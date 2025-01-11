@@ -394,5 +394,4 @@ pre {\
 \
 .octicon {\
     vertical-align:text-bottom\
-}\
-";
+}";

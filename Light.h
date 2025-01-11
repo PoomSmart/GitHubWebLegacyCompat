@@ -1157,5 +1157,4 @@ static NSString *lightStyles = @"\
     --shadow-floating-xlarge: 0px 0px 0px 1px #d1d9e0, 0px 56px 112px 0px #25292e52;\
     --shadow-floating-legacy: 0px 6px 12px -3px #25292e0a, 0px 6px 18px 0px #25292e1f;\
   }\
-}\
-";
+}";

@@ -5,6 +5,7 @@ TARGET = iphone:clang:14.5:12.0
 export PREFIX = $(THEOS)/toolchain/Xcode11.xctoolchain/usr/bin/
 endif
 INSTALL_TARGET_PROCESSES = MobileSafari SafariViewService
+PACKAGE_VERSION = 1.0.1
 
 include $(THEOS)/makefiles/common.mk
 

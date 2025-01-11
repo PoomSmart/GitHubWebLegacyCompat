@@ -1157,5 +1157,4 @@ static NSString *darkStyles = @"\
     --shadow-floating-legacy: 0px 6px 12px -3px #01040966, 0px 6px 18px 0px #01040966;\
     --outline-focus: #1f6feb solid 2px;\
   }\
-}\
-";
+}";

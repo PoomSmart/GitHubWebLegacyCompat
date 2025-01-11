@@ -8,7 +8,6 @@
         <array>
             <string>com.apple.mobilesafari</string>
             <string>com.apple.SafariViewService</string>
-            <string>com.apple.WebKit.WebContent</string>
         </array>
     </dict>
 </dict>
