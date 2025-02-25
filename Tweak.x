@@ -7,6 +7,7 @@
 #import "Normalize.h"
 #import "Light.h"
 #import "Dark.h"
+#import "Polyfill.h"
 
 // WKWebView injection code from https://github.com/guillermo-moran/Eclipse-Dark-Mode
 
@@ -38,6 +39,7 @@ static void inject(WKWebView *webview) {
     injectScript(webview, injectStyles(@"normalize", normalizeStyles));
     injectScript(webview, injectStyles(@"light", lightStyles));
     injectScript(webview, injectStyles(@"dark", darkStyles));
+    injectScript(webview, polyfillScript);
 }
 
 %hook WKWebView
