@@ -2,17 +2,17 @@ ifeq ($(SIMULATOR),1)
 	ARCHS = arm64 x86_64
 	TARGET = simulator:clang:latest:14.0
 else
-	ARCHS = arm64 arm64e
 	ifeq ($(THEOS_PACKAGE_SCHEME),rootless)
 		TARGET = iphone:clang:latest:15.0
+		ARCHS = arm64 arm64e
 	else
-		TARGET = iphone:clang:14.5:12.0
+		TARGET = iphone:clang:14.5:9.0
+		ARCHS = armv7 arm64 arm64e
 		export PREFIX = $(THEOS)/toolchain/Xcode11.xctoolchain/usr/bin/
 	endif
 endif
 
 INSTALL_TARGET_PROCESSES = MobileSafari SafariViewService
-PACKAGE_VERSION = 1.0.3
 
 include $(THEOS)/makefiles/common.mk
 
