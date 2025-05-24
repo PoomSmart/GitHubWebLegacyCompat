@@ -6,7 +6,7 @@ else
 		TARGET = iphone:clang:latest:15.0
 		ARCHS = arm64 arm64e
 	else
-		TARGET = iphone:clang:14.5:9.0
+		TARGET = iphone:clang:14.5:8.0
 		ARCHS = armv7 arm64 arm64e
 		export PREFIX = $(THEOS)/toolchain/Xcode11.xctoolchain/usr/bin/
 	endif
