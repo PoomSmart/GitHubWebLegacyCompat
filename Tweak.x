@@ -7,13 +7,12 @@
 // #import <WebKit/WKScriptMessage.h>
 // #import <WebKit/WKUserContentController.h>
 // #import <WebKit/WKUserScript.h>
-#import <HBLog.h>
 #import <version.h>
+
 #import "Normalize.h"
 #import "Light.h"
 #import "Dark.h"
-#import "Polyfill.h"
-#import "ReleaseAssets.h"
+#import "Scripts.h"
 
 static NSString* injectStyles(NSString *id, NSString *styles) {
     return [NSString stringWithFormat:@"if (document.getElementById('%@') === null) { const styleSheet = document.createElement('style'); styleSheet.type = 'text/css'; styleSheet.innerText = `%@`; styleSheet.id = '%@'; document.head.appendChild(styleSheet); }", id, styles, id];
@@ -46,7 +45,7 @@ static void inject(WKWebView *webview) {
     injectScript(webview, injectStyles(@"normalize", normalizeStyles));
     injectScript(webview, injectStyles(@"light", lightStyles));
     injectScript(webview, injectStyles(@"dark", darkStyles));
-    injectScript(webview, polyfillScript);
+    // injectScript(webview, openCloseMenuScript);
     if (!IS_IOS_OR_NEWER(iOS_15_0))
         injectScript(webview, releaseAssetsScript);
 }
