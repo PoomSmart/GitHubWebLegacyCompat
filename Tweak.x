@@ -14,7 +14,7 @@
 #import "Dark.h"
 #import "Scripts.h"
 
-static NSString* injectStyles(NSString *id, NSString *styles) {
+static NSString *injectStyles(NSString *id, NSString *styles) {
     return [NSString stringWithFormat:@"if (document.getElementById('%@') === null) { const styleSheet = document.createElement('style'); styleSheet.type = 'text/css'; styleSheet.innerText = `%@`; styleSheet.id = '%@'; document.head.appendChild(styleSheet); }", id, styles, id];
 }
 

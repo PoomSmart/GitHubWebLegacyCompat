@@ -1,7 +1,7 @@
 #import <Foundation/Foundation.h>
 
 static NSString *releaseAssetsScript = @"\
-const assetSummaryElements = document.querySelectorAll('[data-target=\"details-toggle.summaryTarget\"][aria-expanded=\"false\"]');\
+const assetSummaryElements = document.querySelectorAll('[data-target=\"details-toggle.summaryTarget\"]');\
 assetSummaryElements.forEach((element) => {\
     const adjacentElement = element.nextElementSibling;\
     const childFragment = adjacentElement.children[0];\
