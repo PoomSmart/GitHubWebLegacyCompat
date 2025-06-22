@@ -1,4 +1,4 @@
 .theos/
 packages/
 .DS_Store
-Experimental.h
+*.js.disabled

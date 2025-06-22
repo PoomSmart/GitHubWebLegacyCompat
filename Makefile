@@ -12,7 +12,7 @@ else
 	endif
 endif
 
-INSTALL_TARGET_PROCESSES = MobileSafari SafariViewService
+INSTALL_TARGET_PROCESSES = MobileSafari SafariViewService com.apple.WebKit.WebContent
 
 include $(THEOS)/makefiles/common.mk
 
@@ -20,6 +20,16 @@ TWEAK_NAME = GitHubWebLegacyCompat
 
 $(TWEAK_NAME)_FILES = Tweak.x
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc
+
+JS_PATH = layout/Library/Application Support/$(TWEAK_NAME)
+
+js:
+	@for file in scripts/*.js; do \
+		base=$$(basename "$$file" .js); \
+		npx babel "$$file" --out-file "$(JS_PATH)/$$base.babel.js"; \
+		npx uglifyjs "$(JS_PATH)/$$base.babel.js" -o "$(JS_PATH)/$$base.min.js"; \
+		rm "$(JS_PATH)/$$base.babel.js"; \
+	done
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 ifeq ($(SIMULATOR),1)
