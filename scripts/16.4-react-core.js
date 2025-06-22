@@ -242,7 +242,7 @@
                         h.relativePath.startsWith("/") && (l(h.relativePath.startsWith(a), 'Absolute route path "' + h.relativePath + '" nested under path "' + a + '" is not valid. An absolute child route path must start with the combined path of all its parent routes.'), h.relativePath = h.relativePath.slice(a.length));
                         let p = _([a, h.relativePath]),
                             f = n.concat(h);
-                        t.children && t.children.length > 0 && (l(!0 !== t.index, 'Index routes must not have child routes. Please remove all child routes from route path "' + p + '".'), e(t.children, r, f, p)),
+                        t.children && t.children.length > 0 && (l(!0 !== t.index, 'Index routes must not have child routes. Please remove all child routes from route path "' + p + '".'), e_(t.children, r, f, p)),
                             (null != t.path || t.index) && r.push({
                                 path: p,
                                 score: (s = p, c = t.index, d = (u = s.split("/")).length, u.some(w) && (d += -2), c && (d += 2), u.filter(segment => !w(segment)).reduce((acc, segment) => acc + (b.test(segment) ? 3 : "" === segment ? 1 : 10), d)),
