@@ -9,10 +9,6 @@
 // #import <WebKit/WKUserScript.h>
 #import <version.h>
 
-#import "Normalize.h"
-#import "Light.h"
-#import "Dark.h"
-
 static BOOL isIOSVersionOrNewer(NSInteger major, NSInteger minor) {
     NSOperatingSystemVersion version = [[NSProcessInfo processInfo] operatingSystemVersion];
     if (version.majorVersion > major) return YES;
@@ -21,7 +17,7 @@ static BOOL isIOSVersionOrNewer(NSInteger major, NSInteger minor) {
 }
 
 static NSString *injectStyles(NSString *identifier, NSString *styles) {
-    return [NSString stringWithFormat:@"if(document.getElementById('%@')===null){const styleSheet=document.createElement('style');styleSheet.type='text/css';styleSheet.innerText=`%@`;styleSheet.id='%@';document.head.appendChild(styleSheet);}", identifier, styles, identifier];
+    return [NSString stringWithFormat:@"if(document.getElementById('%@')===null){const styleSheet=document.createElement('style');styleSheet.type='text/css';styleSheet.innerText=`%@`;styleSheet.id='no-polyfill-%@';document.head.appendChild(styleSheet);}", identifier, styles, identifier];
 }
 
 static NSString *injectScript(WKWebView *webview, NSString *identifier, NSString *script) {
@@ -48,40 +44,64 @@ static NSString *injectScript(WKWebView *webview, NSString *identifier, NSString
 
 static void inject(WKWebView *webview) {
     if (![webview.URL.host containsString:@"github.com"]) return;
-    if (!isIOSVersionOrNewer(17, 0)) {
-        if (!isIOSVersionOrNewer(15, 4)) {
-            injectScript(webview, @"normalize-css", injectStyles(@"normalize", normalizeStyles));
-            injectScript(webview, @"light-css", injectStyles(@"light", lightStyles));
-            injectScript(webview, @"dark-css", injectStyles(@"dark", darkStyles));
+    NSString *assetsFolder = PS_ROOT_PATH_NS(@"/Library/Application Support/GitHubWebLegacyCompat");
+    NSArray *assets = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:assetsFolder error:nil];
+
+    // Load CSS files
+    NSPredicate *cssPredicate = [NSPredicate predicateWithFormat:@"self ENDSWITH '.css'"];
+    NSArray *cssFiles = [assets filteredArrayUsingPredicate:cssPredicate];
+    for (NSString *cssFile in cssFiles) {
+        NSString *filePath = [assetsFolder stringByAppendingPathComponent:cssFile];
+        NSString *fileName = [cssFile stringByDeletingPathExtension];
+        float fileNameIosVersion = [[[fileName componentsSeparatedByString:@"-"] firstObject] floatValue];
+        if (fileNameIosVersion == 0.0) {
+            HBLogDebug(@"GitHubWebLegacyCompat CSS %@ has no iOS version, skipping", cssFile);
+            continue;
         }
-        NSString *scriptsFolder = PS_ROOT_PATH_NS(@"/Library/Application Support/GitHubWebLegacyCompat");
-        NSArray *scripts = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:scriptsFolder error:nil];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self ENDSWITH '.js'"];
-        NSArray *jsFiles = [scripts filteredArrayUsingPredicate:predicate];
-        for (NSString *jsFile in jsFiles) {
-            NSString *filePath = [scriptsFolder stringByAppendingPathComponent:jsFile];
-            NSString *fileName = [jsFile stringByDeletingPathExtension];
-            float fileNameIosVersion = [[[fileName componentsSeparatedByString:@"-"] firstObject] floatValue];
-            if (fileNameIosVersion == 0.0) {
-                HBLogDebug(@"GitHubWebLegacyCompat script %@ has no iOS version, skipping", jsFile);
-                continue;
-            }
-            int majorVersion = (int)fileNameIosVersion;
-            int minorVersion = (int)((fileNameIosVersion - majorVersion) * 10);
-            if (isIOSVersionOrNewer(majorVersion, minorVersion)) {
-                HBLogDebug(@"GitHubWebLegacyCompat script %@ is not compatible with this iOS version, skipping", jsFile);
-                continue;
-            }
-            NSString *scriptContent = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
-            if (scriptContent) {
-                NSString *result = injectScript(webview, fileName, scriptContent);
-                if (result)
-                    HBLogDebug(@"GitHubWebLegacyCompat injected script %@: %@", fileName, result);
-                else
-                    HBLogDebug(@"GitHubWebLegacyCompat failed to inject script %@", fileName);
-            } else
-                HBLogDebug(@"GitHubWebLegacyCompat failed to read script file %@", jsFile);
+        int majorVersion = (int)fileNameIosVersion;
+        int minorVersion = (int)((fileNameIosVersion - majorVersion) * 10);
+        if (isIOSVersionOrNewer(majorVersion, minorVersion)) {
+            HBLogDebug(@"GitHubWebLegacyCompat CSS %@ is not compatible with this iOS version, skipping", cssFile);
+            continue;
         }
+        NSString *cssContent = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+        if (cssContent) {
+            NSString *cssIdentifier = [fileName stringByReplacingOccurrencesOfString:@"-" withString:@"_"];
+            NSString *result = injectScript(webview, cssIdentifier, injectStyles(cssIdentifier, cssContent));
+            if (result)
+                HBLogDebug(@"GitHubWebLegacyCompat injected CSS %@: %@", fileName, result);
+            else
+                HBLogDebug(@"GitHubWebLegacyCompat failed to inject CSS %@", fileName);
+        } else
+            HBLogDebug(@"GitHubWebLegacyCompat failed to read CSS file %@", cssFile);
+    }
+
+    // Load JS files
+    NSPredicate *jsPredicate = [NSPredicate predicateWithFormat:@"self ENDSWITH '.js'"];
+    NSArray *jsFiles = [assets filteredArrayUsingPredicate:jsPredicate];
+    for (NSString *jsFile in jsFiles) {
+        NSString *filePath = [assetsFolder stringByAppendingPathComponent:jsFile];
+        NSString *fileName = [jsFile stringByDeletingPathExtension];
+        float fileNameIosVersion = [[[fileName componentsSeparatedByString:@"-"] firstObject] floatValue];
+        if (fileNameIosVersion == 0.0) {
+            HBLogDebug(@"GitHubWebLegacyCompat script %@ has no iOS version, skipping", jsFile);
+            continue;
+        }
+        int majorVersion = (int)fileNameIosVersion;
+        int minorVersion = (int)((fileNameIosVersion - majorVersion) * 10);
+        if (isIOSVersionOrNewer(majorVersion, minorVersion)) {
+            HBLogDebug(@"GitHubWebLegacyCompat script %@ is not compatible with this iOS version, skipping", jsFile);
+            continue;
+        }
+        NSString *scriptContent = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
+        if (scriptContent) {
+            NSString *result = injectScript(webview, fileName, scriptContent);
+            if (result)
+                HBLogDebug(@"GitHubWebLegacyCompat injected script %@: %@", fileName, result);
+            else
+                HBLogDebug(@"GitHubWebLegacyCompat failed to inject script %@", fileName);
+        } else
+            HBLogDebug(@"GitHubWebLegacyCompat failed to read script file %@", jsFile);
     }
 }
 

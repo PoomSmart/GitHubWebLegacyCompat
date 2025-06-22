@@ -1,0 +1,12 @@
+{
+  "name": "github-web-legacy-compat",
+  "version": "1.0.0",
+  "description": "GitHub Web Legacy Compatibility Tweak",
+  "private": true,
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "clean-css-cli": "^5.0.0",
+    "uglify-js": "^3.0.0"
+  }
+}

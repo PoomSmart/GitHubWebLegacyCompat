@@ -21,17 +21,26 @@ TWEAK_NAME = GitHubWebLegacyCompat
 $(TWEAK_NAME)_FILES = Tweak.x
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc
 
-JS_PATH = layout/Library/Application Support/$(TWEAK_NAME)
+ASSETS_PATH = layout/Library/Application Support/$(TWEAK_NAME)
 
 js:
 	@for file in scripts/*.js; do \
 		base=$$(basename "$$file" .js); \
-		npx babel "$$file" --out-file "$(JS_PATH)/$$base.babel.js"; \
-		npx uglifyjs "$(JS_PATH)/$$base.babel.js" -o "$(JS_PATH)/$$base.min.js"; \
-		rm "$(JS_PATH)/$$base.babel.js"; \
+		npx babel "$$file" --out-file "$(ASSETS_PATH)/$$base.babel.js"; \
+		npx uglifyjs "$(ASSETS_PATH)/$$base.babel.js" -o "$(ASSETS_PATH)/$$base.min.js"; \
+		rm "$(ASSETS_PATH)/$$base.babel.js"; \
 	done
 
+css:
+	@for file in styles/*.css; do \
+		base=$$(basename "$$file" .css); \
+		npx cleancss "$$file" -o "$(ASSETS_PATH)/$$base.min.css"; \
+	done
+
+assets: js css
+
 include $(THEOS_MAKE_PATH)/tweak.mk
+
 ifeq ($(SIMULATOR),1)
 setup:: clean all
 	@rm -f /opt/simject/$(TWEAK_NAME).dylib
