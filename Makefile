@@ -21,6 +21,15 @@ TWEAK_NAME = GitHubWebLegacyCompat
 $(TWEAK_NAME)_FILES = Tweak.x
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc
 
+include $(THEOS_MAKE_PATH)/tweak.mk
+
+ifeq ($(SIMULATOR),1)
+setup:: clean all
+	@rm -f /opt/simject/$(TWEAK_NAME).dylib
+	@cp -v $(THEOS_OBJ_DIR)/$(TWEAK_NAME).dylib /opt/simject/$(TWEAK_NAME).dylib
+	@cp -v $(PWD)/$(TWEAK_NAME).plist /opt/simject/$(TWEAK_NAME).plist
+endif
+
 ASSETS_PATH = layout/Library/Application Support/$(TWEAK_NAME)
 
 js:
@@ -38,12 +47,3 @@ css:
 	done
 
 assets: js css
-
-include $(THEOS_MAKE_PATH)/tweak.mk
-
-ifeq ($(SIMULATOR),1)
-setup:: clean all
-	@rm -f /opt/simject/$(TWEAK_NAME).dylib
-	@cp -v $(THEOS_OBJ_DIR)/$(TWEAK_NAME).dylib /opt/simject/$(TWEAK_NAME).dylib
-	@cp -v $(PWD)/$(TWEAK_NAME).plist /opt/simject/$(TWEAK_NAME).plist
-endif
