@@ -4,7 +4,6 @@
 #import <Foundation/Foundation.h>
 #import <WebKit/WKWebView.h>
 #import <WebKit/WKWebViewConfiguration.h>
-#import <WebKit/WKScriptMessage.h>
 #import <WebKit/WKUserContentController.h>
 #import <WebKit/WKUserScript.h>
 #import <version.h>
