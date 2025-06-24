@@ -3605,7 +3605,7 @@
                     }),
                     { v7_startTransition: h } = n || {},
                     p = s.useCallback(e => {
-                        h && w ? wCallback(() => d(e)) : d(e)
+                        h && w ? w(() => d(e)) : d(e)
                     }, [d, h]);
                 return s.useLayoutEffect(() => i.listen(p), [i, p]), s.useEffect(() => (0, c.V8)(n), [n]), s.createElement(c.Ix, {
                     basename: t,
