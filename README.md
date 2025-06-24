@@ -10,8 +10,6 @@ To mitigate this, this tweak dynamically inserts new stylesheets into the page n
 
 Reference: [Safari Release Notes](https://developer.apple.com/documentation/safari-release-notes/safari-15_4-release-notes#New-Features)
 
-Furthermore, this tweak also adds few JavaScript polyfills to make the website more functional on older versions of WebKit.
-
 ### Callee and Parameter Name Conflict
 
 As of May or Jun 2025, GitHub pushed the update to certain some JS bundles (e.g. `react-core`), minified. This version has the issue on iOS < 16.4, which forbids the callee and the parameter to have the same name. To make this works on lower iOS versions, those JS bundles are included in this tweak, with the callee and parameter names fixed.
