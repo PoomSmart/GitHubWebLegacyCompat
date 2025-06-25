@@ -3,6 +3,240 @@
     if (window.__GHWLC_ISSUES_REACT_LOADED) return;
     window.__GHWLC_ISSUES_REACT_LOADED = true;
     (globalThis.webpackChunk = globalThis.webpackChunk || []).push([["issues-react"], {
+        66661: (e, l, a) => {
+            function n(e) {
+                let l = e.parentNode;
+                if (null === l || !(l instanceof HTMLElement))
+                    throw Error();
+                let a = 0;
+                l instanceof HTMLOListElement && 1 !== l.start && (a = l.start - 1);
+                let n = l.children;
+                for (let l = 0; l < n.length; ++l)
+                    if (n[l] === e)
+                        return a + l;
+                return a
+            }
+            a.d(l, {
+                P: () => Quote,
+                g: () => MarkdownQuote
+            });
+            let t = 0;
+            function s(e) {
+                return e.replace(/&/g, "&amp;").replace(/'/g, "&apos;").replace(/"/g, "&quot;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+            }
+            let i = {
+                INPUT: e => e instanceof HTMLInputElement && e.checked ? "[x] " : "[ ] ",
+                CODE(e) {
+                    let l = e.textContent || "";
+                    return e.parentNode && "PRE" === e.parentNode.nodeName ? (e.textContent = `\`\`\`
+${l.replace(/\n+$/, "")}
+\`\`\`
+
+`
+
+
+                        , e) : l.indexOf("`") >= 0 ? `\`\` ${l} \`\`` : `\`${l}\``
+                },
+                P(e) {
+                    let l = document.createElement("p");
+                    return l.textContent = (e.textContent || "").replace(/<(\/?)(pre|strong|weak|em)>/g, "\\<$1$2\\>"), l
+                },
+                STRONG: e => `**${e.textContent || ""}**`,
+                EM: e => `_${e.textContent || ""}_`,
+                DEL: e => `~${e.textContent || ""}~`,
+                BLOCKQUOTE(e) {
+                    let l = (e.textContent || "").trim().replace(/^/gm, "> "),
+                        a = document.createElement("pre");
+                    return a.textContent = `${l}
+
+`
+
+                        , a
+                },
+                A(e) {
+                    let l = e.textContent || "",
+                        a = e.getAttribute("href");
+                    return /^https?:/.test(l) && l === a ? l : a ? `[${l}](${a})` : l
+                },
+                IMG(e) {
+                    let l = e.getAttribute("alt") || "",
+                        a = e.getAttribute("src");
+                    if (!a)
+                        throw Error();
+                    let n = e.hasAttribute("width") ? ` width="${s(e.getAttribute("width") || "")}"` : "",
+                        t = e.hasAttribute("height") ? ` height="${s(e.getAttribute("height") || "")}"` : "";
+                    return n || t ? `<img alt="${s(l)}"${n}${t} src="${s(a)}">` : `![${l}](${a})`
+                },
+                LI(e) {
+                    let l = e.parentNode;
+                    if (!l)
+                        throw Error();
+                    let a = "";
+                    if (!function (e) {
+                        let l = e.childNodes[0],
+                            a = e.childNodes[1];
+                        return !!l && e.childNodes.length < 3 && ("OL" === l.nodeName || "UL" === l.nodeName) && (!a || a.nodeType === Node.TEXT_NODE && !(a.textContent || "").trim())
+                    }(e))
+                        if ("OL" === l.nodeName)
+                            if (t > 0 && !l.previousSibling) {
+                                let l = n(e) + t + 1;
+                                a = `${l}\\. `
+                            } else
+                                a = `${n(e) + 1}. `;
+                        else
+                            a = "* ";
+                    let s = a.replace(/\S/g, " "),
+                        i = (e.textContent || "").trim().replace(/^/gm, s),
+                        r = document.createElement("pre");
+                    return r.textContent = i.replace(s, a), r
+                },
+                OL(e) {
+                    let l = document.createElement("li");
+                    return l.appendChild(document.createElement("br")), e.append(l), e
+                },
+                H1(e) {
+                    let l = parseInt(e.nodeName.slice(1));
+                    return e.prepend(`${Array(l + 1).join("#")} `), e
+                },
+                UL: e => e
+            };
+            i.UL = i.OL;
+            for (let e = 2; e <= 6; ++e)
+                i[`H${e}`] = i.H1;
+            let Quote = class Quote {
+                constructor() {
+                    this.selection = window.getSelection(),
+                        this.processSelectionText = e => e
+                }
+                closest(e) {
+                    let l = this.range.startContainer,
+                        a = l instanceof Element ? l : l.parentElement;
+                    return a ? a.closest(e) : null
+                }
+                get active() {
+                    var e;
+                    return ((null == (e = this.selection) ? void 0 : e.rangeCount) || 0) > 0
+                }
+                get range() {
+                    var e;
+                    return (null == (e = this.selection) ? void 0 : e.rangeCount) ? this.selection.getRangeAt(0) : new Range
+                }
+                set range(e) {
+                    var l,
+                        a;
+                    null == (l = this.selection) || l.removeAllRanges(),
+                        null == (a = this.selection) || a.addRange(e)
+                }
+                set processSelectionTextFn(e) {
+                    this.processSelectionText = e
+                }
+                get selectionText() {
+                    var e;
+                    return this.processSelectionText((null == (e = this.selection) ? void 0 : e.toString().trim()) || "")
+                }
+                get quotedText() {
+                    return `> ${this.selectionText.replace(/\n/g, `
+> `)}
+
+`
+
+                }
+                select(e) {
+                    this.selection && (this.selection.removeAllRanges(), this.selection.selectAllChildren(e))
+                }
+                insert(e) {
+                    e.value ? e.value = `${e.value}
+
+${this.quotedText}` : e.value = this.quotedText,
+                        e.dispatchEvent(new CustomEvent("change", {
+                            bubbles: !0,
+                            cancelable: !1
+                        })),
+                        e.focus(),
+                        e.selectionStart = e.value.length,
+                        e.scrollTop = e.scrollHeight
+                }
+            }
+                ;
+            let MarkdownQuote = class MarkdownQuote extends Quote {
+                constructor(e = "", l) {
+                    super(),
+                        this.scopeSelector = e,
+                        this.callback = l
+                }
+                get selectionText() {
+                    var e,
+                        l;
+                    if (!this.selection)
+                        return "";
+                    let a = function (e, l) {
+                        let a = e.startContainer;
+                        if (!a || !a.parentNode || !(a.parentNode instanceof HTMLElement))
+                            throw Error("the range must start within an HTMLElement");
+                        let s = a.parentNode,
+                            i = e.cloneContents();
+                        if (l) {
+                            let e = i.querySelector(l);
+                            e && (i = document.createDocumentFragment()).appendChild(e)
+                        }
+                        t = 0;
+                        let r = s.closest("li");
+                        if (s.closest("pre")) {
+                            let e = document.createElement("pre");
+                            e.appendChild(i),
+                                (i = document.createDocumentFragment()).appendChild(e)
+                        } else if (r && r.parentNode && ("OL" === r.parentNode.nodeName && (t = n(r)), !i.querySelector("li"))) {
+                            let e = document.createElement("li");
+                            if (!r.parentNode)
+                                throw Error();
+                            let l = document.createElement(r.parentNode.nodeName);
+                            e.appendChild(i),
+                                l.appendChild(e),
+                                (i = document.createDocumentFragment()).appendChild(l)
+                        }
+                        return i
+                    }(this.range, null != (e = this.scopeSelector) ? e : "");
+                    null == (l = this.callback) || l.call(this, a);
+                    let s = document.createNodeIterator(a, NodeFilter.SHOW_ELEMENT, {
+                        acceptNode: e => e.nodeName in i && !function (e) {
+                            if (e instanceof HTMLAnchorElement && 1 === e.childNodes.length) {
+                                let l = e.childNodes[0];
+                                if (l instanceof HTMLImageElement)
+                                    return l.src === e.href
+                            }
+                            return !1
+                        }(e) && ("IMG" === e.nodeName || null != e.firstChild || "INPUT" === e.nodeName && e instanceof HTMLInputElement && "checkbox" === e.type) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP
+                    }),
+                        r = [],
+                        o = s.nextNode();
+                    for (; o;)
+                        o instanceof HTMLElement && r.push(o),
+                            o = s.nextNode();
+                    for (let e of (r.reverse(), r))
+                        e.replaceWith(i[e.nodeName](e));
+                    let u = document.body;
+                    if (!u)
+                        return "";
+                    let d = document.createElement("div");
+                    d.appendChild(a),
+                        d.style.cssText = "position:absolute;left:-9999px;",
+                        u.appendChild(d);
+                    let c = "";
+                    try {
+                        let e = document.createRange();
+                        e.selectNodeContents(d),
+                            this.selection.removeAllRanges(),
+                            this.selection.addRange(e),
+                            c = this.selection.toString(),
+                            this.selection.removeAllRanges(),
+                            e.detach()
+                    } finally {
+                        u.removeChild(d)
+                    }
+                    return this.processSelectionText(c.trim())
+                }
+            }
+        },
         981: (e, l, a) => {
             a.d(l, {
                 xC: () => K,
@@ -47,9 +281,9 @@
                     f,
                     b,
                     C,
-                    F = (0, t.c)(37),
-                    { checkRun: S } = e;
-                F[0] !== S.icon ? (l = function (e) {
+                    S = (0, t.c)(37),
+                    { checkRun: F } = e;
+                S[0] !== F.icon ? (l = function (e) {
                     switch (e) {
                         case "check":
                             return (0, n.jsx)(s.CheckIcon, {
@@ -88,10 +322,10 @@
                                 className: "fgColor-danger my-0 mx-2 flex-self-center"
                             })
                     }
-                }(S.icon), F[0] = S.icon, F[1] = l) : l = F[1];
+                }(F.icon), S[0] = F.icon, S[1] = l) : l = S[1];
                 let L = l,
-                    x = "in_progress" === S.state;
-                return F[2] !== L || F[3] !== x ? (a = x ? (0, n.jsx)("div", {
+                    x = "in_progress" === F.state;
+                return S[2] !== L || S[3] !== x ? (a = x ? (0, n.jsx)("div", {
                     className: h.Box_2,
                     children: (0, n.jsxs)("svg", {
                         fill: "none",
@@ -115,47 +349,47 @@
                     })
                 }) : (0, n.jsx)(n.Fragment, {
                     children: L
-                }), F[2] = L, F[3] = x, F[4] = a) : a = F[4], F[5] !== S.avatarBackgroundColor ? (i = {
-                    backgroundColor: S.avatarBackgroundColor
-                }, F[5] = S.avatarBackgroundColor, F[6] = i) : i = F[6], F[7] !== S.avatarLogo || F[8] !== i ? (r = (0, n.jsx)(p.r, {
+                }), S[2] = L, S[3] = x, S[4] = a) : a = S[4], S[5] !== F.avatarBackgroundColor ? (i = {
+                    backgroundColor: F.avatarBackgroundColor
+                }, S[5] = F.avatarBackgroundColor, S[6] = i) : i = S[6], S[7] !== F.avatarLogo || S[8] !== i ? (r = (0, n.jsx)(p.r, {
                     square: !0,
-                    src: S.avatarLogo,
+                    src: F.avatarLogo,
                     sx: i
-                }), F[7] = S.avatarLogo, F[8] = i, F[9] = r) : r = F[9], F[10] !== S.avatarUrl || F[11] !== r ? (o = (0, n.jsx)(y.A, {
-                    href: S.avatarUrl,
+                }), S[7] = F.avatarLogo, S[8] = i, S[9] = r) : r = S[9], S[10] !== F.avatarUrl || S[11] !== r ? (o = (0, n.jsx)(y.A, {
+                    href: F.avatarUrl,
                     "aria-label": "Avatar",
                     className: h.Link,
                     children: r
-                }), F[10] = S.avatarUrl, F[11] = r, F[12] = o) : o = F[12], F[13] !== S.avatarDescription || F[14] !== o ? (u = (0, n.jsx)(k.m, {
-                    text: S.avatarDescription,
+                }), S[10] = F.avatarUrl, S[11] = r, S[12] = o) : o = S[12], S[13] !== F.avatarDescription || S[14] !== o ? (u = (0, n.jsx)(k.m, {
+                    text: F.avatarDescription,
                     direction: "e",
                     children: o
-                }), F[13] = S.avatarDescription, F[14] = o, F[15] = u) : u = F[15], F[16] !== a || F[17] !== u ? (d = (0, n.jsxs)("div", {
+                }), S[13] = F.avatarDescription, S[14] = o, S[15] = u) : u = S[15], S[16] !== a || S[17] !== u ? (d = (0, n.jsxs)("div", {
                     className: h.Box_1,
                     children: [a, u]
-                }), F[16] = a, F[17] = u, F[18] = d) : d = F[18], F[19] !== S.name ? (c = (0, n.jsxs)("span", {
+                }), S[16] = a, S[17] = u, S[18] = d) : d = S[18], S[19] !== F.name ? (c = (0, n.jsxs)("span", {
                     className: h.Text_1,
-                    children: [S.name, " "]
-                }), F[19] = S.name, F[20] = c) : c = F[20], F[21] !== S.additionalContext || F[22] !== S.pending ? (m = S.pending ? (0, n.jsx)("span", {
+                    children: [F.name, " "]
+                }), S[19] = F.name, S[20] = c) : c = S[20], S[21] !== F.additionalContext || S[22] !== F.pending ? (m = F.pending ? (0, n.jsx)("span", {
                     className: h.Text_2,
-                    children: S.additionalContext
-                }) : S.additionalContext, F[21] = S.additionalContext, F[22] = S.pending, F[23] = m) : m = F[23], F[24] !== S.description || F[25] !== S.pending ? (g = S.description && (0, n.jsxs)("span", {
-                    children: [" ", "- ", S.pending ? (0, n.jsx)("span", {
+                    children: F.additionalContext
+                }) : F.additionalContext, S[21] = F.additionalContext, S[22] = F.pending, S[23] = m) : m = S[23], S[24] !== F.description || S[25] !== F.pending ? (g = F.description && (0, n.jsxs)("span", {
+                    children: [" ", "- ", F.pending ? (0, n.jsx)("span", {
                         className: h.Text_2,
-                        children: S.description
-                    }) : S.description]
-                }), F[24] = S.description, F[25] = S.pending, F[26] = g) : g = F[26], F[27] !== g || F[28] !== c || F[29] !== m ? (f = (0, n.jsxs)("span", {
+                        children: F.description
+                    }) : F.description]
+                }), S[24] = F.description, S[25] = F.pending, S[26] = g) : g = S[26], S[27] !== g || S[28] !== c || S[29] !== m ? (f = (0, n.jsxs)("span", {
                     className: h.Text,
                     children: [c, m, g]
-                }), F[27] = g, F[28] = c, F[29] = m, F[30] = f) : f = F[30], F[31] !== S.targetUrl ? (b = (0, n.jsx)(y.A, {
-                    href: S.targetUrl,
+                }), S[27] = g, S[28] = c, S[29] = m, S[30] = f) : f = S[30], S[31] !== F.targetUrl ? (b = (0, n.jsx)(y.A, {
+                    href: F.targetUrl,
                     className: h.Link_1,
                     children: "Details"
-                }), F[31] = S.targetUrl, F[32] = b) : b = F[32], F[33] !== f || F[34] !== b || F[35] !== d ? (C = (0, n.jsxs)("li", {
+                }), S[31] = F.targetUrl, S[32] = b) : b = S[32], S[33] !== f || S[34] !== b || S[35] !== d ? (C = (0, n.jsxs)("li", {
                     "data-testid": "check-run-item",
                     className: h.Box,
                     children: [d, f, b]
-                }), F[33] = f, F[34] = b, F[35] = d, F[36] = C) : C = F[36], C
+                }), S[33] = f, S[34] = b, S[35] = d, S[36] = C) : C = S[36], C
             }
             try {
                 f.displayName || (f.displayName = "CheckRunItem")
@@ -168,12 +402,12 @@
                     a,
                     s = (0, t.c)(4),
                     { checkRuns: i } = e;
-                return s[0] !== i ? (l = i.map(F), s[0] = i, s[1] = l) : l = s[1], s[2] !== l ? (a = (0, n.jsx)("ul", {
+                return s[0] !== i ? (l = i.map(S), s[0] = i, s[1] = l) : l = s[1], s[2] !== l ? (a = (0, n.jsx)("ul", {
                     className: b.Box,
                     children: l
                 }), s[2] = l, s[3] = a) : a = s[3], a
             }
-            function F(e, l) {
+            function S(e, l) {
                 return (0, n.jsx)(f, {
                     checkRun: e
                 }, l)
@@ -181,7 +415,7 @@
             try {
                 C.displayName || (C.displayName = "ChecksStatusBadgeFooter")
             } catch { }
-            let S = {
+            let F = {
                 Text: "ChecksStatusBadgeHeader-module__Text--IBN_O",
                 Text_1: "ChecksStatusBadgeHeader-module__Text_1--nuXs5",
                 Text_2: "ChecksStatusBadgeHeader-module__Text_2--nXTHk"
@@ -194,28 +428,28 @@
                         {
                             let e;
                             return l[0] === Symbol.for("react.memo_cache_sentinel") ? (e = (0, n.jsx)("span", {
-                                className: S.Text,
+                                className: F.Text,
                                 children: "All checks have passed"
                             }), l[0] = e) : e = l[0], e
                         } case "FAILED":
                         {
                             let e;
                             return l[1] === Symbol.for("react.memo_cache_sentinel") ? (e = (0, n.jsx)("span", {
-                                className: S.Text_1,
+                                className: F.Text_1,
                                 children: "All checks have failed"
                             }), l[1] = e) : e = l[1], e
                         } case "PENDING":
                         {
                             let e;
                             return l[2] === Symbol.for("react.memo_cache_sentinel") ? (e = (0, n.jsx)("span", {
-                                className: S.Text_2,
+                                className: F.Text_2,
                                 children: "Some checks haven\u2019t completed yet"
                             }), l[2] = e) : e = l[2], e
                         } default:
                         {
                             let e;
                             return l[3] === Symbol.for("react.memo_cache_sentinel") ? (e = (0, n.jsx)("span", {
-                                className: S.Text_1,
+                                className: F.Text_1,
                                 children: "Some checks were not successful"
                             }), l[3] = e) : e = l[3], e
                         }
@@ -306,24 +540,24 @@
                         "aria-label": C,
                         sx: l
                     }), m[2] = y, m[3] = b, m[4] = C, m[5] = l, m[6] = a) : a = m[6];
-                let F = a;
+                let S = a;
                 if (h) {
                     let e;
-                    m[7] !== F || m[8] !== f || m[9] !== h ? (e = (0, n.jsx)(u.A, {
+                    m[7] !== S || m[8] !== f || m[9] !== h ? (e = (0, n.jsx)(u.A, {
                         id: f,
                         "aria-label": h,
                         direction: "e",
-                        children: F
-                    }), m[7] = F, m[8] = f, m[9] = h, m[10] = e) : e = m[10],
-                        F = e
+                        children: S
+                    }), m[7] = S, m[8] = f, m[9] = h, m[10] = e) : e = m[10],
+                        S = e
                 }
                 return m[11] !== g ? (s = (0, c.$)(g, "d-flex flex-items-center gap-1"), m[11] = g, m[12] = s) : s = m[12], m[13] !== p ? (i = p && (0, n.jsxs)("span", {
                     children: [" ", p]
-                }), m[13] = p, m[14] = i) : i = m[14], m[15] !== F || m[16] !== s || m[17] !== i ? (r = (0, n.jsxs)("span", {
+                }), m[13] = p, m[14] = i) : i = m[14], m[15] !== S || m[16] !== s || m[17] !== i ? (r = (0, n.jsxs)("span", {
                     className: s,
                     "data-testid": "checks-status-badge-icon-only",
-                    children: [F, i]
-                }), m[15] = F, m[16] = s, m[17] = i, m[18] = r) : r = m[18], r
+                    children: [S, i]
+                }), m[15] = S, m[16] = s, m[17] = i, m[18] = r) : r = m[18], r
             }
             function _(e) {
                 let l,
@@ -334,8 +568,8 @@
                     { statusRollup: c, combinedStatus: m, variant: g, disablePopover: p, buttonSx: y, size: k, descriptionText: h, onWillOpenPopup: f } = e,
                     b = void 0 === g ? "default" : g,
                     C = void 0 === k ? "medium" : k,
-                    F = void 0 === h ? "" : h,
-                    [S, L] = (0, d.useState)(!1),
+                    S = void 0 === h ? "" : h,
+                    [F, L] = (0, d.useState)(!1),
                     x = (0, d.useRef)(null),
                     _ = I[c],
                     w = _?.[b] || I.error[b],
@@ -358,13 +592,13 @@
                 }
                 if (p) {
                     let e;
-                    return u[7] !== F || u[8] !== N || u[9] !== R ? (e = (0, n.jsx)(v, {
-                        descriptionText: F,
+                    return u[7] !== S || u[8] !== N || u[9] !== R ? (e = (0, n.jsx)(v, {
+                        descriptionText: S,
                         icon: N,
                         iconColor: R
-                    }), u[7] = F, u[8] = N, u[9] = R, u[10] = e) : e = u[10], e
+                    }), u[7] = S, u[8] = N, u[9] = R, u[10] = e) : e = u[10], e
                 }
-                return u[11] !== y || u[12] !== m?.checksStatusSummary || u[13] !== F || u[14] !== f || u[15] !== N || u[16] !== R || u[17] !== C || u[18] !== c ? (a = F ? (0, n.jsx)(i.Q, {
+                return u[11] !== y || u[12] !== m?.checksStatusSummary || u[13] !== S || u[14] !== f || u[15] !== N || u[16] !== R || u[17] !== C || u[18] !== c ? (a = S ? (0, n.jsx)(i.Q, {
                     "data-testid": "checks-status-badge-button",
                     leadingVisual: N,
                     variant: "invisible",
@@ -384,7 +618,7 @@
                         f?.(),
                             L(!0)
                     },
-                    children: F
+                    children: S
                 }) : (0, n.jsx)(r.K, {
                     "data-testid": "checks-status-badge-icon",
                     tooltipDirection: "s",
@@ -409,16 +643,16 @@
                         f?.(),
                             L(!0)
                     }
-                }), u[11] = y, u[12] = m?.checksStatusSummary, u[13] = F, u[14] = f, u[15] = N, u[16] = R, u[17] = C, u[18] = c, u[19] = a) : a = u[19], u[20] !== m || u[21] !== S ? (s = S && (0, n.jsx)(K, {
+                }), u[11] = y, u[12] = m?.checksStatusSummary, u[13] = S, u[14] = f, u[15] = N, u[16] = R, u[17] = C, u[18] = c, u[19] = a) : a = u[19], u[20] !== m || u[21] !== F ? (s = F && (0, n.jsx)(K, {
                     combinedStatus: m,
-                    isOpen: S,
+                    isOpen: F,
                     onDismiss: () => {
                         L(!1),
                             setTimeout(() => {
                                 x.current?.focus()
                             }, 0)
                     }
-                }), u[20] = m, u[21] = S, u[22] = s) : s = u[22], u[23] !== a || u[24] !== s ? (o = (0, n.jsxs)(n.Fragment, {
+                }), u[20] = m, u[21] = F, u[22] = s) : s = u[22], u[23] !== a || u[24] !== s ? (o = (0, n.jsxs)(n.Fragment, {
                     children: [a, s]
                 }), u[23] = a, u[24] = s, u[25] = o) : o = u[25], o
             }
@@ -452,7 +686,7 @@
                 n: () => i
             });
             var n = a(34784),
-                t = a(83088),
+                t = a(11245),
                 s = a(70170);
             let i = (e, l, a, s) => (0, n.fetchQuery)(e, t.k5, {
                 owner: l,
@@ -1016,8 +1250,8 @@
             try {
                 b.displayName || (b.displayName = "NavigationContextProvider")
             } catch { }
-            var F = a(13233),
-                S = a(64262),
+            var S = a(13233),
+                F = a(64262),
                 L = a(99543),
                 x = a(28835),
                 K = a(47767);
@@ -1200,18 +1434,18 @@
                 empty: "empty"
             },
                 B = Object.values(O),
-                Q = {
+                $ = {
                     color: T.defaultViewColor,
                     description: "",
                     scopingRepository: null
                 },
-                $ = {
+                Q = {
                     id: O.assignedToMe,
                     name: "Assigned to me",
                     query: q.Ds.assignedToMe,
                     icon: "PEOPLE",
                     hidden: !1,
-                    ...Q
+                    ...$
                 },
                 U = {
                     id: O.repository,
@@ -1219,7 +1453,7 @@
                     query: "is:issue state:open",
                     icon: "PEOPLE",
                     hidden: !0,
-                    ...Q
+                    ...$
                 },
                 z = {
                     id: O.pullsAssignedToMe,
@@ -1227,7 +1461,7 @@
                     query: q.Ds.pullsAssignedToMe,
                     icon: "PEOPLE",
                     hidden: !0,
-                    ...Q
+                    ...$
                 },
                 H = {
                     id: O.mentioned,
@@ -1235,21 +1469,21 @@
                     query: q.Ds.mentioned,
                     icon: "MENTION",
                     hidden: !1,
-                    ...Q
+                    ...$
                 },
                 W = {
                     id: O.created,
                     name: "Created by me",
                     query: q.Ds.createdByMe,
                     icon: "SMILEY",
-                    ...Q
+                    ...$
                 },
                 G = {
                     id: O.recent,
                     name: "Recent activity",
                     query: q.Ds.recentActivity,
                     icon: "CLOCK",
-                    ...Q
+                    ...$
                 },
                 Z = {
                     id: O.empty,
@@ -1257,7 +1491,7 @@
                     query: "is:issue state:open",
                     icon: "ISSUE_OPENED",
                     hidden: !0,
-                    ...Q
+                    ...$
                 },
                 X = {
                     id: O.new,
@@ -1265,14 +1499,14 @@
                     query: "is:issue state:open",
                     icon: "ISSUE_OPENED",
                     hidden: !0,
-                    ...Q
+                    ...$
                 },
                 Y = ["created_by", "assigned", "mentioned"],
                 J = {
                     defaultQuery: "is:issue state:open",
                     query: e => e.author ? e.createdByApp ? `author:app/${e.author}` : `author:${e.author}` : e.assignee ? `assignee:${e.assignee}` : e.mentioned ? `mentions:${e.mentioned}` : e.label ? `label:${e.label}` : void 0
                 },
-                ee = [$, W, H, G, U];
+                ee = [Q, W, H, G, U];
             function el() {
                 return (0, h.useMemo)(() => {
                     let e = [...ee];
@@ -1321,7 +1555,7 @@
                     return n && !t ? e.replaceAll(`-${q.Ds.open}`, `-${q.Ds.closed}`) : !a || l || t ? l || t ? e.trim() : (e = e.trim()).length > 0 ? `${e.trim()} ${q.Ds.open}` : q.Ds.open : e.replaceAll(q.Ds.closed, q.Ds.open)
                 },
                 eC = e => e.replace(/(^|\s)is:(open|closed)(\s|$)/g, "$1state:$2$3"),
-                eF = (e, l) => {
+                eS = (e, l) => {
                     if (!(e = e.trim()))
                         return "";
                     if (e = eC(e), void 0 === l && (l = eb(e)), !l)
@@ -1329,7 +1563,7 @@
                     let a = ep(l);
                     return eh(l) ? l.replaceAll(`-${q.Ds.closed}`, `-${q.Ds.open}`) : a ? l.replaceAll(q.Ds.open, q.Ds.closed) : ""
                 },
-                eS = (e, l) => e && l ? e.split(",").map(e => {
+                eF = (e, l) => e && l ? e.split(",").map(e => {
                     let [a, n] = e.split("/");
                     if (a === l && n) {
                         let e = parseInt(n);
@@ -1880,62 +2114,62 @@
             var eq = a(44263);
             let eO = (0, h.createContext)({
                 viewPosition: void 0,
-                setViewPosition: F.l,
+                setViewPosition: S.l,
                 isCustomView: e => "" === e,
                 isEditing: !1,
-                setIsEditing: F.l,
+                setIsEditing: S.l,
                 isQueryLoading: !1,
-                setIsQueryLoading: F.l,
+                setIsQueryLoading: S.l,
                 saveViewsConnectionId: void 0,
-                setSaveViewsConnectionId: F.l,
+                setSaveViewsConnectionId: S.l,
                 activeSearchQuery: "",
-                setActiveSearchQuery: F.l,
+                setActiveSearchQuery: S.l,
                 canEditView: !1,
-                setCanEditView: F.l,
+                setCanEditView: S.l,
                 isNewView: !1,
-                setIsNewView: F.l,
+                setIsNewView: S.l,
                 executeQuery: void 0,
-                setExecuteQuery: F.l,
+                setExecuteQuery: S.l,
                 dirtyViewId: void 0,
-                setDirtyViewId: F.l,
+                setDirtyViewId: S.l,
                 currentViewId: O.empty,
-                setCurrentViewId: F.l,
+                setCurrentViewId: S.l,
                 currentPage: void 0,
-                setCurrentPage: F.l,
+                setCurrentPage: S.l,
                 savedViewsCount: 0,
-                setSavedViewsCount: F.l
+                setSavedViewsCount: S.l
             }),
                 eB = (0, h.createContext)({
-                    commitUserViewCreate: F.l,
-                    commitUserViewEdit: F.l,
-                    commitUserViewDuplicate: F.l,
+                    commitUserViewCreate: S.l,
+                    commitUserViewEdit: S.l,
+                    commitUserViewDuplicate: S.l,
                     dirtySearchQuery: "",
                     debouncedDirtySearchQuery: null,
-                    setDirtySearchQuery: F.l,
+                    setDirtySearchQuery: S.l,
                     dirtyTitle: "",
-                    setDirtyTitle: F.l,
+                    setDirtyTitle: S.l,
                     dirtyDescription: "",
-                    setDirtyDescription: F.l,
+                    setDirtyDescription: S.l,
                     dirtyViewIcon: null,
-                    setDirtyViewIcon: F.l,
+                    setDirtyViewIcon: S.l,
                     dirtyViewColor: null,
-                    setDirtyViewColor: F.l,
+                    setDirtyViewColor: S.l,
                     bulkJobId: null,
-                    setBulkJobId: F.l,
-                    clearSavedViewEditState: F.l,
+                    setBulkJobId: S.l,
+                    clearSavedViewEditState: S.l,
                     shouldFocusSearchOnNav: !1,
-                    setShouldFocusSearchOnNav: F.l
+                    setShouldFocusSearchOnNav: S.l
                 }),
-                eQ = () => {
-                    let { scoped_repository: e } = (0, S.X)(),
+                e$ = () => {
+                    let { scoped_repository: e } = (0, F.X)(),
                         { pathname: l } = (0, K.zy)();
                     if (l.match(en))
                         return e ? O.repository : O.assignedToMe;
                     let a = l.split("/").pop() || "";
                     return e && l.match(et) ? O.repository : "issues" !== a && a ? a : O.empty
                 };
-            function e$({ children: e }) {
-                let { initial_view_content: { can_edit_view: l } } = (0, S.X)(),
+            function eQ({ children: e }) {
+                let { initial_view_content: { can_edit_view: l } } = (0, F.X)(),
                     { addToast: a } = (0, L.Y6)(),
                     { search: n } = (0, K.zy)(),
                     t = new URLSearchParams(n).get("q"),
@@ -1946,15 +2180,15 @@
                     [m, g] = (0, h.useState)(void 0),
                     [y, k] = (0, h.useState)(void 0),
                     [f, b] = (0, h.useState)(null),
-                    [C, F] = (0, h.useState)(null),
+                    [C, S] = (0, h.useState)(null),
                     [I, v] = (0, h.useState)(null),
                     [_, j] = (0, h.useState)(null),
                     [N, R] = (0, h.useState)(void 0),
-                    P = eQ(),
+                    P = e$(),
                     [A, M] = (0, h.useState)(P),
                     [D, V] = (0, h.useState)(!1),
                     [O, B] = (0, h.useState)(!1),
-                    [Q, $] = (0, h.useState)(!1),
+                    [$, Q] = (0, h.useState)(!1),
                     { knownViews: U } = el(),
                     [z, H] = (0, h.useState)(),
                     [W, G] = (0, h.useState)(),
@@ -1970,7 +2204,7 @@
                     er = (0, h.useCallback)(() => {
                         u(null),
                             b(null),
-                            F(null),
+                            S(null),
                             v(null),
                             j(null),
                             R(void 0),
@@ -2085,8 +2319,8 @@
                         setActiveSearchQuery: c,
                         canEditView: i,
                         setCanEditView: r,
-                        isNewView: Q,
-                        setIsNewView: $,
+                        isNewView: $,
+                        setIsNewView: Q,
                         executeQuery: W,
                         setExecuteQuery: G,
                         dirtyViewId: N,
@@ -2097,7 +2331,7 @@
                         setCurrentPage: H,
                         savedViewsCount: Y,
                         setSavedViewsCount: J
-                    }), [D, O, m, ei, y, d, i, Q, W, N, A, z, Y]),
+                    }), [D, O, m, ei, y, d, i, $, W, N, A, z, Y]),
                     eg = (0, h.useMemo)(() => ({
                         commitUserViewCreate: ed,
                         commitUserViewDuplicate: ec,
@@ -2106,7 +2340,7 @@
                         setDirtySearchQuery: u,
                         debouncedDirtySearchQuery: ee,
                         dirtyDescription: C,
-                        setDirtyDescription: F,
+                        setDirtyDescription: S,
                         dirtyViewIcon: I,
                         setDirtyViewIcon: v,
                         dirtyTitle: f,
@@ -2142,11 +2376,11 @@
                 eB.displayName || (eB.displayName = "QueryEditContext")
             } catch { }
             try {
-                e$.displayName || (e$.displayName = "QueryContextProvider")
+                eQ.displayName || (eQ.displayName = "QueryContextProvider")
             } catch { }
             function eH({ children: e }) {
                 return (0, p.jsx)(b, {
-                    children: (0, p.jsx)(e$, {
+                    children: (0, p.jsx)(eQ, {
                         children: (0, p.jsxs)(k.e, {
                             children: [(0, y.G7)("primer_react_unified_portal_root") ? null : (0, p.jsx)("div", {
                                 role: "region",
@@ -2851,7 +3085,7 @@
                             }],
                             storageKey: null
                         },
-                        F = {
+                        S = {
                             alias: null,
                             args: k,
                             filters: ["orderBy"],
@@ -2860,7 +3094,7 @@
                             kind: "LinkedHandle",
                             name: "labels"
                         },
-                        S = {
+                        F = {
                             alias: null,
                             args: null,
                             kind: "ScalarField",
@@ -2949,7 +3183,7 @@
                         },
                         w = {
                             kind: "InlineFragment",
-                            selections: [C, F, S, L, x, K, I, {
+                            selections: [C, S, F, L, x, K, I, {
                                 alias: null,
                                 args: null,
                                 kind: "ScalarField",
@@ -3066,7 +3300,7 @@
                                                             kind: "InlineFragment",
                                                             selections: [w, {
                                                                 kind: "InlineFragment",
-                                                                selections: [C, F, S, L, x, K, I, {
+                                                                selections: [C, S, F, L, x, K, I, {
                                                                     alias: null,
                                                                     args: null,
                                                                     kind: "ScalarField",
@@ -3099,7 +3333,7 @@
                                                                 kind: "InlineFragment",
                                                                 selections: [w, {
                                                                     kind: "InlineFragment",
-                                                                    selections: [C, F, S, L, x, K, I, j, N, _],
+                                                                    selections: [C, S, F, L, x, K, I, j, N, _],
                                                                     type: "PullRequest",
                                                                     abstractKey: null
                                                                 }],
@@ -3233,7 +3467,7 @@
             };
             e2.hash = "a93246eb19a6ce78ccda6b3c1177859f";
             var e0 = a(34346),
-                e3 = a(83088),
+                e3 = a(11245),
                 e4 = a(58087),
                 e5 = a(87330);
             let e7 = {
@@ -3370,17 +3604,17 @@
                 return `${t.trim()} ${l}:${s}`
             }
             var lC = a(97396),
-                lF = a(60183);
-            let lS = /https?:\/\/(?<hostname>github\.(com|localhost|localhost:\d+))\/(?<owner>.*)\/(?<repo>.*)\/issues\/(?<number>\d+)/,
+                lS = a(60183);
+            let lF = /https?:\/\/(?<hostname>github\.(com|localhost|localhost:\d+))\/(?<owner>.*)\/(?<repo>.*)\/issues\/(?<number>\d+)/,
                 lL = () => {
                     let { setCanEditView: e, activeSearchQuery: l, setIsEditing: n, setIsNewView: t } = eU(),
-                        { scoped_repository: s, multi_tenant: i } = (0, S.X)(),
+                        { scoped_repository: s, multi_tenant: i } = (0, F.X)(),
                         { isAnyInputElementActive: r } = (0, ld.B)(),
                         { isCommentEditActive: o, cancelAllCommentEdits: u } = (0, lr.N)(),
                         d = (0, h.useRef)(null),
                         c = (0, ll.Z)(),
                         m = (0, lc.useRelayEnvironment)(),
-                        { issues_react_force_turbo_nav: g } = (0, lF.h)(),
+                        { issues_react_force_turbo_nav: g } = (0, lS.h)(),
                         p = (0, h.useCallback)(async (e, l, n) => {
                             if (r)
                                 return;
@@ -3413,7 +3647,7 @@
                                 return;
                             let l = "";
                             if (l = e.currentTarget instanceof HTMLAnchorElement ? e.currentTarget.href : e.target instanceof HTMLAnchorElement ? e.target.href : e.target.closest("a")?.href ?? "", l?.length > 0) {
-                                let a = l.match(lS);
+                                let a = l.match(lF);
                                 if (a && a.groups) {
                                     let { hostname: n, owner: t, repo: s, number: i } = a.groups;
                                     if (n !== window.location.hostname)
@@ -3458,7 +3692,7 @@
                                 query: l
                             }))
                         }, [c]),
-                        F = (0, h.useCallback)((e, a) => {
+                        S = (0, h.useCallback)((e, a) => {
                             if (s)
                                 p(`/${s.owner}/${s.name}/issues`);
                             else if (e === Z.id)
@@ -3474,7 +3708,7 @@
                         navigateToView: f,
                         navigateToSavedView: b,
                         navigateToSearch: C,
-                        navigateToRoot: F,
+                        navigateToRoot: S,
                         getQueryFieldUrl: k
                     }
                 },
@@ -3508,7 +3742,7 @@
             function lv({ currentRepository: e }) {
                 let l = (0, ll.Z)(),
                     { currentUser: a } = (0, lK.J)(),
-                    { scoped_repository: n, current_user_settings: t } = (0, S.X)(),
+                    { scoped_repository: n, current_user_settings: t } = (0, F.X)(),
                     s = (0, eV.useFragment)(lx, e),
                     i = n?.is_archived || null != a && !!a?.is_emu && (!s || !s.isOwnerEnterpriseManaged);
                 return (0, p.jsxs)("div", {
@@ -3644,12 +3878,12 @@
                     }, [d, r, u]),
                     b = i || (n ? T.defaultViewIcon : t),
                     C = o || (n ? T.defaultViewColor : s),
-                    F = D(b),
-                    S = _[C],
+                    S = D(b),
+                    F = _[C],
                     L = w[C];
                 return e || !a ? (0, p.jsx)(la.A, {
                     sx: {
-                        backgroundColor: S,
+                        backgroundColor: F,
                         color: L,
                         borderRadius: 2,
                         width: 32,
@@ -3668,13 +3902,13 @@
                             ...e,
                             "aria-labelledby": void 0,
                             "aria-label": eM.views.iconAndColorAnchorAriaLabel,
-                            icon: F,
+                            icon: S,
                             size: "medium",
                             variant: "invisible",
                             onClick: () => d(!c),
                             id: "edit-view-icon-button",
                             sx: {
-                                backgroundColor: S,
+                                backgroundColor: F,
                                 color: L
                             }
                         })
@@ -3756,7 +3990,7 @@
                                 variant: "invisible",
                                 sx: {
                                     "&:hover:not([aria-disabled])": {
-                                        backgroundColor: S,
+                                        backgroundColor: F,
                                         svg: {
                                             color: L
                                         }
@@ -3865,8 +4099,8 @@
                     abstractKey: "__isShortcutable"
                 };
             lB.hash = "62dca5895718c106a2f717dbe6980390";
-            var lQ = a(53526),
-                l$ = a(10569),
+            var l$ = a(53526),
+                lQ = a(10569),
                 lU = a(15385);
             let lz = function () {
                 var e = [{
@@ -4094,8 +4328,8 @@
                     [k, f] = (0, h.useState)(!1),
                     b = (0, lG.M)(k),
                     { addToast: C } = (0, L.Y6)(),
-                    { navigateToSavedView: F, navigateToView: S } = lL(),
-                    x = (0, lQ.S)(),
+                    { navigateToSavedView: S, navigateToView: F } = lL(),
+                    x = (0, l$.S)(),
                     K = (0, h.useCallback)(() => {
                         o(!0)
                     }, [o]),
@@ -4112,12 +4346,12 @@
                             }),
                             relayEnvironment: m,
                             onSuccess: ({ createDashboardSearchShortcut: e }) => {
-                                e?.shortcut && F(e.shortcut.id, {
+                                e?.shortcut && S(e.shortcut.id, {
                                     isEditing: !1
                                 })
                             }
                         })
-                    }, [a, i, s, t, n, m, C, c, F]);
+                    }, [a, i, s, t, n, m, C, c, S]);
                 (0, h.useEffect)(() => {
                     b.current && !k && y.current?.focus()
                 }, [k, b]);
@@ -4140,26 +4374,26 @@
                                 message: eM.views.deleteError
                             }),
                             onCompleted: () => {
-                                S({
-                                    viewId: $.id,
+                                F({
+                                    viewId: Q.id,
                                     canEditView: !0
                                 })
                             }
                         }),
                             f(!1)
                     }
-                }, [C, x, S, m, l, a]),
+                }, [C, x, F, m, l, a]),
                     _ = l !== O.repository && (u || !r),
                     w = r(l) && u;
-                return w || _ ? (0, p.jsxs)(l$.W, {
-                    children: [(0, p.jsx)(l$.W.Anchor, {
+                return w || _ ? (0, p.jsxs)(lQ.W, {
+                    children: [(0, p.jsx)(lQ.W.Anchor, {
                         children: (0, p.jsx)(e5.K, {
                             icon: j.KebabHorizontalIcon,
                             "aria-label": eM.views.editButtonAriaLabel,
                             variant: "invisible",
                             ref: y
                         })
-                    }), (0, p.jsx)(l$.W.Overlay, {
+                    }), (0, p.jsx)(lQ.W.Overlay, {
                         width: "small",
                         children: (0, p.jsxs)(lU.l, {
                             children: [w && (0, p.jsxs)(lU.l.Item, {
@@ -4203,7 +4437,7 @@
             }
             function lJ({ readOnly: e = !1, currentViewKey: l }) {
                 let { isCustomView: a, isEditing: n } = eU(),
-                    { scoped_repository: t } = (0, S.X)(),
+                    { scoped_repository: t } = (0, F.X)(),
                     s = (0, eV.useFragment)(l_, l),
                     { name: i, description: r, id: o } = s,
                     { dirtyTitle: u, setDirtyTitle: d, dirtyDescription: c, setDirtyDescription: m, shouldFocusSearchOnNav: g } = ez(),
@@ -4215,12 +4449,12 @@
                     })
                 }, [n, g]);
                 let C = (0, y.G7)("issues_react_index_quick_filters"),
-                    { search: F } = N.fV,
+                    { search: S } = N.fV,
                     L = (0, h.useMemo)(() => C ? lO.find(e => eA({
                         query: e.query,
-                        search: F,
+                        search: S,
                         defaultQuery: q.Ds.defaultRepoLevelOpen
-                    }))?.name ?? "Search" : i, [F, i, C]);
+                    }))?.name ?? "Search" : i, [S, i, C]);
                 return (0, p.jsx)(la.A, {
                     sx: {
                         width: "auto",
@@ -4339,7 +4573,7 @@
                     { id: c, name: m, query: g } = d,
                     k = (0, eV.useFragment)(e6, n),
                     { openNavigation: f } = C(),
-                    { scoped_repository: b, current_user_settings: F } = (0, S.X)(),
+                    { scoped_repository: b, current_user_settings: S } = (0, F.X)(),
                     { activeSearchQuery: L } = eU(),
                     x = (0, h.useCallback)(() => {
                         c === O.repository && L !== g ? r(function ({ query: e } = {}) {
@@ -4460,10 +4694,10 @@
                                 navigate: R,
                                 optionConfig: {
                                     showRepositoryPicker: null === b,
-                                    useMonospaceFont: F?.use_monospace_font || !1,
-                                    singleKeyShortcutsEnabled: F?.use_single_key_shortcut || !1,
-                                    emojiSkinTonePreference: F?.preferred_emoji_skin_tone,
-                                    pasteUrlsAsPlainText: F?.paste_url_link_as_plain_text,
+                                    useMonospaceFont: S?.use_monospace_font || !1,
+                                    singleKeyShortcutsEnabled: S?.use_single_key_shortcut || !1,
+                                    emojiSkinTonePreference: S?.preferred_emoji_skin_tone,
+                                    pasteUrlsAsPlainText: S?.paste_url_link_as_plain_text,
                                     showFullScreenButton: !0
                                 }
                             })
@@ -5182,10 +5416,10 @@
                     let { isOrgScope: l = !1 } = e,
                         { currentUser: a } = (0, lK.J)(),
                         n = (0, eV.useRelayEnvironment)(),
-                        { scoped_repository: t } = (0, S.X)(),
+                        { scoped_repository: t } = (0, F.X)(),
                         s = !!t,
                         i = (0, y.G7)("copilot_swe_agent"),
-                        { issue_dependencies_internal_dev: r } = (0, lF.h)(),
+                        { issue_dependencies_internal_dev: r } = (0, lS.h)(),
                         o = s ? `${t.owner}/${t.name}` : void 0,
                         u = s ? R : P,
                         d = (0, h.useMemo)(() => {
@@ -5251,15 +5485,15 @@
                     [u, d] = (0, h.useState)([]),
                     { search: c, pathname: m } = (0, K.zy)(),
                     g = new URLSearchParams(c).get("q"),
-                    { scoped_repository: k, current_user_settings: f } = (0, S.X)(),
+                    { scoped_repository: k, current_user_settings: f } = (0, F.X)(),
                     { navigateToUrl: b } = lL(),
-                    { id: C, scopingRepository: F, query: L } = (0, eV.useFragment)(al, e),
+                    { id: C, scopingRepository: S, query: L } = (0, eV.useFragment)(al, e),
                     x = (0, eV.useFragment)(aa, l),
                     { author: I, assignee: v, mentioned: _, label: w } = (0, K.g)(),
                     j = `${J.defaultQuery} ${J.query({ author: I, assignee: v, mentioned: _, label: w, createdByApp: ed(m) })}`,
                     N = L;
                 eu(m) ? N = j : eo(m) && w && (N = ej("state:open", [w], "label"));
-                let R = F ? `repo:${F.owner.login}/${F.name} ${N}` : N,
+                let R = S ? `repo:${S.owner.login}/${S.name} ${N}` : N,
                     { dirtySearchQuery: P, setDirtySearchQuery: A, setShouldFocusSearchOnNav: T, shouldFocusSearchOnNav: M } = ez(),
                     D = (0, h.useCallback)(e => {
                         s(e),
@@ -5299,32 +5533,32 @@
                     B = (0, h.useCallback)(e => {
                         A(e.trim())
                     }, [A]),
-                    Q = (0, h.useCallback)(e => d(e), [d]);
+                    $ = (0, h.useCallback)(e => d(e), [d]);
                 (0, as._N)([at.w.focusSearch], O, {
                     [as.AR.metaKey]: !0
                 }),
                     (0, as._N)([at.w.focusSearch], O, {
                         [as.AR.ctrlKey]: !0
                     });
-                let $ = r && i(C);
+                let Q = r && i(C);
                 (0, h.useEffect)(() => {
-                    if (!t.current || !$)
+                    if (!t.current || !Q)
                         return;
                     let e = t.current;
                     function l() {
                         T(!0)
                     }
                     return e.addEventListener("focus", l), () => e.removeEventListener("focus", l)
-                }, [$, T]),
+                }, [Q, T]),
                     (0, h.useEffect)(() => {
-                        $ && t.current && M && requestAnimationFrame(() => {
+                        Q && t.current && M && requestAnimationFrame(() => {
                             if (t.current) {
                                 t.current.focus();
                                 let e = t.current.value?.length || 0;
                                 t.current.setSelectionRange(e, e)
                             }
                         })
-                    }, [$, M]);
+                    }, [Q, M]);
                 let z = eu(m) || eo(m) ? N : [...ee, Z].find(e => e.id === C)?.query,
                     H = (0, h.useMemo)(() => C === U.id ? g ?? z : z ?? g, [z, g, C]),
                     W = (0, h.useMemo)(() => P ?? H ?? a ?? "", [P, H, a]),
@@ -5332,12 +5566,12 @@
                     X = (0, y.G7)("issues_react_index_quick_filters"),
                     Y = !1;
                 return Y = i(C) ? P?.trim() !== a?.trim() : C === U.id ? P?.trim() !== z?.trim() : P?.trim() !== H?.trim(), (0, p.jsxs)(ah, {
-                    editing: $,
-                    children: [$ && (0, p.jsx)(lN.A.Label, {
+                    editing: Q,
+                    children: [Q && (0, p.jsx)(lN.A.Label, {
                         visuallyHidden: !0,
                         children: lm.query
                     }), (0, p.jsx)("div", {
-                        className: `${ao.gap8} px-0 ${$ ? "d-flex" : "d-block"} flex-row flex-justify-between`,
+                        className: `${ao.gap8} px-0 ${Q ? "d-flex" : "d-block"} flex-row flex-justify-between`,
                         children: (0, p.jsxs)("div", {
                             className: `${ao.filterContainer} ${ao.gap8} d-flex flex-row flex-1 flexWrap min-width-0`,
                             children: [(0, p.jsx)("div", {
@@ -5347,8 +5581,8 @@
                                     context: G ? {
                                         repo: G
                                     } : void 0,
-                                    label: $ ? eM.issueEditingSearchInputAriaLabel : eM.issueSearchInputAriaLabel,
-                                    visuallyHideLabel: !$,
+                                    label: Q ? eM.issueEditingSearchInputAriaLabel : eM.issueSearchInputAriaLabel,
+                                    visuallyHideLabel: !Q,
                                     placeholder: eM.issueSearchInputPlaceholder,
                                     onSubmit: q,
                                     onChange: B,
@@ -5361,7 +5595,7 @@
                                         groupAndKeywordSupport: !0
                                     },
                                     showValidationMessage: !1,
-                                    onValidation: Q,
+                                    onValidation: $,
                                     showClearButton: null !== P && Y
                                 })
                             }), n, !X && k && !es(m) && (0, p.jsx)(lv, {
@@ -5477,10 +5711,10 @@
                 abstractKey: null
             };
             aC.hash = "f65187d282f8f58f706a2eabbfe6075b";
-            var aF = a(15845);
+            var aS = a(15845);
             a(61885),
                 a(70056);
-            let aS = /(?:^|\s)reason:"?(completed|not(\s|-)planned)"?(?:$|\s)/g;
+            let aF = /(?:^|\s)reason:"?(completed|not(\s|-)planned)"?(?:$|\s)/g;
             function aL(e, l) {
                 var a;
                 let n = ax((a = e, l?.is_archived ? a : `${"" === a ? "archived:false" : a}`));
@@ -5949,14 +6183,14 @@
                         name: "cursor",
                         storageKey: null
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "endCursor",
                         storageKey: null
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -6007,7 +6241,7 @@
                             kind: "LinkedField",
                             name: "pageInfo",
                             plural: !1,
-                            selections: [F, S],
+                            selections: [S, F],
                             storageKey: null
                         }],
                         storageKey: null
@@ -6416,13 +6650,13 @@
                                                 kind: "ScalarField",
                                                 name: "startCursor",
                                                 storageKey: null
-                                            }, F, {
+                                            }, S, {
                                                 alias: null,
                                                 args: null,
                                                 kind: "ScalarField",
                                                 name: "hasPreviousPage",
                                                 storageKey: null
-                                            }, S],
+                                            }, F],
                                             storageKey: null
                                         }]
                                     }],
@@ -6750,7 +6984,7 @@
                 abstractKey: null
             };
             aB.hash = "21fd35aed4bf06bc46c2c5f43e336427";
-            let aQ = {
+            let a$ = {
                 argumentDefinitions: [{
                     defaultValue: !0,
                     kind: "LocalArgument",
@@ -6815,8 +7049,8 @@
                 type: "Issue",
                 abstractKey: null
             };
-            aQ.hash = "0117efdfcd4f84d5eb84fd080781921a";
-            var a$ = a(93715),
+            a$.hash = "0117efdfcd4f84d5eb84fd080781921a";
+            var aQ = a(93715),
                 aU = a(42265),
                 az = a(81346),
                 aH = a(78168);
@@ -8004,7 +8238,7 @@
                 }
             }();
             nC.hash = "c07750a7baf2631bfdee073a48c7ec32";
-            let nF = function () {
+            let nS = function () {
                 var e = [{
                     defaultValue: null,
                     kind: "LocalArgument",
@@ -8062,8 +8296,8 @@
                     }
                 }
             }();
-            nF.hash = "25171224ff286ab953decc6e4bf6938a";
-            let nS = function () {
+            nS.hash = "25171224ff286ab953decc6e4bf6938a";
+            let nF = function () {
                 var e = [{
                     defaultValue: null,
                     kind: "LocalArgument",
@@ -8181,7 +8415,7 @@
                     }
                 }
             }();
-            nS.hash = "5dee87e2713acc6cc0a5df4aebd42df6";
+            nF.hash = "5dee87e2713acc6cc0a5df4aebd42df6";
             let nL = function () {
                 var e = {
                     alias: null,
@@ -8819,7 +9053,7 @@
                 })
             }
             function nO({ data: e, secondaryDataKey: l }) {
-                let a = (0, eV.useFragment)(tF, l),
+                let a = (0, eV.useFragment)(tS, l),
                     n = (0, eV.useFragment)(nN, a);
                 return (0, p.jsx)(nV, {
                     data: e,
@@ -8968,8 +9202,8 @@
                 }
             }();
             nB.hash = "a24e25f6c540b1b24c68cfd21c14e1a2";
-            var nQ = a(81584),
-                n$ = a(20161),
+            var n$ = a(81584),
+                nQ = a(20161),
                 nU = a(65848);
             let nz = {
                 argumentDefinitions: [],
@@ -9118,7 +9352,7 @@
                 if (!a?.subIssuesSummary)
                     return null;
                 let { total: n, completed: t, percentCompleted: s } = a.subIssuesSummary;
-                return 0 === n ? null : (0, p.jsx)(n$.r, {
+                return 0 === n ? null : (0, p.jsx)(nQ.r, {
                     title: "sub-issues summary",
                     children: (0, p.jsx)(nG.m, {
                         text: `${s}% completed`,
@@ -9164,7 +9398,7 @@
                     f = (0, h.useCallback)(e => {
                         1 === e.button || e.shiftKey || e.ctrlKey || e.metaKey || s?.(e)
                     }, [s]),
-                    b = [...(k?.edges || []).flatMap(e => e?.node || []).map(e => (0, p.jsx)(n$.r, {
+                    b = [...(k?.edges || []).flatMap(e => e?.node || []).map(e => (0, p.jsx)(nQ.r, {
                         title: e.name,
                         children: (0, p.jsx)(nZ, {
                             label: e,
@@ -9198,8 +9432,8 @@
                             return ""
                     }
                 }(g.__typename, c, m, y) : void 0, [g.__typename, y, m, c]),
-                    [F] = (0, n7.I)(() => !1, !0, []),
-                    S = (0, h.useMemo)(() => {
+                    [S] = (0, n7.I)(() => !1, !0, []),
+                    F = (0, h.useMemo)(() => {
                         let e = (0, p.jsx)("a", {
                             "data-hovercard-url": C,
                             "data-testid": "issue-pr-title-link",
@@ -9211,7 +9445,7 @@
                         });
                         return (0, nU.F0)(e).replace(/ <\/a>$/, `${i}</a>`)
                     }, [C, n, y, a, t, i]);
-                return F ? (0, p.jsx)(nQ.ao, {
+                return S ? (0, p.jsx)(n$.ao, {
                     value: i,
                     onClick: f,
                     leadingBadge: r,
@@ -9225,8 +9459,8 @@
                         "data-hovercard-url": C,
                         "data-testid": "issue-pr-title-link"
                     }
-                }) : (0, p.jsx)(nQ.kx, {
-                    html: S,
+                }) : (0, p.jsx)(n$.kx, {
+                    html: F,
                     onClick: f,
                     leadingBadge: r,
                     trailingBadges: b,
@@ -9475,7 +9709,7 @@
             function tu({ id: e, secondaryQueryRef: l, variant: a }) {
                 let { nodes: n } = (0, eV.usePreloadedQuery)(tH, l),
                     t = n?.find(l => l?.id === e),
-                    { pull_request_single_subscription: s } = (0, lF.h)();
+                    { pull_request_single_subscription: s } = (0, lS.h)();
                 return t ? s ? (0, p.jsx)(tc, {
                     dataKey: t,
                     variant: a
@@ -9519,12 +9753,12 @@
             };
             var tg = a(4122);
             let tp = nx,
-                ty = ({ itemKey: e, metadataRef: l, isActive: a = !1, isSelected: n, ref: t, href: s, showCommentCount: i, showCommentZeroCount: r, showAssignees: o, showRepository: u = !0, onSelect: d = F.l, onClick: c = F.l, getMetadataHref: m, reactionEmojiToDisplay: g, sortingItemSelected: y, includeGitDataFromMainQuery: k, as: h, role: f }) => {
+                ty = ({ itemKey: e, metadataRef: l, isActive: a = !1, isSelected: n, ref: t, href: s, showCommentCount: i, showCommentZeroCount: r, showAssignees: o, showRepository: u = !0, onSelect: d = S.l, onClick: c = S.l, getMetadataHref: m, reactionEmojiToDisplay: g, sortingItemSelected: y, includeGitDataFromMainQuery: k, as: h, role: f }) => {
                     let b = (0, eV.useFragment)(nK, e),
                         C = b && (0, tg.us)(b.title, b.titleHTML),
-                        { pull_request_single_subscription: S } = (0, lF.h)(),
-                        L = (0, eV.useFragment)(tp, !S && k ? b : null),
-                        x = (0, eV.useFragment)(tt, S ? null : L?.headCommit?.commit),
+                        { pull_request_single_subscription: F } = (0, lS.h)(),
+                        L = (0, eV.useFragment)(tp, !F && k ? b : null),
+                        x = (0, eV.useFragment)(tt, F ? null : L?.headCommit?.commit),
                         K = (0, p.jsx)(n6, {
                             value: C,
                             dataKey: b,
@@ -9575,7 +9809,7 @@
                                 metadataRef: l
                             })
                         }), (0, p.jsx)(az.Q, {
-                            children: (0, p.jsx)(a$.U, {
+                            children: (0, p.jsx)(aQ.U, {
                                 children: I
                             })
                         })]
@@ -10079,9 +10313,9 @@
                 (0, eV.useSubscription)(l)
             };
             var tC = a(7799);
-            let tF = nh;
-            function tS({ secondaryDataKey: e }) {
-                let l = (0, lc.useFragment)(tF, e);
+            let tS = nh;
+            function tF({ secondaryDataKey: e }) {
+                let l = (0, lc.useFragment)(tS, e);
                 return l && l.headCommit ? (0, p.jsx)(tK, {
                     commitId: l.headCommit.commit.id
                 }) : null
@@ -10089,7 +10323,7 @@
             function tL({ id: e, secondaryQueryRef: l }) {
                 let { nodes: a } = (0, lc.usePreloadedQuery)(tH, l),
                     n = a?.find(l => l?.id === e);
-                return n ? (0, p.jsx)(tS, {
+                return n ? (0, p.jsx)(tF, {
                     secondaryDataKey: n
                 }) : null
             }
@@ -10104,7 +10338,7 @@
             }
             function tK({ commitId: e }) {
                 let l = (0, h.useMemo)(() => ({
-                    subscription: nS,
+                    subscription: nF,
                     variables: {
                         id: e
                     }
@@ -10112,7 +10346,7 @@
                 return (0, eV.useSubscription)(l), (0, p.jsx)(p.Fragment, {})
             }
             let tI = (0, h.forwardRef)(({ pullRequestKey: e, metadataRef: l, reactionEmojiToDisplay: a, getMetadataHref: n, onSelect: t, onSelectRow: s, isActive: i, isSelected: r, sortingItemSelected: o, additionalAnalyticsContext: u = {}, onNavigate: d, ...c }, m) => {
-                let { use_pull_request_subscriptions_enabled: g, pull_request_single_subscription: y } = (0, lF.h)(),
+                let { use_pull_request_subscriptions_enabled: g, pull_request_single_subscription: y } = (0, lS.h)(),
                     k = (0, lc.useFragment)(nL, e);
                 g && (0, tC.M3)() && (y ? tb(k.id) : function (e) {
                     let l = (0, h.useMemo)(() => ({
@@ -10134,7 +10368,7 @@
                             }
                         }), [e]),
                         t = (0, h.useMemo)(() => ({
-                            subscription: nF,
+                            subscription: nS,
                             variables: {
                                 id: e
                             }
@@ -10153,7 +10387,7 @@
                     C = (0, h.useCallback)(() => {
                         d(b)
                     }, [b, d]),
-                    F = (0, h.useCallback)(e => {
+                    S = (0, h.useCallback)(e => {
                         s({
                             type: k.__typename,
                             ...u
@@ -10162,7 +10396,7 @@
                             e.preventDefault(),
                             C()
                     }, [u, s, k.__typename, C]),
-                    S = (0, h.useCallback)(() => {
+                    F = (0, h.useCallback)(() => {
                         t?.(!r)
                     }, [t, r]);
                 return (0, p.jsxs)(p.Fragment, {
@@ -10174,7 +10408,7 @@
                     })), (0, p.jsx)(tk.tL, {
                         commands: {
                             "list-view-items-issues-prs:open-focused-item": C,
-                            "list-view-items-issues-prs:toggle-focused-item-selection": S
+                            "list-view-items-issues-prs:toggle-focused-item-selection": F
                         },
                         className: th.row,
                         children: (0, p.jsx)(ty, {
@@ -10190,7 +10424,7 @@
                             sortingItemSelected: o,
                             getMetadataHref: n,
                             onSelect: t,
-                            onClick: F,
+                            onClick: S,
                             href: b,
                             ref: m,
                             ...c
@@ -10201,7 +10435,7 @@
             tI.displayName = "PullRequestRow";
             let tv = h.memo(tI);
             try {
-                tS.displayName || (tS.displayName = "LazyCommitChecksUpdateSubscriptionWrapperInternal")
+                tF.displayName || (tF.displayName = "LazyCommitChecksUpdateSubscriptionWrapperInternal")
             } catch { }
             try {
                 tL.displayName || (tL.displayName = "LazyCommitChecksUpdateSubscriptionWrapperFetched")
@@ -10315,7 +10549,7 @@
                 }) : null
             }
             function tN({ secondaryDataKey: e, variant: l }) {
-                let a = (0, eV.useFragment)(tF, e),
+                let a = (0, eV.useFragment)(tS, e),
                     n = (0, eV.useFragment)(nk, a);
                 return n?.reviewDecision ? (0, p.jsx)(t_, {
                     decision: n.reviewDecision,
@@ -10454,9 +10688,9 @@
             }
             let tT = ({ dataKey: e, metadataRef: l, showRepository: a = !0, sortingItemSelected: n, statusCheckRollup: t, defaultRepositoryRender: s, defaultMetaRender: i, nameWithOwner: r, ariaLabels: o, getAuthorHref: u, id: d, includeGitDataFromMainQuery: c }) => {
                 let m = (0, eV.useFragment)(ng, e),
-                    { pull_request_single_subscription: g } = (0, lF.h)(),
+                    { pull_request_single_subscription: g } = (0, lS.h)(),
                     { variant: y } = (0, aZ.e)(),
-                    { author: k, reviewDecision: h, closed: f, closedAt: b, createdAt: C, updatedAt: F, stateReason: S } = m,
+                    { author: k, reviewDecision: h, closed: f, closedAt: b, createdAt: C, updatedAt: S, stateReason: F } = m,
                     L = k?.__typename,
                     x = k?.login || nA.ghostUserLogin,
                     K = "Bot" === L ? `app/${x}` : x,
@@ -10467,7 +10701,7 @@
                         isCopilot: I
                     }),
                     j = C ? new Date(C) : void 0,
-                    N = F ? new Date(F) : void 0,
+                    N = S ? new Date(S) : void 0,
                     R = b ? new Date(b) : void 0;
                 return (0, p.jsxs)(np.z, {
                     "data-testid": na.listRowRepoNameAndNumber,
@@ -10522,7 +10756,7 @@
                                 })]
                             })]
                         })]
-                    }), S?.toLowerCase() === "duplicate" && (0, p.jsxs)("span", {
+                    }), F?.toLowerCase() === "duplicate" && (0, p.jsxs)("span", {
                         "data-testid": "state-reason",
                         children: [" \xb7", " Duplicate"]
                     }), h ? (0, p.jsx)(t_, {
@@ -10653,12 +10887,12 @@
             try {
                 tB.displayName || (tB.displayName = "IssueItemBlockedByInternal")
             } catch { }
-            let tQ = ({ itemKey: e, metadataRef: l, isSelected: a, isActive: n = !1, showCommentCount: t, showCommentZeroCount: s, showAssignees: i = !0, showRepository: r = !0, onSelect: o = F.l, onFocus: u = F.l, onClick: d = F.l, getMetadataHref: c, reactionEmojiToDisplay: m, sortingItemSelected: g, ref: y, href: k, repositoryOwner: h, repositoryName: f, as: b, role: C }) => {
-                let S = (0, eV.useFragment)(aQ, e),
-                    L = S && (0, tg.us)(S.title, S.titleHtml),
+            let t$ = ({ itemKey: e, metadataRef: l, isSelected: a, isActive: n = !1, showCommentCount: t, showCommentZeroCount: s, showAssignees: i = !0, showRepository: r = !0, onSelect: o = S.l, onFocus: u = S.l, onClick: d = S.l, getMetadataHref: c, reactionEmojiToDisplay: m, sortingItemSelected: g, ref: y, href: k, repositoryOwner: h, repositoryName: f, as: b, role: C }) => {
+                let F = (0, eV.useFragment)(a$, e),
+                    L = F && (0, tg.us)(F.title, F.titleHtml),
                     x = (0, p.jsx)(n6, {
                         value: L,
-                        dataKey: S,
+                        dataKey: F,
                         metadataRef: l,
                         repositoryOwner: h,
                         repositoryName: f,
@@ -10671,14 +10905,14 @@
                     K = (0, p.jsx)(tA, {
                         repositoryOwner: h,
                         repositoryName: f,
-                        dataKey: S,
+                        dataKey: F,
                         showRepository: r,
                         sortingItemSelected: g,
                         getAuthorHref: e => c("author", e),
-                        id: S.id
+                        id: F.id
                     }),
                     I = (0, p.jsx)(ns, {
-                        issueId: S.id,
+                        issueId: F.id,
                         metadataRef: l,
                         getMetadataHref: c,
                         showAssignees: i,
@@ -10699,30 +10933,30 @@
                     as: b,
                     children: [(0, p.jsx)(tl, {
                         metadataRef: l,
-                        issueId: S.id
+                        issueId: F.id
                     }), (0, p.jsx)(aU.B, {
                         className: nn.leadingContent,
                         children: (0, p.jsx)(nD, {
-                            dataKey: S
+                            dataKey: F
                         })
                     }), (0, p.jsx)(az.Q, {
-                        children: (0, p.jsxs)(a$.U, {
+                        children: (0, p.jsxs)(aQ.U, {
                             children: [(0, p.jsx)(nm, {
-                                dataKey: S,
+                                dataKey: F,
                                 getIssueTypeHref: e => c("type", e)
                             }), (0, p.jsx)(tq, {
                                 metadataRef: l,
-                                issueId: S.id
+                                issueId: F.id
                             }), K]
                         })
                     })]
-                }, S.id)
+                }, F.id)
             };
-            tQ.nodeType = "issue";
+            t$.nodeType = "issue";
             try {
-                tQ.displayName || (tQ.displayName = "IssueItem")
+                t$.displayName || (t$.displayName = "IssueItem")
             } catch { }
-            let t$ = function () {
+            let tQ = function () {
                 var e = [{
                     defaultValue: null,
                     kind: "LocalArgument",
@@ -11277,10 +11511,10 @@
                     }
                 }
             }();
-            t$.hash = "7dcca82772307ea7652904e3c947800b";
+            tQ.hash = "7dcca82772307ea7652904e3c947800b";
             let tU = e => {
                 let l = (0, h.useMemo)(() => ({
-                    subscription: t$,
+                    subscription: tQ,
                     variables: {
                         issueId: e
                     }
@@ -11293,7 +11527,7 @@
                 tH = d,
                 tW = (0, h.forwardRef)(({ isActive: e, isSelected: l, issueKey: a, scopedRepository: n, getMetadataHref: t, onSelect: s, onNavigate: i, onSidePanelNavigate: r, onSelectRow: o, reactionEmojiToDisplay: u, sortingItemSelected: d, metadataRef: c, ...m }, g) => {
                     let y = (0, lc.useFragment)(aB, a),
-                        k = (0, lc.useFragment)(aQ, y);
+                        k = (0, lc.useFragment)(a$, y);
                     (0, tC.M3)() && tU(k.id);
                     let f = n ? n.owner : y.repository?.owner.login || "",
                         b = n ? n.name : y.repository?.name || "",
@@ -11302,7 +11536,7 @@
                             repo: b,
                             number: y.number
                         }),
-                        F = (0, h.useCallback)(() => {
+                        S = (0, h.useCallback)(() => {
                             r ? r({
                                 number: y.number,
                                 repo: b,
@@ -11310,22 +11544,22 @@
                                 type: "Issue"
                             }) : i(C)
                         }, [r, y.number, b, f, i, C]),
-                        S = (0, h.useCallback)(e => {
+                        F = (0, h.useCallback)(e => {
                             o({
                                 type: k.__typename
                             }),
-                                e.ctrlKey || e.metaKey || (e.stopPropagation(), e.preventDefault(), F())
-                        }, [k.__typename, F, o]),
+                                e.ctrlKey || e.metaKey || (e.stopPropagation(), e.preventDefault(), S())
+                        }, [k.__typename, S, o]),
                         L = (0, h.useCallback)(() => {
                             s?.(!l)
                         }, [s, l]);
                     return (0, p.jsx)(tk.tL, {
                         commands: {
-                            "list-view-items-issues-prs:open-focused-item": F,
+                            "list-view-items-issues-prs:open-focused-item": S,
                             "list-view-items-issues-prs:toggle-focused-item-selection": L
                         },
                         className: tz.row,
-                        children: (0, p.jsx)(tQ, {
+                        children: (0, p.jsx)(t$, {
                             isActive: e,
                             itemKey: y,
                             metadataRef: c,
@@ -11340,7 +11574,7 @@
                             sortingItemSelected: d,
                             getMetadataHref: t,
                             onSelect: s,
-                            onClick: S,
+                            onClick: F,
                             href: C,
                             ref: g,
                             ...m
@@ -11632,7 +11866,7 @@
                         c,
                         m,
                         g = (0, t4.c)(35),
-                        { issuesToActOn: y, repositoryId: k, anchorElement: h, useQueryForAction: f, query: b, onCompleted: C, onError: F, nested: S, owner: L, repo: x } = e;
+                        { issuesToActOn: y, repositoryId: k, anchorElement: h, useQueryForAction: f, query: b, onCompleted: C, onError: S, nested: F, owner: L, repo: x } = e;
                     g[0] !== y ? (l = {
                         ids: y
                     }, g[0] = y, g[1] = l) : l = g[1],
@@ -11692,7 +11926,7 @@
                             u = g[14],
                             d = g[15],
                             c = g[16];
-                    return g[19] !== n || g[20] !== h || g[21] !== S || g[22] !== C || g[23] !== F || g[24] !== L || g[25] !== x || g[26] !== t || g[27] !== s || g[28] !== i || g[29] !== r || g[30] !== o || g[31] !== u || g[32] !== d || g[33] !== c ? (m = (0, p.jsx)(n, {
+                    return g[19] !== n || g[20] !== h || g[21] !== F || g[22] !== C || g[23] !== S || g[24] !== L || g[25] !== x || g[26] !== t || g[27] !== s || g[28] !== i || g[29] !== r || g[30] !== o || g[31] !== u || g[32] !== d || g[33] !== c ? (m = (0, p.jsx)(n, {
                         pickerId: s,
                         issueIds: i,
                         repositoryId: r,
@@ -11702,12 +11936,12 @@
                         useQueryForAction: c,
                         selectedProjects: t,
                         onCompleted: C,
-                        onError: F,
-                        nested: S,
+                        onError: S,
+                        nested: F,
                         anchorElement: h,
                         owner: L,
                         repo: x
-                    }), g[19] = n, g[20] = h, g[21] = S, g[22] = C, g[23] = F, g[24] = L, g[25] = x, g[26] = t, g[27] = s, g[28] = i, g[29] = r, g[30] = o, g[31] = u, g[32] = d, g[33] = c, g[34] = m) : m = g[34], m
+                    }), g[19] = n, g[20] = h, g[21] = F, g[22] = C, g[23] = S, g[24] = L, g[25] = x, g[26] = t, g[27] = s, g[28] = i, g[29] = r, g[30] = o, g[31] = u, g[32] = d, g[33] = c, g[34] = m) : m = g[34], m
                 };
             try {
                 t7.displayName || (t7.displayName = "AddToProjectsBulkAction")
@@ -11956,7 +12190,7 @@
                 }
             }();
             t8.hash = "aa3a29608e04e6c971477f59bd1a947c";
-            var se = a(43960);
+            var se = a(52374);
             let sl = e => {
                 let l,
                     a,
@@ -12217,7 +12451,7 @@
                 markAs: "Mark as",
                 setIssueType: "Issue type"
             };
-            var sr = a(92534);
+            var sr = a(3213);
             let so = e => {
                 let l,
                     a,
@@ -12469,7 +12703,7 @@
                 }
             }();
             sm.hash = "44889de9ad73a14e365e1011f491f2bf";
-            var sg = a(69252);
+            var sg = a(73966);
             let sp = e => {
                 let l,
                     a,
@@ -12725,7 +12959,7 @@
             sf.hash = "82aeab8762454708408f41e2ea965180";
             var sb = a(71400),
                 sC = a(47519);
-            let sF = e => {
+            let sS = e => {
                 let l,
                     a,
                     n,
@@ -12749,7 +12983,7 @@
                     }, y[9] = o) : o = y[9];
                 let { nodes: k } = (0, eV.useLazyLoadQuery)(sf, r, o);
                 if (y[10] !== k) {
-                    let e = (k || []).map(sS) ?? [];
+                    let e = (k || []).map(sF) ?? [];
                     u = e.length > 0 && e.every(l => l?.id === e[0]?.id) && e[0] || null,
                         y[10] = k,
                         y[11] = u
@@ -12797,9 +13031,9 @@
                 }), y[17] = h, y[18] = f, y[19] = n, y[20] = t, y[21] = s, y[22] = i, y[23] = g) : g = y[23], g
             };
             try {
-                sF.displayName || (sF.displayName = "ApplyMilestoneBulkAction")
+                sS.displayName || (sS.displayName = "ApplyMilestoneBulkAction")
             } catch { }
-            function sS(e) {
+            function sF(e) {
                 return e?.id && e.milestone ? (0, eV.readInlineData)(sb.xm, e.milestone) : null
             }
             function sL() {
@@ -12977,7 +13211,7 @@
                         k,
                         f,
                         b = (0, t4.c)(32),
-                        { issuesToActOn: C, query: F, repositoryId: S, disabled: L, useQueryForAction: x, onCompleted: K, onError: I, nested: v } = e,
+                        { issuesToActOn: C, query: S, repositoryId: F, disabled: L, useQueryForAction: x, onCompleted: K, onError: I, nested: v } = e,
                         _ = (0, eV.useRelayEnvironment)(),
                         [w, N] = (0, h.useState)(!1);
                     b[0] === Symbol.for("react.memo_cache_sentinel") ? (l = e => {
@@ -12991,8 +13225,8 @@
                         (0, as._N)(a, n, t),
                         b[4] === Symbol.for("react.memo_cache_sentinel") ? (s = ["Escape"], i = () => R(!1), r = {}, b[4] = s, b[5] = i, b[6] = r) : (s = b[4], i = b[5], r = b[6]),
                         (0, as._N)(s, i, r),
-                        b[7] !== C || b[8] !== K || b[9] !== I || b[10] !== F || b[11] !== _ || b[12] !== S || b[13] !== x ? (o = e => {
-                            x && S && F ? function ({ environment: e, optimisticUpdateIds: l, input: { query: a, repositoryId: n, state: t, stateReason: s }, onCompleted: i, onError: r }) {
+                        b[7] !== C || b[8] !== K || b[9] !== I || b[10] !== S || b[11] !== _ || b[12] !== F || b[13] !== x ? (o = e => {
+                            x && F && S ? function ({ environment: e, optimisticUpdateIds: l, input: { query: a, repositoryId: n, state: t, stateReason: s }, onCompleted: i, onError: r }) {
                                 let o = {
                                     state: t,
                                     stateReason: s
@@ -13016,8 +13250,8 @@
                                 environment: _,
                                 optimisticUpdateIds: C,
                                 input: {
-                                    query: F,
-                                    repositoryId: S,
+                                    query: S,
+                                    repositoryId: F,
                                     ...e
                                 },
                                 onCompleted: e => {
@@ -13061,7 +13295,7 @@
                                     I?.(e)
                                 }
                             })
-                        }, b[7] = C, b[8] = K, b[9] = I, b[10] = F, b[11] = _, b[12] = S, b[13] = x, b[14] = o) : o = b[14];
+                        }, b[7] = C, b[8] = K, b[9] = I, b[10] = S, b[11] = _, b[12] = F, b[13] = x, b[14] = o) : o = b[14];
                     let P = o;
                     if (b[15] !== P ? (d = s_.map((e, l) => (0, p.jsxs)(lU.l.Item, {
                         onSelect: () => P(e.value),
@@ -13073,21 +13307,21 @@
                     }), b[17] = d, b[18] = c) : c = b[18], u = c, void 0 !== v && v) {
                         let e,
                             l;
-                        return b[19] === Symbol.for("react.memo_cache_sentinel") ? (e = (0, p.jsx)(l$.W.Anchor, {
+                        return b[19] === Symbol.for("react.memo_cache_sentinel") ? (e = (0, p.jsx)(lQ.W.Anchor, {
                             children: (0, p.jsxs)(lU.l.Item, {
                                 children: [(0, p.jsx)(lU.l.LeadingVisual, {
                                     children: (0, p.jsx)(sx.issueIcons.CLOSED.icon, {})
                                 }), "Mark as"]
                             })
-                        }), b[19] = e) : e = b[19], b[20] !== u ? (l = (0, p.jsxs)(l$.W, {
-                            children: [e, (0, p.jsx)(l$.W.Overlay, {
+                        }), b[19] = e) : e = b[19], b[20] !== u ? (l = (0, p.jsxs)(lQ.W, {
+                            children: [e, (0, p.jsx)(lQ.W.Overlay, {
                                 children: (0, p.jsx)(lU.l, {
                                     children: u
                                 })
                             })]
                         }), b[20] = u, b[21] = l) : l = b[21], l
                     }
-                    return b[22] === Symbol.for("react.memo_cache_sentinel") ? (m = (0, tE.G)("mark-as-action-menu-button"), b[22] = m) : m = b[22], b[23] !== L ? (g = (0, p.jsx)(l$.W.Anchor, {
+                    return b[22] === Symbol.for("react.memo_cache_sentinel") ? (m = (0, tE.G)("mark-as-action-menu-button"), b[22] = m) : m = b[22], b[23] !== L ? (g = (0, p.jsx)(lQ.W.Anchor, {
                         children: (0, p.jsx)(ln.Q, {
                             disabled: L,
                             leadingVisual: sx.issueIcons.CLOSED.icon,
@@ -13095,12 +13329,12 @@
                             ...m,
                             children: si.markAs
                         })
-                    }), b[23] = L, b[24] = g) : g = b[24], b[25] === Symbol.for("react.memo_cache_sentinel") ? (y = (0, tE.G)("mark-as-action-menu-list"), b[25] = y) : y = b[25], b[26] !== u ? (k = (0, p.jsx)(l$.W.Overlay, {
+                    }), b[23] = L, b[24] = g) : g = b[24], b[25] === Symbol.for("react.memo_cache_sentinel") ? (y = (0, tE.G)("mark-as-action-menu-list"), b[25] = y) : y = b[25], b[26] !== u ? (k = (0, p.jsx)(lQ.W.Overlay, {
                         children: (0, p.jsx)(lU.l, {
                             ...y,
                             children: u
                         })
-                    }), b[26] = u, b[27] = k) : k = b[27], b[28] !== w || b[29] !== g || b[30] !== k ? (f = (0, p.jsxs)(l$.W, {
+                    }), b[26] = u, b[27] = k) : k = b[27], b[28] !== w || b[29] !== g || b[30] !== k ? (f = (0, p.jsxs)(lQ.W, {
                         open: w,
                         onOpenChange: R,
                         children: [g, k]
@@ -13144,14 +13378,14 @@
                         render: l => e(l, j.IssueOpenedIcon, ls.setIssueType)
                     }], [e]);
                 return (0, p.jsx)(t0.X, {
-                    onToggleSelectAll: F.l,
+                    onToggleSelectAll: S.l,
                     actionsLabel: eM.bulkActions,
                     actions: l,
                     density: "normal"
                 })
             }
             function sR({ checkedItems: e, issueNodes: l, setCheckedItems: a, useBulkActions: n, listHasPRs: t, isInOrganization: s }) {
-                let { scoped_repository: i, current_user_settings: r } = (0, S.X)(),
+                let { scoped_repository: i, current_user_settings: r } = (0, F.X)(),
                     { addToast: o, addPersistedToast: u } = (0, L.Y6)(),
                     { setBulkJobId: d, bulkJobId: c } = ez(),
                     m = Array.from(e.values()).filter(e => null != e).filter(e => "Issue" === e.__typename),
@@ -13167,7 +13401,7 @@
                                 role: "status"
                             }), d(e))
                     }, [u, d]),
-                    F = (0, h.useCallback)(e => {
+                    S = (0, h.useCallback)(e => {
                         y(!1),
                             o({
                                 type: "error",
@@ -13178,12 +13412,12 @@
                     I = (0, h.useMemo)(() => ({
                         useQueryForAction: x,
                         onCompleted: C,
-                        onError: F,
+                        onError: S,
                         disabled: g,
                         issuesToActOn: x ? l.filter(e => null != e).map(e => e.id) : m.filter(e => null != e).map(e => e.id),
                         query: k,
                         singleKeyShortcutsEnabled: r?.use_single_key_shortcut || !1
-                    }), [x, C, F, g, l, m, k, r?.use_single_key_shortcut]),
+                    }), [x, C, S, g, l, m, k, r?.use_single_key_shortcut]),
                     { setSelectedCount: v } = (0, t1.v)(),
                     _ = (0, h.useCallback)(e => {
                         e ? a(l.filter(e => null != e).reduce((e, l) => e.set(l.id, l), new Map)) : (a(new Map), x && (K(!1), v(0), b?.(!1)))
@@ -13236,7 +13470,7 @@
                                 })
                             }, {
                                 key: "apply-milestone",
-                                render: e => (0, p.jsx)(sF, {
+                                render: e => (0, p.jsx)(sS, {
                                     owner: i.owner,
                                     repo: i.name,
                                     nested: e,
@@ -13323,7 +13557,7 @@
                             k(e, "desc"),
                             f(e)
                     }, [d, k, f]),
-                    F = (0, h.useCallback)(e => {
+                    S = (0, h.useCallback)(e => {
                         m && (c(e), n(sD[m]), k(m, e))
                     }, [k, m, n]);
                 (0, h.useEffect)(() => {
@@ -13333,9 +13567,9 @@
                     n(e),
                         f(e)
                 }, [a, n, u, f]);
-                let S = Object.entries(aR.sortDropdownOptionDisplayValues),
+                let F = Object.entries(aR.sortDropdownOptionDisplayValues),
                     L = Object.entries(aR.sortDropdownReactionLabels),
-                    x = s$(m) || "relevance" === m,
+                    x = sQ(m) || "relevance" === m,
                     K = (0, p.jsxs)(p.Fragment, {
                         children: [(0, p.jsx)(lU.l.Item, {
                             onSelect: () => b(aR.totalReactions, "reactions"),
@@ -13355,18 +13589,18 @@
                         children: [(0, p.jsxs)(lU.l.Group, {
                             children: [(0, p.jsx)(lU.l.GroupHeading, {
                                 children: "Sort by"
-                            }), S.map(([e, l]) => (0, p.jsx)(lU.l.Item, {
+                            }), F.map(([e, l]) => (0, p.jsx)(lU.l.Item, {
                                 onSelect: () => b(l, e),
                                 selected: m === e,
                                 role: "menuitemradio",
                                 children: l
-                            }, e)), (0, p.jsxs)(l$.W, {
-                                children: [(0, p.jsx)(l$.W.Anchor, {
+                            }, e)), (0, p.jsxs)(lQ.W, {
+                                children: [(0, p.jsx)(lQ.W.Anchor, {
                                     children: (0, p.jsx)(lU.l.Item, {
-                                        selected: s$(m) || "reactions" === m,
+                                        selected: sQ(m) || "reactions" === m,
                                         children: aR.reactions
                                     })
-                                }), (0, p.jsx)(l$.W.Overlay, {
+                                }), (0, p.jsx)(lQ.W.Overlay, {
                                     children: (0, p.jsx)(lU.l, {
                                         selectionVariant: "single",
                                         children: K
@@ -13379,17 +13613,17 @@
                             }), (0, p.jsxs)(lU.l.Item, {
                                 disabled: x,
                                 selected: "asc" === d && null !== m,
-                                onSelect: () => F("asc"),
+                                onSelect: () => S("asc"),
                                 children: [(0, p.jsx)(lU.l.LeadingVisual, {
                                     children: (0, p.jsx)(j.SortAscIcon, {})
-                                }), sQ(m, "asc")]
+                                }), s$(m, "asc")]
                             }, "ascending"), (0, p.jsxs)(lU.l.Item, {
                                 disabled: x,
                                 selected: "desc" === d && null !== m,
-                                onSelect: () => F("desc"),
+                                onSelect: () => S("desc"),
                                 children: [(0, p.jsx)(lU.l.LeadingVisual, {
                                     children: (0, p.jsx)(j.SortDescIcon, {})
-                                }), sQ(m, "desc")]
+                                }), s$(m, "desc")]
                             }, "descending")]
                         })]
                     });
@@ -13401,8 +13635,8 @@
                         "aria-label": "Sort",
                         children: I
                     })
-                }) : (0, p.jsxs)(l$.W, {
-                    children: [(0, p.jsxs)(l$.W.Button, {
+                }) : (0, p.jsxs)(lQ.W, {
+                    children: [(0, p.jsxs)(lQ.W.Button, {
                         variant: "invisible",
                         className: sA.sortingMenuButton,
                         leadingVisual: sM[d || "desc"],
@@ -13415,7 +13649,7 @@
                             className: "sr-only",
                             children: "asc" === d ? ", ascending" : ", descending"
                         }) : null]
-                    }), (0, p.jsx)(l$.W.Overlay, {
+                    }), (0, p.jsx)(lQ.W.Overlay, {
                         children: (0, p.jsx)(lU.l, {
                             selectionVariant: "single",
                             children: I
@@ -13442,10 +13676,10 @@
                 let l = e.match(sT)?.[0];
                 return "reactions" === l && (l = e.split(/-asc|-desc/)?.[0]?.split("reactions-")?.[1] || "reactions"), sU(l) ? l : null
             }
-            function sQ(e, l) {
+            function s$(e, l) {
                 return "created" === e || "updated" === e ? "asc" === l ? aR.Oldest : aR.Newest : "asc" === l ? aR.ascending : aR.descending
             }
-            function s$(e) {
+            function sQ(e) {
                 return !!e && aR.sortDropdownReactionLabels.hasOwnProperty(e)
             }
             function sU(e) {
@@ -13581,12 +13815,12 @@
             },
                 sZ = ({ isClosedTabActive: e, isOpenTabActive: l }) => (0, p.jsxs)("div", {
                     className: `${(0, a4.$)(sG.tabsContainer, sG.loading)}`,
-                    children: [(0, p.jsx)(aF.L, {
+                    children: [(0, p.jsx)(aS.L, {
                         title: "Open",
                         isSelected: l,
                         isLoading: !0,
                         href: ""
-                    }, "open"), (0, p.jsx)(aF.L, {
+                    }, "open"), (0, p.jsx)(aS.L, {
                         title: "Closed",
                         isSelected: e,
                         isLoading: !0,
@@ -13615,7 +13849,7 @@
                     t = (0, h.useMemo)(() => eb(a), [a]),
                     s = t ? `?q=${encodeURIComponent(t)}` : "",
                     i = `${n}${s}`,
-                    r = (0, h.useMemo)(() => eF(a), [a]),
+                    r = (0, h.useMemo)(() => eS(a), [a]),
                     o = r ? `${n}?q=${encodeURIComponent(r)}` : n,
                     u = (0, sW.X)(["mac"]),
                     d = (0, h.useCallback)((l, n) => {
@@ -13632,7 +13866,7 @@
                     k = c && !g || y,
                     f = m && !y || g,
                     b = (0, h.useMemo)(() => {
-                        let e = t.match(aS) ? r : t;
+                        let e = t.match(aF) ? r : t;
                         return (e = aL(e, l), t) ? e : `is:issue ${e}`
                     }, [r, t, l]),
                     C = (0, eV.useLazyLoadQuery)(sH, {
@@ -13642,27 +13876,27 @@
                     }, {
                         fetchPolicy: "store-or-network"
                     }),
-                    F = C.repository?.search?.closedIssueCount || 0,
-                    S = C.repository?.search?.openIssueCount || 0;
+                    S = C.repository?.search?.closedIssueCount || 0,
+                    F = C.repository?.search?.openIssueCount || 0;
                 return (0, p.jsx)("div", {
                     ...(0, tE.G)("list-view-section-filters"),
                     children: (0, p.jsxs)("ul", {
                         className: `list-style-none ${(0, a4.$)(sG.tabsContainer)}`,
                         children: [(0, p.jsx)("li", {
                             ...(0, tE.G)("list-view-section-filter-0"),
-                            children: (0, p.jsx)(aF.L, {
+                            children: (0, p.jsx)(aS.L, {
                                 title: "Open",
                                 isSelected: k && !f,
-                                count: eT(S),
+                                count: eT(F),
                                 href: i,
                                 onClick: e => d(e, !0)
                             }, "open")
                         }, "section-filter-0"), (0, p.jsx)("li", {
                             ...(0, tE.G)("list-view-section-filter-1"),
-                            children: (0, p.jsx)(aF.L, {
+                            children: (0, p.jsx)(aS.L, {
                                 title: "Closed",
                                 isSelected: f && !k,
-                                count: eT(F),
+                                count: eT(S),
                                 href: o,
                                 onClick: e => d(e, !1)
                             }, "closed")
@@ -13682,7 +13916,7 @@
             function sJ({ nested: e, repo: l, applySectionFilter: a }) {
                 let { activeSearchQuery: n, currentViewId: t } = eU(),
                     { debouncedDirtySearchQuery: s } = ez(),
-                    { current_user_settings: i } = (0, S.X)(),
+                    { current_user_settings: i } = (0, F.X)(),
                     r = s ?? n,
                     o = (0, h.useMemo)(() => ({
                         id: sC.v.noLabelsData.id,
@@ -13843,7 +14077,7 @@
             let s5 = ({ nested: e, repo: l, applySectionFilter: a }) => {
                 let { activeSearchQuery: n, currentViewId: t } = eU(),
                     { debouncedDirtySearchQuery: s } = ez(),
-                    { current_user_settings: i } = (0, S.X)(),
+                    { current_user_settings: i } = (0, F.X)(),
                     [r, o] = (0, h.useState)(null),
                     u = s ?? n,
                     d = (0, h.useMemo)(() => ({
@@ -13925,7 +14159,7 @@
                 let { name: n, owner: t } = e,
                     { activeSearchQuery: s, currentViewId: i } = eU(),
                     { debouncedDirtySearchQuery: r } = ez(),
-                    { current_user_settings: o } = (0, S.X)(),
+                    { current_user_settings: o } = (0, F.X)(),
                     u = r ?? s,
                     d = (0, h.useMemo)(() => e_(u, "assignee").slice(-1), [u]),
                     c = (0, h.useMemo)(() => ({
@@ -14005,7 +14239,7 @@
                 let { name: n, owner: t } = e,
                     { activeSearchQuery: s, currentViewId: i } = eU(),
                     { debouncedDirtySearchQuery: r } = ez(),
-                    { current_user_settings: o } = (0, S.X)(),
+                    { current_user_settings: o } = (0, F.X)(),
                     u = (0, y.G7)("issues_react_include_bots_in_pickers"),
                     d = r ?? s,
                     c = (0, h.useMemo)(() => e_(d, "author"), [d]),
@@ -14074,7 +14308,7 @@
                 let { name: n, owner: t } = e,
                     { activeSearchQuery: s, currentViewId: i } = eU(),
                     { debouncedDirtySearchQuery: r } = ez(),
-                    { current_user_settings: o } = (0, S.X)(),
+                    { current_user_settings: o } = (0, F.X)(),
                     u = r ?? s,
                     d = (0, h.useMemo)(() => iu(u), [u]),
                     c = (0, h.useCallback)(e => {
@@ -14151,7 +14385,7 @@
                 ListViewMetadata_0: "ListItemsHeaderWithoutBulkActions-module__ListViewMetadata_0--x0baS"
             };
             function ic({ issueCount: e, issueNodes: l, setCheckedItems: a, setReactionEmojiToDisplay: n, setSortingItemSelected: t, setCurrentPage: s, updateListHasPRs: i, isInOrganization: r, ...o }) {
-                let { scoped_repository: u } = (0, S.X)(),
+                let { scoped_repository: u } = (0, F.X)(),
                     { dirtySearchQuery: d, setDirtySearchQuery: c } = ez(),
                     { activeSearchQuery: m, isQueryLoading: g, currentViewId: y } = eU(),
                     { navigateToUrl: k } = lL(),
@@ -14161,11 +14395,11 @@
                             k(l),
                             s(1)
                     }, [k, s, c]),
-                    [C, F] = (0, h.useState)(!1),
+                    [C, S] = (0, h.useState)(!1),
                     { setSelectedCount: L } = (0, t1.v)(),
                     { setMultiPageSelectionAllowed: x } = (0, sj.P)(),
                     K = (0, h.useCallback)(e => {
-                        e ? (a(l.filter(e => null != e).reduce((e, l) => e.set(l.id, l), new Map)), i(l.filter(e => null != e).reduce((e, l) => e.set(l.id, l), new Map))) : (a(new Map), C && (F(!1), L(0), x?.(!1)))
+                        e ? (a(l.filter(e => null != e).reduce((e, l) => e.set(l.id, l), new Map)), i(l.filter(e => null != e).reduce((e, l) => e.set(l.id, l), new Map))) : (a(new Map), C && (S(!1), L(0), x?.(!1)))
                     }, [l, L, a, C, x, i]),
                     I = (0, h.useCallback)(e => lf({
                         viewId: y,
@@ -14272,7 +14506,7 @@
                 let { activeSearchQuery: l } = eU(),
                     { currentUser: a } = (0, lK.J)(),
                     n = (0, h.useMemo)(() => (0, tX.ws)(l), [l]),
-                    t = (0, lF.u)("issues_react_bypass_es_limits");
+                    t = (0, lS.u)("issues_react_bypass_es_limits");
                 return (0, p.jsx)("div", {
                     className: "p-2",
                     children: (0, p.jsx)(ig.l, {
@@ -14295,7 +14529,7 @@
             }
             function ih({ search: e, queryFromCustomView: l, listRef: a, isBulkSupported: n, includeGitDataFromMainQuery: t = !1, isInOrganization: s, onSidePanelNavigate: i }) {
                 let r = `${N.fV.pathname}${N.fV.search}`,
-                    { scoped_repository: o } = (0, S.X)(),
+                    { scoped_repository: o } = (0, F.X)(),
                     { currentUser: u } = (0, lK.J)(),
                     { activeSearchQuery: d, currentPage: c, setCurrentPage: m } = eU(),
                     [g, y] = (0, h.useState)(!1),
@@ -14315,7 +14549,7 @@
                             shiftKeyPressedRef: e
                         }
                     }(),
-                    { issues_react_bypass_es_limits: x } = (0, lF.h)(),
+                    { issues_react_bypass_es_limits: x } = (0, lS.h)(),
                     [K, I] = (0, lc.useQueryLoader)(tH),
                     { data: v, refetch: _ } = ik({
                         key: e
@@ -14349,9 +14583,9 @@
                     }, [d, _, w, q]);
                 let O = (0, h.useMemo)(() => P ? P.map(e => e?.node && ("PullRequest" === e.node.__typename || "Issue" === e.node.__typename) ? e.node : null).filter(e => null != e) : [], [P]),
                     B = (0, h.useRef)(null),
-                    Q = (0, h.useMemo)(() => (0, tX.ws)(d), [d]),
-                    $ = T.maxIssuesListItems(x || !1, Q, !!u),
-                    U = (0, h.useMemo)(() => A ? Math.ceil(Math.min($, A) / T.issuesPageSize()) : 0, [A, $]),
+                    $ = (0, h.useMemo)(() => (0, tX.ws)(d), [d]),
+                    Q = T.maxIssuesListItems(x || !1, $, !!u),
+                    U = (0, h.useMemo)(() => A ? Math.ceil(Math.min(Q, A) / T.issuesPageSize()) : 0, [A, Q]),
                     { getQueryFieldUrl: z, navigateToUrl: H } = lL(),
                     W = (0, h.useCallback)((e, l) => {
                         if ((f ? e.metaKey : e.ctrlKey) || e.shiftKey)
@@ -14483,18 +14717,18 @@
                 (0, h.useEffect)(() => {
                     g && c && ((0, lE.i)(eM.announcePage(c, U, eb.length)), y(!1))
                 }, [c, g, eb.length, U]);
-                let eC = void 0 !== c && U === c && void 0 !== A && A > $,
-                    eF = () => {
+                let eC = void 0 !== c && U === c && void 0 !== A && A > Q,
+                    eS = () => {
                         if (a.current) {
                             let e = a.current.querySelector('[tabindex="0"]');
                             e && e instanceof HTMLElement && e.focus()
                         }
                     },
-                    eS = (0, p.jsxs)(p.Fragment, {
+                    eF = (0, p.jsxs)(p.Fragment, {
                         children: [(0, p.jsx)(tk.ak, {
                             commands: {
-                                "issues-react:focus-next-issue": eF,
-                                "issues-react:focus-previous-issue": eF
+                                "issues-react:focus-next-issue": eS,
+                                "issues-react:focus-previous-issue": eS
                             }
                         }), (0, p.jsx)(la.A, {
                             "data-testid": "list-load-progress-bar",
@@ -14505,8 +14739,8 @@
                             }
                         }), (0, p.jsx)(tk.tL, {
                             commands: {
-                                "issues-react:focus-next-issue": F.l,
-                                "issues-react:focus-previous-issue": F.l
+                                "issues-react:focus-next-issue": S.l,
+                                "issues-react:focus-previous-issue": S.l
                             },
                             className: sG.listScopedCommand,
                             children: (0, p.jsxs)(aO.u, {
@@ -14534,7 +14768,7 @@
                             borderRadius: 2
                         },
                         "data-hpc": !0,
-                        children: eS
+                        children: eF
                     }), c && U > 1 ? (0, p.jsx)(tJ.A, {
                         pageCount: U,
                         currentPage: c,
@@ -14553,16 +14787,16 @@
             } catch { }
             function ib({ itemIdentifier: e, query: l, search: a, repository: n, loadSearchQuery: t, queryFromCustomView: s, listRef: i, onSidePanelNavigate: r }) {
                 let o = (0, eV.useFragment)(ab, a),
-                    { scoped_repository: u } = (0, S.X)(),
+                    { scoped_repository: u } = (0, F.X)(),
                     { pathname: d } = (0, K.zy)(),
                     c = e?.number === void 0 && "/issues/new" !== d,
                     m = (0, eV.useFragment)(aC, n),
                     g = m && m.viewerCanPush && !(m.isDisabled || m.isLocked || m.isArchived),
-                    y = [(0, p.jsx)(aF.L, {
+                    y = [(0, p.jsx)(aS.L, {
                         title: "Open",
                         isLoading: !0,
                         href: ""
-                    }, "open"), (0, p.jsx)(aF.L, {
+                    }, "open"), (0, p.jsx)(aS.L, {
                         title: "Closed",
                         isLoading: !0,
                         href: ""
@@ -14601,8 +14835,8 @@
                 ib.displayName || (ib.displayName = "SearchList")
             } catch { }
             var iC = a(19139),
-                iF = a(40319);
-            let iS = function () {
+                iS = a(40319);
+            let iF = function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -14674,18 +14908,18 @@
                     abstractKey: "__isShortcutable"
                 }
             }();
-            iS.hash = "3b84c25573420783a2b736065a76b8a7";
+            iF.hash = "3b84c25573420783a2b736065a76b8a7";
             var iL = a(66871);
             let ix = {
                 gap8: "DashboardEditViewActions-module__gap8--lh6te"
             };
             function iK({ currentView: e }) {
-                let { id: l, color: a, name: n, description: t, icon: s, scopingRepository: i, query: r } = (0, eV.useFragment)(iS, e),
+                let { id: l, color: a, name: n, description: t, icon: s, scopingRepository: i, query: r } = (0, eV.useFragment)(iF, e),
                     o = (0, eV.useRelayEnvironment)(),
                     { pathname: u } = (0, K.zy)(),
                     { navigateToView: d } = lL(),
                     { setIsEditing: c, setIsNewView: m, dirtyViewId: g, isNewView: y } = eU(),
-                    { dirtyTitle: k, dirtyDescription: f, commitUserViewEdit: b, dirtySearchQuery: C, dirtyViewIcon: S, dirtyViewColor: L, clearSavedViewEditState: x } = ez(),
+                    { dirtyTitle: k, dirtyDescription: f, commitUserViewEdit: b, dirtySearchQuery: C, dirtyViewIcon: F, dirtyViewColor: L, clearSavedViewEditState: x } = ez(),
                     { sendHyperlistAnalyticsEvent: I } = ar(),
                     { author: v, assignee: _, mentioned: w } = (0, K.g)(),
                     j = `${J.defaultQuery} ${J.query({ author: v, assignee: _, mentioned: w, createdByApp: ed(u) })}`,
@@ -14695,7 +14929,7 @@
                         let e = {
                             viewName: lY(k) ? k : n,
                             viewDescription: lY(f) ? f : t,
-                            viewIcon: lY(S) ? S : s,
+                            viewIcon: lY(F) ? F : s,
                             viewColor: lY(L) ? L : a,
                             viewQuery: lY(C) ? C : R
                         };
@@ -14722,17 +14956,17 @@
                             },
                             relayEnvironment: o
                         }), m(!1), x())
-                    }, [k, I, L, S, C, f, a, s, R, t, n, l, o, b, m, x, c]),
+                    }, [k, I, L, F, C, f, a, s, R, t, n, l, o, b, m, x, c]),
                     A = (0, h.useCallback)(() => {
                         void 0 !== g && lH({
                             environment: o,
                             input: {
                                 shortcutId: g
                             },
-                            onError: () => F.l,
+                            onError: () => S.l,
                             onCompleted: () => {
                                 d({
-                                    viewId: $.id,
+                                    viewId: Q.id,
                                     canEditView: !0
                                 })
                             }
@@ -14823,8 +15057,8 @@
                     { commitUserViewDuplicate: y, commitUserViewEdit: k, dirtySearchQuery: f } = ez(),
                     b = l !== O.repository && (d || !u),
                     C = u(l) && d,
-                    F = null !== f && n?.trim() !== f?.trim(),
-                    S = c >= T.viewsPageSize,
+                    S = null !== f && n?.trim() !== f?.trim(),
+                    F = c >= T.viewsPageSize,
                     x = (0, h.useCallback)(() => {
                         y({
                             viewName: a,
@@ -14869,17 +15103,17 @@
                         icon: (0, p.jsx)(j.DuplicateIcon, {}),
                         text: "Save changes to new view",
                         onSelect: x,
-                        enabled: b && !S,
-                        showDescription: !!(b && S),
+                        enabled: b && !F,
+                        showDescription: !!(b && F),
                         description: eM.views.maxViewsReached
                     }];
                 return (0, p.jsx)("div", {
                     className: iv.searchBarContainer,
-                    children: (0, p.jsxs)(l$.W, {
-                        children: [(0, p.jsx)(l$.W.Button, {
-                            disabled: !F || !C,
+                    children: (0, p.jsxs)(lQ.W, {
+                        children: [(0, p.jsx)(lQ.W.Button, {
+                            disabled: !S || !C,
                             children: "Save"
-                        }), (0, p.jsx)(l$.W.Overlay, {
+                        }), (0, p.jsx)(lQ.W.Overlay, {
                             className: iv.menuOverlay,
                             children: (0, p.jsx)(lU.l, {
                                 children: I.map(e => (0, p.jsxs)(lU.l.Item, {
@@ -14908,7 +15142,7 @@
                 actions: "DashboardSearch-module__actions--FG79W"
             };
             function ij({ itemIdentifier: e, currentView: l, search: a, loadSearchQuery: n, onSidePanelNavigate: t }) {
-                let { ssoOrgs: s } = (0, iF.N)(),
+                let { ssoOrgs: s } = (0, iS.N)(),
                     i = s.map(e => e.login).filter(e => void 0 !== e),
                     r = (0, eV.useFragment)(l3, a),
                     o = (0, eV.useFragment)(l4, l),
@@ -15133,14 +15367,14 @@
                 truncatedItemText: "SavedViewItem-module__truncatedItemText--mRa3l",
                 icon: "SavedViewItem-module__icon--POC_c"
             };
-            function iQ({ id: e, icon: l, Icon: a, color: n, title: t, position: s, query: i }) {
+            function i$({ id: e, icon: l, Icon: a, color: n, title: t, position: s, query: i }) {
                 let { setViewPosition: r, setCanEditView: o, isNewView: u, setIsNewView: d, setCurrentPage: c, currentViewId: m, setIsEditing: g, dirtyViewId: y } = eU(),
-                    { dirtyDescription: k, dirtySearchQuery: f, dirtyTitle: b, clearSavedViewEditState: S } = ez(),
+                    { dirtyDescription: k, dirtySearchQuery: f, dirtyTitle: b, clearSavedViewEditState: F } = ez(),
                     { closeNavigation: L } = C(),
                     { navigateToUrl: x } = lL(),
                     K = (0, eV.useRelayEnvironment)(),
                     I = (0, ll.Z)(),
-                    v = (0, lQ.S)(),
+                    v = (0, l$.S)(),
                     _ = e === m,
                     w = lf({
                         viewId: e,
@@ -15156,8 +15390,8 @@
                             input: {
                                 shortcutId: y
                             },
-                            onError: F.l,
-                            onCompleted: F.l
+                            onError: S.l,
+                            onCompleted: S.l
                         })
                     }, [y, K]),
                     R = (0, h.useCallback)(async () => {
@@ -15175,11 +15409,11 @@
                         g(!1),
                             d(!1),
                             I(w),
-                            S(),
+                            F(),
                             r(s),
                             o(!0),
                             L()
-                    }, [e, u, b, f, k, g, d, I, w, S, r, s, o, L, j, v, N]),
+                    }, [e, u, b, f, k, g, d, I, w, F, r, s, o, L, j, v, N]),
                     P = (0, h.useCallback)(e => {
                         R(),
                             e.preventDefault(),
@@ -15207,9 +15441,9 @@
                 })
             }
             try {
-                iQ.displayName || (iQ.displayName = "SavedViewItem")
+                i$.displayName || (i$.displayName = "SavedViewItem")
             } catch { }
-            let i$ = {
+            let iQ = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -15268,7 +15502,7 @@
                 type: "UserDashboard",
                 abstractKey: null
             };
-            i$.hash = "9a49a46a5715f6ebf02954f58883658b";
+            iQ.hash = "9a49a46a5715f6ebf02954f58883658b";
             let iU = {
                 disabled: "CreateSavedView-module__disabled--E98Ih"
             };
@@ -15276,7 +15510,7 @@
                 let { commitUserViewCreate: l, dirtyDescription: a, dirtySearchQuery: n, dirtyTitle: t } = ez(),
                     { dirtyViewId: s, setDirtyViewId: i, isNewView: r } = eU(),
                     o = (0, eV.useRelayEnvironment)(),
-                    u = (0, lQ.S)(),
+                    u = (0, l$.S)(),
                     [d, c] = (0, h.useState)(!1),
                     { navigateToSavedView: m } = lL(),
                     g = (0, h.useCallback)(() => {
@@ -15288,8 +15522,8 @@
                             input: {
                                 shortcutId: s
                             },
-                            onError: F.l,
-                            onCompleted: F.l
+                            onError: S.l,
+                            onCompleted: S.l
                         })
                     }, [s, o]),
                     k = (0, h.useCallback)(async () => {
@@ -15404,7 +15638,7 @@
             }();
             function iW({ savedView: e, position: l }) {
                 let a = (0, lc.useFragment)(iH, e);
-                return a && (0, p.jsx)(iQ, {
+                return a && (0, p.jsx)(i$, {
                     id: a.id,
                     position: l,
                     icon: a.icon,
@@ -15435,7 +15669,7 @@
             function iX({ savedViewsRef: e }) {
                 let { knownViews: l } = el(),
                     { setSavedViewsCount: a } = eU(),
-                    n = (0, eV.useFragment)(i$, e),
+                    n = (0, eV.useFragment)(iQ, e),
                     t = (0, h.useMemo)(() => n.shortcuts.nodes || [], [n.shortcuts.nodes]);
                 (0, h.useEffect)(() => {
                     a(n.shortcuts.totalCount)
@@ -15521,7 +15755,7 @@
                         path: e.url,
                         title: e.name,
                         tooltip: ""
-                    }, e.id) : (0, p.jsx)(iQ, {
+                    }, e.id) : (0, p.jsx)(i$, {
                         id: e.id,
                         icon: e.icon,
                         color: T.defaultViewColor,
@@ -15602,7 +15836,7 @@
                     id: e.id,
                     path: e.url,
                     tooltip: e.name
-                }, e.id) : (0, p.jsx)(iQ, {
+                }, e.id) : (0, p.jsx)(i$, {
                     id: e.id,
                     position: l + 1,
                     icon: e.icon,
@@ -15653,7 +15887,7 @@
             };
             function i8() {
                 let { isNavigationOpen: e } = C(),
-                    l = lO.map((e, l) => (0, p.jsx)(iQ, {
+                    l = lO.map((e, l) => (0, p.jsx)(i$, {
                         id: O.repository,
                         query: e.query,
                         position: l,
@@ -15683,7 +15917,7 @@
             } catch { }
             function re({ customViewsRef: e }) {
                 let { isNavigationOpen: l, closeNavigation: a } = C(),
-                    { scoped_repository: n } = (0, S.X)();
+                    { scoped_repository: n } = (0, F.X)();
                 return l ? (0, p.jsx)(iT.l, {
                     width: "large",
                     title: n ? eM.quickFilters : eM.allViews,
@@ -15725,7 +15959,7 @@
                 searchListContainer: "IssueDashboardCustomViewPage-module__searchListContainer--zNdz7"
             },
                 rt = ({ queries: { pageQuery: e, currentViewQuery: l, customViewsQuery: a } }) => {
-                    let n = (0, S.X)(),
+                    let n = (0, F.X)(),
                         t = n?.current_user_settings?.use_single_key_shortcut || !1,
                         { sidePanelItemIdentifier: s, setSidePanelItemIdentifier: i, sidePanelItemURL: r, onCloseSidePanel: o, onParentIssueActivate: u } = iV(),
                         { queryRef: d } = rl(e, eJ),
@@ -16010,7 +16244,7 @@
                         }],
                         storageKey: null
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: k,
                         filters: ["orderBy"],
@@ -16019,7 +16253,7 @@
                         kind: "LinkedHandle",
                         name: "labels"
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -16108,7 +16342,7 @@
                     },
                     w = {
                         kind: "InlineFragment",
-                        selections: [C, F, S, L, x, K, I, {
+                        selections: [C, S, F, L, x, K, I, {
                             alias: null,
                             args: null,
                             kind: "ScalarField",
@@ -16225,7 +16459,7 @@
                                                         kind: "InlineFragment",
                                                         selections: [w, {
                                                             kind: "InlineFragment",
-                                                            selections: [C, F, S, L, x, K, I, {
+                                                            selections: [C, S, F, L, x, K, I, {
                                                                 alias: null,
                                                                 args: null,
                                                                 kind: "ScalarField",
@@ -16258,7 +16492,7 @@
                                                             kind: "InlineFragment",
                                                             selections: [w, {
                                                                 kind: "InlineFragment",
-                                                                selections: [C, F, S, L, x, K, I, j, N, _],
+                                                                selections: [C, S, F, L, x, K, I, j, N, _],
                                                                 type: "PullRequest",
                                                                 abstractKey: null
                                                             }],
@@ -16499,7 +16733,7 @@
                 abstractKey: "__isShortcutable"
             };
             function rg({ itemIdentifier: e, currentViewKey: l, currentRepository: a, search: n, loadSearchQuery: t, queryFromCustomView: s, onSidePanelNavigate: i, showSsoBanner: r }) {
-                let { ssoOrgs: o } = (0, iF.N)(),
+                let { ssoOrgs: o } = (0, iS.N)(),
                     u = o.map(e => e.login).filter(e => void 0 !== e),
                     d = (0, eV.useFragment)(rd, n),
                     c = (0, eV.useFragment)(rc, a),
@@ -16576,7 +16810,7 @@
                 ry.displayName || (ry.displayName = "List")
             } catch { }
             let rk = ({ queries: { pageQuery: e, customViewsQuery: l } }) => {
-                let a = (0, S.X)(),
+                let a = (0, F.X)(),
                     n = a?.current_user_settings?.use_single_key_shortcut || !1,
                     { sidePanelItemIdentifier: t, setSidePanelItemIdentifier: s, sidePanelItemURL: i, onCloseSidePanel: r, onParentIssueActivate: o } = iV(),
                     { queryRef: u, loadQuery: d } = rl(e, ri),
@@ -16854,7 +17088,7 @@
                         }],
                         storageKey: null
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: k,
                         filters: ["orderBy"],
@@ -16863,7 +17097,7 @@
                         kind: "LinkedHandle",
                         name: "labels"
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -16952,7 +17186,7 @@
                     },
                     w = {
                         kind: "InlineFragment",
-                        selections: [C, F, S, L, x, K, I, {
+                        selections: [C, S, F, L, x, K, I, {
                             alias: null,
                             args: null,
                             kind: "ScalarField",
@@ -17069,7 +17303,7 @@
                                                         kind: "InlineFragment",
                                                         selections: [w, {
                                                             kind: "InlineFragment",
-                                                            selections: [C, F, S, L, x, K, I, {
+                                                            selections: [C, S, F, L, x, K, I, {
                                                                 alias: null,
                                                                 args: null,
                                                                 kind: "ScalarField",
@@ -17102,7 +17336,7 @@
                                                             kind: "InlineFragment",
                                                             selections: [w, {
                                                                 kind: "InlineFragment",
-                                                                selections: [C, F, S, L, x, K, I, j, N, _],
+                                                                selections: [C, S, F, L, x, K, I, j, N, _],
                                                                 type: "PullRequest",
                                                                 abstractKey: null
                                                             }],
@@ -17168,7 +17402,7 @@
             }();
             rf.hash = "74ccd4931dd56a81cc098302b098ba21";
             let rb = ({ queries: { pageQuery: e, customViewsQuery: l } }) => {
-                let a = (0, S.X)(),
+                let a = (0, F.X)(),
                     n = a?.current_user_settings?.use_single_key_shortcut || !1,
                     { sidePanelItemIdentifier: t, setSidePanelItemIdentifier: s, sidePanelItemURL: i, onCloseSidePanel: r, onParentIssueActivate: o } = iV(),
                     { queryRef: u, loadQuery: d } = rl(e, rf),
@@ -17215,7 +17449,7 @@
                         })
                     })]
                 }) : (m({
-                    viewId: $.id,
+                    viewId: Q.id,
                     canEditView: !0
                 }), null) : null
             };
@@ -17256,7 +17490,7 @@
             try {
                 rC.displayName || (rC.displayName = "IssueDashboardPageContent")
             } catch { }
-            let rF = function () {
+            let rS = function () {
                 var e = {
                     defaultValue: 25,
                     kind: "LocalArgument",
@@ -17397,14 +17631,14 @@
                         name: "createdAt",
                         storageKey: null
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "state",
                         storageKey: null
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -17593,7 +17827,7 @@
                     },
                     E = {
                         kind: "InlineFragment",
-                        selections: [N, R, C, P, A, T, M, S, F, V],
+                        selections: [N, R, C, P, A, T, M, F, S, V],
                         type: "Issue",
                         abstractKey: null
                     },
@@ -17711,7 +17945,7 @@
                                         kind: "LinkedField",
                                         name: "issue",
                                         plural: !1,
-                                        selections: [c, h, f, b, C, F, S, L, {
+                                        selections: [c, h, f, b, C, S, F, L, {
                                             alias: null,
                                             args: null,
                                             concreteType: null,
@@ -18001,8 +18235,8 @@
                     }
                 }
             }();
-            rF.hash = "b59a0f9f85c49e982e1834713e262af6";
-            let rS = function () {
+            rS.hash = "b59a0f9f85c49e982e1834713e262af6";
+            let rF = function () {
                 var e = [{
                     defaultValue: null,
                     kind: "LocalArgument",
@@ -18102,7 +18336,7 @@
                     }
                 }
             }();
-            rS.hash = "47f9aec1c876c707ac0b7a218fd72209";
+            rF.hash = "47f9aec1c876c707ac0b7a218fd72209";
             let rL = function () {
                 var e = [{
                     defaultValue: null,
@@ -18504,7 +18738,7 @@
                     [k, f] = (0, h.useState)(null),
                     b = (0, eV.useRelayEnvironment)(),
                     C = (0, h.useRef)(0),
-                    [F, S] = (0, h.useState)(void 0),
+                    [S, F] = (0, h.useState)(void 0),
                     x = (0, h.useRef)(null),
                     K = (0, h.useRef)(null),
                     I = (0, h.useRef)(!1);
@@ -18520,7 +18754,7 @@
                     }, o[2] = y, o[3] = c, o[4] = k, o[5] = n) : n = o[5];
                 let v = n;
                 o[6] !== m || o[7] !== g || o[8] !== d || o[9] !== b || o[10] !== v ? (t = e => ({
-                    subscription: rS,
+                    subscription: rF,
                     variables: {
                         id: e
                     },
@@ -18575,7 +18809,7 @@
                                 }
                                 x.current && clearTimeout(x.current),
                                     x.current = setTimeout(() => {
-                                        S(Date.now())
+                                        F(Date.now())
                                     }, 6e4),
                                     d && m({
                                         message: `Bulk update is in progress ${l} % ${t > 0 ? `(${t} issues failing to update)` : ""}`,
@@ -18607,9 +18841,9 @@
                     }
                 }), o[6] = m, o[7] = g, o[8] = d, o[9] = b, o[10] = v, o[11] = t) : t = o[11];
                 let _ = t;
-                return o[12] !== d || o[13] !== y || o[14] !== _ || o[15] !== b || o[16] !== F || o[17] !== k ? (s = () => {
-                    d ? (!k || F) && (f((0, eV.requestSubscription)(b, _(d))), F && (0, rx.N7)(Error(`Issue bulk edit job(${d}) did not send an update after 1 minute (subscription msg not received)`)), S(void 0)) : y()
-                }, i = [_, b, d, f, F, k, y], o[12] = d, o[13] = y, o[14] = _, o[15] = b, o[16] = F, o[17] = k, o[18] = s, o[19] = i) : (s = o[18], i = o[19]), (0, h.useEffect)(s, i), o[20] !== u ? (r = (0, p.jsx)(p.Fragment, {
+                return o[12] !== d || o[13] !== y || o[14] !== _ || o[15] !== b || o[16] !== S || o[17] !== k ? (s = () => {
+                    d ? (!k || S) && (f((0, eV.requestSubscription)(b, _(d))), S && (0, rx.N7)(Error(`Issue bulk edit job(${d}) did not send an update after 1 minute (subscription msg not received)`)), F(void 0)) : y()
+                }, i = [_, b, d, f, S, k, y], o[12] = d, o[13] = y, o[14] = _, o[15] = b, o[16] = S, o[17] = k, o[18] = s, o[19] = i) : (s = o[18], i = o[19]), (0, h.useEffect)(s, i), o[20] !== u ? (r = (0, p.jsx)(p.Fragment, {
                     children: u
                 }), o[20] = u, o[21] = r) : r = o[21], r
             }
@@ -18870,9 +19104,9 @@
                                 }), (0, p.jsx)(nW.JR, {
                                     html: l.titleHTML
                                 })]
-                            }), l.repository.viewerCanPinIssues && (0, p.jsxs)(l$.W, {
+                            }), l.repository.viewerCanPinIssues && (0, p.jsxs)(lQ.W, {
                                 anchorRef: s,
-                                children: [(0, p.jsx)(l$.W.Anchor, {
+                                children: [(0, p.jsx)(lQ.W.Anchor, {
                                     children: (0, p.jsx)(e5.K, {
                                         size: "small",
                                         sx: {
@@ -18884,7 +19118,7 @@
                                         variant: "invisible",
                                         "aria-label": "Pinned issue options"
                                     })
-                                }), (0, p.jsx)(l$.W.Overlay, {
+                                }), (0, p.jsx)(lQ.W.Overlay, {
                                     width: "medium",
                                     children: (0, p.jsxs)(lU.l, {
                                         children: [l && (0, p.jsxs)(lU.l.Item, {
@@ -19279,7 +19513,8 @@
                                 display: l.viewerCanPinIssues ? "grid" : void 0,
                                 alignItems: "start",
                                 gridTemplateColumns: d ? "0px 1fr" : "24px 1fr",
-                                gap: 2
+                                gap: 16,
+                                paddingLeft: l.viewerCanPinIssues ? "var(--base-size-8)" : "var(--base-size-12)"
                             },
                             isDragOverlay: !0,
                             children: (0, p.jsx)(rA, {
@@ -19296,7 +19531,8 @@
                                 display: l.viewerCanPinIssues ? "grid" : void 0,
                                 alignItems: "start",
                                 gridTemplateColumns: d ? "0px 1fr" : "24px 1fr",
-                                gap: 2
+                                gap: 16,
+                                paddingLeft: l.viewerCanPinIssues ? "var(--base-size-8)" : "var(--base-size-12)"
                             },
                             children: (0, p.jsx)(rA, {
                                 issue: e.data.issue
@@ -19454,10 +19690,10 @@
                 className: "p-4 text-center rounded-2 border color-border-muted",
                 children: [(0, p.jsx)("div", {
                     className: "float-right",
-                    children: (0, p.jsxs)(l$.W, {
-                        children: [(0, p.jsx)(l$.W.Button, {
+                    children: (0, p.jsxs)(lQ.W, {
+                        children: [(0, p.jsx)(lQ.W.Button, {
                             children: "Dismiss"
-                        }), (0, p.jsx)(l$.W.Overlay, {
+                        }), (0, p.jsx)(lQ.W.Overlay, {
                             width: "medium",
                             children: (0, p.jsxs)(lU.l, {
                                 children: [(0, p.jsx)(lU.l.Item, {
@@ -19556,7 +19792,7 @@
                 }
             }();
             rB.hash = "a7ab55b350a1a7ea25ac34d44f953470";
-            let rQ = function () {
+            let r$ = function () {
                 var e = [{
                     defaultValue: null,
                     kind: "LocalArgument",
@@ -19608,8 +19844,8 @@
                     }
                 }
             }();
-            rQ.hash = "627f89c848988611d395dde7073ca948";
-            let r$ = ({ repository: e }) => {
+            r$.hash = "627f89c848988611d395dde7073ca948";
+            let rQ = ({ repository: e }) => {
                 let l = (0, eV.useRelayEnvironment)(),
                     [a, n] = (0, eV.useQueryLoader)(rE),
                     t = (0, eV.useFragment)(rq, e),
@@ -19636,7 +19872,7 @@
                     i = (0, h.useCallback)(() => {
                         !function ({ environment: e, repositoryId: l }) {
                             (0, eV.commitMutation)(e, {
-                                mutation: rQ,
+                                mutation: r$,
                                 variables: {
                                     input: {
                                         notice: "first_time_contributor_issues_banner"
@@ -19687,7 +19923,7 @@
                     })
                 };
             try {
-                r$.displayName || (r$.displayName = "FirstTimeContributionBanner")
+                rQ.displayName || (rQ.displayName = "FirstTimeContributionBanner")
             } catch { }
             try {
                 rU.displayName || (rU.displayName = "FirstTimeContributionBannerInternal")
@@ -19700,8 +19936,8 @@
                 rG = a(60039),
                 rZ = a(47139);
             function rX() {
-                let e = (0, lF.u)("issues_semantic_search_preview_opt_in"),
-                    l = (0, lF.u)("issues_semantic_search_preview_enabled"),
+                let e = (0, lS.u)("issues_semantic_search_preview_opt_in"),
+                    l = (0, lS.u)("issues_semantic_search_preview_enabled"),
                     a = (0, h.useCallback)(async () => {
                         let a = e && !l;
                         await (0, rG.lS)(`${window.location.pathname}?issues_semantic_search=${a}`, {
@@ -19734,7 +19970,7 @@
                 rX.displayName || (rX.displayName = "SemanticSearchPreviewOptIn")
             } catch { }
             let rY = ({ queries: { pageQuery: e } }) => {
-                let { queryRef: l, loadQuery: a } = rl(e, rF),
+                let { queryRef: l, loadQuery: a } = rl(e, rS),
                     { setCurrentViewId: n } = eU();
                 return ((0, h.useEffect)(() => {
                     n(O.repository)
@@ -19750,7 +19986,7 @@
                     fetchPolicy: "store-only"
                 }),
                     { bulkJobId: n, setBulkJobId: t } = ez(),
-                    s = (0, eV.usePreloadedQuery)(rF, e),
+                    s = (0, eV.usePreloadedQuery)(rS, e),
                     i = (0, y.G7)("issues_react_index_quick_filters");
                 return s.repository ? (0, p.jsx)(ra, {
                     category: "Issues Index",
@@ -19774,7 +20010,7 @@
                                         children: [(0, p.jsx)(rX, {}), (0, p.jsx)("div", {
                                             className: "flex-1"
                                         }), (0, p.jsx)(i4, {})]
-                                    }), (0, p.jsx)(r$, {
+                                    }), (0, p.jsx)(rQ, {
                                         repository: s.repository
                                     }), (0, p.jsx)(rV, {
                                         repository: s.repository
@@ -19849,7 +20085,7 @@
                     let { itemIdentifier: a, viewId: n, sidePanelItemIdentifier: t, setSidePanelItemIdentifier: s, sidePanelItemURL: i } = iV(),
                         { onIssueHrefLinkClick: r, navigateToRoot: o } = lL(),
                         { query: u } = (0, eV.useFragment)(r2, e),
-                        d = (0, S.X)(),
+                        d = (0, F.X)(),
                         c = d?.current_user_settings?.paste_url_link_as_plain_text || !1,
                         m = d?.current_user_settings?.use_monospace_font || !1,
                         g = d?.current_user_settings?.use_single_key_shortcut || !1,
@@ -19868,14 +20104,14 @@
                                 type: "Issue"
                             })
                         }, [s]),
-                        F = (0, h.useCallback)(() => {
+                        S = (0, h.useCallback)(() => {
                             s(null)
                         }, [s]),
                         [L, x] = (0, iy.Fo)(`${d.scoped_repository?.owner}-${d.scoped_repository?.name}-deletedRecordId`, ""),
                         K = (0, h.useCallback)(e => {
                             x(e)
                         }, [x]),
-                        I = (0, h.useCallback)((e, l) => !!a && l.owner === a.owner && l.repo === a.repo && l.number === a.number && (e.preventDefault(), F(), !0), [a, F]);
+                        I = (0, h.useCallback)((e, l) => !!a && l.owner === a.owner && l.repo === a.repo && l.number === a.number && (e.preventDefault(), S(), !0), [a, S]);
                     return r3((e, l) => {
                         if (em(e, a?.owner || "", a?.repo || ""))
                             return;
@@ -19920,18 +20156,18 @@
                                 })
                             })
                         }), t && (0, p.jsx)(iA, {
-                            onClose: F,
+                            onClose: S,
                             children: (0, p.jsx)(e3.cI, {
                                 itemIdentifier: t,
                                 optionConfig: Object.assign({}, e4.C, {
                                     shouldSkipSetDocumentTitle: !0,
-                                    onClose: F,
+                                    onClose: S,
                                     insideSidePanel: !0,
                                     singleKeyShortcutsEnabled: g,
                                     onSubIssueClick: C,
                                     onParentIssueActivate: I,
                                     onIssueDelete: K,
-                                    navigateBack: F,
+                                    navigateBack: S,
                                     additionalHeaderActions: (0, p.jsx)(e5.K, {
                                         as: "a",
                                         role: "link",
@@ -19949,7 +20185,7 @@
                 r4.displayName || (r4.displayName = "IssueDetail")
             } catch { }
             let r5 = ({ queries: { ...e } }) => {
-                let { scoped_repository: l } = (0, S.X)(),
+                let { scoped_repository: l } = (0, F.X)(),
                     { currentViewId: a, setCurrentViewId: n } = eU(),
                     { bulkJobId: t, setBulkJobId: s } = ez(),
                     i = a || (l ? O.repository : O.assignedToMe);
@@ -20123,14 +20359,14 @@
                         name: "type",
                         value: "ISSUE_ADVANCED"
                     }],
-                    F = {
+                    S = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "color",
                         storageKey: null
                     },
-                    S = [{
+                    F = [{
                         kind: "Literal",
                         name: "first",
                         value: 10
@@ -20173,7 +20409,7 @@
                     },
                     K = {
                         alias: null,
-                        args: S,
+                        args: F,
                         concreteType: "LabelConnection",
                         kind: "LinkedField",
                         name: "labels",
@@ -20198,7 +20434,7 @@
                                     kind: "ScalarField",
                                     name: "nameHTML",
                                     storageKey: null
-                                }, F, b, y, k],
+                                }, S, b, y, k],
                                 storageKey: null
                             }, L],
                             storageKey: null
@@ -20207,7 +20443,7 @@
                     },
                     I = {
                         alias: null,
-                        args: S,
+                        args: F,
                         filters: ["orderBy"],
                         handle: "connection",
                         key: "Labels_labels",
@@ -20418,7 +20654,7 @@
                                                         kind: "LinkedField",
                                                         name: "issueType",
                                                         plural: !1,
-                                                        selections: [d, b, F],
+                                                        selections: [d, b, S],
                                                         storageKey: null
                                                     }, {
                                                         kind: "InlineFragment",
@@ -21427,14 +21663,14 @@
                         name: "name",
                         storageKey: null
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "__typename",
                         storageKey: null
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -21496,7 +21732,7 @@
                             kind: "ScalarField",
                             name: "hasReachedItemsLimit",
                             storageKey: null
-                        }, F],
+                        }, S],
                     w = [{
                         kind: "Variable",
                         name: "filename",
@@ -21612,7 +21848,7 @@
                                 plural: !1,
                                 selections: [f, {
                                     kind: "InlineFragment",
-                                    selections: [F, S, C, M, L, D],
+                                    selections: [S, F, C, M, L, D],
                                     type: "Actor",
                                     abstractKey: "__isActor"
                                 }],
@@ -21656,14 +21892,14 @@
                         name: "id",
                         storageKey: null
                     },
-                    Q = {
+                    $ = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "label",
                         storageKey: null
                     },
-                    $ = {
+                    Q = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -21799,7 +22035,7 @@
                                     kind: "LinkedField",
                                     name: "owner",
                                     plural: !1,
-                                    selections: [F, b, S, L, {
+                                    selections: [S, b, F, L, {
                                         alias: null,
                                         args: null,
                                         kind: "ScalarField",
@@ -22004,7 +22240,7 @@
                                         kind: "LinkedField",
                                         name: "issueTemplate",
                                         plural: !1,
-                                        selections: [F, C, j, {
+                                        selections: [S, C, j, {
                                             alias: null,
                                             args: null,
                                             kind: "ScalarField",
@@ -22019,21 +22255,21 @@
                                         kind: "LinkedField",
                                         name: "issueForm",
                                         plural: !1,
-                                        selections: [F, C, j, K, {
+                                        selections: [S, C, j, K, {
                                             alias: null,
                                             args: null,
                                             concreteType: null,
                                             kind: "LinkedField",
                                             name: "elements",
                                             plural: !0,
-                                            selections: [F, {
+                                            selections: [S, {
                                                 kind: "InlineFragment",
-                                                selections: [B, Q, $, U, z, H, O],
+                                                selections: [B, $, Q, U, z, H, O],
                                                 type: "IssueFormElementInput",
                                                 abstractKey: null
                                             }, {
                                                     kind: "InlineFragment",
-                                                    selections: [B, Q, $, U, z, H, {
+                                                    selections: [B, $, Q, U, z, H, {
                                                         alias: null,
                                                         args: null,
                                                         kind: "ScalarField",
@@ -22055,7 +22291,7 @@
                                                     abstractKey: null
                                                 }, {
                                                     kind: "InlineFragment",
-                                                    selections: [B, Q, $, {
+                                                    selections: [B, $, Q, {
                                                         alias: null,
                                                         args: null,
                                                         kind: "ScalarField",
@@ -22078,14 +22314,14 @@
                                                     abstractKey: null
                                                 }, {
                                                     kind: "InlineFragment",
-                                                    selections: [B, Q, $, {
+                                                    selections: [B, $, Q, {
                                                         alias: "checkboxOptions",
                                                         args: null,
                                                         concreteType: "IssueFormElementCheckboxOption",
                                                         kind: "LinkedField",
                                                         name: "options",
                                                         plural: !0,
-                                                        selections: [Q, {
+                                                        selections: [$, {
                                                             alias: null,
                                                             args: null,
                                                             kind: "ScalarField",
@@ -22154,10 +22390,10 @@
                                             kind: "LinkedField",
                                             name: "nodes",
                                             plural: !0,
-                                            selections: [F, {
+                                            selections: [S, {
                                                 kind: "TypeDiscriminator",
                                                 abstractKey: "__isActor"
-                                            }, f, S, C, M, L, D],
+                                            }, f, F, C, M, L, D],
                                             storageKey: null
                                         }],
                                         storageKey: null
@@ -23411,9 +23647,9 @@
                 }
             }();
             on.hash = "22ff6992a96ef2cde9444260d48f9173";
-            var ot = a(9253),
+            var ot = a(60439),
                 os = a(653),
-                oi = a(13186),
+                oi = a(58314),
                 or = a(83831),
                 oo = a(46201),
                 ou = a(40616),
@@ -23491,7 +23727,7 @@
                 ob.displayName || (ob.displayName = "DifferentTemplateLink")
             } catch { }
             var oC = a(36376);
-            let oF = ({ initialMetadataValues: e, currentRepository: l, storageKeyPrefix: a, pasteUrlsAsPlainText: n, useMonospaceFont: t, emojiSkinTonePreference: s, singleKeyShortcutsEnabled: i, copilotShowFunctionality: r }) => {
+            let oS = ({ initialMetadataValues: e, currentRepository: l, storageKeyPrefix: a, pasteUrlsAsPlainText: n, useMonospaceFont: t, emojiSkinTonePreference: s, singleKeyShortcutsEnabled: i, copilotShowFunctionality: r }) => {
                 let o = (0, eV.useFragment)(on, l),
                     [u] = (0, ll.o)(),
                     d = !!u.get("template"),
@@ -23522,7 +23758,7 @@
                     return reportError(Error(`Could not find the current user when loading IssueCreatePage for ${N.fV?.href.toString()}`)), (0, p.jsx)("div", {
                         children: "Current user not found"
                     });
-                let { avatarUrl: F, login: S } = m;
+                let { avatarUrl: S, login: F } = m;
                 return (0, p.jsx)(oy.S, {
                     optionConfig: k,
                     preselectedData: {
@@ -23532,17 +23768,17 @@
                     children: (0, p.jsxs)("div", {
                         className: oc.createPane,
                         children: [(0, p.jsxs)(aM.A, {
-                            href: `/${S}`,
+                            href: `/${F}`,
                             className: oc.avatarLink,
                             children: [(0, p.jsx)("span", {
                                 className: "sr-only",
-                                children: od.k.viewProfile(S)
+                                children: od.k.viewProfile(F)
                             }), (0, p.jsx)(a0.r, {
-                                src: F,
+                                src: S,
                                 size: 32,
                                 alt: "",
                                 "data-hovercard-url": (0, nX.dCN)({
-                                    owner: S
+                                    owner: F
                                 }),
                                 className: oc.avatar
                             })]
@@ -23578,7 +23814,7 @@
                                     gap: 2
                                 },
                                 tabIndex: -1,
-                                children: (0, p.jsx)(oS, {
+                                children: (0, p.jsx)(oF, {
                                     template: f,
                                     repository: c,
                                     optionConfig: k,
@@ -23590,7 +23826,7 @@
                     })
                 })
             },
-                oS = ({ template: e, issueFormRef: l, repository: a, optionConfig: n, showUserRestrictedView: t }) => {
+                oF = ({ template: e, issueFormRef: l, repository: a, optionConfig: n, showUserRestrictedView: t }) => {
                     let s = (0, ll.Z)(),
                         i = n.navigate || s,
                         { setDisplayMode: r, setCreateMoreCreatedPath: o } = (0, om.a)(),
@@ -23623,7 +23859,7 @@
                     }, [a, o]), (0, p.jsx)(oi.e, {
                         issueFormRef: l,
                         onCreateSuccess: f,
-                        onCreateError: F.l,
+                        onCreateError: S.l,
                         onCancel: b,
                         selectedTemplate: e,
                         repository: a,
@@ -23640,10 +23876,10 @@
                     })
                 };
             try {
-                oF.displayName || (oF.displayName = "IssueCreatePage")
+                oS.displayName || (oS.displayName = "IssueCreatePage")
             } catch { }
             try {
-                oS.displayName || (oS.displayName = "IssueCreatePageInternal")
+                oF.displayName || (oF.displayName = "IssueCreatePageInternal")
             } catch { }
             let oL = ({ urlParameterQueryData: e }) => {
                 let l = (0, eV.usePreloadedQuery)(ol, e)?.repository;
@@ -23654,7 +23890,7 @@
                 })
             },
                 ox = ({ repository: e }) => {
-                    let l = (0, S.X)(),
+                    let l = (0, F.X)(),
                         a = (0, eV.useFragment)(oa, e),
                         n = a?.suggestedActors?.nodes,
                         t = n && a.viewerIssueCreationPermissions?.assignable ? n.flatMap(e => e ? [(0, eV.readInlineData)(se.G1, e)] : []) : void 0,
@@ -23695,7 +23931,7 @@
                         h = l?.current_user_settings?.preferred_emoji_skin_tone,
                         f = l?.current_user_settings?.use_single_key_shortcut || !1,
                         b = l?.current_user_settings?.copilot_show_functionality || !1;
-                    return (0, p.jsx)(oF, {
+                    return (0, p.jsx)(oS, {
                         initialMetadataValues: m,
                         storageKeyPrefix: g,
                         pasteUrlsAsPlainText: y,
@@ -23778,7 +24014,7 @@
                         t && (e.milestoneTitle = t, e.withMilestone = !0);
                         let s = l.searchParams.get("projects");
                         if (l && s) {
-                            let a = eS(s, l.pathParams.owner);
+                            let a = eF(s, l.pathParams.owner);
                             a.length > 0 && (e.projectNumbers = a, e.withProjects = !0)
                         }
                         let i = l.searchParams.get("type");
@@ -24400,14 +24636,14 @@
                         name: "type",
                         value: "ISSUE_ADVANCED"
                     }],
-                    F = {
+                    S = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "color",
                         storageKey: null
                     },
-                    S = [{
+                    F = [{
                         kind: "Literal",
                         name: "first",
                         value: 10
@@ -24450,7 +24686,7 @@
                     },
                     K = {
                         alias: null,
-                        args: S,
+                        args: F,
                         concreteType: "LabelConnection",
                         kind: "LinkedField",
                         name: "labels",
@@ -24475,7 +24711,7 @@
                                     kind: "ScalarField",
                                     name: "nameHTML",
                                     storageKey: null
-                                }, F, b, y, k],
+                                }, S, b, y, k],
                                 storageKey: null
                             }, L],
                             storageKey: null
@@ -24484,7 +24720,7 @@
                     },
                     I = {
                         alias: null,
-                        args: S,
+                        args: F,
                         filters: ["orderBy"],
                         handle: "connection",
                         key: "Labels_labels",
@@ -24695,7 +24931,7 @@
                                                         kind: "LinkedField",
                                                         name: "issueType",
                                                         plural: !1,
-                                                        selections: [d, b, F],
+                                                        selections: [d, b, S],
                                                         storageKey: null
                                                     }, {
                                                         kind: "InlineFragment",
@@ -24886,7 +25122,7 @@
                 }
             }();
             oB.hash = "ed58f7c20d8325fa9641338233943cdb";
-            let oQ = {
+            let o$ = {
                 middlePaneWrapper: "RepositoryMilestone-module__middlePaneWrapper--VBdKn",
                 middlePaneGrid: "RepositoryMilestone-module__middlePaneGrid--WmGQt",
                 milestoneDetailsWrapper: "RepositoryMilestone-module__milestoneDetailsWrapper--il8vQ",
@@ -24935,7 +25171,7 @@
                 milestoneTitleWrapper: "RepositoryMilestone-module__milestoneTitleWrapper--Iz5b7",
                 title: "RepositoryMilestone-module__title--_e7Jh"
             },
-                o$ = {
+                oQ = {
                     editMilestone: "Edit",
                     newMilestone: "New milestone",
                     newIssue: "New issue",
@@ -25023,7 +25259,7 @@
                     href: "https://www.githubstatus.com/",
                     children: "GitHub Status"
                 }), o[9] = i) : i = o[9], o[10] !== s ? (r = (0, p.jsxs)("div", {
-                    className: oQ.errorFallbackContainer,
+                    className: o$.errorFallbackContainer,
                     children: [s, i]
                 }), o[10] = s, o[11] = r) : r = o[11], r
             };
@@ -25306,11 +25542,11 @@
                 }), o[5] = n, o[6] = t) : t = o[6], o[7] !== a || o[8] !== t ? (s = (0, p.jsxs)(o1.A, {
                     children: [a, t]
                 }), o[7] = a, o[8] = t, o[9] = s) : s = o[9], o[10] !== d ? (i = (0, p.jsx)(lP.A, {
-                    className: oQ.title,
+                    className: o$.title,
                     as: "h2",
                     children: d
                 }), o[10] = d, o[11] = i) : i = o[11], o[12] !== s || o[13] !== i ? (r = (0, p.jsxs)("div", {
-                    className: oQ.milestoneTitleWrapper,
+                    className: o$.milestoneTitleWrapper,
                     children: [s, i]
                 }), o[12] = s, o[13] = i, o[14] = r) : r = o[14], r
             }
@@ -25342,26 +25578,26 @@
                 if (!g)
                     return null;
                 let C = `${N.fV.origin}/${k.login}/${h}`,
-                    S = `${C}/milestones/${g.number}/edit`;
+                    F = `${C}/milestones/${g.number}/edit`;
                 d[4] !== g ? (n = (0, p.jsx)(o2, {
                     milestoneRef: g
                 }), d[4] = g, d[5] = n) : n = d[5],
-                    d[6] !== S || d[7] !== g || d[8] !== y ? (t = y ? (0, p.jsxs)(p.Fragment, {
+                    d[6] !== F || d[7] !== g || d[8] !== y ? (t = y ? (0, p.jsxs)(p.Fragment, {
                         children: [(0, p.jsx)(ln.Q, {
                             as: "a",
-                            href: S,
-                            children: o$.editMilestone
+                            href: F,
+                            children: oQ.editMilestone
                         }), (0, p.jsx)(oX, {
                             milestoneRef: g
                         })]
-                    }) : null, d[6] = S, d[7] = g, d[8] = y, d[9] = t) : t = d[9],
+                    }) : null, d[6] = F, d[7] = g, d[8] = y, d[9] = t) : t = d[9],
                     d[10] !== h || d[11] !== k.login ? (s = {
                         repository: {
                             owner: k.login,
                             name: h
                         }
                     }, d[10] = h, d[11] = k.login, d[12] = s) : s = d[12];
-                let L = f !== F.l;
+                let L = f !== S.l;
                 return d[13] !== m || d[14] !== s || d[15] !== L ? (i = {
                     ...m,
                     showRepositoryPicker: !1,
@@ -25370,14 +25606,14 @@
                     navigateToFullScreenOnTemplateChoice: L,
                     canBypassTemplateSelection: !0
                 }, d[13] = m, d[14] = s, d[15] = L, d[16] = i) : i = d[16], d[17] !== b || d[18] !== i ? (r = (0, p.jsx)(le.a, {
-                    label: o$.newIssue,
+                    label: oQ.newIssue,
                     navigate: b,
                     optionConfig: i
                 }), d[17] = b, d[18] = i, d[19] = r) : r = d[19], d[20] !== t || d[21] !== r ? (o = (0, p.jsxs)("div", {
-                    className: oQ.actionsGrp,
+                    className: o$.actionsGrp,
                     children: [t, r]
                 }), d[20] = t, d[21] = r, d[22] = o) : o = d[22], d[23] !== n || d[24] !== o ? (u = (0, p.jsxs)("div", {
-                    className: `${oQ.buttonGrp} ${oQ.header}`,
+                    className: `${o$.buttonGrp} ${o$.header}`,
                     children: [n, o]
                 }), d[23] = n, d[24] = o, d[25] = u) : u = d[25], u
             }
@@ -25575,14 +25811,14 @@
                         kind: "LinkedHandle",
                         name: "labels"
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "createdAt",
                         storageKey: null
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -25639,7 +25875,7 @@
                     },
                     v = {
                         kind: "InlineFragment",
-                        selections: [b, C, F, S, L, x, I, {
+                        selections: [b, C, S, F, L, x, I, {
                             alias: null,
                             args: null,
                             kind: "ScalarField",
@@ -25768,7 +26004,7 @@
                                                         kind: "InlineFragment",
                                                         selections: [v, {
                                                             kind: "InlineFragment",
-                                                            selections: [b, C, F, S, L, x, I, {
+                                                            selections: [b, C, S, F, L, x, I, {
                                                                 alias: null,
                                                                 args: null,
                                                                 kind: "ScalarField",
@@ -25810,7 +26046,7 @@
                                                             kind: "InlineFragment",
                                                             selections: [v, {
                                                                 kind: "InlineFragment",
-                                                                selections: [b, C, F, S, x, I, _, w],
+                                                                selections: [b, C, S, F, x, I, _, w],
                                                                 type: "PullRequest",
                                                                 abstractKey: null
                                                             }],
@@ -25845,7 +26081,7 @@
                                     kind: "LinkedField",
                                     name: "milestone",
                                     plural: !1,
-                                    selections: [d, m, S, {
+                                    selections: [d, m, F, {
                                         alias: null,
                                         args: null,
                                         kind: "ScalarField",
@@ -26210,7 +26446,7 @@
                         s = (0, t4.c)(12),
                         { selected: i, ariaLabel: r, id: o, descriptionUrl: u } = e;
                     "open" !== i && "closed" !== i && (i = "open");
-                    let d = "open" === i ? o$.emptyStateOpenIssues : o$.emptyStateClosedIssues;
+                    let d = "open" === i ? oQ.emptyStateOpenIssues : oQ.emptyStateClosedIssues;
                     return s[0] !== d ? (l = (0, p.jsx)("h3", {
                         className: o7.emptyStateHeading,
                         children: d
@@ -26248,25 +26484,25 @@
                     u = o8;
                 return o[0] === Symbol.for("react.memo_cache_sentinel") ? (l = {
                     key: "mark-as",
-                    render: e => u(e, oI.issueIcons.CLOSED.icon, o$.markAs)
+                    render: e => u(e, oI.issueIcons.CLOSED.icon, oQ.markAs)
                 }, o[0] = l) : l = o[0], o[1] === Symbol.for("react.memo_cache_sentinel") ? (a = {
                     key: "apply-labels",
-                    render: e => u(e, j.TagIcon, o$.label)
+                    render: e => u(e, j.TagIcon, oQ.label)
                 }, o[1] = a) : a = o[1], o[2] === Symbol.for("react.memo_cache_sentinel") ? (n = {
                     key: "apply-assignees",
-                    render: e => u(e, j.PeopleIcon, o$.assign)
+                    render: e => u(e, j.PeopleIcon, oQ.assign)
                 }, o[2] = n) : n = o[2], o[3] === Symbol.for("react.memo_cache_sentinel") ? (t = {
                     key: "add-to-projects",
-                    render: e => u(e, j.ProjectSymlinkIcon, o$.project)
+                    render: e => u(e, j.ProjectSymlinkIcon, oQ.project)
                 }, o[3] = t) : t = o[3], o[4] === Symbol.for("react.memo_cache_sentinel") ? (s = {
                     key: "apply-milestone",
-                    render: e => u(e, j.MilestoneIcon, o$.milestone)
+                    render: e => u(e, j.MilestoneIcon, oQ.milestone)
                 }, o[4] = s) : s = o[4], o[5] === Symbol.for("react.memo_cache_sentinel") ? (i = [l, a, n, t, s, {
                     key: "apply-issue-type",
-                    render: e => u(e, j.IssueOpenedIcon, o$.setIssueType)
+                    render: e => u(e, j.IssueOpenedIcon, oQ.setIssueType)
                 }], o[5] = i) : i = o[5], e = i, o[6] === Symbol.for("react.memo_cache_sentinel") ? (r = (0, p.jsx)(t0.X, {
-                    onToggleSelectAll: F.l,
-                    actionsLabel: o$.bulkActions,
+                    onToggleSelectAll: S.l,
+                    actionsLabel: oQ.bulkActions,
                     actions: e,
                     density: "normal"
                 }), o[6] = r) : r = o[6], r
@@ -26308,7 +26544,7 @@
                                 message: `Could not update issues: ${e.message}`
                             })
                     }, [d]),
-                    F = (0, h.useMemo)(() => ({
+                    S = (0, h.useMemo)(() => ({
                         useQueryForAction: !1,
                         onCompleted: b,
                         onError: C,
@@ -26316,7 +26552,7 @@
                         issuesToActOn: f.filter(e => null != e).map(e => e.id),
                         singleKeyShortcutsEnabled: i || !1
                     }), [b, C, y, f, i]),
-                    S = (0, h.useCallback)(e => {
+                    F = (0, h.useCallback)(e => {
                         e ? (a(l.filter(e => null != e).reduce((e, l) => e.set(l.id, l), new Map)), n(l.filter(e => null != e).reduce((e, l) => e.set(l.id, l), new Map))) : (a(new Map), m(0), g?.(!1))
                     }, [l, a, g, m, n]),
                     x = s && t,
@@ -26331,7 +26567,7 @@
                             l = [{
                                 key: "mark-as",
                                 render: e => (0, p.jsx)(sw, {
-                                    ...F,
+                                    ...S,
                                     nested: e
                                 })
                             }, {
@@ -26341,7 +26577,7 @@
                                     repo: s.name,
                                     nested: l,
                                     issueIds: e,
-                                    ...F,
+                                    ...S,
                                     repositoryId: s?.id
                                 })
                             }, {
@@ -26349,7 +26585,7 @@
                                 render: l => (0, p.jsx)(sl, {
                                     nested: l,
                                     issueIds: e,
-                                    ...F,
+                                    ...S,
                                     repositoryId: s?.id,
                                     owner: s?.owner,
                                     repo: s?.name
@@ -26362,17 +26598,17 @@
                                     repositoryId: s?.id,
                                     owner: s?.owner,
                                     repo: s?.name,
-                                    ...F
+                                    ...S
                                 })
                             }, {
                                 key: "apply-milestone",
-                                render: e => (0, p.jsx)(sF, {
+                                render: e => (0, p.jsx)(sS, {
                                     owner: s.owner,
                                     repo: s.name,
                                     nested: e,
                                     issueIds: f.map(e => e.id),
                                     repositoryId: s.id,
-                                    ...F
+                                    ...S
                                 })
                             }];
                         return u && l.push({
@@ -26387,19 +26623,19 @@
                                     nested: l,
                                     issueIds: e,
                                     repositoryId: s?.id,
-                                    ...F
+                                    ...S
                                 })
                             })
                         }), l
-                    }, [F, s?.id, s?.owner, s?.name, f, x, K, u]);
+                    }, [S, s?.id, s?.owner, s?.name, f, x, K, u]);
                 return (0, p.jsx)(h.Suspense, {
                     fallback: (0, p.jsx)(o9, {}),
                     children: (0, p.jsx)(t0.X, {
-                        onToggleSelectAll: S,
-                        actionsLabel: o$.bulkActions,
+                        onToggleSelectAll: F,
+                        actionsLabel: oQ.bulkActions,
                         actions: I,
                         density: "normal",
-                        ...F
+                        ...S
                     })
                 })
             };
@@ -26428,7 +26664,7 @@
                 let m = i;
                 return u[12] === Symbol.for("react.memo_cache_sentinel") ? (r = [], u[12] = r) : r = u[12], u[13] !== m || u[14] !== a || u[15] !== n ? (o = (0, p.jsx)(t0.X, {
                     onToggleSelectAll: m,
-                    actionsLabel: o$.bulkActions,
+                    actionsLabel: oQ.bulkActions,
                     actions: r,
                     sectionFilters: n,
                     density: "normal",
@@ -26515,16 +26751,16 @@
                     [b] = (0, ll.o)(),
                     C = b.get("closed");
                 m[6] === Symbol.for("react.memo_cache_sentinel") ? (s = ["mac"], m[6] = s) : s = m[6];
-                let F = (0, sW.X)(s),
-                    S = (0, ll.Z)();
-                m[7] !== F || m[8] !== S ? (i = (e, l) => {
-                    (F ? e.metaKey : e.ctrlKey) || (e.preventDefault(), S(l ? t : f))
-                }, m[7] = F, m[8] = S, m[9] = i) : i = m[9];
+                let S = (0, sW.X)(s),
+                    F = (0, ll.Z)();
+                m[7] !== S || m[8] !== F ? (i = (e, l) => {
+                    (S ? e.metaKey : e.ctrlKey) || (e.preventDefault(), F(l ? t : f))
+                }, m[7] = S, m[8] = F, m[9] = i) : i = m[9];
                 let L = i,
                     x = N.KJ && "1" !== C;
                 m[10] !== L ? (r = e => L(e, !0), m[10] = L, m[11] = r) : r = m[11],
                     m[12] !== k || m[13] !== x || m[14] !== r ? (o = (0, p.jsx)("li", {
-                        children: (0, p.jsx)(aF.L, {
+                        children: (0, p.jsx)(aS.L, {
                             title: "Open",
                             isSelected: x,
                             count: k,
@@ -26534,7 +26770,7 @@
                     }, "section-filter-0"), m[12] = k, m[13] = x, m[14] = r, m[15] = o) : o = m[15];
                 let K = N.KJ && "1" === C;
                 return m[16] !== L ? (u = e => L(e, !1), m[16] = L, m[17] = u) : u = m[17], m[18] !== h || m[19] !== u || m[20] !== K ? (d = (0, p.jsx)("li", {
-                    children: (0, p.jsx)(aF.L, {
+                    children: (0, p.jsx)(aS.L, {
                         title: "Closed",
                         isSelected: K,
                         count: h,
@@ -26543,7 +26779,7 @@
                     }, "closed")
                 }, "section-filter-1"), m[18] = h, m[19] = u, m[20] = K, m[21] = d) : d = m[21], m[22] !== d || m[23] !== o ? (c = (0, p.jsx)("div", {
                     children: (0, p.jsxs)("ul", {
-                        className: `list-style-none ${(0, a4.$)(oQ.tabsContainer)}`,
+                        className: `list-style-none ${(0, a4.$)(o$.tabsContainer)}`,
                         children: [o, d]
                     })
                 }), m[22] = d, m[23] = o, m[24] = c) : c = m[24], c
@@ -26642,7 +26878,7 @@
                             isActive: !1,
                             isSelected: e && r.has(e.id),
                             onSelect: l => e && o(e.id, e, l),
-                            onSelectRow: F.l,
+                            onSelectRow: S.l,
                             getMetadataHref: u,
                             reactionEmojiToDisplay: {
                                 reaction: "",
@@ -26676,7 +26912,7 @@
                                 display: "flex",
                                 width: "100%"
                             },
-                            className: oQ.dragAndDropItem,
+                            className: o$.dragAndDropItem,
                             tabIndex: -1,
                             elementId: `list-view-node-${e.id}`,
                             children: "Issue" === e.__typename ? (0, p.jsx)(tG, {
@@ -26742,7 +26978,7 @@
                     f,
                     b,
                     C,
-                    S,
+                    F,
                     K,
                     I,
                     v,
@@ -26756,7 +26992,7 @@
                     M = (0, t4.c)(92),
                     { data: D, milestone: V, loadNext: E, hasNext: q, singleKeyShortcutsEnabled: O, viewerCanPush: B } = e;
                 M[0] === Symbol.for("react.memo_cache_sentinel") ? (l = o5, M[0] = l) : l = M[0];
-                let Q = (0, eV.useFragment)(l, V);
+                let $ = (0, eV.useFragment)(l, V);
                 M[1] !== D.id || M[2] !== D.isArchived || M[3] !== D.isDisabled || M[4] !== D.isLocked || M[5] !== D.name || M[6] !== D.owner.login || M[7] !== D.viewerCanPush ? (n = {
                     id: D.id,
                     name: D.name,
@@ -26767,7 +27003,7 @@
                     isLocked: D.isLocked
                 }, M[1] = D.id, M[2] = D.isArchived, M[3] = D.isDisabled, M[4] = D.isLocked, M[5] = D.name, M[6] = D.owner.login, M[7] = D.viewerCanPush, M[8] = n) : n = M[8],
                     a = n;
-                let [$, U] = (0, h.useState)(uL),
+                let [Q, U] = (0, h.useState)(uL),
                     [z, H] = (0, h.useState)(),
                     { shiftKeyPressedRef: W } = function () {
                         let e,
@@ -26786,7 +27022,7 @@
                             shiftKeyPressedRef: t
                         }, n[2] = a) : a = n[2], a
                     }();
-                M[9] !== D.search?.edges ? (s = D.search?.edges?.map(uS).filter(uF) || [], M[9] = D.search?.edges, M[10] = s) : s = M[10],
+                M[9] !== D.search?.edges ? (s = D.search?.edges?.map(uF).filter(uS) || [], M[9] = D.search?.edges, M[10] = s) : s = M[10],
                     t = s;
                 let G = (0, eV.useRelayEnvironment)(),
                     Z = (0, ll.Z)();
@@ -26809,20 +27045,20 @@
                     }
                 }, M[17] = t, M[18] = o) : o = M[18];
                 let et = o;
-                M[19] !== et || M[20] !== $ || M[21] !== z || M[22] !== W ? (u = (e, l, a) => {
-                    let n = new Map($);
+                M[19] !== et || M[20] !== Q || M[21] !== z || M[22] !== W ? (u = (e, l, a) => {
+                    let n = new Map(Q);
                     W.current && z ? et(n, z.id, e, a) : (a ? n.set(e, l) : n.delete(e), en(n)),
                         U(n),
                         H({
                             id: e,
                             node: l
                         })
-                }, M[19] = et, M[20] = $, M[21] = z, M[22] = W, M[23] = u) : u = M[23];
+                }, M[19] = et, M[20] = Q, M[21] = z, M[22] = W, M[23] = u) : u = M[23];
                 let es = u,
                     [ei, er] = (0, h.useState)(t),
                     eo = `${N.fV.origin}/${D.owner.login}/${D.name}`,
                     eu = `${eo}/issues/?q=is%3Aissue%20state%3Aopen%20no%3Amilestone`,
-                    ed = `/${D.owner.login}/${D.name}/milestone/${Q.number}`,
+                    ed = `/${D.owner.login}/${D.name}/milestone/${$.number}`,
                     ec = N.fV.pathname,
                     [em] = (0, iO.ok)(),
                     eg = em.get("closed"),
@@ -26841,7 +27077,7 @@
                 }, m = [t, ep], M[25] = ep, M[26] = t, M[27] = c, M[28] = m) : (c = M[27], m = M[28]),
                     (0, h.useEffect)(c, m);
                 let { addToast: ek } = (0, L.Y6)();
-                M[29] !== ek || M[30] !== G || M[31] !== Q.id || M[32] !== Q.updatedAt || M[33] !== ei ? (g = e => {
+                M[29] !== ek || M[30] !== G || M[31] !== $.id || M[32] !== $.updatedAt || M[33] !== ei ? (g = e => {
                     let { dragMetadata: l, dropMetadata: a, isBefore: n } = e;
                     if (l.id === a?.id)
                         return;
@@ -26865,8 +27101,8 @@
                                 environment: G,
                                 input: {
                                     id: t.id,
-                                    milestoneId: Q.id,
-                                    timestamp: Q.updatedAt,
+                                    milestoneId: $.id,
+                                    timestamp: $.updatedAt,
                                     prevId: e
                                 },
                                 onError: e => {
@@ -26882,7 +27118,7 @@
                                 }
                             })
                     }
-                }, M[29] = ek, M[30] = G, M[31] = Q.id, M[32] = Q.updatedAt, M[33] = ei, M[34] = g) : g = M[34];
+                }, M[29] = ek, M[30] = G, M[31] = $.id, M[32] = $.updatedAt, M[33] = ei, M[34] = g) : g = M[34];
                 let eh = g,
                     ef = D.search?.issueCount || 0,
                     eb = B && ef < oI.maxPrioritizableItemCount && !ep,
@@ -26896,25 +27132,25 @@
                 } else
                     k = M[36];
                 y = k,
-                    M[37] !== $ || M[38] !== X || M[39] !== es || M[40] !== y || M[41] !== a || M[42] !== eb ? (f = y.map(e => (0, p.jsx)(ud, {
+                    M[37] !== Q || M[38] !== X || M[39] !== es || M[40] !== y || M[41] !== a || M[42] !== eb ? (f = y.map(e => (0, p.jsx)(ud, {
                         orderedNodes: e,
-                        checkedItems: $,
+                        checkedItems: Q,
                         itemSelected: es,
                         getMetadataHref: ub,
                         withDragAndDrop: eb,
                         scopedRepository: a,
                         handleNavigate: X
-                    }, e[0] ? e[0].id : "my_key")), M[37] = $, M[38] = X, M[39] = es, M[40] = y, M[41] = a, M[42] = eb, M[43] = f) : f = M[43];
-                let eF = f,
-                    eS = D.isInOrganization;
-                M[44] !== Q ? (b = (0, p.jsx)(uo, {
-                    milestoneRef: Q
-                }), M[44] = Q, M[45] = b) : b = M[45],
+                    }, e[0] ? e[0].id : "my_key")), M[37] = Q, M[38] = X, M[39] = es, M[40] = y, M[41] = a, M[42] = eb, M[43] = f) : f = M[43];
+                let eS = f,
+                    eF = D.isInOrganization;
+                M[44] !== $ ? (b = (0, p.jsx)(uo, {
+                    milestoneRef: $
+                }), M[44] = $, M[45] = b) : b = M[45],
                     M[46] !== t ? (C = t.filter(Boolean).reduce(uh, []), M[46] = t, M[47] = C) : C = M[47],
-                    M[48] !== Y || M[49] !== $ || M[50] !== D.isInOrganization || M[51] !== ef || M[52] !== a || M[53] !== J || M[54] !== O || M[55] !== b || M[56] !== C || M[57] !== ea ? (S = (0, p.jsx)(ui, {
-                        checkedItems: $,
+                    M[48] !== Y || M[49] !== Q || M[50] !== D.isInOrganization || M[51] !== ef || M[52] !== a || M[53] !== J || M[54] !== O || M[55] !== b || M[56] !== C || M[57] !== ea ? (F = (0, p.jsx)(ui, {
+                        checkedItems: Q,
                         scopedRepository: a,
-                        isInOrganization: eS,
+                        isInOrganization: eF,
                         sectionFilters: b,
                         issueCount: ef,
                         issueNodes: C,
@@ -26924,8 +27160,8 @@
                         singleKeyShortcutsEnabled: O,
                         bulkJobId: Y,
                         setBulkJobId: J
-                    }), M[48] = Y, M[49] = $, M[50] = D.isInOrganization, M[51] = ef, M[52] = a, M[53] = J, M[54] = O, M[55] = b, M[56] = C, M[57] = ea, M[58] = S) : S = M[58];
-                let eL = S;
+                    }), M[48] = Y, M[49] = Q, M[50] = D.isInOrganization, M[51] = ef, M[52] = a, M[53] = J, M[54] = O, M[55] = b, M[56] = C, M[57] = ea, M[58] = F) : F = M[58];
+                let eL = F;
                 M[59] !== E ? (K = () => {
                     E(oI.issuesPageSize)
                 }, M[59] = E, M[60] = K) : K = M[60];
@@ -26935,11 +27171,11 @@
                     if (ef > oI.issuesPageSize) {
                         let e;
                         M[61] !== q || M[62] !== ex ? (e = q ? (0, p.jsx)("div", {
-                            className: oQ.loadMoreButtonWrapper,
+                            className: o$.loadMoreButtonWrapper,
                             children: (0, p.jsx)(ln.Q, {
                                 variant: "invisible",
                                 onClick: ex,
-                                className: oQ.loadMoreButton,
+                                className: o$.loadMoreButton,
                                 "data-testid": "load-more-button",
                                 children: (0, p.jsx)("span", {
                                     children: "Load more"
@@ -26961,19 +27197,19 @@
                             metadataRef: null,
                             issueKey: a,
                             getMetadataHref: uy,
-                            onSelectRow: F.l,
+                            onSelectRow: S.l,
                             isActive: !1,
                             sortingItemSelected: "",
-                            onNavigate: F.l
+                            onNavigate: S.l
                         })), "PullRequest" === a.__typename) ? (0, p.jsx)(tv, {
                             metadataRef: null,
                             pullRequestKey: a,
                             includeGitDataFromMainQuery: !1,
                             getMetadataHref: up,
-                            onSelectRow: F.l,
+                            onSelectRow: S.l,
                             isActive: !1,
                             sortingItemSelected: "",
-                            onNavigate: F.l
+                            onNavigate: S.l
                         }) : (0, p.jsx)(rw.BS.Item, {
                             hideSortableItemTrigger: !0,
                             as: "li",
@@ -26994,7 +27230,7 @@
                     M[68] !== eh || M[69] !== v || M[70] !== _ ? (w = {
                         items: v,
                         onDrop: eh,
-                        className: oQ.dndList,
+                        className: o$.dndList,
                         direction: "vertical",
                         renderOverlay: _
                     }, M[68] = eh, M[69] = v, M[70] = _, M[71] = w) : w = M[71];
@@ -27002,18 +27238,18 @@
                 M[72] === Symbol.for("react.memo_cache_sentinel") ? (j = (0, tE.G)("repository-milestone-list-view"), M[72] = j) : j = M[72];
                 let ev = eb ? rw.BS : "ul";
                 M[73] !== eI || M[74] !== eb ? (R = eb ? eI : {}, M[73] = eI, M[74] = eb, M[75] = R) : R = M[75];
-                let e_ = ei.length > 0 && eF;
-                return M[76] !== ep || M[77] !== eu || M[78] !== eF.length ? (P = 0 === eF.length && (0, p.jsx)(o6, {
+                let e_ = ei.length > 0 && eS;
+                return M[76] !== ep || M[77] !== eu || M[78] !== eS.length ? (P = 0 === eS.length && (0, p.jsx)(o6, {
                     selected: ep ? "closed" : "open",
                     descriptionUrl: eu
-                }), M[76] = ep, M[77] = eu, M[78] = eF.length, M[79] = P) : P = M[79], M[80] !== $.size || M[81] !== ef || M[82] !== eL || M[83] !== ev || M[84] !== R || M[85] !== e_ || M[86] !== P || M[87] !== eb ? (A = (0, p.jsx)("div", {
-                    className: oQ.milestoneListWrapper,
+                }), M[76] = ep, M[77] = eu, M[78] = eS.length, M[79] = P) : P = M[79], M[80] !== Q.size || M[81] !== ef || M[82] !== eL || M[83] !== ev || M[84] !== R || M[85] !== e_ || M[86] !== P || M[87] !== eb ? (A = (0, p.jsx)("div", {
+                    className: o$.milestoneListWrapper,
                     "data-hpc": !0,
                     ...j,
                     children: (0, p.jsxs)(aO.u, {
                         title: "",
                         totalCount: ef,
-                        selectedCount: $.size,
+                        selectedCount: Q.size,
                         titleHeaderTag: "h2",
                         isSelectable: !0,
                         hasDragHandle: eb,
@@ -27024,7 +27260,7 @@
                         ...R,
                         children: [e_, P]
                     })
-                }), M[80] = $.size, M[81] = ef, M[82] = eL, M[83] = ev, M[84] = R, M[85] = e_, M[86] = P, M[87] = eb, M[88] = A) : A = M[88], M[89] !== eK || M[90] !== A ? (T = (0, p.jsxs)(p.Fragment, {
+                }), M[80] = Q.size, M[81] = ef, M[82] = eL, M[83] = ev, M[84] = R, M[85] = e_, M[86] = P, M[87] = eb, M[88] = A) : A = M[88], M[89] !== eK || M[90] !== A ? (T = (0, p.jsxs)(p.Fragment, {
                     children: [A, eK]
                 }), M[89] = eK, M[90] = A, M[91] = T) : T = M[91], T
             }
@@ -27055,10 +27291,10 @@
             function uC(e) {
                 return "PullRequest" === e.__typename
             }
-            function uF(e) {
+            function uS(e) {
                 return !!e
             }
-            function uS(e) {
+            function uF(e) {
                 return e?.node && ("PullRequest" === e.node.__typename || "Issue" === e.node.__typename) ? e.node : null
             }
             function uL() {
@@ -27186,24 +27422,24 @@
                         n = e
                 } let c = n;
                 return r[3] !== d ? (t = d ? (0, p.jsxs)("div", {
-                    className: oQ.milestoneData,
+                    className: o$.milestoneData,
                     children: [(0, p.jsxs)("div", {
-                        className: oQ.overDue,
+                        className: o$.overDue,
                         children: [(0, p.jsx)(j.AlertFillIcon, {
                             size: 12
                         }), (0, p.jsxs)("span", {
-                            children: [o$.milestoneOverdue, " ", d]
+                            children: [oQ.milestoneOverdue, " ", d]
                         })]
                     }), (0, p.jsx)("span", {
-                        className: oQ.middot,
-                        children: o$.separator
+                        className: o$.middot,
+                        children: oQ.separator
                     })]
                 }) : null, r[3] = d, r[4] = t) : t = r[4], r[5] !== u.dueOn || r[6] !== c ? (s = (0, p.jsx)("div", {
-                    className: oQ.milestoneData,
+                    className: o$.milestoneData,
                     children: u.dueOn ? (0, p.jsxs)("span", {
-                        children: [o$.dueBy, " ", c]
+                        children: [oQ.dueBy, " ", c]
                     }) : (0, p.jsx)("span", {
-                        children: o$.noDueDate
+                        children: oQ.noDueDate
                     })
                 }), r[5] = u.dueOn, r[6] = c, r[7] = s) : s = r[7], r[8] !== t || r[9] !== s ? (i = (0, p.jsxs)(p.Fragment, {
                     children: [t, s]
@@ -27233,29 +27469,29 @@
                     b = (0, t4.c)(44),
                     { milestoneRef: C } = e;
                 b[0] === Symbol.for("react.memo_cache_sentinel") ? (l = ux, b[0] = l) : l = b[0];
-                let F = (0, eV.useFragment)(l, C),
-                    [S, L] = (0, h.useState)(!1),
-                    x = F.descriptionHTML && F.descriptionHTML.length > 600;
-                b[1] !== x || b[2] !== S ? (a = () => x ? S ? oQ.expanded : oQ.collapsed : null, b[1] = x, b[2] = S, b[3] = a) : a = b[3];
+                let S = (0, eV.useFragment)(l, C),
+                    [F, L] = (0, h.useState)(!1),
+                    x = S.descriptionHTML && S.descriptionHTML.length > 600;
+                b[1] !== x || b[2] !== F ? (a = () => x ? F ? o$.expanded : o$.collapsed : null, b[1] = x, b[2] = F, b[3] = a) : a = b[3];
                 let K = a,
-                    I = `${oQ.milestoneDetailsWrapper} ${S && x ? oQ.expanded : ""}`,
-                    v = F.closed ? "closed" : "open",
-                    _ = F.closed ? o$.milestoneClosed : o$.milestoneOpen;
+                    I = `${o$.milestoneDetailsWrapper} ${F && x ? o$.expanded : ""}`,
+                    v = S.closed ? "closed" : "open",
+                    _ = S.closed ? oQ.milestoneClosed : oQ.milestoneOpen;
                 b[4] !== v || b[5] !== _ ? (n = (0, p.jsx)(uI.A, {
-                    className: oQ.milestoneStatus,
+                    className: o$.milestoneStatus,
                     variant: "small",
                     status: v,
                     children: _
                 }), b[4] = v, b[5] = _, b[6] = n) : n = b[6],
-                    b[7] !== F ? (t = (0, p.jsx)(uw, {
-                        milestone: F
-                    }), b[7] = F, b[8] = t) : t = b[8],
-                    b[9] !== F.closed ? (s = F.closed ? (0, p.jsx)(p.Fragment, {
-                        children: o$.milestoneClosed
+                    b[7] !== S ? (t = (0, p.jsx)(uw, {
+                        milestone: S
+                    }), b[7] = S, b[8] = t) : t = b[8],
+                    b[9] !== S.closed ? (s = S.closed ? (0, p.jsx)(p.Fragment, {
+                        children: oQ.milestoneClosed
                     }) : (0, p.jsx)(p.Fragment, {
-                        children: o$.milestoneLastUpdated
-                    }), b[9] = F.closed, b[10] = s) : s = b[10],
-                    b[11] !== F.updatedAt ? (i = new Date(F.updatedAt), b[11] = F.updatedAt, b[12] = i) : i = b[12],
+                        children: oQ.milestoneLastUpdated
+                    }), b[9] = S.closed, b[10] = s) : s = b[10],
+                    b[11] !== S.updatedAt ? (i = new Date(S.updatedAt), b[11] = S.updatedAt, b[12] = i) : i = b[12],
                     b[13] !== i ? (r = (0, p.jsx)(ny.A, {
                         date: i,
                         tense: "past"
@@ -27264,55 +27500,55 @@
                         children: [s, r]
                     }), b[15] = r, b[16] = s, b[17] = o) : o = b[17],
                     b[18] !== o || b[19] !== t ? (u = (0, p.jsxs)("div", {
-                        className: oQ.milestoneDataContainer,
+                        className: o$.milestoneDataContainer,
                         children: [t, o]
                     }), b[18] = o, b[19] = t, b[20] = u) : u = b[20],
                     b[21] !== u || b[22] !== n ? (d = (0, p.jsxs)("div", {
-                        className: oQ.status,
+                        className: o$.status,
                         "data-testid": "milestone-status",
                         children: [n, u]
                     }), b[21] = u, b[22] = n, b[23] = d) : d = b[23];
-                let w = Math.floor(F.progressPercentage);
+                let w = Math.floor(S.progressPercentage);
                 b[24] !== w ? (c = (0, p.jsxs)("span", {
                     children: [(0, p.jsxs)("span", {
-                        className: oQ.progressPercentage,
+                        className: o$.progressPercentage,
                         children: [w, "%"]
                     }), " ", "complete"]
                 }), b[24] = w, b[25] = c) : c = b[25];
-                let N = Math.floor(F.progressPercentage);
+                let N = Math.floor(S.progressPercentage);
                 return b[26] !== N ? (m = (0, p.jsx)(uv.z, {
                     progress: N,
                     "aria-hidden": "true"
                 }), b[26] = N, b[27] = m) : m = b[27], b[28] !== c || b[29] !== m ? (g = (0, p.jsxs)("div", {
-                    className: oQ.progressSection,
+                    className: o$.progressSection,
                     children: [c, m]
                 }), b[28] = c, b[29] = m, b[30] = g) : g = b[30], b[31] !== d || b[32] !== g ? (y = (0, p.jsxs)("div", {
-                    className: oQ.metadataWrapper,
+                    className: o$.metadataWrapper,
                     children: [d, g]
-                }), b[31] = d, b[32] = g, b[33] = y) : y = b[33], b[34] !== F.description || b[35] !== F.descriptionHTML || b[36] !== x || b[37] !== S || b[38] !== K ? (k = F.description && F.descriptionHTML ? (0, p.jsxs)("div", {
-                    className: oQ.milestoneDescription,
+                }), b[31] = d, b[32] = g, b[33] = y) : y = b[33], b[34] !== S.description || b[35] !== S.descriptionHTML || b[36] !== x || b[37] !== F || b[38] !== K ? (k = S.description && S.descriptionHTML ? (0, p.jsxs)("div", {
+                    className: o$.milestoneDescription,
                     id: "milestone-description",
                     children: [(0, p.jsx)(uK.G, {
-                        className: (0, a4.$)(oQ.mdViewer, K()),
-                        markdownValue: F.description,
-                        verifiedHTML: F.descriptionHTML,
+                        className: (0, a4.$)(o$.mdViewer, K()),
+                        markdownValue: S.description,
+                        verifiedHTML: S.descriptionHTML,
                         onChange: uN
                     }), x && (0, p.jsx)("div", {
-                        className: (0, a4.$)(oQ.showMoreButtonContainer, S ? oQ.expanded : oQ.collapsed),
+                        className: (0, a4.$)(o$.showMoreButtonContainer, F ? o$.expanded : o$.collapsed),
                         children: (0, p.jsx)(ln.Q, {
                             size: "small",
                             variant: "invisible",
-                            className: oQ.button,
+                            className: o$.button,
                             onClick: () => {
-                                L(!S)
+                                L(!F)
                             },
-                            "aria-expanded": S,
+                            "aria-expanded": F,
                             "aria-controls": "milestone-description",
-                            trailingVisual: S ? j.ChevronUpIcon : j.ChevronDownIcon,
-                            children: S ? "Show less" : "Show more"
+                            trailingVisual: F ? j.ChevronUpIcon : j.ChevronDownIcon,
+                            children: F ? "Show less" : "Show more"
                         })
                     })]
-                }) : null, b[34] = F.description, b[35] = F.descriptionHTML, b[36] = x, b[37] = S, b[38] = K, b[39] = k) : k = b[39], b[40] !== y || b[41] !== k || b[42] !== I ? (f = (0, p.jsxs)("div", {
+                }) : null, b[34] = S.description, b[35] = S.descriptionHTML, b[36] = x, b[37] = F, b[38] = K, b[39] = k) : k = b[39], b[40] !== y || b[41] !== k || b[42] !== I ? (f = (0, p.jsxs)("div", {
                     className: I,
                     children: [y, k]
                 }), b[40] = y, b[41] = k, b[42] = I, b[43] = f) : f = b[43], f
@@ -27354,8 +27590,8 @@
                 }, n = [k.milestone, k.nameWithOwner], m[1] = k.milestone, m[2] = k.nameWithOwner, m[3] = a, m[4] = n) : (a = m[3], n = m[4]), (0, h.useEffect)(a, n), !k.milestone)
                     return null;
                 m[5] === Symbol.for("react.memo_cache_sentinel") ? (t = (0, p.jsx)(oz, {
-                    title: o$.milestoneError,
-                    message: o$.milestoneErrorMessage
+                    title: oQ.milestoneError,
+                    message: oQ.milestoneErrorMessage
                 }), m[5] = t) : t = m[5],
                     m[6] !== k || m[7] !== y ? (s = (0, p.jsx)(o0, {
                         repositoryRef: k,
@@ -27365,8 +27601,8 @@
                         milestoneRef: k.milestone
                     }), m[9] = k.milestone, m[10] = i) : i = m[10],
                     m[11] === Symbol.for("react.memo_cache_sentinel") ? (r = (0, p.jsx)(oz, {
-                        title: o$.milestoneIssuesError,
-                        message: o$.milestoneIssuesErrorMessage
+                        title: oQ.milestoneIssuesError,
+                        message: oQ.milestoneIssuesErrorMessage
                     }), m[11] = r) : r = m[11];
                 let C = y?.singleKeyShortcutsEnabled;
                 return m[12] !== k || m[13] !== C ? (o = (0, p.jsx)(sP.t, {
@@ -27376,14 +27612,14 @@
                         singleKeyShortcutsEnabled: C
                     })
                 }), m[12] = k, m[13] = C, m[14] = o) : o = m[14], m[15] !== i || m[16] !== o ? (u = (0, p.jsxs)("div", {
-                    className: oQ.middlePaneGrid,
+                    className: o$.middlePaneGrid,
                     children: [i, o]
                 }), m[15] = i, m[16] = o, m[17] = u) : u = m[17], m[18] !== u || m[19] !== s ? (d = (0, p.jsx)(e0.Y, {
                     contentAs: "div",
                     resizeable: !1,
                     leftPaneWidth: "small",
                     middlePane: (0, p.jsx)("div", {
-                        className: oQ.middlePaneWrapper,
+                        className: o$.middlePaneWrapper,
                         children: (0, p.jsxs)(sP.t, {
                             fallback: t,
                             children: [s, u]
@@ -27441,7 +27677,7 @@
             }
             function uM({ repository: e }) {
                 let l = (0, eV.useFragment)(oq, e),
-                    { current_user_settings: a } = (0, S.X)(),
+                    { current_user_settings: a } = (0, F.X)(),
                     n = {
                         useMonospaceFont: a.use_monospace_font,
                         pasteUrlsAsPlainText: a.paste_url_link_as_plain_text,
@@ -28109,7 +28345,7 @@
                 type: "Milestone",
                 abstractKey: null
             };
-            function uQ(e) {
+            function u$(e) {
                 let l,
                     a,
                     n,
@@ -28126,7 +28362,7 @@
                     (u ? e.metaKey : e.ctrlKey) || (e.preventDefault(), d(new URL(o, window.location.origin).pathname))
                 }, s[2] = o, s[3] = u, s[4] = d, s[5] = n) : n = s[5];
                 let c = n;
-                return s[6] !== r.title || s[7] !== r.url || s[8] !== c ? (t = (0, p.jsx)(nQ.ao, {
+                return s[6] !== r.title || s[7] !== r.url || s[8] !== c ? (t = (0, p.jsx)(n$.ao, {
                     value: r.title,
                     href: r.url,
                     onClick: c
@@ -28134,9 +28370,9 @@
             }
             uB.hash = "5bc05bbe94a56bd64216010d45ac7f03";
             try {
-                uQ.displayName || (uQ.displayName = "MilestoneRowTitle")
+                u$.displayName || (u$.displayName = "MilestoneRowTitle")
             } catch { }
-            let u$ = {
+            let uQ = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -28173,7 +28409,7 @@
                 type: "Milestone",
                 abstractKey: null
             };
-            u$.hash = "db345f0e64434fb83335b93532e33afd";
+            uQ.hash = "db345f0e64434fb83335b93532e33afd";
             let uU = function () {
                 var e = {
                     alias: null,
@@ -28420,14 +28656,14 @@
                 return (0, h.useEffect)(() => {
                     s && r?.current && r.current.focus()
                 }, [r, s]), (0, p.jsxs)(p.Fragment, {
-                    children: [(0, p.jsxs)(l$.W, {
-                        children: [(0, p.jsx)(l$.W.Button, {
-                            className: oQ.menuButton,
+                    children: [(0, p.jsxs)(lQ.W, {
+                        children: [(0, p.jsx)(lQ.W.Button, {
+                            className: o$.menuButton,
                             "aria-label": "Milestone menu",
                             variant: "invisible",
                             icon: (0, p.jsx)(j.KebabHorizontalIcon, {}),
                             onKeyDown: f
-                        }), (0, p.jsx)(l$.W.Overlay, {
+                        }), (0, p.jsx)(lQ.W.Overlay, {
                             children: (0, p.jsxs)(lU.l, {
                                 children: [(0, p.jsx)(lU.l.Item, {
                                     onSelect: () => g(),
@@ -28438,40 +28674,40 @@
                                 }), (0, p.jsx)(lU.l.Divider, {}), (0, p.jsx)(lU.l.Item, {
                                     onSelect: () => a(!0),
                                     children: (0, p.jsx)("span", {
-                                        className: oQ.deleteMilestoneButton,
+                                        className: o$.deleteMilestoneButton,
                                         children: "Delete"
                                     })
                                 })]
                             })
                         })]
-                    }), l && (0, p.jsx)(lQ.K, {
+                    }), l && (0, p.jsx)(l$.K, {
                         onClose: e => {
                             "confirm" === e ? k() : (a(!1), i(!1))
                         },
                         title: (0, p.jsx)("p", {
-                            className: oQ.dialogTitle,
-                            children: o$.deleteMilestoneConfirmationTitle
+                            className: o$.dialogTitle,
+                            children: oQ.deleteMilestoneConfirmationTitle
                         }),
-                        cancelButtonContent: o$.cancel,
-                        confirmButtonContent: o$.deleteMilestoneConfirmationButton,
+                        cancelButtonContent: oQ.cancel,
+                        confirmButtonContent: oQ.deleteMilestoneConfirmationButton,
                         confirmButtonType: "danger",
                         children: (0, p.jsxs)("div", {
-                            className: oQ.dialogDescriptionContainer,
+                            className: o$.dialogDescriptionContainer,
                             children: [s && (0, p.jsx)(ig.l, {
                                 ref: r,
                                 className: "mb-3",
                                 title: "Error",
                                 description: (0, p.jsx)(uH.o, {
-                                    children: o$.deleteMilestoneError
+                                    children: oQ.deleteMilestoneError
                                 }),
                                 variant: "critical",
                                 role: "alert"
                             }), (0, p.jsx)("p", {
-                                className: oQ.dialogDescription,
-                                children: o$.deleteMilestoneWarningPermanent
+                                className: o$.dialogDescription,
+                                children: oQ.deleteMilestoneWarningPermanent
                             }), (0, p.jsx)("p", {
-                                className: oQ.dialogDescription,
-                                children: o$.deleteMilestoneAssociatedIssuesNote
+                                className: o$.dialogDescription,
+                                children: oQ.deleteMilestoneAssociatedIssuesNote
                             })]
                         })
                     })]
@@ -28495,7 +28731,7 @@
                     m,
                     g = (0, t4.c)(30),
                     { milestone: y, repositoryNameWithOwner: k } = e;
-                g[0] === Symbol.for("react.memo_cache_sentinel") ? (l = u$, g[0] = l) : l = g[0];
+                g[0] === Symbol.for("react.memo_cache_sentinel") ? (l = uQ, g[0] = l) : l = g[0];
                 let h = (0, eV.useFragment)(l, y);
                 g[1] !== h.title || g[2] !== k ? (a = e => `/${k}/issues?q=${encodeURIComponent(`is:${e} milestone:"${h.title ?? ""}"`)}`, g[1] = h.title, g[2] = k, g[3] = a) : a = g[3];
                 let f = a,
@@ -28505,43 +28741,43 @@
                     "aria-hidden": "true",
                     "data-testid": "milestone-metadata-progress-bar",
                     barSize: "small",
-                    className: oQ.progressBar
+                    className: o$.progressBar
                 }), g[4] = b, g[5] = n) : n = g[5];
                 let C = Math.floor(h.progressPercentage);
                 g[6] !== C ? (t = (0, p.jsxs)("span", {
                     children: [(0, p.jsxs)("span", {
-                        className: oQ.progressPercentage,
+                        className: o$.progressPercentage,
                         children: [C, "%"]
                     }), " complete"]
                 }), g[6] = C, g[7] = t) : t = g[7];
-                let F = f("open");
+                let S = f("open");
                 g[8] !== h.openIssueCount ? (s = (0, p.jsx)("span", {
-                    className: oQ.progressPercentage,
+                    className: o$.progressPercentage,
                     children: h.openIssueCount
                 }), g[8] = h.openIssueCount, g[9] = s) : s = g[9],
-                    g[10] !== F || g[11] !== s ? (i = (0, p.jsxs)(aM.A, {
-                        className: oQ.link,
-                        href: F,
+                    g[10] !== S || g[11] !== s ? (i = (0, p.jsxs)(aM.A, {
+                        className: o$.link,
+                        href: S,
                         children: [s, " open"]
-                    }), g[10] = F, g[11] = s, g[12] = i) : i = g[12];
-                let S = f("closed");
+                    }), g[10] = S, g[11] = s, g[12] = i) : i = g[12];
+                let F = f("closed");
                 return g[13] !== h.closedIssueCount ? (r = (0, p.jsx)("span", {
-                    className: oQ.progressPercentage,
+                    className: o$.progressPercentage,
                     children: h.closedIssueCount
-                }), g[13] = h.closedIssueCount, g[14] = r) : r = g[14], g[15] !== S || g[16] !== r ? (o = (0, p.jsxs)(aM.A, {
-                    className: oQ.link,
-                    href: S,
+                }), g[13] = h.closedIssueCount, g[14] = r) : r = g[14], g[15] !== F || g[16] !== r ? (o = (0, p.jsxs)(aM.A, {
+                    className: o$.link,
+                    href: F,
                     children: [r, " closed"]
-                }), g[15] = S, g[16] = r, g[17] = o) : o = g[17], g[18] !== o || g[19] !== t || g[20] !== i ? (u = (0, p.jsxs)("div", {
-                    className: oQ.listMetadata,
+                }), g[15] = F, g[16] = r, g[17] = o) : o = g[17], g[18] !== o || g[19] !== t || g[20] !== i ? (u = (0, p.jsxs)("div", {
+                    className: o$.listMetadata,
                     children: [t, i, o]
                 }), g[18] = o, g[19] = t, g[20] = i, g[21] = u) : u = g[21], g[22] !== u || g[23] !== n ? (d = (0, p.jsxs)("div", {
-                    className: oQ.progress,
+                    className: o$.progress,
                     children: [n, u]
                 }), g[22] = u, g[23] = n, g[24] = d) : d = g[24], g[25] !== h ? (c = (0, p.jsx)(uW, {
                     milestone: h
                 }), g[25] = h, g[26] = c) : c = g[26], g[27] !== d || g[28] !== c ? (m = (0, p.jsxs)("div", {
-                    className: oQ.listProgressSection,
+                    className: o$.listProgressSection,
                     children: [d, c]
                 }), g[27] = d, g[28] = c, g[29] = m) : m = g[29], m
             }
@@ -28587,10 +28823,10 @@
                     closed: d,
                     total: c
                 }, i[1] = d, i[2] = u, i[3] = c, i[4] = n) : n = i[4], (a = n).total <= 0) ? null : (i[5] === Symbol.for("react.memo_cache_sentinel") ? (t = (0, p.jsx)("span", {
-                    className: oQ.middot,
-                    children: o$.separator
+                    className: o$.middot,
+                    children: oQ.separator
                 }), i[5] = t) : t = i[5], i[6] !== a.closed || i[7] !== a.total ? (s = (0, p.jsxs)("div", {
-                    className: oQ.milestoneIssueCount,
+                    className: o$.milestoneIssueCount,
                     children: [t, (0, p.jsxs)("span", {
                         children: [a.closed, "/", a.total, " issues closed"]
                     })]
@@ -28612,7 +28848,7 @@
                     { milestone: u, repositoryNameWithOwner: d } = e;
                 o[0] === Symbol.for("react.memo_cache_sentinel") ? (l = uO, o[0] = l) : l = o[0];
                 let c = (0, eV.useFragment)(l, u);
-                o[1] !== c ? (a = (0, p.jsx)(uQ, {
+                o[1] !== c ? (a = (0, p.jsx)(u$, {
                     milestone: c
                 }), o[1] = c, o[2] = a) : a = o[2];
                 let m = a;
@@ -28622,26 +28858,26 @@
                 }), o[3] = c, o[4] = d, o[5] = n) : n = o[5];
                 let g = n;
                 return o[6] !== c.description ? (t = c.description && (0, p.jsx)("p", {
-                    className: oQ.listDescription,
+                    className: o$.listDescription,
                     children: c.description
                 }), o[6] = c.description, o[7] = t) : t = o[7], o[8] !== c ? (s = (0, p.jsxs)("div", {
-                    className: oQ.listDateContainer,
+                    className: o$.listDateContainer,
                     children: [(0, p.jsx)(uw, {
                         milestone: c
                     }), (0, p.jsx)(uX, {
                         milestone: c
                     })]
                 }), o[8] = c, o[9] = s) : s = o[9], o[10] !== t || o[11] !== s ? (i = (0, p.jsx)(az.Q, {
-                    children: (0, p.jsxs)(a$.U, {
-                        className: oQ.listItemContent,
+                    children: (0, p.jsxs)(aQ.U, {
+                        className: o$.listItemContent,
                         children: [t, s]
                     })
                 }), o[10] = t, o[11] = s, o[12] = i) : i = o[12], o[13] !== c.id || o[14] !== g || o[15] !== i || o[16] !== m ? (r = (0, p.jsx)(aH.c, {
                     title: m,
                     role: "listitem",
                     metadata: g,
-                    className: oQ.milestoneRow,
-                    metadataContainerClassName: oQ.listMetadataContainer,
+                    className: o$.milestoneRow,
+                    metadataContainerClassName: o$.listMetadataContainer,
                     children: i
                 }, c.id), o[13] = c.id, o[14] = g, o[15] = i, o[16] = m, o[17] = r) : r = o[17], r
             }
@@ -28722,21 +28958,21 @@
                     [b] = (0, ll.o)(),
                     C = b.get("state");
                 c[5] === Symbol.for("react.memo_cache_sentinel") ? (t = ["mac"], c[5] = t) : t = c[5];
-                let F = (0, sW.X)(t),
-                    S = (0, ll.Z)();
-                c[6] !== F || c[7] !== S || c[8] !== b ? (s = (e, l) => {
-                    if ((F ? e.metaKey : e.ctrlKey) || !N.cg)
+                let S = (0, sW.X)(t),
+                    F = (0, ll.Z)();
+                c[6] !== S || c[7] !== F || c[8] !== b ? (s = (e, l) => {
+                    if ((S ? e.metaKey : e.ctrlKey) || !N.cg)
                         return;
                     e.preventDefault();
                     let a = new URLSearchParams(b);
                     l ? a.delete("state") : a.set("state", "closed"),
-                        S(`${N.cg.location.pathname}?${a.toString()}`)
-                }, c[6] = F, c[7] = S, c[8] = b, c[9] = s) : s = c[9];
+                        F(`${N.cg.location.pathname}?${a.toString()}`)
+                }, c[6] = S, c[7] = F, c[8] = b, c[9] = s) : s = c[9];
                 let L = s,
                     x = N.KJ && "closed" !== C;
                 c[10] !== L ? (i = e => L(e, !0), c[10] = L, c[11] = i) : i = c[11],
                     c[12] !== y || c[13] !== x || c[14] !== i ? (r = (0, p.jsx)("li", {
-                        children: (0, p.jsx)(aF.L, {
+                        children: (0, p.jsx)(aS.L, {
                             title: "Open",
                             isSelected: x,
                             count: y,
@@ -28747,7 +28983,7 @@
                     }, "section-filter-0"), c[12] = y, c[13] = x, c[14] = i, c[15] = r) : r = c[15];
                 let K = N.KJ && "closed" === C;
                 return c[16] !== L ? (o = e => L(e, !1), c[16] = L, c[17] = o) : o = c[17], c[18] !== k || c[19] !== o || c[20] !== K ? (u = (0, p.jsx)("li", {
-                    children: (0, p.jsx)(aF.L, {
+                    children: (0, p.jsx)(aS.L, {
                         title: "Closed",
                         isSelected: K,
                         count: k,
@@ -28757,7 +28993,7 @@
                     }, "closed")
                 }, "section-filter-1"), c[18] = k, c[19] = o, c[20] = K, c[21] = u) : u = c[21], c[22] !== u || c[23] !== r ? (d = (0, p.jsx)("div", {
                     children: (0, p.jsxs)("ul", {
-                        className: `list-style-none ${(0, a4.$)(oQ.tabsContainer)}`,
+                        className: `list-style-none ${(0, a4.$)(o$.tabsContainer)}`,
                         children: [r, u]
                     })
                 }), c[22] = u, c[23] = r, c[24] = d) : d = c[24], d
@@ -28787,8 +29023,8 @@
                     f,
                     b,
                     C,
-                    F,
                     S,
+                    F,
                     L = (0, t4.c)(60),
                     [x] = (0, ll.o)(),
                     K = x.get("sort"),
@@ -28803,7 +29039,7 @@
                     }
                 }, L[0] = v, L[1] = x, L[2] = e) : e = L[2];
                 let _ = e;
-                L[3] === Symbol.for("react.memo_cache_sentinel") ? (l = (0, p.jsx)(l$.W.Button, {
+                L[3] === Symbol.for("react.memo_cache_sentinel") ? (l = (0, p.jsx)(lQ.W.Button, {
                     variant: "invisible",
                     leadingVisual: j.SortDescIcon,
                     children: "Sort"
@@ -28877,21 +29113,21 @@
                 }), L[42] = f, L[43] = V, L[44] = b) : b = L[44],
                     L[45] !== _ ? (C = () => _("count", "asc"), L[45] = _, L[46] = C) : C = L[46];
                 let E = "count" === K && "asc" === I;
-                return L[47] !== C || L[48] !== E ? (F = (0, p.jsx)(lU.l.Item, {
+                return L[47] !== C || L[48] !== E ? (S = (0, p.jsx)(lU.l.Item, {
                     onSelect: C,
                     selected: E,
                     role: "menuitemradio",
                     children: "Fewest issues"
-                }), L[47] = C, L[48] = E, L[49] = F) : F = L[49], L[50] !== o || L[51] !== d || L[52] !== m || L[53] !== y || L[54] !== h || L[55] !== b || L[56] !== F || L[57] !== t || L[58] !== i ? (S = (0, p.jsxs)(l$.W, {
-                    children: [l, (0, p.jsx)(l$.W.Overlay, {
+                }), L[47] = C, L[48] = E, L[49] = S) : S = L[49], L[50] !== o || L[51] !== d || L[52] !== m || L[53] !== y || L[54] !== h || L[55] !== b || L[56] !== S || L[57] !== t || L[58] !== i ? (F = (0, p.jsxs)(lQ.W, {
+                    children: [l, (0, p.jsx)(lQ.W.Overlay, {
                         children: (0, p.jsx)(lU.l, {
                             selectionVariant: "single",
                             children: (0, p.jsxs)(lU.l.Group, {
-                                children: [a, t, i, o, d, m, y, h, b, F]
+                                children: [a, t, i, o, d, m, y, h, b, S]
                             })
                         })
                     })]
-                }), L[50] = o, L[51] = d, L[52] = m, L[53] = y, L[54] = h, L[55] = b, L[56] = F, L[57] = t, L[58] = i, L[59] = S) : S = L[59], S
+                }), L[50] = o, L[51] = d, L[52] = m, L[53] = y, L[54] = h, L[55] = b, L[56] = S, L[57] = t, L[58] = i, L[59] = F) : F = L[59], F
             }
             try {
                 u2.displayName || (u2.displayName = "MilestoneSortMenu")
@@ -28904,8 +29140,8 @@
                     s,
                     i = (0, t4.c)(12),
                     { noCreatedMilestones: r, newMilestoneUrl: o } = e,
-                    u = r ? o$.noCreatedMilestones : o$.weCouldntFindMilestones,
-                    d = r ? o$.noCreatedMilestonesDescription : o$.weCouldntFindMilestonesDescription;
+                    u = r ? oQ.noCreatedMilestones : oQ.weCouldntFindMilestones,
+                    d = r ? oQ.noCreatedMilestonesDescription : oQ.weCouldntFindMilestonesDescription;
                 return i[0] === Symbol.for("react.memo_cache_sentinel") ? (l = (0, p.jsx)(oU.E.Visual, {
                     children: (0, p.jsx)(j.MilestoneIcon, {
                         size: "medium"
@@ -28916,7 +29152,7 @@
                     children: d
                 }), i[3] = d, i[4] = n) : n = i[4], i[5] !== o || i[6] !== r ? (t = r && (0, p.jsx)(oU.E.PrimaryAction, {
                     href: o,
-                    children: o$.createAMilestone
+                    children: oQ.createAMilestone
                 }), i[5] = o, i[6] = r, i[7] = t) : t = i[7], i[8] !== a || i[9] !== n || i[10] !== t ? (s = (0, p.jsxs)(oU.E, {
                     children: [l, a, n, t]
                 }), i[8] = a, i[9] = n, i[10] = t, i[11] = s) : s = i[11], s
@@ -28956,11 +29192,11 @@
                         })
                     }),
                     u = (0, h.useMemo)(() => l ? (0, p.jsx)("div", {
-                        className: oQ.loadMoreButtonWrapper,
+                        className: o$.loadMoreButtonWrapper,
                         children: (0, p.jsx)(ln.Q, {
                             variant: "invisible",
                             onClick: () => n(oI.milestonePageSize),
-                            className: oQ.loadMoreButton,
+                            className: o$.loadMoreButton,
                             "data-testid": "load-more-milestones-button",
                             loading: a,
                             children: "Load more"
@@ -28968,7 +29204,7 @@
                     }) : null, [l, a, n]);
                 return (0, p.jsxs)(p.Fragment, {
                     children: [(0, p.jsx)("div", {
-                        className: oQ.milestoneListWrapper,
+                        className: o$.milestoneListWrapper,
                         "data-hpc": !0,
                         children: (0, p.jsx)(aO.u, {
                             ...(0, tE.G)("repository-milestone-list-view"),
@@ -29042,20 +29278,20 @@
                 let g = a;
                 return i[4] === Symbol.for("react.memo_cache_sentinel") ? (n = (0, p.jsx)(lP.A, {
                     as: "h2",
-                    className: oQ.heading,
+                    className: o$.heading,
                     children: "Milestones"
                 }), i[4] = n) : n = i[4], i[5] !== c || i[6] !== g || i[7] !== o ? (t = o ? (0, p.jsx)("div", {
-                    className: oQ.actionsGrp,
+                    className: o$.actionsGrp,
                     children: (0, p.jsx)(ln.Q, {
                         as: "a",
                         href: c,
                         onClick: g,
                         variant: "primary",
                         "data-testid": "new-milestone-button",
-                        children: o$.newMilestone
+                        children: oQ.newMilestone
                     })
                 }) : null, i[5] = c, i[6] = g, i[7] = o, i[8] = t) : t = i[8], i[9] !== t ? (s = (0, p.jsxs)("div", {
-                    className: oQ.buttonGrp,
+                    className: o$.buttonGrp,
                     children: [n, t]
                 }), i[9] = t, i[10] = s) : s = i[10], s
             }
@@ -29072,14 +29308,14 @@
                 t[0] === Symbol.for("react.memo_cache_sentinel") ? (l = uV, t[0] = l) : l = t[0];
                 let i = (0, eV.useFragment)(l, s);
                 return t[1] === Symbol.for("react.memo_cache_sentinel") ? (a = (0, p.jsx)(oz, {
-                    title: o$.milestonesError,
-                    message: o$.milestonesErrorMessage
+                    title: oQ.milestonesError,
+                    message: oQ.milestonesErrorMessage
                 }), t[1] = a) : a = t[1], t[2] !== i ? (n = (0, p.jsx)(e0.Y, {
                     contentAs: "div",
                     resizeable: !1,
                     leftPaneWidth: "small",
                     middlePane: (0, p.jsx)("div", {
-                        className: oQ.middlePaneWrapper,
+                        className: o$.middlePaneWrapper,
                         children: (0, p.jsxs)(sP.t, {
                             fallback: a,
                             children: [(0, p.jsx)(u7, {
@@ -29218,8 +29454,8 @@
                     f,
                     b,
                     C,
-                    F,
                     S,
+                    F,
                     L,
                     x,
                     K,
@@ -29228,9 +29464,9 @@
                     _,
                     w = (0, t4.c)(68),
                     { repository: j, onCancel: N, formTitle: R, formDescription: P, formSubmitLabel: A, onSubmit: T, submissionErrors: M, initialValues: D, onToggleMilestoneState: V, toggleStateLabel: E } = e,
-                    q = void 0 === A ? o$.createMilestone : A,
+                    q = void 0 === A ? oQ.createMilestone : A,
                     [O, B] = (0, h.useState)(D?.title || ""),
-                    [Q, $] = (0, h.useState)(D?.description || "");
+                    [$, Q] = (0, h.useState)(D?.description || "");
                 w[0] !== D ? (l = () => D?.dueOn ? new Date(D.dueOn) : null, w[0] = D, w[1] = l) : l = w[1];
                 let [U, z] = (0, h.useState)(l),
                     [H, W] = (0, h.useState)(!1),
@@ -29238,11 +29474,11 @@
                     X = (0, h.useRef)(null);
                 w[2] === Symbol.for("react.memo_cache_sentinel") ? (a = dt, w[2] = a) : a = w[2];
                 let Y = (0, eV.useFragment)(a, j);
-                w[3] !== Q || w[4] !== U || w[5] !== H || w[6] !== T || w[7] !== Y || w[8] !== O ? (n = async e => {
+                w[3] !== $ || w[4] !== U || w[5] !== H || w[6] !== T || w[7] !== Y || w[8] !== O ? (n = async e => {
                     if (H)
                         return;
                     if (e.preventDefault(), W(!0), Z(null), !O.trim()) {
-                        Z(o$.titleRequired), X.current?.focus(),
+                        Z(oQ.titleRequired), X.current?.focus(),
                             W(!1);
                         return
                     }
@@ -29254,10 +29490,10 @@
                     T({
                         repositoryId: Y.id,
                         title: O.trim(),
-                        description: Q?.trim(),
+                        description: $?.trim(),
                         dueOn: l
                     }, W)
-                }, w[3] = Q, w[4] = U, w[5] = H, w[6] = T, w[7] = Y, w[8] = O, w[9] = n) : n = w[9];
+                }, w[3] = $, w[4] = U, w[5] = H, w[6] = T, w[7] = Y, w[8] = O, w[9] = n) : n = w[9];
                 let J = n;
                 w[10] === Symbol.for("react.memo_cache_sentinel") ? (t = e => {
                     z(e)
@@ -29286,13 +29522,13 @@
                     }), w[17] = P, w[18] = r, w[19] = o) : o = w[19],
                     w[20] === Symbol.for("react.memo_cache_sentinel") ? (u = (0, p.jsx)(lN.A.Label, {
                         htmlFor: "milestone-title",
-                        children: o$.title
+                        children: oQ.title
                     }), w[20] = u) : u = w[20],
                     w[21] !== el || w[22] !== O ? (d = (0, p.jsx)(lR.A, {
                         block: !0,
                         value: O,
                         onChange: el,
-                        placeholder: o$.titlePlaceholder,
+                        placeholder: oQ.titlePlaceholder,
                         ref: X
                     }), w[21] = el, w[22] = O, w[23] = d) : d = w[23],
                     w[24] !== G ? (c = G && (0, p.jsx)(lN.A.Validation, {
@@ -29308,7 +29544,7 @@
                     }), w[26] = H, w[27] = d, w[28] = c, w[29] = m) : m = w[29],
                     w[30] === Symbol.for("react.memo_cache_sentinel") ? (g = (0, p.jsx)(lN.A.Label, {
                         htmlFor: "milestone-due-on",
-                        children: o$.dueDate
+                        children: oQ.dueDate
                     }), w[30] = g) : g = w[30],
                     w[31] !== U || w[32] !== H ? (y = (0, p.jsxs)(lN.A, {
                         className: dr.formControl,
@@ -29320,40 +29556,40 @@
                             onChange: ee,
                             disabled: H,
                             dateFormat: "MMM d, yyyy",
-                            placeholder: o$.datePlaceholder,
+                            placeholder: oQ.datePlaceholder,
                             anchorClassName: dr.datePickerAnchor,
-                            fieldName: o$.dueDate
+                            fieldName: oQ.dueDate
                         })]
                     }), w[31] = U, w[32] = H, w[33] = y) : y = w[33],
                     w[34] === Symbol.for("react.memo_cache_sentinel") ? (k = (0, p.jsx)(lN.A.Label, {
                         htmlFor: "milestone-description",
-                        children: o$.description
+                        children: oQ.description
                     }), w[34] = k) : k = w[34],
-                    w[35] === Symbol.for("react.memo_cache_sentinel") ? (f = e => $(e.target.value), w[35] = f) : f = w[35],
-                    w[36] !== Q ? (b = (0, p.jsx)(di.Ay, {
-                        value: Q,
+                    w[35] === Symbol.for("react.memo_cache_sentinel") ? (f = e => Q(e.target.value), w[35] = f) : f = w[35],
+                    w[36] !== $ ? (b = (0, p.jsx)(di.Ay, {
+                        value: $,
                         onChange: f,
                         rows: 5,
-                        placeholder: o$.descriptionPlaceholder,
+                        placeholder: oQ.descriptionPlaceholder,
                         block: !0
-                    }), w[36] = Q, w[37] = b) : b = w[37],
+                    }), w[36] = $, w[37] = b) : b = w[37],
                     w[38] !== H || w[39] !== b ? (C = (0, p.jsxs)(lN.A, {
                         className: dr.formControl,
                         id: "milestone-description",
                         disabled: H,
                         children: [k, b]
                     }), w[38] = H, w[39] = b, w[40] = C) : C = w[40],
-                    w[41] !== m || w[42] !== y || w[43] !== C ? (F = (0, p.jsxs)("div", {
+                    w[41] !== m || w[42] !== y || w[43] !== C ? (S = (0, p.jsxs)("div", {
                         className: dr.formWrapper,
                         children: [m, y, C]
-                    }), w[41] = m, w[42] = y, w[43] = C, w[44] = F) : F = w[44];
+                    }), w[41] = m, w[42] = y, w[43] = C, w[44] = S) : S = w[44];
                 let ea = `${dr.buttonRow} ${V ? "flex-justify-between" : "flex-justify-end"}`;
-                return w[45] !== V || w[46] !== E ? (S = V && E && (0, p.jsx)(ln.Q, {
+                return w[45] !== V || w[46] !== E ? (F = V && E && (0, p.jsx)(ln.Q, {
                     onClick: e => V?.(e, W),
                     children: E
-                }), w[45] = V, w[46] = E, w[47] = S) : S = w[47], w[48] !== N ? (L = (0, p.jsx)(ln.Q, {
+                }), w[45] = V, w[46] = E, w[47] = F) : F = w[47], w[48] !== N ? (L = (0, p.jsx)(ln.Q, {
                     onClick: N,
-                    children: o$.cancel
+                    children: oQ.cancel
                 }), w[48] = N, w[49] = L) : L = w[49], w[50] !== q || w[51] !== H ? (x = (0, p.jsx)(ln.Q, {
                     type: "submit",
                     variant: "primary",
@@ -29362,13 +29598,13 @@
                 }), w[50] = q, w[51] = H, w[52] = x) : x = w[52], w[53] !== L || w[54] !== x ? (K = (0, p.jsxs)("div", {
                     className: dr.buttonGroup,
                     children: [L, x]
-                }), w[53] = L, w[54] = x, w[55] = K) : K = w[55], w[56] !== ea || w[57] !== S || w[58] !== K ? (I = (0, p.jsxs)("div", {
+                }), w[53] = L, w[54] = x, w[55] = K) : K = w[55], w[56] !== ea || w[57] !== F || w[58] !== K ? (I = (0, p.jsxs)("div", {
                     className: ea,
-                    children: [S, K]
-                }), w[56] = ea, w[57] = S, w[58] = K, w[59] = I) : I = w[59], w[60] !== J || w[61] !== F || w[62] !== I ? (v = (0, p.jsxs)("form", {
+                    children: [F, K]
+                }), w[56] = ea, w[57] = F, w[58] = K, w[59] = I) : I = w[59], w[60] !== J || w[61] !== S || w[62] !== I ? (v = (0, p.jsxs)("form", {
                     onSubmit: J,
-                    children: [F, I]
-                }), w[60] = J, w[61] = F, w[62] = I, w[63] = v) : v = w[63], w[64] !== v || w[65] !== i || w[66] !== o ? (_ = (0, p.jsxs)("div", {
+                    children: [S, I]
+                }), w[60] = J, w[61] = S, w[62] = I, w[63] = v) : v = w[63], w[64] !== v || w[65] !== i || w[66] !== o ? (_ = (0, p.jsxs)("div", {
                     className: dr.formContainer,
                     id: "milestone-create-form",
                     "data-hpc": !0,
@@ -29512,7 +29748,7 @@
                 let c = (0, eV.useFragment)(l, e.repository);
                 i[1] !== o || i[2] !== r || i[3] !== c ? (a = (e, l) => {
                     if (d(null), !c?.viewerCanPush) {
-                        d(o$.milestoneCreatePermissionError),
+                        d(oQ.milestoneCreatePermissionError),
                             l(!1);
                         return
                     }
@@ -29530,11 +29766,11 @@
                         input: e,
                         onError: e => {
                             l(!1),
-                                e.cause && Array.isArray(e.cause) ? d(dc(e.cause)) : d(o$.milestoneCreateError)
+                                e.cause && Array.isArray(e.cause) ? d(dc(e.cause)) : d(oQ.milestoneCreateError)
                         },
                         onCompleted: e => {
                             if (!e.createMilestone?.milestone || e?.createMilestone?.errors?.length > 0) {
-                                d(o$.milestoneCreateError),
+                                d(oQ.milestoneCreateError),
                                     l(!1);
                                 return
                             }
@@ -29545,16 +29781,16 @@
                 let m = a;
                 i[5] === Symbol.for("react.memo_cache_sentinel") ? (n = (0, p.jsxs)("p", {
                     className: dn.milestonePageDescription,
-                    children: [o$.createMilestoneDescription, " ", o$.learnMorePrefix, " ", (0, p.jsx)(aM.A, {
+                    children: [oQ.createMilestoneDescription, " ", oQ.learnMorePrefix, " ", (0, p.jsx)(aM.A, {
                         href: "https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues",
                         inline: !0,
-                        children: o$.milestonesAndIssues
+                        children: oQ.milestonesAndIssues
                     }), "."]
                 }), i[5] = n) : n = i[5];
                 let g = n;
                 return i[6] === Symbol.for("react.memo_cache_sentinel") ? (t = (0, p.jsx)(oz, {
-                    title: o$.milestonePageError,
-                    message: o$.milestonePageErrorMessage
+                    title: oQ.milestonePageError,
+                    message: oQ.milestonePageErrorMessage
                 }), i[6] = t) : t = i[6], i[7] !== m || i[8] !== e.optionConfig || i[9] !== c || i[10] !== u ? (s = (0, p.jsx)("div", {
                     className: dn.middlePaneWrapper,
                     "data-hpc": !0,
@@ -29564,9 +29800,9 @@
                         children: (0, p.jsx)(du, {
                             repository: c,
                             optionConfig: e.optionConfig,
-                            formTitle: o$.createMilestone,
+                            formTitle: oQ.createMilestone,
                             formDescription: g,
-                            formSubmitLabel: o$.createMilestone,
+                            formSubmitLabel: oQ.createMilestone,
                             onSubmit: m,
                             onCancel: dg,
                             submissionErrors: u
@@ -29603,7 +29839,7 @@
             }
             function dk({ repository: e }) {
                 let l = (0, eV.useFragment)(dl, e),
-                    { current_user_settings: a } = (0, S.X)(),
+                    { current_user_settings: a } = (0, F.X)(),
                     n = {
                         useMonospaceFont: a.use_monospace_font,
                         pasteUrlsAsPlainText: a.paste_url_link_as_plain_text,
@@ -30176,7 +30412,7 @@
                 }
             }();
             dC.hash = "877381f6a4d0225be11b63a26d9ca9c5";
-            let dF = {
+            let dS = {
                 middlePaneWrapper: "RepositoryLabel-module__middlePaneWrapper--AubQN",
                 labelListWrapper: "RepositoryLabel-module__labelListWrapper--LLFcJ",
                 labelRowDescriptionItemDescription: "RepositoryLabel-module__labelRowDescriptionItemDescription--dXS7A",
@@ -30195,7 +30431,7 @@
                 countContainer: "RepositoryLabel-module__countContainer--AVpX2",
                 countItem: "RepositoryLabel-module__countItem--B5nNu"
             },
-                dS = {
+                dF = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -30234,7 +30470,7 @@
                     type: "Label",
                     abstractKey: null
                 };
-            dS.hash = "018d9a2a4921ee93f19396bdfd3a4d22";
+            dF.hash = "018d9a2a4921ee93f19396bdfd3a4d22";
             var dL = a(87854);
             let dx = {
                 cancelButtonText: "Cancel",
@@ -30398,15 +30634,15 @@
                     k,
                     f,
                     b = (0, t4.c)(34),
-                    { color: C, onChangeCallback: F } = e,
-                    [S, L] = (0, h.useState)(C),
+                    { color: C, onChangeCallback: S } = e,
+                    [F, L] = (0, h.useState)(C),
                     [x, K] = (0, h.useState)(C),
                     [I, v] = (0, h.useState)(!1),
                     _ = d_(1, x);
-                b[0] !== F ? (a = e => {
+                b[0] !== S ? (a = e => {
                     L(e),
-                        dR(e) && K(e), F?.(e)
-                }, b[0] = F, b[1] = a) : a = b[1];
+                        dR(e) && K(e), S?.(e)
+                }, b[0] = S, b[1] = a) : a = b[1];
                 let w = a;
                 b[2] !== w ? (n = () => w(dN()), b[2] = w, b[3] = n) : n = b[3];
                 let N = n;
@@ -30451,17 +30687,17 @@
                     b[18] === Symbol.for("react.memo_cache_sentinel") ? (c = () => v(!0), m = e => {
                         e.relatedTarget && e.relatedTarget.closest(`.${dI.popup}`) || v(!1)
                     }, b[18] = c, b[19] = m) : (c = b[18], m = b[19]);
-                let T = dR(S) ? "success" : "error";
-                return b[20] !== S || b[21] !== R || b[22] !== l || b[23] !== T ? (g = (0, p.jsxs)(lN.A, {
+                let T = dR(F) ? "success" : "error";
+                return b[20] !== F || b[21] !== R || b[22] !== l || b[23] !== T ? (g = (0, p.jsxs)(lN.A, {
                     children: [d, (0, p.jsx)(lR.A, {
-                        value: S,
+                        value: F,
                         onChange: R,
                         onFocus: c,
                         onBlur: m,
                         validationStatus: T,
                         ref: l
                     })]
-                }), b[20] = S, b[21] = R, b[22] = l, b[23] = T, b[24] = g) : g = b[24], b[25] !== A || b[26] !== I ? (y = I && (0, p.jsxs)("div", {
+                }), b[20] = F, b[21] = R, b[22] = l, b[23] = T, b[24] = g) : g = b[24], b[25] !== A || b[26] !== I ? (y = I && (0, p.jsxs)("div", {
                     className: dI.popup,
                     tabIndex: -1,
                     children: [(0, p.jsx)("span", {
@@ -30536,8 +30772,8 @@
                     f,
                     b,
                     C,
-                    F,
                     S,
+                    F,
                     L,
                     x,
                     K,
@@ -30550,8 +30786,8 @@
                     E = void 0 === P ? dx.newLabel : P,
                     q = void 0 === A ? "" : A,
                     O = void 0 === T ? dx.createButtonText : T,
-                    [B, Q] = (0, h.useState)(V?.name ?? ""),
-                    [$, U] = (0, h.useState)(V?.description ?? "");
+                    [B, $] = (0, h.useState)(V?.name ?? ""),
+                    [Q, U] = (0, h.useState)(V?.description ?? "");
                 j[0] !== V ? (l = () => V?.color ? `#${V.color}` : dN(), j[0] = V, j[1] = l) : l = j[1];
                 let [z, H] = (0, h.useState)(l),
                     [W, G] = (0, h.useState)(z),
@@ -30561,7 +30797,7 @@
                     ea = (0, h.useRef)(null),
                     en = (0, h.useRef)(null),
                     et = (0, h.useRef)(null);
-                j[2] !== z || j[3] !== W || j[4] !== $ || j[5] !== Z || j[6] !== B || j[7] !== R ? (a = () => {
+                j[2] !== z || j[3] !== W || j[4] !== Q || j[5] !== Z || j[6] !== B || j[7] !== R ? (a = () => {
                     if (!Z) {
                         if (X(!0), J(null), el(null), !B) {
                             J(dx.nameRequired),
@@ -30575,11 +30811,11 @@
                         }
                         R({
                             name: B.trim(),
-                            description: $.trim(),
+                            description: Q.trim(),
                             color: z.replace("#", "")
                         }, X)
                     }
-                }, j[2] = z, j[3] = W, j[4] = $, j[5] = Z, j[6] = B, j[7] = R, j[8] = a) : a = j[8];
+                }, j[2] = z, j[3] = W, j[4] = Q, j[5] = Z, j[6] = B, j[7] = R, j[8] = a) : a = j[8];
                 let es = a;
                 j[9] === Symbol.for("react.memo_cache_sentinel") ? (n = e => {
                     G(e),
@@ -30605,7 +30841,7 @@
                     }) : null, j[16] = q, j[17] = r) : r = j[17];
                 let er = B || dx.labelPreview;
                 return j[18] !== z ? (o = z?.replace("#", ""), j[18] = z, j[19] = o) : o = j[19], j[20] !== er || j[21] !== o ? (u = (0, p.jsx)("div", {
-                    className: dF.dialogFormPreviewContainer,
+                    className: dS.dialogFormPreviewContainer,
                     children: (0, p.jsx)(dT, {
                         name: er,
                         color: o
@@ -30613,10 +30849,10 @@
                 }), j[20] = er, j[21] = o, j[22] = u) : u = j[22], j[23] === Symbol.for("react.memo_cache_sentinel") ? (d = (0, p.jsx)(lN.A.Label, {
                     htmlFor: "label-form-name",
                     children: dx.name
-                }), j[23] = d) : d = j[23], j[24] === Symbol.for("react.memo_cache_sentinel") ? (c = e => Q(e.target.value), j[24] = c) : c = j[24], j[25] !== B || j[26] !== M ? (m = (0, p.jsx)(lR.A, {
+                }), j[23] = d) : d = j[23], j[24] === Symbol.for("react.memo_cache_sentinel") ? (c = e => $(e.target.value), j[24] = c) : c = j[24], j[25] !== B || j[26] !== M ? (m = (0, p.jsx)(lR.A, {
                     value: B,
                     onChange: c,
-                    className: dF.dialogFormInput,
+                    className: dS.dialogFormInput,
                     ref: en,
                     maxLength: 50,
                     placeholder: M
@@ -30624,38 +30860,38 @@
                     variant: "error",
                     children: Y
                 }), j[28] = Y, j[29] = g) : g = j[29], j[30] !== m || j[31] !== g ? (y = (0, p.jsxs)(lN.A, {
-                    className: dF.dialogFormInput,
+                    className: dS.dialogFormInput,
                     id: "label-form-name",
                     children: [d, m, g]
                 }), j[30] = m, j[31] = g, j[32] = y) : y = j[32], j[33] === Symbol.for("react.memo_cache_sentinel") ? (k = (0, p.jsx)(lN.A.Label, {
                     htmlFor: "label-form-description",
                     children: dx.description
-                }), j[33] = k) : k = j[33], j[34] === Symbol.for("react.memo_cache_sentinel") ? (f = e => U(e.target.value), j[34] = f) : f = j[34], j[35] !== $ || j[36] !== D ? (b = (0, p.jsxs)(lN.A, {
-                    className: dF.dialogFormInput,
+                }), j[33] = k) : k = j[33], j[34] === Symbol.for("react.memo_cache_sentinel") ? (f = e => U(e.target.value), j[34] = f) : f = j[34], j[35] !== Q || j[36] !== D ? (b = (0, p.jsxs)(lN.A, {
+                    className: dS.dialogFormInput,
                     id: "label-form-description",
                     children: [k, (0, p.jsx)(di.Ay, {
-                        value: $,
+                        value: Q,
                         onChange: f,
                         rows: 3,
-                        className: dF.dialogFormInput,
+                        className: dS.dialogFormInput,
                         placeholder: D
                     })]
-                }), j[35] = $, j[36] = D, j[37] = b) : b = j[37], j[38] !== z ? (C = (0, p.jsx)(dP, {
+                }), j[35] = Q, j[36] = D, j[37] = b) : b = j[37], j[38] !== z ? (C = (0, p.jsx)(dP, {
                     color: z,
                     onChangeCallback: ei,
                     ref: et
-                }), j[38] = z, j[39] = C) : C = j[39], j[40] === Symbol.for("react.memo_cache_sentinel") ? (F = (0, p.jsx)(lN.A.Label, {
+                }), j[38] = z, j[39] = C) : C = j[39], j[40] === Symbol.for("react.memo_cache_sentinel") ? (S = (0, p.jsx)(lN.A.Label, {
                     visuallyHidden: !0,
                     children: dx.color
-                }), j[40] = F) : F = j[40], j[41] !== ee ? (S = ee && (0, p.jsx)(lN.A.Validation, {
+                }), j[40] = S) : S = j[40], j[41] !== ee ? (F = ee && (0, p.jsx)(lN.A.Validation, {
                     variant: "error",
                     children: ee
-                }), j[41] = ee, j[42] = S) : S = j[42], j[43] !== C || j[44] !== S ? (L = (0, p.jsxs)(lN.A, {
-                    className: dF.dialogFormInput,
+                }), j[41] = ee, j[42] = F) : F = j[42], j[43] !== C || j[44] !== F ? (L = (0, p.jsxs)(lN.A, {
+                    className: dS.dialogFormInput,
                     id: "label-form-color",
-                    children: [C, F, S]
-                }), j[43] = C, j[44] = S, j[45] = L) : L = j[45], j[46] !== r || j[47] !== u || j[48] !== y || j[49] !== b || j[50] !== L ? (x = (0, p.jsxs)(iT.l.Body, {
-                    className: dF.dialogFormBody,
+                    children: [C, S, F]
+                }), j[43] = C, j[44] = F, j[45] = L) : L = j[45], j[46] !== r || j[47] !== u || j[48] !== y || j[49] !== b || j[50] !== L ? (x = (0, p.jsxs)(iT.l.Body, {
+                    className: dS.dialogFormBody,
                     children: [r, u, y, b, L]
                 }), j[46] = r, j[47] = u, j[48] = y, j[49] = b, j[50] = L, j[51] = x) : x = j[51], j[52] !== Z ? (K = (0, p.jsx)(tk.cQ, {
                     commandId: "repository-label:cancel-save-label",
@@ -30668,12 +30904,12 @@
                     showKeybindingHint: !0,
                     children: O
                 }), j[54] = Z, j[55] = O, j[56] = I) : I = j[56], j[57] !== K || j[58] !== I ? (v = (0, p.jsxs)(iT.l.Footer, {
-                    className: dF.dialogFormButtonGroup,
+                    className: dS.dialogFormButtonGroup,
                     children: [K, I]
                 }), j[57] = K, j[58] = I, j[59] = v) : v = j[59], j[60] !== E || j[61] !== N || j[62] !== x || j[63] !== v ? (_ = (0, p.jsxs)(iT.l, {
                     title: E,
                     onClose: N,
-                    className: dF.dialogForm,
+                    className: dS.dialogForm,
                     children: [x, v]
                 }), j[60] = E, j[61] = N, j[62] = x, j[63] = v, j[64] = _) : _ = j[64], j[65] !== _ || j[66] !== i ? (w = (0, p.jsx)(tk.tL, {
                     commands: i,
@@ -30892,18 +31128,18 @@
             dq.hash = "b68f025268eb8acb0882842361c6589b";
             var dO = a(52450),
                 dB = a(6020);
-            let dQ = e => {
+            let d$ = e => {
                 let l,
                     a,
                     n,
                     t = (0, t4.c)(7),
                     { secondaryQueryRef: s, labelName: i, labelId: r, repositoryNameWithOwner: o } = e;
                 return s ? (t[0] === Symbol.for("react.memo_cache_sentinel") ? (l = (0, p.jsxs)(np.z, {
-                    className: dF.labelRowIssuesAndPrsCount,
+                    className: dS.labelRowIssuesAndPrsCount,
                     children: [(0, p.jsx)(j.AlertIcon, {
                         size: 16
                     }), " Could not load data"]
-                }), t[0] = l) : l = t[0], t[1] === Symbol.for("react.memo_cache_sentinel") ? (a = (0, p.jsx)(d$, {}), t[1] = a) : a = t[1], t[2] !== r || t[3] !== i || t[4] !== o || t[5] !== s ? (n = (0, p.jsx)(sP.t, {
+                }), t[0] = l) : l = t[0], t[1] === Symbol.for("react.memo_cache_sentinel") ? (a = (0, p.jsx)(dQ, {}), t[1] = a) : a = t[1], t[2] !== r || t[3] !== i || t[4] !== o || t[5] !== s ? (n = (0, p.jsx)(sP.t, {
                     fallback: l,
                     children: (0, p.jsx)(h.Suspense, {
                         fallback: a,
@@ -30916,15 +31152,15 @@
                     })
                 }), t[2] = r, t[3] = i, t[4] = o, t[5] = s, t[6] = n) : n = t[6], n) : null
             },
-                d$ = () => {
+                dQ = () => {
                     let e,
                         l = (0, t4.c)(1);
                     return l[0] === Symbol.for("react.memo_cache_sentinel") ? (e = (0, p.jsxs)(np.z, {
-                        className: dF.labelRowIssuesAndPrsCount,
+                        className: dS.labelRowIssuesAndPrsCount,
                         children: [(0, p.jsx)(dO.f, {
-                            className: dF.loadingIssueAndPullRequestCount
+                            className: dS.loadingIssueAndPullRequestCount
                         }), (0, p.jsx)(dO.f, {
-                            className: dF.loadingIssueAndPullRequestCount
+                            className: dS.loadingIssueAndPullRequestCount
                         })]
                     }), l[0] = e) : e = l[0], e
                 },
@@ -30965,15 +31201,15 @@
                         f = y.pullRequestCount || 0,
                         b = f > 0,
                         C = h > 0,
-                        F = !b && dF.empty;
-                    d[4] !== F ? (n = (0, a4.$)(dF.countContainer, F), d[4] = F, d[5] = n) : n = d[5],
+                        S = !b && dS.empty;
+                    d[4] !== S ? (n = (0, a4.$)(dS.countContainer, S), d[4] = S, d[5] = n) : n = d[5],
                         d[6] !== k || d[7] !== b || d[8] !== f ? (t = b && (0, p.jsx)(nG.m, {
                             text: `${f} open pull requests`,
                             direction: "n",
                             children: (0, p.jsxs)(aM.A, {
                                 href: k("pr"),
                                 muted: !0,
-                                className: dF.countItem,
+                                className: dS.countItem,
                                 children: [(0, p.jsx)(j.GitPullRequestIcon, {
                                     size: 16
                                 }), f, " ", (0, p.jsx)(dB.s, {
@@ -30985,14 +31221,14 @@
                             className: n,
                             children: t
                         }), d[10] = n, d[11] = t, d[12] = s) : s = d[12];
-                    let S = !C && dF.empty;
-                    return d[13] !== S ? (i = (0, a4.$)(dF.countContainer, S), d[13] = S, d[14] = i) : i = d[14], d[15] !== k || d[16] !== C || d[17] !== h ? (r = C && (0, p.jsx)(nG.m, {
+                    let F = !C && dS.empty;
+                    return d[13] !== F ? (i = (0, a4.$)(dS.countContainer, F), d[13] = F, d[14] = i) : i = d[14], d[15] !== k || d[16] !== C || d[17] !== h ? (r = C && (0, p.jsx)(nG.m, {
                         text: `${h} open issues`,
                         direction: "n",
                         children: (0, p.jsxs)(aM.A, {
                             href: k("issue"),
                             muted: !0,
-                            className: dF.countItem,
+                            className: dS.countItem,
                             children: [(0, p.jsx)(j.IssueOpenedIcon, {
                                 size: 16
                             }), h, " ", (0, p.jsx)(dB.s, {
@@ -31003,15 +31239,15 @@
                         className: i,
                         children: r
                     }), d[19] = i, d[20] = r, d[21] = o) : o = d[21], d[22] !== o || d[23] !== s ? (u = (0, p.jsxs)(np.z, {
-                        className: dF.labelRowIssuesAndPrsCount,
+                        className: dS.labelRowIssuesAndPrsCount,
                         children: [s, o]
                     }), d[22] = o, d[23] = s, d[24] = u) : u = d[24], u
                 };
             try {
-                dQ.displayName || (dQ.displayName = "IssuesAndPullRequestsCount")
+                d$.displayName || (d$.displayName = "IssuesAndPullRequestsCount")
             } catch { }
             try {
-                d$.displayName || (d$.displayName = "LoadingLabelSecondaryData")
+                dQ.displayName || (dQ.displayName = "LoadingLabelSecondaryData")
             } catch { }
             try {
                 dU.displayName || (dU.displayName = "IssuesAndPullRequestsCountFetched")
@@ -31037,18 +31273,18 @@
                     f,
                     b,
                     C,
-                    F,
-                    S = (0, t4.c)(57),
+                    S,
+                    F = (0, t4.c)(57),
                     { label: L, isActionsAvailable: x, viewerCanPush: K, secondaryQueryRef: I, repositoryId: v, repositoryNameWithOwner: _ } = e,
                     [w, j] = (0, h.useState)(!1),
                     [N, R] = (0, h.useState)(!1),
                     [P, A] = (0, h.useState)(!1),
                     [T, M] = (0, h.useState)(""),
                     D = (0, h.useRef)(null);
-                S[0] === Symbol.for("react.memo_cache_sentinel") ? (l = dS, S[0] = l) : l = S[0];
+                F[0] === Symbol.for("react.memo_cache_sentinel") ? (l = dF, F[0] = l) : l = F[0];
                 let V = (0, eV.useFragment)(l, L),
                     E = (0, eV.useRelayEnvironment)();
-                S[1] !== V.id || S[2] !== E || S[3] !== v ? (a = async () => {
+                F[1] !== V.id || F[2] !== E || F[3] !== v ? (a = async () => {
                     !function ({ environment: e, input: l, onError: a, onCompleted: n }) {
                         (0, eV.commitMutation)(e, {
                             mutation: dK,
@@ -31085,9 +31321,9 @@
                             j(!0)
                         }
                     })
-                }, S[1] = V.id, S[2] = E, S[3] = v, S[4] = a) : a = S[4];
+                }, F[1] = V.id, F[2] = E, F[3] = v, F[4] = a) : a = F[4];
                 let B = a;
-                S[5] !== V.id || S[6] !== E ? (n = async (e, l) => {
+                F[5] !== V.id || F[6] !== E ? (n = async (e, l) => {
                     M(""),
                         function ({ environment: e, input: l, onError: a, onCompleted: n }) {
                             (0, eV.commitMutation)(e, {
@@ -31131,25 +31367,25 @@
                                     l(!1)
                             }
                         })
-                }, S[5] = V.id, S[6] = E, S[7] = n) : n = S[7];
-                let Q = n;
-                if (S[8] !== w ? (t = () => {
+                }, F[5] = V.id, F[6] = E, F[7] = n) : n = F[7];
+                let $ = n;
+                if (F[8] !== w ? (t = () => {
                     w && D?.current && D.current.focus()
-                }, s = [D, w], S[8] = w, S[9] = t, S[10] = s) : (t = S[9], s = S[10]), (0, h.useEffect)(t, s), S[11] !== V.name || S[12] !== _) {
+                }, s = [D, w], F[8] = w, F[9] = t, F[10] = s) : (t = F[9], s = F[10]), (0, h.useEffect)(t, s), F[11] !== V.name || F[12] !== _) {
                     let e = ej(q.Ds.open, [V.name], "label");
                     i = (0, y.G7)("issues_label_search_url") ? lf({
                         viewId: O.repository,
                         query: e
                     }) : `/${_}/labels/${encodeURIComponent(V.name)}`,
-                        S[11] = V.name,
-                        S[12] = _,
-                        S[13] = i
+                        F[11] = V.name,
+                        F[12] = _,
+                        F[13] = i
                 } else
-                    i = S[13];
-                let $ = i,
+                    i = F[13];
+                let Q = i,
                     U = V.id;
-                S[14] === Symbol.for("react.memo_cache_sentinel") ? (r = (0, p.jsx)(p.Fragment, {}), S[14] = r) : r = S[14],
-                    S[15] !== x || S[16] !== K ? (o = x ? (0, p.jsx)(dL.L, {
+                F[14] === Symbol.for("react.memo_cache_sentinel") ? (r = (0, p.jsx)(p.Fragment, {}), F[14] = r) : r = F[14],
+                    F[15] !== x || F[16] !== K ? (o = x ? (0, p.jsx)(dL.L, {
                         staticMenuActions: [...K ? [{
                             key: "edit",
                             render: () => (0, p.jsx)(lU.l.Item, {
@@ -31166,38 +31402,38 @@
                                 })]
                             })
                         }] : []]
-                    }) : void 0, S[15] = x, S[16] = K, S[17] = o) : o = S[17];
-                let z = !x && dF.noActionBar;
-                S[18] !== z ? (u = (0, a4.$)(dF.labelRowDescription, z), S[18] = z, S[19] = u) : u = S[19];
+                    }) : void 0, F[15] = x, F[16] = K, F[17] = o) : o = F[17];
+                let z = !x && dS.noActionBar;
+                F[18] !== z ? (u = (0, a4.$)(dS.labelRowDescription, z), F[18] = z, F[19] = u) : u = F[19];
                 let H = V.nameHTML;
-                S[20] !== H ? (d = (0, p.jsx)(nW.JR, {
+                F[20] !== H ? (d = (0, p.jsx)(nW.JR, {
                     html: H
-                }), S[20] = H, S[21] = d) : d = S[21];
+                }), F[20] = H, F[21] = d) : d = F[21];
                 let W = `#${V.color}`;
-                return S[22] !== d || S[23] !== W ? (c = (0, p.jsx)(nH.a, {
+                return F[22] !== d || F[23] !== W ? (c = (0, p.jsx)(nH.a, {
                     text: d,
                     interactive: !0,
                     fillColor: W
-                }, 0), S[22] = d, S[23] = W, S[24] = c) : c = S[24], S[25] !== $ || S[26] !== c ? (m = (0, p.jsxs)(np.z, {
+                }, 0), F[22] = d, F[23] = W, F[24] = c) : c = F[24], F[25] !== Q || F[26] !== c ? (m = (0, p.jsxs)(np.z, {
                     children: [(0, p.jsx)(aM.A, {
-                        href: $,
+                        href: Q,
                         muted: !0,
                         children: c
                     }), " "]
-                }), S[25] = $, S[26] = c, S[27] = m) : m = S[27], S[28] !== V.description ? (g = (0, p.jsx)(np.z, {
-                    className: dF.labelRowDescriptionItemDescription,
+                }), F[25] = Q, F[26] = c, F[27] = m) : m = F[27], F[28] !== V.description ? (g = (0, p.jsx)(np.z, {
+                    className: dS.labelRowDescriptionItemDescription,
                     children: V.description
-                }), S[28] = V.description, S[29] = g) : g = S[29], S[30] !== V.id || S[31] !== V.name || S[32] !== _ || S[33] !== I ? (k = (0, p.jsx)(dQ, {
+                }), F[28] = V.description, F[29] = g) : g = F[29], F[30] !== V.id || F[31] !== V.name || F[32] !== _ || F[33] !== I ? (k = (0, p.jsx)(d$, {
                     repositoryNameWithOwner: _,
                     labelName: V.name,
                     labelId: V.id,
                     secondaryQueryRef: I
-                }), S[30] = V.id, S[31] = V.name, S[32] = _, S[33] = I, S[34] = k) : k = S[34], S[35] !== u || S[36] !== m || S[37] !== g || S[38] !== k ? (f = (0, p.jsx)(az.Q, {
-                    children: (0, p.jsxs)(a$.U, {
+                }), F[30] = V.id, F[31] = V.name, F[32] = _, F[33] = I, F[34] = k) : k = F[34], F[35] !== u || F[36] !== m || F[37] !== g || F[38] !== k ? (f = (0, p.jsx)(az.Q, {
+                    children: (0, p.jsxs)(aQ.U, {
                         className: u,
                         children: [m, g, k]
                     })
-                }), S[35] = u, S[36] = m, S[37] = g, S[38] = k, S[39] = f) : f = S[39], S[40] !== w || S[41] !== B || S[42] !== N ? (b = N && (0, p.jsx)(lQ.K, {
+                }), F[35] = u, F[36] = m, F[37] = g, F[38] = k, F[39] = f) : f = F[39], F[40] !== w || F[41] !== B || F[42] !== N ? (b = N && (0, p.jsx)(l$.K, {
                     onClose: e => {
                         "confirm" === e ? B() : (j(!1), R(!1))
                     },
@@ -31223,7 +31459,7 @@
                             children: dx.deleteLabelAssociatedIssuesNote
                         })]
                     })
-                }), S[40] = w, S[41] = B, S[42] = N, S[43] = b) : b = S[43], S[44] !== V.color || S[45] !== V.description || S[46] !== V.name || S[47] !== T || S[48] !== Q || S[49] !== P ? (C = P && (0, p.jsx)(dM, {
+                }), F[40] = w, F[41] = B, F[42] = N, F[43] = b) : b = F[43], F[44] !== V.color || F[45] !== V.description || F[46] !== V.name || F[47] !== T || F[48] !== $ || F[49] !== P ? (C = P && (0, p.jsx)(dM, {
                     onDialogClose: () => {
                         M(""),
                             A(!1)
@@ -31232,18 +31468,18 @@
                     descriptionPlaceholder: dx.labelDescriptionPlaceholder,
                     submissionErrors: T,
                     submitButtonText: dx.saveChanges,
-                    onDialogSubmit: Q,
+                    onDialogSubmit: $,
                     initialValues: {
                         name: V.name,
                         description: V.description,
                         color: V.color
                     }
-                }), S[44] = V.color, S[45] = V.description, S[46] = V.name, S[47] = T, S[48] = Q, S[49] = P, S[50] = C) : C = S[50], S[51] !== V.id || S[52] !== f || S[53] !== b || S[54] !== C || S[55] !== o ? (F = (0, p.jsxs)(aH.c, {
+                }), F[44] = V.color, F[45] = V.description, F[46] = V.name, F[47] = T, F[48] = $, F[49] = P, F[50] = C) : C = F[50], F[51] !== V.id || F[52] !== f || F[53] !== b || F[54] !== C || F[55] !== o ? (S = (0, p.jsxs)(aH.c, {
                     title: r,
                     role: "listitem",
                     secondaryActions: o,
                     children: [f, b, C]
-                }, U), S[51] = V.id, S[52] = f, S[53] = b, S[54] = C, S[55] = o, S[56] = F) : F = S[56], F
+                }, U), F[51] = V.id, F[52] = f, F[53] = b, F[54] = C, F[55] = o, F[56] = S) : S = F[56], S
             }
             try {
                 dH.displayName || (dH.displayName = "LabelRow")
@@ -31275,95 +31511,95 @@
                     f,
                     b,
                     C,
-                    F,
-                    S = (0, t4.c)(50),
+                    S,
+                    F = (0, t4.c)(50),
                     [L] = (0, ll.o)(),
                     x = (0, ll.Z)();
-                if (S[0] !== L) {
+                if (F[0] !== L) {
                     let a = L.get("sort");
                     if (l = "name", e = "asc", a) {
                         let [n, t] = a.split("-");
                         dG.includes(n) && (l = n),
                             ("asc" === t || "desc" === t) && (e = t)
                     }
-                    S[0] = L,
-                        S[1] = e,
-                        S[2] = l
+                    F[0] = L,
+                        F[1] = e,
+                        F[2] = l
                 } else
-                    e = S[1],
-                        l = S[2];
-                S[3] !== x || S[4] !== l || S[5] !== L ? (a = e => {
+                    e = F[1],
+                        l = F[2];
+                F[3] !== x || F[4] !== l || F[5] !== L ? (a = e => {
                     if (e === l)
                         return;
                     let a = new URLSearchParams(L);
                     a.set("sort", `${e}-${"count" === e ? "desc" : "asc"}`),
                         x(`${N.cg?.location.pathname}?${a.toString()}`)
-                }, S[3] = x, S[4] = l, S[5] = L, S[6] = a) : a = S[6];
+                }, F[3] = x, F[4] = l, F[5] = L, F[6] = a) : a = F[6];
                 let K = a;
-                S[7] !== e || S[8] !== x || S[9] !== l || S[10] !== L ? (n = a => {
+                F[7] !== e || F[8] !== x || F[9] !== l || F[10] !== L ? (n = a => {
                     if (a === e)
                         return;
                     let n = new URLSearchParams(L);
                     n.set("sort", `${l}-${a}`),
                         x(`${N.cg?.location.pathname}?${n.toString()}`)
-                }, S[7] = e, S[8] = x, S[9] = l, S[10] = L, S[11] = n) : n = S[11];
+                }, F[7] = e, F[8] = x, F[9] = l, F[10] = L, F[11] = n) : n = F[11];
                 let I = n,
                     v = "asc" === e ? j.SortAscIcon : j.SortDescIcon;
-                S[12] !== v ? (t = (0, p.jsx)(l$.W.Button, {
+                F[12] !== v ? (t = (0, p.jsx)(lQ.W.Button, {
                     variant: "invisible",
                     leadingVisual: v,
                     children: "Sort"
-                }), S[12] = v, S[13] = t) : t = S[13],
-                    S[14] === Symbol.for("react.memo_cache_sentinel") ? (s = (0, p.jsx)(lU.l.GroupHeading, {
+                }), F[12] = v, F[13] = t) : t = F[13],
+                    F[14] === Symbol.for("react.memo_cache_sentinel") ? (s = (0, p.jsx)(lU.l.GroupHeading, {
                         children: "Sort by"
-                    }), S[14] = s) : s = S[14],
-                    S[15] !== K ? (i = () => K("name"), S[15] = K, S[16] = i) : i = S[16];
+                    }), F[14] = s) : s = F[14],
+                    F[15] !== K ? (i = () => K("name"), F[15] = K, F[16] = i) : i = F[16];
                 let _ = "name" === l;
-                S[17] !== i || S[18] !== _ ? (r = (0, p.jsx)(lU.l.Item, {
+                F[17] !== i || F[18] !== _ ? (r = (0, p.jsx)(lU.l.Item, {
                     onSelect: i,
                     selected: _,
                     children: "Name"
-                }), S[17] = i, S[18] = _, S[19] = r) : r = S[19],
-                    S[20] !== K ? (o = () => K("count"), S[20] = K, S[21] = o) : o = S[21];
+                }), F[17] = i, F[18] = _, F[19] = r) : r = F[19],
+                    F[20] !== K ? (o = () => K("count"), F[20] = K, F[21] = o) : o = F[21];
                 let w = "count" === l;
-                S[22] !== o || S[23] !== w ? (u = (0, p.jsx)(lU.l.Item, {
+                F[22] !== o || F[23] !== w ? (u = (0, p.jsx)(lU.l.Item, {
                     onSelect: o,
                     selected: w,
                     children: "Total issue count"
-                }), S[22] = o, S[23] = w, S[24] = u) : u = S[24],
-                    S[25] !== u || S[26] !== r ? (d = (0, p.jsxs)(lU.l.Group, {
+                }), F[22] = o, F[23] = w, F[24] = u) : u = F[24],
+                    F[25] !== u || F[26] !== r ? (d = (0, p.jsxs)(lU.l.Group, {
                         children: [s, r, u]
-                    }), S[25] = u, S[26] = r, S[27] = d) : d = S[27],
-                    S[28] === Symbol.for("react.memo_cache_sentinel") ? (c = (0, p.jsx)(lU.l.GroupHeading, {
+                    }), F[25] = u, F[26] = r, F[27] = d) : d = F[27],
+                    F[28] === Symbol.for("react.memo_cache_sentinel") ? (c = (0, p.jsx)(lU.l.GroupHeading, {
                         children: "Order"
-                    }), S[28] = c) : c = S[28];
+                    }), F[28] = c) : c = F[28];
                 let R = "asc" === e;
-                S[29] !== I ? (m = () => I("asc"), S[29] = I, S[30] = m) : m = S[30],
-                    S[31] === Symbol.for("react.memo_cache_sentinel") ? (g = (0, p.jsx)(lU.l.LeadingVisual, {
+                F[29] !== I ? (m = () => I("asc"), F[29] = I, F[30] = m) : m = F[30],
+                    F[31] === Symbol.for("react.memo_cache_sentinel") ? (g = (0, p.jsx)(lU.l.LeadingVisual, {
                         children: (0, p.jsx)(j.SortAscIcon, {})
-                    }), S[31] = g) : g = S[31],
-                    S[32] !== R || S[33] !== m ? (y = (0, p.jsxs)(lU.l.Item, {
+                    }), F[31] = g) : g = F[31],
+                    F[32] !== R || F[33] !== m ? (y = (0, p.jsxs)(lU.l.Item, {
                         selected: R,
                         onSelect: m,
                         children: [g, "Ascending"]
-                    }, "ascending"), S[32] = R, S[33] = m, S[34] = y) : y = S[34];
+                    }, "ascending"), F[32] = R, F[33] = m, F[34] = y) : y = F[34];
                 let P = "desc" === e;
-                return S[35] !== I ? (k = () => I("desc"), S[35] = I, S[36] = k) : k = S[36], S[37] === Symbol.for("react.memo_cache_sentinel") ? (h = (0, p.jsx)(lU.l.LeadingVisual, {
+                return F[35] !== I ? (k = () => I("desc"), F[35] = I, F[36] = k) : k = F[36], F[37] === Symbol.for("react.memo_cache_sentinel") ? (h = (0, p.jsx)(lU.l.LeadingVisual, {
                     children: (0, p.jsx)(j.SortDescIcon, {})
-                }), S[37] = h) : h = S[37], S[38] !== P || S[39] !== k ? (f = (0, p.jsxs)(lU.l.Item, {
+                }), F[37] = h) : h = F[37], F[38] !== P || F[39] !== k ? (f = (0, p.jsxs)(lU.l.Item, {
                     selected: P,
                     onSelect: k,
                     children: [h, "Descending"]
-                }, "descending"), S[38] = P, S[39] = k, S[40] = f) : f = S[40], S[41] !== y || S[42] !== f ? (b = (0, p.jsxs)(lU.l.Group, {
+                }, "descending"), F[38] = P, F[39] = k, F[40] = f) : f = F[40], F[41] !== y || F[42] !== f ? (b = (0, p.jsxs)(lU.l.Group, {
                     children: [c, y, f]
-                }), S[41] = y, S[42] = f, S[43] = b) : b = S[43], S[44] !== d || S[45] !== b ? (C = (0, p.jsx)(l$.W.Overlay, {
+                }), F[41] = y, F[42] = f, F[43] = b) : b = F[43], F[44] !== d || F[45] !== b ? (C = (0, p.jsx)(lQ.W.Overlay, {
                     children: (0, p.jsxs)(lU.l, {
                         selectionVariant: "single",
                         children: [d, b]
                     })
-                }), S[44] = d, S[45] = b, S[46] = C) : C = S[46], S[47] !== C || S[48] !== t ? (F = (0, p.jsxs)(l$.W, {
+                }), F[44] = d, F[45] = b, F[46] = C) : C = F[46], F[47] !== C || F[48] !== t ? (S = (0, p.jsxs)(lQ.W, {
                     children: [t, C]
-                }), S[47] = C, S[48] = t, S[49] = F) : F = S[49], F
+                }), F[47] = C, F[48] = t, F[49] = S) : S = F[49], S
             }
             try {
                 dX.displayName || (dX.displayName = "LabelSortMenu")
@@ -31469,12 +31705,12 @@
                     l = a;
                 let [b] = (0, ll.o)(),
                     C = k.labels?.totalCount || 0,
-                    F = 1 === C ? "1 label" : `${C} labels`;
-                y[2] !== F ? (n = (0, p.jsx)("span", {
+                    S = 1 === C ? "1 label" : `${C} labels`;
+                y[2] !== S ? (n = (0, p.jsx)("span", {
                     "aria-live": "polite",
-                    children: F
-                }), y[2] = F, y[3] = n) : n = y[3];
-                let S = n,
+                    children: S
+                }), y[2] = S, y[3] = n) : n = y[3];
+                let F = n,
                     L = k.isWritable && k.viewerCanPush;
                 if (0 === l.length || b.get("q")) {
                     let e;
@@ -31489,11 +31725,11 @@
                         t = e
                 }
                 let x = t;
-                y[6] !== x || y[7] !== S ? (s = (0, p.jsx)(t0.X, {
-                    title: S,
+                y[6] !== x || y[7] !== F ? (s = (0, p.jsx)(t0.X, {
+                    title: F,
                     actions: x,
                     actionsLabel: "Label actions"
-                }), y[6] = x, y[7] = S, y[8] = s) : s = y[8];
+                }), y[6] = x, y[7] = F, y[8] = s) : s = y[8];
                 let K = s,
                     [I, v] = (0, eV.useQueryLoader)(dE);
                 y[9] !== v || y[10] !== l ? (i = () => {
@@ -31527,7 +31763,7 @@
                 }), y[26] = K, y[27] = _, y[28] = w, y[29] = u, y[30] = d, y[31] = c) : c = y[31], y[32] !== C || y[33] !== l.length ? (m = l.length > 0 && (0, p.jsx)(dY, {
                     dataCount: C
                 }), y[32] = C, y[33] = l.length, y[34] = m) : m = y[34], y[35] !== c || y[36] !== m ? (g = (0, p.jsxs)("div", {
-                    className: dF.labelListWrapper,
+                    className: dS.labelListWrapper,
                     "data-hpc": !0,
                     children: [c, m]
                 }), y[35] = c, y[36] = m, y[37] = g) : g = y[37], g
@@ -31933,14 +32169,14 @@
                 let b = (0, eV.useFragment)(l, y);
                 return g[1] === Symbol.for("react.memo_cache_sentinel") ? (a = (0, p.jsx)(lP.A, {
                     as: "h2",
-                    className: dF.heading,
+                    className: dS.heading,
                     children: "Labels"
                 }), g[1] = a) : a = g[1], g[2] !== b.viewerCanPush ? (n = b.viewerCanPush && (0, p.jsx)(ln.Q, {
                     variant: "primary",
                     onClick: () => f(!0),
                     children: "New label"
                 }), g[2] = b.viewerCanPush, g[3] = n) : n = g[3], g[4] !== n ? (t = (0, p.jsxs)("div", {
-                    className: dF.header,
+                    className: dS.header,
                     children: [a, n]
                 }), g[4] = n, g[5] = t) : t = g[5], g[6] === Symbol.for("react.memo_cache_sentinel") ? (s = (0, p.jsx)(d6, {}), g[6] = s) : s = g[6], g[7] === Symbol.for("react.memo_cache_sentinel") ? (i = (0, p.jsx)("div", {
                     children: "Oops we could not load the labels"
@@ -31955,7 +32191,7 @@
                     resizeable: !1,
                     leftPaneWidth: "small",
                     middlePane: (0, p.jsxs)("div", {
-                        className: dF.middlePaneWrapper,
+                        className: dS.middlePaneWrapper,
                         children: [t, s, o]
                     })
                 }), g[11] = t, g[12] = o, g[13] = u) : u = g[13], g[14] === Symbol.for("react.memo_cache_sentinel") ? (d = () => f(!1), g[14] = d) : d = g[14], g[15] !== b || g[16] !== k ? (c = (0, p.jsx)(ca, {
@@ -32269,12 +32505,12 @@
                 let g = (0, eV.useFragment)(l, m);
                 r[1] !== c || r[2] !== d || r[3] !== g.milestone || r[4] !== g.nameWithOwner || r[5] !== g.viewerCanPush ? (a = (e, l) => {
                     if (u(null), !g.milestone) {
-                        u(o$.milestoneErrorMessage),
+                        u(oQ.milestoneErrorMessage),
                             l(!1);
                         return
                     }
                     if (!g?.viewerCanPush) {
-                        u(o$.milestoneEditPermissionError),
+                        u(oQ.milestoneEditPermissionError),
                             l(!1);
                         return
                     }
@@ -32297,11 +32533,11 @@
                         },
                         onError: e => {
                             l(!1),
-                                e.cause && Array.isArray(e.cause) ? u(dc(e.cause)) : u(o$.milestoneEditError)
+                                e.cause && Array.isArray(e.cause) ? u(dc(e.cause)) : u(oQ.milestoneEditError)
                         },
                         onCompleted: e => {
                             if (!e.updateMilestone?.milestone || e?.updateMilestone?.errors?.length > 0) {
-                                u(o$.milestoneEditError),
+                                u(oQ.milestoneEditError),
                                     l(!1);
                                 return
                             }
@@ -32312,12 +32548,12 @@
                 let y = a;
                 r[7] !== c || r[8] !== d || r[9] !== g.milestone || r[10] !== g.nameWithOwner || r[11] !== g.viewerCanPush ? (n = (e, l) => {
                     if (e.preventDefault(), l(!0), u(null), !g?.milestone) {
-                        u(o$.milestoneErrorMessage),
+                        u(oQ.milestoneErrorMessage),
                             l(!1);
                         return
                     }
                     if (!g?.viewerCanPush) {
-                        u(o$.milestoneEditPermissionError),
+                        u(oQ.milestoneEditPermissionError),
                             l(!1);
                         return
                     }
@@ -32330,11 +32566,11 @@
                         },
                         onError: e => {
                             l(!1),
-                                e.cause && Array.isArray(e.cause) ? u(dc(e.cause)) : u(o$.milestoneEditError)
+                                e.cause && Array.isArray(e.cause) ? u(dc(e.cause)) : u(oQ.milestoneEditError)
                         },
                         onCompleted: e => {
                             if (!e.updateMilestone?.milestone) {
-                                u(o$.milestoneEditError),
+                                u(oQ.milestoneEditError),
                                     l(!1);
                                 return
                             }
@@ -32348,8 +32584,8 @@
                     return r[13] === Symbol.for("react.memo_cache_sentinel") ? (e = (0, p.jsx)("div", {
                         className: dn.middlePaneWrapper,
                         children: (0, p.jsx)(oz, {
-                            title: o$.milestoneError,
-                            message: o$.milestoneErrorMessage
+                            title: oQ.milestoneError,
+                            message: oQ.milestoneErrorMessage
                         })
                     }), r[13] = e) : e = r[13], e
                 }
@@ -32361,10 +32597,10 @@
                 }, r[14] = g.milestone.description, r[15] = g.milestone.dueOn, r[16] = g.milestone.id, r[17] = g.milestone.title, r[18] = t) : t = r[18];
                 let f = t;
                 r[19] === Symbol.for("react.memo_cache_sentinel") ? (s = (0, p.jsx)(oz, {
-                    title: o$.milestonePageError,
-                    message: o$.milestonePageErrorMessage
+                    title: oQ.milestonePageError,
+                    message: oQ.milestonePageErrorMessage
                 }), r[19] = s) : s = r[19];
-                let b = "OPEN" === g.milestone.state ? o$.closeMilestone : o$.reopenMilestone;
+                let b = "OPEN" === g.milestone.state ? oQ.closeMilestone : oQ.reopenMilestone;
                 return r[20] !== y || r[21] !== k || r[22] !== f || r[23] !== e.optionConfig || r[24] !== g || r[25] !== o || r[26] !== b ? (i = (0, p.jsx)("div", {
                     className: dn.middlePaneWrapper,
                     "data-testid": "milestone-edit",
@@ -32373,8 +32609,8 @@
                         children: (0, p.jsx)(du, {
                             repository: g,
                             optionConfig: e.optionConfig,
-                            formTitle: o$.editMilestoneTitle,
-                            formSubmitLabel: o$.saveChanges,
+                            formTitle: oQ.editMilestoneTitle,
+                            formSubmitLabel: oQ.saveChanges,
                             onSubmit: y,
                             onCancel: cc,
                             submissionErrors: o,
@@ -32414,7 +32650,7 @@
             }
             function cp({ repository: e }) {
                 let l = (0, eV.useFragment)(cr, e),
-                    { current_user_settings: a } = (0, S.X)(),
+                    { current_user_settings: a } = (0, F.X)(),
                     n = {
                         useMonospaceFont: a.use_monospace_font,
                         pasteUrlsAsPlainText: a.paste_url_link_as_plain_text,
@@ -32596,7 +32832,7 @@
                         transformVariables: ow["/:owner/:repo/issues"],
                         queryConfigs: {
                             pageQuery: {
-                                concreteRequest: rF
+                                concreteRequest: rS
                             }
                         },
                         errorCallbacks: l
@@ -32646,7 +32882,7 @@
                         transformVariables: ow["/:owner/:repo/issues/created_by/:author"],
                         queryConfigs: {
                             pageQuery: {
-                                concreteRequest: rF
+                                concreteRequest: rS
                             }
                         }
                     }), (0, g.X)({
@@ -32658,7 +32894,7 @@
                         transformVariables: ow["/:owner/:repo/issues/created_by/app/:author"],
                         queryConfigs: {
                             pageQuery: {
-                                concreteRequest: rF
+                                concreteRequest: rS
                             }
                         }
                     }), (0, g.X)({
@@ -32670,7 +32906,7 @@
                         transformVariables: ow["/:owner/:repo/issues/assigned/:assignee"],
                         queryConfigs: {
                             pageQuery: {
-                                concreteRequest: rF
+                                concreteRequest: rS
                             }
                         }
                     }), (0, g.X)({
@@ -32754,7 +32990,7 @@
                         transformVariables: ow["/:owner/:repo/issues/mentioned/:mentioned"],
                         queryConfigs: {
                             pageQuery: {
-                                concreteRequest: rF
+                                concreteRequest: rS
                             }
                         }
                     }), (0, g.X)({
@@ -32766,7 +33002,7 @@
                         Component: rY,
                         queryConfigs: {
                             pageQuery: {
-                                concreteRequest: rF
+                                concreteRequest: rS
                             }
                         }
                     })]
@@ -33072,16 +33308,16 @@
             var f = a(73451),
                 b = a(65607),
                 C = a(25654);
-            let F = {
+            let S = {
                 container: "SelectAllCheckbox-module__container--FJDtV",
                 formControlContainer: "SelectAllCheckbox-module__formControlContainer--JTzPI",
                 count: "SelectAllCheckbox-module__count--xEF8c"
             };
-            var S = a(89992),
+            var F = a(89992),
                 L = a(74304);
             let x = ({ onToggle: e, style: l, className: a }) => {
                 let { title: n } = (0, L.t)(),
-                    { isSelectable: u, selectedCount: d, totalCount: c, countOnPage: m, isSelectAllChecked: g, anyItemsSelected: p, singularUnits: y, pluralUnits: k } = (0, S.v)(),
+                    { isSelectable: u, selectedCount: d, totalCount: c, countOnPage: m, isSelectAllChecked: g, anyItemsSelected: p, singularUnits: y, pluralUnits: k } = (0, F.v)(),
                     { multiPageSelectionAllowed: h } = (0, C.P)(),
                     x = (0, o.useId)(),
                     K = (0, o.useRef)(null),
@@ -33101,11 +33337,11 @@
                 let P = `${x}-list-view-select-all`;
                 return (0, t.jsxs)("div", {
                     style: l,
-                    className: (0, r.$)(F.container, a),
+                    className: (0, r.$)(S.container, a),
                     ...(0, i.G)("list-view-select-all-container"),
                     id: `${x}-list-view-select-all-container`,
                     children: [(0, t.jsx)("div", {
-                        className: F.formControlContainer,
+                        className: S.formControlContainer,
                         children: (0, t.jsxs)(f.A, {
                             id: P,
                             children: [(0, t.jsx)(b.A, {
@@ -33126,7 +33362,7 @@
                             })]
                         })
                     }), (0, t.jsxs)("p", {
-                        className: (0, r.$)(F.count, p ? void 0 : "sr-only"),
+                        className: (0, r.$)(S.count, p ? void 0 : "sr-only"),
                         ...(0, i.G)("select-all-selected-count"),
                         children: [(0, t.jsxs)("span", {
                             "aria-hidden": "true",
@@ -33152,7 +33388,7 @@
             }) : null : null,
                 I = ({ title: e, assistiveAnnouncement: l, sectionFilters: a, children: n, style: c, className: m, actionsStyle: k, actionsClassName: h, onToggleSelectAll: f, ...b }) => {
                     let { idPrefix: C } = (0, p.If)(),
-                        { anyItemsSelected: F } = (0, S.v)(),
+                        { anyItemsSelected: S } = (0, F.v)(),
                         { setHasMetadataTitle: I } = (0, L.t)(),
                         _ = (0, d.m)("list-view-metadata"),
                         w = (0, o.useRef)(null);
@@ -33162,7 +33398,7 @@
                         w.current && (0, s.C)(w.current)
                     }, [l]), (0, t.jsxs)("div", {
                         id: `${C}-list-view-metadata`,
-                        className: (0, r.$)(y.container, m, F && u.spacious),
+                        className: (0, r.$)(y.container, m, S && u.spacious),
                         style: c,
                         ...(0, i.G)("list-view-metadata"),
                         children: [(0, t.jsx)(x, {
@@ -33171,7 +33407,7 @@
                             }
                         }), (0, t.jsx)(K, {
                             sectionFilters: a
-                        }), !!(e && !F) && (0, t.jsx)(_, {
+                        }), !!(e && !S) && (0, t.jsx)(_, {
                             className: y.heading,
                             ...(0, i.G)("list-view-header-title"),
                             children: e
@@ -33321,7 +33557,7 @@
                 g = a(69487),
                 p = a(18312);
             let y = e => e;
-            function k({ path: e, resourceName: l, componentLoader: a, Component: n, queryConfigs: s, transformVariables: i = y, title: r, relayEnvironment: h, fallback: f, maxAge: b, errorCallbacks: C, transitionType: F = u.E.FETCH_THEN_TRANSITION }, S = {}) {
+            function k({ path: e, resourceName: l, componentLoader: a, Component: n, queryConfigs: s, transformVariables: i = y, title: r, relayEnvironment: h, fallback: f, maxAge: b, errorCallbacks: C, transitionType: S = u.E.FETCH_THEN_TRANSITION }, F = {}) {
                 let L = l || n?.displayName;
                 if (void 0 === L)
                     throw Error("invalid internal resourceName");
@@ -33417,7 +33653,7 @@
                                 fallback: f,
                                 children: (0, t.jsx)(p.EntryPointContainer, {
                                     entryPointReference: l,
-                                    props: S
+                                    props: F
                                 })
                             })
                         }) : null
@@ -33427,7 +33663,7 @@
                             pathParams: e,
                             searchParams: new URLSearchParams(l.search)
                         });
-                        return F === u.E.FETCH_THEN_TRANSITION && await Promise.allSettled(Object.values(a.data.entryPointReference.queries).map(e => e.source?.toPromise())), a
+                        return S === u.E.FETCH_THEN_TRANSITION && await Promise.allSettled(Object.values(a.data.entryPointReference.queries).map(e => e.source?.toPromise())), a
                     },
                     loadFromEmbeddedData: function ({ pathParams: e, embeddedData: l, location: a }) {
                         let { data: n, isValid: t } = K({
@@ -33441,7 +33677,7 @@
                             isValid: t
                         }
                     },
-                    transitionType: F
+                    transitionType: S
                 }
             }
             try {
@@ -33659,133 +33895,34 @@
                 return e
             }
         },
-        84929: (e, l, a) => {
+        83592: (e, l, a) => {
             a.d(l, {
-                H: () => t
+                s: () => t
             });
-            var n = a(2940);
+            var n = a(2642);
             function t(e, l) {
-                let a,
-                    t,
-                    g = l?.additionalDigits ?? 2,
-                    p = function (e) {
-                        let l,
-                            a = {},
-                            n = e.split(s.dateTimeDelimiter);
-                        if (n.length > 2)
-                            return a;
-                        if (/:/.test(n[0]) ? l = n[0] : (a.date = n[0], l = n[1], s.timeZoneDelimiter.test(a.date) && (a.date = e.split(s.timeZoneDelimiter)[0], l = e.substr(a.date.length, e.length))), l) {
-                            let e = s.timezone.exec(l);
-                            e ? (a.time = l.replace(e[1], ""), a.timezone = e[1]) : a.time = l
-                        }
-                        return a
-                    }(e);
-                if (p.date) {
-                    let e = function (e, l) {
-                        let a = RegExp("^(?:(\\d{4}|[+-]\\d{" + (4 + l) + "})|(\\d{2}|[+-]\\d{" + (2 + l) + "})$)"),
-                            n = e.match(a);
-                        if (!n)
-                            return {
-                                year: NaN,
-                                restDateString: ""
-                            };
-                        let t = n[1] ? parseInt(n[1]) : null,
-                            s = n[2] ? parseInt(n[2]) : null;
-                        return {
-                            year: null === s ? t : 100 * s,
-                            restDateString: e.slice((n[1] || n[2]).length)
-                        }
-                    }(p.date, g);
-                    a = function (e, l) {
-                        var a,
-                            n,
-                            t,
-                            s,
-                            r,
-                            o,
-                            d,
-                            g;
-                        if (null === l)
-                            return new Date(NaN);
-                        let p = e.match(i);
-                        if (!p)
-                            return new Date(NaN);
-                        let y = !!p[4],
-                            k = u(p[1]),
-                            h = u(p[2]) - 1,
-                            f = u(p[3]),
-                            b = u(p[4]),
-                            C = u(p[5]) - 1;
-                        if (y) {
-                            return (a = 0, n = b, t = C, n >= 1 && n <= 53 && t >= 0 && t <= 6) ? function (e, l, a) {
-                                let n = new Date(0);
-                                n.setUTCFullYear(e, 0, 4);
-                                let t = n.getUTCDay() || 7;
-                                return n.setUTCDate(n.getUTCDate() + ((l - 1) * 7 + a + 1 - t)), n
-                            }(l, b, C) : new Date(NaN)
-                        }
-                        {
-                            let e = new Date(0);
-                            return (s = l, r = h, o = f, r >= 0 && r <= 11 && o >= 1 && o <= (c[r] || (m(s) ? 29 : 28)) && (d = l, (g = k) >= 1 && g <= (m(d) ? 366 : 365))) ? (e.setUTCFullYear(l, h, Math.max(k, f)), e) : new Date(NaN)
-                        }
-                    }(e.restDateString, e.year)
-                }
-                if (!a || isNaN(a.getTime()))
-                    return new Date(NaN);
-                let y = a.getTime(),
-                    k = 0;
-                if (p.time && isNaN(k = function (e) {
-                    var l,
-                        a,
-                        t;
-                    let s = e.match(r);
-                    if (!s)
-                        return NaN;
-                    let i = d(s[1]),
-                        o = d(s[2]),
-                        u = d(s[3]);
-                    return (l = i, a = o, t = u, 24 === l ? 0 === a && 0 === t : t >= 0 && t < 60 && a >= 0 && a < 60 && l >= 0 && l < 25) ? i * n.s0 + o * n.Cg + 1e3 * u : NaN
-                }(p.time)))
-                    return new Date(NaN);
-                if (p.timezone) {
-                    if (isNaN(t = function (e) {
-                        var l,
-                            a;
-                        if ("Z" === e)
-                            return 0;
-                        let t = e.match(o);
-                        if (!t)
-                            return 0;
-                        let s = "+" === t[1] ? -1 : 1,
-                            i = parseInt(t[2]),
-                            r = t[3] && parseInt(t[3]) || 0;
-                        return (l = 0, (a = r) >= 0 && a <= 59) ? s * (i * n.s0 + r * n.Cg) : NaN
-                    }(p.timezone)))
-                        return new Date(NaN)
-                } else {
-                    let e = new Date(y + k),
-                        l = new Date(0);
-                    return l.setFullYear(e.getUTCFullYear(), e.getUTCMonth(), e.getUTCDate()), l.setHours(e.getUTCHours(), e.getUTCMinutes(), e.getUTCSeconds(), e.getUTCMilliseconds()), l
-                }
-                return new Date(y + k + t)
+                let a = (0, n.a)(e),
+                    t = (0, n.a)(l);
+                return a.getFullYear() === t.getFullYear()
             }
-            let s = {
-                dateTimeDelimiter: /[T ]/,
-                timeZoneDelimiter: /[Z ]/i,
-                timezone: /([Z+-].*)$/
-            },
-                i = /^-?(?:(\d{3})|(\d{2})(?:-?(\d{2}))?|W(\d{2})(?:-?(\d{1}))?|)$/,
-                r = /^(\d{2}(?:[.,]\d*)?)(?::?(\d{2}(?:[.,]\d*)?))?(?::?(\d{2}(?:[.,]\d*)?))?$/,
-                o = /^([+-])(\d{2})(?::?(\d{2}))?$/;
-            function u(e) {
-                return e ? parseInt(e) : 1
+        },
+        9802: (e, l, a) => {
+            a.d(l, {
+                e: () => t
+            });
+            var n = a(83592);
+            function t(e) {
+                return (0, n.s)(e, Date.now())
             }
-            function d(e) {
-                return e && parseFloat(e.replace(",", ".")) || 0
-            }
-            let c = [31, null, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-            function m(e) {
-                return e % 400 == 0 || e % 4 == 0 && e % 100 != 0
+        },
+        79639: (e, l, a) => {
+            a.d(l, {
+                P: () => s
+            });
+            var n = a(85551),
+                t = a(40828);
+            function s(e) {
+                return (0, n.r)(e, (0, t.e)(Date.now(), 1))
             }
         },
         45572: (e, l, a) => {
@@ -33858,8 +33995,8 @@
         }
     }, e => {
         var l = l => e(e.s = l);
-        e.O(0, ["primer-react", "react-core", "react-lib", "octicons-react", "vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js", "vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_stacktrace-parser_dist_s-1d3d52", "vendors-node_modules_primer_behaviors_dist_esm_index_mjs", "vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-b1c483", "vendors-node_modules_github_catalyst_lib_index_js-node_modules_primer_live-region-element_dis-b2aea6", "vendors-node_modules_dompurify_dist_purify_es_mjs", "vendors-node_modules_lodash-es__Stack_js-node_modules_lodash-es__Uint8Array_js-node_modules_l-4faaa6", "vendors-node_modules_date-fns_format_mjs", "vendors-node_modules_date-fns_addWeeks_mjs-node_modules_date-fns_addYears_mjs-node_modules_da-827f4f", "vendors-node_modules_github_relative-time-element_dist_index_js", "vendors-node_modules_focus-visible_dist_focus-visible_js-node_modules_github_hotkey_dist_inde-70f9af", "vendors-node_modules_lodash-es_isEqual_js", "vendors-node_modules_dnd-kit_modifiers_dist_modifiers_esm_js-node_modules_dnd-kit_sortable_di-72228e", "vendors-node_modules_braintree_browser-detection_dist_browser-detection_js-node_modules_githu-bb80ec", "vendors-node_modules_lodash-es_cloneDeep_js", "vendors-node_modules_react-relay_index_js", "vendors-node_modules_fzy_js_index_js-node_modules_github_paste-markdown_dist_index_js", "vendors-node_modules_github_g-emoji-element_dist_index_js-node_modules_lit-labs_react_index_j-aaff98", "vendors-node_modules_github_quote-selection_dist_index_js-node_modules_react-relay_hooks_js-n-d04245", "vendors-node_modules_github_combobox-nav_dist_index_js-node_modules_github_jtml_lib_index_js", "ui_packages_failbot_failbot_ts", "ui_packages_document-metadata_document-metadata_ts-ui_packages_history_history_ts-ui_packages-417c81", "ui_packages_paths_index_ts", "ui_packages_ui-commands_ui-commands_ts", "ui_packages_date-picker_date-picker_ts", "ui_packages_drag-and-drop_drag-and-drop_ts-ui_packages_hydro-analytics_hydro-analytics_ts", "ui_packages_list-view_src_hooks_use-next-header-tag_ts-ui_packages_list-view_src_ListItem_Lis-0a5d95", "ui_packages_filter_utils_index_ts-ui_packages_fuzzy-score_fuzzy-filter_ts-ui_packages_use-ana-cdfa54", "ui_packages_filter_providers_index_ts", "ui_packages_relay-environment_relay-environment_ts", "ui_packages_item-picker_components_RepositoryPicker_tsx-ui_packages_safe-html_VerifiedHTML_tsx", "ui_packages_issue-create_dialog_CreateIssueDialogEntry_tsx-ui_packages_copy-to-clipboard_Copy-8346e3", "ui_packages_commenting_constants_values_ts-ui_packages_commenting_components_ActivityHeader_t-8a1940", "ui_packages_query-builder-element_query-builder-element_ts", "ui_packages_app-uuid_app-uuid_ts-ui_packages_signed-commit-badge_index_ts", "ui_packages_commenting_hooks_use-markdown-body_ts-ui_packages_commenting_utils_blocked-commen-338167", "ui_packages_markdown-viewer_NewMarkdownViewer_tsx", "ui_packages_issue-viewer_components_IssueViewer_tsx-ui_packages_issue-viewer_contexts_IssueVi-97ef09", "ui_packages_query-builder_utils_query_ts-ui_packages_copy-to-clipboard_CopyToClipboardButton_-45bb37"], () => l(70413)),
+        e.O(0, ["primer-react", "react-core", "react-lib", "octicons-react", "vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js", "vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_stacktrace-parser_dist_s-1d3d52", "vendors-node_modules_primer_behaviors_dist_esm_index_mjs", "vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-b1c483", "vendors-node_modules_github_catalyst_lib_index_js-node_modules_primer_live-region-element_dis-b2aea6", "vendors-node_modules_dompurify_dist_purify_es_mjs", "vendors-node_modules_lodash-es__Stack_js-node_modules_lodash-es__Uint8Array_js-node_modules_l-4faaa6", "vendors-node_modules_date-fns_format_mjs", "vendors-node_modules_date-fns_addWeeks_mjs-node_modules_date-fns_addYears_mjs-node_modules_da-827f4f", "vendors-node_modules_github_relative-time-element_dist_index_js", "vendors-node_modules_focus-visible_dist_focus-visible_js-node_modules_github_hotkey_dist_inde-70f9af", "vendors-node_modules_lodash-es_isEqual_js", "vendors-node_modules_dnd-kit_modifiers_dist_modifiers_esm_js-node_modules_dnd-kit_sortable_di-72228e", "vendors-node_modules_braintree_browser-detection_dist_browser-detection_js-node_modules_githu-bb80ec", "vendors-node_modules_lodash-es_cloneDeep_js", "vendors-node_modules_react-relay_index_js", "vendors-node_modules_fzy_js_index_js-node_modules_github_paste-markdown_dist_index_js", "vendors-node_modules_github_g-emoji-element_dist_index_js-node_modules_lit-labs_react_index_j-aaff98", "vendors-node_modules_react-relay_hooks_js-node_modules_color2k_dist_index_exports_import_es_m-05025c", "vendors-node_modules_github_combobox-nav_dist_index_js-node_modules_github_jtml_lib_index_js", "ui_packages_failbot_failbot_ts", "ui_packages_document-metadata_document-metadata_ts-ui_packages_history_history_ts-ui_packages-417c81", "ui_packages_paths_index_ts", "ui_packages_ui-commands_ui-commands_ts", "ui_packages_date-picker_date-picker_ts", "ui_packages_drag-and-drop_drag-and-drop_ts-ui_packages_hydro-analytics_hydro-analytics_ts", "ui_packages_list-view_src_hooks_use-next-header-tag_ts-ui_packages_list-view_src_ListItem_Lis-0a5d95", "ui_packages_filter_utils_index_ts-ui_packages_fuzzy-score_fuzzy-filter_ts-ui_packages_use-ana-cdfa54", "ui_packages_filter_providers_index_ts", "ui_packages_relay-environment_relay-environment_ts", "ui_packages_item-picker_components_RepositoryPicker_tsx-ui_packages_safe-html_VerifiedHTML_tsx", "ui_packages_issue-create_dialog_CreateIssueDialogEntry_tsx-ui_packages_date-picker_components-96ce24", "ui_packages_commenting_constants_values_ts-ui_packages_commenting_components_ActivityHeader_t-8a1940", "ui_packages_query-builder-element_query-builder-element_ts", "ui_packages_app-uuid_app-uuid_ts-ui_packages_signed-commit-badge_index_ts", "ui_packages_commenting_hooks_use-markdown-body_ts-ui_packages_commenting_utils_blocked-commen-338167", "ui_packages_markdown-viewer_NewMarkdownViewer_tsx", "ui_packages_issue-viewer_components_IssueViewer_tsx-ui_packages_issue-viewer_contexts_IssueVi-97ef09", "ui_packages_query-builder_utils_query_ts-ui_packages_issue-type-filter-provider_IssueTypeFilt-b3a6b0"], () => l(70413)),
             e.O()
     }]);
-    //# sourceMappingURL=issues-react-cc0b4155a69c.js.map
+    //# sourceMappingURL=issues-react-c0ce4b670644.js.map
 })();
