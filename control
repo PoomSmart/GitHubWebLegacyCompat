@@ -1,11 +1,11 @@
 Package: com.ps.githubweblegacycompat
 Name: GitHubWebLegacyCompat
-Version: 2.3.3
+Version: 2.3.4
 Architecture: iphoneos-arm
 Description: Makes GitHub website more accessible on iOS < 16.4
 Maintainer: PoomSmart
 Author: PoomSmart
 Section: Tweaks
-Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 8.0), firmware (<< 16.4), com.ps.polyfills (>= 2.1.0)
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 8.0), firmware (<< 16.4), com.ps.polyfills (>= 2.6.0)
 Depiction: https://poomsmart.github.io/repo/depictions/githubweblegacycompat.html
 SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/githubweblegacycompat.json
