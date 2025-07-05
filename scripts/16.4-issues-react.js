@@ -45118,21 +45118,25 @@ ${this.quotedText}`)
                         let t = l.searchParams.get("q");
                         return t && (e.query = a4(t)), e;
                     },
-                    "/:owner/:repo/labels/:label": (e, l) => (
-                        Object.keys(l.pathParams).length > 0 &&
-                            ((e.query = a3(
-                                eD(x.Ds.open, [l.pathParams.label], "label"),
-                                {
-                                    owner: l.pathParams.owner,
-                                    name: l.pathParams.repo,
-                                }
-                            )),
-                            eP(l.searchParams, e),
-                            (e.owner = l.pathParams.owner),
-                            (e.name = l.pathParams.repo),
-                            (e.includeReactions = !1)),
-                        e
-                    ),
+                    "/:owner/:repo/labels/:label": (e, l) => {
+                        if (Object.keys(l.pathParams).length > 0) {
+                            let a = l.searchParams.get("q"),
+                                n = eD(
+                                    x.Ds.open,
+                                    [l.pathParams.label],
+                                    "label"
+                                );
+                            (e.query = a3(a?.trim() || n, {
+                                owner: l.pathParams.owner,
+                                name: l.pathParams.repo,
+                            })),
+                                eP(l.searchParams, e),
+                                (e.owner = l.pathParams.owner),
+                                (e.name = l.pathParams.repo),
+                                (e.includeReactions = !1);
+                        }
+                        return e;
+                    },
                     "/:owner/:repo/issues": co,
                     "/:owner/:repo/issues/created_by/:author": co,
                     "/:owner/:repo/issues/assigned/:assignee": co,
@@ -47061,4 +47065,4 @@ ${this.quotedText}`)
             e.O();
     },
 ]);
-//# sourceMappingURL=issues-react-8cef8cc17490.js.map
+//# sourceMappingURL=issues-react-41d74e3087f2.js.map
