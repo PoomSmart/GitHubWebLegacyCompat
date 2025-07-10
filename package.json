@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "description": "GitHub Web Legacy Compatibility Tweak",
   "private": true,
+  "scripts": {
+    "update-scripts": "node update-scripts.js",
+    "update-scripts:dry-run": "node update-scripts.js --dry-run"
+  },
   "devDependencies": {
     "@babel/cli": "^7.27.2",
     "@babel/core": "^7.27.4",
     "@babel/preset-env": "^7.27.1",
     "clean-css-cli": "^5.6.3",
+    "prettier": "^3.2.5",
     "uglify-js": "^3.19.3"
   }
 }

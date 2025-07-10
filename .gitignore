@@ -3,3 +3,5 @@ packages/
 .DS_Store
 *.js.disabled
 node_modules/
+bak/
+temp-downloads/

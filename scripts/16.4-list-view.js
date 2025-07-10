@@ -5,9 +5,7 @@
     ],
     {
         31668: (e, t, r) => {
-            r.d(t, {
-                E7: () => F,
-            });
+            r.d(t, { E7: () => F });
             var i = r(74848),
                 a = r(96540);
             let l = (0, a.createContext)({
@@ -36,10 +34,7 @@
                         }),
                         [t, r, n, s, o]
                     );
-                    return (0, i.jsx)(l.Provider, {
-                        value: c,
-                        children: e,
-                    });
+                    return (0, i.jsx)(l.Provider, { value: c, children: e });
                 },
                 s = () => {
                     let e = (0, a.useContext)(l);
@@ -70,10 +65,7 @@
                             }),
                             [e]
                         );
-                    return (0, i.jsx)(o.Provider, {
-                        value: n,
-                        children: t,
-                    });
+                    return (0, i.jsx)(o.Provider, { value: n, children: t });
                 },
                 d = () => {
                     let e = (0, a.useContext)(o);
@@ -113,21 +105,21 @@
                     let r = x(e, t);
                     if (void 0 === r) return;
                     let i = r;
-                    return t && (i -= t.offsetLeft), i;
+                    return (t && (i -= t.offsetLeft), i);
                 },
                 x = (e, t) => {
                     if (!e) return;
                     let r = e.offsetWidth;
-                    return t && (r -= t.offsetWidth), r;
+                    return (t && (r -= t.offsetWidth), r);
                 },
                 N = (e) =>
                     "condensed" === e
                         ? "var(--base-size-4)"
                         : "spacious" === e
-                        ? "var(--base-size-16)"
-                        : "none" === e
-                        ? 0
-                        : "var(--base-size-8)",
+                          ? "var(--base-size-16)"
+                          : "none" === e
+                            ? 0
+                            : "var(--base-size-8)",
                 w = (0, a.createContext)({
                     visibleChildEndIndex: 0,
                     justifySpaceBetween: !1,
@@ -169,7 +161,7 @@
                                 C((t) => {
                                     if (i === t.get(e) || isNaN(i)) return t;
                                     let r = new Map(Array.from(t.entries()));
-                                    return r.set(e, i), r;
+                                    return (r.set(e, i), r);
                                 });
                             },
                             [o]
@@ -203,7 +195,7 @@
                                 u(r),
                                 g(r <= (y ?? t.offsetWidth)));
                         }, [_, L, y, c, s, o]);
-                    (0, h.A)(() => {
+                    ((0, h.A)(() => {
                         let e = o.current;
                         if (!e) return;
                         let r = new Map();
@@ -222,7 +214,7 @@
                         (0, h.A)(() => {
                             P();
                         }, [P]),
-                        (0, v.w)(P, s);
+                        (0, v.w)(P, s));
                     let E = (0, a.useMemo)(
                         () => ({
                             visibleChildEndIndex: l,
@@ -231,10 +223,7 @@
                         }),
                         [l, A, S]
                     );
-                    return (0, i.jsx)(w.Provider, {
-                        value: E,
-                        children: e,
-                    });
+                    return (0, i.jsx)(w.Provider, { value: E, children: e });
                 },
                 C = () => {
                     let e = (0, a.useContext)(w);
@@ -273,10 +262,7 @@
                         icon: t = T,
                         variant: r = R,
                         ...l
-                    } = {
-                        icon: T,
-                        variant: R,
-                    },
+                    } = { icon: T, variant: R },
                 }) => {
                     let { anchorRef: n } = d(),
                         { actions: o, staticMenuActions: c, label: u } = s(),
@@ -323,9 +309,8 @@
                                                   (0, i.jsx)(
                                                       a.Fragment,
                                                       {
-                                                          children: e.render(
-                                                              !0
-                                                          ),
+                                                          children:
+                                                              e.render(!0),
                                                       },
                                                       e.key
                                                   )
@@ -344,9 +329,7 @@
                     Box_0: "VisibleAndOverflowContainer-module__Box_0--cTFgm",
                     space: "VisibleAndOverflowContainer-module__space--BaowS",
                 },
-                O = {
-                    Box_0: "VisibleItem-module__Box_0--wJA9C",
-                },
+                O = { Box_0: "VisibleItem-module__Box_0--wJA9C" },
                 z = ({ children: e, actionKey: t }) => {
                     let r = (0, a.useRef)(null),
                         { recalculateItemSize: l } = C();
@@ -366,9 +349,7 @@
             try {
                 z.displayName || (z.displayName = "VisibleItem");
             } catch {}
-            let W = {
-                    Box_1: "VisibleItems-module__Box_1--_dgKR",
-                },
+            let W = { Box_1: "VisibleItems-module__Box_1--_dgKR" },
                 H = ({ className: e, style: t }) => {
                     let { itemContainerRef: r } = d(),
                         { actions: a, gap: l } = s(),
@@ -378,19 +359,9 @@
                         ...(0, A.G)("action-bar"),
                         ref: r,
                         className: (0, I.$)(e, W.Box_1),
-                        style: {
-                            gap: l,
-                            ...t,
-                        },
+                        style: { gap: l, ...t },
                         children: o?.map(({ key: e, render: t }) =>
-                            (0, i.jsx)(
-                                z,
-                                {
-                                    actionKey: e,
-                                    children: t(!1),
-                                },
-                                e
-                            )
+                            (0, i.jsx)(z, { actionKey: e, children: t(!1) }, e)
                         ),
                     });
                 };
@@ -416,18 +387,12 @@
                         ...(0, A.G)("action-bar-container"),
                         role: "toolbar" === n ? "toolbar" : void 0,
                         "aria-label": "toolbar" === n ? l : void 0,
-                        style: {
-                            gap: o,
-                        },
+                        style: { gap: o },
                         className: (0, I.$)(k.Box_0, c && k.space),
                         children: [
-                            (0, i.jsx)(H, {
-                                ...r,
-                            }),
+                            (0, i.jsx)(H, { ...r }),
                             t,
-                            (0, i.jsx)(V, {
-                                anchorProps: e,
-                            }),
+                            (0, i.jsx)(V, { anchorProps: e }),
                         ],
                     })
                 );
@@ -438,10 +403,7 @@
             } catch {}
             let D = "normal",
                 K = ({ children: e, ...t }) =>
-                    (0, i.jsx)($, {
-                        ...t,
-                        children: e,
-                    }),
+                    (0, i.jsx)($, { ...t, children: e }),
                 F = ({
                     actions: e = [],
                     staticMenuActions: t,
@@ -465,9 +427,7 @@
                             [e, t, o, s, d]
                         ),
                         y = (0, a.useMemo)(
-                            () => ({
-                                actionKeys: e.map((e) => e.key),
-                            }),
+                            () => ({ actionKeys: e.map((e) => e.key) }),
                             [e]
                         ),
                         f = t && t.length > 0,
@@ -479,9 +439,7 @@
                         style: h,
                     };
                     return (0, i.jsx)(c, {
-                        value: {
-                            anchorRef: u,
-                        },
+                        value: { anchorRef: u },
                         children: (0, i.jsx)(n, {
                             value: v,
                             children: p
@@ -492,10 +450,7 @@
                                           children: l,
                                       }),
                                   })
-                                : (0, i.jsx)(K, {
-                                      ...x,
-                                      children: l,
-                                  }),
+                                : (0, i.jsx)(K, { ...x, children: l }),
                         }),
                     });
                 };
@@ -531,9 +486,7 @@
                 d = "List view";
         },
         78413: (e, t, r) => {
-            r.d(t, {
-                m: () => n,
-            });
+            r.d(t, { m: () => n });
             var i = r(96540),
                 a = r(77817),
                 l = r(74304);
@@ -547,9 +500,7 @@
             }
         },
         8241: (e, t, r) => {
-            r.d(t, {
-                N: () => a,
-            });
+            r.d(t, { N: () => a });
             var i = r(96540);
             function a(
                 e,
@@ -558,13 +509,11 @@
                 let [l, n] = (0, i.useState)(e),
                     [s, o] = (0, i.useState)(e),
                     c = e instanceof Function ? e() : e;
-                return t || r(s, c) || (o(c), n(c)), [l, n];
+                return (t || r(s, c) || (o(c), n(c)), [l, n]);
             }
         },
         87854: (e, t, r) => {
-            r.d(t, {
-                L: () => d,
-            });
+            r.d(t, { L: () => d });
             var i = r(74848),
                 a = r(31668),
                 l = r(98386),
@@ -604,9 +553,7 @@
                                 label: d,
                                 variant: "menu",
                                 overflowMenuToggleProps: e
-                                    ? {
-                                          icon: e,
-                                      }
+                                    ? { icon: e }
                                     : void 0,
                             }),
                         })
@@ -617,26 +564,17 @@
             } catch {}
         },
         510: (e, t, r) => {
-            r.d(t, {
-                L: () => s,
-                O: () => n,
-            });
+            r.d(t, { L: () => s, O: () => n });
             var i = r(74848),
                 a = r(96540);
             let l = (0, a.createContext)(void 0),
                 n = ({ children: e }) => {
                     let [t, r] = (0, a.useState)(""),
                         n = (0, a.useMemo)(
-                            () => ({
-                                description: t,
-                                setDescription: r,
-                            }),
+                            () => ({ description: t, setDescription: r }),
                             [t]
                         );
-                    return (0, i.jsx)(l.Provider, {
-                        value: n,
-                        children: e,
-                    });
+                    return (0, i.jsx)(l.Provider, { value: n, children: e });
                 };
             n.displayName = "ListItemDescriptionProvider";
             let s = () => {
@@ -652,9 +590,7 @@
             } catch {}
         },
         78168: (e, t, r) => {
-            r.d(t, {
-                c: () => g,
-            });
+            r.d(t, { c: () => g });
             var i = r(74848),
                 a = r(13233),
                 l = r(34164),
@@ -671,16 +607,10 @@
                 h = ({ children: e }) => {
                     let [t, r] = (0, n.useState)(!1),
                         a = (0, n.useMemo)(
-                            () => ({
-                                actionsOpen: t,
-                                setActionsOpen: r,
-                            }),
+                            () => ({ actionsOpen: t, setActionsOpen: r }),
                             [t]
                         );
-                    return (0, i.jsx)(m.Provider, {
-                        value: a,
-                        children: e,
-                    });
+                    return (0, i.jsx)(m.Provider, { value: a, children: e });
                 };
             h.displayName = "ListItemActionsProvider";
             try {
@@ -694,9 +624,7 @@
                 selected: "ListItem-module__selected--BaCDB",
             };
             var f = r(98386);
-            let p = {
-                container: "MetadataContainer-module__container--lj6YE",
-            };
+            let p = { container: "MetadataContainer-module__container--lj6YE" };
             function x({ style: e, className: t, children: r }) {
                 return (0, i.jsx)("div", {
                     className: (0, l.$)(p.container, t),
@@ -770,7 +698,7 @@
                                                 document.activeElement
                                         )
                                             break;
-                                        e.preventDefault(), B(!M);
+                                        (e.preventDefault(), B(!M));
                                         break;
                                     case "Escape":
                                         W?.current?.focus();
@@ -790,12 +718,7 @@
                                 (l = "More information available below");
                             let n = [R, T].filter((e) => e.trim()).join(": ");
                             try {
-                                // Remove trailing dots but preserve ellipsis (...)
-                                if (n.endsWith("...")) {
-                                    // Keep ellipsis intact
-                                } else {
-                                    n = n.replace(/\.+$/, "");
-                                }
+                                n = n.endsWith("...") ? n : n.replace(/\.+$/, "");
                             } catch {
                                 for (; n.endsWith("."); )
                                     n = n.substring(0, n.length - 1);
@@ -830,9 +753,7 @@
                                       children: a.map((e, t) =>
                                           (0, i.jsx)(
                                               n.Fragment,
-                                              {
-                                                  children: e,
-                                              },
+                                              { children: e },
                                               t
                                           )
                                       ),
@@ -855,7 +776,7 @@
                 }) => {
                     let { setSelectedCount: s } = (0, c.v)(),
                         o = (0, n.useRef)(t);
-                    (o.current = t),
+                    ((o.current = t),
                         (0, n.useEffect)(() => {
                             s((e) => (t ? e + 1 : Math.max(0, e - 1)));
                         }, [t, s]),
@@ -864,12 +785,9 @@
                                 o.current && s((e) => Math.max(0, e - 1));
                             },
                             [s]
-                        );
+                        ));
                     let d = (0, n.useMemo)(
-                        () => ({
-                            isSelected: t,
-                            onSelect: r,
-                        }),
+                        () => ({ isSelected: t, onSelect: r }),
                         [t, r]
                     );
                     return (0, i.jsx)(h, {
@@ -898,26 +816,17 @@
             } catch {}
         },
         98391: (e, t, r) => {
-            r.d(t, {
-                I: () => s,
-                t: () => n,
-            });
+            r.d(t, { I: () => s, t: () => n });
             var i = r(74848),
                 a = r(96540);
             let l = (0, a.createContext)(void 0),
                 n = ({ children: e }) => {
                     let [t, r] = (0, a.useState)(!1),
                         n = (0, a.useMemo)(
-                            () => ({
-                                hasNewActivity: t,
-                                setHasNewActivity: r,
-                            }),
+                            () => ({ hasNewActivity: t, setHasNewActivity: r }),
                             [t]
                         );
-                    return (0, i.jsx)(l.Provider, {
-                        value: n,
-                        children: e,
-                    });
+                    return (0, i.jsx)(l.Provider, { value: n, children: e });
                 };
             n.displayName = "ListItemNewActivityProvider";
             let s = () => {
@@ -933,19 +842,13 @@
             } catch {}
         },
         87766: (e, t, r) => {
-            r.d(t, {
-                W: () => c,
-                r: () => d,
-            });
+            r.d(t, { W: () => c, r: () => d });
             var i = r(74848),
                 a = r(52811),
                 l = r(13233),
                 n = r(96540),
                 s = r(14918);
-            let o = (0, n.createContext)({
-                    isSelected: !1,
-                    onSelect: l.l,
-                }),
+            let o = (0, n.createContext)({ isSelected: !1, onSelect: l.l }),
                 c = ({
                     children: e,
                     value: { isSelected: t, onSelect: r },
@@ -955,20 +858,17 @@
                             () => ({
                                 isSelected: t,
                                 onSelect: (e) => {
-                                    (0, a.i)(
+                                    ((0, a.i)(
                                         e
                                             ? `Selected. ${l}.`
                                             : `Unselected. ${l}.`
                                     ),
-                                        r(e);
+                                        r(e));
                                 },
                             }),
                             [t, r, l]
                         );
-                    return (0, i.jsx)(o.Provider, {
-                        value: c,
-                        children: e,
-                    });
+                    return (0, i.jsx)(o.Provider, { value: c, children: e });
                 };
             c.displayName = "ListItemSelectionProvider";
             let d = () => (0, n.useContext)(o);
@@ -977,26 +877,17 @@
             } catch {}
         },
         65710: (e, t, r) => {
-            r.d(t, {
-                u: () => n,
-                x: () => s,
-            });
+            r.d(t, { u: () => n, x: () => s });
             var i = r(74848),
                 a = r(96540);
             let l = (0, a.createContext)(void 0),
                 n = ({ children: e }) => {
                     let [t, r] = (0, a.useState)(""),
                         n = (0, a.useMemo)(
-                            () => ({
-                                status: t,
-                                setStatus: r,
-                            }),
+                            () => ({ status: t, setStatus: r }),
                             [t]
                         );
-                    return (0, i.jsx)(l.Provider, {
-                        value: n,
-                        children: e,
-                    });
+                    return (0, i.jsx)(l.Provider, { value: n, children: e });
                 };
             n.displayName = "ListItemStatusProvider";
             let s = () => {
@@ -1012,10 +903,7 @@
             } catch {}
         },
         14918: (e, t, r) => {
-            r.d(t, {
-                J: () => s,
-                y: () => n,
-            });
+            r.d(t, { J: () => s, y: () => n });
             var i = r(74848),
                 a = r(96540);
             let l = (0, a.createContext)(void 0),
@@ -1036,10 +924,7 @@
                         }),
                         [t, n]
                     );
-                    return (0, i.jsx)(l.Provider, {
-                        value: c,
-                        children: e,
-                    });
+                    return (0, i.jsx)(l.Provider, { value: c, children: e });
                 };
             n.displayName = "ListItemTitleProvider";
             let s = () => {
@@ -1055,25 +940,14 @@
             } catch {}
         },
         29447: (e, t, r) => {
-            r.d(t, {
-                If: () => s,
-                JE: () => n,
-            });
+            r.d(t, { If: () => s, JE: () => n });
             var i = r(74848),
                 a = r(96540);
             let l = (0, a.createContext)(void 0),
                 n = ({ children: e }) => {
                     let t = (0, a.useId)(),
-                        r = (0, a.useMemo)(
-                            () => ({
-                                idPrefix: t,
-                            }),
-                            [t]
-                        );
-                    return (0, i.jsx)(l.Provider, {
-                        value: r,
-                        children: e,
-                    });
+                        r = (0, a.useMemo)(() => ({ idPrefix: t }), [t]);
+                    return (0, i.jsx)(l.Provider, { value: r, children: e });
                 };
             n.displayName = "ListViewIdProvider";
             let s = () => {
@@ -1087,10 +961,7 @@
             } catch {}
         },
         16946: (e, t, r) => {
-            r.d(t, {
-                Z: () => o,
-                w: () => s,
-            });
+            r.d(t, { Z: () => o, w: () => s });
             var i = r(74848),
                 a = r(13233),
                 l = r(96540);
@@ -1112,10 +983,7 @@
                             }),
                             [t, a]
                         );
-                    return (0, i.jsx)(n.Provider, {
-                        value: o,
-                        children: e,
-                    });
+                    return (0, i.jsx)(n.Provider, { value: o, children: e });
                 };
             s.displayName = "ListViewItemsProvider";
             let o = () => (0, l.useContext)(n);
@@ -1124,9 +992,7 @@
             } catch {}
         },
         84905: (e, t, r) => {
-            r.d(t, {
-                u: () => I,
-            });
+            r.d(t, { u: () => I });
             var i = r(74848),
                 a = r(13233),
                 l = r(98386),
@@ -1356,9 +1222,7 @@
                                         }
                                     },
                                 });
-                            return {
-                                containerRef: a,
-                            };
+                            return { containerRef: a };
                         })(C);
                     (0, c.useEffect)(() => {
                         a && (a.current = P.current);
@@ -1400,15 +1264,10 @@
             } catch {}
         },
         25654: (e, t, r) => {
-            r.d(t, {
-                P: () => s,
-                e: () => n,
-            });
+            r.d(t, { P: () => s, e: () => n });
             var i = r(74848),
                 a = r(96540);
-            let l = (0, a.createContext)({
-                    multiPageSelectionAllowed: !1,
-                }),
+            let l = (0, a.createContext)({ multiPageSelectionAllowed: !1 }),
                 n = ({ children: e, multiPageSelectionAllowed: t = !1 }) => {
                     let [r, n] = (0, a.useState)(t),
                         s = (0, a.useMemo)(
@@ -1418,10 +1277,7 @@
                             }),
                             [r]
                         );
-                    return (0, i.jsx)(l.Provider, {
-                        value: s,
-                        children: e,
-                    });
+                    return (0, i.jsx)(l.Provider, { value: s, children: e });
                 };
             n.displayName = "ListViewMultiPageSelectionProvider";
             let s = () => (0, a.useContext)(l);
@@ -1430,10 +1286,7 @@
             } catch {}
         },
         89992: (e, t, r) => {
-            r.d(t, {
-                W: () => d,
-                v: () => u,
-            });
+            r.d(t, { W: () => d, v: () => u });
             var i = r(74848),
                 a = r(13233),
                 l = r(96540),
@@ -1489,10 +1342,7 @@
                             }),
                             [d, t, v, y, f, p, r, a, m, h]
                         );
-                    return (0, i.jsx)(c.Provider, {
-                        value: x,
-                        children: e,
-                    });
+                    return (0, i.jsx)(c.Provider, { value: x, children: e });
                 };
             d.displayName = "ListViewSelectionProvider";
             let u = () => (0, l.useContext)(c);
@@ -1501,10 +1351,7 @@
             } catch {}
         },
         74304: (e, t, r) => {
-            r.d(t, {
-                t: () => o,
-                y: () => s,
-            });
+            r.d(t, { t: () => o, y: () => s });
             var i = r(74848),
                 a = r(96540),
                 l = r(77817);
@@ -1520,10 +1367,7 @@
                             }),
                             [s, t, r]
                         );
-                    return (0, i.jsx)(n.Provider, {
-                        value: c,
-                        children: e,
-                    });
+                    return (0, i.jsx)(n.Provider, { value: c, children: e });
                 };
             s.displayName = "ListViewTitleProvider";
             let o = () => {
@@ -1539,10 +1383,7 @@
             } catch {}
         },
         78563: (e, t, r) => {
-            r.d(t, {
-                H: () => o,
-                e: () => c,
-            });
+            r.d(t, { H: () => o, e: () => c });
             var i = r(74848),
                 a = r(13233),
                 l = r(96540),
@@ -1554,16 +1395,10 @@
                     setVariant: r = a.l,
                 }) => {
                     let o = (0, l.useMemo)(
-                        () => ({
-                            variant: t,
-                            setVariant: r,
-                        }),
+                        () => ({ variant: t, setVariant: r }),
                         [r, t]
                     );
-                    return (0, i.jsx)(s.Provider, {
-                        value: o,
-                        children: e,
-                    });
+                    return (0, i.jsx)(s.Provider, { value: o, children: e });
                 };
             o.displayName = "ListViewVariantProvider";
             let c = () => {
