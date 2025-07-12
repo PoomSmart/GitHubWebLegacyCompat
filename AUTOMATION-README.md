@@ -1,6 +1,6 @@
 # Automated Script Updates
 
-This directory contains an automated script (`update-scripts.js`) that replaces the manual patching process described in `MANUAL-PATCHING.md`.
+There is an automated script (`update-scripts.js`) to update JS files in case GitHub changed their JS, causing the tweak to no longer work.
 
 ## How it works
 
@@ -12,7 +12,7 @@ The automation script:
     - `issue-viewer-*.js`
     - `list-view-*.js`
     - `react-core-*.js`
-3. **Formats with Prettier**: Runs Prettier on downloaded files to format the minified code (like step 4 in manual process)
+3. **Formats with Prettier**: Runs Prettier on downloaded files to format the minified code
 4. **Applies patches**:
     - For `issues-react`, `issue-viewer`, and `list-view`: Uses find-replace patterns from `.txt` files
     - For `react-core`: Applies the `react-core.diff` patch file
@@ -41,15 +41,6 @@ The script updates these files in the `scripts/` directory:
 - `16.4-issue-viewer.js`
 - `16.4-list-view.js`
 - `16.4-react-core.js`
-
-## Patch files
-
-The script uses these patch definition files:
-
-- `issues-react.txt` - Function parameter renaming patch
-- `issue-viewer.txt` - Negative lookbehind regex replacement
-- `list-view.txt` - Negative lookbehind regex replacement
-- `react-core.diff` - Complex diff patch for multiple function renamings
 
 ## Error handling
 
