@@ -1,0 +1,5 @@
+# Old
+n=n.replace(/(?<!\.)\.+$/,"")
+
+# New
+n=n.endsWith("...")?n:n.replace(/\.+$/,"")

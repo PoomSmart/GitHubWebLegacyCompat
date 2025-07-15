@@ -1,0 +1,5 @@
+# Old
+s=s.replace(/(?<!\.)\.+$/,"")
+
+# New
+s=s.endsWith("...")?s:s.replace(/\.+$/,"")

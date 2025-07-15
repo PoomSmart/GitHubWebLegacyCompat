@@ -39,7 +39,7 @@ const TARGET_FILES = {
     "issues-react": "16.4-issues-react.js",
     "issue-viewer": "16.4-issue-viewer.js",
     "list-view": "16.4-list-view.js",
-    "react-core": "16.4-react-core.js",
+    "react-core": "16.4-a-react-core.js",
 };
 
 async function fetchGitHubPage() {
@@ -134,7 +134,7 @@ function formatWithPrettier(filePath) {
     console.log(`Formatting ${path.basename(filePath)} with Prettier...`);
 
     try {
-        // Run Prettier on the downloaded file using local config
+        // Run Prettier using local config (.prettierrc)
         execSync(`npx prettier --write "${filePath}"`, {
             cwd: __dirname, // This ensures it uses the .prettierrc in the current directory
             stdio: "pipe", // Suppress output unless there's an error
@@ -206,27 +206,11 @@ function applyTextPatches(content, patchFile) {
     const originalLength = content.length;
     let modifiedContent = content;
 
-    // Handle special cases based on the patch content
-    if (patch.oldPattern.includes("(?<!\\.)")) {
-        // Handle negative lookbehind for dot patterns (issue-viewer.txt and list-view.txt)
-        // Use direct string replacement since the pattern is now simplified
-        modifiedContent = content.replace(
-            patch.oldPattern,
-            patch.newReplacement
-        );
-    } else if (patch.oldPattern.includes("coreLoader: async function e({")) {
-        // Handle function parameter renaming (issues-react.txt)
-        modifiedContent = content.replace(
-            /coreLoader: async function e\(/g,
-            "coreLoader: async function e_("
-        );
-    } else {
-        // Default: simple string replacement
-        modifiedContent = content.replace(
-            patch.oldPattern,
-            patch.newReplacement
-        );
-    }
+    // Apply the patch using simple string replacement
+    modifiedContent = content.replace(
+        patch.oldPattern,
+        patch.newReplacement
+    );
 
     console.log(
         `  Patch result: ${originalLength} → ${modifiedContent.length} chars (${modifiedContent.length - originalLength >= 0 ? "+" : ""}${modifiedContent.length - originalLength})`
@@ -401,22 +385,20 @@ async function main() {
             downloadedFiles[key] = downloadPath;
         }
 
-        console.log("\n--- Formatting Files ---");
+        console.log("\n--- Processing Files (Skipping Formatting) ---");
 
-        // Step 3: Format downloaded files with Prettier
-        const formattedFiles = {};
+        // Step 3: Work directly with downloaded minified files
+        const processedFiles = {};
         for (const [key, downloadPath] of Object.entries(downloadedFiles)) {
-            console.log(`Formatting ${key}...`);
-            const formattedContent = formatWithPrettier(downloadPath);
-            formattedFiles[key] = formattedContent;
+            console.log(`Processing ${key} (keeping minified format)...`);
+            const content = fs.readFileSync(downloadPath, "utf8");
+            processedFiles[key] = content;
         }
 
         console.log("\n--- Applying Patches ---");
 
-        // Step 4: Apply patches to formatted files
-        const processedFiles = {};
-
-        for (const [key, content] of Object.entries(formattedFiles)) {
+        // Step 4: Apply patches to minified files
+        for (const [key, content] of Object.entries(processedFiles)) {
             const originalLength = content.length;
             let modifiedContent = content;
 
@@ -463,7 +445,7 @@ async function main() {
                     fs.unlinkSync(tempFile);
                 }
             } else {
-                // Apply text patches for other files
+                // Apply text patches to formatted content
                 const patchFile = `${key}.txt`;
                 modifiedContent = applyTextPatches(content, patchFile);
             }
@@ -495,9 +477,19 @@ async function main() {
                 console.log(`Created backup: ${path.basename(backupFile)}`);
             }
 
-            // Write new content
+            // Write and format the final content
             fs.writeFileSync(targetFile, content);
-            console.log(`Updated: ${TARGET_FILES[key]}`);
+
+            // Apply Prettier formatting to the final file
+            try {
+                formatWithPrettier(targetFile);
+                console.log(`Updated and formatted: ${TARGET_FILES[key]}`);
+            } catch (formatError) {
+                console.warn(
+                    `  Warning: Final formatting failed for ${TARGET_FILES[key]}: ${formatError.message}`
+                );
+                console.log(`Updated: ${TARGET_FILES[key]} (unformatted)`);
+            }
         }
         console.log("\n--- Cleanup ---");
 
@@ -508,7 +500,8 @@ async function main() {
                 .filter(
                     (file) =>
                         file.includes("react-core-formatted.js") ||
-                        file.includes("react-core-temp.js")
+                        file.includes("react-core-temp.js") ||
+                        file.includes("-new.js") // Preserve all downloaded files for debugging
                 );
 
             if (debugFiles.length > 0) {

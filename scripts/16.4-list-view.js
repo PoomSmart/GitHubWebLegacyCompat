@@ -718,7 +718,9 @@
                                 (l = "More information available below");
                             let n = [R, T].filter((e) => e.trim()).join(": ");
                             try {
-                                n = n.endsWith("...") ? n : n.replace(/\.+$/, "");
+                                n = n.endsWith("...")
+                                    ? n
+                                    : n.replace(/\.+$/, "");
                             } catch {
                                 for (; n.endsWith("."); )
                                     n = n.substring(0, n.length - 1);
