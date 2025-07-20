@@ -24,10 +24,40 @@ Reference: [Lookbehind assertion](https://developer.mozilla.org/en-US/docs/Web/J
 
 ## Building
 
-The project uses dynamic asset loading for both CSS and JavaScript files. Assets are automatically processed during the build process:
+The project uses dynamic asset loading for both CSS and JavaScript files. To build the complete project:
 
-- CSS files in `./styles/` are minified and copied to the layout directory
-- JavaScript files in `./scripts/` are processed with Babel and minified
+1. **Update JavaScript assets** (when GitHub updates their bundles):
+   ```bash
+   node update-scripts.js
+   ```
+
+2. **Process and build assets**:
+   ```bash
+   make assets
+   ```
+
+This workflow:
+- Downloads and patches the latest GitHub JavaScript bundles for compatibility
+- Processes CSS files in `./styles/` (minified and copied to layout directory)
+- Processes JavaScript files in `./scripts/` (processed with Babel and minified)
 - Assets are loaded dynamically based on iOS version compatibility
 
-Run `make assets` to process CSS and JS files.
+### Updating JavaScript Assets
+
+The automation script handles updating GitHub's JavaScript assets when they change:
+
+```bash
+# Download latest assets and apply compatibility patches
+node update-scripts.js
+
+# Preview changes without modifying files
+node update-scripts.js --dry-run
+```
+
+The automation script:
+- Scrapes GitHub's issues page to discover current asset URLs
+- Downloads the latest JavaScript bundles (issues-react, issue-viewer, list-view, react-core)
+- Applies compatibility patches for iOS < 16.4 (callee/parameter conflicts, lookbehind regex)
+- Updates the bundled script files automatically
+
+This eliminates the need for manual patching when GitHub updates their assets.
