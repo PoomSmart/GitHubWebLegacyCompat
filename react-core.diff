@@ -1,7 +1,5 @@
-diff --git a/scripts/16.4-react-core-old.js b/scripts/16.4-react-core.js
-index 4554cb1..7f3376b 100644
---- a/scripts/16.4-react-core-old.js
-+++ b/scripts/16.4-react-core.js
+--- scripts/16.4-a-react-core-old.js	2025-07-26 11:34:24
++++ scripts/16.4-a-react-core.js	2025-07-26 11:27:57
 @@ -203,7 +203,7 @@
                          e = e ? e[t[n]] : a;
                      return e === a ? r : e;
@@ -20,33 +18,42 @@ index 4554cb1..7f3376b 100644
                              }),
                          n
                      );
-@@ -967,12 +967,12 @@
+@@ -970,12 +970,12 @@
                  );
              }
              var x = (function () {
 -                    function e(e) {
 +                    function e_(e) {
-                         (this.groupSizes = new Uint32Array(512)),
+                         ((this.groupSizes = new Uint32Array(512)),
                              (this.length = 512),
-                             (this.tag = e);
+                             (this.tag = e));
                      }
 -                    var t = e.prototype;
 +                    var t = e_.prototype;
                      return (
                          (t.indexOfGroup = function (e) {
                              for (var t = 0, r = 0; r < e; r++)
-@@ -1112,7 +1112,7 @@
+@@ -1036,7 +1036,7 @@
+ `;
+                             return t;
+                         }),
+-                        e
++                        e_
+                     );
+                 })(),
+                 C = new Map(),
+@@ -1117,7 +1117,7 @@
                      );
                  },
                  D = (function () {
 -                    function e(e) {
 +                    function e_(e) {
                          var t = (this.element = $(e));
-                         t.appendChild(document.createTextNode("")),
+                         (t.appendChild(document.createTextNode("")),
                              (this.sheet = (function (e) {
-@@ -1131,12 +1131,12 @@
+@@ -1136,12 +1136,12 @@
                              })(t)),
-                             (this.length = 0);
+                             (this.length = 0));
                      }
 -                    var t = e.prototype;
 +                    var t = e_.prototype;
@@ -60,7 +67,7 @@ index 4554cb1..7f3376b 100644
                                      this.length++,
                                      !0
                                  );
-@@ -1153,15 +1153,15 @@
+@@ -1158,15 +1158,15 @@
                                  ? t.cssText
                                  : "";
                          }),
@@ -72,14 +79,14 @@ index 4554cb1..7f3376b 100644
 -                    function e(e) {
 +                    function e_(e) {
                          var t = (this.element = $(e));
-                         (this.nodes = t.childNodes), (this.length = 0);
+                         ((this.nodes = t.childNodes), (this.length = 0));
                      }
 -                    var t = e.prototype;
 +                    var t = e_.prototype;
                      return (
                          (t.insertRule = function (e, t) {
                              if (e <= this.length && e >= 0) {
-@@ -1184,14 +1184,14 @@
+@@ -1189,14 +1189,14 @@
                                  ? this.nodes[e].textContent
                                  : "";
                          }),
@@ -90,14 +97,14 @@ index 4554cb1..7f3376b 100644
                  M = (function () {
 -                    function e(e) {
 +                    function e_(e) {
-                         (this.rules = []), (this.length = 0);
+                         ((this.rules = []), (this.length = 0));
                      }
 -                    var t = e.prototype;
 +                    var t = e_.prototype;
                      return (
                          (t.insertRule = function (e, t) {
                              return (
-@@ -1205,13 +1205,13 @@
+@@ -1210,13 +1210,13 @@
                          (t.getRule = function (e) {
                              return e < this.length ? this.rules[e] : "";
                          }),
@@ -110,12 +117,12 @@ index 4554cb1..7f3376b 100644
                  U = (function () {
 -                    function e(e, t, r) {
 +                    function e_(e, t, r) {
-                         void 0 === e && (e = y),
+                         (void 0 === e && (e = y),
                              void 0 === t && (t = {}),
                              (this.options = h({}, W, {}, e)),
-@@ -1239,15 +1239,15 @@
+@@ -1244,15 +1244,15 @@
                                      }
-                                 })(this));
+                                 })(this)));
                      }
 -                    e.registerId = function (e) {
 +                    e_.registerId = function (e) {
@@ -132,7 +139,7 @@ index 4554cb1..7f3376b 100644
                                      h({}, this.options, {}, t),
                                      this.gs,
                                      (r && this.names) || void 0
-@@ -1339,7 +1339,7 @@
+@@ -1345,7 +1345,7 @@
                                  return n;
                              })(this);
                          }),
@@ -141,17 +148,17 @@ index 4554cb1..7f3376b 100644
                      );
                  })(),
                  H = /(a)(d)/gi,
-@@ -1370,7 +1370,7 @@
+@@ -1376,7 +1376,7 @@
              }
              var V = J("5.3.11"),
                  X = (function () {
 -                    function e(e, t, r) {
 +                    function e_(e, t, r) {
-                         (this.rules = e),
+                         ((this.rules = e),
                              (this.staticRulesId = ""),
                              (this.isStatic =
-@@ -1381,7 +1381,7 @@
-                             U.registerId(t);
+@@ -1387,7 +1387,7 @@
+                             U.registerId(t));
                      }
                      return (
 -                        (e.prototype.generateAndInjectStyles = function (
@@ -159,7 +166,7 @@ index 4554cb1..7f3376b 100644
                              e,
                              t,
                              r
-@@ -1443,7 +1443,7 @@
+@@ -1449,7 +1449,7 @@
                              }
                              return a.join(" ");
                          }),
@@ -168,47 +175,50 @@ index 4554cb1..7f3376b 100644
                      );
                  })(),
                  G = /^\s*\/\/.*$/gm,
-@@ -1595,7 +1595,7 @@
+@@ -1601,7 +1601,7 @@
                  );
              }
              var ei = (function () {
 -                    function e(e, t) {
 +                    function e_(e, t) {
                          var r = this;
-                         (this.inject = function (e, t) {
+                         ((this.inject = function (e, t) {
                              void 0 === t && (t = er);
-@@ -1615,10 +1615,10 @@
-                             (this.rules = t);
+@@ -1621,13 +1621,13 @@
+                             (this.rules = t));
                      }
                      return (
 -                        (e.prototype.getName = function (e) {
 +                        (e_.prototype.getName = function (e) {
-                             return void 0 === e && (e = er), this.name + e.hash;
+                             return (
+                                 void 0 === e && (e = er),
+                                 this.name + e.hash
+                             );
                          }),
 -                        e
 +                        e_
                      );
                  })(),
                  es = /([A-Z])/,
-@@ -1655,7 +1655,7 @@
-                         ? (e.inject(r, n), e.getName(n))
-                         : e
-                     : p(e)
--                    ? (function e(t, r) {
-+                    ? (function e_(t, r) {
-                           var n,
-                               a = [];
-                           for (var o in t)
-@@ -1665,7 +1665,7 @@
-                                   g(t[o])
-                                       ? a.push(ed(o) + ":", t[o], ";")
-                                       : p(t[o])
--                                      ? a.push.apply(a, e(t[o], o))
-+                                      ? a.push.apply(a, e_(t[o], o))
-                                       : a.push(
-                                             ed(o) +
-                                                 ": " +
-@@ -1759,7 +1759,7 @@
+@@ -1664,7 +1664,7 @@
+                               ? (e.inject(r, n), e.getName(n))
+                               : e
+                           : p(e)
+-                            ? (function e(t, r) {
++                            ? (function e_(t, r) {
+                                   var n,
+                                       a = [];
+                                   for (var o in t)
+@@ -1675,7 +1675,7 @@
+                                           g(t[o])
+                                               ? a.push(ed(o) + ":", t[o], ";")
+                                               : p(t[o])
+-                                                ? a.push.apply(a, e(t[o], o))
++                                                ? a.push.apply(a, e_(t[o], o))
+                                                 : a.push(
+                                                       ed(o) +
+                                                           ": " +
+@@ -1775,7 +1775,7 @@
              eR.Consumer;
              var eC = {},
                  ek = function (e) {
@@ -217,7 +227,7 @@ index 4554cb1..7f3376b 100644
                          if (
                              (void 0 === a && (a = y),
                              !(0, n.isValidElementType)(r))
-@@ -1770,10 +1770,10 @@
+@@ -1786,10 +1786,10 @@
                          };
                          return (
                              (o.withConfig = function (n) {
@@ -230,7 +240,7 @@ index 4554cb1..7f3376b 100644
                                      t,
                                      r,
                                      h({}, a, {
-@@ -1785,7 +1785,7 @@
+@@ -1801,7 +1801,7 @@
                              }),
                              o
                          );
@@ -239,7 +249,7 @@ index 4554cb1..7f3376b 100644
                          var o = b(t),
                              i = !eS(t),
                              s = r.attrs,
-@@ -1961,7 +1961,7 @@
+@@ -1977,7 +1977,7 @@
                                          return a;
                                      })(r, ["componentId"]),
                                      i = a && a + "-" + (eS(t) ? t : eb(v(t)));
@@ -248,7 +258,7 @@ index 4554cb1..7f3376b 100644
                                      t,
                                      h({}, o, { attrs: E, componentId: i }),
                                      n
-@@ -1971,7 +1971,7 @@
+@@ -1987,7 +1987,7 @@
                                  get: function () {
                                      return this._foldedDefaultProps;
                                  },
@@ -257,41 +267,43 @@ index 4554cb1..7f3376b 100644
                                      this._foldedDefaultProps = o
                                          ? (function e(t) {
                                                for (
-@@ -2011,7 +2011,7 @@
+@@ -2026,8 +2026,8 @@
+                                                               })(t, i[s], s);
                                                }
                                                return t;
-                                           })({}, t.defaultProps, e)
+-                                          })({}, t.defaultProps, e)
 -                                        : e;
++                                          })({}, t.defaultProps, e_)
 +                                        : e_;
                                  },
                              }),
                              Object.defineProperty(j, "toString", {
-@@ -2175,13 +2175,13 @@
+@@ -2191,13 +2191,13 @@
                  ek[e] = ek(e);
              });
              var eN = (function () {
 -                function e(e, t) {
 +                function e_(e, t) {
-                     (this.rules = e),
+                     ((this.rules = e),
                          (this.componentId = t),
                          (this.isStatic = Y(e)),
-                         U.registerId(this.componentId + 1);
+                         U.registerId(this.componentId + 1));
                  }
 -                var t = e.prototype;
 +                var t = e_.prototype;
                  return (
                      (t.createStyles = function (e, t, r, n) {
                          var a = n(ef(this.rules, t, r, n).join(""), ""),
-@@ -2196,7 +2196,7 @@
+@@ -2212,7 +2212,7 @@
                              this.removeStyles(e, r),
-                             this.createStyles(e, t, r, n);
+                             this.createStyles(e, t, r, n));
                      }),
 -                    e
 +                    e_
                  );
              })();
              function ej(e) {
-@@ -5391,7 +5391,7 @@
+@@ -5407,7 +5407,7 @@
                  return {
                      path: e,
                      Component: t,

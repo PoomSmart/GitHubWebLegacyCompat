@@ -318,8 +318,26 @@ ${this.quotedText}`)
                 }
             };
         },
+        34441: (e, l, a) => {
+            a.d(l, { A: () => n });
+            let n = {
+                Box: "SingleSignOnBanner-module__Box--iwIEO",
+                Flash: "SingleSignOnBanner-module__Flash--XK1g3",
+                Box_1: "SingleSignOnBanner-module__Box_1--VPBly",
+                Octicon: "SingleSignOnBanner-module__Octicon--JXNw_",
+                Box_2: "SingleSignOnBanner-module__Box_2--kq0MT",
+                ForceWrap: "SingleSignOnBanner-module__ForceWrap--tZqOV",
+                Paragraph: "SingleSignOnBanner-module__Paragraph--rpV0k",
+                ProtectedOrgs_FullList:
+                    "SingleSignOnBanner-module__ProtectedOrgs_FullList--HTdZQ",
+                ProtectedOrgs_Shortened:
+                    "SingleSignOnBanner-module__ProtectedOrgs_Shortened--MTXYo",
+                ShieldLockIcon:
+                    "SingleSignOnBanner-module__ShieldLockIcon--TXlVP",
+            };
+        },
         44237: (e, l, a) => {
-            a.d(l, { xC: () => K, B6: () => w, ym: () => R });
+            a.d(l, { xC: () => _, B6: () => w, ym: () => R });
             var n = a(74848),
                 t = a(21728),
                 s = a(38621),
@@ -333,7 +351,7 @@ ${this.quotedText}`)
                 g = a(9852),
                 p = a(39459),
                 y = a(34614),
-                k = a(42522);
+                k = a(58868);
             let h = {
                 Box: "CheckRunItem-module__Box--vkNX2",
                 Box_1: "CheckRunItem-module__Box_1--NFRJY",
@@ -358,9 +376,9 @@ ${this.quotedText}`)
                     b,
                     f,
                     C,
-                    F = (0, t.c)(37),
-                    { checkRun: S } = e;
-                F[0] !== S.icon
+                    S = (0, t.c)(37),
+                    { checkRun: F } = e;
+                S[0] !== F.icon
                     ? ((l = (function (e) {
                           switch (e) {
                               case "check":
@@ -409,14 +427,14 @@ ${this.quotedText}`)
                                           "fgColor-danger my-0 mx-2 flex-self-center",
                                   });
                           }
-                      })(S.icon)),
-                      (F[0] = S.icon),
-                      (F[1] = l))
-                    : (l = F[1]);
+                      })(F.icon)),
+                      (S[0] = F.icon),
+                      (S[1] = l))
+                    : (l = S[1]);
                 let L = l,
-                    I = "in_progress" === S.state;
+                    I = "in_progress" === F.state;
                 return (
-                    F[2] !== L || F[3] !== I
+                    S[2] !== L || S[3] !== I
                         ? ((a = I
                               ? (0, n.jsx)("div", {
                                     className: h.Box_2,
@@ -446,123 +464,123 @@ ${this.quotedText}`)
                                     }),
                                 })
                               : (0, n.jsx)(n.Fragment, { children: L })),
-                          (F[2] = L),
-                          (F[3] = I),
-                          (F[4] = a))
-                        : (a = F[4]),
-                    F[5] !== S.avatarBackgroundColor
-                        ? ((i = { backgroundColor: S.avatarBackgroundColor }),
-                          (F[5] = S.avatarBackgroundColor),
-                          (F[6] = i))
-                        : (i = F[6]),
-                    F[7] !== S.avatarLogo || F[8] !== i
+                          (S[2] = L),
+                          (S[3] = I),
+                          (S[4] = a))
+                        : (a = S[4]),
+                    S[5] !== F.avatarBackgroundColor
+                        ? ((i = { backgroundColor: F.avatarBackgroundColor }),
+                          (S[5] = F.avatarBackgroundColor),
+                          (S[6] = i))
+                        : (i = S[6]),
+                    S[7] !== F.avatarLogo || S[8] !== i
                         ? ((r = (0, n.jsx)(p.r, {
                               square: !0,
-                              src: S.avatarLogo,
+                              src: F.avatarLogo,
                               sx: i,
                           })),
-                          (F[7] = S.avatarLogo),
-                          (F[8] = i),
-                          (F[9] = r))
-                        : (r = F[9]),
-                    F[10] !== S.avatarUrl || F[11] !== r
+                          (S[7] = F.avatarLogo),
+                          (S[8] = i),
+                          (S[9] = r))
+                        : (r = S[9]),
+                    S[10] !== F.avatarUrl || S[11] !== r
                         ? ((o = (0, n.jsx)(y.A, {
-                              href: S.avatarUrl,
+                              href: F.avatarUrl,
                               "aria-label": "Avatar",
                               className: h.Link,
                               children: r,
                           })),
-                          (F[10] = S.avatarUrl),
-                          (F[11] = r),
-                          (F[12] = o))
-                        : (o = F[12]),
-                    F[13] !== S.avatarDescription || F[14] !== o
+                          (S[10] = F.avatarUrl),
+                          (S[11] = r),
+                          (S[12] = o))
+                        : (o = S[12]),
+                    S[13] !== F.avatarDescription || S[14] !== o
                         ? ((u = (0, n.jsx)(k.m, {
-                              text: S.avatarDescription,
+                              text: F.avatarDescription,
                               direction: "e",
                               children: o,
                           })),
-                          (F[13] = S.avatarDescription),
-                          (F[14] = o),
-                          (F[15] = u))
-                        : (u = F[15]),
-                    F[16] !== a || F[17] !== u
+                          (S[13] = F.avatarDescription),
+                          (S[14] = o),
+                          (S[15] = u))
+                        : (u = S[15]),
+                    S[16] !== a || S[17] !== u
                         ? ((d = (0, n.jsxs)("div", {
                               className: h.Box_1,
                               children: [a, u],
                           })),
-                          (F[16] = a),
-                          (F[17] = u),
-                          (F[18] = d))
-                        : (d = F[18]),
-                    F[19] !== S.name
+                          (S[16] = a),
+                          (S[17] = u),
+                          (S[18] = d))
+                        : (d = S[18]),
+                    S[19] !== F.name
                         ? ((c = (0, n.jsxs)("span", {
                               className: h.Text_1,
-                              children: [S.name, " "],
+                              children: [F.name, " "],
                           })),
-                          (F[19] = S.name),
-                          (F[20] = c))
-                        : (c = F[20]),
-                    F[21] !== S.additionalContext || F[22] !== S.pending
-                        ? ((m = S.pending
+                          (S[19] = F.name),
+                          (S[20] = c))
+                        : (c = S[20]),
+                    S[21] !== F.additionalContext || S[22] !== F.pending
+                        ? ((m = F.pending
                               ? (0, n.jsx)("span", {
                                     className: h.Text_2,
-                                    children: S.additionalContext,
+                                    children: F.additionalContext,
                                 })
-                              : S.additionalContext),
-                          (F[21] = S.additionalContext),
-                          (F[22] = S.pending),
-                          (F[23] = m))
-                        : (m = F[23]),
-                    F[24] !== S.description || F[25] !== S.pending
+                              : F.additionalContext),
+                          (S[21] = F.additionalContext),
+                          (S[22] = F.pending),
+                          (S[23] = m))
+                        : (m = S[23]),
+                    S[24] !== F.description || S[25] !== F.pending
                         ? ((g =
-                              S.description &&
+                              F.description &&
                               (0, n.jsxs)("span", {
                                   children: [
                                       " ",
                                       "- ",
-                                      S.pending
+                                      F.pending
                                           ? (0, n.jsx)("span", {
                                                 className: h.Text_2,
-                                                children: S.description,
+                                                children: F.description,
                                             })
-                                          : S.description,
+                                          : F.description,
                                   ],
                               })),
-                          (F[24] = S.description),
-                          (F[25] = S.pending),
-                          (F[26] = g))
-                        : (g = F[26]),
-                    F[27] !== g || F[28] !== c || F[29] !== m
+                          (S[24] = F.description),
+                          (S[25] = F.pending),
+                          (S[26] = g))
+                        : (g = S[26]),
+                    S[27] !== g || S[28] !== c || S[29] !== m
                         ? ((b = (0, n.jsxs)("span", {
                               className: h.Text,
                               children: [c, m, g],
                           })),
-                          (F[27] = g),
-                          (F[28] = c),
-                          (F[29] = m),
-                          (F[30] = b))
-                        : (b = F[30]),
-                    F[31] !== S.targetUrl
+                          (S[27] = g),
+                          (S[28] = c),
+                          (S[29] = m),
+                          (S[30] = b))
+                        : (b = S[30]),
+                    S[31] !== F.targetUrl
                         ? ((f = (0, n.jsx)(y.A, {
-                              href: S.targetUrl,
+                              href: F.targetUrl,
                               className: h.Link_1,
                               children: "Details",
                           })),
-                          (F[31] = S.targetUrl),
-                          (F[32] = f))
-                        : (f = F[32]),
-                    F[33] !== b || F[34] !== f || F[35] !== d
+                          (S[31] = F.targetUrl),
+                          (S[32] = f))
+                        : (f = S[32]),
+                    S[33] !== b || S[34] !== f || S[35] !== d
                         ? ((C = (0, n.jsxs)("li", {
                               "data-testid": "check-run-item",
                               className: h.Box,
                               children: [d, b, f],
                           })),
-                          (F[33] = b),
-                          (F[34] = f),
-                          (F[35] = d),
-                          (F[36] = C))
-                        : (C = F[36]),
+                          (S[33] = b),
+                          (S[34] = f),
+                          (S[35] = d),
+                          (S[36] = C))
+                        : (C = S[36]),
                     C
                 );
             }
@@ -577,7 +595,7 @@ ${this.quotedText}`)
                     { checkRuns: i } = e;
                 return (
                     s[0] !== i
-                        ? ((l = i.map(F)), (s[0] = i), (s[1] = l))
+                        ? ((l = i.map(S)), (s[0] = i), (s[1] = l))
                         : (l = s[1]),
                     s[2] !== l
                         ? ((a = (0, n.jsx)("ul", {
@@ -590,13 +608,13 @@ ${this.quotedText}`)
                     a
                 );
             }
-            function F(e, l) {
+            function S(e, l) {
                 return (0, n.jsx)(b, { checkRun: e }, l);
             }
             try {
                 C.displayName || (C.displayName = "ChecksStatusBadgeFooter");
             } catch {}
-            let S = {
+            let F = {
                 Text: "ChecksStatusBadgeHeader-module__Text--IBN_O",
                 Text_1: "ChecksStatusBadgeHeader-module__Text_1--nuXs5",
                 Text_2: "ChecksStatusBadgeHeader-module__Text_2--nXTHk",
@@ -610,7 +628,7 @@ ${this.quotedText}`)
                         return (
                             l[0] === Symbol.for("react.memo_cache_sentinel")
                                 ? ((e = (0, n.jsx)("span", {
-                                      className: S.Text,
+                                      className: F.Text,
                                       children: "All checks have passed",
                                   })),
                                   (l[0] = e))
@@ -623,7 +641,7 @@ ${this.quotedText}`)
                         return (
                             l[1] === Symbol.for("react.memo_cache_sentinel")
                                 ? ((e = (0, n.jsx)("span", {
-                                      className: S.Text_1,
+                                      className: F.Text_1,
                                       children: "All checks have failed",
                                   })),
                                   (l[1] = e))
@@ -636,7 +654,7 @@ ${this.quotedText}`)
                         return (
                             l[2] === Symbol.for("react.memo_cache_sentinel")
                                 ? ((e = (0, n.jsx)("span", {
-                                      className: S.Text_2,
+                                      className: F.Text_2,
                                       children:
                                           "Some checks haven\u2019t completed yet",
                                   })),
@@ -650,7 +668,7 @@ ${this.quotedText}`)
                         return (
                             l[3] === Symbol.for("react.memo_cache_sentinel")
                                 ? ((e = (0, n.jsx)("span", {
-                                      className: S.Text_1,
+                                      className: F.Text_1,
                                       children:
                                           "Some checks were not successful",
                                   })),
@@ -669,7 +687,7 @@ ${this.quotedText}`)
                 Dialog_Body: "CheckStatusDialog-module__Dialog_Body--WjYUz",
                 Box: "CheckStatusDialog-module__Box--KtBxw",
             };
-            function K(e) {
+            function _(e) {
                 let l,
                     a,
                     s = (0, t.c)(7),
@@ -722,9 +740,9 @@ ${this.quotedText}`)
                 );
             }
             try {
-                K.displayName || (K.displayName = "CheckStatusDialog");
+                _.displayName || (_.displayName = "CheckStatusDialog");
             } catch {}
-            let _ = {
+            let K = {
                     ChecksStatusBadgeButton:
                         "ChecksStatusBadge-module__ChecksStatusBadgeButton--cXKro",
                     ChecksStatusBadgeIconButton:
@@ -789,22 +807,22 @@ ${this.quotedText}`)
                           (m[5] = l),
                           (m[6] = a))
                         : (a = m[6]));
-                let F = a;
+                let S = a;
                 if (h) {
                     let e;
-                    (m[7] !== F || m[8] !== b || m[9] !== h
+                    (m[7] !== S || m[8] !== b || m[9] !== h
                         ? ((e = (0, n.jsx)(u.A, {
                               id: b,
                               "aria-label": h,
                               direction: "e",
-                              children: F,
+                              children: S,
                           })),
-                          (m[7] = F),
+                          (m[7] = S),
                           (m[8] = b),
                           (m[9] = h),
                           (m[10] = e))
                         : (e = m[10]),
-                        (F = e));
+                        (S = e));
                 }
                 return (
                     m[11] !== g
@@ -818,13 +836,13 @@ ${this.quotedText}`)
                           (m[13] = p),
                           (m[14] = i))
                         : (i = m[14]),
-                    m[15] !== F || m[16] !== s || m[17] !== i
+                    m[15] !== S || m[16] !== s || m[17] !== i
                         ? ((r = (0, n.jsxs)("span", {
                               className: s,
                               "data-testid": "checks-status-badge-icon-only",
-                              children: [F, i],
+                              children: [S, i],
                           })),
-                          (m[15] = F),
+                          (m[15] = S),
                           (m[16] = s),
                           (m[17] = i),
                           (m[18] = r))
@@ -850,8 +868,8 @@ ${this.quotedText}`)
                     } = e,
                     f = void 0 === g ? "default" : g,
                     C = void 0 === k ? "medium" : k,
-                    F = void 0 === h ? "" : h,
-                    [S, L] = (0, d.useState)(!1),
+                    S = void 0 === h ? "" : h,
+                    [F, L] = (0, d.useState)(!1),
                     I = (0, d.useRef)(null),
                     w = v[c],
                     N = w?.[f] || v.error[f],
@@ -887,13 +905,13 @@ ${this.quotedText}`)
                 if (p) {
                     let e;
                     return (
-                        u[7] !== F || u[8] !== R || u[9] !== P
+                        u[7] !== S || u[8] !== R || u[9] !== P
                             ? ((e = (0, n.jsx)(x, {
-                                  descriptionText: F,
+                                  descriptionText: S,
                                   icon: R,
                                   iconColor: P,
                               })),
-                              (u[7] = F),
+                              (u[7] = S),
                               (u[8] = R),
                               (u[9] = P),
                               (u[10] = e))
@@ -904,13 +922,13 @@ ${this.quotedText}`)
                 return (
                     u[11] !== y ||
                     u[12] !== m?.checksStatusSummary ||
-                    u[13] !== F ||
+                    u[13] !== S ||
                     u[14] !== b ||
                     u[15] !== R ||
                     u[16] !== P ||
                     u[17] !== C ||
                     u[18] !== c
-                        ? ((a = F
+                        ? ((a = S
                               ? (0, n.jsx)(i.Q, {
                                     "data-testid": "checks-status-badge-button",
                                     leadingVisual: R,
@@ -924,8 +942,8 @@ ${this.quotedText}`)
                                     onClick: () => {
                                         (b?.(), L(!0));
                                     },
-                                    className: _.ChecksStatusBadgeButton,
-                                    children: F,
+                                    className: K.ChecksStatusBadgeButton,
+                                    children: S,
                                 })
                               : (0, n.jsx)(r.K, {
                                     "data-testid": "checks-status-badge-icon",
@@ -935,7 +953,7 @@ ${this.quotedText}`)
                                     size: C,
                                     "aria-label": m?.checksStatusSummary ?? c,
                                     sx: { svg: { color: P }, ...y },
-                                    className: _.ChecksStatusBadgeIconButton,
+                                    className: K.ChecksStatusBadgeIconButton,
                                     ref: I,
                                     onClick: () => {
                                         (b?.(), L(!0));
@@ -943,7 +961,7 @@ ${this.quotedText}`)
                                 })),
                           (u[11] = y),
                           (u[12] = m?.checksStatusSummary),
-                          (u[13] = F),
+                          (u[13] = S),
                           (u[14] = b),
                           (u[15] = R),
                           (u[16] = P),
@@ -951,12 +969,12 @@ ${this.quotedText}`)
                           (u[18] = c),
                           (u[19] = a))
                         : (a = u[19]),
-                    u[20] !== m || u[21] !== S
+                    u[20] !== m || u[21] !== F
                         ? ((s =
-                              S &&
-                              (0, n.jsx)(K, {
+                              F &&
+                              (0, n.jsx)(_, {
                                   combinedStatus: m,
-                                  isOpen: S,
+                                  isOpen: F,
                                   onDismiss: () => {
                                       (L(!1),
                                           setTimeout(() => {
@@ -965,7 +983,7 @@ ${this.quotedText}`)
                                   },
                               })),
                           (u[20] = m),
-                          (u[21] = S),
+                          (u[21] = F),
                           (u[22] = s))
                         : (s = u[22]),
                     u[23] !== a || u[24] !== s
@@ -1013,6 +1031,49 @@ ${this.quotedText}`)
                 );
             }
         },
+        8367: (e, l, a) => {
+            function n(e) {
+                return t(e)[0];
+            }
+            function t(e) {
+                let l = [];
+                for (let a of (function () {
+                    try {
+                        return document.cookie.split(";");
+                    } catch {
+                        return [];
+                    }
+                })()) {
+                    let [n, t] = a.trim().split("=");
+                    e === n && void 0 !== t && l.push({ key: n, value: t });
+                }
+                return l;
+            }
+            function s(e, l, a = null, n = !1, t = "lax") {
+                let i = document.domain;
+                if (null == i) throw Error("Unable to get document domain");
+                i.endsWith(".github.com") && (i = "github.com");
+                let r = "https:" === location.protocol ? "; secure" : "",
+                    o = a ? `; expires=${a}` : "";
+                !1 === n && (i = `.${i}`);
+                try {
+                    document.cookie = `${e}=${l}; path=/; domain=${i}${o}${r}; samesite=${t}`;
+                } catch {}
+            }
+            function i(e, l = !1) {
+                let a = document.domain;
+                if (null == a) throw Error("Unable to get document domain");
+                a.endsWith(".github.com") && (a = "github.com");
+                let n = new Date(Date.now() - 1).toUTCString(),
+                    t = "https:" === location.protocol ? "; secure" : "",
+                    s = `; expires=${n}`;
+                !1 === l && (a = `.${a}`);
+                try {
+                    document.cookie = `${e}=''; path=/; domain=${a}${s}${t}`;
+                } catch {}
+            }
+            a.d(l, { OR: () => t, Ri: () => n, TV: () => s, Yj: () => i });
+        },
         72841: (e, l, a) => {
             a.d(l, { A: () => n });
             let n = (e, l) => {
@@ -1030,7 +1091,7 @@ ${this.quotedText}`)
             a.d(l, { n: () => i });
             var n = a(70170),
                 t = a(34784),
-                s = a(94893);
+                s = a(82069);
             let i = (e, l, a, n) =>
                 (0, t.fetchQuery)(
                     e,
@@ -1056,7 +1117,7 @@ ${this.quotedText}`)
                 up: "ArrowUp",
             };
         },
-        49042: (e, l, a) => {
+        2020: (e, l, a) => {
             var n,
                 t,
                 s,
@@ -1707,7 +1768,7 @@ ${this.quotedText}`)
                     );
                 return (0, y.jsx)(f.Provider, { value: s, children: e });
             }
-            let F = () => {
+            let S = () => {
                 let e = (0, b.useContext)(f);
                 if (!e)
                     throw Error(
@@ -1721,7 +1782,7 @@ ${this.quotedText}`)
             try {
                 C.displayName || (C.displayName = "NavigationContextProvider");
             } catch {}
-            let S = {
+            let F = {
                 repository: "repository",
                 assignedToMe: "assigned",
                 pullsAssignedToMe: "pullsAssignedToMe",
@@ -1733,8 +1794,8 @@ ${this.quotedText}`)
             };
             var L = a(13233),
                 I = a(35983),
-                K = a(64262),
-                _ = a(85647),
+                _ = a(64262),
+                K = a(85788),
                 v = a(99543),
                 x = a(44263),
                 w = a(28835);
@@ -2012,14 +2073,14 @@ ${this.quotedText}`)
                     sidePanelTooltip: "View issue",
                     viewProfile: (e) => `View ${e}'s profile`,
                 },
-                H = Object.values(S),
+                H = Object.values(F),
                 z = {
                     color: E.defaultViewColor,
                     description: "",
                     scopingRepository: null,
                 },
                 W = {
-                    id: S.assignedToMe,
+                    id: F.assignedToMe,
                     name: "Assigned to me",
                     query: I.Ds.assignedToMe,
                     icon: "PEOPLE",
@@ -2027,7 +2088,7 @@ ${this.quotedText}`)
                     ...z,
                 },
                 G = {
-                    id: S.repository,
+                    id: F.repository,
                     name: "Issues",
                     query: "is:issue state:open",
                     icon: "PEOPLE",
@@ -2035,7 +2096,7 @@ ${this.quotedText}`)
                     ...z,
                 },
                 Z = {
-                    id: S.pullsAssignedToMe,
+                    id: F.pullsAssignedToMe,
                     name: "Assigned to me",
                     query: I.Ds.pullsAssignedToMe,
                     icon: "PEOPLE",
@@ -2043,7 +2104,7 @@ ${this.quotedText}`)
                     ...z,
                 },
                 X = {
-                    id: S.mentioned,
+                    id: F.mentioned,
                     name: "Mentioned",
                     query: I.Ds.mentioned,
                     icon: "MENTION",
@@ -2051,21 +2112,21 @@ ${this.quotedText}`)
                     ...z,
                 },
                 Y = {
-                    id: S.created,
+                    id: F.created,
                     name: "Created by me",
                     query: I.Ds.createdByMe,
                     icon: "SMILEY",
                     ...z,
                 },
                 J = {
-                    id: S.recent,
+                    id: F.recent,
                     name: "Recent activity",
                     query: I.Ds.recentActivity,
                     icon: "CLOCK",
                     ...z,
                 },
                 ee = {
-                    id: S.empty,
+                    id: F.empty,
                     name: "Issues",
                     query: "is:issue state:open",
                     icon: "ISSUE_OPENED",
@@ -2073,7 +2134,7 @@ ${this.quotedText}`)
                     ...z,
                 },
                 el = {
-                    id: S.new,
+                    id: F.new,
                     name: "New",
                     query: "is:issue state:open",
                     icon: "ISSUE_OPENED",
@@ -2596,11 +2657,11 @@ ${this.quotedText}`)
                     !!e.startsWith(window.location.origin) &&
                     e.indexOf(`/${l}/${a}/issues`) > -1,
                 eC = (e, l) => (l ? `/${l}/${e}/issues` : "/issues"),
-                eF = (e) => e.includes(I.Ds.open),
-                eS = (e) => e.includes(I.Ds.closed),
+                eS = (e) => e.includes(I.Ds.open),
+                eF = (e) => e.includes(I.Ds.closed),
                 eL = (e) => e.includes(`-${I.Ds.open}`),
                 eI = (e) => e.includes(`-${I.Ds.closed}`),
-                eK = (e) =>
+                e_ = (e) =>
                     [
                         I.Ds.defaultRepoLevelOpen,
                         I.Ds.defaultRepoLevelClosed,
@@ -2611,10 +2672,10 @@ ${this.quotedText}`)
                             .sort((e) => ("is:issue" === e ? -1 : 1))
                             .join(" ")
                     ),
-                e_ = (e) => {
-                    if (!(e = e.trim()) || eK(e)) return "";
-                    let l = eF((e = ev(e))),
-                        a = eS(e),
+                eK = (e) => {
+                    if (!(e = e.trim()) || e_(e)) return "";
+                    let l = eS((e = ev(e))),
+                        a = eF(e),
                         n = eL(e),
                         t = eI(e);
                     return n && !t
@@ -2631,9 +2692,9 @@ ${this.quotedText}`)
                     e.replace(/(^|\s)is:(open|closed)(\s|$)/g, "$1state:$2$3"),
                 ex = (e, l) => {
                     if (!(e = e.trim())) return "";
-                    if (((e = ev(e)), void 0 === l && (l = e_(e)), !l))
+                    if (((e = ev(e)), void 0 === l && (l = eK(e)), !l))
                         return I.Ds.defaultRepoLevelClosed;
-                    let a = eF(l);
+                    let a = eS(l);
                     return eI(l)
                         ? l.replaceAll(`-${I.Ds.closed}`, `-${I.Ds.open}`)
                         : a
@@ -2782,7 +2843,7 @@ ${this.quotedText}`)
                     setExecuteQuery: L.l,
                     dirtyViewId: void 0,
                     setDirtyViewId: L.l,
-                    currentViewId: S.empty,
+                    currentViewId: F.empty,
                     setCurrentViewId: L.l,
                     currentPage: void 0,
                     setCurrentPage: L.l,
@@ -2811,22 +2872,22 @@ ${this.quotedText}`)
                     setShouldFocusSearchOnNav: L.l,
                 }),
                 e$ = () => {
-                    let { scoped_repository: e } = (0, K.X)(),
-                        { pathname: l } = (0, _.zy)();
-                    if (l.match(ed)) return e ? S.repository : S.assignedToMe;
+                    let { scoped_repository: e } = (0, _.X)(),
+                        { pathname: l } = (0, K.zy)();
+                    if (l.match(ed)) return e ? F.repository : F.assignedToMe;
                     let a = l.split("/").pop() || "";
                     return e && l.match(ec)
-                        ? S.repository
+                        ? F.repository
                         : "issues" !== a && a
                           ? a
-                          : S.empty;
+                          : F.empty;
                 };
             function eQ({ children: e }) {
                 let {
                         initial_view_content: { can_edit_view: l },
-                    } = (0, K.X)(),
+                    } = (0, _.X)(),
                     { addToast: a } = (0, v.Y6)(),
-                    { search: n } = (0, _.zy)(),
+                    { search: n } = (0, K.zy)(),
                     t = new URLSearchParams(n).get("q"),
                     s = t && "" !== t ? t : I.Ds.defaultRepoLevelOpen,
                     [i, r] = (0, b.useState)(l),
@@ -2835,8 +2896,8 @@ ${this.quotedText}`)
                     [m, g] = (0, b.useState)(void 0),
                     [p, k] = (0, b.useState)(void 0),
                     [h, f] = (0, b.useState)(null),
-                    [C, F] = (0, b.useState)(null),
-                    [S, L] = (0, b.useState)(null),
+                    [C, S] = (0, b.useState)(null),
+                    [F, L] = (0, b.useState)(null),
                     [N, j] = (0, b.useState)(null),
                     [R, T] = (0, b.useState)(void 0),
                     A = e$(),
@@ -2865,7 +2926,7 @@ ${this.quotedText}`)
                     em = (0, b.useCallback)(() => {
                         (u(null),
                             f(null),
-                            F(null),
+                            S(null),
                             L(null),
                             j(null),
                             T(void 0),
@@ -3061,8 +3122,8 @@ ${this.quotedText}`)
                             setDirtySearchQuery: u,
                             debouncedDirtySearchQuery: ea,
                             dirtyDescription: C,
-                            setDirtyDescription: F,
-                            dirtyViewIcon: S,
+                            setDirtyDescription: S,
+                            dirtyViewIcon: F,
                             setDirtyViewIcon: L,
                             dirtyTitle: h,
                             setDirtyTitle: f,
@@ -3076,7 +3137,7 @@ ${this.quotedText}`)
                             shouldFocusSearchOnNav: Y,
                             setShouldFocusSearchOnNav: J,
                         }),
-                        [ey, ek, eg, o, ea, C, S, h, N, R, eu, ed, em, Y]
+                        [ey, ek, eg, o, ea, C, F, h, N, R, eu, ed, em, Y]
                     );
                 return (0, y.jsx)(eO.Provider, {
                     value: eh,
@@ -3743,7 +3804,7 @@ ${this.quotedText}`)
                         ],
                         storageKey: null,
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: k,
                         filters: ["orderBy"],
@@ -3752,7 +3813,7 @@ ${this.quotedText}`)
                         kind: "LinkedHandle",
                         name: "labels",
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -3773,14 +3834,14 @@ ${this.quotedText}`)
                         name: "closed",
                         storageKey: null,
                     },
-                    K = {
+                    _ = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "closedAt",
                         storageKey: null,
                     },
-                    _ = {
+                    K = {
                         alias: null,
                         args: null,
                         concreteType: null,
@@ -3860,12 +3921,12 @@ ${this.quotedText}`)
                         kind: "InlineFragment",
                         selections: [
                             C,
-                            F,
                             S,
+                            F,
                             L,
                             I,
-                            K,
                             _,
+                            K,
                             {
                                 alias: null,
                                 args: null,
@@ -4027,12 +4088,12 @@ ${this.quotedText}`)
                                                                                                 selections:
                                                                                                     [
                                                                                                         C,
-                                                                                                        F,
                                                                                                         S,
+                                                                                                        F,
                                                                                                         L,
                                                                                                         I,
-                                                                                                        K,
                                                                                                         _,
+                                                                                                        K,
                                                                                                         {
                                                                                                             alias: null,
                                                                                                             args: null,
@@ -4093,12 +4154,12 @@ ${this.quotedText}`)
                                                                                                 selections:
                                                                                                     [
                                                                                                         C,
-                                                                                                        F,
                                                                                                         S,
+                                                                                                        F,
                                                                                                         L,
                                                                                                         I,
-                                                                                                        K,
                                                                                                         _,
+                                                                                                        K,
                                                                                                         N,
                                                                                                         j,
                                                                                                         x,
@@ -4408,7 +4469,7 @@ ${this.quotedText}`)
                         ],
                         storageKey: null,
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: k,
                         filters: ["orderBy"],
@@ -4417,7 +4478,7 @@ ${this.quotedText}`)
                         kind: "LinkedHandle",
                         name: "labels",
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -4438,14 +4499,14 @@ ${this.quotedText}`)
                         name: "closed",
                         storageKey: null,
                     },
-                    K = {
+                    _ = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "closedAt",
                         storageKey: null,
                     },
-                    _ = {
+                    K = {
                         alias: null,
                         args: null,
                         concreteType: null,
@@ -4525,12 +4586,12 @@ ${this.quotedText}`)
                         kind: "InlineFragment",
                         selections: [
                             C,
-                            F,
                             S,
+                            F,
                             L,
                             I,
-                            K,
                             _,
+                            K,
                             {
                                 alias: null,
                                 args: null,
@@ -4692,12 +4753,12 @@ ${this.quotedText}`)
                                                                                                 selections:
                                                                                                     [
                                                                                                         C,
-                                                                                                        F,
                                                                                                         S,
+                                                                                                        F,
                                                                                                         L,
                                                                                                         I,
-                                                                                                        K,
                                                                                                         _,
+                                                                                                        K,
                                                                                                         {
                                                                                                             alias: null,
                                                                                                             args: null,
@@ -4758,12 +4819,12 @@ ${this.quotedText}`)
                                                                                                 selections:
                                                                                                     [
                                                                                                         C,
-                                                                                                        F,
                                                                                                         S,
+                                                                                                        F,
                                                                                                         L,
                                                                                                         I,
-                                                                                                        K,
                                                                                                         _,
+                                                                                                        K,
                                                                                                         N,
                                                                                                         j,
                                                                                                         x,
@@ -5073,7 +5134,7 @@ ${this.quotedText}`)
                         ],
                         storageKey: null,
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: k,
                         filters: ["orderBy"],
@@ -5082,7 +5143,7 @@ ${this.quotedText}`)
                         kind: "LinkedHandle",
                         name: "labels",
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -5103,14 +5164,14 @@ ${this.quotedText}`)
                         name: "closed",
                         storageKey: null,
                     },
-                    K = {
+                    _ = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "closedAt",
                         storageKey: null,
                     },
-                    _ = {
+                    K = {
                         alias: null,
                         args: null,
                         concreteType: null,
@@ -5190,12 +5251,12 @@ ${this.quotedText}`)
                         kind: "InlineFragment",
                         selections: [
                             C,
-                            F,
                             S,
+                            F,
                             L,
                             I,
-                            K,
                             _,
+                            K,
                             {
                                 alias: null,
                                 args: null,
@@ -5357,12 +5418,12 @@ ${this.quotedText}`)
                                                                                                 selections:
                                                                                                     [
                                                                                                         C,
-                                                                                                        F,
                                                                                                         S,
+                                                                                                        F,
                                                                                                         L,
                                                                                                         I,
-                                                                                                        K,
                                                                                                         _,
+                                                                                                        K,
                                                                                                         {
                                                                                                             alias: null,
                                                                                                             args: null,
@@ -5423,12 +5484,12 @@ ${this.quotedText}`)
                                                                                                 selections:
                                                                                                     [
                                                                                                         C,
-                                                                                                        F,
                                                                                                         S,
+                                                                                                        F,
                                                                                                         L,
                                                                                                         I,
-                                                                                                        K,
                                                                                                         _,
+                                                                                                        K,
                                                                                                         N,
                                                                                                         j,
                                                                                                         x,
@@ -5667,14 +5728,14 @@ ${this.quotedText}`)
                         name: "createdAt",
                         storageKey: null,
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "state",
                         storageKey: null,
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -5695,7 +5756,7 @@ ${this.quotedText}`)
                         name: "viewerCanPinIssues",
                         storageKey: null,
                     },
-                    K = [
+                    _ = [
                         r,
                         o,
                         u,
@@ -5705,7 +5766,7 @@ ${this.quotedText}`)
                             value: "ISSUE_ADVANCED",
                         },
                     ],
-                    _ = {
+                    K = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -5777,7 +5838,7 @@ ${this.quotedText}`)
                                                 name: "nameHTML",
                                                 storageKey: null,
                                             },
-                                            _,
+                                            K,
                                             g,
                                             {
                                                 alias: null,
@@ -5892,7 +5953,7 @@ ${this.quotedText}`)
                     },
                     E = {
                         kind: "InlineFragment",
-                        selections: [j, R, C, P, T, A, M, S, F, D],
+                        selections: [j, R, C, P, T, A, M, F, S, D],
                         type: "Issue",
                         abstractKey: null,
                     },
@@ -6050,8 +6111,8 @@ ${this.quotedText}`)
                                                             b,
                                                             f,
                                                             C,
-                                                            F,
                                                             S,
+                                                            F,
                                                             L,
                                                             {
                                                                 alias: null,
@@ -6197,7 +6258,7 @@ ${this.quotedText}`)
                                         selections: [
                                             {
                                                 alias: null,
-                                                args: K,
+                                                args: _,
                                                 concreteType:
                                                     "SearchResultItemConnection",
                                                 kind: "LinkedField",
@@ -6263,7 +6324,7 @@ ${this.quotedText}`)
                                                                                                     [
                                                                                                         c,
                                                                                                         g,
-                                                                                                        _,
+                                                                                                        K,
                                                                                                     ],
                                                                                                 storageKey:
                                                                                                     null,
@@ -6457,7 +6518,7 @@ ${this.quotedText}`)
                                             },
                                             {
                                                 alias: null,
-                                                args: K,
+                                                args: _,
                                                 filters: [
                                                     "query",
                                                     "type",
@@ -7333,14 +7394,14 @@ ${this.quotedText}`)
                             value: "ISSUE_ADVANCED",
                         },
                     ],
-                    F = {
+                    S = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "color",
                         storageKey: null,
                     },
-                    S = [
+                    F = [
                         { kind: "Literal", name: "first", value: 10 },
                         {
                             kind: "Literal",
@@ -7380,9 +7441,9 @@ ${this.quotedText}`)
                         ],
                         storageKey: null,
                     },
-                    K = {
+                    _ = {
                         alias: null,
-                        args: S,
+                        args: F,
                         concreteType: "LabelConnection",
                         kind: "LinkedField",
                         name: "labels",
@@ -7412,7 +7473,7 @@ ${this.quotedText}`)
                                                 name: "nameHTML",
                                                 storageKey: null,
                                             },
-                                            F,
+                                            S,
                                             f,
                                             y,
                                             k,
@@ -7428,9 +7489,9 @@ ${this.quotedText}`)
                         storageKey:
                             'labels(first:10,orderBy:{"direction":"ASC","field":"NAME"})',
                     },
-                    _ = {
+                    K = {
                         alias: null,
-                        args: S,
+                        args: F,
                         filters: ["orderBy"],
                         handle: "connection",
                         key: "Labels_labels",
@@ -7489,8 +7550,8 @@ ${this.quotedText}`)
                     N = {
                         kind: "InlineFragment",
                         selections: [
-                            K,
                             _,
+                            K,
                             v,
                             p,
                             c,
@@ -7702,7 +7763,7 @@ ${this.quotedText}`)
                                                                             [
                                                                                 d,
                                                                                 f,
-                                                                                F,
+                                                                                S,
                                                                             ],
                                                                         storageKey:
                                                                             null,
@@ -7716,8 +7777,8 @@ ${this.quotedText}`)
                                                                                     kind: "InlineFragment",
                                                                                     selections:
                                                                                         [
-                                                                                            K,
                                                                                             _,
+                                                                                            K,
                                                                                             v,
                                                                                             p,
                                                                                             c,
@@ -7797,8 +7858,8 @@ ${this.quotedText}`)
                                                                                     kind: "InlineFragment",
                                                                                     selections:
                                                                                         [
-                                                                                            K,
                                                                                             _,
+                                                                                            K,
                                                                                             v,
                                                                                             p,
                                                                                             x,
@@ -8222,14 +8283,14 @@ ${this.quotedText}`)
                             name: "name",
                             storageKey: null,
                         },
-                        F = {
+                        S = {
                             alias: null,
                             args: null,
                             kind: "ScalarField",
                             name: "__typename",
                             storageKey: null,
                         },
-                        S = {
+                        F = {
                             alias: null,
                             args: null,
                             kind: "ScalarField",
@@ -8246,14 +8307,14 @@ ${this.quotedText}`)
                             storageKey: "avatarUrl(size:64)",
                         },
                         I = { kind: "Literal", name: "first", value: 20 },
-                        K = {
+                        _ = {
                             alias: null,
                             args: null,
                             kind: "ScalarField",
                             name: "title",
                             storageKey: null,
                         },
-                        _ = {
+                        K = {
                             alias: null,
                             args: null,
                             kind: "ScalarField",
@@ -8269,8 +8330,8 @@ ${this.quotedText}`)
                         },
                         x = [
                             b,
-                            K,
                             _,
+                            K,
                             {
                                 alias: null,
                                 args: null,
@@ -8293,7 +8354,7 @@ ${this.quotedText}`)
                                 name: "hasReachedItemsLimit",
                                 storageKey: null,
                             },
-                            F,
+                            S,
                         ],
                         w = [
                             {
@@ -8427,8 +8488,8 @@ ${this.quotedText}`)
                                                 {
                                                     kind: "InlineFragment",
                                                     selections: [
-                                                        F,
                                                         S,
+                                                        F,
                                                         C,
                                                         M,
                                                         L,
@@ -8705,9 +8766,9 @@ ${this.quotedText}`)
                                             name: "owner",
                                             plural: !1,
                                             selections: [
-                                                F,
-                                                f,
                                                 S,
+                                                f,
+                                                F,
                                                 L,
                                                 {
                                                     alias: null,
@@ -8970,7 +9031,7 @@ ${this.quotedText}`)
                                                     name: "issueTemplate",
                                                     plural: !1,
                                                     selections: [
-                                                        F,
+                                                        S,
                                                         C,
                                                         N,
                                                         {
@@ -8980,7 +9041,7 @@ ${this.quotedText}`)
                                                             name: "body",
                                                             storageKey: null,
                                                         },
-                                                        K,
+                                                        _,
                                                         T,
                                                         D,
                                                         q,
@@ -8996,10 +9057,10 @@ ${this.quotedText}`)
                                                     name: "issueForm",
                                                     plural: !1,
                                                     selections: [
-                                                        F,
+                                                        S,
                                                         C,
                                                         N,
-                                                        K,
+                                                        _,
                                                         {
                                                             alias: null,
                                                             args: null,
@@ -9008,7 +9069,7 @@ ${this.quotedText}`)
                                                             name: "elements",
                                                             plural: !0,
                                                             selections: [
-                                                                F,
+                                                                S,
                                                                 {
                                                                     kind: "InlineFragment",
                                                                     selections:
@@ -9230,14 +9291,14 @@ ${this.quotedText}`)
                                                             name: "nodes",
                                                             plural: !0,
                                                             selections: [
-                                                                F,
+                                                                S,
                                                                 {
                                                                     kind: "TypeDiscriminator",
                                                                     abstractKey:
                                                                         "__isActor",
                                                                 },
                                                                 b,
-                                                                S,
+                                                                F,
                                                                 C,
                                                                 M,
                                                                 L,
@@ -9315,7 +9376,7 @@ ${this.quotedText}`)
                                                             name: "formattedBody",
                                                             storageKey: null,
                                                         },
-                                                        K,
+                                                        _,
                                                         T,
                                                         b,
                                                     ],
@@ -9344,8 +9405,8 @@ ${this.quotedText}`)
                                                     plural: !1,
                                                     selections: [
                                                         b,
-                                                        K,
                                                         _,
+                                                        K,
                                                         {
                                                             alias: null,
                                                             args: null,
@@ -9709,7 +9770,7 @@ ${this.quotedText}`)
                             repo: l,
                             number: a,
                             viewId: n,
-                        } = (0, _.g)(),
+                        } = (0, K.g)(),
                         [t, s] = (0, b.useState)(null),
                         i = (0, b.useCallback)((e) => {
                             let l = new URL(
@@ -9923,7 +9984,7 @@ ${this.quotedText}`)
                 lC.displayName ||
                     (lC.displayName = "IssueRepoNewChoosePageContentInternal");
             } catch {}
-            let lF = (function () {
+            let lS = (function () {
                 var e = {
                         alias: null,
                         args: null,
@@ -10593,8 +10654,8 @@ ${this.quotedText}`)
                     abstractKey: null,
                 };
             })();
-            lF.hash = "dac38b907bfbe6c2a2a8f9965ee260a2";
-            let lS = (function () {
+            lS.hash = "dac38b907bfbe6c2a2a8f9965ee260a2";
+            let lF = (function () {
                 var e = {
                         alias: null,
                         args: null,
@@ -11385,11 +11446,11 @@ ${this.quotedText}`)
                     abstractKey: null,
                 };
             })();
-            lS.hash = "22ff6992a96ef2cde9444260d48f9173";
+            lF.hash = "22ff6992a96ef2cde9444260d48f9173";
             var lL = a(60439),
                 lI = a(90486),
-                lK = a(39409),
-                l_ = a(21059);
+                l_ = a(39409),
+                lK = a(21059);
             let lv = (0, b.createContext)(null),
                 lx = () => {
                     let e = (0, b.useContext)(lv);
@@ -11455,7 +11516,7 @@ ${this.quotedText}`)
                 issueFormRef: a,
             }) => {
                 let n = (0, li.Z)(),
-                    { usedStorageKeyPrefix: t } = (0, l_.u)(),
+                    { usedStorageKeyPrefix: t } = (0, lK.u)(),
                     { onSafeClose: s } = (0, lj.Z)({
                         storageKeyPrefix: t,
                         issueFormRef: a,
@@ -11502,8 +11563,8 @@ ${this.quotedText}`)
                     singleKeyShortcutsEnabled: i,
                     copilotShowFunctionality: r,
                 }) => {
-                    let o = (0, er.useFragment)(lS, l),
-                        [u] = (0, _.ok)(),
+                    let o = (0, er.useFragment)(lF, l),
+                        [u] = (0, K.ok)(),
                         d = !!u.get("template"),
                         c = (0, lL.Jo)(o),
                         { currentUser: m } = (0, lr.J)(),
@@ -11544,7 +11605,7 @@ ${this.quotedText}`)
                                 children: "Current user not found",
                             })
                         );
-                    let { avatarUrl: F, login: S } = m;
+                    let { avatarUrl: S, login: F } = m;
                     return (0, y.jsx)(ln.S, {
                         optionConfig: k,
                         preselectedData: { repository: c, template: h },
@@ -11552,19 +11613,19 @@ ${this.quotedText}`)
                             className: lR.createPane,
                             children: [
                                 (0, y.jsxs)(lo.A, {
-                                    href: `/${S}`,
+                                    href: `/${F}`,
                                     className: lR.avatarLink,
                                     children: [
                                         (0, y.jsx)("span", {
                                             className: "sr-only",
-                                            children: lI.k.viewProfile(S),
+                                            children: lI.k.viewProfile(F),
                                         }),
                                         (0, y.jsx)(le.r, {
-                                            src: F,
+                                            src: S,
                                             size: 32,
                                             alt: "",
                                             "data-hovercard-url": (0, ls.dCN)({
-                                                owner: S,
+                                                owner: F,
                                             }),
                                             className: lR.avatar,
                                         }),
@@ -11629,10 +11690,10 @@ ${this.quotedText}`)
                     optionConfig: n,
                     showUserRestrictedView: t,
                 }) => {
-                    let s = (0, _.Zp)(),
+                    let s = (0, K.Zp)(),
                         i = n.navigate || s,
                         { setDisplayMode: r, setCreateMoreCreatedPath: o } = (0,
-                        lK.a)(),
+                        l_.a)(),
                         {
                             title: u,
                             setTitle: d,
@@ -11640,7 +11701,7 @@ ${this.quotedText}`)
                             setBody: m,
                             clearSessionData: g,
                             usedStorageKeyPrefix: p,
-                        } = (0, l_.u)(),
+                        } = (0, lK.u)(),
                         k = (0, lM.wT)({
                             optionConfig: n,
                             repository: a,
@@ -11694,7 +11755,7 @@ ${this.quotedText}`)
             } catch {}
             var lq = a(52374),
                 lO = a(3213),
-                lB = a(73966),
+                lB = a(62110),
                 l$ = a(71400),
                 lQ = a(90189);
             let lU = ({ urlParameterQueryData: e }) => {
@@ -11706,8 +11767,8 @@ ${this.quotedText}`)
                           });
                 },
                 lH = ({ repository: e }) => {
-                    let l = (0, K.X)(),
-                        a = (0, er.useFragment)(lF, e),
+                    let l = (0, _.X)(),
+                        a = (0, er.useFragment)(lS, e),
                         n = a?.suggestedActors?.nodes,
                         t =
                             n && a.viewerIssueCreationPermissions?.assignable
@@ -11734,10 +11795,7 @@ ${this.quotedText}`)
                         u =
                             a?.milestoneByTitle &&
                             a.viewerIssueCreationPermissions?.milestoneable
-                                ? (0, er.readInlineData)(
-                                      l$.xm,
-                                      a?.milestoneByTitle
-                                  )
+                                ? (0, l$.Hf)(a?.milestoneByTitle)
                                 : void 0,
                         d =
                             a?.issueType &&
@@ -11890,11 +11948,12 @@ ${this.quotedText}`)
                 abstractKey: "__isShortcutable",
             };
             lG.hash = "a93246eb19a6ce78ccda6b3c1177859f";
-            var lZ = a(94893),
-                lX = a(58087),
-                lY = a(86648),
-                lJ = a(87330);
-            let l1 = {
+            var lZ = a(3607),
+                lX = a(82069),
+                lY = a(58087),
+                lJ = a(86648),
+                l1 = a(87330);
+            let l2 = {
                 argumentDefinitions: [
                     {
                         defaultValue: null,
@@ -11957,8 +12016,8 @@ ${this.quotedText}`)
                 type: "Searchable",
                 abstractKey: "__isSearchable",
             };
-            l1.hash = "c798fd569d54187c387a94dbb72d8826";
-            let l2 = {
+            l2.hash = "c798fd569d54187c387a94dbb72d8826";
+            let l0 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -11990,10 +12049,10 @@ ${this.quotedText}`)
                 type: "Shortcutable",
                 abstractKey: "__isShortcutable",
             };
-            l2.hash = "a8438ebbf35da2ba8c7c5360a65efc1f";
-            var l0 = a(19139),
-                l3 = a(40319);
-            let l4 = {
+            l0.hash = "a8438ebbf35da2ba8c7c5360a65efc1f";
+            var l3 = a(87517),
+                l4 = a(40319);
+            let l5 = {
                 NewViewExperienceContainer:
                     "NewViewExperience-module__NewViewExperienceContainer--q5HzD",
                 textContent: "NewViewExperience-module__textContent--cQahs",
@@ -12001,12 +12060,12 @@ ${this.quotedText}`)
                 descriptionText:
                     "NewViewExperience-module__descriptionText--p7Bq1",
             };
-            var l5 = a(30391);
-            let l6 = {
+            var l6 = a(30391);
+            let l7 = {
                     NewViewGraphicContainer:
                         "NewViewGraphic-module__NewViewGraphicContainer--cZboB",
                 },
-                l7 = () =>
+                l9 = () =>
                     (0, y.jsxs)("svg", {
                         role: "presentation",
                         width: "100%",
@@ -12166,7 +12225,7 @@ ${this.quotedText}`)
                             }),
                         ],
                     }),
-                l9 = () =>
+                l8 = () =>
                     (0, y.jsxs)("svg", {
                         role: "presentation",
                         width: "100%",
@@ -12389,52 +12448,52 @@ ${this.quotedText}`)
                             }),
                         ],
                     }),
-                l8 = () => {
-                    let { resolvedColorMode: e } = (0, l5.DP)();
+                ae = () => {
+                    let { resolvedColorMode: e } = (0, l6.DP)();
                     switch (e) {
                         case "day":
                         case "light":
-                            return (0, y.jsx)(l7, {});
+                            return (0, y.jsx)(l9, {});
                         case "night":
                         case "dark":
-                            return (0, y.jsx)(l9, {});
+                            return (0, y.jsx)(l8, {});
                         default:
                             return null;
                     }
                 },
-                ae = () =>
+                al = () =>
                     (0, y.jsx)("div", {
-                        className: l6.NewViewGraphicContainer,
-                        children: (0, y.jsx)(l8, {}),
+                        className: l7.NewViewGraphicContainer,
+                        children: (0, y.jsx)(ae, {}),
                     });
             try {
-                l7.displayName || (l7.displayName = "InboxZeroLightGraphic");
+                l9.displayName || (l9.displayName = "InboxZeroLightGraphic");
             } catch {}
             try {
-                l9.displayName || (l9.displayName = "InboxZeroDarkGraphic");
+                l8.displayName || (l8.displayName = "InboxZeroDarkGraphic");
             } catch {}
             try {
-                l8.displayName || (l8.displayName = "InboxZeroGraphic");
+                ae.displayName || (ae.displayName = "InboxZeroGraphic");
             } catch {}
             try {
-                ae.displayName || (ae.displayName = "InboxZeroGraphicWrapper");
+                al.displayName || (al.displayName = "InboxZeroGraphicWrapper");
             } catch {}
-            function al() {
+            function aa() {
                 return (0, y.jsxs)("div", {
-                    className: l4.NewViewExperienceContainer,
+                    className: l5.NewViewExperienceContainer,
                     children: [
-                        (0, y.jsx)(ae, {}),
+                        (0, y.jsx)(al, {}),
                         (0, y.jsxs)("div", {
-                            className: l4.textContent,
+                            className: l5.textContent,
                             children: [
                                 (0, y.jsx)(lu.A, {
                                     as: "h2",
-                                    className: l4.Heading,
+                                    className: l5.Heading,
                                     children:
                                         "Build powerful views to keep track of work",
                                 }),
                                 (0, y.jsx)("span", {
-                                    className: l4.descriptionText,
+                                    className: l5.descriptionText,
                                     children:
                                         "Create your own views to quickly find and access your work.",
                                 }),
@@ -12444,9 +12503,9 @@ ${this.quotedText}`)
                 });
             }
             try {
-                al.displayName || (al.displayName = "NewViewExperience");
+                aa.displayName || (aa.displayName = "NewViewExperience");
             } catch {}
-            let aa = (function () {
+            let an = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -12510,8 +12569,8 @@ ${this.quotedText}`)
                     abstractKey: "__isShortcutable",
                 };
             })();
-            aa.hash = "9c50d63e7c8b908e123ab49c4f0f99ed";
-            let an = {
+            an.hash = "9c50d63e7c8b908e123ab49c4f0f99ed";
+            let at = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -12533,66 +12592,66 @@ ${this.quotedText}`)
                 type: "Repository",
                 abstractKey: null,
             };
-            an.hash = "20967928041ea84ed8abbdc0d7c33927";
-            var at = a(40811);
-            let as = {
+            at.hash = "20967928041ea84ed8abbdc0d7c33927";
+            var as = a(40811);
+            let ai = {
                     assigned: "assigned",
                     pullsAssignedToMe: "assigned",
                     mentioned: "mentioned",
                     createdByMe: "created",
                     recentActivity: "recent",
                 },
-                ai = RegExp(
+                ar = RegExp(
                     "^\\/([a-zA-Z0-9]+(-[a-zA-Z0-9]+|-)*)\\/(([\\-_\\.a-zA-Z0-9])*)\\/issues"
                 ),
-                ar = RegExp(
+                ao = RegExp(
                     "^\\/([a-zA-Z0-9]+(-[a-zA-Z0-9]+|-)*)\\/(([\\-_\\.a-zA-Z0-9])*)\\/labels"
                 ),
-                ao = RegExp(
+                au = RegExp(
                     "^\\/([a-zA-Z0-9]+(-[a-zA-Z0-9]+|-)*)\\/(([\\-_\\.a-zA-Z0-9])*)\\/labels\\/([\\-_\\.a-zA-Z0-9]+)"
                 ),
-                au = RegExp(
+                ad = RegExp(
                     "^\\/([a-zA-Z0-9]+(-[a-zA-Z0-9]+|-)*)\\/(([\\-_\\.a-zA-Z0-9])*)\\/milestone\\/([0-9]+)"
                 ),
-                ad = ({ viewId: e, query: l }) => {
+                ac = ({ viewId: e, query: l }) => {
                     let a = "";
-                    if (e !== S.repository) {
-                        if (e && e !== S.empty)
-                            a = as[e] ? `/${as[e]}` : `/${e}`;
+                    if (e !== F.repository) {
+                        if (e && e !== F.empty)
+                            a = ai[e] ? `/${ai[e]}` : `/${e}`;
                         else if (l === I.Ds.assignedToMe)
-                            return `/issues/${as.assigned}`;
+                            return `/issues/${ai.assigned}`;
                         else if (l === I.Ds.mentioned)
-                            return `/issues/${as.mentioned}`;
+                            return `/issues/${ai.mentioned}`;
                         else if (l === I.Ds.createdByMe)
-                            return `/issues/${as.createdByMe}`;
+                            return `/issues/${ai.createdByMe}`;
                         else if (l === I.Ds.recentActivity)
-                            return `/issues/${as.recentActivity}`;
+                            return `/issues/${ai.recentActivity}`;
                     }
                     if (
                         (void 0 !== l &&
                             "" !== l.trim() &&
                             (a = `${a}?q=${encodeURIComponent(l)}`),
-                        e === S.repository)
+                        e === F.repository)
                     ) {
                         let e = A.fV?.pathname,
-                            l = e.match(ai);
+                            l = e.match(ar);
                         if (l) return e + a;
-                        if ((l = e.match(ar) || e.match(ao) || e.match(au)))
+                        if ((l = e.match(ao) || e.match(au) || e.match(ad)))
                             return `/${l[1]}/${l[3]}/issues${a}`;
                     }
                     return `/issues${a}`;
                 };
-            function ac(e, l, a) {
+            function am(e, l, a) {
                 if (!e) return;
                 let n = RegExp(`(?:^|\\s)${l}:(?:\\"[^\\"]*\\"|\\S+)`, "g"),
                     t = e.replaceAll(n, "").replace(/^\s+/, ""),
                     s = a.indexOf(" ") > -1 ? `"${a}"` : a;
                 return `${t.trim()} ${l}:${s}`;
             }
-            var am = a(79696),
-                ag = a(10375),
-                ap = a(73451);
-            let ay = {
+            var ag = a(79696),
+                ap = a(10375),
+                ay = a(73451);
+            let ak = {
                 confirmLeave:
                     "Are you sure you want to leave? You have unsaved changes.",
                 errorLoadingIssues:
@@ -12606,41 +12665,41 @@ ${this.quotedText}`)
                 moreItemsAvailableDescription: (e, l) =>
                     `Showing the first ${e} ${l}. To view additional ${l.toLocaleString()}, please refine your search.`,
             };
-            var ak = a(93067),
-                ah = a(16768),
-                ab = a(56016),
-                af = a(65741),
-                aC = a(60183),
+            var ah = a(93067),
+                ab = a(16768),
+                af = a(56016),
+                aC = a(65741),
+                aS = a(60183),
                 aF = a(97396),
-                aS = a(34784);
-            let aL =
+                aL = a(34784);
+            let aI =
                     /https?:\/\/(?<hostname>github\.(com|localhost|localhost:\d+))\/(?<owner>.*)\/(?<repo>.*)\/issues\/(?<number>\d+)/,
-                aI = () => {
+                a_ = () => {
                     let {
                             setCanEditView: e,
                             activeSearchQuery: l,
                             setIsEditing: n,
                             setIsNewView: t,
                         } = eU(),
-                        { scoped_repository: s, multi_tenant: i } = (0, K.X)(),
-                        { isAnyInputElementActive: r } = (0, ah.B)(),
+                        { scoped_repository: s, multi_tenant: i } = (0, _.X)(),
+                        { isAnyInputElementActive: r } = (0, ab.B)(),
                         { isCommentEditActive: o, cancelAllCommentEdits: u } =
-                            (0, ak.N)(),
+                            (0, ah.N)(),
                         d = (0, b.useRef)(null),
                         c = (0, li.Z)(),
-                        m = (0, aS.useRelayEnvironment)(),
-                        { issues_react_force_turbo_nav: g } = (0, aC.h)(),
+                        m = (0, aL.useRelayEnvironment)(),
+                        { issues_react_force_turbo_nav: g } = (0, aS.h)(),
                         p = (0, b.useCallback)(
                             async (e, l, n) => {
                                 if (r) return;
                                 if (o()) {
-                                    if (!confirm(ay.confirmLeave)) return;
+                                    if (!confirm(ak.confirmLeave)) return;
                                     u();
                                 }
                                 let t = new URL(e.toString(), A.fV.origin),
                                     s = t.pathname,
                                     p = s.match(ed),
-                                    y = s.match(ai);
+                                    y = s.match(ar);
                                 if (p && p.groups) {
                                     let {
                                         owner: a,
@@ -12651,7 +12710,7 @@ ${this.quotedText}`)
                                         let r = parseInt(i);
                                         ((d.current = s),
                                             (0, aF.SC)("react"),
-                                            await (0, ab.n)(m, a, t, r),
+                                            await (0, af.n)(m, a, t, r),
                                             d.current === s &&
                                                 s !== A.cg?.location.pathname &&
                                                 ((d.current = null),
@@ -12699,7 +12758,7 @@ ${this.quotedText}`)
                                                 "")),
                                     l?.length > 0)
                                 ) {
-                                    let a = l.match(aL);
+                                    let a = l.match(aI);
                                     if (a && a.groups) {
                                         let {
                                             hostname: n,
@@ -12711,7 +12770,7 @@ ${this.quotedText}`)
                                             return;
                                         if (t && s && i) {
                                             e.preventDefault();
-                                            let a = (0, af.$9)({
+                                            let a = (0, aC.$9)({
                                                     owner: t,
                                                     repo: s,
                                                     number: parseInt(i),
@@ -12729,9 +12788,9 @@ ${this.quotedText}`)
                         ),
                         k = (0, b.useCallback)(
                             (e, a) =>
-                                ad({
-                                    viewId: s ? S.repository : void 0,
-                                    query: ac(l, e, a),
+                                ac({
+                                    viewId: s ? F.repository : void 0,
+                                    query: am(l, e, a),
                                 }),
                             [l, s]
                         ),
@@ -12743,7 +12802,7 @@ ${this.quotedText}`)
                                 navigateOptions: i,
                                 isNewView: r = !1,
                             }) => {
-                                (c(ad({ viewId: l }), i), e(a), n(s), t(r));
+                                (c(ac({ viewId: l }), i), e(a), n(s), t(r));
                             },
                             [c, e, n, t]
                         ),
@@ -12762,11 +12821,11 @@ ${this.quotedText}`)
                         ),
                         C = (0, b.useCallback)(
                             (e, l) => {
-                                c(ad({ viewId: e, query: l }));
+                                c(ac({ viewId: e, query: l }));
                             },
                             [c]
                         ),
-                        F = (0, b.useCallback)(
+                        S = (0, b.useCallback)(
                             (e, a) => {
                                 if (s) p(`/${s.owner}/${s.name}/issues`);
                                 else if (e === ee.id) C(void 0, l);
@@ -12783,12 +12842,12 @@ ${this.quotedText}`)
                         navigateToView: h,
                         navigateToSavedView: f,
                         navigateToSearch: C,
-                        navigateToRoot: F,
+                        navigateToRoot: S,
                         getQueryFieldUrl: k,
                     };
                 };
             var aK = a(75367);
-            function a_() {
+            function av() {
                 let { sendAnalyticsEvent: e } = (0, aK.s)();
                 return {
                     sendHyperlistAnalyticsEvent: (0, b.useCallback)(
@@ -12799,27 +12858,27 @@ ${this.quotedText}`)
                     ),
                 };
             }
-            var av = a(50348),
-                ax = a(57124);
-            function aw(e) {
+            var ax = a(50348),
+                aw = a(57124);
+            function aN(e) {
                 return "Type" === e.displayName;
             }
-            function aN(e) {
+            function aj(e) {
                 return null != e;
             }
-            let aj = (e, l) => ({
-                    type: at.ak.Value,
-                    value: av.RY,
-                    ariaLabel: `${av.RY}, Your AI pair programmer`,
+            let aR = (e, l) => ({
+                    type: as.ak.Value,
+                    value: ax.RY,
+                    ariaLabel: `${ax.RY}, Your AI pair programmer`,
                     displayName: e,
                     description: "Your AI pair programmer",
                     inlineDescription: !0,
                     priority: 1,
                     icon: T.CopilotIcon,
-                    avatarUrl: l ? { url: l, type: at.uW.User } : void 0,
+                    avatarUrl: l ? { url: l, type: as.uW.User } : void 0,
                     iconColor: "var(--fgColor-done, var(--color-done-fg))",
                 }),
-                aR = class CopilotUserFilterProvider extends av.Qh {
+                aP = class CopilotUserFilterProvider extends ax.Qh {
                     async getSuggestions(e, l, a, n) {
                         return (
                             this.copilotQueryParamKey &&
@@ -12837,7 +12896,7 @@ ${this.quotedText}`)
                     }
                     processSuggestion(e, l) {
                         let { login: a, avatarUrl: n, isCopilot: t } = e;
-                        return t ? aj(a, n) : super.processSuggestion(e, l);
+                        return t ? aR(a, n) : super.processSuggestion(e, l);
                     }
                     constructor(e, l, a) {
                         (super(e, l, a),
@@ -12853,61 +12912,61 @@ ${this.quotedText}`)
                             })(this, "copilotQueryParamKey", void 0));
                     }
                 };
-            let AssigneeFilterProviderWithCopilotSupport = class AssigneeFilterProviderWithCopilotSupport extends aR {
+            let AssigneeFilterProviderWithCopilotSupport = class AssigneeFilterProviderWithCopilotSupport extends aP {
                 constructor(e, l) {
-                    (super(e, at.yV.assignee, l),
+                    (super(e, as.yV.assignee, l),
                         (this.copilotQueryParamKey = e.showAtCopilot
                             ? "show_assignee_copilot"
                             : void 0));
                 }
             };
-            let AuthorFilterProviderWithCopilotSupport = class AuthorFilterProviderWithCopilotSupport extends aR {
+            let AuthorFilterProviderWithCopilotSupport = class AuthorFilterProviderWithCopilotSupport extends aP {
                 constructor(e, l) {
-                    (super(e, at.yV.author, l),
+                    (super(e, as.yV.author, l),
                         (this.copilotQueryParamKey = e.showAtCopilot
                             ? "show_author_copilot"
                             : void 0));
                 }
             };
-            let ReviewedByFilterProviderWithCopilotSupport = class ReviewedByFilterProviderWithCopilotSupport extends aR {
+            let ReviewedByFilterProviderWithCopilotSupport = class ReviewedByFilterProviderWithCopilotSupport extends aP {
                 constructor(e, l) {
-                    (super(e, at.yV.reviewedBy, l),
+                    (super(e, as.yV.reviewedBy, l),
                         (this.copilotQueryParamKey = e.showAtCopilot
                             ? "show_pull_request_reviewer_copilot"
                             : void 0));
                 }
             };
-            let ReviewRequestedFilterProviderWithCopilotSupport = class ReviewRequestedFilterProviderWithCopilotSupport extends aR {
+            let ReviewRequestedFilterProviderWithCopilotSupport = class ReviewRequestedFilterProviderWithCopilotSupport extends aP {
                 constructor(e, l) {
-                    (super(e, at.yV.reviewRequested, l),
+                    (super(e, as.yV.reviewRequested, l),
                         (this.copilotQueryParamKey = e.showAtCopilot
                             ? "show_pull_request_reviewer_copilot"
                             : void 0));
                 }
             };
-            let InvolvesFilterProviderWithCopilotSupport = class InvolvesFilterProviderWithCopilotSupport extends aR {
+            let InvolvesFilterProviderWithCopilotSupport = class InvolvesFilterProviderWithCopilotSupport extends aP {
                 constructor(e, l) {
-                    (super(e, at.yV.involves, l),
+                    (super(e, as.yV.involves, l),
                         (this.copilotQueryParamKey = e.showAtCopilot
                             ? "show_involves_copilot"
                             : void 0));
                 }
             };
-            var aP = a(18991),
-                aT = a(71073);
-            let SubIssueFilterProvider = class SubIssueFilterProvider extends av.uy {
+            var aT = a(18991),
+                aA = a(71073);
+            let SubIssueFilterProvider = class SubIssueFilterProvider extends ax.uy {
                 getSuggestions(e, l, a, n) {
-                    let t = (0, aT.DS)(l, n),
+                    let t = (0, aA.DS)(l, n),
                         s = l.provider.key,
                         i = [];
                     if (
-                        ((0, aT.uT)(l) &&
+                        ((0, aA.uT)(l) &&
                             l.raw !== `-${s}:` &&
-                            (i.push((0, aT.jL)(this.displayName, this.icon)),
-                            i.push((0, aT.Ms)(this.displayName, this.icon))),
-                        "" === t && (0, aT.aK)(l) && l.raw !== `-${s}:`)
+                            (i.push((0, aA.jL)(this.displayName, this.icon)),
+                            i.push((0, aA.Ms)(this.displayName, this.icon))),
+                        "" === t && (0, aA.aK)(l) && l.raw !== `-${s}:`)
                     ) {
-                        let e = (0, aT.m1)(s);
+                        let e = (0, aA.m1)(s);
                         i.unshift(e);
                     }
                     return i;
@@ -12918,15 +12977,15 @@ ${this.quotedText}`)
                     );
                     return Promise.resolve(
                         a.map((e) => {
-                            let l = (0, aT.q5)((0, aT.I8)(e.value));
+                            let l = (0, aA.q5)((0, aA.I8)(e.value));
                             return a.length < 1 || !l
                                 ? {
                                       ...e,
                                       valid: !1,
                                       validations: [
                                           {
-                                              type: at.b.EmptyValue,
-                                              message: aP.D.filterValueEmpty(
+                                              type: as.b.EmptyValue,
+                                              message: aT.D.filterValueEmpty(
                                                   this.key
                                               ),
                                           },
@@ -12939,8 +12998,8 @@ ${this.quotedText}`)
                                         valid: !1,
                                         validations: [
                                             {
-                                                type: at.b.InvalidValue,
-                                                message: `${aP.D.filterInvalidValue(this.key, l)}. Use the format <pre>&lt;owner&gt;/&lt;repo&gt;#&lt;number&gt;</pre>.`,
+                                                type: as.b.InvalidValue,
+                                                message: `${aT.D.filterInvalidValue(this.key, l)}. Use the format <pre>&lt;owner&gt;/&lt;repo&gt;#&lt;number&gt;</pre>.`,
                                             },
                                         ],
                                     };
@@ -12954,22 +13013,22 @@ ${this.quotedText}`)
                             displayName: "Sub-issue",
                             icon: T.IssueTracksIcon,
                             priority: 5,
-                            type: at.CH.Text,
+                            type: as.CH.Text,
                         },
                         [],
-                        { filterTypes: { ...at.dQ?.filterTypes, hasValue: !0 } }
+                        { filterTypes: { ...as.dQ?.filterTypes, hasValue: !0 } }
                     );
                 }
             };
-            let aA = (e, l) => (e ? [l] : []),
-                aM = (e) => {
+            let aM = (e, l) => (e ? [l] : []),
+                aV = (e) => {
                     let { isOrgScope: l = !1 } = e,
                         { currentUser: a } = (0, lr.J)(),
                         n = (0, er.useRelayEnvironment)(),
-                        { scoped_repository: t } = (0, K.X)(),
+                        { scoped_repository: t } = (0, _.X)(),
                         s = !!t,
                         i = (0, k.G7)("copilot_swe_agent"),
-                        { issue_dependencies: r } = (0, aC.h)(),
+                        { issue_dependencies: r } = (0, aS.h)(),
                         o = s ? `${t.owner}/${t.name}` : void 0,
                         u = s ? M : V,
                         d = (0, b.useMemo)(() => {
@@ -12982,20 +13041,20 @@ ${this.quotedText}`)
                                 t = { filterTypes: { valueless: !1 } },
                                 d = { filterTypes: { hasValue: !0 } };
                             return [
-                                ...aA(
+                                ...aM(
                                     !s,
-                                    new av.pH({
+                                    new ax.pH({
                                         ...t,
                                         filterTypes: { multiKey: !0 },
                                     })
                                 ),
-                                ...aA(!s, new av.E({ ...t })),
-                                new av.I4(u, t, r),
-                                new av.PT("mixed", t),
-                                new av.aF(d),
-                                ...aA(l || !s, new ax.B(d, !0, n, o)),
-                                new av.FG(d),
-                                new av.Qq(d),
+                                ...aM(!s, new ax.E({ ...t })),
+                                new ax.I4(u, t, r),
+                                new ax.PT("mixed", t),
+                                new ax.aF(d),
+                                ...aM(l || !s, new aw.B(d, !0, n, o)),
+                                new ax.FG(d),
+                                new ax.Qq(d),
                                 new AssigneeFilterProviderWithCopilotSupport(
                                     {
                                         ...e,
@@ -13012,43 +13071,43 @@ ${this.quotedText}`)
                                     { ...e, showAtCopilot: !0 },
                                     t
                                 ),
-                                new av.Pd(e, t),
-                                new av.$q(at._i.parentIssue, d),
-                                ...aA(r ?? !1, new av.tQ()),
-                                ...aA(r ?? !1, new av.rL()),
+                                new ax.Pd(e, t),
+                                new ax.$q(as._i.parentIssue, d),
+                                ...aM(r ?? !1, new ax.tQ()),
+                                ...aM(r ?? !1, new ax.rL()),
                                 new SubIssueFilterProvider(),
-                                new av.pv(t),
-                                new av._O(t),
-                                new av.ws(t),
-                                new av.Or(t),
+                                new ax.pv(t),
+                                new ax._O(t),
+                                new ax.ws(t),
+                                new ax.Or(t),
                                 new ReviewRequestedFilterProviderWithCopilotSupport(
                                     { ...e, showAtCopilot: !0 },
                                     t
                                 ),
-                                new av.HD(),
-                                new av._N(e, t),
-                                new av.Dv(e, t),
-                                new av.LB(e, t),
+                                new ax.HD(),
+                                new ax._N(e, t),
+                                new ax.Dv(e, t),
+                                new ax.LB(e, t),
                                 new ReviewedByFilterProviderWithCopilotSupport(
                                     { ...e, showAtCopilot: !0 },
                                     t
                                 ),
-                                new av.Ge(t),
-                                new av.NT(t),
-                                new av.Ag(t),
-                                new av.d$(["issue", "pr"], t),
-                                new av.AR(t),
-                                new av.WE(t),
-                                new av.FZ(t),
-                                new av.A6(t),
-                                new av.a2(t),
-                                new av.KX(t),
-                                new av.dR(t),
-                                new av.Ws(t),
-                                new av.C2(t),
-                                new av.NN(o, t),
-                                new av.X_(o, t),
-                                new av.uB(
+                                new ax.Ge(t),
+                                new ax.NT(t),
+                                new ax.Ag(t),
+                                new ax.d$(["issue", "pr"], t),
+                                new ax.AR(t),
+                                new ax.WE(t),
+                                new ax.FZ(t),
+                                new ax.A6(t),
+                                new ax.a2(t),
+                                new ax.KX(t),
+                                new ax.dR(t),
+                                new ax.Ws(t),
+                                new ax.C2(t),
+                                new ax.NN(o, t),
+                                new ax.X_(o, t),
+                                new ax.uB(
                                     [
                                         "created",
                                         "updated",
@@ -13062,23 +13121,23 @@ ${this.quotedText}`)
                         }, [i, a, u, l, o, n, s, r]);
                     for (let e of ((0, b.useEffect)(
                         () => () => {
-                            let e = d.find(aw);
+                            let e = d.find(aN);
                             e && e.requestDisposable?.dispose();
                         },
                         [d]
                     ),
                     d))
-                        e.priority = at.$D;
+                        e.priority = as.$D;
                     return d;
                 },
-                aV = {
+                aD = {
                     gap8: "SearchBar-module__gap8--lQIE5",
                     filterContainer: "SearchBar-module__filterContainer--QBpfA",
                     validation: "SearchBar-module__validation--FKMwS",
                     filter: "SearchBar-module__filter--TbH52",
                     FormControl: "SearchBar-module__FormControl--C3NBA",
                 },
-                aD = {
+                aE = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -13102,10 +13161,10 @@ ${this.quotedText}`)
                     type: "Repository",
                     abstractKey: null,
                 };
-            aD.hash = "a797e54d6a4d9410241158e79db7ba3d";
-            var aE = a(79345),
-                aq = a(55847);
-            let aO = {
+            aE.hash = "a797e54d6a4d9410241158e79db7ba3d";
+            var aq = a(79345),
+                aO = a(55847);
+            let aB = {
                     cancel: "Cancel",
                     apply: "Apply",
                     issues: "Issues",
@@ -13114,39 +13173,39 @@ ${this.quotedText}`)
                     returnToList: "Return to list",
                     setIssueType: "Issue type",
                 },
-                aB = {
+                a$ = {
                     gap8: "SearchBarActions-module__gap8--htEVL",
                     buttons: "SearchBarActions-module__buttons--N7M2V",
                 };
-            function a$({ currentRepository: e }) {
+            function aQ({ currentRepository: e }) {
                 let l = (0, li.Z)(),
                     { currentUser: a } = (0, lr.J)(),
                     { scoped_repository: n, current_user_settings: t } = (0,
-                    K.X)(),
-                    s = (0, er.useFragment)(aD, e),
+                    _.X)(),
+                    s = (0, er.useFragment)(aE, e),
                     i =
                         n?.is_archived ||
                         (null != a &&
                             !!a?.is_emu &&
                             (!s || !s.isOwnerEnterpriseManaged));
                 return (0, y.jsxs)("div", {
-                    className: `${aB.buttons} ${aB.gap8} d-flex flex-wrap`,
+                    className: `${a$.buttons} ${a$.gap8} d-flex flex-wrap`,
                     children: [
-                        (0, y.jsx)(aq.Q, {
+                        (0, y.jsx)(aO.Q, {
                             as: "a",
                             href: `/${s?.nameWithOwner}/labels`,
                             leadingVisual: T.TagIcon,
                             children: "Labels",
                         }),
-                        (0, y.jsx)(aq.Q, {
+                        (0, y.jsx)(aO.Q, {
                             as: "a",
                             href: `/${s?.nameWithOwner}/milestones`,
                             leadingVisual: T.MilestoneIcon,
                             children: "Milestones",
                         }),
                         !i &&
-                            (0, y.jsx)(aE.a, {
-                                label: aO.newIssue,
+                            (0, y.jsx)(aq.a, {
+                                label: aB.newIssue,
                                 navigate: l,
                                 optionConfig: {
                                     issueCreateArguments: {
@@ -13172,16 +13231,16 @@ ${this.quotedText}`)
                 });
             }
             try {
-                a$.displayName || (a$.displayName = "SearchBarActions");
+                aQ.displayName || (aQ.displayName = "SearchBarActions");
             } catch {}
-            let aQ = ({ editing: e, children: l }) =>
+            let aU = ({ editing: e, children: l }) =>
                 e
-                    ? (0, y.jsx)(ap.A, {
-                          className: aV.FormControl,
+                    ? (0, y.jsx)(ay.A, {
+                          className: aD.FormControl,
                           children: l,
                       })
                     : (0, y.jsx)(y.Fragment, { children: l });
-            function aU({
+            function aH({
                 currentViewKey: e,
                 currentRepository: l,
                 queryFromCustomView: a,
@@ -13195,25 +13254,25 @@ ${this.quotedText}`)
                         setCurrentPage: o,
                     } = eU(),
                     [u, d] = (0, b.useState)([]),
-                    { search: c, pathname: m } = (0, _.zy)(),
+                    { search: c, pathname: m } = (0, K.zy)(),
                     g = new URLSearchParams(c).get("q"),
                     { scoped_repository: p, current_user_settings: k } = (0,
-                    K.X)(),
-                    { navigateToUrl: h } = aI(),
+                    _.X)(),
+                    { navigateToUrl: h } = a_(),
                     {
                         id: f,
                         scopingRepository: C,
-                        query: F,
-                    } = (0, er.useFragment)(aa, e),
-                    S = (0, er.useFragment)(an, l),
+                        query: S,
+                    } = (0, er.useFragment)(an, e),
+                    F = (0, er.useFragment)(at, l),
                     {
                         author: L,
                         assignee: I,
                         mentioned: v,
                         label: x,
-                    } = (0, _.g)(),
+                    } = (0, K.g)(),
                     w = `${en.defaultQuery} ${en.query({ author: L, assignee: I, mentioned: v, label: x, createdByApp: eh(m) })}`,
-                    N = F;
+                    N = S;
                 ek(m)
                     ? (N = w)
                     : ey(m) && x && (N = eV("state:open", [x], "label"));
@@ -13233,18 +13292,18 @@ ${this.quotedText}`)
                 (0, b.useEffect)(() => {
                     !em(m) && (s(g || j || ""), g && P(g));
                 }, [M, g, m, j, s, P]);
-                let { sendHyperlistAnalyticsEvent: V } = a_(),
-                    D = aM({ isOrgScope: !!S?.isInOrganization }),
+                let { sendHyperlistAnalyticsEvent: V } = av(),
+                    D = aV({ isOrgScope: !!F?.isInOrganization }),
                     E = (0, b.useCallback)(
                         (e, l) => {
                             let a = e.raw;
-                            l === at.FT.Clear && ((a = j), M(j));
+                            l === as.FT.Clear && ((a = j), M(j));
                             let n = (a || "is:issue").trim();
                             (e.config.groupAndKeywordSupport || (n = eq(a)),
                                 V("search.execute", "FILTER_BAR_INPUT", {
                                     new_query: n,
                                 }),
-                                h(ad({ viewId: f, query: n }), {
+                                h(ac({ viewId: f, query: n }), {
                                     preventAutofocus: !0,
                                 }),
                                 o(1));
@@ -13269,8 +13328,8 @@ ${this.quotedText}`)
                         [P]
                     ),
                     B = (0, b.useCallback)((e) => d(e), [d]);
-                ((0, ag._N)([am.w.focusSearch], q, { [ag.AR.metaKey]: !0 }),
-                    (0, ag._N)([am.w.focusSearch], q, { [ag.AR.ctrlKey]: !0 }));
+                ((0, ap._N)([ag.w.focusSearch], q, { [ap.AR.metaKey]: !0 }),
+                    (0, ap._N)([ag.w.focusSearch], q, { [ap.AR.ctrlKey]: !0 }));
                 let $ = r && i(f);
                 ((0, b.useEffect)(() => {
                     if (!t.current || !$) return;
@@ -13312,22 +13371,22 @@ ${this.quotedText}`)
                         : f === G.id
                           ? R?.trim() !== Q?.trim()
                           : R?.trim() !== H?.trim()),
-                    (0, y.jsxs)(aQ, {
+                    (0, y.jsxs)(aU, {
                         editing: $,
                         children: [
                             $ &&
-                                (0, y.jsx)(ap.A.Label, {
+                                (0, y.jsx)(ay.A.Label, {
                                     visuallyHidden: !0,
-                                    children: ay.query,
+                                    children: ak.query,
                                 }),
                             (0, y.jsx)("div", {
-                                className: `${aV.gap8} px-0 ${$ ? "d-flex" : "d-block"} flex-row flex-justify-between`,
+                                className: `${aD.gap8} px-0 ${$ ? "d-flex" : "d-block"} flex-row flex-justify-between`,
                                 children: (0, y.jsxs)("div", {
-                                    className: `${aV.filterContainer} ${aV.gap8} d-flex flex-row flex-1 flexWrap min-width-0`,
+                                    className: `${aD.filterContainer} ${aD.gap8} d-flex flex-row flex-1 flexWrap min-width-0`,
                                     children: [
                                         (0, y.jsx)("div", {
-                                            className: `${aV.filter} d-flex flex-1 flex-column`,
-                                            children: (0, y.jsx)(at.dJ, {
+                                            className: `${aD.filter} d-flex flex-1 flex-column`,
+                                            children: (0, y.jsx)(as.dJ, {
                                                 id: f ?? "search",
                                                 context: W
                                                     ? { repo: W }
@@ -13359,13 +13418,13 @@ ${this.quotedText}`)
                                         n,
                                         p &&
                                             !em(m) &&
-                                            (0, y.jsx)(a$, {
-                                                currentRepository: S,
+                                            (0, y.jsx)(aQ, {
+                                                currentRepository: F,
                                             }),
                                         u.length > 0 &&
                                             (0, y.jsx)("div", {
-                                                className: `${aV.validation} mt-1`,
-                                                children: (0, y.jsx)(at.Xl, {
+                                                className: `${aD.validation} mt-1`,
+                                                children: (0, y.jsx)(as.Xl, {
                                                     messages: u,
                                                     id: "repository-validation-message",
                                                 }),
@@ -13378,12 +13437,12 @@ ${this.quotedText}`)
                 );
             }
             try {
-                aQ.displayName || (aQ.displayName = "DynamicWrapper");
+                aU.displayName || (aU.displayName = "DynamicWrapper");
             } catch {}
             try {
-                aU.displayName || (aU.displayName = "SearchBar");
+                aH.displayName || (aH.displayName = "SearchBar");
             } catch {}
-            let aH = {
+            let az = {
                 argumentDefinitions: [
                     {
                         defaultValue: null,
@@ -13446,8 +13505,8 @@ ${this.quotedText}`)
                 type: "Searchable",
                 abstractKey: "__isSearchable",
             };
-            aH.hash = "eba993ac639526f6caaf137566bcdb58";
-            let az = {
+            az.hash = "eba993ac639526f6caaf137566bcdb58";
+            let aW = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -13492,9 +13551,9 @@ ${this.quotedText}`)
                 type: "Repository",
                 abstractKey: null,
             };
-            az.hash = "f65187d282f8f58f706a2eabbfe6075b";
-            var aW = a(15845);
-            let aG = {
+            aW.hash = "f65187d282f8f58f706a2eabbfe6075b";
+            var aG = a(15845);
+            let aZ = {
                     "+1": "Thumbs up",
                     "-1": "Thumbs down",
                     rocket: "Rocket",
@@ -13504,7 +13563,7 @@ ${this.quotedText}`)
                     smile: "Laugh",
                     thinking_face: "Confused",
                 },
-                aZ = {
+                aX = {
                     sort: "Sort",
                     Newest: "Newest",
                     Oldest: "Oldest",
@@ -13521,9 +13580,9 @@ ${this.quotedText}`)
                         updated: "Updated",
                         relevance: "Best match",
                         reactions: "Reactions",
-                        ...aG,
+                        ...aZ,
                     },
-                    sortDropdownReactionLabels: aG,
+                    sortDropdownReactionLabels: aZ,
                     sortKeyToQuery: {
                         created: "sort:created",
                         comments: "sort:comments",
@@ -13547,9 +13606,9 @@ ${this.quotedText}`)
                     descending: "Descending",
                     totalReactions: "Total reactions",
                 };
-            var aX = a(15385),
-                aY = a(94232);
-            let aJ = {
+            var aY = a(15385),
+                aJ = a(94232);
+            let a1 = {
                     rowLoadingContainer:
                         "RowLoading-module__rowLoadingContainer--q3al0",
                     rowLoadingContent:
@@ -13557,34 +13616,34 @@ ${this.quotedText}`)
                     LoadingSkeleton:
                         "RowLoading-module__LoadingSkeleton--HhXtV",
                 },
-                a1 = ({ width: e = "random", showCompactDensity: l = !1 }) =>
-                    (0, y.jsx)(aX.l.Item, {
+                a2 = ({ width: e = "random", showCompactDensity: l = !1 }) =>
+                    (0, y.jsx)(aY.l.Item, {
                         children: (0, y.jsxs)(ld.A, {
                             sx: {
                                 alignItems: l ? "center" : "flex-start",
                                 height: l ? "20px" : "40px",
                             },
-                            className: aJ.rowLoadingContainer,
+                            className: a1.rowLoadingContainer,
                             children: [
-                                (0, y.jsx)(aY.O, {
+                                (0, y.jsx)(aJ.O, {
                                     variant: "elliptical",
                                     height: "md",
                                     width: "md",
                                 }),
                                 (0, y.jsxs)("div", {
-                                    className: aJ.rowLoadingContent,
+                                    className: a1.rowLoadingContent,
                                     children: [
-                                        (0, y.jsx)(aY.O, {
+                                        (0, y.jsx)(aJ.O, {
                                             variant: "rounded",
                                             height: "sm",
                                             width: e,
                                         }),
                                         !l &&
-                                            (0, y.jsx)(aY.O, {
+                                            (0, y.jsx)(aJ.O, {
                                                 variant: "rounded",
                                                 height: "12px",
                                                 width: e,
-                                                className: aJ.LoadingSkeleton,
+                                                className: a1.LoadingSkeleton,
                                             }),
                                     ],
                                 }),
@@ -13592,22 +13651,22 @@ ${this.quotedText}`)
                         }),
                     });
             try {
-                a1.displayName || (a1.displayName = "RowLoading");
+                a2.displayName || (a2.displayName = "RowLoading");
             } catch {}
-            let a2 = ({ numberOfRows: e, isCompact: l }) =>
-                (0, y.jsx)(aX.l, {
+            let a0 = ({ numberOfRows: e, isCompact: l }) =>
+                (0, y.jsx)(aY.l, {
                     children: [...Array(e)].map((e, a) =>
-                        (0, y.jsx)(a1, { showCompactDensity: l }, a)
+                        (0, y.jsx)(a2, { showCompactDensity: l }, a)
                     ),
                 });
             try {
-                a2.displayName || (a2.displayName = "ActionListLoading");
+                a0.displayName || (a0.displayName = "ActionListLoading");
             } catch {}
-            let a0 = {
+            let a3 = {
                     ListLoadingHeader:
                         "ListLoading-module__ListLoadingHeader--sskDH",
                 },
-                a3 = ({
+                a4 = ({
                     pageSize: e,
                     showBorder: l = !0,
                     headerTitle: a,
@@ -13625,7 +13684,7 @@ ${this.quotedText}`)
                         children: [
                             l &&
                                 (0, y.jsxs)("div", {
-                                    className: a0.ListLoadingHeader,
+                                    className: a3.ListLoadingHeader,
                                     children: [
                                         a,
                                         n?.map((e, l) =>
@@ -13637,30 +13696,30 @@ ${this.quotedText}`)
                                         ),
                                     ],
                                 }),
-                            (0, y.jsx)(a2, { numberOfRows: e, isCompact: t }),
+                            (0, y.jsx)(a0, { numberOfRows: e, isCompact: t }),
                         ],
                     });
             try {
-                a3.displayName || (a3.displayName = "ListLoading");
-            } catch {}
-            let a4 = ({ layoutDensity: e, ...l }) => {
-                let a = e === aZ.Compact.toLowerCase();
-                return (0, y.jsx)(a3, { isCompactRows: a, ...l });
-            };
-            try {
                 a4.displayName || (a4.displayName = "ListLoading");
             } catch {}
+            let a5 = ({ layoutDensity: e, ...l }) => {
+                let a = e === aX.Compact.toLowerCase();
+                return (0, y.jsx)(a4, { isCompactRows: a, ...l });
+            };
+            try {
+                a5.displayName || (a5.displayName = "ListLoading");
+            } catch {}
             (a(61885), a(70056));
-            let a5 = /(?:^|\s)reason:"?(completed|not(\s|-)planned)"?(?:$|\s)/g;
-            function a6(e, l) {
+            let a6 = /(?:^|\s)reason:"?(completed|not(\s|-)planned)"?(?:$|\s)/g;
+            function a7(e, l) {
                 var a;
-                let n = a7(
+                let n = a9(
                     ((a = e),
                     l?.is_archived ? a : `${"" === a ? "archived:false" : a}`)
                 );
                 if (!l) return n;
                 let t = "",
-                    s = a9(n),
+                    s = a8(n),
                     i = (function (e) {
                         let l = new Map(e),
                             a = l.get("is") || [],
@@ -13700,7 +13759,7 @@ ${this.quotedText}`)
                     .join(" ")
                     .trim();
             }
-            function a7(e) {
+            function a9(e) {
                 let l = (function (e) {
                     let l = [],
                         a = e.indexOf(I.A);
@@ -13797,7 +13856,7 @@ ${this.quotedText}`)
                           return a;
                       })(e, a);
             }
-            function a9(e) {
+            function a8(e) {
                 let l = new Map();
                 for (let a of (l.set("searchTerms", []),
                 e
@@ -13817,23 +13876,23 @@ ${this.quotedText}`)
                 }
                 return l;
             }
-            function a8(e) {
+            function ne(e) {
                 if (!e) return !1;
-                let l = a9(e).get("sort");
+                let l = a8(e).get("sort");
                 return (
                     (l && 1 === l.length && l[0].startsWith("reactions-")) || !1
                 );
             }
-            var ne = a(6294),
-                nl = a(23086),
-                na = a(53110),
-                nn = a(34164);
-            let nt = {
+            var nl = a(6294),
+                na = a(23086),
+                nn = a(53110),
+                nt = a(34164);
+            let ns = {
                     errorIcon: "ListError-module__errorIcon--I_jd2",
                     errorMessage: "ListError-module__errorMessage--vCu3v",
                     retryLink: "ListError-module__retryLink--j9317",
                 },
-                ns = ({
+                ni = ({
                     retry: e,
                     icon: l,
                     title: a,
@@ -13845,10 +13904,10 @@ ${this.quotedText}`)
                         className: "blankslate",
                         "data-testid": s,
                         children: [
-                            (0, y.jsx)(na.A, {
-                                className: (0, nn.$)(
+                            (0, y.jsx)(nn.A, {
+                                className: (0, nt.$)(
                                     "blankslate-icon",
-                                    nt.errorIcon
+                                    ns.errorIcon
                                 ),
                                 icon: l ?? T.AlertFillIcon,
                             }),
@@ -13857,7 +13916,7 @@ ${this.quotedText}`)
                                 children: a,
                             }),
                             (0, y.jsx)("p", {
-                                className: nt.errorMessage,
+                                className: ns.errorMessage,
                                 children: n,
                             }),
                             e &&
@@ -13865,15 +13924,15 @@ ${this.quotedText}`)
                                     as: "button",
                                     underline: !0,
                                     onClick: e,
-                                    className: nt.retryLink,
-                                    children: t ?? nl.l.tryAgain,
+                                    className: ns.retryLink,
+                                    children: t ?? na.l.tryAgain,
                                 }),
                         ],
                     });
             try {
-                ns.displayName || (ns.displayName = "ListError");
+                ni.displayName || (ni.displayName = "ListError");
             } catch {}
-            let ni = {
+            let nr = {
                     list: "list",
                     listHeader: "list-header",
                     issueRowItem: (e) => `issue-row-${e}`,
@@ -13886,17 +13945,17 @@ ${this.quotedText}`)
                     ftcBannerContributingGuidelinesLink:
                         "contributing-guidelines",
                 },
-                nr = (e) =>
-                    (0, y.jsx)(ns, {
+                no = (e) =>
+                    (0, y.jsx)(ni, {
                         retry: e,
-                        title: ay.failedToLoadIssues,
-                        message: ay.errorLoadingIssues,
-                        testid: ni.fallback,
+                        title: ak.failedToLoadIssues,
+                        message: ak.errorLoadingIssues,
+                        testid: nr.fallback,
                     });
             try {
-                nr.displayName || (nr.displayName = "ListError");
+                no.displayName || (no.displayName = "ListError");
             } catch {}
-            let no = (function () {
+            let nu = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -14029,14 +14088,14 @@ ${this.quotedText}`)
                         name: "cursor",
                         storageKey: null,
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "endCursor",
                         storageKey: null,
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -14099,7 +14158,7 @@ ${this.quotedText}`)
                                 kind: "LinkedField",
                                 name: "pageInfo",
                                 plural: !1,
-                                selections: [F, S],
+                                selections: [S, F],
                                 storageKey: null,
                             },
                         ],
@@ -14114,14 +14173,14 @@ ${this.quotedText}`)
                         kind: "LinkedHandle",
                         name: "labels",
                     },
-                    K = {
+                    _ = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "createdAt",
                         storageKey: null,
                     },
-                    _ = {
+                    K = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -14237,8 +14296,8 @@ ${this.quotedText}`)
                         selections: [
                             L,
                             I,
-                            K,
                             _,
+                            K,
                             v,
                             x,
                             N,
@@ -14511,8 +14570,8 @@ ${this.quotedText}`)
                                                                                                                 [
                                                                                                                     L,
                                                                                                                     I,
-                                                                                                                    K,
                                                                                                                     _,
+                                                                                                                    K,
                                                                                                                     v,
                                                                                                                     x,
                                                                                                                     N,
@@ -14616,8 +14675,8 @@ ${this.quotedText}`)
                                                                                                                 [
                                                                                                                     L,
                                                                                                                     I,
-                                                                                                                    K,
                                                                                                                     _,
+                                                                                                                    K,
                                                                                                                     v,
                                                                                                                     x,
                                                                                                                     N,
@@ -14694,7 +14753,7 @@ ${this.quotedText}`)
                                                                         storageKey:
                                                                             null,
                                                                     },
-                                                                    F,
+                                                                    S,
                                                                     {
                                                                         alias: null,
                                                                         args: null,
@@ -14703,7 +14762,7 @@ ${this.quotedText}`)
                                                                         storageKey:
                                                                             null,
                                                                     },
-                                                                    S,
+                                                                    F,
                                                                 ],
                                                                 storageKey:
                                                                     null,
@@ -14748,8 +14807,8 @@ ${this.quotedText}`)
                     },
                 };
             })();
-            no.hash = "7048a8fa4213ea495d3a363ede290f47";
-            let nu = (function () {
+            nu.hash = "7048a8fa4213ea495d3a363ede290f47";
+            let nd = (function () {
                 var e = ["search"],
                     l = {
                         alias: null,
@@ -14826,7 +14885,7 @@ ${this.quotedText}`)
                                 path: e,
                             },
                             fragmentPathInResult: ["node"],
-                            operation: no,
+                            operation: nu,
                             identifierInfo: {
                                 identifierField: "id",
                                 identifierQueryVariableName: "id",
@@ -15023,10 +15082,10 @@ ${this.quotedText}`)
                     abstractKey: "__isSearchable",
                 };
             })();
-            nu.hash = "7048a8fa4213ea495d3a363ede290f47";
-            var nd = a(52811),
-                nc = a(84905);
-            let nm = {
+            nd.hash = "7048a8fa4213ea495d3a363ede290f47";
+            var nc = a(52811),
+                nm = a(84905);
+            let ng = {
                 argumentDefinitions: [
                     {
                         defaultValue: null,
@@ -15118,10 +15177,10 @@ ${this.quotedText}`)
                 type: "Issue",
                 abstractKey: null,
             };
-            nm.hash = "21fd35aed4bf06bc46c2c5f43e336427";
-            var ng = a(7799),
-                np = a(42080);
-            let ny = {
+            ng.hash = "21fd35aed4bf06bc46c2c5f43e336427";
+            var np = a(7799),
+                ny = a(42080);
+            let nk = {
                 argumentDefinitions: [
                     {
                         defaultValue: !0,
@@ -15202,12 +15261,12 @@ ${this.quotedText}`)
                 type: "Issue",
                 abstractKey: null,
             };
-            ny.hash = "0117efdfcd4f84d5eb84fd080781921a";
-            var nk = a(4122),
-                nh = a(78168),
-                nb = a(93715),
-                nf = a(42265),
-                nC = a(81346);
+            nk.hash = "0117efdfcd4f84d5eb84fd080781921a";
+            var nh = a(4122),
+                nb = a(78168),
+                nf = a(93715),
+                nC = a(42265),
+                nS = a(81346);
             let nF = {
                 label: "label",
                 assignee: "assignee",
@@ -15216,7 +15275,7 @@ ${this.quotedText}`)
             RegExp(
                 `^(\\d+)(${Object.values({ day: "d", week: "w", month: "m", year: "y" }).join("|")})`
             );
-            let nS = {
+            let nL = {
                     ListItem_0: "IssueItem-module__ListItem_0--feI3m",
                     leadingContent: "IssueItem-module__leadingContent--EZ8h4",
                     commentCountContainer:
@@ -15233,7 +15292,7 @@ ${this.quotedText}`)
                         "IssueItem-module__compactNameWithOwnerLabel--hMW4z",
                     token: "IssueItem-module__token--p8scu",
                 },
-                nL = {
+                nI = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -15268,27 +15327,27 @@ ${this.quotedText}`)
                     type: "Issue",
                     abstractKey: null,
                 };
-            nL.hash = "9c625883c1ab2a710b78eb3d2e69cda8";
-            var nI = a(98386),
+            nI.hash = "9c625883c1ab2a710b78eb3d2e69cda8";
+            var n_ = a(98386),
                 nK = a(13922);
-            function n_({ metadataRef: e, issueId: l }) {
+            function nv({ metadataRef: e, issueId: l }) {
                 return e
                     ? (0, y.jsx)(b.Suspense, {
                           fallback: null,
-                          children: (0, y.jsx)(nv, {
+                          children: (0, y.jsx)(nx, {
                               issueId: l,
                               metadataRef: e,
                           }),
                       })
                     : null;
             }
-            function nv({ metadataRef: e, issueId: l }) {
-                let { nodes: a } = (0, er.usePreloadedQuery)(sF, e),
+            function nx({ metadataRef: e, issueId: l }) {
+                let { nodes: a } = (0, er.usePreloadedQuery)(sS, e),
                     n = a?.find((e) => e?.id === l);
-                return n ? (0, y.jsx)(nx, { blockedByKey: n }) : null;
+                return n ? (0, y.jsx)(nw, { blockedByKey: n }) : null;
             }
-            function nx({ blockedByKey: e }) {
-                let l = (0, er.useFragment)(nL, e);
+            function nw({ blockedByKey: e }) {
+                let l = (0, er.useFragment)(nI, e);
                 if (l?.state === "CLOSED" || !l?.issueDependenciesSummary)
                     return null;
                 let { blockedBy: a } = l.issueDependenciesSummary;
@@ -15301,22 +15360,22 @@ ${this.quotedText}`)
                                   className: "fgColor-danger",
                                   size: 14,
                               }),
-                          className: nS.token,
-                          ...(0, nI.G)("blocked-by-token"),
+                          className: nL.token,
+                          ...(0, n_.G)("blocked-by-token"),
                       });
             }
             try {
-                n_.displayName || (n_.displayName = "IssueItemBlockedBy");
-            } catch {}
-            try {
-                nv.displayName ||
-                    (nv.displayName = "IssueItemBlockedByFetched");
+                nv.displayName || (nv.displayName = "IssueItemBlockedBy");
             } catch {}
             try {
                 nx.displayName ||
-                    (nx.displayName = "IssueItemBlockedByInternal");
+                    (nx.displayName = "IssueItemBlockedByFetched");
             } catch {}
-            let nw = {
+            try {
+                nw.displayName ||
+                    (nw.displayName = "IssueItemBlockedByInternal");
+            } catch {}
+            let nN = {
                 argumentDefinitions: [
                     {
                         defaultValue: 10,
@@ -15411,17 +15470,17 @@ ${this.quotedText}`)
                 type: "Issue",
                 abstractKey: null,
             };
-            nw.hash = "40031c7706e02f95b7bde55bd32d1463";
-            var nN = a(52369),
-                nj = a(78563);
-            let nR = {
+            nN.hash = "40031c7706e02f95b7bde55bd32d1463";
+            var nj = a(52369),
+                nR = a(78563);
+            let nP = {
                     listRowRepoNameAndNumber: "list-row-repo-name-and-number",
                     listRowStateIcon: "list-row-state-icon",
                     listRowComments: "list-row-comments",
                     listRowAssignees: "list-row-assignees",
                     listRowLinkedPullRequests: "list-row-linked-pull-requests",
                 },
-                nP = (function () {
+                nT = (function () {
                     var e = [
                             {
                                 defaultValue: null,
@@ -15709,8 +15768,8 @@ ${this.quotedText}`)
                         },
                     };
                 })();
-            nP.hash = "6430a51068d73c42eaf731eae13d2c00";
-            let nT = (function () {
+            nT.hash = "6430a51068d73c42eaf731eae13d2c00";
+            let nA = (function () {
                 var e = ["assignedActors"],
                     l = [
                         {
@@ -15754,7 +15813,7 @@ ${this.quotedText}`)
                                 path: e,
                             },
                             fragmentPathInResult: ["node"],
-                            operation: nP,
+                            operation: nT,
                             identifierInfo: {
                                 identifierField: "id",
                                 identifierQueryVariableName: "id",
@@ -15863,9 +15922,9 @@ ${this.quotedText}`)
                     abstractKey: "__isAssignable",
                 };
             })();
-            nT.hash = "6430a51068d73c42eaf731eae13d2c00";
-            var nA = a(70892);
-            let nM = {
+            nA.hash = "6430a51068d73c42eaf731eae13d2c00";
+            var nM = a(70892);
+            let nV = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -15903,13 +15962,13 @@ ${this.quotedText}`)
                 type: "Actor",
                 abstractKey: "__isActor",
             };
-            nM.hash = "42bd9fa660c90cbfea3449aa2b1d2c2c";
-            var nV = a(91560),
-                nD = a(50879);
-            let nE = {
+            nV.hash = "42bd9fa660c90cbfea3449aa2b1d2c2c";
+            var nD = a(91560),
+                nE = a(50879);
+            let nq = {
                     AssigneeAvatar: "Assignee-module__AssigneeAvatar--ATit0",
                 },
-                nq = {
+                nO = {
                     noAssigneeContainer:
                         "Assignees-module__noAssigneeContainer--mMEYh",
                     assigneeIconLink:
@@ -15921,51 +15980,51 @@ ${this.quotedText}`)
                     noAssigneeBackgroundIcon:
                         "Assignees-module__noAssigneeBackgroundIcon--dhhfQ",
                 };
-            function nO({ assignee: e, getAssigneeHref: l, className: a }) {
+            function nB({ assignee: e, getAssigneeHref: l, className: a }) {
                 let {
                         login: n,
                         avatarUrl: t,
                         isCopilot: s,
-                    } = (0, er.useFragment)(nM, e),
+                    } = (0, er.useFragment)(nV, e),
                     i = s ? "Copilot" : n,
-                    r = (0, nD.S)(n, { isCopilot: s });
+                    r = (0, nE.S)(n, { isCopilot: s });
                 return (0, y.jsx)(lo.A, {
                     "aria-label": `${i} is assigned`,
                     href: l(n),
                     ...r,
-                    className: (0, nn.$)(
+                    className: (0, nt.$)(
                         a,
                         "pc-AvatarItem",
-                        nq.assigneeIconLink
+                        nO.assigneeIconLink
                     ),
                     children: s
-                        ? (0, y.jsx)(nV.C, { size: "small" }, n)
+                        ? (0, y.jsx)(nD.C, { size: "small" }, n)
                         : (0, y.jsx)(
                               le.r,
-                              { alt: i, src: t, className: nE.AssigneeAvatar },
+                              { alt: i, src: t, className: nq.AssigneeAvatar },
                               n
                           ),
                 });
             }
             try {
-                nO.displayName || (nO.displayName = "Assignee");
+                nB.displayName || (nB.displayName = "Assignee");
             } catch {}
-            function nB({
+            function n$({
                 assigneeskey: e,
                 getAssigneeHref: l,
                 showPlaceholder: a = !0,
             }) {
-                let { data: n } = (0, er.usePaginationFragment)(nT, e),
+                let { data: n } = (0, er.usePaginationFragment)(nA, e),
                     t = (n.assignedActors?.edges || []).flatMap((e) =>
                         e && e.node ? e.node : []
                     );
                 return t.length
-                    ? (0, y.jsx)(nA.A, {
+                    ? (0, y.jsx)(nM.A, {
                           alignRight: !0,
-                          className: nq.AssigneesAvatarStack,
+                          className: nO.AssigneesAvatarStack,
                           children: t.map((e) =>
                               (0, y.jsx)(
-                                  nO,
+                                  nB,
                                   { assignee: e, getAssigneeHref: l },
                                   e.id
                               )
@@ -15973,30 +16032,30 @@ ${this.quotedText}`)
                       })
                     : a
                       ? (0, y.jsxs)("div", {
-                            className: nq.noAssigneeContainer,
+                            className: nO.noAssigneeContainer,
                             children: [
-                                (0, y.jsx)(na.A, {
+                                (0, y.jsx)(nn.A, {
                                     icon: T.PersonIcon,
-                                    className: nq.noAssigneePersonIcon,
+                                    className: nO.noAssigneePersonIcon,
                                 }),
-                                (0, y.jsx)(na.A, {
+                                (0, y.jsx)(nn.A, {
                                     size: 24,
                                     icon: T.CircleIcon,
-                                    className: nq.noAssigneeBackgroundIcon,
+                                    className: nO.noAssigneeBackgroundIcon,
                                 }),
                             ],
                         })
                       : null;
             }
             try {
-                nB.displayName || (nB.displayName = "Assignees");
+                n$.displayName || (n$.displayName = "Assignees");
             } catch {}
-            var n$ = a(69403);
-            let nQ = {
+            var nQ = a(69403);
+            let nU = {
                     ListItemMetadata_0:
                         "IssueItemMetadata-module__ListItemMetadata_0--RUUfu",
                 },
-                nU = {
+                nH = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -16042,17 +16101,17 @@ ${this.quotedText}`)
                     type: "Reactable",
                     abstractKey: "__isReactable",
                 };
-            nU.hash = "74f8d34cc7d8c1ceb397b94750030f0d";
-            let nH = {
+            nH.hash = "74f8d34cc7d8c1ceb397b94750030f0d";
+            let nz = {
                     reactionsContainer:
                         "Reactions-module__reactionsContainer--II9mB",
                 },
-                nz = ({
+                nW = ({
                     dataKey: e,
                     reactionEmojiToDisplay: l,
                     showCompactDensity: a = !1,
                 }) => {
-                    let n = (0, er.useFragment)(nU, e),
+                    let n = (0, er.useFragment)(nH, e),
                         t =
                             n.reactionGroups?.filter(
                                 (e) => e.content === l.reaction
@@ -16060,7 +16119,7 @@ ${this.quotedText}`)
                     return l?.reactionEmoji && 0 !== t
                         ? (0, y.jsx)(ld.A, {
                               sx: { minWidth: a ? 0 : "45px", ml: 3 * !a },
-                              className: nH.reactionsContainer,
+                              className: nz.reactionsContainer,
                               children:
                                   t > 0 &&
                                   (0, y.jsxs)(y.Fragment, {
@@ -16075,19 +16134,19 @@ ${this.quotedText}`)
                         : null;
                 };
             try {
-                nz.displayName || (nz.displayName = "Reactions");
+                nW.displayName || (nW.displayName = "Reactions");
             } catch {}
-            function nW({ metadataRef: e, ...l }) {
+            function nG({ metadataRef: e, ...l }) {
                 return null === e
                     ? null
                     : e
                       ? (0, y.jsx)(b.Suspense, {
-                            fallback: (0, y.jsx)(nG, { ...l }),
-                            children: (0, y.jsx)(nZ, { ...l, metadataRef: e }),
+                            fallback: (0, y.jsx)(nZ, { ...l }),
+                            children: (0, y.jsx)(nX, { ...l, metadataRef: e }),
                         })
-                      : (0, y.jsx)(nG, { ...l });
+                      : (0, y.jsx)(nZ, { ...l });
             }
-            function nG({
+            function nZ({
                 showAssignees: e,
                 showCommentCount: l = !0,
                 reactionEmojiToDisplay: a,
@@ -16097,38 +16156,38 @@ ${this.quotedText}`)
                 return (0, y.jsxs)(y.Fragment, {
                     children: [
                         n &&
-                            (0, y.jsx)(nN.V, {
-                                "data-testid": nR.listRowLinkedPullRequests,
-                                className: nQ.ListItemMetadata_0,
-                                children: (0, y.jsx)(aY.O, {
+                            (0, y.jsx)(nj.V, {
+                                "data-testid": nP.listRowLinkedPullRequests,
+                                className: nU.ListItemMetadata_0,
+                                children: (0, y.jsx)(aJ.O, {
                                     variant: "pill",
                                     width: "xl",
                                 }),
                             }),
-                        (0, y.jsx)(nN.V, {
-                            "data-testid": nR.listRowComments,
-                            className: nQ.ListItemMetadata_0,
+                        (0, y.jsx)(nj.V, {
+                            "data-testid": nP.listRowComments,
+                            className: nU.ListItemMetadata_0,
                             children:
                                 l &&
-                                (0, y.jsx)(aY.O, {
+                                (0, y.jsx)(aJ.O, {
                                     variant: "pill",
                                     width: "xl",
                                 }),
                         }),
                         t &&
-                            (0, y.jsx)(nN.V, {
-                                className: nQ.ListItemMetadata_0,
-                                children: (0, y.jsx)(aY.O, {
+                            (0, y.jsx)(nj.V, {
+                                className: nU.ListItemMetadata_0,
+                                children: (0, y.jsx)(aJ.O, {
                                     variant: "pill",
                                     width: "xl",
                                 }),
                             }),
                         e &&
-                            (0, y.jsx)(nN.V, {
-                                "data-testid": nR.listRowAssignees,
+                            (0, y.jsx)(nj.V, {
+                                "data-testid": nP.listRowAssignees,
                                 alignment: "right",
-                                className: nQ.ListItemMetadata_0,
-                                children: (0, y.jsx)(aY.O, {
+                                className: nU.ListItemMetadata_0,
+                                children: (0, y.jsx)(aJ.O, {
                                     variant: "pill",
                                     width: "lg",
                                 }),
@@ -16136,14 +16195,14 @@ ${this.quotedText}`)
                     ],
                 });
             }
-            function nZ({ issueId: e, metadataRef: l, ...a }) {
-                let { nodes: n } = (0, er.usePreloadedQuery)(sF, l),
+            function nX({ issueId: e, metadataRef: l, ...a }) {
+                let { nodes: n } = (0, er.usePreloadedQuery)(sS, l),
                     t = n?.find((l) => l?.id === e);
                 return t
-                    ? (0, y.jsx)(nX, { itemKey: t, ...a })
-                    : (0, y.jsx)(nG, { ...a });
+                    ? (0, y.jsx)(nY, { itemKey: t, ...a })
+                    : (0, y.jsx)(nZ, { ...a });
             }
-            let nX = ({
+            let nY = ({
                 itemKey: e,
                 getMetadataHref: l,
                 reactionEmojiToDisplay: a,
@@ -16154,12 +16213,12 @@ ${this.quotedText}`)
             }) => {
                 let r,
                     o,
-                    { variant: u } = (0, nj.e)(),
-                    d = (0, er.useFragment)(nw, e),
+                    { variant: u } = (0, nR.e)(),
+                    d = (0, er.useFragment)(nN, e),
                     c = !!a?.reaction,
                     m = (0, k.G7)("issues_react_remove_placeholders");
                 if (void 0 === d.totalCommentsCount)
-                    return (0, y.jsx)(nG, {
+                    return (0, y.jsx)(nZ, {
                         reactionEmojiToDisplay: a,
                         showCommentCount: !0,
                         showLinkedPullRequests: !0,
@@ -16181,22 +16240,22 @@ ${this.quotedText}`)
                         children: [
                             d &&
                                 i &&
-                                (0, y.jsx)(nN.V, {
-                                    "data-testid": nR.listRowLinkedPullRequests,
-                                    className: nQ.ListItemMetadata_0,
-                                    children: (0, y.jsx)(n$.d, {
+                                (0, y.jsx)(nj.V, {
+                                    "data-testid": nP.listRowLinkedPullRequests,
+                                    className: nU.ListItemMetadata_0,
+                                    children: (0, y.jsx)(nQ.d, {
                                         issueId: d.id,
                                         closedByPullRequestsReferencesKey: d,
                                     }),
                                 }),
-                            (0, y.jsx)(nN.V, {
+                            (0, y.jsx)(nj.V, {
                                 "aria-label": g,
-                                "data-testid": nR.listRowComments,
-                                className: nQ.ListItemMetadata_0,
+                                "data-testid": nP.listRowComments,
+                                className: nU.ListItemMetadata_0,
                                 children:
                                     r &&
                                     (0, y.jsxs)("div", {
-                                        className: nS.commentCountContainer,
+                                        className: nL.commentCountContainer,
                                         children: [
                                             (0, y.jsx)(T.CommentIcon, {
                                                 size: 16,
@@ -16217,11 +16276,11 @@ ${this.quotedText}`)
                                     }),
                             }),
                             c &&
-                                (0, y.jsx)(nN.V, {
-                                    className: nQ.ListItemMetadata_0,
+                                (0, y.jsx)(nj.V, {
+                                    className: nU.ListItemMetadata_0,
                                     children:
                                         d.reactionGroups &&
-                                        (0, y.jsx)(nz, {
+                                        (0, y.jsx)(nW, {
                                             dataKey: d,
                                             reactionEmojiToDisplay: a,
                                             showCompactDensity: "compact" === u,
@@ -16229,11 +16288,11 @@ ${this.quotedText}`)
                                 }),
                             n &&
                                 d &&
-                                (0, y.jsx)(nN.V, {
-                                    "data-testid": nR.listRowAssignees,
+                                (0, y.jsx)(nj.V, {
+                                    "data-testid": nP.listRowAssignees,
                                     alignment: "right",
-                                    className: nQ.ListItemMetadata_0,
-                                    children: (0, y.jsx)(nB, {
+                                    className: nU.ListItemMetadata_0,
+                                    children: (0, y.jsx)(n$, {
                                         showPlaceholder: !m,
                                         assigneeskey: d,
                                         getAssigneeHref: (e) =>
@@ -16245,18 +16304,18 @@ ${this.quotedText}`)
                 );
             };
             try {
-                nW.displayName || (nW.displayName = "LazyIssueItemMetadata");
+                nG.displayName || (nG.displayName = "LazyIssueItemMetadata");
             } catch {}
             try {
-                nG.displayName || (nG.displayName = "LoadingMetadata");
+                nZ.displayName || (nZ.displayName = "LoadingMetadata");
             } catch {}
             try {
-                nZ.displayName || (nZ.displayName = "LazyIssueMetadataFetched");
+                nX.displayName || (nX.displayName = "LazyIssueMetadataFetched");
             } catch {}
             try {
-                nX.displayName || (nX.displayName = "IssueItemMetadata");
+                nY.displayName || (nY.displayName = "IssueItemMetadata");
             } catch {}
-            let nY = (function () {
+            let nJ = (function () {
                 var e = [
                     {
                         alias: null,
@@ -16296,12 +16355,12 @@ ${this.quotedText}`)
                     abstractKey: "__isIssueOrPullRequest",
                 };
             })();
-            nY.hash = "691d1fd40629826d5b45aaffeb927341";
-            let nJ = { unread: "UnreadIndicator-module__unread--rNL5I" };
-            function n1({ unread: e }) {
+            nJ.hash = "691d1fd40629826d5b45aaffeb927341";
+            let n1 = { unread: "UnreadIndicator-module__unread--rNL5I" };
+            function n2({ unread: e }) {
                 return e
                     ? (0, y.jsx)("div", {
-                          className: nJ.unread,
+                          className: n1.unread,
                           children: (0, y.jsx)("span", {
                               className: "sr-only",
                               children: "New activity.",
@@ -16310,44 +16369,44 @@ ${this.quotedText}`)
                     : null;
             }
             try {
-                n1.displayName || (n1.displayName = "UnreadIndicator");
+                n2.displayName || (n2.displayName = "UnreadIndicator");
             } catch {}
-            function n2({ issueId: e, metadataRef: l }) {
+            function n0({ issueId: e, metadataRef: l }) {
                 return l
                     ? (0, y.jsx)(b.Suspense, {
                           fallback: null,
-                          children: (0, y.jsx)(n0, {
+                          children: (0, y.jsx)(n3, {
                               issueId: e,
                               metadataRef: l,
                           }),
                       })
                     : null;
             }
-            function n0({ issueId: e, metadataRef: l }) {
-                let { nodes: a } = (0, er.usePreloadedQuery)(sF, l),
+            function n3({ issueId: e, metadataRef: l }) {
+                let { nodes: a } = (0, er.usePreloadedQuery)(sS, l),
                     n = a?.find((l) => l?.id === e);
-                return n ? (0, y.jsx)(n3, { notificationKey: n }) : null;
+                return n ? (0, y.jsx)(n4, { notificationKey: n }) : null;
             }
-            function n3({ notificationKey: e }) {
-                let l = (0, er.useFragment)(nY, e),
+            function n4({ notificationKey: e }) {
+                let l = (0, er.useFragment)(nJ, e),
                     a = !!l && "isReadByViewer" in l && l.isReadByViewer;
-                return (0, y.jsx)(n1, { unread: !a });
+                return (0, y.jsx)(n2, { unread: !a });
             }
-            try {
-                n2.displayName ||
-                    (n2.displayName = "IssueOrPullRequestUnreadIndicator");
-            } catch {}
             try {
                 n0.displayName ||
-                    (n0.displayName =
-                        "IssueOrPullRequestUnreadIndicatorFetched");
+                    (n0.displayName = "IssueOrPullRequestUnreadIndicator");
             } catch {}
             try {
                 n3.displayName ||
                     (n3.displayName =
+                        "IssueOrPullRequestUnreadIndicatorFetched");
+            } catch {}
+            try {
+                n4.displayName ||
+                    (n4.displayName =
                         "IssueOrPullRequestUnreadIndicatorInternal");
             } catch {}
-            let n4 = (function () {
+            let n5 = (function () {
                 var e = {
                         alias: null,
                         args: null,
@@ -16511,138 +16570,80 @@ ${this.quotedText}`)
                     abstractKey: "__isIssueOrPullRequest",
                 };
             })();
-            n4.hash = "fa9824330990dabf19a484ca8d78a275";
-            var n5 = a(46404),
-                n6 = a(58569),
-                n7 = a(89169);
-            let n9 = { copilotDisplayName: "Copilot", ghostUserLogin: "ghost" },
-                n8 = {
-                    issueIcons: {
-                        OPEN: {
-                            color: "open.fg",
-                            icon: T.IssueOpenedIcon,
-                            description: "Status: Open.",
+            n5.hash = "fa9824330990dabf19a484ca8d78a275";
+            var n6 = a(46404),
+                n7 = a(58569),
+                n9 = a(89169),
+                n8 = a(19413);
+            let te = (function () {
+                var e = {
+                    alias: null,
+                    args: null,
+                    kind: "ScalarField",
+                    name: "state",
+                    storageKey: null,
+                };
+                return {
+                    argumentDefinitions: [],
+                    kind: "Fragment",
+                    metadata: null,
+                    name: "CheckRunStatus",
+                    selections: [
+                        {
+                            alias: null,
+                            args: null,
+                            concreteType: "StatusCheckRollup",
+                            kind: "LinkedField",
+                            name: "statusCheckRollup",
+                            plural: !1,
+                            selections: [
+                                e,
+                                {
+                                    alias: null,
+                                    args: null,
+                                    concreteType:
+                                        "StatusCheckRollupContextConnection",
+                                    kind: "LinkedField",
+                                    name: "contexts",
+                                    plural: !1,
+                                    selections: [
+                                        {
+                                            alias: null,
+                                            args: null,
+                                            kind: "ScalarField",
+                                            name: "checkRunCount",
+                                            storageKey: null,
+                                        },
+                                        {
+                                            alias: null,
+                                            args: null,
+                                            concreteType: "CheckRunStateCount",
+                                            kind: "LinkedField",
+                                            name: "checkRunCountsByState",
+                                            plural: !0,
+                                            selections: [
+                                                {
+                                                    alias: null,
+                                                    args: null,
+                                                    kind: "ScalarField",
+                                                    name: "count",
+                                                    storageKey: null,
+                                                },
+                                                e,
+                                            ],
+                                            storageKey: null,
+                                        },
+                                    ],
+                                    storageKey: null,
+                                },
+                            ],
+                            storageKey: null,
                         },
-                        CLOSED: {
-                            color: "done.fg",
-                            icon: T.IssueClosedIcon,
-                            description: "Status: Closed (completed).",
-                        },
-                        COMPLETED: {
-                            color: "done.fg",
-                            icon: T.IssueClosedIcon,
-                            description: "Status: Closed (completed).",
-                        },
-                        NOT_PLANNED: {
-                            color: "fg.muted",
-                            icon: T.SkipIcon,
-                            description: "Status: Not planned (skipped).",
-                        },
-                        DUPLICATE: {
-                            color: "fg.muted",
-                            icon: T.SkipIcon,
-                            description:
-                                "Status: Duplicate of an existing item.",
-                        },
-                    },
-                    pullRequestIcons: {
-                        MERGED: {
-                            color: "done.fg",
-                            icon: T.GitMergeIcon,
-                            description: "Status: Merged (completed).",
-                        },
-                        IN_MERGE_QUEUE: {
-                            color: "attention.fg",
-                            icon: T.GitMergeQueueIcon,
-                            description: "Status: In merge queue.",
-                        },
-                        OPEN: {
-                            color: "open.fg",
-                            icon: T.GitPullRequestIcon,
-                            description: "Status: Open (in progress).",
-                        },
-                        CLOSED: {
-                            color: "closed.fg",
-                            icon: T.GitPullRequestClosedIcon,
-                            description: "Status: Closed (abandoned).",
-                        },
-                        DRAFT: {
-                            color: "fg.muted",
-                            icon: T.GitPullRequestDraftIcon,
-                            description: "Status: Draft (not ready).",
-                        },
-                    },
-                },
-                te = (function () {
-                    var e = {
-                        alias: null,
-                        args: null,
-                        kind: "ScalarField",
-                        name: "state",
-                        storageKey: null,
-                    };
-                    return {
-                        argumentDefinitions: [],
-                        kind: "Fragment",
-                        metadata: null,
-                        name: "CheckRunStatus",
-                        selections: [
-                            {
-                                alias: null,
-                                args: null,
-                                concreteType: "StatusCheckRollup",
-                                kind: "LinkedField",
-                                name: "statusCheckRollup",
-                                plural: !1,
-                                selections: [
-                                    e,
-                                    {
-                                        alias: null,
-                                        args: null,
-                                        concreteType:
-                                            "StatusCheckRollupContextConnection",
-                                        kind: "LinkedField",
-                                        name: "contexts",
-                                        plural: !1,
-                                        selections: [
-                                            {
-                                                alias: null,
-                                                args: null,
-                                                kind: "ScalarField",
-                                                name: "checkRunCount",
-                                                storageKey: null,
-                                            },
-                                            {
-                                                alias: null,
-                                                args: null,
-                                                concreteType:
-                                                    "CheckRunStateCount",
-                                                kind: "LinkedField",
-                                                name: "checkRunCountsByState",
-                                                plural: !0,
-                                                selections: [
-                                                    {
-                                                        alias: null,
-                                                        args: null,
-                                                        kind: "ScalarField",
-                                                        name: "count",
-                                                        storageKey: null,
-                                                    },
-                                                    e,
-                                                ],
-                                                storageKey: null,
-                                            },
-                                        ],
-                                        storageKey: null,
-                                    },
-                                ],
-                                storageKey: null,
-                            },
-                        ],
-                        type: "Commit",
-                        abstractKey: null,
-                    };
-                })();
+                    ],
+                    type: "Commit",
+                    abstractKey: null,
+                };
+            })();
             te.hash = "6dc5ad338ebeeb78e4452c83673b4bec";
             let tl = (function () {
                 var e = {
@@ -17005,21 +17006,8 @@ ${this.quotedText}`)
                 abstractKey: "__isIssueOrPullRequest",
             };
             tr.hash = "bad896aa98ad487f05ec49c3434b03aa";
-            var to = a(67307);
-            function tu(e) {
-                let l = {
-                    color: "fg.muted",
-                    icon: T.SkipIcon,
-                    description: n8.issueIcons.NOT_PLANNED.description,
-                };
-                if (e) {
-                    let a = `${e}`;
-                    if (a in n8.issueIcons) l = n8.issueIcons[a];
-                    else if ("COMPLETED" !== e)
-                        throw Error("Invalid state reason");
-                }
-                return l;
-            }
+            var to = a(67307),
+                tu = a(77755);
             let td = {
                 argumentDefinitions: [],
                 kind: "Fragment",
@@ -18264,21 +18252,21 @@ ${this.quotedText}`)
                 (0, er.useSubscription)(l);
             };
             function tC({ secondaryDataKey: e }) {
-                let l = (0, aS.useFragment)(td, e);
+                let l = (0, aL.useFragment)(td, e);
                 return l && l.headCommit
                     ? (0, y.jsx)(tL, { commitId: l.headCommit.commit.id })
                     : null;
             }
-            function tF({ id: e, secondaryQueryRef: l }) {
-                let { nodes: a } = (0, aS.usePreloadedQuery)(sF, l),
+            function tS({ id: e, secondaryQueryRef: l }) {
+                let { nodes: a } = (0, aL.usePreloadedQuery)(sS, l),
                     n = a?.find((l) => l?.id === e);
                 return n ? (0, y.jsx)(tC, { secondaryDataKey: n }) : null;
             }
-            function tS({ id: e, secondaryQueryRef: l }) {
+            function tF({ id: e, secondaryQueryRef: l }) {
                 return l
                     ? (0, y.jsx)(b.Suspense, {
                           fallback: null,
-                          children: (0, y.jsx)(tF, {
+                          children: (0, y.jsx)(tS, {
                               id: e,
                               secondaryQueryRef: l,
                           }),
@@ -18313,10 +18301,10 @@ ${this.quotedText}`)
                     let {
                             use_pull_request_subscriptions_enabled: g,
                             pull_request_single_subscription: p,
-                        } = (0, aC.h)(),
-                        k = (0, aS.useFragment)(tk, e);
+                        } = (0, aS.h)(),
+                        k = (0, aL.useFragment)(tk, e);
                     g &&
-                        (0, ng.M3)() &&
+                        (0, np.M3)() &&
                         (p
                             ? tf(k.id)
                             : (function (e) {
@@ -18354,7 +18342,7 @@ ${this.quotedText}`)
                                       (0, er.useSubscription)(t));
                               })(k.id));
                     let h = k.repository.owner.login,
-                        f = (0, af.ET)({
+                        f = (0, aC.ET)({
                             owner: h,
                             repo: k.repository.name,
                             number: k.number,
@@ -18362,7 +18350,7 @@ ${this.quotedText}`)
                         C = (0, b.useCallback)(() => {
                             d(f);
                         }, [f, d]),
-                        F = (0, b.useCallback)(
+                        S = (0, b.useCallback)(
                             (e) => {
                                 (s({ type: k.__typename, ...u }),
                                     e.stopPropagation(),
@@ -18371,7 +18359,7 @@ ${this.quotedText}`)
                             },
                             [u, s, k.__typename, C]
                         ),
-                        S = (0, b.useCallback)(() => {
+                        F = (0, b.useCallback)(() => {
                             t?.(!r);
                         }, [t, r]);
                     return (0, y.jsxs)(y.Fragment, {
@@ -18382,16 +18370,16 @@ ${this.quotedText}`)
                                     ? (0, y.jsx)(tL, {
                                           commitId: k.headCommit.commit.id,
                                       })
-                                    : (0, y.jsx)(tS, {
+                                    : (0, y.jsx)(tF, {
                                           id: k.id,
                                           secondaryQueryRef: l,
                                       })),
-                            (0, y.jsx)(np.tL, {
+                            (0, y.jsx)(ny.tL, {
                                 commands: {
                                     "list-view-items-issues-prs:open-focused-item":
                                         C,
                                     "list-view-items-issues-prs:toggle-focused-item-selection":
-                                        S,
+                                        F,
                                 },
                                 className: th.row,
                                 children: (0, y.jsx)(t0, {
@@ -18407,7 +18395,7 @@ ${this.quotedText}`)
                                     sortingItemSelected: o,
                                     getMetadataHref: n,
                                     onSelect: t,
-                                    onClick: F,
+                                    onClick: S,
                                     href: f,
                                     ref: m,
                                     ...c,
@@ -18418,20 +18406,20 @@ ${this.quotedText}`)
                 }
             );
             tI.displayName = "PullRequestRow";
-            let tK = b.memo(tI);
+            let t_ = b.memo(tI);
             try {
                 tC.displayName ||
                     (tC.displayName =
                         "LazyCommitChecksUpdateSubscriptionWrapperInternal");
             } catch {}
             try {
-                tF.displayName ||
-                    (tF.displayName =
+                tS.displayName ||
+                    (tS.displayName =
                         "LazyCommitChecksUpdateSubscriptionWrapperFetched");
             } catch {}
             try {
-                tS.displayName ||
-                    (tS.displayName =
+                tF.displayName ||
+                    (tF.displayName =
                         "LazyCommitChecksUpdateSubscriptionWrapper");
             } catch {}
             try {
@@ -18439,9 +18427,9 @@ ${this.quotedText}`)
                     (tL.displayName = "CommitChecksUpdateSubscriptionWrapper");
             } catch {}
             try {
-                tK.displayName || (tK.displayName = "PullRequestRow");
+                t_.displayName || (t_.displayName = "PullRequestRow");
             } catch {}
-            function t_({ id: e, dataKey: l, metadataRef: a }) {
+            function tK({ id: e, dataKey: l, metadataRef: a }) {
                 let n = (0, er.useFragment)(tr, l);
                 return "PullRequest" === n.__typename
                     ? void 0 === n.isInMergeQueue
@@ -18457,46 +18445,32 @@ ${this.quotedText}`)
                     icon: a,
                     color: n,
                     description: t,
-                } = (0, b.useMemo)(() => tu(null), []);
+                } = (0, b.useMemo)(() => (0, tu.q)(null), []);
                 if ("PullRequest" === e.__typename) {
-                    let s = (function (e) {
-                        let l = {
-                            color: "fg.muted",
-                            icon: T.SkipIcon,
-                            description: n8.pullRequestIcons.DRAFT.description,
-                        };
-                        if (e) {
-                            let a = `${e}`;
-                            if (a in n8.pullRequestIcons)
-                                l = n8.pullRequestIcons[a];
-                            else throw Error("Invalid state reason");
-                        }
-                        return l;
-                    })(
-                        (function (e, l, a) {
+                    let s = (function (e, l, a) {
                             if (l) return "IN_MERGE_QUEUE";
                             if ("OPEN" === a && e) return "DRAFT";
-                            if (a in n8.pullRequestIcons) return a;
+                            if (a in n8.g.pullRequestIcons) return a;
                             throw Error(`Invalid pull request state: ${a}`);
-                        })(e.isDraft, l, e.pullRequestState)
-                    );
-                    ((a = s.icon), (n = s.color), (t = s.description));
+                        })(e.isDraft, l, e.pullRequestState),
+                        i = (0, tu.V)(s);
+                    ((a = i.icon), (n = i.color), (t = i.description));
                 }
                 if ("Issue" === e.__typename) {
-                    let l = tu(
-                        "CLOSED" === e.state &&
+                    let l =
+                            "CLOSED" === e.state &&
                             ("NOT_PLANNED" === e.stateReason ||
                                 "DUPLICATE" === e.stateReason)
-                            ? e.stateReason
-                            : e.state
-                    );
-                    ((a = l.icon), (n = l.color), (t = l.description));
+                                ? e.stateReason
+                                : e.state,
+                        s = (0, tu.q)(l);
+                    ((a = s.icon), (n = s.color), (t = s.description));
                 }
                 return (0, y.jsx)(to.e, {
                     icon: a,
                     color: n,
                     description: t,
-                    "data-testid": nR.listRowStateIcon,
+                    "data-testid": nP.listRowStateIcon,
                 });
             }
             function tx({ data: e, metadataRef: l, id: a }) {
@@ -18515,7 +18489,7 @@ ${this.quotedText}`)
                     : (0, y.jsx)(tv, { data: e, isInMergeQueue: !1 });
             }
             function tw({ id: e, data: l, metadataRef: a }) {
-                let { nodes: n } = (0, er.usePreloadedQuery)(sF, a),
+                let { nodes: n } = (0, er.usePreloadedQuery)(sS, a),
                     t = n?.find((l) => l?.id === e);
                 return (0, y.jsx)(tN, { data: l, secondaryDataKey: t });
             }
@@ -18528,8 +18502,8 @@ ${this.quotedText}`)
                 });
             }
             try {
-                t_.displayName ||
-                    (t_.displayName = "IssuePullRequestStateIcon");
+                tK.displayName ||
+                    (tK.displayName = "IssuePullRequestStateIcon");
             } catch {}
             try {
                 tv.displayName ||
@@ -18740,7 +18714,7 @@ ${this.quotedText}`)
             };
             tM.hash = "69d927a8cc29fe0a0e03b982885c9f3a";
             var tV = a(57643),
-                tD = a(42522);
+                tD = a(58868);
             let tE = {
                 progressCircle:
                     "IssueItemSubIssuesSummary-module__progressCircle--iCRm9",
@@ -18759,7 +18733,7 @@ ${this.quotedText}`)
                     : null;
             }
             function tO({ metadataRef: e, issueId: l, link: a }) {
-                let { nodes: n } = (0, er.usePreloadedQuery)(sF, e),
+                let { nodes: n } = (0, er.usePreloadedQuery)(sS, e),
                     t = n?.find((e) => e?.id === l);
                 return t ? (0, y.jsx)(tB, { summaryKey: t, link: a }) : null;
             }
@@ -18874,7 +18848,7 @@ ${this.quotedText}`)
                     id: i,
                     name: r,
                     description: o,
-                } = (0, aS.useFragment)(tQ, e);
+                } = (0, aL.useFragment)(tQ, e);
                 return (0, y.jsx)(tD.m, {
                     text: o ?? "",
                     type: "description",
@@ -18883,7 +18857,7 @@ ${this.quotedText}`)
                     className: tz.LabelTooltip,
                     children: (0, y.jsxs)(lo.A, {
                         href: a(r),
-                        className: (0, nn.$)({ "sr-only": l }),
+                        className: (0, nt.$)({ "sr-only": l }),
                         "aria-describedby": `${i}-tooltip`,
                         sx: { visibility: l ? "hidden" : null },
                         children: [
@@ -18994,12 +18968,12 @@ ${this.quotedText}`)
                                 : void 0,
                         [g.__typename, p, m, c]
                     ),
-                    [F] = (0, tT.I)(() => !1, !0, []),
-                    S = (0, b.useMemo)(() => {
+                    [S] = (0, tT.I)(() => !1, !0, []),
+                    F = (0, b.useMemo)(() => {
                         let e = (0, y.jsx)("a", {
                             "data-hovercard-url": C,
                             "data-testid": "issue-pr-title-link",
-                            className: (0, nn.$)(p && t$.ListItemTitle_1),
+                            className: (0, nt.$)(p && t$.ListItemTitle_1),
                             target: t,
                             ref: a,
                             href: n,
@@ -19007,15 +18981,15 @@ ${this.quotedText}`)
                         });
                         return (0, tA.F0)(e).replace(/ <\/a>$/, `${i}</a>`);
                     }, [C, n, p, a, t, i]);
-                return F
+                return S
                     ? (0, y.jsx)(tR.ao, {
                           value: i,
                           onClick: h,
                           leadingBadge: r,
                           trailingBadges: f,
-                          headingClassName: (0, nn.$)(d, t$.ListItemTitle_0),
+                          headingClassName: (0, nt.$)(d, t$.ListItemTitle_0),
                           anchorRef: a,
-                          anchorClassName: (0, nn.$)(p && t$.ListItemTitle_1),
+                          anchorClassName: (0, nt.$)(p && t$.ListItemTitle_1),
                           href: n,
                           target: t,
                           linkProps: {
@@ -19024,11 +18998,11 @@ ${this.quotedText}`)
                           },
                       })
                     : (0, y.jsx)(tR.kx, {
-                          html: S,
+                          html: F,
                           onClick: h,
                           leadingBadge: r,
                           trailingBadges: f,
-                          headingClassName: (0, nn.$)(d, t$.ListItemTitle_0),
+                          headingClassName: (0, nt.$)(d, t$.ListItemTitle_0),
                       });
             }
             try {
@@ -19128,15 +19102,15 @@ ${this.quotedText}`)
                 tJ = ({ metadataRef: e, ...l }) =>
                     e
                         ? (0, y.jsx)(b.Suspense, {
-                              fallback: (0, y.jsx)(nG, { ...l }),
+                              fallback: (0, y.jsx)(nZ, { ...l }),
                               children: (0, y.jsx)(t1, {
                                   ...l,
                                   metadataRef: e,
                               }),
                           })
-                        : (0, y.jsx)(nG, { ...l });
+                        : (0, y.jsx)(nZ, { ...l });
             function t1({ pullId: e, metadataRef: l, ...a }) {
-                let { nodes: n } = (0, er.usePreloadedQuery)(sF, l),
+                let { nodes: n } = (0, er.usePreloadedQuery)(sS, l),
                     t = n?.find((l) => l?.id === e);
                 return t ? (0, y.jsx)(t2, { itemKey: t, ...a }) : null;
             }
@@ -19148,7 +19122,7 @@ ${this.quotedText}`)
                 showCommentCount: t = !0,
                 showCommentZeroCount: s = !1,
             }) => {
-                let { variant: i } = (0, nj.e)(),
+                let { variant: i } = (0, nR.e)(),
                     r = (0, er.useFragment)(tX, e),
                     o = (0, k.G7)("issues_react_remove_placeholders"),
                     u =
@@ -19159,9 +19133,9 @@ ${this.quotedText}`)
                     c = (t && !!r.totalCommentsCount) || (t && s);
                 return (0, y.jsxs)(y.Fragment, {
                     children: [
-                        (0, y.jsx)(nN.V, {
+                        (0, y.jsx)(nj.V, {
                             "aria-label": u,
-                            "data-testid": nR.listRowComments,
+                            "data-testid": nP.listRowComments,
                             className: tY.ListItemMetadata_0,
                             children:
                                 c &&
@@ -19176,23 +19150,23 @@ ${this.quotedText}`)
                                 }),
                         }),
                         d &&
-                            (0, y.jsx)(nN.V, {
+                            (0, y.jsx)(nj.V, {
                                 className: tY.ListItemMetadata_0,
                                 children:
                                     r.reactionGroups &&
-                                    (0, y.jsx)(nz, {
+                                    (0, y.jsx)(nW, {
                                         dataKey: r,
                                         reactionEmojiToDisplay: a,
                                         showCompactDensity: "compact" === i,
                                     }),
                             }),
-                        (0, y.jsx)(nN.V, {
+                        (0, y.jsx)(nj.V, {
                             alignment: "right",
                             className: tY.ListItemMetadata_0,
                             children:
                                 n &&
                                 r &&
-                                (0, y.jsx)(nB, {
+                                (0, y.jsx)(n$, {
                                     showPlaceholder: !o,
                                     assigneeskey: r,
                                     getAssigneeHref: (e) => l(nF.assignee, e),
@@ -19232,14 +19206,14 @@ ${this.quotedText}`)
                 role: b,
             }) => {
                 let f = (0, er.useFragment)(ts, e),
-                    C = f && (0, nk.us)(f.title, f.titleHTML),
-                    { pull_request_single_subscription: F } = (0, aC.h)(),
-                    S = (0, er.useFragment)(tt, !F && k ? f : null),
+                    C = f && (0, nh.us)(f.title, f.titleHTML),
+                    { pull_request_single_subscription: S } = (0, aS.h)(),
+                    F = (0, er.useFragment)(tt, !S && k ? f : null),
                     I = (0, er.useFragment)(
                         t3,
-                        F ? null : S?.headCommit?.commit
+                        S ? null : F?.headCommit?.commit
                     ),
-                    K = (0, y.jsx)(tG, {
+                    _ = (0, y.jsx)(tG, {
                         value: C,
                         dataKey: f,
                         href: s,
@@ -19249,7 +19223,7 @@ ${this.quotedText}`)
                         onClick: c,
                         getLabelHref: (e) => m(nF.label, e),
                     }),
-                    _ = (0, y.jsx)(su, {
+                    K = (0, y.jsx)(su, {
                         repositoryOwner: f.repository.owner.login,
                         repositoryName: f.repository.name,
                         statusCheckRollup: I?.statusCheckRollup || void 0,
@@ -19271,9 +19245,9 @@ ${this.quotedText}`)
                         showCommentZeroCount: r,
                     });
                 return (0, y.jsxs)(
-                    nh.c,
+                    nb.c,
                     {
-                        title: K,
+                        title: _,
                         isActive: a,
                         isSelected: n,
                         onSelect: d,
@@ -19282,16 +19256,16 @@ ${this.quotedText}`)
                         role: b || "listitem",
                         as: h,
                         children: [
-                            (0, y.jsx)(n2, { metadataRef: l, issueId: f.id }),
-                            (0, y.jsx)(nf.B, {
-                                children: (0, y.jsx)(t_, {
+                            (0, y.jsx)(n0, { metadataRef: l, issueId: f.id }),
+                            (0, y.jsx)(nC.B, {
+                                children: (0, y.jsx)(tK, {
                                     id: f.id,
                                     dataKey: f,
                                     metadataRef: l,
                                 }),
                             }),
-                            (0, y.jsx)(nC.Q, {
-                                children: (0, y.jsx)(nb.U, { children: _ }),
+                            (0, y.jsx)(nS.Q, {
+                                children: (0, y.jsx)(nf.U, { children: K }),
                             }),
                         ],
                     },
@@ -19346,9 +19320,9 @@ ${this.quotedText}`)
                     : null;
             }
             function t6({ id: e, secondaryQueryRef: l, variant: a }) {
-                let { nodes: n } = (0, er.usePreloadedQuery)(sF, l),
+                let { nodes: n } = (0, er.usePreloadedQuery)(sS, l),
                     t = n?.find((l) => l?.id === e),
-                    { pull_request_single_subscription: s } = (0, aC.h)();
+                    { pull_request_single_subscription: s } = (0, aS.h)();
                 return t
                     ? s
                         ? (0, y.jsx)(t9, { dataKey: t, variant: a })
@@ -19481,12 +19455,12 @@ ${this.quotedText}`)
                                       "aria-label": l.title,
                                       className: sl.milestoneLink,
                                       children: [
-                                          (0, y.jsx)(na.A, {
+                                          (0, y.jsx)(nn.A, {
                                               icon: T.MilestoneIcon,
                                               size: 16,
                                           }),
                                           "\xa0",
-                                          (0, y.jsx)(n6.A, {
+                                          (0, y.jsx)(n7.A, {
                                               title: l.title,
                                               className:
                                                   sl.milestoneTitleTruncate,
@@ -19537,7 +19511,7 @@ ${this.quotedText}`)
                         case "APPROVED":
                             return (0, y.jsxs)(y.Fragment, {
                                 children: [
-                                    (0, y.jsx)(na.A, {
+                                    (0, y.jsx)(nn.A, {
                                         icon: T.CheckCircleFillIcon,
                                         size: 12,
                                         className: st.approvedIcon,
@@ -19552,7 +19526,7 @@ ${this.quotedText}`)
                         case "CHANGES_REQUESTED":
                             return (0, y.jsxs)(y.Fragment, {
                                 children: [
-                                    (0, y.jsx)(na.A, {
+                                    (0, y.jsx)(nn.A, {
                                         icon: T.XCircleFillIcon,
                                         size: 12,
                                         className: st.changesRequestedIcon,
@@ -19567,7 +19541,7 @@ ${this.quotedText}`)
                         case "REVIEW_REQUIRED":
                             return (0, y.jsxs)(y.Fragment, {
                                 children: [
-                                    (0, y.jsx)(na.A, {
+                                    (0, y.jsx)(nn.A, {
                                         icon: T.NoEntryFillIcon,
                                         size: 12,
                                         className: st.reviewRequiredIcon,
@@ -19618,7 +19592,7 @@ ${this.quotedText}`)
                     : null;
             }
             function sr({ id: e, secondaryQueryRef: l, variant: a }) {
-                let { nodes: n } = (0, er.usePreloadedQuery)(sF, l),
+                let { nodes: n } = (0, er.usePreloadedQuery)(sS, l),
                     t = n?.find((l) => l?.id === e);
                 return t
                     ? (0, y.jsx)(so, { secondaryDataKey: t, variant: a })
@@ -19651,11 +19625,11 @@ ${this.quotedText}`)
                 repositoryName: a,
                 ...n
             }) {
-                let { number: t } = (0, er.useFragment)(n4, e),
+                let { number: t } = (0, er.useFragment)(n5, e),
                     s = `${l}/${a}`,
                     i = { number: `number ${t} `, repo: `In ${s};` },
                     r = (0, y.jsxs)("div", {
-                        className: nS.defaultRepoContainer,
+                        className: nL.defaultRepoContainer,
                         children: [
                             (0, y.jsx)("span", {
                                 children: n.showRepository ? s : "",
@@ -19667,7 +19641,7 @@ ${this.quotedText}`)
                         ],
                     }),
                     o = (0, y.jsxs)("span", {
-                        className: nS.defaultNumberDescription,
+                        className: nL.defaultNumberDescription,
                         children: [
                             (0, y.jsxs)("span", { children: ["#", t] }),
                             "\xa0",
@@ -19702,42 +19676,42 @@ ${this.quotedText}`)
                     id: d,
                     includeGitDataFromMainQuery: c,
                 }) => {
-                    let m = (0, er.useFragment)(n4, e),
-                        { pull_request_single_subscription: g } = (0, aC.h)(),
-                        { variant: p } = (0, nj.e)(),
+                    let m = (0, er.useFragment)(n5, e),
+                        { pull_request_single_subscription: g } = (0, aS.h)(),
+                        { variant: p } = (0, nR.e)(),
                         {
                             author: k,
                             reviewDecision: h,
                             closed: b,
                             closedAt: f,
                             createdAt: C,
-                            updatedAt: F,
-                            stateReason: S,
+                            updatedAt: S,
+                            stateReason: F,
                         } = m,
                         L = k?.__typename,
-                        I = k?.login || n9.ghostUserLogin,
-                        K = "Bot" === L ? `app/${I}` : I,
-                        _ = k?.isCopilot,
-                        v = _ ? n9.copilotDisplayName : I,
+                        I = k?.login || n8.t.ghostUserLogin,
+                        _ = "Bot" === L ? `app/${I}` : I,
+                        K = k?.isCopilot,
+                        v = K ? n8.t.copilotDisplayName : I,
                         x = k?.resourcePath || "",
-                        w = (0, nD.S)(I, { isCopilot: _ }),
+                        w = (0, nE.S)(I, { isCopilot: K }),
                         N = C ? new Date(C) : void 0,
-                        j = F ? new Date(F) : void 0,
+                        j = S ? new Date(S) : void 0,
                         R = f ? new Date(f) : void 0;
-                    return (0, y.jsxs)(n5.z, {
-                        "data-testid": nR.listRowRepoNameAndNumber,
+                    return (0, y.jsxs)(n6.z, {
+                        "data-testid": nP.listRowRepoNameAndNumber,
                         children: [
                             "compact" === p
                                 ? a &&
                                   (0, y.jsxs)(y.Fragment, {
                                       children: [
-                                          (0, y.jsx)(n6.A, {
+                                          (0, y.jsx)(n7.A, {
                                               title: r,
                                               className:
                                                   t8.repositoryNameTruncate,
                                               children: (0, y.jsx)("span", {
                                                   className:
-                                                      nS.compactNameWithOwnerLabel,
+                                                      nL.compactNameWithOwnerLabel,
                                                   children: r,
                                               }),
                                           }),
@@ -19755,7 +19729,7 @@ ${this.quotedText}`)
                                         b
                                             ? (0, y.jsx)(sm, {
                                                   displayName: v,
-                                                  authorFullLogin: K,
+                                                  authorFullLogin: _,
                                                   resourcePath: x,
                                                   getAuthorHref: u,
                                                   hovercardAttributes: w,
@@ -19765,7 +19739,7 @@ ${this.quotedText}`)
                                               })
                                             : (0, y.jsx)(sm, {
                                                   displayName: v,
-                                                  authorFullLogin: K,
+                                                  authorFullLogin: _,
                                                   resourcePath: x,
                                                   getAuthorHref: u,
                                                   hovercardAttributes: w,
@@ -19773,18 +19747,18 @@ ${this.quotedText}`)
                                                   testId: "created-at",
                                                   action: sc.Opened,
                                               }),
-                                        (n === aZ.RecentlyUpdated ||
+                                        (n === aX.RecentlyUpdated ||
                                             "updated" === n) &&
                                             j &&
                                             (0, y.jsxs)("div", {
                                                 "data-testid": "updated-at",
                                                 className:
-                                                    nS.timestampContainer,
+                                                    nL.timestampContainer,
                                                 children: [
                                                     " ",
                                                     "\xb7 Updated",
                                                     " ",
-                                                    (0, y.jsxs)(n7.A, {
+                                                    (0, y.jsxs)(n9.A, {
                                                         date: j,
                                                         className:
                                                             t8.RelativeTime,
@@ -19804,7 +19778,7 @@ ${this.quotedText}`)
                                             }),
                                     ],
                                 }),
-                            S?.toLowerCase() === "duplicate" &&
+                            F?.toLowerCase() === "duplicate" &&
                                 (0, y.jsxs)("span", {
                                     "data-testid": "state-reason",
                                     children: [" \xb7", " Duplicate"],
@@ -19844,7 +19818,7 @@ ${this.quotedText}`)
                 }) =>
                     (0, y.jsxs)("div", {
                         "data-testid": i,
-                        className: nS.timestampContainer,
+                        className: nL.timestampContainer,
                         children: [
                             (0, y.jsx)("span", { children: "\xb7 " }),
                             (0, y.jsx)("span", {
@@ -19852,7 +19826,7 @@ ${this.quotedText}`)
                             }),
                             (0, y.jsx)(lo.A, {
                                 href: n ? n(l) : a,
-                                className: nS.authorCreatedLink,
+                                className: nL.authorCreatedLink,
                                 ...t,
                                 children: e,
                             }),
@@ -19864,7 +19838,7 @@ ${this.quotedText}`)
                                         : " was closed ",
                             }),
                             s &&
-                                (0, y.jsxs)(n7.A, {
+                                (0, y.jsxs)(n9.A, {
                                     date: s,
                                     children: [
                                         "on ",
@@ -19974,11 +19948,11 @@ ${this.quotedText}`)
                 as: f,
                 role: C,
             }) => {
-                let F = (0, er.useFragment)(ny, e),
-                    S = F && (0, nk.us)(F.title, F.titleHtml),
+                let S = (0, er.useFragment)(nk, e),
+                    F = S && (0, nh.us)(S.title, S.titleHtml),
                     I = (0, y.jsx)(tG, {
-                        value: S,
-                        dataKey: F,
+                        value: F,
+                        dataKey: S,
                         metadataRef: l,
                         repositoryOwner: h,
                         repositoryName: b,
@@ -19989,17 +19963,17 @@ ${this.quotedText}`)
                         getSubIssuesHref: (e, l, a) =>
                             c(nF["parent-issue"], `${e}/${l}#${a}`),
                     }),
-                    K = (0, y.jsx)(su, {
+                    _ = (0, y.jsx)(su, {
                         repositoryOwner: h,
                         repositoryName: b,
-                        dataKey: F,
+                        dataKey: S,
                         showRepository: r,
                         sortingItemSelected: g,
                         getAuthorHref: (e) => c("author", e),
-                        id: F.id,
+                        id: S.id,
                     }),
-                    _ = (0, y.jsx)(nW, {
-                        issueId: F.id,
+                    K = (0, y.jsx)(nG, {
+                        issueId: S.id,
                         metadataRef: l,
                         getMetadataHref: c,
                         showAssignees: i,
@@ -20009,42 +19983,42 @@ ${this.quotedText}`)
                         showLinkedPullRequests: !0,
                     });
                 return (0, y.jsxs)(
-                    nh.c,
+                    nb.c,
                     {
                         title: I,
                         isSelected: a,
                         isActive: n,
                         onSelect: o,
                         onFocus: u,
-                        metadata: _,
-                        metadataContainerClassName: nS.ListItem_0,
+                        metadata: K,
+                        metadataContainerClassName: nL.ListItem_0,
                         role: C || "listitem",
                         as: f,
                         children: [
-                            (0, y.jsx)(n2, { metadataRef: l, issueId: F.id }),
-                            (0, y.jsx)(nf.B, {
-                                className: nS.leadingContent,
-                                children: (0, y.jsx)(t_, { dataKey: F }),
+                            (0, y.jsx)(n0, { metadataRef: l, issueId: S.id }),
+                            (0, y.jsx)(nC.B, {
+                                className: nL.leadingContent,
+                                children: (0, y.jsx)(tK, { dataKey: S }),
                             }),
-                            (0, y.jsx)(nC.Q, {
-                                children: (0, y.jsxs)(nb.U, {
+                            (0, y.jsx)(nS.Q, {
+                                children: (0, y.jsxs)(nf.U, {
                                     children: [
                                         (0, y.jsx)(sk, {
-                                            dataKey: F,
+                                            dataKey: S,
                                             getIssueTypeHref: (e) =>
                                                 c("type", e),
                                         }),
-                                        (0, y.jsx)(n_, {
+                                        (0, y.jsx)(nv, {
                                             metadataRef: l,
-                                            issueId: F.id,
+                                            issueId: S.id,
                                         }),
-                                        K,
+                                        _,
                                     ],
                                 }),
                             }),
                         ],
                     },
-                    F.id
+                    S.id
                 );
             };
             sh.nodeType = "issue";
@@ -20771,8 +20745,8 @@ ${this.quotedText}`)
                     );
                     (0, er.useSubscription)(l);
                 },
-                sF = c,
-                sS = (0, b.forwardRef)(
+                sS = c,
+                sF = (0, b.forwardRef)(
                     (
                         {
                             isActive: e,
@@ -20791,17 +20765,17 @@ ${this.quotedText}`)
                         },
                         g
                     ) => {
-                        let p = (0, aS.useFragment)(nm, a),
-                            k = (0, aS.useFragment)(ny, p);
-                        (0, ng.M3)() && sC(k.id);
+                        let p = (0, aL.useFragment)(ng, a),
+                            k = (0, aL.useFragment)(nk, p);
+                        (0, np.M3)() && sC(k.id);
                         let h = n ? n.owner : p.repository?.owner.login || "",
                             f = n ? n.name : p.repository?.name || "",
-                            C = (0, af.$9)({
+                            C = (0, aC.$9)({
                                 owner: h,
                                 repo: f,
                                 number: p.number,
                             }),
-                            F = (0, b.useCallback)(() => {
+                            S = (0, b.useCallback)(() => {
                                 r
                                     ? r({
                                           number: p.number,
@@ -20811,24 +20785,24 @@ ${this.quotedText}`)
                                       })
                                     : i(C);
                             }, [r, p.number, f, h, i, C]),
-                            S = (0, b.useCallback)(
+                            F = (0, b.useCallback)(
                                 (e) => {
                                     (o({ type: k.__typename }),
                                         e.ctrlKey ||
                                             e.metaKey ||
                                             (e.stopPropagation(),
                                             e.preventDefault(),
-                                            F()));
+                                            S()));
                                 },
-                                [k.__typename, F, o]
+                                [k.__typename, S, o]
                             ),
                             L = (0, b.useCallback)(() => {
                                 s?.(!l);
                             }, [s, l]);
-                        return (0, y.jsx)(np.tL, {
+                        return (0, y.jsx)(ny.tL, {
                             commands: {
                                 "list-view-items-issues-prs:open-focused-item":
-                                    F,
+                                    S,
                                 "list-view-items-issues-prs:toggle-focused-item-selection":
                                     L,
                             },
@@ -20848,7 +20822,7 @@ ${this.quotedText}`)
                                 sortingItemSelected: d,
                                 getMetadataHref: t,
                                 onSelect: s,
-                                onClick: S,
+                                onClick: F,
                                 href: C,
                                 ref: g,
                                 ...m,
@@ -20856,8 +20830,8 @@ ${this.quotedText}`)
                         });
                     }
                 );
-            sS.displayName = "IssueRowInternal";
-            let sL = b.memo(sS);
+            sF.displayName = "IssueRowInternal";
+            let sL = b.memo(sF);
             try {
                 sL.displayName || (sL.displayName = "IssueRow");
             } catch {}
@@ -20872,16 +20846,16 @@ ${this.quotedText}`)
                     children: [
                         (0, y.jsx)("h3", {
                             className: "blankslate-heading",
-                            children: aZ.noResultsTitle,
+                            children: aX.noResultsTitle,
                         }),
-                        (0, y.jsx)("p", { children: aZ.noResultsDescription }),
+                        (0, y.jsx)("p", { children: aX.noResultsDescription }),
                     ],
                 });
             try {
                 sI.displayName || (sI.displayName = "NoResults");
             } catch {}
-            var sK = a(70179),
-                s_ = a(64334),
+            var s_ = a(70179),
+                sK = a(64334),
                 sv = a(10569);
             let sx = {
                     sortingMenuButton:
@@ -20890,9 +20864,9 @@ ${this.quotedText}`)
                 sw = /(created|updated|comments|reactions|relevance?)/,
                 sN = { asc: T.SortAscIcon, desc: T.SortDescIcon },
                 sj = {
-                    ...aZ.sortDropdownOptionDisplayValues,
-                    ...aZ.sortDropdownReactionLabels,
-                    reactions: aZ.totalReactions,
+                    ...aX.sortDropdownOptionDisplayValues,
+                    ...aX.sortDropdownReactionLabels,
+                    reactions: aX.totalReactions,
                 };
             function sR({
                 activeSearchQuery: e,
@@ -20904,7 +20878,7 @@ ${this.quotedText}`)
                 nested: i = !1,
             }) {
                 var r, o;
-                let u = (0, b.useMemo)(() => a9(e).get("sort")?.[0] || "", [e]),
+                let u = (0, b.useMemo)(() => a8(e).get("sort")?.[0] || "", [e]),
                     [d, c] = (0, b.useState)(() => sA(u)),
                     [m, g] = (0, b.useState)(() => sM(u)),
                     p = (0, li.Z)(),
@@ -20914,7 +20888,7 @@ ${this.quotedText}`)
                             (p(
                                 t(
                                     ((n = l || ""),
-                                    (i = `${aZ.sortKeyToQuery[e]}-${a}`),
+                                    (i = `${aX.sortKeyToQuery[e]}-${a}`),
                                     n
                                         .replace(/\bsort\S+/gi, "")
                                         .concat(` ${i}`)
@@ -20928,7 +20902,7 @@ ${this.quotedText}`)
                     h = (0, b.useCallback)(
                         (e) => {
                             let l = sT(e),
-                                t = s_.qG[l || ""];
+                                t = sK.qG[l || ""];
                             l &&
                                 t &&
                                 (n(e), a({ reaction: l, reactionEmoji: t }));
@@ -20950,7 +20924,7 @@ ${this.quotedText}`)
                         },
                         [d, k, h]
                     ),
-                    F = (0, b.useCallback)(
+                    S = (0, b.useCallback)(
                         (e) => {
                             m && (c(e), n(sj[m]), k(m, e));
                         },
@@ -20961,33 +20935,33 @@ ${this.quotedText}`)
                     let e = sP(u);
                     (n(e), h(e));
                 }, [a, n, u, h]);
-                let S = Object.entries(aZ.sortDropdownOptionDisplayValues),
-                    L = Object.entries(aZ.sortDropdownReactionLabels),
+                let F = Object.entries(aX.sortDropdownOptionDisplayValues),
+                    L = Object.entries(aX.sortDropdownReactionLabels),
                     I = sD(m) || "relevance" === m,
-                    K = (0, y.jsxs)(y.Fragment, {
+                    _ = (0, y.jsxs)(y.Fragment, {
                         children: [
                             (0, y.jsx)(
-                                aX.l.Item,
+                                aY.l.Item,
                                 {
                                     onSelect: () =>
-                                        f(aZ.totalReactions, "reactions"),
+                                        f(aX.totalReactions, "reactions"),
                                     selected: "reactions" === m,
                                     role: "menuitemradio",
-                                    children: aZ.totalReactions,
+                                    children: aX.totalReactions,
                                 },
                                 "reactions"
                             ),
-                            (0, y.jsx)(aX.l.Divider, {}),
+                            (0, y.jsx)(aY.l.Divider, {}),
                             L.map(([e, l]) =>
                                 (0, y.jsxs)(
-                                    aX.l.Item,
+                                    aY.l.Item,
                                     {
                                         onSelect: () => C(e),
                                         selected: m === e,
                                         role: "menuitemradio",
                                         children: [
-                                            (0, y.jsx)(aX.l.LeadingVisual, {
-                                                children: s_.qG[sT(e) || ""],
+                                            (0, y.jsx)(aY.l.LeadingVisual, {
+                                                children: sK.qG[sT(e) || ""],
                                             }),
                                             l,
                                         ],
@@ -20997,16 +20971,16 @@ ${this.quotedText}`)
                             ),
                         ],
                     }),
-                    _ = (0, y.jsxs)(y.Fragment, {
+                    K = (0, y.jsxs)(y.Fragment, {
                         children: [
-                            (0, y.jsxs)(aX.l.Group, {
+                            (0, y.jsxs)(aY.l.Group, {
                                 children: [
-                                    (0, y.jsx)(aX.l.GroupHeading, {
+                                    (0, y.jsx)(aY.l.GroupHeading, {
                                         children: "Sort by",
                                     }),
-                                    S.map(([e, l]) =>
+                                    F.map(([e, l]) =>
                                         (0, y.jsx)(
-                                            aX.l.Item,
+                                            aY.l.Item,
                                             {
                                                 onSelect: () => f(l, e),
                                                 selected: m === e,
@@ -21020,39 +20994,39 @@ ${this.quotedText}`)
                                         children: [
                                             (0, y.jsx)(sv.W.Anchor, {
                                                 children: (0, y.jsx)(
-                                                    aX.l.Item,
+                                                    aY.l.Item,
                                                     {
                                                         selected:
                                                             sD(m) ||
                                                             "reactions" === m,
-                                                        children: aZ.reactions,
+                                                        children: aX.reactions,
                                                     }
                                                 ),
                                             }),
                                             (0, y.jsx)(sv.W.Overlay, {
-                                                children: (0, y.jsx)(aX.l, {
+                                                children: (0, y.jsx)(aY.l, {
                                                     selectionVariant: "single",
-                                                    children: K,
+                                                    children: _,
                                                 }),
                                             }),
                                         ],
                                     }),
                                 ],
                             }),
-                            (0, y.jsx)(aX.l.Divider, {}),
-                            (0, y.jsxs)(aX.l.Group, {
+                            (0, y.jsx)(aY.l.Divider, {}),
+                            (0, y.jsxs)(aY.l.Group, {
                                 children: [
-                                    (0, y.jsx)(aX.l.GroupHeading, {
+                                    (0, y.jsx)(aY.l.GroupHeading, {
                                         children: "Order",
                                     }),
                                     (0, y.jsxs)(
-                                        aX.l.Item,
+                                        aY.l.Item,
                                         {
                                             disabled: I,
                                             selected: "asc" === d && null !== m,
-                                            onSelect: () => F("asc"),
+                                            onSelect: () => S("asc"),
                                             children: [
-                                                (0, y.jsx)(aX.l.LeadingVisual, {
+                                                (0, y.jsx)(aY.l.LeadingVisual, {
                                                     children: (0, y.jsx)(
                                                         T.SortAscIcon,
                                                         {}
@@ -21064,14 +21038,14 @@ ${this.quotedText}`)
                                         "ascending"
                                     ),
                                     (0, y.jsxs)(
-                                        aX.l.Item,
+                                        aY.l.Item,
                                         {
                                             disabled: I,
                                             selected:
                                                 "desc" === d && null !== m,
-                                            onSelect: () => F("desc"),
+                                            onSelect: () => S("desc"),
                                             children: [
-                                                (0, y.jsx)(aX.l.LeadingVisual, {
+                                                (0, y.jsx)(aY.l.LeadingVisual, {
                                                     children: (0, y.jsx)(
                                                         T.SortDescIcon,
                                                         {}
@@ -21087,13 +21061,13 @@ ${this.quotedText}`)
                         ],
                     });
                 return i
-                    ? (0, y.jsx)(sK.t, {
+                    ? (0, y.jsx)(s_.t, {
                           fallback: null,
-                          children: (0, y.jsx)(aX.l, {
+                          children: (0, y.jsx)(aY.l, {
                               selectionVariant: "single",
                               "aria-labelledby": "",
                               "aria-label": "Sort",
-                              children: _,
+                              children: K,
                           }),
                       })
                     : (0, y.jsxs)(sv.W, {
@@ -21114,15 +21088,15 @@ ${this.quotedText}`)
                                               ? ((r = m),
                                                 (o = d || "desc"),
                                                 "created" === r
-                                                    ? aZ
+                                                    ? aX
                                                           .sortDropdownMenuButtonLabels[
                                                           r
                                                       ][o]
-                                                    : aZ
+                                                    : aX
                                                           .sortDropdownMenuButtonLabels[
                                                           r
                                                       ])
-                                              : aZ.sort,
+                                              : aX.sort,
                                       }),
                                       sE(m ?? "")
                                           ? (0, y.jsx)("span", {
@@ -21136,9 +21110,9 @@ ${this.quotedText}`)
                                   ],
                               }),
                               (0, y.jsx)(sv.W.Overlay, {
-                                  children: (0, y.jsx)(aX.l, {
+                                  children: (0, y.jsx)(aY.l, {
                                       selectionVariant: "single",
-                                      children: _,
+                                      children: K,
                                   }),
                               }),
                           ],
@@ -21151,7 +21125,7 @@ ${this.quotedText}`)
             function sT(e) {
                 var l;
                 let a = sj[e]?.replace(" ", "_").toUpperCase();
-                return ((l = a), Object.keys(s_.qG).includes(l)) ? a : void 0;
+                return ((l = a), Object.keys(sK.qG).includes(l)) ? a : void 0;
             }
             function sA(e) {
                 let l = e.split("-")?.[1];
@@ -21172,14 +21146,14 @@ ${this.quotedText}`)
             function sV(e, l) {
                 return "created" === e || "updated" === e
                     ? "asc" === l
-                        ? aZ.Oldest
-                        : aZ.Newest
+                        ? aX.Oldest
+                        : aX.Newest
                     : "asc" === l
-                      ? aZ.ascending
-                      : aZ.descending;
+                      ? aX.ascending
+                      : aX.descending;
             }
             function sD(e) {
-                return !!e && aZ.sortDropdownReactionLabels.hasOwnProperty(e);
+                return !!e && aX.sortDropdownReactionLabels.hasOwnProperty(e);
             }
             function sE(e) {
                 return !!e && Object.keys(sj).includes(e);
@@ -21469,12 +21443,12 @@ ${this.quotedText}`)
                     i[4] !== r || i[5] !== l
                         ? ((t = (e) =>
                               l
-                                  ? (0, y.jsxs)(aX.l.Item, {
+                                  ? (0, y.jsxs)(aY.l.Item, {
                                         disabled: r,
                                         ...e,
                                         role: "menuitem",
                                         children: [
-                                            (0, y.jsx)(aX.l.LeadingVisual, {
+                                            (0, y.jsx)(aY.l.LeadingVisual, {
                                                 children: (0, y.jsx)(
                                                     T.ProjectSymlinkIcon,
                                                     {}
@@ -21483,7 +21457,7 @@ ${this.quotedText}`)
                                             "Project",
                                         ],
                                     })
-                                  : (0, y.jsx)(aq.Q, {
+                                  : (0, y.jsx)(aO.Q, {
                                         "data-testid":
                                             "bulk-add-to-project-button",
                                         disabled: r,
@@ -21550,8 +21524,8 @@ ${this.quotedText}`)
                             useQueryForAction: b,
                             query: f,
                             onCompleted: C,
-                            onError: F,
-                            nested: S,
+                            onError: S,
+                            nested: F,
                             owner: L,
                             repo: I,
                         } = e;
@@ -21562,18 +21536,18 @@ ${this.quotedText}`)
                             ? ((a = { fetchPolicy: "store-or-network" }),
                               (g[2] = a))
                             : (a = g[2]));
-                    let { nodes: K } = (0, er.useLazyLoadQuery)(sU, l, a);
+                    let { nodes: _ } = (0, er.useLazyLoadQuery)(sU, l, a);
                     if (
                         g[3] !== p ||
                         g[4] !== f ||
                         g[5] !== k ||
-                        g[6] !== K ||
+                        g[6] !== _ ||
                         g[7] !== b
                     ) {
                         let e,
                             l = new Map();
-                        g[17] !== K
-                            ? ((e = K || []), (g[17] = K), (g[18] = e))
+                        g[17] !== _
+                            ? ((e = _ || []), (g[17] = _), (g[18] = e))
                             : (e = g[18]);
                         let a = e.map((e) => {
                                 let a = e?.id;
@@ -21616,7 +21590,7 @@ ${this.quotedText}`)
                             (g[3] = p),
                             (g[4] = f),
                             (g[5] = k),
-                            (g[6] = K),
+                            (g[6] = _),
                             (g[7] = b),
                             (g[8] = n),
                             (g[9] = t),
@@ -21640,9 +21614,9 @@ ${this.quotedText}`)
                     return (
                         g[19] !== n ||
                         g[20] !== h ||
-                        g[21] !== S ||
+                        g[21] !== F ||
                         g[22] !== C ||
-                        g[23] !== F ||
+                        g[23] !== S ||
                         g[24] !== L ||
                         g[25] !== I ||
                         g[26] !== t ||
@@ -21663,17 +21637,17 @@ ${this.quotedText}`)
                                   useQueryForAction: c,
                                   selectedProjects: t,
                                   onCompleted: C,
-                                  onError: F,
-                                  nested: S,
+                                  onError: S,
+                                  nested: F,
                                   anchorElement: h,
                                   owner: L,
                                   repo: I,
                               })),
                               (g[19] = n),
                               (g[20] = h),
-                              (g[21] = S),
+                              (g[21] = F),
                               (g[22] = C),
-                              (g[23] = F),
+                              (g[23] = S),
                               (g[24] = L),
                               (g[25] = I),
                               (g[26] = t),
@@ -22151,12 +22125,12 @@ ${this.quotedText}`)
                     m[9] !== g || m[10] !== n
                         ? ((o = (e) =>
                               n
-                                  ? (0, y.jsxs)(aX.l.Item, {
+                                  ? (0, y.jsxs)(aY.l.Item, {
                                         disabled: g,
                                         ...e,
                                         role: "menuitem",
                                         children: [
-                                            (0, y.jsx)(aX.l.LeadingVisual, {
+                                            (0, y.jsx)(aY.l.LeadingVisual, {
                                                 children: (0, y.jsx)(
                                                     T.PeopleIcon,
                                                     {}
@@ -22165,7 +22139,7 @@ ${this.quotedText}`)
                                             "Assign",
                                         ],
                                     })
-                                  : (0, y.jsx)(aq.Q, {
+                                  : (0, y.jsx)(aO.Q, {
                                         "data-testid":
                                             "bulk-set-assignee-button",
                                         disabled: g,
@@ -22453,14 +22427,14 @@ ${this.quotedText}`)
                     g[14] !== l || g[15] !== n
                         ? ((c = (e) =>
                               n
-                                  ? (0, y.jsxs)(aX.l.Item, {
+                                  ? (0, y.jsxs)(aY.l.Item, {
                                         "data-testid":
                                             "bulk-set-issue-type-button",
                                         disabled: l,
                                         ...e,
                                         role: "menuitem",
                                         children: [
-                                            (0, y.jsx)(aX.l.LeadingVisual, {
+                                            (0, y.jsx)(aY.l.LeadingVisual, {
                                                 children: (0, y.jsx)(
                                                     T.IssueOpenedIcon,
                                                     {}
@@ -22469,7 +22443,7 @@ ${this.quotedText}`)
                                             s0.setIssueType,
                                         ],
                                     })
-                                  : (0, y.jsx)(aq.Q, {
+                                  : (0, y.jsx)(aO.Q, {
                                         "data-testid":
                                             "bulk-set-issue-type-button",
                                         disabled: l,
@@ -22865,12 +22839,12 @@ ${this.quotedText}`)
                     d[8] !== c || d[9] !== m
                         ? ((r = (e) =>
                               m
-                                  ? (0, y.jsxs)(aX.l.Item, {
+                                  ? (0, y.jsxs)(aY.l.Item, {
                                         disabled: c,
                                         ...e,
                                         role: "menuitem",
                                         children: [
-                                            (0, y.jsx)(aX.l.LeadingVisual, {
+                                            (0, y.jsx)(aY.l.LeadingVisual, {
                                                 children: (0, y.jsx)(
                                                     T.TagIcon,
                                                     {}
@@ -22879,7 +22853,7 @@ ${this.quotedText}`)
                                             "Label",
                                         ],
                                     })
-                                  : (0, y.jsx)(aq.Q, {
+                                  : (0, y.jsx)(aO.Q, {
                                         "data-testid": "bulk-set-label-button",
                                         disabled: c,
                                         leadingVisual: T.TagIcon,
@@ -23109,7 +23083,7 @@ ${this.quotedText}`)
                 };
             })();
             ia.hash = "82aeab8762454708408f41e2ea965180";
-            var it = a(47519);
+            var it = a(97839);
             let is = (e) => {
                 let l,
                     a,
@@ -23169,12 +23143,12 @@ ${this.quotedText}`)
                 p[12] !== l || p[13] !== n
                     ? ((d = (e) =>
                           n
-                              ? (0, y.jsxs)(aX.l.Item, {
+                              ? (0, y.jsxs)(aY.l.Item, {
                                     disabled: l,
                                     ...e,
                                     role: "menuitem",
                                     children: [
-                                        (0, y.jsx)(aX.l.LeadingVisual, {
+                                        (0, y.jsx)(aY.l.LeadingVisual, {
                                             children: (0, y.jsx)(
                                                 T.MilestoneIcon,
                                                 {}
@@ -23183,7 +23157,7 @@ ${this.quotedText}`)
                                         "Milestone",
                                     ],
                                 })
-                              : (0, y.jsx)(aq.Q, {
+                              : (0, y.jsx)(aO.Q, {
                                     "data-testid": "bulk-set-milestone-button",
                                     disabled: l,
                                     leadingVisual: T.MilestoneIcon,
@@ -23247,9 +23221,7 @@ ${this.quotedText}`)
                 is.displayName || (is.displayName = "ApplyMilestoneBulkAction");
             } catch {}
             function ii(e) {
-                return e?.id && e.milestone
-                    ? (0, er.readInlineData)(l$.xm, e.milestone)
-                    : null;
+                return e?.id && e.milestone ? (0, l$.Hf)(e.milestone) : null;
             }
             function ir() {
                 return (0, y.jsx)(T.MilestoneIcon, {});
@@ -23439,12 +23411,12 @@ ${this.quotedText}`)
                         f = (0, sH.c)(32),
                         {
                             issuesToActOn: C,
-                            query: F,
-                            repositoryId: S,
+                            query: S,
+                            repositoryId: F,
                             disabled: L,
                             useQueryForAction: I,
-                            onCompleted: K,
-                            onError: _,
+                            onCompleted: _,
+                            onError: K,
                             nested: v,
                         } = e,
                         x = (0, er.useRelayEnvironment)(),
@@ -23467,7 +23439,7 @@ ${this.quotedText}`)
                           (f[2] = n),
                           (f[3] = t))
                         : ((a = f[1]), (n = f[2]), (t = f[3])),
-                        (0, ag._N)(a, n, t),
+                        (0, ap._N)(a, n, t),
                         f[4] === Symbol.for("react.memo_cache_sentinel")
                             ? ((s = ["Escape"]),
                               (i = () => j(!1)),
@@ -23476,16 +23448,16 @@ ${this.quotedText}`)
                               (f[5] = i),
                               (f[6] = r))
                             : ((s = f[4]), (i = f[5]), (r = f[6])),
-                        (0, ag._N)(s, i, r),
+                        (0, ap._N)(s, i, r),
                         f[7] !== C ||
-                        f[8] !== K ||
-                        f[9] !== _ ||
-                        f[10] !== F ||
+                        f[8] !== _ ||
+                        f[9] !== K ||
+                        f[10] !== S ||
                         f[11] !== x ||
-                        f[12] !== S ||
+                        f[12] !== F ||
                         f[13] !== I
                             ? ((o = (e) => {
-                                  I && S && F
+                                  I && F && S
                                       ? (function ({
                                             environment: e,
                                             optimisticUpdateIds: l,
@@ -23520,18 +23492,18 @@ ${this.quotedText}`)
                                             environment: x,
                                             optimisticUpdateIds: C,
                                             input: {
-                                                query: F,
-                                                repositoryId: S,
+                                                query: S,
+                                                repositoryId: F,
                                                 ...e,
                                             },
                                             onCompleted: (e) => {
                                                 let {
                                                     updateIssuesBulkByQuery: l,
                                                 } = e;
-                                                K?.(l?.jobId || void 0);
+                                                _?.(l?.jobId || void 0);
                                             },
                                             onError: (e) => {
-                                                _?.(e);
+                                                K?.(e);
                                             },
                                         })
                                       : (function ({
@@ -23565,19 +23537,19 @@ ${this.quotedText}`)
                                             input: { ids: [...C], ...e },
                                             onCompleted: (e) => {
                                                 let { updateIssuesBulk: l } = e;
-                                                K?.(l?.jobId || void 0);
+                                                _?.(l?.jobId || void 0);
                                             },
                                             onError: (e) => {
-                                                _?.(e);
+                                                K?.(e);
                                             },
                                         });
                               }),
                               (f[7] = C),
-                              (f[8] = K),
-                              (f[9] = _),
-                              (f[10] = F),
+                              (f[8] = _),
+                              (f[9] = K),
+                              (f[10] = S),
                               (f[11] = x),
-                              (f[12] = S),
+                              (f[12] = F),
                               (f[13] = I),
                               (f[14] = o))
                             : (o = f[14]));
@@ -23586,11 +23558,11 @@ ${this.quotedText}`)
                         (f[15] !== R
                             ? ((d = im.map((e, l) =>
                                   (0, y.jsxs)(
-                                      aX.l.Item,
+                                      aY.l.Item,
                                       {
                                           onSelect: () => R(e.value),
                                           children: [
-                                              (0, y.jsx)(aX.l.LeadingVisual, {
+                                              (0, y.jsx)(aY.l.LeadingVisual, {
                                                   children: (0, y.jsx)(
                                                       e.icon,
                                                       {}
@@ -23617,9 +23589,9 @@ ${this.quotedText}`)
                         return (
                             f[19] === Symbol.for("react.memo_cache_sentinel")
                                 ? ((e = (0, y.jsx)(sv.W.Anchor, {
-                                      children: (0, y.jsxs)(aX.l.Item, {
+                                      children: (0, y.jsxs)(aY.l.Item, {
                                           children: [
-                                              (0, y.jsx)(aX.l.LeadingVisual, {
+                                              (0, y.jsx)(aY.l.LeadingVisual, {
                                                   children: (0, y.jsx)(
                                                       io.issueIcons.CLOSED.icon,
                                                       {}
@@ -23636,7 +23608,7 @@ ${this.quotedText}`)
                                       children: [
                                           e,
                                           (0, y.jsx)(sv.W.Overlay, {
-                                              children: (0, y.jsx)(aX.l, {
+                                              children: (0, y.jsx)(aY.l, {
                                                   children: u,
                                               }),
                                           }),
@@ -23650,12 +23622,12 @@ ${this.quotedText}`)
                     }
                     return (
                         f[22] === Symbol.for("react.memo_cache_sentinel")
-                            ? ((m = (0, nI.G)("mark-as-action-menu-button")),
+                            ? ((m = (0, n_.G)("mark-as-action-menu-button")),
                               (f[22] = m))
                             : (m = f[22]),
                         f[23] !== L
                             ? ((g = (0, y.jsx)(sv.W.Anchor, {
-                                  children: (0, y.jsx)(aq.Q, {
+                                  children: (0, y.jsx)(aO.Q, {
                                       disabled: L,
                                       leadingVisual: io.issueIcons.CLOSED.icon,
                                       trailingVisual: T.TriangleDownIcon,
@@ -23667,12 +23639,12 @@ ${this.quotedText}`)
                               (f[24] = g))
                             : (g = f[24]),
                         f[25] === Symbol.for("react.memo_cache_sentinel")
-                            ? ((p = (0, nI.G)("mark-as-action-menu-list")),
+                            ? ((p = (0, n_.G)("mark-as-action-menu-list")),
                               (f[25] = p))
                             : (p = f[25]),
                         f[26] !== u
                             ? ((k = (0, y.jsx)(sv.W.Overlay, {
-                                  children: (0, y.jsx)(aX.l, {
+                                  children: (0, y.jsx)(aY.l, {
                                       ...p,
                                       children: u,
                                   }),
@@ -23703,14 +23675,14 @@ ${this.quotedText}`)
                 let e = (0, b.useCallback)(
                         (e, l, a) =>
                             e
-                                ? (0, y.jsxs)(aX.l.Item, {
+                                ? (0, y.jsxs)(aY.l.Item, {
                                       disabled: !0,
                                       children: [
-                                          (0, y.jsx)(aX.l.LeadingVisual, {
+                                          (0, y.jsx)(aY.l.LeadingVisual, {
                                               children: (0, y.jsx)(l, {}),
                                           }),
                                           a,
-                                          (0, y.jsx)(aX.l.TrailingVisual, {
+                                          (0, y.jsx)(aY.l.TrailingVisual, {
                                               children: (0, y.jsx)(
                                                   T.TriangleDownIcon,
                                                   {}
@@ -23718,7 +23690,7 @@ ${this.quotedText}`)
                                           }),
                                       ],
                                   })
-                                : (0, y.jsx)(aq.Q, {
+                                : (0, y.jsx)(aO.Q, {
                                       disabled: !0,
                                       leadingVisual: l,
                                       trailingVisual: T.TriangleDownIcon,
@@ -23754,7 +23726,7 @@ ${this.quotedText}`)
                             {
                                 key: "apply-issue-type",
                                 render: (l) =>
-                                    e(l, T.IssueOpenedIcon, aO.setIssueType),
+                                    e(l, T.IssueOpenedIcon, aB.setIssueType),
                             },
                         ],
                         [e]
@@ -23775,7 +23747,7 @@ ${this.quotedText}`)
                 isInOrganization: s,
             }) {
                 let { scoped_repository: i, current_user_settings: r } = (0,
-                    K.X)(),
+                    _.X)(),
                     { addToast: o, addPersistedToast: u } = (0, v.Y6)(),
                     { setBulkJobId: d, bulkJobId: c } = eH(),
                     m = Array.from(e.values())
@@ -23798,7 +23770,7 @@ ${this.quotedText}`)
                         },
                         [u, d]
                     ),
-                    F = (0, b.useCallback)(
+                    S = (0, b.useCallback)(
                         (e) => {
                             (p(!1),
                                 o({
@@ -23808,23 +23780,23 @@ ${this.quotedText}`)
                         },
                         [o]
                     ),
-                    [S, L] = (0, b.useState)(!1),
+                    [F, L] = (0, b.useState)(!1),
                     I = (0, b.useMemo)(
                         () => ({
-                            useQueryForAction: S,
+                            useQueryForAction: F,
                             onCompleted: C,
-                            onError: F,
+                            onError: S,
                             disabled: g,
-                            issuesToActOn: S
+                            issuesToActOn: F
                                 ? l.filter((e) => null != e).map((e) => e.id)
                                 : m.filter((e) => null != e).map((e) => e.id),
                             query: k,
                             singleKeyShortcutsEnabled:
                                 r?.use_single_key_shortcut || !1,
                         }),
-                        [S, C, F, g, l, m, k, r?.use_single_key_shortcut]
+                        [F, C, S, g, l, m, k, r?.use_single_key_shortcut]
                     ),
-                    { setSelectedCount: _ } = (0, sQ.v)(),
+                    { setSelectedCount: K } = (0, sQ.v)(),
                     x = (0, b.useCallback)(
                         (e) => {
                             e
@@ -23836,9 +23808,9 @@ ${this.quotedText}`)
                                               new Map()
                                           )
                                   )
-                                : (a(new Map()), S && (L(!1), _(0), f?.(!1)));
+                                : (a(new Map()), F && (L(!1), K(0), f?.(!1)));
                         },
-                        [l, a, f, _, S]
+                        [l, a, f, K, F]
                     ),
                     w = i && n && !t,
                     N = (0, b.useMemo)(
@@ -23955,15 +23927,15 @@ ${this.quotedText}`)
             } catch {}
             var ib = a(63867),
                 iC = a(11057);
-            let iF = {
+            let iS = {
                 assigneeFilterButton:
                     "ListAssigneeFilter-module__assigneeFilterButton--mq5TL",
             };
-            function iS({ repo: e, applySectionFilter: l, nested: a }) {
+            function iF({ repo: e, applySectionFilter: l, nested: a }) {
                 let { name: n, owner: t } = e,
                     { activeSearchQuery: s, currentViewId: i } = eU(),
                     { debouncedDirtySearchQuery: r } = eH(),
-                    { current_user_settings: o } = (0, K.X)(),
+                    { current_user_settings: o } = (0, _.X)(),
                     u = r ?? s,
                     d = (0, b.useMemo)(() => eA(u, "assignee").slice(-1), [u]),
                     c = (0, b.useMemo)(
@@ -23991,7 +23963,7 @@ ${this.quotedText}`)
                                     ),
                                     "assignee"
                                 ),
-                                n = ad({ viewId: i, query: a });
+                                n = ac({ viewId: i, query: a });
                             l(a, n);
                         },
                         [u, l, i]
@@ -24018,12 +23990,12 @@ ${this.quotedText}`)
                 });
             }
             function iL(e) {
-                return (0, y.jsxs)(aX.l.Item, {
+                return (0, y.jsxs)(aY.l.Item, {
                     ...e,
                     "aria-label": U.filters.assigneesLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(aX.l.LeadingVisual, {
+                        (0, y.jsx)(aY.l.LeadingVisual, {
                             children: (0, y.jsx)(T.MentionIcon, {}),
                         }),
                         U.filters.assignees,
@@ -24032,18 +24004,18 @@ ${this.quotedText}`)
                 });
             }
             function iI(e) {
-                return (0, y.jsx)(aq.Q, {
+                return (0, y.jsx)(aO.Q, {
                     variant: "invisible",
                     "data-testid": "assignees-anchor-button",
                     trailingVisual: T.TriangleDownIcon,
                     "aria-label": U.filters.assigneesLabel,
-                    className: iF.assigneeFilterButton,
+                    className: iS.assigneeFilterButton,
                     ...e,
                     children: U.filters.assignees,
                 });
             }
             try {
-                iS.displayName || (iS.displayName = "ListAssigneeFilter");
+                iF.displayName || (iF.displayName = "ListAssigneeFilter");
             } catch {}
             try {
                 iL.displayName || (iL.displayName = "NestedAssigneesAnchor");
@@ -24051,22 +24023,22 @@ ${this.quotedText}`)
             try {
                 iI.displayName || (iI.displayName = "AssigneesAnchor");
             } catch {}
-            let iK = {
+            let i_ = {
                 authorFilterButton:
                     "ListAuthorFilter-module__authorFilterButton--VTo2Y",
             };
-            function i_({ repo: e, applySectionFilter: l, nested: a }) {
+            function iK({ repo: e, applySectionFilter: l, nested: a }) {
                 let { name: n, owner: t } = e,
                     { activeSearchQuery: s, currentViewId: i } = eU(),
                     { debouncedDirtySearchQuery: r } = eH(),
-                    { current_user_settings: o } = (0, K.X)(),
+                    { current_user_settings: o } = (0, _.X)(),
                     u = (0, k.G7)("issues_react_include_bots_in_pickers"),
                     d = r ?? s,
                     c = (0, b.useMemo)(() => eA(d, "author"), [d]),
                     m = (0, b.useCallback)(
                         (e) => {
                             let a = eD(d, e.map(iC.i), "author"),
-                                n = ad({ viewId: i, query: a });
+                                n = ac({ viewId: i, query: a });
                             l(a, n);
                         },
                         [d, l, i]
@@ -24092,12 +24064,12 @@ ${this.quotedText}`)
                 });
             }
             function iv(e) {
-                return (0, y.jsxs)(aX.l.Item, {
+                return (0, y.jsxs)(aY.l.Item, {
                     ...e,
                     "aria-label": U.filters.authorLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(aX.l.LeadingVisual, {
+                        (0, y.jsx)(aY.l.LeadingVisual, {
                             children: (0, y.jsx)(T.PersonIcon, {}),
                         }),
                         U.filters.author,
@@ -24106,18 +24078,18 @@ ${this.quotedText}`)
                 });
             }
             function ix(e) {
-                return (0, y.jsx)(aq.Q, {
+                return (0, y.jsx)(aO.Q, {
                     variant: "invisible",
                     "data-testid": "authors-anchor-button",
                     trailingVisual: T.TriangleDownIcon,
                     "aria-label": U.filters.authorLabel,
-                    className: iK.authorFilterButton,
+                    className: i_.authorFilterButton,
                     ...e,
                     children: U.filters.author,
                 });
             }
             try {
-                i_.displayName || (i_.displayName = "ListAuthorFilter");
+                iK.displayName || (iK.displayName = "ListAuthorFilter");
             } catch {}
             try {
                 iv.displayName || (iv.displayName = "NestedAuthorsAnchor");
@@ -24133,7 +24105,7 @@ ${this.quotedText}`)
                 let { name: n, owner: t } = e,
                     { activeSearchQuery: s, currentViewId: i } = eU(),
                     { debouncedDirtySearchQuery: r } = eH(),
-                    { current_user_settings: o } = (0, K.X)(),
+                    { current_user_settings: o } = (0, _.X)(),
                     u = r ?? s,
                     d = (0, b.useMemo)(() => iP(u), [u]),
                     c = (0, b.useCallback)(
@@ -24147,7 +24119,7 @@ ${this.quotedText}`)
                                     ) || [],
                                     "type"
                                 ),
-                                n = ad({ viewId: i, query: a });
+                                n = ac({ viewId: i, query: a });
                             l(a, n);
                         },
                         [u, l, i]
@@ -24168,12 +24140,12 @@ ${this.quotedText}`)
                 });
             }
             function ij(e) {
-                return (0, y.jsxs)(aX.l.Item, {
+                return (0, y.jsxs)(aY.l.Item, {
                     ...e,
                     "aria-label": U.filters.issueTypeLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(aX.l.LeadingVisual, {
+                        (0, y.jsx)(aY.l.LeadingVisual, {
                             children: (0, y.jsx)(T.IssueOpenedIcon, {}),
                         }),
                         U.filters.issueType,
@@ -24182,9 +24154,9 @@ ${this.quotedText}`)
                 });
             }
             function iR(e) {
-                return (0, y.jsx)(aq.Q, {
+                return (0, y.jsx)(aO.Q, {
                     variant: "invisible",
-                    "data-testid": ni.issueTypeAnchorFilter,
+                    "data-testid": nr.issueTypeAnchorFilter,
                     trailingVisual: T.TriangleDownIcon,
                     "aria-label": U.filters.issueTypeLabel,
                     className: iw.issueTypeFilterButton,
@@ -24227,7 +24199,7 @@ ${this.quotedText}`)
             function iM({ nested: e, repo: l, applySectionFilter: a }) {
                 let { activeSearchQuery: n, currentViewId: t } = eU(),
                     { debouncedDirtySearchQuery: s } = eH(),
-                    { current_user_settings: i } = (0, K.X)(),
+                    { current_user_settings: i } = (0, _.X)(),
                     r = s ?? n,
                     o = (0, b.useMemo)(
                         () => ({
@@ -24263,7 +24235,7 @@ ${this.quotedText}`)
                                     ),
                                     "label"
                                 ),
-                                n = ad({ viewId: t, query: l });
+                                n = ac({ viewId: t, query: l });
                             a(l, n);
                         },
                         [r, a, t]
@@ -24287,12 +24259,12 @@ ${this.quotedText}`)
                 });
             }
             function iV(e) {
-                return (0, y.jsxs)(aX.l.Item, {
+                return (0, y.jsxs)(aY.l.Item, {
                     ...e,
                     "aria-label": U.filters.labelsLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(aX.l.LeadingVisual, {
+                        (0, y.jsx)(aY.l.LeadingVisual, {
                             children: (0, y.jsx)(T.TagIcon, {}),
                         }),
                         U.filters.labels,
@@ -24301,7 +24273,7 @@ ${this.quotedText}`)
                 });
             }
             function iD(e) {
-                return (0, y.jsx)(aq.Q, {
+                return (0, y.jsx)(aO.Q, {
                     variant: "invisible",
                     "data-testid": "labels-anchor-button",
                     trailingVisual: T.TriangleDownIcon,
@@ -24331,7 +24303,7 @@ ${this.quotedText}`)
                 iq = ({ nested: e, repo: l, applySectionFilter: a }) => {
                     let { activeSearchQuery: n, currentViewId: t } = eU(),
                         { debouncedDirtySearchQuery: s } = eH(),
-                        { current_user_settings: i } = (0, K.X)(),
+                        { current_user_settings: i } = (0, _.X)(),
                         [r, o] = (0, b.useState)(null),
                         u = s ?? n,
                         d = (0, b.useMemo)(
@@ -24360,7 +24332,7 @@ ${this.quotedText}`)
                                 n = e.map((e) => e.title);
                             e[0] && o(e[0]);
                             let s = eD(u, n, "milestone", l),
-                                i = ad({ viewId: t, query: s });
+                                i = ac({ viewId: t, query: s });
                             a(s, i);
                         },
                         [u, a, t]
@@ -24377,12 +24349,12 @@ ${this.quotedText}`)
                     });
                 };
             function iO(e) {
-                return (0, y.jsxs)(aX.l.Item, {
+                return (0, y.jsxs)(aY.l.Item, {
                     ...e,
                     "aria-label": U.filters.milestonesLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(aX.l.LeadingVisual, {
+                        (0, y.jsx)(aY.l.LeadingVisual, {
                             children: (0, y.jsx)(T.MilestoneIcon, {}),
                         }),
                         U.filters.milestones,
@@ -24391,9 +24363,9 @@ ${this.quotedText}`)
                 });
             }
             function iB(e) {
-                return (0, y.jsx)(aq.Q, {
+                return (0, y.jsx)(aO.Q, {
                     variant: "invisible",
-                    "data-testid": ni.milestoneAnchorFilter,
+                    "data-testid": nr.milestoneAnchorFilter,
                     trailingVisual: T.TriangleDownIcon,
                     "aria-label": U.filters.milestonesLabel,
                     className: iE.milestoneFilterButton,
@@ -24431,7 +24403,7 @@ ${this.quotedText}`)
                                 "project"
                             );
                             if (n !== i) {
-                                let e = ad({ viewId: t, query: n });
+                                let e = ac({ viewId: t, query: n });
                                 l(n, e);
                             }
                         },
@@ -24469,12 +24441,12 @@ ${this.quotedText}`)
                 });
             }
             function iU(e) {
-                return (0, y.jsxs)(aX.l.Item, {
+                return (0, y.jsxs)(aY.l.Item, {
                     ...e,
                     "aria-label": U.filters.projectsLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(aX.l.LeadingVisual, {
+                        (0, y.jsx)(aY.l.LeadingVisual, {
                             children: (0, y.jsx)(T.ProjectIcon, {}),
                         }),
                         U.filters.projects,
@@ -24483,7 +24455,7 @@ ${this.quotedText}`)
                 });
             }
             function iH(e) {
-                return (0, y.jsx)(aq.Q, {
+                return (0, y.jsx)(aO.Q, {
                     variant: "invisible",
                     "data-testid": "projects-anchor-button",
                     trailingVisual: T.TriangleDownIcon,
@@ -24642,10 +24614,10 @@ ${this.quotedText}`)
                 },
                 iG = ({ isClosedTabActive: e, isOpenTabActive: l }) =>
                     (0, y.jsxs)("div", {
-                        className: `${(0, nn.$)(iW.tabsContainer, iW.loading)}`,
+                        className: `${(0, nt.$)(iW.tabsContainer, iW.loading)}`,
                         children: [
                             (0, y.jsx)(
-                                aW.L,
+                                aG.L,
                                 {
                                     title: "Open",
                                     isSelected: l,
@@ -24655,7 +24627,7 @@ ${this.quotedText}`)
                                 "open"
                             ),
                             (0, y.jsx)(
-                                aW.L,
+                                aG.L,
                                 {
                                     title: "Closed",
                                     isSelected: e,
@@ -24668,8 +24640,8 @@ ${this.quotedText}`)
                     });
             function iZ(e) {
                 let { activeSearchQuery: l } = eU(),
-                    a = eF(l),
-                    n = eS(l),
+                    a = eS(l),
+                    n = eF(l),
                     t = eL(l),
                     s = eI(l);
                 return (0, y.jsx)(b.Suspense, {
@@ -24683,7 +24655,7 @@ ${this.quotedText}`)
             function iX({ applySectionFilter: e, scopedRepository: l }) {
                 let { activeSearchQuery: a } = eU(),
                     n = A.fV.pathname,
-                    t = (0, b.useMemo)(() => e_(a), [a]),
+                    t = (0, b.useMemo)(() => eK(a), [a]),
                     s = t ? `?q=${encodeURIComponent(t)}` : "",
                     i = `${n}${s}`,
                     r = (0, b.useMemo)(() => ex(a), [a]),
@@ -24698,38 +24670,38 @@ ${this.quotedText}`)
                         },
                         [a, e, r, u, t]
                     ),
-                    c = eF(a),
-                    m = eS(a),
+                    c = eS(a),
+                    m = eF(a),
                     g = eL(a),
                     p = eI(a),
                     k = (c && !g) || p,
                     h = (m && !p) || g,
                     f = (0, b.useMemo)(() => {
-                        let e = t.match(a5) ? r : t;
-                        return ((e = a6(e, l)), t) ? e : `is:issue ${e}`;
+                        let e = t.match(a6) ? r : t;
+                        return ((e = a7(e, l)), t) ? e : `is:issue ${e}`;
                     }, [r, t, l]),
                     C = (0, er.useLazyLoadQuery)(
                         iz,
                         { query: f, owner: l.owner, name: l.name },
                         { fetchPolicy: "store-or-network" }
                     ),
-                    F = C.repository?.search?.closedIssueCount || 0,
-                    S = C.repository?.search?.openIssueCount || 0;
+                    S = C.repository?.search?.closedIssueCount || 0,
+                    F = C.repository?.search?.openIssueCount || 0;
                 return (0, y.jsx)("div", {
-                    ...(0, nI.G)("list-view-section-filters"),
+                    ...(0, n_.G)("list-view-section-filters"),
                     children: (0, y.jsxs)("ul", {
-                        className: `list-style-none ${(0, nn.$)(iW.tabsContainer)}`,
+                        className: `list-style-none ${(0, nt.$)(iW.tabsContainer)}`,
                         children: [
                             (0, y.jsx)(
                                 "li",
                                 {
-                                    ...(0, nI.G)("list-view-section-filter-0"),
+                                    ...(0, n_.G)("list-view-section-filter-0"),
                                     children: (0, y.jsx)(
-                                        aW.L,
+                                        aG.L,
                                         {
                                             title: "Open",
                                             isSelected: k && !h,
-                                            count: Q(S),
+                                            count: Q(F),
                                             href: i,
                                             onClick: (e) => d(e, !0),
                                         },
@@ -24741,13 +24713,13 @@ ${this.quotedText}`)
                             (0, y.jsx)(
                                 "li",
                                 {
-                                    ...(0, nI.G)("list-view-section-filter-1"),
+                                    ...(0, n_.G)("list-view-section-filter-1"),
                                     children: (0, y.jsx)(
-                                        aW.L,
+                                        aG.L,
                                         {
                                             title: "Closed",
                                             isSelected: h && !k,
-                                            count: Q(F),
+                                            count: Q(S),
                                             href: o,
                                             onClick: (e) => d(e, !1),
                                         },
@@ -24780,14 +24752,14 @@ ${this.quotedText}`)
                 isInOrganization: r,
                 ...o
             }) {
-                let { scoped_repository: u } = (0, K.X)(),
+                let { scoped_repository: u } = (0, _.X)(),
                     { dirtySearchQuery: d, setDirtySearchQuery: c } = eH(),
                     {
                         activeSearchQuery: m,
                         isQueryLoading: g,
                         currentViewId: p,
                     } = eU(),
-                    { navigateToUrl: k } = aI(),
+                    { navigateToUrl: k } = a_(),
                     h = (0, b.useMemo)(() => U.numberOfResults(e), [e]),
                     f = (0, b.useCallback)(
                         (e, l) => {
@@ -24795,8 +24767,8 @@ ${this.quotedText}`)
                         },
                         [k, s, c]
                     ),
-                    [C, F] = (0, b.useState)(!1),
-                    { setSelectedCount: S } = (0, sQ.v)(),
+                    [C, S] = (0, b.useState)(!1),
+                    { setSelectedCount: F } = (0, sQ.v)(),
                     { setMultiPageSelectionAllowed: L } = (0, iy.P)(),
                     I = (0, b.useCallback)(
                         (e) => {
@@ -24817,12 +24789,12 @@ ${this.quotedText}`)
                                               new Map()
                                           )
                                   ))
-                                : (a(new Map()), C && (F(!1), S(0), L?.(!1)));
+                                : (a(new Map()), C && (S(!1), F(0), L?.(!1)));
                         },
-                        [l, S, a, C, L, i]
+                        [l, F, a, C, L, i]
                     ),
-                    _ = (0, b.useCallback)(
-                        (e) => ad({ viewId: p, query: e }),
+                    K = (0, b.useCallback)(
+                        (e) => ac({ viewId: p, query: e }),
                         [p]
                     ),
                     v = (0, b.useMemo)(
@@ -24834,12 +24806,12 @@ ${this.quotedText}`)
                                     dirtySearchQuery: d || m,
                                     setReactionEmojiToDisplay: n,
                                     setSortingItemSelected: t,
-                                    searchUrl: _,
+                                    searchUrl: K,
                                     nested: e,
                                     setCurrentPage: s,
                                 }),
                         }),
-                        [m, d, _, s, n, t]
+                        [m, d, K, s, n, t]
                     ),
                     x = (0, b.useMemo)(
                         () => ({
@@ -24857,7 +24829,7 @@ ${this.quotedText}`)
                             {
                                 key: "authors",
                                 render: (e) =>
-                                    (0, y.jsx)(i_, {
+                                    (0, y.jsx)(iK, {
                                         nested: e,
                                         repo: u,
                                         applySectionFilter: f,
@@ -24893,7 +24865,7 @@ ${this.quotedText}`)
                             {
                                 key: "assignees",
                                 render: (e) =>
-                                    (0, y.jsx)(iS, {
+                                    (0, y.jsx)(iF, {
                                         nested: e,
                                         repo: u,
                                         applySectionFilter: f,
@@ -24946,21 +24918,21 @@ ${this.quotedText}`)
             try {
                 iJ.displayName || (iJ.displayName = "ListItemsHeader");
             } catch {}
-            var i1 = a(95726);
+            var i1 = a(38911);
             let i2 = ({ itemsLabel: e }) => {
                 let { activeSearchQuery: l } = eU(),
                     { currentUser: a } = (0, lr.J)(),
                     n = (0, b.useMemo)(() => (0, sq.ws)(l), [l]),
-                    t = (0, aC.u)("issues_react_bypass_es_limits");
+                    t = (0, aS.u)("issues_react_bypass_es_limits");
                 return (0, y.jsx)("div", {
                     className: "p-2",
                     children: (0, y.jsx)(i1.l, {
-                        description: ay.moreItemsAvailableDescription(
+                        description: ak.moreItemsAvailableDescription(
                             E.maxIssuesListItems(t, n, !!a),
                             e
                         ),
                         hideTitle: !0,
-                        title: ay.moreItemsAvailableTitle(e),
+                        title: ak.moreItemsAvailableTitle(e),
                     }),
                 });
             };
@@ -24970,7 +24942,7 @@ ${this.quotedText}`)
             } catch {}
             function i0({ key: e }) {
                 let { data: l, refetch: a } = (0, er.usePaginationFragment)(
-                    nu,
+                    nd,
                     e
                 );
                 return { data: l, refetch: a };
@@ -24985,7 +24957,7 @@ ${this.quotedText}`)
                 onSidePanelNavigate: i,
             }) {
                 let r = `${A.fV.pathname}${A.fV.search}`,
-                    { scoped_repository: o } = (0, K.X)(),
+                    { scoped_repository: o } = (0, _.X)(),
                     { currentUser: u } = (0, lr.J)(),
                     {
                         activeSearchQuery: d,
@@ -24996,7 +24968,7 @@ ${this.quotedText}`)
                     k = (0, li.Z)(),
                     h = (0, sO.X)(["mac"]),
                     [f, C] = (0, b.useState)(),
-                    { shiftKeyPressedRef: F } = (function () {
+                    { shiftKeyPressedRef: S } = (function () {
                         let e = (0, b.useRef)(!1);
                         return (
                             (0, b.useEffect)(() => {
@@ -25020,8 +24992,8 @@ ${this.quotedText}`)
                             { shiftKeyPressedRef: e }
                         );
                     })(),
-                    { issues_react_bypass_es_limits: S } = (0, aC.h)(),
-                    [I, _] = (0, aS.useQueryLoader)(sF),
+                    { issues_react_bypass_es_limits: F } = (0, aS.h)(),
+                    [I, K] = (0, aL.useQueryLoader)(sS),
                     { data: v, refetch: x } = i0({ key: e }),
                     w = null === v.search || void 0 === v.search,
                     N = v.search?.ok ? null : v.search?.errors;
@@ -25048,7 +25020,7 @@ ${this.quotedText}`)
                         return !V && w && e;
                     }, [V, w, v]);
                 ((0, b.useEffect)(() => {
-                    (0, nd.i)(U.numberOfResults(P || 0), { assertive: !0 });
+                    (0, nc.i)(U.numberOfResults(P || 0), { assertive: !0 });
                 }, [P]),
                     (0, b.useEffect)(() => {
                         if (q)
@@ -25075,7 +25047,7 @@ ${this.quotedText}`)
                     ),
                     B = (0, b.useRef)(null),
                     $ = (0, b.useMemo)(() => (0, sq.ws)(d), [d]),
-                    Q = E.maxIssuesListItems(S || !1, $, !!u),
+                    Q = E.maxIssuesListItems(F || !1, $, !!u),
                     H = (0, b.useMemo)(
                         () =>
                             P
@@ -25083,7 +25055,7 @@ ${this.quotedText}`)
                                 : 0,
                         [P, Q]
                     ),
-                    { getQueryFieldUrl: z, navigateToUrl: W } = aI(),
+                    { getQueryFieldUrl: z, navigateToUrl: W } = a_(),
                     G = (0, b.useCallback)(
                         (e, l) => {
                             if ((h ? e.metaKey : e.ctrlKey) || e.shiftKey)
@@ -25102,7 +25074,7 @@ ${this.quotedText}`)
                         let e = (0, sq.mA)(l || d).get("sort"),
                             a = sP(e?.[0] || ""),
                             n = sT(a),
-                            t = s_.qG[n || ""];
+                            t = sK.qG[n || ""];
                         return {
                             initialSortingItem: a || "created",
                             initialReactionEmojiToDisplay: t
@@ -25113,12 +25085,12 @@ ${this.quotedText}`)
                     [J, ee] = (0, b.useState)(Y),
                     [el, ea] = (0, b.useState)(X),
                     [en, et] = (0, b.useState)(!1),
-                    { sendHyperlistAnalyticsEvent: es } = a_(),
+                    { sendHyperlistAnalyticsEvent: es } = av(),
                     ei = (0, b.useMemo)(
                         () =>
                             n &&
                             !(function (e) {
-                                let l = a9(e),
+                                let l = a8(e),
                                     a = new Set([
                                         ...(l.get("is") || []),
                                         ...(l.get("type") || []),
@@ -25158,13 +25130,13 @@ ${this.quotedText}`)
                     ec = (0, b.useCallback)(
                         (e, l, a) => {
                             let n = new Map(er);
-                            (F.current && f
+                            (S.current && f
                                 ? ed(n, f.id, e, a)
                                 : (a ? n.set(e, l) : n.delete(e), eu(n)),
                                 eo(n),
                                 C({ id: e, node: l }));
                         },
-                        [ed, er, f, F]
+                        [ed, er, f, S]
                     );
                 ((0, b.useEffect)(() => {
                     Array.from(er.values()).find(
@@ -25227,8 +25199,8 @@ ${this.quotedText}`)
                     ),
                     ef = null !== I;
                 (0, b.useEffect)(() => {
-                    A.X3 || _({ nodes: eb, includeReactions: !!Y });
-                }, [Y, _, eb, ef]);
+                    A.X3 || K({ nodes: eb, includeReactions: !!Y });
+                }, [Y, K, eb, ef]);
                 let eC = O?.map((e) => {
                     let l = {
                         key: e?.id,
@@ -25253,7 +25225,7 @@ ${this.quotedText}`)
                                               issueKey: e,
                                               metadataRef: I,
                                               ...l,
-                                              "data-testid": ni.issueRowItem(
+                                              "data-testid": nr.issueRowItem(
                                                   e?.number || "-1"
                                               ),
                                               key: l.key,
@@ -25262,13 +25234,13 @@ ${this.quotedText}`)
                                               getMetadataHref: eg,
                                           }),
                                       "PullRequest" === e.__typename &&
-                                          (0, b.createElement)(tK, {
+                                          (0, b.createElement)(t_, {
                                               pullRequestKey: e,
                                               metadataRef: I,
                                               onNavigate: k,
                                               ...l,
                                               "data-testid":
-                                                  ni.pullRequestRowItem(
+                                                  nr.pullRequestRowItem(
                                                       e?.number || "-1"
                                                   ),
                                               key: l.key,
@@ -25283,10 +25255,10 @@ ${this.quotedText}`)
                 (0, b.useEffect)(() => {
                     g &&
                         c &&
-                        ((0, nd.i)(U.announcePage(c, H, eC.length)), p(!1));
+                        ((0, nc.i)(U.announcePage(c, H, eC.length)), p(!1));
                 }, [c, g, eC.length, H]);
-                let eF = void 0 !== c && H === c && void 0 !== P && P > Q,
-                    eS = () => {
+                let eS = void 0 !== c && H === c && void 0 !== P && P > Q,
+                    eF = () => {
                         if (a.current) {
                             let e = a.current.querySelector('[tabindex="0"]');
                             e && e instanceof HTMLElement && e.focus();
@@ -25294,28 +25266,28 @@ ${this.quotedText}`)
                     },
                     eL = (0, y.jsxs)(y.Fragment, {
                         children: [
-                            (0, y.jsx)(np.ak, {
+                            (0, y.jsx)(ny.ak, {
                                 commands: {
-                                    "issues-react:focus-next-issue": eS,
-                                    "issues-react:focus-previous-issue": eS,
+                                    "issues-react:focus-next-issue": eF,
+                                    "issues-react:focus-previous-issue": eF,
                                 },
                             }),
                             (0, y.jsx)("div", {
                                 "data-testid": "list-load-progress-bar",
                                 ref: B,
-                                className: (0, nn.$)(
+                                className: (0, nt.$)(
                                     "turbo-progress-bar",
                                     iW.progressBar
                                 ),
                             }),
-                            (0, y.jsx)(np.tL, {
+                            (0, y.jsx)(ny.tL, {
                                 commands: {
                                     "issues-react:focus-next-issue": L.l,
                                     "issues-react:focus-previous-issue": L.l,
                                 },
                                 className: iW.listScopedCommand,
-                                children: (0, y.jsxs)(nc.u, {
-                                    ...(0, nI.G)(ni.list),
+                                children: (0, y.jsxs)(nm.u, {
+                                    ...(0, n_.G)(nr.list),
                                     title: U.searchResults,
                                     totalCount: P || 0,
                                     selectedCount: er.size,
@@ -25330,7 +25302,7 @@ ${this.quotedText}`)
                                         0 === eC.length &&
                                             M &&
                                             (0, y.jsx)(sI, {}),
-                                        eF &&
+                                        eS &&
                                             (0, y.jsx)(i2, {
                                                 itemsLabel:
                                                     U.pluralUnits(ey) ??
@@ -25377,43 +25349,43 @@ ${this.quotedText}`)
                 listRef: i,
                 onSidePanelNavigate: r,
             }) {
-                let o = (0, er.useFragment)(aH, a),
-                    { scoped_repository: u } = (0, K.X)(),
-                    { pathname: d } = (0, _.zy)(),
+                let o = (0, er.useFragment)(az, a),
+                    { scoped_repository: u } = (0, _.X)(),
+                    { pathname: d } = (0, K.zy)(),
                     c = e?.number === void 0 && "/issues/new" !== d,
-                    m = (0, er.useFragment)(az, n),
+                    m = (0, er.useFragment)(aW, n),
                     g =
                         m &&
                         m.viewerCanPush &&
                         !(m.isDisabled || m.isLocked || m.isArchived),
                     p = [
                         (0, y.jsx)(
-                            aW.L,
+                            aG.L,
                             { title: "Open", isLoading: !0, href: "" },
                             "open"
                         ),
                         (0, y.jsx)(
-                            aW.L,
+                            aG.L,
                             { title: "Closed", isLoading: !0, href: "" },
                             "closed"
                         ),
                     ];
                 return (0, y.jsx)(b.Suspense, {
-                    fallback: (0, y.jsx)(a4, {
+                    fallback: (0, y.jsx)(a5, {
                         sectionFilters: p,
                         showBorder: c,
                         layoutDensity: "default",
                         pageSize: E.issuesPageSize(),
                     }),
-                    children: (0, y.jsx)(ne.A, {
+                    children: (0, y.jsx)(nl.A, {
                         critical: !0,
-                        fallback: nr,
+                        fallback: no,
                         onRetry: () => {
                             l &&
                                 t &&
                                 t(
                                     {
-                                        query: a6(l, u),
+                                        query: a7(l, u),
                                         owner: u ? u.owner : "",
                                         name: u ? u.name : "",
                                     },
@@ -25804,8 +25776,8 @@ ${this.quotedText}`)
                         query: r,
                     } = (0, er.useFragment)(i5, e),
                     o = (0, er.useRelayEnvironment)(),
-                    { pathname: u } = (0, _.zy)(),
-                    { navigateToView: d } = aI(),
+                    { pathname: u } = (0, K.zy)(),
+                    { navigateToView: d } = a_(),
                     {
                         setIsEditing: c,
                         setIsNewView: m,
@@ -25817,25 +25789,25 @@ ${this.quotedText}`)
                         dirtyDescription: h,
                         commitUserViewEdit: f,
                         dirtySearchQuery: C,
-                        dirtyViewIcon: F,
-                        dirtyViewColor: S,
+                        dirtyViewIcon: S,
+                        dirtyViewColor: F,
                         clearSavedViewEditState: I,
                     } = eH(),
-                    { sendHyperlistAnalyticsEvent: K } = a_(),
-                    { author: v, assignee: x, mentioned: w } = (0, _.g)(),
+                    { sendHyperlistAnalyticsEvent: _ } = av(),
+                    { author: v, assignee: x, mentioned: w } = (0, K.g)(),
                     N = `${en.defaultQuery} ${en.query({ author: v, assignee: x, mentioned: w, createdByApp: eh(u) })}`,
                     j = ek(u) ? N : r,
                     R = i ? `repo:${i.owner.login}/${i.name} ${j}` : `${j}`,
                     P = (0, b.useCallback)(() => {
                         let e = {
-                            viewName: aN(k) ? k : n,
-                            viewDescription: aN(h) ? h : t,
-                            viewIcon: aN(F) ? F : s,
-                            viewColor: aN(S) ? S : a,
-                            viewQuery: aN(C) ? C : R,
+                            viewName: aj(k) ? k : n,
+                            viewDescription: aj(h) ? h : t,
+                            viewIcon: aj(S) ? S : s,
+                            viewColor: aj(F) ? F : a,
+                            viewQuery: aj(C) ? C : R,
                         };
                         "" !== e.viewName.trim() &&
-                            (K("search.save", "FILTER_BAR_SAVE_BUTTON", {
+                            (_("search.save", "FILTER_BAR_SAVE_BUTTON", {
                                 new_color: e.viewColor,
                                 new_icon: e.viewIcon,
                                 new_query: e.viewQuery,
@@ -25851,14 +25823,14 @@ ${this.quotedText}`)
                                 viewId: l,
                                 ...e,
                                 onSuccess: () => {
-                                    let e = ad({ viewId: l });
+                                    let e = ac({ viewId: l });
                                     ((0, lg.bj)(e), c(!1));
                                 },
                                 relayEnvironment: o,
                             }),
                             m(!1),
                             I());
-                    }, [k, K, S, F, C, h, a, s, R, t, n, l, o, f, m, I, c]),
+                    }, [k, _, F, S, C, h, a, s, R, t, n, l, o, f, m, I, c]),
                     T = (0, b.useCallback)(() => {
                         void 0 !== g &&
                             i7({
@@ -25880,11 +25852,11 @@ ${this.quotedText}`)
                 return (0, y.jsxs)("div", {
                     className: `${i9.gap8} d-flex flex-row`,
                     children: [
-                        (0, y.jsx)(aq.Q, { onClick: A, children: aO.cancel }),
-                        (0, y.jsx)(aq.Q, {
+                        (0, y.jsx)(aO.Q, { onClick: A, children: aB.cancel }),
+                        (0, y.jsx)(aO.Q, {
                             variant: "primary",
                             onClick: P,
-                            children: aO.saveView,
+                            children: aB.saveView,
                         }),
                     ],
                 });
@@ -25973,15 +25945,15 @@ ${this.quotedText}`)
                         canEditView: d,
                         savedViewsCount: c,
                     } = eU(),
-                    { navigateToSavedView: m, navigateToUrl: g } = aI(),
+                    { navigateToSavedView: m, navigateToUrl: g } = a_(),
                     {
                         commitUserViewDuplicate: p,
                         commitUserViewEdit: k,
                         dirtySearchQuery: h,
                     } = eH(),
-                    f = l !== S.repository && (d || !u),
+                    f = l !== F.repository && (d || !u),
                     C = u(l) && d,
-                    F = null !== h && n?.trim() !== h?.trim(),
+                    S = null !== h && n?.trim() !== h?.trim(),
                     L = c >= E.viewsPageSize,
                     I = (0, b.useCallback)(() => {
                         p({
@@ -26004,7 +25976,7 @@ ${this.quotedText}`)
                             },
                         });
                     }, [h, n, a, i, s, t, r, p, o, m]),
-                    K = (0, b.useCallback)(() => {
+                    _ = (0, b.useCallback)(() => {
                         k({
                             viewId: l,
                             viewQuery: null === h ? n : h,
@@ -26013,16 +25985,16 @@ ${this.quotedText}`)
                             viewColor: s,
                             viewDescription: t,
                             onSuccess: () => {
-                                g(ad({ viewId: l }));
+                                g(ac({ viewId: l }));
                             },
                             relayEnvironment: r,
                         });
                     }, [h, n, l, a, i, s, t, r, k, g]),
-                    _ = [
+                    K = [
                         {
                             icon: (0, y.jsx)(T.BookmarkIcon, {}),
                             text: "Save changes",
-                            onSelect: K,
+                            onSelect: _,
                             enabled: C,
                         },
                         {
@@ -26039,27 +26011,27 @@ ${this.quotedText}`)
                     children: (0, y.jsxs)(sv.W, {
                         children: [
                             (0, y.jsx)(sv.W.Button, {
-                                disabled: !F || !C,
+                                disabled: !S || !C,
                                 children: "Save",
                             }),
                             (0, y.jsx)(sv.W.Overlay, {
                                 className: ra.menuOverlay,
-                                children: (0, y.jsx)(aX.l, {
-                                    children: _.map((e) =>
+                                children: (0, y.jsx)(aY.l, {
+                                    children: K.map((e) =>
                                         (0, y.jsxs)(
-                                            aX.l.Item,
+                                            aY.l.Item,
                                             {
                                                 onSelect: e.onSelect,
                                                 disabled: !e.enabled,
                                                 children: [
                                                     (0, y.jsx)(
-                                                        aX.l.LeadingVisual,
+                                                        aY.l.LeadingVisual,
                                                         { children: e.icon }
                                                     ),
                                                     e.text,
                                                     e.showDescription &&
                                                         (0, y.jsx)(
-                                                            aX.l.Description,
+                                                            aY.l.Description,
                                                             {
                                                                 variant:
                                                                     "block",
@@ -26093,41 +26065,45 @@ ${this.quotedText}`)
                 search: a,
                 loadSearchQuery: n,
                 onSidePanelNavigate: t,
+                showSsoBanner: s = !0,
             }) {
-                let { ssoOrgs: s } = (0, l3.N)(),
-                    i = s.map((e) => e.login).filter((e) => void 0 !== e),
-                    r = (0, er.useFragment)(l1, a),
-                    o = (0, er.useFragment)(l2, l),
-                    { activeSearchQuery: u, isNewView: d, isEditing: c } = eU(),
-                    m = (0, b.useRef)(void 0),
-                    g = d && !u,
-                    p = c
-                        ? (0, y.jsx)(i8, { currentView: o })
-                        : (0, y.jsx)(rn, { currentView: o });
+                let { ssoOrgs: i } = (0, l4.N)(),
+                    r = i.map((e) => e.login).filter((e) => void 0 !== e),
+                    o = (0, er.useFragment)(l2, a),
+                    u = (0, er.useFragment)(l0, l),
+                    { activeSearchQuery: d, isNewView: c, isEditing: m } = eU(),
+                    g = (0, b.useRef)(void 0),
+                    p = c && !d,
+                    k = m
+                        ? (0, y.jsx)(i8, { currentView: u })
+                        : (0, y.jsx)(rn, { currentView: u });
                 return (0, y.jsxs)("div", {
                     className: re.searchContainer,
                     children: [
-                        (0, y.jsx)(aU, {
-                            currentViewKey: o,
+                        (0, y.jsx)(aH, {
+                            currentViewKey: u,
                             currentRepository: null,
-                            queryFromCustomView: o.query,
+                            queryFromCustomView: u.query,
                             children: (0, y.jsx)("div", {
                                 className: re.actions,
-                                children: p,
+                                children: k,
                             }),
                         }),
-                        g
-                            ? (0, y.jsx)(al, {})
+                        p
+                            ? (0, y.jsx)(aa, {})
                             : (0, y.jsxs)(y.Fragment, {
                                   children: [
-                                      (0, y.jsx)(l0.x, { protectedOrgs: i }),
+                                      s &&
+                                          (0, y.jsx)(l3.x, {
+                                              protectedOrgs: r,
+                                          }),
                                       (0, y.jsx)(i4, {
                                           itemIdentifier: e,
-                                          search: r,
+                                          search: o,
                                           repository: null,
                                           loadSearchQuery: n,
-                                          query: u,
-                                          listRef: m,
+                                          query: d,
+                                          listRef: g,
                                           onSidePanelNavigate: t,
                                       }),
                                   ],
@@ -26312,13 +26288,13 @@ ${this.quotedText}`)
                     }, [d]),
                     p = (0, b.useCallback)(
                         (e) => {
-                            (r(e), (0, nd.i)(`${e} selected`));
+                            (r(e), (0, nc.i)(`${e} selected`));
                         },
                         [r]
                     ),
                     k = (0, b.useCallback)(
                         (e) => {
-                            (u(e), (0, nd.i)(`${e} selected`));
+                            (u(e), (0, nc.i)(`${e} selected`));
                         },
                         [u]
                     ),
@@ -26327,30 +26303,30 @@ ${this.quotedText}`)
                     }, [d, r, u]),
                     f = i || (n ? E.defaultViewIcon : t),
                     C = o || (n ? E.defaultViewColor : s),
-                    F = O(f),
-                    S = R[C],
+                    S = O(f),
+                    F = R[C],
                     L = P[C];
                 return e || !a
                     ? (0, y.jsx)(ld.A, {
-                          sx: { backgroundColor: S, color: L },
+                          sx: { backgroundColor: F, color: L },
                           className: rk.iconDisplayContainer,
-                          children: (0, y.jsx)(na.A, { icon: O(t) }),
+                          children: (0, y.jsx)(nn.A, { icon: O(t) }),
                       })
                     : (0, y.jsx)(ry.T, {
                           renderAnchor: (e) =>
                               (0, y.jsx)("div", {
                                   ...e,
-                                  children: (0, y.jsx)(lJ.K, {
+                                  children: (0, y.jsx)(l1.K, {
                                       ...e,
                                       "aria-labelledby": void 0,
                                       "aria-label":
                                           U.views.iconAndColorAnchorAriaLabel,
-                                      icon: F,
+                                      icon: S,
                                       size: "medium",
                                       variant: "invisible",
                                       onClick: () => d(!c),
                                       id: "edit-view-icon-button",
-                                      sx: { backgroundColor: S, color: L },
+                                      sx: { backgroundColor: F, color: L },
                                   }),
                               }),
                           focusZoneSettings: { disabled: !0 },
@@ -26372,7 +26348,7 @@ ${this.quotedText}`)
                                           let l = P[e],
                                               a = R[e];
                                           return (0, y.jsx)(
-                                              lJ.K,
+                                              l1.K,
                                               {
                                                   icon:
                                                       e === C
@@ -26411,7 +26387,7 @@ ${this.quotedText}`)
                                       className: rk.iconSelectionGrid,
                                       children: Object.keys($).map((e) =>
                                           (0, y.jsx)(
-                                              lJ.K,
+                                              l1.K,
                                               {
                                                   unsafeDisableTooltip: !0,
                                                   icon: O(e),
@@ -26421,7 +26397,7 @@ ${this.quotedText}`)
                                                       "&:hover:not([aria-disabled])":
                                                           {
                                                               backgroundColor:
-                                                                  S,
+                                                                  F,
                                                           },
                                                       "&:focus:not([aria-disabled])":
                                                           {
@@ -26444,14 +26420,14 @@ ${this.quotedText}`)
                                   (0, y.jsxs)("div", {
                                       className: rk.actionButtonsContainer,
                                       children: [
-                                          (0, y.jsx)(aq.Q, {
+                                          (0, y.jsx)(aO.Q, {
                                               onClick: h,
-                                              children: aO.cancel,
+                                              children: aB.cancel,
                                           }),
-                                          (0, y.jsx)(aq.Q, {
+                                          (0, y.jsx)(aO.Q, {
                                               variant: "primary",
                                               onClick: g,
-                                              children: aO.apply,
+                                              children: aB.apply,
                                           }),
                                       ],
                                   }),
@@ -26517,8 +26493,8 @@ ${this.quotedText}`)
             rb.hash = "62dca5895718c106a2f717dbe6980390";
             var rf = a(90851),
                 rC = a(53526);
-            let rF = { warning: "ViewOptionsButton-module__warning--_mS9K" },
-                rS = ({ currentView: e }) => {
+            let rS = { warning: "ViewOptionsButton-module__warning--_mS9K" },
+                rF = ({ currentView: e }) => {
                     let {
                             id: l,
                             name: a,
@@ -26540,12 +26516,12 @@ ${this.quotedText}`)
                         [k, h] = (0, b.useState)(!1),
                         f = (0, rf.M)(k),
                         { addToast: C } = (0, v.Y6)(),
-                        { navigateToSavedView: F, navigateToView: L } = aI(),
+                        { navigateToSavedView: S, navigateToView: L } = a_(),
                         I = (0, rC.S)(),
-                        K = (0, b.useCallback)(() => {
+                        _ = (0, b.useCallback)(() => {
                             o(!0);
                         }, [o]),
-                        _ = (0, b.useCallback)(() => {
+                        K = (0, b.useCallback)(() => {
                             c({
                                 viewName: a,
                                 viewIcon: i,
@@ -26562,10 +26538,10 @@ ${this.quotedText}`)
                                     createDashboardSearchShortcut: e,
                                 }) => {
                                     e?.shortcut &&
-                                        F(e.shortcut.id, { isEditing: !1 });
+                                        S(e.shortcut.id, { isEditing: !1 });
                                 },
                             });
-                        }, [a, i, s, t, n, m, C, c, F]);
+                        }, [a, i, s, t, n, m, C, c, S]);
                     (0, b.useEffect)(() => {
                         f.current && !k && p.current?.focus();
                     }, [k, f]);
@@ -26597,13 +26573,13 @@ ${this.quotedText}`)
                                     h(!1));
                             }
                         }, [C, I, L, m, l, a]),
-                        w = l !== S.repository && (u || !r),
+                        w = l !== F.repository && (u || !r),
                         N = r(l) && u;
                     return N || w
                         ? (0, y.jsxs)(sv.W, {
                               children: [
                                   (0, y.jsx)(sv.W.Anchor, {
-                                      children: (0, y.jsx)(lJ.K, {
+                                      children: (0, y.jsx)(l1.K, {
                                           icon: T.KebabHorizontalIcon,
                                           "aria-label":
                                               U.views.editButtonAriaLabel,
@@ -26613,14 +26589,14 @@ ${this.quotedText}`)
                                   }),
                                   (0, y.jsx)(sv.W.Overlay, {
                                       width: "small",
-                                      children: (0, y.jsxs)(aX.l, {
+                                      children: (0, y.jsxs)(aY.l, {
                                           children: [
                                               N &&
-                                                  (0, y.jsxs)(aX.l.Item, {
-                                                      onSelect: K,
+                                                  (0, y.jsxs)(aY.l.Item, {
+                                                      onSelect: _,
                                                       children: [
                                                           (0, y.jsx)(
-                                                              aX.l
+                                                              aY.l
                                                                   .LeadingVisual,
                                                               {
                                                                   children: (0,
@@ -26634,12 +26610,12 @@ ${this.quotedText}`)
                                                       ],
                                                   }),
                                               w &&
-                                                  (0, y.jsxs)(aX.l.Item, {
-                                                      onSelect: _,
+                                                  (0, y.jsxs)(aY.l.Item, {
+                                                      onSelect: K,
                                                       disabled: g,
                                                       children: [
                                                           (0, y.jsx)(
-                                                              aX.l
+                                                              aY.l
                                                                   .LeadingVisual,
                                                               {
                                                                   children: (0,
@@ -26652,7 +26628,7 @@ ${this.quotedText}`)
                                                           U.views.duplicate,
                                                           g &&
                                                               (0, y.jsx)(
-                                                                  aX.l
+                                                                  aY.l
                                                                       .Description,
                                                                   {
                                                                       variant:
@@ -26663,7 +26639,7 @@ ${this.quotedText}`)
                                                                               "span",
                                                                               {
                                                                                   className:
-                                                                                      rF.warning,
+                                                                                      rS.warning,
                                                                                   children:
                                                                                       U
                                                                                           .views
@@ -26678,11 +26654,11 @@ ${this.quotedText}`)
                                                   (0, y.jsxs)(y.Fragment, {
                                                       children: [
                                                           (0, y.jsx)(
-                                                              aX.l.Divider,
+                                                              aY.l.Divider,
                                                               {}
                                                           ),
                                                           (0, y.jsxs)(
-                                                              aX.l.Item,
+                                                              aY.l.Item,
                                                               {
                                                                   variant:
                                                                       "danger",
@@ -26690,7 +26666,7 @@ ${this.quotedText}`)
                                                                   children: [
                                                                       (0,
                                                                       y.jsx)(
-                                                                          aX.l
+                                                                          aY.l
                                                                               .LeadingVisual,
                                                                           {
                                                                               children:
@@ -26716,11 +26692,11 @@ ${this.quotedText}`)
                         : null;
                 };
             try {
-                rS.displayName || (rS.displayName = "ViewOptionsButton");
+                rF.displayName || (rF.displayName = "ViewOptionsButton");
             } catch {}
             function rL({ readOnly: e = !1, currentViewKey: l }) {
                 let { isCustomView: a, isEditing: n } = eU(),
-                    { scoped_repository: t } = (0, K.X)(),
+                    { scoped_repository: t } = (0, _.X)(),
                     s = (0, er.useFragment)(ru, l),
                     { name: i, description: r, id: o } = s,
                     {
@@ -26751,12 +26727,12 @@ ${this.quotedText}`)
                                       (0, y.jsxs)("div", {
                                           className: rg.iconTitleInputRow,
                                           children: [
-                                              (0, y.jsxs)(ap.A, {
+                                              (0, y.jsxs)(ay.A, {
                                                   children: [
-                                                      (0, y.jsx)(ap.A.Label, {
+                                                      (0, y.jsx)(ay.A.Label, {
                                                           htmlFor:
                                                               "edit-view-icon-button",
-                                                          children: ay.icon,
+                                                          children: ak.icon,
                                                       }),
                                                       a(o) &&
                                                           (0, y.jsx)(rh, {
@@ -26765,11 +26741,11 @@ ${this.quotedText}`)
                                                           }),
                                                   ],
                                               }),
-                                              (0, y.jsxs)(ap.A, {
+                                              (0, y.jsxs)(ay.A, {
                                                   className: rg.FormControl,
                                                   children: [
-                                                      (0, y.jsx)(ap.A.Label, {
-                                                          children: ay.title,
+                                                      (0, y.jsx)(ay.A.Label, {
+                                                          children: ak.title,
                                                       }),
                                                       (0, y.jsx)(rm.A, {
                                                           ref: h,
@@ -26783,7 +26759,7 @@ ${this.quotedText}`)
                                                               ),
                                                                   d(l));
                                                           },
-                                                          value: aN(u) ? u : i,
+                                                          value: aj(u) ? u : i,
                                                           placeholder:
                                                               rc.k
                                                                   .viewTitlePlaceholder,
@@ -26792,7 +26768,7 @@ ${this.quotedText}`)
                                                       }),
                                                       p &&
                                                           (0, y.jsx)(
-                                                              ap.A.Validation,
+                                                              ay.A.Validation,
                                                               {
                                                                   variant:
                                                                       "error",
@@ -26803,17 +26779,17 @@ ${this.quotedText}`)
                                               }),
                                           ],
                                       }),
-                                      (0, y.jsxs)(ap.A, {
+                                      (0, y.jsxs)(ay.A, {
                                           className: rg.FormControl,
                                           children: [
-                                              (0, y.jsx)(ap.A.Label, {
-                                                  children: ay.description,
+                                              (0, y.jsx)(ay.A.Label, {
+                                                  children: ak.description,
                                               }),
                                               (0, y.jsx)(rm.A, {
                                                   onChange: (e) => {
                                                       m(e.target.value);
                                                   },
-                                                  value: aN(c) ? c : r,
+                                                  value: aj(c) ? c : r,
                                                   placeholder:
                                                       rc.k
                                                           .viewDescriptionPlaceholder,
@@ -26836,7 +26812,7 @@ ${this.quotedText}`)
                                                   }),
                                               (0, y.jsx)(lu.A, {
                                                   as: "h1",
-                                                  className: (0, nn.$)(
+                                                  className: (0, nt.$)(
                                                       t ? "sr-only" : "",
                                                       rg.Heading
                                                   ),
@@ -26844,7 +26820,7 @@ ${this.quotedText}`)
                                               }),
                                               a(o) &&
                                                   !e &&
-                                                  (0, y.jsx)(rS, {
+                                                  (0, y.jsx)(rF, {
                                                       currentView: s,
                                                   }),
                                           ],
@@ -26867,18 +26843,18 @@ ${this.quotedText}`)
                 onCollapse: l,
                 setSafeDocumentTitle: a,
             }) {
-                let { pathname: n } = (0, _.zy)(),
+                let { pathname: n } = (0, K.zy)(),
                     t = em(n),
-                    { navigateToRoot: s, navigateToUrl: i } = aI(),
+                    { navigateToRoot: s, navigateToUrl: i } = a_(),
                     { isEditing: r, canEditView: o } = eU(),
                     u = (0, er.useFragment)(rs, e),
                     { id: d, name: c, query: m } = u,
-                    { openNavigation: g } = F(),
+                    { openNavigation: g } = S(),
                     { scoped_repository: p, current_user_settings: k } = (0,
-                    K.X)(),
+                    _.X)(),
                     { activeSearchQuery: h } = eU(),
                     f = (0, b.useCallback)(() => {
-                        d === S.repository && h !== m
+                        d === F.repository && h !== m
                             ? i(
                                   (function ({ query: e } = {}) {
                                       let l = A.fV?.pathname,
@@ -26916,7 +26892,7 @@ ${this.quotedText}`)
                         [L]
                     );
                 return (0, y.jsx)("div", {
-                    "data-testid": ni.listHeader,
+                    "data-testid": nr.listHeader,
                     children: t
                         ? (0, y.jsx)("div", {
                               className: ro.HeaderCreateIssueContainer,
@@ -26932,14 +26908,14 @@ ${this.quotedText}`)
                                               shortcut: "Mod+B",
                                               tooltipDirection: "e",
                                           }),
-                                      (0, y.jsx)(aq.Q, {
+                                      (0, y.jsx)(aO.Q, {
                                           variant: "invisible",
                                           onClick: f,
                                           leadingVisual: T.ArrowLeftIcon,
                                           size: "small",
-                                          title: aO.returnToList,
+                                          title: aB.returnToList,
                                           className: ro.Button,
-                                          children: (0, y.jsx)(n6.A, {
+                                          children: (0, y.jsx)(n7.A, {
                                               id: "view-title",
                                               title: c,
                                               className: ro.Truncate,
@@ -26956,7 +26932,7 @@ ${this.quotedText}`)
                                       (0, y.jsx)("div", {
                                           className:
                                               ro.mobileNavigationContainer,
-                                          children: (0, y.jsx)(aq.Q, {
+                                          children: (0, y.jsx)(aO.Q, {
                                               variant: "invisible",
                                               size: "small",
                                               onClick: g,
@@ -26975,8 +26951,8 @@ ${this.quotedText}`)
                                           className: ro.actionButtonsContainer,
                                           children:
                                               !p &&
-                                              (0, y.jsx)(aE.a, {
-                                                  label: aO.newIssue,
+                                              (0, y.jsx)(aq.a, {
+                                                  label: aB.newIssue,
                                                   navigate: v,
                                                   optionConfig: {
                                                       showRepositoryPicker:
@@ -27002,8 +26978,8 @@ ${this.quotedText}`)
             try {
                 rI.displayName || (rI.displayName = "Header");
             } catch {}
-            var rK = a(48824);
-            let r_ = {
+            var r_ = a(48824);
+            let rK = {
                     HeaderLoadingContainer:
                         "HeaderLoading-module__HeaderLoadingContainer--UquhY",
                     headingContainer:
@@ -27012,18 +26988,18 @@ ${this.quotedText}`)
                 },
                 rv = () =>
                     (0, y.jsxs)("div", {
-                        "data-testid": ni.headerLoading,
-                        className: r_.HeaderLoadingContainer,
+                        "data-testid": nr.headerLoading,
+                        className: rK.HeaderLoadingContainer,
                         children: [
                             (0, y.jsx)("div", {
-                                className: r_.headingContainer,
+                                className: rK.headingContainer,
                                 children: (0, y.jsx)(lu.A, {
                                     as: "h1",
-                                    className: r_.Heading,
-                                    children: aO.issues,
+                                    className: rK.Heading,
+                                    children: aB.issues,
                                 }),
                             }),
-                            (0, y.jsx)(rK.Q, { height: "xl", width: "150px" }),
+                            (0, y.jsx)(r_.Q, { height: "xl", width: "150px" }),
                         ],
                     });
             try {
@@ -27086,7 +27062,7 @@ ${this.quotedText}`)
                                 (0, y.jsx)("span", {
                                     tabIndex: -1,
                                     ref: n,
-                                    ...(0, nI.G)("side-panel-focus-target"),
+                                    ...(0, n_.G)("side-panel-focus-target"),
                                 }),
                                 l,
                             ],
@@ -27120,7 +27096,7 @@ ${this.quotedText}`)
                         (e) => {
                             (r(!1),
                                 e.query
-                                    ? n(ad({ viewId: e.id, query: void 0 }))
+                                    ? n(ac({ viewId: e.id, query: void 0 }))
                                     : e.url && n(e.url),
                                 s(e.position));
                         },
@@ -27166,7 +27142,7 @@ ${this.quotedText}`)
                         },
                         [d, e.length, t, u.length, m]
                     );
-                ((0, ag._N)([am.w.up, am.w.down], p), (0, ag._N)(l, g));
+                ((0, ap._N)([ag.w.up, ag.w.down], p), (0, ap._N)(l, g));
             };
             var rM = a(34700);
             let rV = { wrapper: "CallToActionItem-module__wrapper--VzZaW" };
@@ -27232,16 +27208,16 @@ ${this.quotedText}`)
                         dirtyTitle: f,
                         clearSavedViewEditState: C,
                     } = eH(),
-                    { closeNavigation: I } = F(),
-                    { navigateToUrl: K } = aI(),
+                    { closeNavigation: I } = S(),
+                    { navigateToUrl: _ } = a_(),
                     v = (0, er.useRelayEnvironment)(),
                     x = (0, li.Z)(),
                     w = (0, rC.S)(),
                     N = e === m,
-                    j = ad({ viewId: e, query: i }),
+                    j = ac({ viewId: e, query: i }),
                     R = (0, b.useCallback)(async () => {
-                        (K(j), c(1));
-                    }, [K, j, c]),
+                        (_(j), c(1));
+                    }, [_, j, c]),
                     P = (0, b.useCallback)(() => {
                         void 0 !== p &&
                             i7({
@@ -27252,7 +27228,7 @@ ${this.quotedText}`)
                             });
                     }, [p, v]),
                     T = (0, b.useCallback)(async () => {
-                        if (e === S.repository) return R();
+                        if (e === F.repository) return R();
                         if (
                             u &&
                             (f !== U.views.defaultName || "" !== h || "" !== k)
@@ -27277,7 +27253,7 @@ ${this.quotedText}`)
                     );
                 return (0, y.jsx)(rT.c.Item, {
                     to: j,
-                    as: _.N_,
+                    as: K.N_,
                     "aria-current": N ? "page" : void 0,
                     onClick: A,
                     className: rO.navItem,
@@ -27290,7 +27266,7 @@ ${this.quotedText}`)
                                 children: a
                                     ? (0, y.jsx)(a, {})
                                     : l
-                                      ? (0, y.jsx)(na.A, { icon: q(l) })
+                                      ? (0, y.jsx)(nn.A, { icon: q(l) })
                                       : null,
                             }),
                             (0, y.jsx)("span", {
@@ -27382,7 +27358,7 @@ ${this.quotedText}`)
                     o = (0, er.useRelayEnvironment)(),
                     u = (0, rC.S)(),
                     [d, c] = (0, b.useState)(!1),
-                    { navigateToSavedView: m } = aI(),
+                    { navigateToSavedView: m } = a_(),
                     g = (0, b.useCallback)(() => {
                         c(!0);
                     }, [c]),
@@ -27423,7 +27399,7 @@ ${this.quotedText}`)
                     }, [l, u, p, a, n, t, r, m, o, i]);
                 return (0, y.jsxs)(y.Fragment, {
                     children: [
-                        (0, y.jsx)(lJ.K, {
+                        (0, y.jsx)(l1.K, {
                             icon: T.PlusIcon,
                             size: "small",
                             variant: "invisible",
@@ -27533,7 +27509,7 @@ ${this.quotedText}`)
                 };
             })();
             function rz({ savedView: e, position: l }) {
-                let a = (0, aS.useFragment)(rH, e);
+                let a = (0, aL.useFragment)(rH, e);
                 return (
                     a &&
                     (0, y.jsx)(
@@ -27679,7 +27655,7 @@ ${this.quotedText}`)
                     onClick: s,
                     children: [
                         (0, y.jsx)(rT.c.LeadingVisual, {
-                            children: (0, y.jsx)(na.A, { icon: e }),
+                            children: (0, y.jsx)(nn.A, { icon: e }),
                         }),
                         (0, y.jsx)(r2.A, { "aria-label": t, children: l }),
                     ],
@@ -27741,14 +27717,14 @@ ${this.quotedText}`)
                                         {
                                             children: [
                                                 (0, y.jsx)(rT.c.LeadingVisual, {
-                                                    children: (0, y.jsx)(rK.Q, {
+                                                    children: (0, y.jsx)(r_.Q, {
                                                         borderRadius:
                                                             "elliptical",
                                                         height: "md",
                                                         width: "md",
                                                     }),
                                                 }),
-                                                (0, y.jsx)(rK.Q, {
+                                                (0, y.jsx)(r_.Q, {
                                                     height: "sm",
                                                     width: "random",
                                                 }),
@@ -27783,7 +27759,7 @@ ${this.quotedText}`)
                     : (0, y.jsx)(r3, {});
             function r5({ customViewsRef: e, isFullHeight: l }) {
                 let { knownViews: a, knownViewRoutes: n } = es(),
-                    { isNavigationOpen: t } = F();
+                    { isNavigationOpen: t } = S();
                 rA(
                     n,
                     (0, b.useMemo)(
@@ -27849,7 +27825,7 @@ ${this.quotedText}`)
                 r5.displayName || (r5.displayName = "SidebarInternal");
             } catch {}
             function r6({ customViewsRef: e }) {
-                let { isNavigationOpen: l, closeNavigation: a } = F();
+                let { isNavigationOpen: l, closeNavigation: a } = S();
                 return l
                     ? (0, y.jsx)(rP.l, {
                           width: "large",
@@ -27873,7 +27849,7 @@ ${this.quotedText}`)
                         customViewsQuery: a,
                     },
                 }) => {
-                    let n = (0, K.X)(),
+                    let n = (0, _.X)(),
                         t =
                             n?.current_user_settings?.use_single_key_shortcut ||
                             !1,
@@ -27888,10 +27864,10 @@ ${this.quotedText}`)
                         { queryRef: c } = lc(l, eG),
                         { queryRef: m } = lc(a, eW),
                         { setCurrentViewId: g } = eU(),
-                        { pathname: p } = (0, _.zy)(),
+                        { pathname: p } = (0, K.zy)(),
                         k = p.split("/").pop();
                     (0, b.useEffect)(() => {
-                        g(k || S.empty);
+                        g(k || F.empty);
                     }, [k, e, g]);
                     let h = (0, b.useCallback)(
                         (e) => {
@@ -27912,11 +27888,11 @@ ${this.quotedText}`)
                                   s &&
                                       (0, y.jsx)(rR, {
                                           onClose: o,
-                                          children: (0, y.jsx)(lZ.cI, {
+                                          children: (0, y.jsx)(lX.cI, {
                                               itemIdentifier: s,
                                               optionConfig: Object.assign(
                                                   {},
-                                                  lX.C,
+                                                  lY.C,
                                                   {
                                                       shouldSkipSetDocumentTitle:
                                                           !0,
@@ -27929,7 +27905,7 @@ ${this.quotedText}`)
                                                       onParentIssueActivate: u,
                                                       navigateBack: o,
                                                       additionalHeaderActions:
-                                                          (0, y.jsx)(lJ.K, {
+                                                          (0, y.jsx)(l1.K, {
                                                               as: "a",
                                                               role: "link",
                                                               variant:
@@ -27958,43 +27934,44 @@ ${this.quotedText}`)
                     i = (0, er.usePreloadedQuery)(eG, l),
                     r = (0, er.useFragment)(lW, s),
                     o = (0, er.useFragment)(lG, i.node);
-                return i.node && o && a
-                    ? (0, y.jsxs)(lk, {
-                          category: "Issues Dashboard",
-                          children: [
-                              (0, y.jsx)(lY.Y, {
-                                  leftPaneWidth: "small",
-                                  leftPane: {
-                                      element: (0, y.jsx)(r4, {
-                                          customViewsRef: a,
-                                          isFullHeight: !0,
-                                      }),
-                                      ariaLabel: U.viewSidebarPaneAriaLabel,
-                                  },
-                                  middlePane: (0, y.jsxs)("div", {
-                                      className: r7.searchListContainer,
-                                      children: [
-                                          (0, y.jsx)(b.Suspense, {
-                                              fallback: (0, y.jsx)(rv, {}),
-                                              children: (0, y.jsx)(rI, {
-                                                  setSafeDocumentTitle:
-                                                      !!t?.number,
-                                                  currentViewKey: o,
-                                              }),
-                                          }),
-                                          (0, y.jsx)(rt, {
-                                              currentView: i.node,
-                                              onSidePanelNavigate: n,
-                                              itemIdentifier: t,
-                                              search: r,
-                                          }),
-                                      ],
-                                  }),
-                              }),
-                              (0, y.jsx)(r6, { customViewsRef: a }),
-                          ],
-                      })
-                    : null;
+                if (!i.node || !o || !a) return null;
+                let u = (0, k.G7)("global_sso_banner");
+                return (0, y.jsxs)(lk, {
+                    category: "Issues Dashboard",
+                    children: [
+                        u && (0, y.jsx)(lZ.Y0, {}),
+                        (0, y.jsx)(lJ.Y, {
+                            leftPaneWidth: "small",
+                            leftPane: {
+                                element: (0, y.jsx)(r4, {
+                                    customViewsRef: a,
+                                    isFullHeight: !0,
+                                }),
+                                ariaLabel: U.viewSidebarPaneAriaLabel,
+                            },
+                            middlePane: (0, y.jsxs)("div", {
+                                className: r7.searchListContainer,
+                                children: [
+                                    (0, y.jsx)(b.Suspense, {
+                                        fallback: (0, y.jsx)(rv, {}),
+                                        children: (0, y.jsx)(rI, {
+                                            setSafeDocumentTitle: !!t?.number,
+                                            currentViewKey: o,
+                                        }),
+                                    }),
+                                    (0, y.jsx)(rt, {
+                                        currentView: i.node,
+                                        onSidePanelNavigate: n,
+                                        itemIdentifier: t,
+                                        search: r,
+                                        showSsoBanner: !u,
+                                    }),
+                                ],
+                            }),
+                        }),
+                        (0, y.jsx)(r6, { customViewsRef: a }),
+                    ],
+                });
             }
             try {
                 r8.displayName ||
@@ -28215,7 +28192,7 @@ ${this.quotedText}`)
                 onSidePanelNavigate: i,
                 showSsoBanner: r,
             }) {
-                let { ssoOrgs: o } = (0, l3.N)(),
+                let { ssoOrgs: o } = (0, l4.N)(),
                     u = o.map((e) => e.login).filter((e) => void 0 !== e),
                     d = (0, er.useFragment)(on, n),
                     c = (0, er.useFragment)(ot, a),
@@ -28225,17 +28202,17 @@ ${this.quotedText}`)
                 return (0, y.jsxs)("div", {
                     className: oi.SearchContainer,
                     children: [
-                        (0, y.jsx)(aU, {
+                        (0, y.jsx)(aH, {
                             currentViewKey: m,
                             currentRepository: c ?? null,
                             queryFromCustomView: s,
                         }),
                         p && !g
-                            ? (0, y.jsx)(al, {})
+                            ? (0, y.jsx)(aa, {})
                             : (0, y.jsxs)(y.Fragment, {
                                   children: [
                                       r &&
-                                          (0, y.jsx)(l0.x, {
+                                          (0, y.jsx)(l3.x, {
                                               protectedOrgs: u,
                                           }),
                                       (0, y.jsx)(i4, {
@@ -28310,7 +28287,7 @@ ${this.quotedText}`)
                 ou.displayName || (ou.displayName = "List");
             } catch {}
             let od = ({ queries: { pageQuery: e, customViewsQuery: l } }) => {
-                let a = (0, K.X)(),
+                let a = (0, _.X)(),
                     n = a?.current_user_settings?.use_single_key_shortcut || !1,
                     {
                         sidePanelItemIdentifier: t,
@@ -28322,10 +28299,10 @@ ${this.quotedText}`)
                     { queryRef: u, loadQuery: d } = lc(e, eX),
                     { queryRef: c } = lc(l, eW),
                     { setCurrentViewId: m } = eU(),
-                    { pathname: g } = (0, _.zy)(),
+                    { pathname: g } = (0, K.zy)(),
                     p = g.split("/").pop();
                 (0, b.useEffect)(() => {
-                    m(p || S.empty);
+                    m(p || F.empty);
                 }, [p, e, m]);
                 let k = (0, b.useCallback)(
                     (e) => {
@@ -28347,11 +28324,11 @@ ${this.quotedText}`)
                               t &&
                                   (0, y.jsx)(rR, {
                                       onClose: r,
-                                      children: (0, y.jsx)(lZ.cI, {
+                                      children: (0, y.jsx)(lX.cI, {
                                           itemIdentifier: t,
                                           optionConfig: Object.assign(
                                               {},
-                                              lX.C,
+                                              lY.C,
                                               {
                                                   shouldSkipSetDocumentTitle:
                                                       !0,
@@ -28363,7 +28340,7 @@ ${this.quotedText}`)
                                                   onParentIssueActivate: o,
                                                   navigateBack: r,
                                                   additionalHeaderActions: (0,
-                                                  y.jsx)(lJ.K, {
+                                                  y.jsx)(l1.K, {
                                                       as: "a",
                                                       role: "link",
                                                       variant: "invisible",
@@ -28392,11 +28369,13 @@ ${this.quotedText}`)
                         eG,
                         { id: e },
                         { fetchPolicy: "store-only" }
-                    );
+                    ),
+                    r = (0, k.G7)("global_sso_banner");
                 return (0, y.jsxs)(lk, {
                     category: "Issues Dashboard",
                     children: [
-                        (0, y.jsx)(lY.Y, {
+                        r && (0, y.jsx)(lZ.Y0, {}),
+                        (0, y.jsx)(lJ.Y, {
                             leftPaneWidth: "small",
                             leftPane: {
                                 element: (0, y.jsx)(r4, {
@@ -28412,7 +28391,7 @@ ${this.quotedText}`)
                                       fetchedRepository: null,
                                       loadSearchQuery: a,
                                       onSidePanelNavigate: t,
-                                      showSsoBanner: !0,
+                                      showSsoBanner: !r,
                                   })
                                 : void 0,
                         }),
@@ -28425,7 +28404,7 @@ ${this.quotedText}`)
                     (oc.displayName = "IssueDashboardKnownViewPageContent");
             } catch {}
             let om = ({ queries: { pageQuery: e, customViewsQuery: l } }) => {
-                let a = (0, K.X)(),
+                let a = (0, _.X)(),
                     n = a?.current_user_settings?.use_single_key_shortcut || !1,
                     {
                         sidePanelItemIdentifier: t,
@@ -28436,8 +28415,8 @@ ${this.quotedText}`)
                     } = ly(),
                     { queryRef: u, loadQuery: d } = lc(e, eY),
                     { queryRef: c } = lc(l, eW),
-                    { navigateToView: m } = aI(),
-                    { search: g } = (0, _.zy)(),
+                    { navigateToView: m } = a_(),
+                    { search: g } = (0, K.zy)(),
                     p = (0, b.useCallback)(
                         (e) => {
                             let { owner: l, repo: a, number: n } = e;
@@ -28458,11 +28437,11 @@ ${this.quotedText}`)
                                   t &&
                                       (0, y.jsx)(rR, {
                                           onClose: r,
-                                          children: (0, y.jsx)(lZ.cI, {
+                                          children: (0, y.jsx)(lX.cI, {
                                               itemIdentifier: t,
                                               optionConfig: Object.assign(
                                                   {},
-                                                  lX.C,
+                                                  lY.C,
                                                   {
                                                       shouldSkipSetDocumentTitle:
                                                           !0,
@@ -28475,7 +28454,7 @@ ${this.quotedText}`)
                                                       onParentIssueActivate: o,
                                                       navigateBack: r,
                                                       additionalHeaderActions:
-                                                          (0, y.jsx)(lJ.K, {
+                                                          (0, y.jsx)(l1.K, {
                                                               as: "a",
                                                               role: "link",
                                                               variant:
@@ -28510,31 +28489,30 @@ ${this.quotedText}`)
                         { fetchPolicy: "store-only" }
                     ),
                     i = (0, er.usePreloadedQuery)(eY, e);
-                return s && s.node
-                    ? (0, y.jsxs)(lk, {
-                          category: "Issues Dashboard",
-                          children: [
-                              (0, y.jsx)(lY.Y, {
-                                  leftPaneWidth: "small",
-                                  leftPane: {
-                                      element: (0, y.jsx)(r4, {
-                                          customViewsRef: a,
-                                      }),
-                                      ariaLabel: U.viewSidebarPaneAriaLabel,
-                                  },
-                                  middlePane: (0, y.jsx)(ou, {
-                                      fetchedView: s.node,
-                                      fetchedRepository: null,
-                                      search: i,
-                                      loadSearchQuery: l,
-                                      onSidePanelNavigate: n,
-                                      showSsoBanner: !0,
-                                  }),
-                              }),
-                              (0, y.jsx)(r6, { customViewsRef: a }),
-                          ],
-                      })
-                    : null;
+                if (!s || !s.node) return null;
+                let r = (0, k.G7)("global_sso_banner");
+                return (0, y.jsxs)(lk, {
+                    category: "Issues Dashboard",
+                    children: [
+                        r && (0, y.jsx)(lZ.Y0, {}),
+                        (0, y.jsx)(lJ.Y, {
+                            leftPaneWidth: "small",
+                            leftPane: {
+                                element: (0, y.jsx)(r4, { customViewsRef: a }),
+                                ariaLabel: U.viewSidebarPaneAriaLabel,
+                            },
+                            middlePane: (0, y.jsx)(ou, {
+                                fetchedView: s.node,
+                                fetchedRepository: null,
+                                search: i,
+                                loadSearchQuery: l,
+                                onSidePanelNavigate: n,
+                                showSsoBanner: !r,
+                            }),
+                        }),
+                        (0, y.jsx)(r6, { customViewsRef: a }),
+                    ],
+                });
             }
             try {
                 og.displayName ||
@@ -29152,10 +29130,10 @@ ${this.quotedText}`)
                     [k, h] = (0, b.useState)(null),
                     f = (0, er.useRelayEnvironment)(),
                     C = (0, b.useRef)(0),
-                    [F, S] = (0, b.useState)(void 0),
+                    [S, F] = (0, b.useState)(void 0),
                     L = (0, b.useRef)(null),
                     I = (0, b.useRef)(null),
-                    K = (0, b.useRef)(!1);
+                    _ = (0, b.useRef)(!1);
                 (o[0] === Symbol.for("react.memo_cache_sentinel")
                     ? ((l = () => () => {
                           L.current && clearTimeout(L.current);
@@ -29178,12 +29156,12 @@ ${this.quotedText}`)
                           (o[4] = k),
                           (o[5] = n))
                         : (n = o[5]));
-                let _ = n;
+                let K = n;
                 o[6] !== m ||
                 o[7] !== g ||
                 o[8] !== d ||
                 o[9] !== f ||
-                o[10] !== _
+                o[10] !== K
                     ? ((t = (e) => ({
                           subscription: op,
                           variables: { id: e },
@@ -29194,7 +29172,7 @@ ${this.quotedText}`)
                                   !e.jobStatusUpdated ||
                                   !e.jobStatusUpdated.jobStatus
                               )
-                                  return void _();
+                                  return void K();
                               let { jobStatusUpdated: a } = e,
                                   n = a?.jobStatus,
                                   t =
@@ -29205,7 +29183,7 @@ ${this.quotedText}`)
                                       type: "error",
                                       message: "Bulk update had an error",
                                   }),
-                                      _());
+                                      K());
                                   return;
                               }
                               let s = new Date(n.updatedAt),
@@ -29216,7 +29194,7 @@ ${this.quotedText}`)
                                           type: "error",
                                           message: "Bulk update had an error",
                                       }),
-                                          _());
+                                          K());
                                       break;
                                   case "PENDING":
                                   case "QUEUED":
@@ -29241,7 +29219,7 @@ ${this.quotedText}`)
                                                     "Issue bulk edit job mutation did not create a job (no job id)"
                                                 )
                                             ),
-                                            _());
+                                            K());
                                       break;
                                   case "STARTED":
                                       if (100 === C.current) break;
@@ -29252,7 +29230,7 @@ ${this.quotedText}`)
                                           (l = C.current),
                                           i > 3e5)
                                       ) {
-                                          (_(),
+                                          (K(),
                                               g({
                                                   type: "error",
                                                   message:
@@ -29267,7 +29245,7 @@ ${this.quotedText}`)
                                       }
                                       (L.current && clearTimeout(L.current),
                                           (L.current = setTimeout(() => {
-                                              S(Date.now());
+                                              F(Date.now());
                                           }, 6e4)),
                                           d &&
                                               m({
@@ -29288,15 +29266,15 @@ ${this.quotedText}`)
                                           }),
                                           n.jobId &&
                                               n.jobId !== I.current &&
-                                              (K.current = !1),
+                                              (_.current = !1),
                                           n.jobId === I.current ||
-                                              K.current ||
-                                              ((0, nd.i)(
+                                              _.current ||
+                                              ((0, nc.i)(
                                                   `Bulk update completed ${t > 0 ? "with errors" : "successfully"}`
                                               ),
-                                              (K.current = !0),
+                                              (_.current = !0),
                                               (I.current = n.jobId)),
-                                          _(),
+                                          K(),
                                           t > 0)
                                       ) {
                                           let e = n.executionErrors.map(ob),
@@ -29315,7 +29293,7 @@ ${this.quotedText}`)
                                       break;
                                   default:
                                       throw (
-                                          _(),
+                                          K(),
                                           Error(
                                               `Unexpected job status: ${n.state}`
                                           )
@@ -29327,7 +29305,7 @@ ${this.quotedText}`)
                       (o[7] = g),
                       (o[8] = d),
                       (o[9] = f),
-                      (o[10] = _),
+                      (o[10] = K),
                       (o[11] = t))
                     : (t = o[11]);
                 let x = t;
@@ -29336,27 +29314,27 @@ ${this.quotedText}`)
                     o[13] !== p ||
                     o[14] !== x ||
                     o[15] !== f ||
-                    o[16] !== F ||
+                    o[16] !== S ||
                     o[17] !== k
                         ? ((s = () => {
                               d
-                                  ? (!k || F) &&
+                                  ? (!k || S) &&
                                     (h((0, er.requestSubscription)(f, x(d))),
-                                    F &&
+                                    S &&
                                         (0, e8.N7)(
                                             Error(
                                                 `Issue bulk edit job(${d}) did not send an update after 1 minute (subscription msg not received)`
                                             )
                                         ),
-                                    S(void 0))
+                                    F(void 0))
                                   : p();
                           }),
-                          (i = [x, f, d, h, F, k, p]),
+                          (i = [x, f, d, h, S, k, p]),
                           (o[12] = d),
                           (o[13] = p),
                           (o[14] = x),
                           (o[15] = f),
-                          (o[16] = F),
+                          (o[16] = S),
                           (o[17] = k),
                           (o[18] = s),
                           (o[19] = i))
@@ -29478,7 +29456,7 @@ ${this.quotedText}`)
                 };
             })();
             oC.hash = "a3f69364d9a035e3974c1bbe5362d35c";
-            let oF = {
+            let oS = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -29541,8 +29519,8 @@ ${this.quotedText}`)
                 type: "Repository",
                 abstractKey: null,
             };
-            oF.hash = "70d7c59b6eb3bd2d43672a5457a4bf4f";
-            let oS = (function () {
+            oS.hash = "70d7c59b6eb3bd2d43672a5457a4bf4f";
+            let oF = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -29602,7 +29580,7 @@ ${this.quotedText}`)
                     },
                 };
             })();
-            oS.hash = "a7ab55b350a1a7ea25ac34d44f953470";
+            oF.hash = "a7ab55b350a1a7ea25ac34d44f953470";
             let oL = (function () {
                 var e = [
                         {
@@ -29685,14 +29663,14 @@ ${this.quotedText}`)
                                     }),
                                     (0, y.jsx)(sv.W.Overlay, {
                                         width: "medium",
-                                        children: (0, y.jsxs)(aX.l, {
+                                        children: (0, y.jsxs)(aY.l, {
                                             children: [
-                                                (0, y.jsx)(aX.l.Item, {
+                                                (0, y.jsx)(aY.l.Item, {
                                                     onSelect: s,
                                                     children:
                                                         "Dismiss for this repository only",
                                                 }),
-                                                (0, y.jsx)(aX.l.Item, {
+                                                (0, y.jsx)(aY.l.Item, {
                                                     onSelect: t,
                                                     children:
                                                         "Dismiss for all repositories",
@@ -29726,7 +29704,7 @@ ${this.quotedText}`)
                                                 "https://opensource.guide/",
                                             target: "_blank",
                                             "data-testid":
-                                                ni.ftcBannerContributingGuidelinesLink,
+                                                nr.ftcBannerContributingGuidelinesLink,
                                             children: "contributing guidelines",
                                         }),
                                         (0, y.jsx)("span", {
@@ -29765,14 +29743,14 @@ ${this.quotedText}`)
                 oI.displayName ||
                     (oI.displayName = "FirstTimeContributionBannerDisplay");
             } catch {}
-            let oK = ({ repository: e }) => {
+            let o_ = ({ repository: e }) => {
                     let l = (0, er.useRelayEnvironment)(),
                         [a, n] = (0, er.useQueryLoader)(oC),
-                        t = (0, er.useFragment)(oF, e),
+                        t = (0, er.useFragment)(oS, e),
                         s = (0, b.useCallback)(() => {
                             !(function ({ environment: e, repositoryId: l }) {
                                 (0, er.commitMutation)(e, {
-                                    mutation: oS,
+                                    mutation: oF,
                                     variables: {
                                         input: {
                                             notice: "first_time_contributor_issues_banner",
@@ -29837,7 +29815,7 @@ ${this.quotedText}`)
                         ? a
                             ? (0, y.jsx)(b.Suspense, {
                                   fallback: r,
-                                  children: (0, y.jsx)(o_, {
+                                  children: (0, y.jsx)(oK, {
                                       queryRef: a,
                                       data: t,
                                       dismissForThisRepo: s,
@@ -29847,7 +29825,7 @@ ${this.quotedText}`)
                             : r
                         : null;
                 },
-                o_ = ({
+                oK = ({
                     data: e,
                     queryRef: l,
                     dismissForAllRepos: a,
@@ -29867,12 +29845,12 @@ ${this.quotedText}`)
                     });
                 };
             try {
-                oK.displayName ||
-                    (oK.displayName = "FirstTimeContributionBanner");
+                o_.displayName ||
+                    (o_.displayName = "FirstTimeContributionBanner");
             } catch {}
             try {
-                o_.displayName ||
-                    (o_.displayName = "FirstTimeContributionBannerInternal");
+                oK.displayName ||
+                    (oK.displayName = "FirstTimeContributionBannerInternal");
             } catch {}
             let ov = (function () {
                 var e = {
@@ -30422,13 +30400,13 @@ ${this.quotedText}`)
                     }, [n, l, a]),
                     s = (0, b.useRef)(null);
                 if (!l) return (0, y.jsx)(y.Fragment, {});
-                let i = tu(
+                let i =
                         "CLOSED" === l.state && "NOT_PLANNED" === l.stateReason
                             ? "NOT_PLANNED"
-                            : l.state
-                    ),
-                    r = l.totalCommentsCount ?? 0,
-                    o = new Date(l.createdAt);
+                            : l.state,
+                    r = (0, tu.q)(i),
+                    o = l.totalCommentsCount ?? 0,
+                    u = new Date(l.createdAt);
                 return (0, y.jsx)("div", {
                     className: oT.PinnedIssueContainer,
                     children: (0, y.jsxs)("div", {
@@ -30439,17 +30417,17 @@ ${this.quotedText}`)
                                 children: [
                                     (0, y.jsxs)(lo.A, {
                                         "aria-label": `View ${l.title}`,
-                                        className: (0, nn.$)(
+                                        className: (0, nt.$)(
                                             "css-truncate",
                                             oT.Link
                                         ),
                                         href: l.url,
                                         muted: !0,
                                         children: [
-                                            (0, y.jsx)(na.A, {
-                                                sx: { color: i.color },
-                                                icon: i.icon,
-                                                "aria-label": i.description,
+                                            (0, y.jsx)(nn.A, {
+                                                sx: { color: r.color },
+                                                icon: r.icon,
+                                                "aria-label": r.description,
                                                 className: oT.Octicon,
                                             }),
                                             (0, y.jsx)(tH.JR, {
@@ -30462,7 +30440,7 @@ ${this.quotedText}`)
                                             anchorRef: s,
                                             children: [
                                                 (0, y.jsx)(sv.W.Anchor, {
-                                                    children: (0, y.jsx)(lJ.K, {
+                                                    children: (0, y.jsx)(l1.K, {
                                                         size: "small",
                                                         icon: T.KebabHorizontalIcon,
                                                         variant: "invisible",
@@ -30475,12 +30453,12 @@ ${this.quotedText}`)
                                                 (0, y.jsx)(sv.W.Overlay, {
                                                     width: "medium",
                                                     children: (0, y.jsxs)(
-                                                        aX.l,
+                                                        aY.l,
                                                         {
                                                             children: [
                                                                 l &&
                                                                     (0, y.jsxs)(
-                                                                        aX.l
+                                                                        aY.l
                                                                             .Item,
                                                                         {
                                                                             onSelect:
@@ -30490,14 +30468,14 @@ ${this.quotedText}`)
                                                                                 [
                                                                                     (0,
                                                                                     y.jsx)(
-                                                                                        aX
+                                                                                        aY
                                                                                             .l
                                                                                             .LeadingVisual,
                                                                                         {
                                                                                             children:
                                                                                                 (0,
                                                                                                 y.jsx)(
-                                                                                                    na.A,
+                                                                                                    nn.A,
                                                                                                     {
                                                                                                         icon: T.PinSlashIcon,
                                                                                                     }
@@ -30550,11 +30528,11 @@ ${this.quotedText}`)
                                             (0, y.jsx)("span", {
                                                 children: "opened ",
                                             }),
-                                            (0, y.jsxs)(n7.A, {
-                                                date: o,
+                                            (0, y.jsxs)(n9.A, {
+                                                date: u,
                                                 children: [
                                                     "on ",
-                                                    o.toLocaleDateString(
+                                                    u.toLocaleDateString(
                                                         "en-US",
                                                         {
                                                             month: "short",
@@ -30566,19 +30544,19 @@ ${this.quotedText}`)
                                             }),
                                         ],
                                     }),
-                                    r > 0 &&
+                                    o > 0 &&
                                         (0, y.jsxs)("div", {
                                             className: oT.commentCountContainer,
                                             children: [
-                                                (0, y.jsx)(na.A, {
+                                                (0, y.jsx)(nn.A, {
                                                     icon: T.CommentIcon,
-                                                    "aria-label": `${r} comments`,
+                                                    "aria-label": `${o} comments`,
                                                     className: oT.commentIcon,
                                                 }),
                                                 (0, y.jsx)("span", {
                                                     className:
                                                         oT.commentCountText,
-                                                    children: r,
+                                                    children: o,
                                                 }),
                                             ],
                                         }),
@@ -30589,11 +30567,11 @@ ${this.quotedText}`)
                 });
             }
             function oM({ onClick: e }) {
-                return (0, y.jsxs)(aX.l.Item, {
+                return (0, y.jsxs)(aY.l.Item, {
                     onSelect: e,
                     children: [
-                        (0, y.jsx)(aX.l.LeadingVisual, {
-                            children: (0, y.jsx)(na.A, { icon: T.GrabberIcon }),
+                        (0, y.jsx)(aY.l.LeadingVisual, {
+                            children: (0, y.jsx)(nn.A, { icon: T.GrabberIcon }),
                         }),
                         "Advanced move...",
                     ],
@@ -30759,7 +30737,7 @@ ${this.quotedText}`)
                     let { queryRef: l, loadQuery: a } = lc(e, eJ),
                         { setCurrentViewId: n } = eU();
                     return ((0, b.useEffect)(() => {
-                        n(S.repository);
+                        n(F.repository);
                     }, [e, n]),
                     l)
                         ? (0, y.jsx)(oO, { pageQueryRef: l, loadQuery: a })
@@ -30768,7 +30746,7 @@ ${this.quotedText}`)
             function oO({ pageQueryRef: e, loadQuery: l }) {
                 let a = (0, er.useLazyLoadQuery)(
                         eG,
-                        { id: S.repository },
+                        { id: F.repository },
                         { fetchPolicy: "store-only" }
                     ),
                     { bulkJobId: n, setBulkJobId: t } = eH(),
@@ -30780,7 +30758,7 @@ ${this.quotedText}`)
                               bulkJobId: n,
                               setBulkJobId: t,
                               children: [
-                                  (0, y.jsx)(lY.Y, {
+                                  (0, y.jsx)(lJ.Y, {
                                       contentAs: "div",
                                       resizeable: !1,
                                       leftPaneWidth: "small",
@@ -30789,7 +30767,7 @@ ${this.quotedText}`)
                                               className: oE.middlePaneGrid,
                                               children: [
                                                   (0, y.jsx)(rD, {}),
-                                                  (0, y.jsx)(oK, {
+                                                  (0, y.jsx)(o_, {
                                                       repository: s.repository,
                                                   }),
                                                   (0, y.jsx)(oD, {
@@ -30895,9 +30873,9 @@ ${this.quotedText}`)
                             setSidePanelItemIdentifier: s,
                             sidePanelItemURL: i,
                         } = ly(),
-                        { onIssueHrefLinkClick: r, navigateToRoot: o } = aI(),
+                        { onIssueHrefLinkClick: r, navigateToRoot: o } = a_(),
                         { query: u } = (0, er.useFragment)(o$, e),
-                        d = (0, K.X)(),
+                        d = (0, _.X)(),
                         c =
                             d?.current_user_settings
                                 ?.paste_url_link_as_plain_text || !1,
@@ -30910,7 +30888,7 @@ ${this.quotedText}`)
                         h = (0, b.useCallback)(() => {
                             o(n ?? ee.id, u);
                         }, [n, u, o]),
-                        { navigateToUrl: f } = aI(),
+                        { navigateToUrl: f } = a_(),
                         C = (0, b.useCallback)(
                             (e) => {
                                 let { owner: l, repo: a, number: n } = e;
@@ -30923,10 +30901,10 @@ ${this.quotedText}`)
                             },
                             [s]
                         ),
-                        F = (0, b.useCallback)(() => {
+                        S = (0, b.useCallback)(() => {
                             s(null);
                         }, [s]),
-                        [S, L] = (0, sB.Fo)(
+                        [F, L] = (0, sB.Fo)(
                             `${d.scoped_repository?.owner}-${d.scoped_repository?.name}-deletedRecordId`,
                             ""
                         ),
@@ -30936,14 +30914,14 @@ ${this.quotedText}`)
                             },
                             [L]
                         ),
-                        _ = (0, b.useCallback)(
+                        K = (0, b.useCallback)(
                             (e, l) =>
                                 !!a &&
                                 l.owner === a.owner &&
                                 l.repo === a.repo &&
                                 l.number === a.number &&
-                                (e.preventDefault(), F(), !0),
-                            [a, F]
+                                (e.preventDefault(), S(), !0),
+                            [a, S]
                         );
                     return (
                         oU((e, l) => {
@@ -30954,18 +30932,18 @@ ${this.quotedText}`)
                         (0, y.jsxs)(y.Fragment, {
                             children: [
                                 (0, y.jsx)("div", {
-                                    className: (0, nn.$)(
+                                    className: (0, nt.$)(
                                         "primary-viewer",
                                         oH.IssueDetailContainer
                                     ),
-                                    "data-testid": ni.issueViewerContainer,
+                                    "data-testid": nr.issueViewerContainer,
                                     children: (0, y.jsx)(b.Suspense, {
                                         fallback: (0, y.jsx)("span", {
                                             children: "Loading Issue...",
                                         }),
                                         children:
                                             a &&
-                                            (0, y.jsx)(lZ.cI, {
+                                            (0, y.jsx)(lX.cI, {
                                                 itemIdentifier: a,
                                                 optionConfig: {
                                                     withLiveUpdates: !0,
@@ -31002,25 +30980,25 @@ ${this.quotedText}`)
                                 }),
                                 t &&
                                     (0, y.jsx)(rR, {
-                                        onClose: F,
-                                        children: (0, y.jsx)(lZ.cI, {
+                                        onClose: S,
+                                        children: (0, y.jsx)(lX.cI, {
                                             itemIdentifier: t,
                                             optionConfig: Object.assign(
                                                 {},
-                                                lX.C,
+                                                lY.C,
                                                 {
                                                     shouldSkipSetDocumentTitle:
                                                         !0,
-                                                    onClose: F,
+                                                    onClose: S,
                                                     insideSidePanel: !0,
                                                     singleKeyShortcutsEnabled:
                                                         g,
                                                     onSubIssueClick: C,
-                                                    onParentIssueActivate: _,
+                                                    onParentIssueActivate: K,
                                                     onIssueDelete: I,
-                                                    navigateBack: F,
+                                                    navigateBack: S,
                                                     additionalHeaderActions: (0,
-                                                    y.jsx)(lJ.K, {
+                                                    y.jsx)(l1.K, {
                                                         as: "a",
                                                         role: "link",
                                                         variant: "invisible",
@@ -31041,10 +31019,10 @@ ${this.quotedText}`)
                 oz.displayName || (oz.displayName = "IssueDetail");
             } catch {}
             let oW = ({ queries: { ...e } }) => {
-                let { scoped_repository: l } = (0, K.X)(),
+                let { scoped_repository: l } = (0, _.X)(),
                     { currentViewId: a, setCurrentViewId: n } = eU(),
                     { bulkJobId: t, setBulkJobId: s } = eH(),
-                    i = a || (l ? S.repository : S.assignedToMe);
+                    i = a || (l ? F.repository : F.assignedToMe);
                 l && !a && n(i);
                 let r = (0, er.useLazyLoadQuery)(
                     eG,
@@ -31485,12 +31463,12 @@ ${this.quotedText}`)
                     h,
                     f,
                     C,
-                    F,
                     S,
+                    F,
                     L,
                     I,
-                    K,
                     _,
+                    K,
                     v,
                     x,
                     w = (0, sH.c)(68),
@@ -31617,7 +31595,7 @@ ${this.quotedText}`)
                           (w[19] = o))
                         : (o = w[19]),
                     w[20] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((u = (0, y.jsx)(ap.A.Label, {
+                        ? ((u = (0, y.jsx)(ay.A.Label, {
                               htmlFor: "milestone-title",
                               children: o2.title,
                           })),
@@ -31638,7 +31616,7 @@ ${this.quotedText}`)
                     w[24] !== G
                         ? ((c =
                               G &&
-                              (0, y.jsx)(ap.A.Validation, {
+                              (0, y.jsx)(ay.A.Validation, {
                                   variant: "error",
                                   children: G,
                               })),
@@ -31646,7 +31624,7 @@ ${this.quotedText}`)
                           (w[25] = c))
                         : (c = w[25]),
                     w[26] !== z || w[27] !== d || w[28] !== c
-                        ? ((m = (0, y.jsxs)(ap.A, {
+                        ? ((m = (0, y.jsxs)(ay.A, {
                               className: o0.formControl,
                               id: "milestone-title",
                               disabled: z,
@@ -31659,14 +31637,14 @@ ${this.quotedText}`)
                           (w[29] = m))
                         : (m = w[29]),
                     w[30] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((g = (0, y.jsx)(ap.A.Label, {
+                        ? ((g = (0, y.jsx)(ay.A.Label, {
                               htmlFor: "milestone-due-on",
                               children: o2.dueDate,
                           })),
                           (w[30] = g))
                         : (g = w[30]),
                     w[31] !== U || w[32] !== z
-                        ? ((p = (0, y.jsxs)(ap.A, {
+                        ? ((p = (0, y.jsxs)(ay.A, {
                               className: o0.formControl,
                               id: "milestone-due-on",
                               children: [
@@ -31689,7 +31667,7 @@ ${this.quotedText}`)
                           (w[33] = p))
                         : (p = w[33]),
                     w[34] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((k = (0, y.jsx)(ap.A.Label, {
+                        ? ((k = (0, y.jsx)(ay.A.Label, {
                               htmlFor: "milestone-description",
                               children: o2.description,
                           })),
@@ -31710,7 +31688,7 @@ ${this.quotedText}`)
                           (w[37] = f))
                         : (f = w[37]),
                     w[38] !== z || w[39] !== f
-                        ? ((C = (0, y.jsxs)(ap.A, {
+                        ? ((C = (0, y.jsxs)(ay.A, {
                               className: o0.formControl,
                               id: "milestone-description",
                               disabled: z,
@@ -31721,31 +31699,31 @@ ${this.quotedText}`)
                           (w[40] = C))
                         : (C = w[40]),
                     w[41] !== m || w[42] !== p || w[43] !== C
-                        ? ((F = (0, y.jsxs)("div", {
+                        ? ((S = (0, y.jsxs)("div", {
                               className: o0.formWrapper,
                               children: [m, p, C],
                           })),
                           (w[41] = m),
                           (w[42] = p),
                           (w[43] = C),
-                          (w[44] = F))
-                        : (F = w[44]));
+                          (w[44] = S))
+                        : (S = w[44]));
                 let ea = `${o0.buttonRow} ${D ? "flex-justify-between" : "flex-justify-end"}`;
                 return (
                     w[45] !== D || w[46] !== E
-                        ? ((S =
+                        ? ((F =
                               D &&
                               E &&
-                              (0, y.jsx)(aq.Q, {
+                              (0, y.jsx)(aO.Q, {
                                   onClick: (e) => D?.(e, W),
                                   children: E,
                               })),
                           (w[45] = D),
                           (w[46] = E),
-                          (w[47] = S))
-                        : (S = w[47]),
+                          (w[47] = F))
+                        : (F = w[47]),
                     w[48] !== j
-                        ? ((L = (0, y.jsx)(aq.Q, {
+                        ? ((L = (0, y.jsx)(aO.Q, {
                               onClick: j,
                               children: o2.cancel,
                           })),
@@ -31753,7 +31731,7 @@ ${this.quotedText}`)
                           (w[49] = L))
                         : (L = w[49]),
                     w[50] !== q || w[51] !== z
-                        ? ((I = (0, y.jsx)(aq.Q, {
+                        ? ((I = (0, y.jsx)(aO.Q, {
                               type: "submit",
                               variant: "primary",
                               loading: z,
@@ -31764,32 +31742,32 @@ ${this.quotedText}`)
                           (w[52] = I))
                         : (I = w[52]),
                     w[53] !== L || w[54] !== I
-                        ? ((K = (0, y.jsxs)("div", {
+                        ? ((_ = (0, y.jsxs)("div", {
                               className: o0.buttonGroup,
                               children: [L, I],
                           })),
                           (w[53] = L),
                           (w[54] = I),
-                          (w[55] = K))
-                        : (K = w[55]),
-                    w[56] !== ea || w[57] !== S || w[58] !== K
-                        ? ((_ = (0, y.jsxs)("div", {
+                          (w[55] = _))
+                        : (_ = w[55]),
+                    w[56] !== ea || w[57] !== F || w[58] !== _
+                        ? ((K = (0, y.jsxs)("div", {
                               className: ea,
-                              children: [S, K],
-                          })),
-                          (w[56] = ea),
-                          (w[57] = S),
-                          (w[58] = K),
-                          (w[59] = _))
-                        : (_ = w[59]),
-                    w[60] !== J || w[61] !== F || w[62] !== _
-                        ? ((v = (0, y.jsxs)("form", {
-                              onSubmit: J,
                               children: [F, _],
                           })),
+                          (w[56] = ea),
+                          (w[57] = F),
+                          (w[58] = _),
+                          (w[59] = K))
+                        : (K = w[59]),
+                    w[60] !== J || w[61] !== S || w[62] !== K
+                        ? ((v = (0, y.jsxs)("form", {
+                              onSubmit: J,
+                              children: [S, K],
+                          })),
                           (w[60] = J),
-                          (w[61] = F),
-                          (w[62] = _),
+                          (w[61] = S),
+                          (w[62] = K),
                           (w[63] = v))
                         : (v = w[63]),
                     w[64] !== v || w[65] !== i || w[66] !== o
@@ -31816,7 +31794,7 @@ ${this.quotedText}`)
                 milestonePageDescription:
                     "MilestoneCreateEdit-module__milestonePageDescription--mGCls",
             };
-            var o5 = a(93116);
+            var o5 = a(32647);
             let o6 = {
                     middlePaneWrapper:
                         "RepositoryMilestone-module__middlePaneWrapper--VBdKn",
@@ -32436,7 +32414,7 @@ ${this.quotedText}`)
                         ? ((i = (0, y.jsx)("div", {
                               className: o4.middlePaneWrapper,
                               "data-testid": "milestone-edit",
-                              children: (0, y.jsx)(sK.t, {
+                              children: (0, y.jsx)(s_.t, {
                                   fallback: s,
                                   children: (0, y.jsx)(o3, {
                                       repository: g,
@@ -32484,7 +32462,7 @@ ${this.quotedText}`)
                 let l = (0, er.usePreloadedQuery)(oG, e),
                     { setCurrentViewId: a } = eU();
                 return ((0, b.useEffect)(() => {
-                    a(S.repository);
+                    a(F.repository);
                 }, [e, a]),
                 l.repository)
                     ? (0, y.jsx)(ui, { repository: l.repository })
@@ -32497,7 +32475,7 @@ ${this.quotedText}`)
             }
             function ui({ repository: e }) {
                 let l = (0, er.useFragment)(oZ, e),
-                    { current_user_settings: a } = (0, K.X)(),
+                    { current_user_settings: a } = (0, _.X)(),
                     n = {
                         useMonospaceFont: a.use_monospace_font,
                         pasteUrlsAsPlainText: a.paste_url_link_as_plain_text,
@@ -32895,7 +32873,7 @@ ${this.quotedText}`)
                               className: o4.middlePaneWrapper,
                               "data-hpc": !0,
                               "data-testid": "milestone-create",
-                              children: (0, y.jsx)(sK.t, {
+                              children: (0, y.jsx)(s_.t, {
                                   fallback: t,
                                   children: (0, y.jsx)(o3, {
                                       repository: c,
@@ -32938,7 +32916,7 @@ ${this.quotedText}`)
                 let l = (0, er.usePreloadedQuery)(ur, e),
                     { setCurrentViewId: a } = eU();
                 return ((0, b.useEffect)(() => {
-                    a(S.repository);
+                    a(F.repository);
                 }, [e, a]),
                 l.repository)
                     ? (0, y.jsx)(uy, { repository: l.repository })
@@ -32951,7 +32929,7 @@ ${this.quotedText}`)
             }
             function uy({ repository: e }) {
                 let l = (0, er.useFragment)(uo, e),
-                    { current_user_settings: a } = (0, K.X)(),
+                    { current_user_settings: a } = (0, _.X)(),
                     n = {
                         useMonospaceFont: a.use_monospace_font,
                         pasteUrlsAsPlainText: a.paste_url_link_as_plain_text,
@@ -33164,9 +33142,9 @@ ${this.quotedText}`)
                 updateLabelError: "There was an error updating this label",
             };
             var uC = a(80249),
-                uF = a(47990);
-            let uS = (e = 1, l) => {
-                    let { colorScheme: a } = (0, l5.DP)(),
+                uS = a(47990);
+            let uF = (e = 1, l) => {
+                    let { colorScheme: a } = (0, l6.DP)(),
                         n = (0, b.useMemo)(
                             () => a?.includes("high_contrast"),
                             [a]
@@ -33206,8 +33184,8 @@ ${this.quotedText}`)
                             [n, e]
                         );
                     return (0, b.useMemo)(() => {
-                        let [e, n, i] = (0, uF.Du)(l),
-                            [r, o, u] = (0, uF.BT)(l);
+                        let [e, n, i] = (0, uS.Du)(l),
+                            [r, o, u] = (0, uS.BT)(l);
                         return {
                             "--label-r": String(e),
                             "--label-g": String(n),
@@ -33244,7 +33222,7 @@ ${this.quotedText}`)
                     "#0052cc",
                     "#5319e7",
                 ],
-                uK = [
+                u_ = [
                     "#e99695",
                     "#f9d0c4",
                     "#fef2c0",
@@ -33254,7 +33232,7 @@ ${this.quotedText}`)
                     "#bfd4f2",
                     "#d4c5f9",
                 ],
-                u_ = {
+                uK = {
                     "#b60205": "Red",
                     "#d93f0b": "Orange",
                     "#fbca04": "Yellow",
@@ -33297,45 +33275,45 @@ ${this.quotedText}`)
                     h,
                     f,
                     C,
-                    F = (0, sH.c)(39),
-                    { color: S, onChangeCallback: L } = e,
-                    [I, K] = (0, b.useState)(S),
-                    [_, v] = (0, b.useState)(S),
+                    S = (0, sH.c)(39),
+                    { color: F, onChangeCallback: L } = e,
+                    [I, _] = (0, b.useState)(F),
+                    [K, v] = (0, b.useState)(F),
                     [x, w] = (0, b.useState)(!1),
-                    N = uS(1, _);
-                F[0] !== L
+                    N = uF(1, K);
+                S[0] !== L
                     ? ((a = (e) => {
-                          (K(e), ux(e) && v(e), L?.(e));
+                          (_(e), ux(e) && v(e), L?.(e));
                       }),
-                      (F[0] = L),
-                      (F[1] = a))
-                    : (a = F[1]);
+                      (S[0] = L),
+                      (S[1] = a))
+                    : (a = S[1]);
                 let j = a;
-                F[2] !== j
-                    ? ((n = () => j(uv())), (F[2] = j), (F[3] = n))
-                    : (n = F[3]);
+                S[2] !== j
+                    ? ((n = () => j(uv())), (S[2] = j), (S[3] = n))
+                    : (n = S[3]);
                 let R = n;
-                F[4] !== j
-                    ? ((t = (e) => j(e.target.value)), (F[4] = j), (F[5] = t))
-                    : (t = F[5]);
+                S[4] !== j
+                    ? ((t = (e) => j(e.target.value)), (S[4] = j), (S[5] = t))
+                    : (t = S[5]);
                 let P = t;
-                F[6] !== j
+                S[6] !== j
                     ? ((s = (e) => {
                           (j(e), w(!1));
                       }),
-                      (F[6] = j),
-                      (F[7] = s))
-                    : (s = F[7]);
+                      (S[6] = j),
+                      (S[7] = s))
+                    : (s = S[7]);
                 let A = s;
-                F[8] !== A
+                S[8] !== A
                     ? ((i = (e, l) =>
                           (0, y.jsx)(
-                              aq.Q,
+                              aO.Q,
                               {
                                   variant: "invisible",
                                   className: uL.color,
                                   style: { backgroundColor: e },
-                                  "aria-label": `${u_[e] ?? "Color:"} (${e})`,
+                                  "aria-label": `${uK[e] ?? "Color:"} (${e})`,
                                   onClick: () => {
                                       A(e);
                                   },
@@ -33343,57 +33321,57 @@ ${this.quotedText}`)
                               },
                               l
                           )),
-                      (F[8] = A),
-                      (F[9] = i))
-                    : (i = F[9]);
+                      (S[8] = A),
+                      (S[9] = i))
+                    : (i = S[9]);
                 let M = i;
-                (F[10] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((r = (0, y.jsx)(ap.A.Label, { children: "Color" })),
-                      (F[10] = r))
-                    : (r = F[10]),
-                    F[11] !== _ || F[12] !== N
-                        ? ((o = { ...N, backgroundColor: _ }),
-                          (F[11] = _),
-                          (F[12] = N),
-                          (F[13] = o))
-                        : (o = F[13]),
-                    F[14] !== R || F[15] !== o
-                        ? ((u = (0, y.jsx)(lJ.K, {
+                (S[10] === Symbol.for("react.memo_cache_sentinel")
+                    ? ((r = (0, y.jsx)(ay.A.Label, { children: "Color" })),
+                      (S[10] = r))
+                    : (r = S[10]),
+                    S[11] !== K || S[12] !== N
+                        ? ((o = { ...N, backgroundColor: K }),
+                          (S[11] = K),
+                          (S[12] = N),
+                          (S[13] = o))
+                        : (o = S[13]),
+                    S[14] !== R || S[15] !== o
+                        ? ((u = (0, y.jsx)(l1.K, {
                               style: o,
                               icon: T.SyncIcon,
                               "aria-label": "Choose random color",
                               title: "Choose random color",
                               onClick: R,
                           })),
-                          (F[14] = R),
-                          (F[15] = o),
-                          (F[16] = u))
-                        : (u = F[16]));
-                let V = `${u_[_] ?? "Color:"} (${_})`;
-                (F[17] !== V
-                    ? ((d = (0, y.jsx)(ap.A.Label, {
+                          (S[14] = R),
+                          (S[15] = o),
+                          (S[16] = u))
+                        : (u = S[16]));
+                let V = `${uK[K] ?? "Color:"} (${K})`;
+                (S[17] !== V
+                    ? ((d = (0, y.jsx)(ay.A.Label, {
                           visuallyHidden: !0,
                           children: V,
                       })),
-                      (F[17] = V),
-                      (F[18] = d))
-                    : (d = F[18]),
-                    F[19] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((c = (0, nI.G)("color-input")), (F[19] = c))
-                        : (c = F[19]),
-                    F[20] === Symbol.for("react.memo_cache_sentinel")
+                      (S[17] = V),
+                      (S[18] = d))
+                    : (d = S[18]),
+                    S[19] === Symbol.for("react.memo_cache_sentinel")
+                        ? ((c = (0, n_.G)("color-input")), (S[19] = c))
+                        : (c = S[19]),
+                    S[20] === Symbol.for("react.memo_cache_sentinel")
                         ? ((m = () => w(!0)),
                           (g = (e) => {
                               (e.relatedTarget &&
                                   e.relatedTarget.closest(`.${uL.popup}`)) ||
                                   w(!1);
                           }),
-                          (F[20] = m),
-                          (F[21] = g))
-                        : ((m = F[20]), (g = F[21])));
+                          (S[20] = m),
+                          (S[21] = g))
+                        : ((m = S[20]), (g = S[21])));
                 let D = ux(I) ? "success" : "error";
                 return (
-                    F[22] !== I || F[23] !== P || F[24] !== l || F[25] !== D
+                    S[22] !== I || S[23] !== P || S[24] !== l || S[25] !== D
                         ? ((p = (0, y.jsx)(rm.A, {
                               ...c,
                               value: I,
@@ -33403,19 +33381,19 @@ ${this.quotedText}`)
                               validationStatus: D,
                               ref: l,
                           })),
-                          (F[22] = I),
-                          (F[23] = P),
-                          (F[24] = l),
-                          (F[25] = D),
-                          (F[26] = p))
-                        : (p = F[26]),
-                    F[27] !== d || F[28] !== p
-                        ? ((k = (0, y.jsxs)(ap.A, { children: [d, p] })),
-                          (F[27] = d),
-                          (F[28] = p),
-                          (F[29] = k))
-                        : (k = F[29]),
-                    F[30] !== M || F[31] !== x
+                          (S[22] = I),
+                          (S[23] = P),
+                          (S[24] = l),
+                          (S[25] = D),
+                          (S[26] = p))
+                        : (p = S[26]),
+                    S[27] !== d || S[28] !== p
+                        ? ((k = (0, y.jsxs)(ay.A, { children: [d, p] })),
+                          (S[27] = d),
+                          (S[28] = p),
+                          (S[29] = k))
+                        : (k = S[29]),
+                    S[30] !== M || S[31] !== x
                         ? ((h =
                               x &&
                               (0, y.jsxs)("div", {
@@ -33433,25 +33411,25 @@ ${this.quotedText}`)
                                       }),
                                       (0, y.jsx)("div", {
                                           className: uL.colors,
-                                          children: uK.map(M),
+                                          children: u_.map(M),
                                       }),
                                   ],
                               })),
-                          (F[30] = M),
-                          (F[31] = x),
-                          (F[32] = h))
-                        : (h = F[32]),
-                    F[33] !== k || F[34] !== h
+                          (S[30] = M),
+                          (S[31] = x),
+                          (S[32] = h))
+                        : (h = S[32]),
+                    S[33] !== k || S[34] !== h
                         ? ((f = (0, y.jsxs)("div", {
                               className: uL.inputContainer,
                               children: [k, h],
                           })),
-                          (F[33] = k),
-                          (F[34] = h),
-                          (F[35] = f))
-                        : (f = F[35]),
-                    F[36] !== f || F[37] !== u
-                        ? ((C = (0, y.jsxs)(ap.A, {
+                          (S[33] = k),
+                          (S[34] = h),
+                          (S[35] = f))
+                        : (f = S[35]),
+                    S[36] !== f || S[37] !== u
+                        ? ((C = (0, y.jsxs)(ay.A, {
                               children: [
                                   r,
                                   (0, y.jsxs)("div", {
@@ -33460,10 +33438,10 @@ ${this.quotedText}`)
                                   }),
                               ],
                           })),
-                          (F[36] = f),
-                          (F[37] = u),
-                          (F[38] = C))
-                        : (C = F[38]),
+                          (S[36] = f),
+                          (S[37] = u),
+                          (S[38] = C))
+                        : (C = S[38]),
                     C
                 );
             });
@@ -33561,12 +33539,12 @@ ${this.quotedText}`)
                     h,
                     f,
                     C,
-                    F,
                     S,
+                    F,
                     L,
                     I,
-                    K,
                     _,
+                    K,
                     v,
                     x,
                     w,
@@ -33698,7 +33676,7 @@ ${this.quotedText}`)
                           (N[22] = u))
                         : (u = N[22]),
                     N[23] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((d = (0, y.jsx)(ap.A.Label, {
+                        ? ((d = (0, y.jsx)(ay.A.Label, {
                               htmlFor: "label-form-name",
                               children: uf.name,
                           })),
@@ -33723,7 +33701,7 @@ ${this.quotedText}`)
                     N[28] !== Y
                         ? ((g =
                               Y &&
-                              (0, y.jsx)(ap.A.Validation, {
+                              (0, y.jsx)(ay.A.Validation, {
                                   variant: "error",
                                   children: Y,
                               })),
@@ -33731,7 +33709,7 @@ ${this.quotedText}`)
                           (N[29] = g))
                         : (g = N[29]),
                     N[30] !== m || N[31] !== g
-                        ? ((p = (0, y.jsxs)(ap.A, {
+                        ? ((p = (0, y.jsxs)(ay.A, {
                               className: uR.dialogFormInput,
                               id: "label-form-name",
                               children: [d, m, g],
@@ -33741,7 +33719,7 @@ ${this.quotedText}`)
                           (N[32] = p))
                         : (p = N[32]),
                     N[33] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((k = (0, y.jsx)(ap.A.Label, {
+                        ? ((k = (0, y.jsx)(ay.A.Label, {
                               htmlFor: "label-form-description",
                               children: uf.description,
                           })),
@@ -33751,7 +33729,7 @@ ${this.quotedText}`)
                         ? ((h = (e) => U(e.target.value)), (N[34] = h))
                         : (h = N[34]),
                     N[35] !== Q || N[36] !== V
-                        ? ((f = (0, y.jsxs)(ap.A, {
+                        ? ((f = (0, y.jsxs)(ay.A, {
                               className: uR.dialogFormInput,
                               id: "label-form-description",
                               children: [
@@ -33779,30 +33757,30 @@ ${this.quotedText}`)
                           (N[39] = C))
                         : (C = N[39]),
                     N[40] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((F = (0, y.jsx)(ap.A.Label, {
+                        ? ((S = (0, y.jsx)(ay.A.Label, {
                               visuallyHidden: !0,
                               children: uf.color,
                           })),
-                          (N[40] = F))
-                        : (F = N[40]),
+                          (N[40] = S))
+                        : (S = N[40]),
                     N[41] !== ee
-                        ? ((S =
+                        ? ((F =
                               ee &&
-                              (0, y.jsx)(ap.A.Validation, {
+                              (0, y.jsx)(ay.A.Validation, {
                                   variant: "error",
                                   children: ee,
                               })),
                           (N[41] = ee),
-                          (N[42] = S))
-                        : (S = N[42]),
-                    N[43] !== C || N[44] !== S
-                        ? ((L = (0, y.jsxs)(ap.A, {
+                          (N[42] = F))
+                        : (F = N[42]),
+                    N[43] !== C || N[44] !== F
+                        ? ((L = (0, y.jsxs)(ay.A, {
                               className: uR.dialogFormInput,
                               id: "label-form-color",
-                              children: [C, F, S],
+                              children: [C, S, F],
                           })),
                           (N[43] = C),
-                          (N[44] = S),
+                          (N[44] = F),
                           (N[45] = L))
                         : (L = N[45]),
                     N[46] !== r ||
@@ -33822,16 +33800,16 @@ ${this.quotedText}`)
                           (N[51] = I))
                         : (I = N[51]),
                     N[52] !== Z
-                        ? ((K = (0, y.jsx)(np.cQ, {
+                        ? ((_ = (0, y.jsx)(ny.cQ, {
                               commandId: "repository-label:cancel-save-label",
                               disabled: Z,
                               children: uf.cancelButtonText,
                           })),
                           (N[52] = Z),
-                          (N[53] = K))
-                        : (K = N[53]),
+                          (N[53] = _))
+                        : (_ = N[53]),
                     N[54] !== Z || N[55] !== O
-                        ? ((_ = (0, y.jsx)(np.cQ, {
+                        ? ((K = (0, y.jsx)(ny.cQ, {
                               commandId: "repository-label:save-label-submit",
                               variant: "primary",
                               loading: Z,
@@ -33840,15 +33818,15 @@ ${this.quotedText}`)
                           })),
                           (N[54] = Z),
                           (N[55] = O),
-                          (N[56] = _))
-                        : (_ = N[56]),
-                    N[57] !== K || N[58] !== _
+                          (N[56] = K))
+                        : (K = N[56]),
+                    N[57] !== _ || N[58] !== K
                         ? ((v = (0, y.jsxs)(rP.l.Footer, {
                               className: uR.dialogFormButtonGroup,
-                              children: [K, _],
+                              children: [_, K],
                           })),
-                          (N[57] = K),
-                          (N[58] = _),
+                          (N[57] = _),
+                          (N[58] = K),
                           (N[59] = v))
                         : (v = N[59]),
                     N[60] !== E || N[61] !== j || N[62] !== I || N[63] !== v
@@ -33865,7 +33843,7 @@ ${this.quotedText}`)
                           (N[64] = x))
                         : (x = N[64]),
                     N[65] !== x || N[66] !== i
-                        ? ((w = (0, y.jsx)(np.tL, {
+                        ? ((w = (0, y.jsx)(ny.tL, {
                               commands: i,
                               children: x,
                           })),
@@ -34960,7 +34938,7 @@ ${this.quotedText}`)
                         } = e;
                     return s
                         ? (t[0] === Symbol.for("react.memo_cache_sentinel")
-                              ? ((l = (0, y.jsxs)(n5.z, {
+                              ? ((l = (0, y.jsxs)(n6.z, {
                                     className: uR.labelRowIssuesAndPrsCount,
                                     children: [
                                         (0, y.jsx)(T.AlertIcon, { size: 16 }),
@@ -34973,7 +34951,7 @@ ${this.quotedText}`)
                               ? ((a = (0, y.jsx)(uW, {})), (t[1] = a))
                               : (a = t[1]),
                           t[2] !== r || t[3] !== i || t[4] !== o || t[5] !== s
-                              ? ((n = (0, y.jsx)(sK.t, {
+                              ? ((n = (0, y.jsx)(s_.t, {
                                     fallback: l,
                                     children: (0, y.jsx)(b.Suspense, {
                                         fallback: a,
@@ -34999,7 +34977,7 @@ ${this.quotedText}`)
                         l = (0, sH.c)(1);
                     return (
                         l[0] === Symbol.for("react.memo_cache_sentinel")
-                            ? ((e = (0, y.jsxs)(n5.z, {
+                            ? ((e = (0, y.jsxs)(n6.z, {
                                   className: uR.labelRowIssuesAndPrsCount,
                                   children: [
                                       (0, y.jsx)(uU.f, {
@@ -35084,10 +35062,10 @@ ${this.quotedText}`)
                         b = p.pullRequestCount || 0,
                         f = b > 0,
                         C = h > 0,
-                        F = !f && uR.empty;
-                    (d[4] !== F
-                        ? ((n = (0, nn.$)(uR.countContainer, F)),
-                          (d[4] = F),
+                        S = !f && uR.empty;
+                    (d[4] !== S
+                        ? ((n = (0, nt.$)(uR.countContainer, S)),
+                          (d[4] = S),
                           (d[5] = n))
                         : (n = d[5]),
                         d[6] !== k || d[7] !== f || d[8] !== b
@@ -35127,11 +35105,11 @@ ${this.quotedText}`)
                               (d[11] = t),
                               (d[12] = s))
                             : (s = d[12]));
-                    let S = !C && uR.empty;
+                    let F = !C && uR.empty;
                     return (
-                        d[13] !== S
-                            ? ((i = (0, nn.$)(uR.countContainer, S)),
-                              (d[13] = S),
+                        d[13] !== F
+                            ? ((i = (0, nt.$)(uR.countContainer, F)),
+                              (d[13] = F),
                               (d[14] = i))
                             : (i = d[14]),
                         d[15] !== k || d[16] !== C || d[17] !== h
@@ -35171,7 +35149,7 @@ ${this.quotedText}`)
                               (d[21] = o))
                             : (o = d[21]),
                         d[22] !== o || d[23] !== s
-                            ? ((u = (0, y.jsxs)(n5.z, {
+                            ? ((u = (0, y.jsxs)(n6.z, {
                                   className: uR.labelRowIssuesAndPrsCount,
                                   children: [s, o],
                               })),
@@ -35473,7 +35451,8 @@ ${this.quotedText}`)
                 };
             })();
             u0.hash = "5bda9d6819d5f7a4b515c22a83f1c73c";
-            let u3 = (e) => {
+            var u3 = a(99418);
+            let u4 = (e) => {
                 let l = e
                     .map((e) => e?.message)
                     .filter(Boolean)
@@ -35483,7 +35462,7 @@ ${this.quotedText}`)
                     uf.updateLabelError
                 );
             };
-            function u4(e) {
+            function u5(e) {
                 let l,
                     a,
                     n,
@@ -35501,11 +35480,11 @@ ${this.quotedText}`)
                     h,
                     f,
                     C,
-                    F,
+                    S,
                     L = (0, sH.c)(57),
                     {
-                        label: K,
-                        isActionsAvailable: _,
+                        label: _,
+                        isActionsAvailable: K,
                         viewerCanPush: v,
                         secondaryQueryRef: x,
                         repositoryId: w,
@@ -35519,7 +35498,7 @@ ${this.quotedText}`)
                 L[0] === Symbol.for("react.memo_cache_sentinel")
                     ? ((l = uJ), (L[0] = l))
                     : (l = L[0]);
-                let q = (0, er.useFragment)(l, K),
+                let q = (0, er.useFragment)(l, _),
                     O = (0, er.useRelayEnvironment)();
                 L[1] !== q.id || L[2] !== O || L[3] !== w
                     ? ((a = async () => {
@@ -35587,7 +35566,14 @@ ${this.quotedText}`)
                                               label: {
                                                   id: l.id,
                                                   name: l.name,
-                                                  nameHTML: l.name,
+                                                  nameHTML: u3.default.sanitize(
+                                                      l.name,
+                                                      {
+                                                          ALLOWED_TAGS: [],
+                                                          ALLOWED_ATTR: [],
+                                                          ALLOW_ARIA_ATTR: !1,
+                                                      }
+                                                  ),
                                                   description:
                                                       l.description ?? null,
                                                   color: l.color,
@@ -35614,7 +35600,7 @@ ${this.quotedText}`)
                                   },
                                   onError: (e) => {
                                       (e.cause && Array.isArray(e.cause)
-                                          ? D(u3(e.cause))
+                                          ? D(u4(e.cause))
                                           : D(uf.editLabelError),
                                           l(!1));
                                   },
@@ -35640,7 +35626,7 @@ ${this.quotedText}`)
                 ) {
                     let e = eV(I.Ds.open, [q.name], "label");
                     ((i = (0, k.G7)("issues_label_search_url")
-                        ? ad({ viewId: S.repository, query: e })
+                        ? ac({ viewId: F.repository, query: e })
                         : `/${N}/labels/${encodeURIComponent(q.name)}`),
                         (L[11] = q.name),
                         (L[12] = N),
@@ -35651,8 +35637,8 @@ ${this.quotedText}`)
                 (L[14] === Symbol.for("react.memo_cache_sentinel")
                     ? ((r = (0, y.jsx)(y.Fragment, {})), (L[14] = r))
                     : (r = L[14]),
-                    L[15] !== _ || L[16] !== v
-                        ? ((o = _
+                    L[15] !== K || L[16] !== v
+                        ? ((o = K
                               ? (0, y.jsx)(u1.L, {
                                     staticMenuActions: [
                                         ...(v
@@ -35661,7 +35647,7 @@ ${this.quotedText}`)
                                                       key: "edit",
                                                       render: () =>
                                                           (0, y.jsx)(
-                                                              aX.l.Item,
+                                                              aY.l.Item,
                                                               {
                                                                   onSelect:
                                                                       () =>
@@ -35684,13 +35670,13 @@ ${this.quotedText}`)
                                                                   children: [
                                                                       (0,
                                                                       y.jsx)(
-                                                                          aX.l
+                                                                          aY.l
                                                                               .Divider,
                                                                           {}
                                                                       ),
                                                                       (0,
                                                                       y.jsx)(
-                                                                          aX.l
+                                                                          aY.l
                                                                               .Item,
                                                                           {
                                                                               variant:
@@ -35713,13 +35699,13 @@ ${this.quotedText}`)
                                     ],
                                 })
                               : void 0),
-                          (L[15] = _),
+                          (L[15] = K),
                           (L[16] = v),
                           (L[17] = o))
                         : (o = L[17]));
-                let H = !_ && uR.noActionBar;
+                let H = !K && uR.noActionBar;
                 L[18] !== H
-                    ? ((u = (0, nn.$)(uR.labelRowDescription, H)),
+                    ? ((u = (0, nt.$)(uR.labelRowDescription, H)),
                       (L[18] = H),
                       (L[19] = u))
                     : (u = L[19]);
@@ -35742,7 +35728,7 @@ ${this.quotedText}`)
                           (L[24] = c))
                         : (c = L[24]),
                     L[25] !== Q || L[26] !== c
-                        ? ((m = (0, y.jsxs)(n5.z, {
+                        ? ((m = (0, y.jsxs)(n6.z, {
                               children: [
                                   (0, y.jsx)(lo.A, {
                                       href: Q,
@@ -35757,7 +35743,7 @@ ${this.quotedText}`)
                           (L[27] = m))
                         : (m = L[27]),
                     L[28] !== q.description
-                        ? ((g = (0, y.jsx)(n5.z, {
+                        ? ((g = (0, y.jsx)(n6.z, {
                               className: uR.labelRowDescriptionItemDescription,
                               children: q.description,
                           })),
@@ -35781,8 +35767,8 @@ ${this.quotedText}`)
                           (L[34] = p))
                         : (p = L[34]),
                     L[35] !== u || L[36] !== m || L[37] !== g || L[38] !== p
-                        ? ((h = (0, y.jsx)(nC.Q, {
-                              children: (0, y.jsxs)(nb.U, {
+                        ? ((h = (0, y.jsx)(nS.Q, {
+                              children: (0, y.jsxs)(nf.U, {
                                   className: u,
                                   children: [m, g, p],
                               }),
@@ -35877,8 +35863,8 @@ ${this.quotedText}`)
                     L[53] !== f ||
                     L[54] !== C ||
                     L[55] !== o
-                        ? ((F = (0, y.jsxs)(
-                              nh.c,
+                        ? ((S = (0, y.jsxs)(
+                              nb.c,
                               {
                                   title: r,
                                   role: "listitem",
@@ -35892,15 +35878,15 @@ ${this.quotedText}`)
                           (L[53] = f),
                           (L[54] = C),
                           (L[55] = o),
-                          (L[56] = F))
-                        : (F = L[56]),
-                    F
+                          (L[56] = S))
+                        : (S = L[56]),
+                    S
                 );
             }
             try {
-                u4.displayName || (u4.displayName = "LabelRow");
+                u5.displayName || (u5.displayName = "LabelRow");
             } catch {}
-            function u5() {
+            function u6() {
                 let e,
                     l,
                     a,
@@ -35921,20 +35907,20 @@ ${this.quotedText}`)
                     b,
                     f,
                     C,
-                    F,
-                    S = (0, sH.c)(50),
+                    S,
+                    F = (0, sH.c)(50),
                     [L] = (0, li.o)(),
                     I = (0, li.Z)();
-                if (S[0] !== L) {
+                if (F[0] !== L) {
                     let a = L.get("sort");
                     if (((l = "name"), (e = "asc"), a)) {
                         let [n, t] = a.split("-");
                         (uM.includes(n) && (l = n),
                             ("asc" === t || "desc" === t) && (e = t));
                     }
-                    ((S[0] = L), (S[1] = e), (S[2] = l));
-                } else ((e = S[1]), (l = S[2]));
-                S[3] !== I || S[4] !== l || S[5] !== L
+                    ((F[0] = L), (F[1] = e), (F[2] = l));
+                } else ((e = F[1]), (l = F[2]));
+                F[3] !== I || F[4] !== l || F[5] !== L
                     ? ((a = (e) => {
                           if (e === l) return;
                           let a = new URLSearchParams(L);
@@ -35944,97 +35930,97 @@ ${this.quotedText}`)
                           ),
                               I(`${A.cg?.location.pathname}?${a.toString()}`));
                       }),
-                      (S[3] = I),
-                      (S[4] = l),
-                      (S[5] = L),
-                      (S[6] = a))
-                    : (a = S[6]);
-                let K = a;
-                S[7] !== e || S[8] !== I || S[9] !== l || S[10] !== L
+                      (F[3] = I),
+                      (F[4] = l),
+                      (F[5] = L),
+                      (F[6] = a))
+                    : (a = F[6]);
+                let _ = a;
+                F[7] !== e || F[8] !== I || F[9] !== l || F[10] !== L
                     ? ((n = (a) => {
                           if (a === e) return;
                           let n = new URLSearchParams(L);
                           (n.set("sort", `${l}-${a}`),
                               I(`${A.cg?.location.pathname}?${n.toString()}`));
                       }),
-                      (S[7] = e),
-                      (S[8] = I),
-                      (S[9] = l),
-                      (S[10] = L),
-                      (S[11] = n))
-                    : (n = S[11]);
-                let _ = n,
+                      (F[7] = e),
+                      (F[8] = I),
+                      (F[9] = l),
+                      (F[10] = L),
+                      (F[11] = n))
+                    : (n = F[11]);
+                let K = n,
                     v = "asc" === e ? T.SortAscIcon : T.SortDescIcon;
-                (S[12] !== v
+                (F[12] !== v
                     ? ((t = (0, y.jsx)(sv.W.Button, {
                           variant: "invisible",
                           leadingVisual: v,
                           children: "Sort",
                       })),
-                      (S[12] = v),
-                      (S[13] = t))
-                    : (t = S[13]),
-                    S[14] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((s = (0, y.jsx)(aX.l.GroupHeading, {
+                      (F[12] = v),
+                      (F[13] = t))
+                    : (t = F[13]),
+                    F[14] === Symbol.for("react.memo_cache_sentinel")
+                        ? ((s = (0, y.jsx)(aY.l.GroupHeading, {
                               children: "Sort by",
                           })),
-                          (S[14] = s))
-                        : (s = S[14]),
-                    S[15] !== K
-                        ? ((i = () => K("name")), (S[15] = K), (S[16] = i))
-                        : (i = S[16]));
+                          (F[14] = s))
+                        : (s = F[14]),
+                    F[15] !== _
+                        ? ((i = () => _("name")), (F[15] = _), (F[16] = i))
+                        : (i = F[16]));
                 let x = "name" === l;
-                (S[17] !== i || S[18] !== x
-                    ? ((r = (0, y.jsx)(aX.l.Item, {
+                (F[17] !== i || F[18] !== x
+                    ? ((r = (0, y.jsx)(aY.l.Item, {
                           onSelect: i,
                           selected: x,
                           children: "Name",
                       })),
-                      (S[17] = i),
-                      (S[18] = x),
-                      (S[19] = r))
-                    : (r = S[19]),
-                    S[20] !== K
-                        ? ((o = () => K("count")), (S[20] = K), (S[21] = o))
-                        : (o = S[21]));
+                      (F[17] = i),
+                      (F[18] = x),
+                      (F[19] = r))
+                    : (r = F[19]),
+                    F[20] !== _
+                        ? ((o = () => _("count")), (F[20] = _), (F[21] = o))
+                        : (o = F[21]));
                 let w = "count" === l;
-                (S[22] !== o || S[23] !== w
-                    ? ((u = (0, y.jsx)(aX.l.Item, {
+                (F[22] !== o || F[23] !== w
+                    ? ((u = (0, y.jsx)(aY.l.Item, {
                           onSelect: o,
                           selected: w,
                           children: "Total issue count",
                       })),
-                      (S[22] = o),
-                      (S[23] = w),
-                      (S[24] = u))
-                    : (u = S[24]),
-                    S[25] !== u || S[26] !== r
-                        ? ((d = (0, y.jsxs)(aX.l.Group, {
+                      (F[22] = o),
+                      (F[23] = w),
+                      (F[24] = u))
+                    : (u = F[24]),
+                    F[25] !== u || F[26] !== r
+                        ? ((d = (0, y.jsxs)(aY.l.Group, {
                               children: [s, r, u],
                           })),
-                          (S[25] = u),
-                          (S[26] = r),
-                          (S[27] = d))
-                        : (d = S[27]),
-                    S[28] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((c = (0, y.jsx)(aX.l.GroupHeading, {
+                          (F[25] = u),
+                          (F[26] = r),
+                          (F[27] = d))
+                        : (d = F[27]),
+                    F[28] === Symbol.for("react.memo_cache_sentinel")
+                        ? ((c = (0, y.jsx)(aY.l.GroupHeading, {
                               children: "Order",
                           })),
-                          (S[28] = c))
-                        : (c = S[28]));
+                          (F[28] = c))
+                        : (c = F[28]));
                 let N = "asc" === e;
-                (S[29] !== _
-                    ? ((m = () => _("asc")), (S[29] = _), (S[30] = m))
-                    : (m = S[30]),
-                    S[31] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((g = (0, y.jsx)(aX.l.LeadingVisual, {
+                (F[29] !== K
+                    ? ((m = () => K("asc")), (F[29] = K), (F[30] = m))
+                    : (m = F[30]),
+                    F[31] === Symbol.for("react.memo_cache_sentinel")
+                        ? ((g = (0, y.jsx)(aY.l.LeadingVisual, {
                               children: (0, y.jsx)(T.SortAscIcon, {}),
                           })),
-                          (S[31] = g))
-                        : (g = S[31]),
-                    S[32] !== N || S[33] !== m
+                          (F[31] = g))
+                        : (g = F[31]),
+                    F[32] !== N || F[33] !== m
                         ? ((p = (0, y.jsxs)(
-                              aX.l.Item,
+                              aY.l.Item,
                               {
                                   selected: N,
                                   onSelect: m,
@@ -36042,24 +36028,24 @@ ${this.quotedText}`)
                               },
                               "ascending"
                           )),
-                          (S[32] = N),
-                          (S[33] = m),
-                          (S[34] = p))
-                        : (p = S[34]));
+                          (F[32] = N),
+                          (F[33] = m),
+                          (F[34] = p))
+                        : (p = F[34]));
                 let j = "desc" === e;
                 return (
-                    S[35] !== _
-                        ? ((k = () => _("desc")), (S[35] = _), (S[36] = k))
-                        : (k = S[36]),
-                    S[37] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((h = (0, y.jsx)(aX.l.LeadingVisual, {
+                    F[35] !== K
+                        ? ((k = () => K("desc")), (F[35] = K), (F[36] = k))
+                        : (k = F[36]),
+                    F[37] === Symbol.for("react.memo_cache_sentinel")
+                        ? ((h = (0, y.jsx)(aY.l.LeadingVisual, {
                               children: (0, y.jsx)(T.SortDescIcon, {}),
                           })),
-                          (S[37] = h))
-                        : (h = S[37]),
-                    S[38] !== j || S[39] !== k
+                          (F[37] = h))
+                        : (h = F[37]),
+                    F[38] !== j || F[39] !== k
                         ? ((b = (0, y.jsxs)(
-                              aX.l.Item,
+                              aY.l.Item,
                               {
                                   selected: j,
                                   onSelect: k,
@@ -36067,42 +36053,42 @@ ${this.quotedText}`)
                               },
                               "descending"
                           )),
-                          (S[38] = j),
-                          (S[39] = k),
-                          (S[40] = b))
-                        : (b = S[40]),
-                    S[41] !== p || S[42] !== b
-                        ? ((f = (0, y.jsxs)(aX.l.Group, {
+                          (F[38] = j),
+                          (F[39] = k),
+                          (F[40] = b))
+                        : (b = F[40]),
+                    F[41] !== p || F[42] !== b
+                        ? ((f = (0, y.jsxs)(aY.l.Group, {
                               children: [c, p, b],
                           })),
-                          (S[41] = p),
-                          (S[42] = b),
-                          (S[43] = f))
-                        : (f = S[43]),
-                    S[44] !== d || S[45] !== f
+                          (F[41] = p),
+                          (F[42] = b),
+                          (F[43] = f))
+                        : (f = F[43]),
+                    F[44] !== d || F[45] !== f
                         ? ((C = (0, y.jsx)(sv.W.Overlay, {
-                              children: (0, y.jsxs)(aX.l, {
+                              children: (0, y.jsxs)(aY.l, {
                                   selectionVariant: "single",
                                   children: [d, f],
                               }),
                           })),
-                          (S[44] = d),
-                          (S[45] = f),
-                          (S[46] = C))
-                        : (C = S[46]),
-                    S[47] !== C || S[48] !== t
-                        ? ((F = (0, y.jsxs)(sv.W, { children: [t, C] })),
-                          (S[47] = C),
-                          (S[48] = t),
-                          (S[49] = F))
-                        : (F = S[49]),
-                    F
+                          (F[44] = d),
+                          (F[45] = f),
+                          (F[46] = C))
+                        : (C = F[46]),
+                    F[47] !== C || F[48] !== t
+                        ? ((S = (0, y.jsxs)(sv.W, { children: [t, C] })),
+                          (F[47] = C),
+                          (F[48] = t),
+                          (F[49] = S))
+                        : (S = F[49]),
+                    S
                 );
             }
             try {
-                u5.displayName || (u5.displayName = "LabelSortMenu");
+                u6.displayName || (u6.displayName = "LabelSortMenu");
             } catch {}
-            function u6(e) {
+            function u7(e) {
                 let l,
                     a,
                     n = (0, sH.c)(6),
@@ -36118,7 +36104,7 @@ ${this.quotedText}`)
                 if (!i.labels) throw Error("labels data is null or undefined");
                 return (
                     n[1] !== i || n[2] !== o || n[3] !== r || n[4] !== s
-                        ? ((a = (0, y.jsx)(u7, {
+                        ? ((a = (0, y.jsx)(u9, {
                               data: i,
                               loadNext: r,
                               hasNext: o,
@@ -36133,7 +36119,7 @@ ${this.quotedText}`)
                     a
                 );
             }
-            function u7(e) {
+            function u9(e) {
                 let l,
                     a,
                     n,
@@ -36150,23 +36136,23 @@ ${this.quotedText}`)
                     p = (0, sH.c)(38),
                     { data: k, onCreateLabel: h } = e;
                 (p[0] !== k.labels?.edges
-                    ? ((a = k.labels?.edges?.map(dl).filter(de) || []),
+                    ? ((a = k.labels?.edges?.map(da).filter(dl) || []),
                       (p[0] = k.labels?.edges),
                       (p[1] = a))
                     : (a = p[1]),
                     (l = a));
                 let [f] = (0, li.o)(),
                     C = k.labels?.totalCount || 0,
-                    F = 1 === C ? "1 label" : `${C} labels`;
-                p[2] !== F
+                    S = 1 === C ? "1 label" : `${C} labels`;
+                p[2] !== S
                     ? ((n = (0, y.jsx)("span", {
                           "aria-live": "polite",
-                          children: F,
+                          children: S,
                       })),
-                      (p[2] = F),
+                      (p[2] = S),
                       (p[3] = n))
                     : (n = p[3]);
-                let S = n,
+                let F = n,
                     L = k.isWritable && k.viewerCanPush;
                 if (0 === l.length || f.get("q")) {
                     let e;
@@ -36177,27 +36163,27 @@ ${this.quotedText}`)
                 } else {
                     let e;
                     (p[5] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((e = [{ key: "label-sort-menu", render: u8 }]),
+                        ? ((e = [{ key: "label-sort-menu", render: de }]),
                           (p[5] = e))
                         : (e = p[5]),
                         (t = e));
                 }
                 let I = t;
-                p[6] !== I || p[7] !== S
+                p[6] !== I || p[7] !== F
                     ? ((s = (0, y.jsx)(ip.X, {
-                          title: S,
+                          title: F,
                           actions: I,
                           actionsLabel: "Label actions",
                       })),
                       (p[6] = I),
-                      (p[7] = S),
+                      (p[7] = F),
                       (p[8] = s))
                     : (s = p[8]);
-                let K = s,
-                    [_, v] = (0, er.useQueryLoader)(u$);
+                let _ = s,
+                    [K, v] = (0, er.useQueryLoader)(u$);
                 (p[9] !== v || p[10] !== l
                     ? ((i = () => {
-                          A.X3 || v({ nodes: l.map(u9) });
+                          A.X3 || v({ nodes: l.map(u8) });
                       }),
                       (r = [l, v]),
                       (p[9] = v),
@@ -36207,7 +36193,7 @@ ${this.quotedText}`)
                     : ((i = p[11]), (r = p[12])),
                     (0, b.useEffect)(i, r),
                     p[13] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((o = (0, nI.G)("repository-label-list-view")),
+                        ? ((o = (0, n_.G)("repository-label-list-view")),
                           (p[13] = o))
                         : (o = p[13]));
                 let x = l.length > 0 ? "ul" : "div",
@@ -36217,18 +36203,18 @@ ${this.quotedText}`)
                     p[15] !== k.nameWithOwner ||
                     p[16] !== k.viewerCanPush ||
                     p[17] !== L ||
-                    p[18] !== _ ||
+                    p[18] !== K ||
                     p[19] !== l
                         ? ((u =
                               l.length > 0 &&
                               l.map((e) =>
                                   (0, y.jsx)(
-                                      u4,
+                                      u5,
                                       {
                                           label: e,
                                           isActionsAvailable: L,
                                           viewerCanPush: k.viewerCanPush,
-                                          secondaryQueryRef: _,
+                                          secondaryQueryRef: K,
                                           repositoryId: k.id,
                                           repositoryNameWithOwner:
                                               k.nameWithOwner,
@@ -36240,7 +36226,7 @@ ${this.quotedText}`)
                           (p[15] = k.nameWithOwner),
                           (p[16] = k.viewerCanPush),
                           (p[17] = L),
-                          (p[18] = _),
+                          (p[18] = K),
                           (p[19] = l),
                           (p[20] = u))
                         : (u = p[20]),
@@ -36261,21 +36247,21 @@ ${this.quotedText}`)
                           (p[24] = h),
                           (p[25] = d))
                         : (d = p[25]),
-                    p[26] !== K ||
+                    p[26] !== _ ||
                     p[27] !== x ||
                     p[28] !== w ||
                     p[29] !== u ||
                     p[30] !== d
-                        ? ((c = (0, y.jsxs)(nc.u, {
+                        ? ((c = (0, y.jsxs)(nm.u, {
                               ...o,
                               title: "Labels",
-                              metadata: K,
+                              metadata: _,
                               titleHeaderTag: "h2",
                               as: x,
                               role: w,
                               children: [u, d],
                           })),
-                          (p[26] = K),
+                          (p[26] = _),
                           (p[27] = x),
                           (p[28] = w),
                           (p[29] = u),
@@ -36302,32 +36288,32 @@ ${this.quotedText}`)
                     g
                 );
             }
-            function u9(e) {
+            function u8(e) {
                 return e.id;
             }
-            function u8() {
-                return (0, y.jsx)(u5, {});
-            }
-            function de(e) {
-                return !!e;
+            function de() {
+                return (0, y.jsx)(u6, {});
             }
             function dl(e) {
+                return !!e;
+            }
+            function da(e) {
                 return e?.node ? e.node : null;
             }
             try {
-                u6.displayName || (u6.displayName = "LabelList");
+                u7.displayName || (u7.displayName = "LabelList");
             } catch {}
             try {
-                u7.displayName || (u7.displayName = "LabelListInternal");
+                u9.displayName || (u9.displayName = "LabelListInternal");
             } catch {}
-            let da = {
+            let dn = {
                 searchWrapper: "SearchBar-module__searchWrapper--PVpZY",
                 searchInput: "SearchBar-module__searchInput--EMXzN",
                 searchBtn: "SearchBar-module__searchBtn--onAKj",
                 searchInputWrapper:
                     "SearchBar-module__searchInputWrapper--cma68",
             };
-            function dn() {
+            function dt() {
                 let e,
                     l,
                     a,
@@ -36339,8 +36325,8 @@ ${this.quotedText}`)
                     o,
                     u,
                     d = (0, sH.c)(25),
-                    [c] = (0, _.ok)(),
-                    m = (0, _.Zp)();
+                    [c] = (0, K.ok)(),
+                    m = (0, K.Zp)();
                 d[0] !== c
                     ? ((e = c.get("q")), (d[0] = c), (d[1] = e))
                     : (e = d[1]);
@@ -36380,7 +36366,7 @@ ${this.quotedText}`)
                 let C = n;
                 return (
                     d[11] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((t = (0, y.jsx)(ap.A.Label, {
+                        ? ((t = (0, y.jsx)(ay.A.Label, {
                               htmlFor: "search-input",
                               visuallyHidden: !0,
                               children: uf.searchAll,
@@ -36393,7 +36379,7 @@ ${this.quotedText}`)
                     d[13] !== C || d[14] !== p
                         ? ((i =
                               "" !== p
-                                  ? (0, y.jsx)(lJ.K, {
+                                  ? (0, y.jsx)(l1.K, {
                                         icon: T.XCircleFillIcon,
                                         onClick: C,
                                         "aria-label": uf.clearSearch,
@@ -36405,14 +36391,14 @@ ${this.quotedText}`)
                           (d[15] = i))
                         : (i = d[15]),
                     d[16] !== f || d[17] !== p || d[18] !== i
-                        ? ((r = (0, y.jsxs)(ap.A, {
+                        ? ((r = (0, y.jsxs)(ay.A, {
                               id: "search-input",
-                              className: da.searchInputWrapper,
+                              className: dn.searchInputWrapper,
                               children: [
                                   t,
                                   (0, y.jsx)(rm.A, {
                                       type: "text",
-                                      className: da.searchInput,
+                                      className: dn.searchInput,
                                       placeholder: uf.searchAll,
                                       value: p,
                                       onKeyDown: f,
@@ -36427,13 +36413,13 @@ ${this.quotedText}`)
                           (d[19] = r))
                         : (r = d[19]),
                     d[20] !== h
-                        ? ((o = (0, y.jsx)(lJ.K, {
+                        ? ((o = (0, y.jsx)(l1.K, {
                               "aria-label": uf.search,
                               size: "medium",
                               icon: T.SearchIcon,
                               variant: "default",
                               onClick: h,
-                              className: da.searchBtn,
+                              className: dn.searchBtn,
                           })),
                           (d[20] = h),
                           (d[21] = o))
@@ -36442,8 +36428,8 @@ ${this.quotedText}`)
                         ? ((u = (0, y.jsxs)("form", {
                               role: "search",
                               "aria-labelledby": "search-input",
-                              className: da.searchWrapper,
-                              onSubmit: dt,
+                              className: dn.searchWrapper,
+                              onSubmit: ds,
                               children: [r, o],
                           })),
                           (d[22] = r),
@@ -36453,13 +36439,13 @@ ${this.quotedText}`)
                     u
                 );
             }
-            function dt(e) {
+            function ds(e) {
                 return e.preventDefault();
             }
             try {
-                dn.displayName || (dn.displayName = "SearchBar");
+                dt.displayName || (dt.displayName = "SearchBar");
             } catch {}
-            function ds(e) {
+            function di(e) {
                 let l,
                     a,
                     n,
@@ -36491,7 +36477,7 @@ ${this.quotedText}`)
                     g[2] !== f.viewerCanPush
                         ? ((n =
                               f.viewerCanPush &&
-                              (0, y.jsx)(aq.Q, {
+                              (0, y.jsx)(aO.Q, {
                                   variant: "primary",
                                   onClick: () => h(!0),
                                   children: "New label",
@@ -36508,7 +36494,7 @@ ${this.quotedText}`)
                           (g[5] = t))
                         : (t = g[5]),
                     g[6] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((s = (0, y.jsx)(dn, {})), (g[6] = s))
+                        ? ((s = (0, y.jsx)(dt, {})), (g[6] = s))
                         : (s = g[6]),
                     g[7] === Symbol.for("react.memo_cache_sentinel")
                         ? ((i = (0, y.jsx)("div", {
@@ -36520,9 +36506,9 @@ ${this.quotedText}`)
                         ? ((r = () => h(!0)), (g[8] = r))
                         : (r = g[8]),
                     g[9] !== f
-                        ? ((o = (0, y.jsx)(sK.t, {
+                        ? ((o = (0, y.jsx)(s_.t, {
                               fallback: i,
-                              children: (0, y.jsx)(u6, {
+                              children: (0, y.jsx)(u7, {
                                   repositoryRef: f,
                                   onCreateLabel: r,
                               }),
@@ -36531,7 +36517,7 @@ ${this.quotedText}`)
                           (g[10] = o))
                         : (o = g[10]),
                     g[11] !== t || g[12] !== o
-                        ? ((u = (0, y.jsx)(lY.Y, {
+                        ? ((u = (0, y.jsx)(lJ.Y, {
                               contentAs: "div",
                               resizeable: !1,
                               leftPaneWidth: "small",
@@ -36567,28 +36553,28 @@ ${this.quotedText}`)
                 );
             }
             try {
-                ds.displayName || (ds.displayName = "RepositoryLabelsInternal");
+                di.displayName || (di.displayName = "RepositoryLabelsInternal");
             } catch {}
-            let di = ({ queries: { pageQuery: e } }) => {
+            let dr = ({ queries: { pageQuery: e } }) => {
                 let { queryRef: l, loadQuery: a } = lc(e, e1);
                 return l
                     ? (0, y.jsx)(lk, {
                           category: "Repository Label Index",
-                          children: (0, y.jsx)(dr, {
+                          children: (0, y.jsx)(du, {
                               pageQueryRef: l,
                               loadQuery: a,
                           }),
                       })
                     : null;
             };
-            function dr({ pageQueryRef: e }) {
+            function du({ pageQueryRef: e }) {
                 let l = (0, er.usePreloadedQuery)(e1, e),
                     { setCurrentViewId: a } = eU();
                 return ((0, b.useEffect)(() => {
-                    a(S.repository);
+                    a(F.repository);
                 }, [e, a]),
                 l.repository)
-                    ? (0, y.jsx)(du, { repository: l.repository })
+                    ? (0, y.jsx)(dd, { repository: l.repository })
                     : (reportError(
                           Error(
                               `Could not find repository when loading labels index for ${A.fV?.href.toString()}`
@@ -36596,20 +36582,20 @@ ${this.quotedText}`)
                       ),
                       (0, y.jsx)("div", { children: "Repository not found" }));
             }
-            function du({ repository: e }) {
+            function dd({ repository: e }) {
                 let l = (0, er.useFragment)(uk, e);
-                return (0, y.jsx)(ds, { repository: l });
+                return (0, y.jsx)(di, { repository: l });
             }
             try {
-                dr.displayName ||
-                    (dr.displayName = "RepositoryLabelIndexContent");
+                du.displayName ||
+                    (du.displayName = "RepositoryLabelIndexContent");
             } catch {}
             try {
-                du.displayName ||
-                    (du.displayName =
+                dd.displayName ||
+                    (dd.displayName =
                         "RepositoryLabelIndexPageContentInternal");
             } catch {}
-            let dd = {
+            let dc = {
                 argumentDefinitions: [
                     {
                         defaultValue: "DESC",
@@ -36656,8 +36642,8 @@ ${this.quotedText}`)
                 type: "Repository",
                 abstractKey: null,
             };
-            dd.hash = "c3181e2da6a22e3d5d53fb3d15250df2";
-            let dc = {
+            dc.hash = "c3181e2da6a22e3d5d53fb3d15250df2";
+            let dm = {
                 argumentDefinitions: [
                     {
                         defaultValue: "DESC",
@@ -36710,8 +36696,8 @@ ${this.quotedText}`)
                 type: "Repository",
                 abstractKey: null,
             };
-            dc.hash = "168c6c023dcd919ea76f3cc6fae4b49b";
-            let dm = (function () {
+            dm.hash = "168c6c023dcd919ea76f3cc6fae4b49b";
+            let dg = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -37107,8 +37093,8 @@ ${this.quotedText}`)
                     },
                 };
             })();
-            dm.hash = "3db42140a58f5e3d4d9a2b592ed1efb7";
-            let dg = (function () {
+            dg.hash = "3db42140a58f5e3d4d9a2b592ed1efb7";
+            let dp = (function () {
                 var e = ["milestones"],
                     l = {
                         alias: null,
@@ -37172,7 +37158,7 @@ ${this.quotedText}`)
                                 path: e,
                             },
                             fragmentPathInResult: ["node"],
-                            operation: dm,
+                            operation: dg,
                             identifierInfo: {
                                 identifierField: "id",
                                 identifierQueryVariableName: "id",
@@ -37339,8 +37325,8 @@ ${this.quotedText}`)
                     abstractKey: null,
                 };
             })();
-            dg.hash = "3db42140a58f5e3d4d9a2b592ed1efb7";
-            let dp = {
+            dp.hash = "3db42140a58f5e3d4d9a2b592ed1efb7";
+            let dy = {
                 issueIcons: {
                     OPEN: {
                         color: "open.fg",
@@ -37363,7 +37349,7 @@ ${this.quotedText}`)
                 milestonePageSize: 50,
                 localStorageKeyBulkUpdateIssues: "milestone.bulkUpdateIssues",
             };
-            function dy(e) {
+            function dk(e) {
                 let l,
                     a,
                     n,
@@ -37416,9 +37402,9 @@ ${this.quotedText}`)
                 );
             }
             try {
-                dy.displayName || (dy.displayName = "MilestoneEmptyState");
+                dk.displayName || (dk.displayName = "MilestoneEmptyState");
             } catch {}
-            let dk = {
+            let dh = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -37462,8 +37448,8 @@ ${this.quotedText}`)
                 type: "Milestone",
                 abstractKey: null,
             };
-            dk.hash = "9179d9703c79d416043b8546babc5fd0";
-            let dh = {
+            dh.hash = "9179d9703c79d416043b8546babc5fd0";
+            let db = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -37487,7 +37473,7 @@ ${this.quotedText}`)
                 type: "Milestone",
                 abstractKey: null,
             };
-            function db(e) {
+            function df(e) {
                 let l,
                     a,
                     n,
@@ -37497,7 +37483,7 @@ ${this.quotedText}`)
                     r = (0, sH.c)(12),
                     { milestone: o } = e;
                 r[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = dh), (r[0] = l))
+                    ? ((l = db), (r[0] = l))
                     : (l = r[0]);
                 let u = (0, er.useFragment)(l, o);
                 e: {
@@ -37604,11 +37590,11 @@ ${this.quotedText}`)
                     i
                 );
             }
-            dh.hash = "c744c3501e741c32d84fc88af287a26b";
+            db.hash = "c744c3501e741c32d84fc88af287a26b";
             try {
-                db.displayName || (db.displayName = "MilestoneDate");
+                df.displayName || (df.displayName = "MilestoneDate");
             } catch {}
-            let df = {
+            let dC = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -37632,7 +37618,7 @@ ${this.quotedText}`)
                 type: "Milestone",
                 abstractKey: null,
             };
-            function dC(e) {
+            function dS(e) {
                 let l,
                     a,
                     n,
@@ -37641,7 +37627,7 @@ ${this.quotedText}`)
                     i = (0, sH.c)(9),
                     { milestone: r } = e;
                 i[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = df), (i[0] = l))
+                    ? ((l = dC), (i[0] = l))
                     : (l = i[0]);
                 let o = (0, er.useFragment)(l, r),
                     u = o.openIssueCount ?? 0,
@@ -37684,9 +37670,9 @@ ${this.quotedText}`)
                           : (s = i[8]),
                       s);
             }
-            df.hash = "15f84a40e0bbfcf780c02f604ec96267";
+            dC.hash = "15f84a40e0bbfcf780c02f604ec96267";
             try {
-                dC.displayName || (dC.displayName = "MilestoneIssueCount");
+                dS.displayName || (dS.displayName = "MilestoneIssueCount");
             } catch {}
             let dF = {
                 argumentDefinitions: [],
@@ -37732,8 +37718,8 @@ ${this.quotedText}`)
                 abstractKey: null,
             };
             dF.hash = "db345f0e64434fb83335b93532e33afd";
-            var dS = a(8601);
-            let dL = (function () {
+            var dL = a(8601);
+            let dI = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -37777,8 +37763,8 @@ ${this.quotedText}`)
                     abstractKey: null,
                 };
             })();
-            dL.hash = "148d9e06feebee4ecf8d39ed423415ce";
-            let dI = (function () {
+            dI.hash = "148d9e06feebee4ecf8d39ed423415ce";
+            let d_ = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -37886,7 +37872,7 @@ ${this.quotedText}`)
                     [n, t] = (0, b.useState)(!1),
                     [s, i] = (0, b.useState)(!1),
                     r = (0, b.useRef)(null),
-                    o = (0, er.useFragment)(dL, e),
+                    o = (0, er.useFragment)(dI, e),
                     u = (0, li.Z)(),
                     [d] = (0, li.o)(),
                     c = (0, er.useRelayEnvironment)(),
@@ -38001,7 +37987,7 @@ ${this.quotedText}`)
                                 onCompleted: n,
                             }) {
                                 (0, er.commitMutation)(e, {
-                                    mutation: dI,
+                                    mutation: d_,
                                     variables: { input: l },
                                     onError: (e) => a && a(e),
                                     onCompleted: (e) => n && n(e),
@@ -38067,21 +38053,21 @@ ${this.quotedText}`)
                                         onKeyDown: h,
                                     }),
                                     (0, y.jsx)(sv.W.Overlay, {
-                                        children: (0, y.jsxs)(aX.l, {
+                                        children: (0, y.jsxs)(aY.l, {
                                             children: [
-                                                (0, y.jsx)(aX.l.Item, {
+                                                (0, y.jsx)(aY.l.Item, {
                                                     onSelect: () => g(),
                                                     children: "Edit",
                                                 }),
-                                                (0, y.jsx)(aX.l.Item, {
+                                                (0, y.jsx)(aY.l.Item, {
                                                     onSelect: () => p(),
                                                     children:
                                                         "CLOSED" === o.state
                                                             ? "Open"
                                                             : "Close",
                                                 }),
-                                                (0, y.jsx)(aX.l.Divider, {}),
-                                                (0, y.jsx)(aX.l.Item, {
+                                                (0, y.jsx)(aY.l.Divider, {}),
+                                                (0, y.jsx)(aY.l.Item, {
                                                     onSelect: () => a(!0),
                                                     children: (0, y.jsx)(
                                                         "span",
@@ -38147,11 +38133,11 @@ ${this.quotedText}`)
                     })
                 );
             }
-            dI.hash = "d96316a2c94a676025441e29c80749db";
+            d_.hash = "d96316a2c94a676025441e29c80749db";
             try {
                 dK.displayName || (dK.displayName = "MilestoneRowMenu");
             } catch {}
-            function d_(e) {
+            function dv(e) {
                 let l,
                     a,
                     n,
@@ -38180,7 +38166,7 @@ ${this.quotedText}`)
                 let b = a,
                     f = Math.floor(h.progressPercentage);
                 g[4] !== f
-                    ? ((n = (0, y.jsx)(dS.z, {
+                    ? ((n = (0, y.jsx)(dL.z, {
                           progress: f,
                           "aria-hidden": "true",
                           "data-testid": "milestone-metadata-progress-bar",
@@ -38204,7 +38190,7 @@ ${this.quotedText}`)
                       (g[6] = C),
                       (g[7] = t))
                     : (t = g[7]);
-                let F = b("open");
+                let S = b("open");
                 (g[8] !== h.openIssueCount
                     ? ((s = (0, y.jsx)("span", {
                           className: o6.progressPercentage,
@@ -38213,17 +38199,17 @@ ${this.quotedText}`)
                       (g[8] = h.openIssueCount),
                       (g[9] = s))
                     : (s = g[9]),
-                    g[10] !== F || g[11] !== s
+                    g[10] !== S || g[11] !== s
                         ? ((i = (0, y.jsxs)(lo.A, {
                               className: o6.link,
-                              href: F,
+                              href: S,
                               children: [s, " open"],
                           })),
-                          (g[10] = F),
+                          (g[10] = S),
                           (g[11] = s),
                           (g[12] = i))
                         : (i = g[12]));
-                let S = b("closed");
+                let F = b("closed");
                 return (
                     g[13] !== h.closedIssueCount
                         ? ((r = (0, y.jsx)("span", {
@@ -38233,13 +38219,13 @@ ${this.quotedText}`)
                           (g[13] = h.closedIssueCount),
                           (g[14] = r))
                         : (r = g[14]),
-                    g[15] !== S || g[16] !== r
+                    g[15] !== F || g[16] !== r
                         ? ((o = (0, y.jsxs)(lo.A, {
                               className: o6.link,
-                              href: S,
+                              href: F,
                               children: [r, " closed"],
                           })),
-                          (g[15] = S),
+                          (g[15] = F),
                           (g[16] = r),
                           (g[17] = o))
                         : (o = g[17]),
@@ -38280,9 +38266,9 @@ ${this.quotedText}`)
                 );
             }
             try {
-                d_.displayName || (d_.displayName = "MilestoneRowMetadata");
+                dv.displayName || (dv.displayName = "MilestoneRowMetadata");
             } catch {}
-            let dv = {
+            let dx = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -38306,7 +38292,7 @@ ${this.quotedText}`)
                 type: "Milestone",
                 abstractKey: null,
             };
-            function dx(e) {
+            function dw(e) {
                 let l,
                     a,
                     n,
@@ -38314,7 +38300,7 @@ ${this.quotedText}`)
                     s = (0, sH.c)(10),
                     { milestone: i } = e;
                 s[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = dv), (s[0] = l))
+                    ? ((l = dx), (s[0] = l))
                     : (l = s[0]);
                 let r = (0, er.useFragment)(l, i),
                     o = r.url;
@@ -38350,11 +38336,11 @@ ${this.quotedText}`)
                     t
                 );
             }
-            dv.hash = "5bc05bbe94a56bd64216010d45ac7f03";
+            dx.hash = "5bc05bbe94a56bd64216010d45ac7f03";
             try {
-                dx.displayName || (dx.displayName = "MilestoneRowTitle");
+                dw.displayName || (dw.displayName = "MilestoneRowTitle");
             } catch {}
-            function dw(e) {
+            function dN(e) {
                 let l,
                     a,
                     n,
@@ -38365,17 +38351,17 @@ ${this.quotedText}`)
                     o = (0, sH.c)(18),
                     { milestone: u, repositoryNameWithOwner: d } = e;
                 o[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = dk), (o[0] = l))
+                    ? ((l = dh), (o[0] = l))
                     : (l = o[0]);
                 let c = (0, er.useFragment)(l, u);
                 o[1] !== c
-                    ? ((a = (0, y.jsx)(dx, { milestone: c })),
+                    ? ((a = (0, y.jsx)(dw, { milestone: c })),
                       (o[1] = c),
                       (o[2] = a))
                     : (a = o[2]);
                 let m = a;
                 o[3] !== c || o[4] !== d
-                    ? ((n = (0, y.jsx)(d_, {
+                    ? ((n = (0, y.jsx)(dv, {
                           milestone: c,
                           repositoryNameWithOwner: d,
                       })),
@@ -38399,16 +38385,16 @@ ${this.quotedText}`)
                         ? ((s = (0, y.jsxs)("div", {
                               className: o6.listDateContainer,
                               children: [
-                                  (0, y.jsx)(db, { milestone: c }),
-                                  (0, y.jsx)(dC, { milestone: c }),
+                                  (0, y.jsx)(df, { milestone: c }),
+                                  (0, y.jsx)(dS, { milestone: c }),
                               ],
                           })),
                           (o[8] = c),
                           (o[9] = s))
                         : (s = o[9]),
                     o[10] !== t || o[11] !== s
-                        ? ((i = (0, y.jsx)(nC.Q, {
-                              children: (0, y.jsxs)(nb.U, {
+                        ? ((i = (0, y.jsx)(nS.Q, {
+                              children: (0, y.jsxs)(nf.U, {
                                   className: o6.listItemContent,
                                   children: [t, s],
                               }),
@@ -38419,7 +38405,7 @@ ${this.quotedText}`)
                         : (i = o[12]),
                     o[13] !== c.id || o[14] !== g || o[15] !== i || o[16] !== m
                         ? ((r = (0, y.jsx)(
-                              nh.c,
+                              nb.c,
                               {
                                   title: m,
                                   role: "listitem",
@@ -38441,9 +38427,9 @@ ${this.quotedText}`)
                 );
             }
             try {
-                dw.displayName || (dw.displayName = "MilestoneRow");
+                dN.displayName || (dN.displayName = "MilestoneRow");
             } catch {}
-            function dN() {
+            function dj() {
                 let e,
                     l,
                     a,
@@ -38464,12 +38450,12 @@ ${this.quotedText}`)
                     b,
                     f,
                     C,
-                    F,
                     S,
+                    F,
                     L = (0, sH.c)(60),
                     [I] = (0, li.o)(),
-                    K = I.get("sort"),
-                    _ = I.get("direction"),
+                    _ = I.get("sort"),
+                    K = I.get("direction"),
                     v = (0, li.Z)();
                 L[0] !== v || L[1] !== I
                     ? ((e = (e, l) => {
@@ -38498,7 +38484,7 @@ ${this.quotedText}`)
                       (L[3] = l))
                     : (l = L[3]),
                     L[4] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((a = (0, y.jsx)(aX.l.GroupHeading, {
+                        ? ((a = (0, y.jsx)(aY.l.GroupHeading, {
                               children: "Sort by",
                           })),
                           (L[4] = a))
@@ -38508,9 +38494,9 @@ ${this.quotedText}`)
                           (L[5] = x),
                           (L[6] = n))
                         : (n = L[6]));
-                let w = !K;
+                let w = !_;
                 (L[7] !== n || L[8] !== w
-                    ? ((t = (0, y.jsx)(aX.l.Item, {
+                    ? ((t = (0, y.jsx)(aY.l.Item, {
                           onSelect: n,
                           selected: w,
                           role: "menuitemradio",
@@ -38525,9 +38511,9 @@ ${this.quotedText}`)
                           (L[10] = x),
                           (L[11] = s))
                         : (s = L[11]));
-                let N = "due_date" === K && "desc" === _;
+                let N = "due_date" === _ && "desc" === K;
                 (L[12] !== s || L[13] !== N
-                    ? ((i = (0, y.jsx)(aX.l.Item, {
+                    ? ((i = (0, y.jsx)(aY.l.Item, {
                           onSelect: s,
                           selected: N,
                           role: "menuitemradio",
@@ -38542,9 +38528,9 @@ ${this.quotedText}`)
                           (L[15] = x),
                           (L[16] = r))
                         : (r = L[16]));
-                let j = "due_date" === K && "asc" === _;
+                let j = "due_date" === _ && "asc" === K;
                 (L[17] !== j || L[18] !== r
-                    ? ((o = (0, y.jsx)(aX.l.Item, {
+                    ? ((o = (0, y.jsx)(aY.l.Item, {
                           onSelect: r,
                           selected: j,
                           role: "menuitemradio",
@@ -38559,9 +38545,9 @@ ${this.quotedText}`)
                           (L[20] = x),
                           (L[21] = u))
                         : (u = L[21]));
-                let R = "completeness" === K && "asc" === _;
+                let R = "completeness" === _ && "asc" === K;
                 (L[22] !== u || L[23] !== R
-                    ? ((d = (0, y.jsx)(aX.l.Item, {
+                    ? ((d = (0, y.jsx)(aY.l.Item, {
                           onSelect: u,
                           selected: R,
                           role: "menuitemradio",
@@ -38576,9 +38562,9 @@ ${this.quotedText}`)
                           (L[25] = x),
                           (L[26] = c))
                         : (c = L[26]));
-                let P = "completeness" === K && "desc" === _;
+                let P = "completeness" === _ && "desc" === K;
                 (L[27] !== c || L[28] !== P
-                    ? ((m = (0, y.jsx)(aX.l.Item, {
+                    ? ((m = (0, y.jsx)(aY.l.Item, {
                           onSelect: c,
                           selected: P,
                           role: "menuitemradio",
@@ -38593,9 +38579,9 @@ ${this.quotedText}`)
                           (L[30] = x),
                           (L[31] = g))
                         : (g = L[31]));
-                let M = "title" === K && "asc" === _;
+                let M = "title" === _ && "asc" === K;
                 (L[32] !== g || L[33] !== M
-                    ? ((p = (0, y.jsx)(aX.l.Item, {
+                    ? ((p = (0, y.jsx)(aY.l.Item, {
                           onSelect: g,
                           selected: M,
                           role: "menuitemradio",
@@ -38610,9 +38596,9 @@ ${this.quotedText}`)
                           (L[35] = x),
                           (L[36] = k))
                         : (k = L[36]));
-                let V = "title" === K && "desc" === _;
+                let V = "title" === _ && "desc" === K;
                 (L[37] !== k || L[38] !== V
-                    ? ((h = (0, y.jsx)(aX.l.Item, {
+                    ? ((h = (0, y.jsx)(aY.l.Item, {
                           onSelect: k,
                           selected: V,
                           role: "menuitemradio",
@@ -38627,9 +38613,9 @@ ${this.quotedText}`)
                           (L[40] = x),
                           (L[41] = b))
                         : (b = L[41]));
-                let D = "count" === K && "desc" === _;
+                let D = "count" === _ && "desc" === K;
                 (L[42] !== b || L[43] !== D
-                    ? ((f = (0, y.jsx)(aX.l.Item, {
+                    ? ((f = (0, y.jsx)(aY.l.Item, {
                           onSelect: b,
                           selected: D,
                           role: "menuitemradio",
@@ -38644,10 +38630,10 @@ ${this.quotedText}`)
                           (L[45] = x),
                           (L[46] = C))
                         : (C = L[46]));
-                let E = "count" === K && "asc" === _;
+                let E = "count" === _ && "asc" === K;
                 return (
                     L[47] !== C || L[48] !== E
-                        ? ((F = (0, y.jsx)(aX.l.Item, {
+                        ? ((S = (0, y.jsx)(aY.l.Item, {
                               onSelect: C,
                               selected: E,
                               role: "menuitemradio",
@@ -38655,24 +38641,24 @@ ${this.quotedText}`)
                           })),
                           (L[47] = C),
                           (L[48] = E),
-                          (L[49] = F))
-                        : (F = L[49]),
+                          (L[49] = S))
+                        : (S = L[49]),
                     L[50] !== o ||
                     L[51] !== d ||
                     L[52] !== m ||
                     L[53] !== p ||
                     L[54] !== h ||
                     L[55] !== f ||
-                    L[56] !== F ||
+                    L[56] !== S ||
                     L[57] !== t ||
                     L[58] !== i
-                        ? ((S = (0, y.jsxs)(sv.W, {
+                        ? ((F = (0, y.jsxs)(sv.W, {
                               children: [
                                   l,
                                   (0, y.jsx)(sv.W.Overlay, {
-                                      children: (0, y.jsx)(aX.l, {
+                                      children: (0, y.jsx)(aY.l, {
                                           selectionVariant: "single",
-                                          children: (0, y.jsxs)(aX.l.Group, {
+                                          children: (0, y.jsxs)(aY.l.Group, {
                                               children: [
                                                   a,
                                                   t,
@@ -38683,7 +38669,7 @@ ${this.quotedText}`)
                                                   p,
                                                   h,
                                                   f,
-                                                  F,
+                                                  S,
                                               ],
                                           }),
                                       }),
@@ -38696,18 +38682,18 @@ ${this.quotedText}`)
                           (L[53] = p),
                           (L[54] = h),
                           (L[55] = f),
-                          (L[56] = F),
+                          (L[56] = S),
                           (L[57] = t),
                           (L[58] = i),
-                          (L[59] = S))
-                        : (S = L[59]),
-                    S
+                          (L[59] = F))
+                        : (F = L[59]),
+                    F
                 );
             }
             try {
-                dN.displayName || (dN.displayName = "MilestoneSortMenu");
+                dj.displayName || (dj.displayName = "MilestoneSortMenu");
             } catch {}
-            let dj = (function () {
+            let dR = (function () {
                 var e = { kind: "Literal", name: "first", value: 0 },
                     l = [
                         {
@@ -38763,7 +38749,7 @@ ${this.quotedText}`)
                     abstractKey: null,
                 };
             })();
-            function dR(e) {
+            function dP(e) {
                 let l,
                     a,
                     n,
@@ -38777,7 +38763,7 @@ ${this.quotedText}`)
                     c = (0, sH.c)(25),
                     { repository: m } = e;
                 c[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = dj), (c[0] = l))
+                    ? ((l = dR), (c[0] = l))
                     : (l = c[0]);
                 let g = (0, er.useFragment)(l, m);
                 c[1] !== g?.open?.totalCount
@@ -38804,18 +38790,18 @@ ${this.quotedText}`)
                 c[5] === Symbol.for("react.memo_cache_sentinel")
                     ? ((t = ["mac"]), (c[5] = t))
                     : (t = c[5]);
-                let F = (0, sO.X)(t),
-                    S = (0, li.Z)();
-                c[6] !== F || c[7] !== S || c[8] !== f
+                let S = (0, sO.X)(t),
+                    F = (0, li.Z)();
+                c[6] !== S || c[7] !== F || c[8] !== f
                     ? ((s = (e, l) => {
-                          if ((F ? e.metaKey : e.ctrlKey) || !A.cg) return;
+                          if ((S ? e.metaKey : e.ctrlKey) || !A.cg) return;
                           e.preventDefault();
                           let a = new URLSearchParams(f);
                           (l ? a.delete("state") : a.set("state", "closed"),
-                              S(`${A.cg.location.pathname}?${a.toString()}`));
+                              F(`${A.cg.location.pathname}?${a.toString()}`));
                       }),
-                      (c[6] = F),
-                      (c[7] = S),
+                      (c[6] = S),
+                      (c[7] = F),
                       (c[8] = f),
                       (c[9] = s))
                     : (s = c[9]);
@@ -38829,7 +38815,7 @@ ${this.quotedText}`)
                               "li",
                               {
                                   children: (0, y.jsx)(
-                                      aW.L,
+                                      aG.L,
                                       {
                                           title: "Open",
                                           isSelected: I,
@@ -38848,20 +38834,20 @@ ${this.quotedText}`)
                           (c[14] = i),
                           (c[15] = r))
                         : (r = c[15]));
-                let K = A.KJ && "closed" === C;
+                let _ = A.KJ && "closed" === C;
                 return (
                     c[16] !== L
                         ? ((o = (e) => L(e, !1)), (c[16] = L), (c[17] = o))
                         : (o = c[17]),
-                    c[18] !== k || c[19] !== o || c[20] !== K
+                    c[18] !== k || c[19] !== o || c[20] !== _
                         ? ((u = (0, y.jsx)(
                               "li",
                               {
                                   children: (0, y.jsx)(
-                                      aW.L,
+                                      aG.L,
                                       {
                                           title: "Closed",
-                                          isSelected: K,
+                                          isSelected: _,
                                           count: k,
                                           href: b,
                                           onClick: o,
@@ -38874,13 +38860,13 @@ ${this.quotedText}`)
                           )),
                           (c[18] = k),
                           (c[19] = o),
-                          (c[20] = K),
+                          (c[20] = _),
                           (c[21] = u))
                         : (u = c[21]),
                     c[22] !== u || c[23] !== r
                         ? ((d = (0, y.jsx)("div", {
                               children: (0, y.jsxs)("ul", {
-                                  className: `list-style-none ${(0, nn.$)(o6.tabsContainer)}`,
+                                  className: `list-style-none ${(0, nt.$)(o6.tabsContainer)}`,
                                   children: [r, u],
                               }),
                           })),
@@ -38891,17 +38877,17 @@ ${this.quotedText}`)
                     d
                 );
             }
-            dj.hash = "889a40b9e8f1d42c2c11ed7d91f2ae48";
+            dR.hash = "889a40b9e8f1d42c2c11ed7d91f2ae48";
             try {
-                dR.displayName || (dR.displayName = "OpenClosedMilestones");
+                dP.displayName || (dP.displayName = "OpenClosedMilestones");
             } catch {}
-            function dP(e) {
+            function dT(e) {
                 let l,
                     a,
                     n = (0, sH.c)(6),
                     { repositoryRef: t } = e;
                 n[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = dg), (n[0] = l))
+                    ? ((l = dp), (n[0] = l))
                     : (l = n[0]);
                 let {
                     data: s,
@@ -38913,7 +38899,7 @@ ${this.quotedText}`)
                     throw Error("Milestones data is null or undefined");
                 return (
                     n[1] !== s || n[2] !== r || n[3] !== o || n[4] !== i
-                        ? ((a = (0, y.jsx)(dT, {
+                        ? ((a = (0, y.jsx)(dA, {
                               data: s,
                               loadNext: i,
                               hasNext: r,
@@ -38928,7 +38914,7 @@ ${this.quotedText}`)
                     a
                 );
             }
-            function dT({
+            function dA({
                 data: e,
                 hasNext: l,
                 isLoadingNext: a,
@@ -38945,7 +38931,7 @@ ${this.quotedText}`)
                         () => [
                             {
                                 key: "milestone-sort-menu",
-                                render: () => (0, y.jsx)(dN, {}),
+                                render: () => (0, y.jsx)(dj, {}),
                             },
                         ],
                         []
@@ -38955,17 +38941,17 @@ ${this.quotedText}`)
                     o = (0, y.jsx)(ip.X, {
                         actions: s,
                         actionsLabel: "Actions",
-                        sectionFilters: (0, y.jsx)(dR, { repository: e }),
+                        sectionFilters: (0, y.jsx)(dP, { repository: e }),
                     }),
                     u = (0, b.useMemo)(
                         () =>
                             l
                                 ? (0, y.jsx)("div", {
                                       className: o6.loadMoreButtonWrapper,
-                                      children: (0, y.jsx)(aq.Q, {
+                                      children: (0, y.jsx)(aO.Q, {
                                           variant: "invisible",
                                           onClick: () =>
-                                              n(dp.milestonePageSize),
+                                              n(dy.milestonePageSize),
                                           className: o6.loadMoreButton,
                                           "data-testid":
                                               "load-more-milestones-button",
@@ -38981,8 +38967,8 @@ ${this.quotedText}`)
                         (0, y.jsx)("div", {
                             className: o6.milestoneListWrapper,
                             "data-hpc": !0,
-                            children: (0, y.jsx)(nc.u, {
-                                ...(0, nI.G)("repository-milestone-list-view"),
+                            children: (0, y.jsx)(nm.u, {
+                                ...(0, n_.G)("repository-milestone-list-view"),
                                 title: "",
                                 metadata: o,
                                 titleHeaderTag: "h2",
@@ -38994,7 +38980,7 @@ ${this.quotedText}`)
                                     if (t.length > 0)
                                         return t.map((l) =>
                                             (0, y.jsx)(
-                                                dw,
+                                                dN,
                                                 {
                                                     milestone: l,
                                                     repositoryNameWithOwner:
@@ -39005,7 +38991,7 @@ ${this.quotedText}`)
                                         );
                                     let l = e.open?.totalCount ?? 0,
                                         a = e.closed?.totalCount ?? 0;
-                                    return (0, y.jsx)(dy, {
+                                    return (0, y.jsx)(dk, {
                                         noCreatedMilestones: 0 === l && 0 === a,
                                         newMilestoneUrl: r,
                                     });
@@ -39017,12 +39003,12 @@ ${this.quotedText}`)
                 });
             }
             try {
-                dP.displayName || (dP.displayName = "MilestoneList");
+                dT.displayName || (dT.displayName = "MilestoneList");
             } catch {}
             try {
-                dT.displayName || (dT.displayName = "MilestoneListInternal");
+                dA.displayName || (dA.displayName = "MilestoneListInternal");
             } catch {}
-            let dA = {
+            let dM = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -39046,7 +39032,7 @@ ${this.quotedText}`)
                 type: "Repository",
                 abstractKey: null,
             };
-            function dM(e) {
+            function dV(e) {
                 let l,
                     a,
                     n,
@@ -39055,7 +39041,7 @@ ${this.quotedText}`)
                     i = (0, sH.c)(11),
                     { repositoryRef: r } = e;
                 i[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = dA), (i[0] = l))
+                    ? ((l = dM), (i[0] = l))
                     : (l = i[0]);
                 let { viewerCanPush: o, nameWithOwner: u } = (0,
                     er.useFragment)(l, r),
@@ -39084,7 +39070,7 @@ ${this.quotedText}`)
                         ? ((t = o
                               ? (0, y.jsx)("div", {
                                     className: o6.actionsGrp,
-                                    children: (0, y.jsx)(aq.Q, {
+                                    children: (0, y.jsx)(aO.Q, {
                                         as: "a",
                                         href: c,
                                         onClick: g,
@@ -39110,18 +39096,18 @@ ${this.quotedText}`)
                     s
                 );
             }
-            dA.hash = "96feda0851486d21958e3e27d74358d0";
+            dM.hash = "96feda0851486d21958e3e27d74358d0";
             try {
-                dM.displayName || (dM.displayName = "MilestonesActions");
+                dV.displayName || (dV.displayName = "MilestonesActions");
             } catch {}
-            function dV(e) {
+            function dD(e) {
                 let l,
                     a,
                     n,
                     t = (0, sH.c)(4),
                     { repository: s } = e;
                 t[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = dc), (t[0] = l))
+                    ? ((l = dm), (t[0] = l))
                     : (l = t[0]);
                 let i = (0, er.useFragment)(l, s);
                 return (
@@ -39133,17 +39119,17 @@ ${this.quotedText}`)
                           (t[1] = a))
                         : (a = t[1]),
                     t[2] !== i
-                        ? ((n = (0, y.jsx)(lY.Y, {
+                        ? ((n = (0, y.jsx)(lJ.Y, {
                               contentAs: "div",
                               resizeable: !1,
                               leftPaneWidth: "small",
                               middlePane: (0, y.jsx)("div", {
                                   className: o6.middlePaneWrapper,
-                                  children: (0, y.jsxs)(sK.t, {
+                                  children: (0, y.jsxs)(s_.t, {
                                       fallback: a,
                                       children: [
-                                          (0, y.jsx)(dM, { repositoryRef: i }),
-                                          (0, y.jsx)(dP, { repositoryRef: i }),
+                                          (0, y.jsx)(dV, { repositoryRef: i }),
+                                          (0, y.jsx)(dT, { repositoryRef: i }),
                                       ],
                                   }),
                               }),
@@ -39155,29 +39141,29 @@ ${this.quotedText}`)
                 );
             }
             try {
-                dV.displayName ||
-                    (dV.displayName = "RepositoryMilestonesInternal");
+                dD.displayName ||
+                    (dD.displayName = "RepositoryMilestonesInternal");
             } catch {}
-            let dD = ({ queries: { pageQuery: e } }) => {
+            let dE = ({ queries: { pageQuery: e } }) => {
                 let { queryRef: l, loadQuery: a } = lc(e, e2);
                 return l
                     ? (0, y.jsx)(lk, {
                           category: "Repository Milestone Index",
-                          children: (0, y.jsx)(dE, {
+                          children: (0, y.jsx)(dq, {
                               pageQueryRef: l,
                               loadQuery: a,
                           }),
                       })
                     : null;
             };
-            function dE({ pageQueryRef: e }) {
+            function dq({ pageQueryRef: e }) {
                 let l = (0, er.usePreloadedQuery)(e2, e),
                     { setCurrentViewId: a } = eU();
                 return ((0, b.useEffect)(() => {
-                    a(S.repository);
+                    a(F.repository);
                 }, [e, a]),
                 l.repository)
-                    ? (0, y.jsx)(dq, { repository: l.repository })
+                    ? (0, y.jsx)(dO, { repository: l.repository })
                     : (reportError(
                           Error(
                               `Could not find repository when loading milestone index for ${A.fV?.href.toString()}`
@@ -39185,20 +39171,20 @@ ${this.quotedText}`)
                       ),
                       (0, y.jsx)("div", { children: "Repository not found" }));
             }
-            function dq({ repository: e }) {
-                let l = (0, er.useFragment)(dd, e);
-                return (0, y.jsx)(dV, { repository: l });
+            function dO({ repository: e }) {
+                let l = (0, er.useFragment)(dc, e);
+                return (0, y.jsx)(dD, { repository: l });
             }
             try {
-                dE.displayName ||
-                    (dE.displayName = "RepositoryMilestoneIndexContent");
+                dq.displayName ||
+                    (dq.displayName = "RepositoryMilestoneIndexContent");
             } catch {}
             try {
-                dq.displayName ||
-                    (dq.displayName =
+                dO.displayName ||
+                    (dO.displayName =
                         "RepositoryMilestoneIndexPageContentInternal");
             } catch {}
-            let dO = {
+            let dB = {
                 argumentDefinitions: [
                     {
                         defaultValue: null,
@@ -39245,8 +39231,8 @@ ${this.quotedText}`)
                 type: "Repository",
                 abstractKey: null,
             };
-            dO.hash = "7d31d10aafeaa69d827d858e9b244865";
-            let dB = (function () {
+            dB.hash = "7d31d10aafeaa69d827d858e9b244865";
+            let d$ = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -39389,14 +39375,14 @@ ${this.quotedText}`)
                             value: "ISSUE_ADVANCED",
                         },
                     ],
-                    F = {
+                    S = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "color",
                         storageKey: null,
                     },
-                    S = [
+                    F = [
                         { kind: "Literal", name: "first", value: 10 },
                         {
                             kind: "Literal",
@@ -39436,9 +39422,9 @@ ${this.quotedText}`)
                         ],
                         storageKey: null,
                     },
-                    K = {
+                    _ = {
                         alias: null,
-                        args: S,
+                        args: F,
                         concreteType: "LabelConnection",
                         kind: "LinkedField",
                         name: "labels",
@@ -39468,7 +39454,7 @@ ${this.quotedText}`)
                                                 name: "nameHTML",
                                                 storageKey: null,
                                             },
-                                            F,
+                                            S,
                                             f,
                                             y,
                                             k,
@@ -39484,9 +39470,9 @@ ${this.quotedText}`)
                         storageKey:
                             'labels(first:10,orderBy:{"direction":"ASC","field":"NAME"})',
                     },
-                    _ = {
+                    K = {
                         alias: null,
-                        args: S,
+                        args: F,
                         filters: ["orderBy"],
                         handle: "connection",
                         key: "Labels_labels",
@@ -39545,8 +39531,8 @@ ${this.quotedText}`)
                     N = {
                         kind: "InlineFragment",
                         selections: [
-                            K,
                             _,
+                            K,
                             v,
                             p,
                             c,
@@ -39758,7 +39744,7 @@ ${this.quotedText}`)
                                                                             [
                                                                                 d,
                                                                                 f,
-                                                                                F,
+                                                                                S,
                                                                             ],
                                                                         storageKey:
                                                                             null,
@@ -39772,8 +39758,8 @@ ${this.quotedText}`)
                                                                                     kind: "InlineFragment",
                                                                                     selections:
                                                                                         [
-                                                                                            K,
                                                                                             _,
+                                                                                            K,
                                                                                             v,
                                                                                             p,
                                                                                             c,
@@ -39853,8 +39839,8 @@ ${this.quotedText}`)
                                                                                     kind: "InlineFragment",
                                                                                     selections:
                                                                                         [
-                                                                                            K,
                                                                                             _,
+                                                                                            K,
                                                                                             v,
                                                                                             p,
                                                                                             x,
@@ -39950,8 +39936,8 @@ ${this.quotedText}`)
                     },
                 };
             })();
-            dB.hash = "0a0e1c3003c63955a36ca0169f77ff91";
-            let d$ = (function () {
+            d$.hash = "0a0e1c3003c63955a36ca0169f77ff91";
+            let dQ = (function () {
                 var e = {
                         kind: "Variable",
                         name: "number",
@@ -40044,8 +40030,8 @@ ${this.quotedText}`)
                     abstractKey: null,
                 };
             })();
-            d$.hash = "ed58f7c20d8325fa9641338233943cdb";
-            let dQ = {
+            dQ.hash = "ed58f7c20d8325fa9641338233943cdb";
+            let dU = {
                 argumentDefinitions: [
                     {
                         defaultValue: null,
@@ -40134,8 +40120,8 @@ ${this.quotedText}`)
                 type: "Repository",
                 abstractKey: null,
             };
-            dQ.hash = "4c04143e376497bc1a37d2218000a808";
-            let dU = {
+            dU.hash = "4c04143e376497bc1a37d2218000a808";
+            let dH = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -40170,9 +40156,9 @@ ${this.quotedText}`)
                 type: "Milestone",
                 abstractKey: null,
             };
-            dU.hash = "3aa545b4589bf0d967e46deb8f691360";
-            var dH = a(53904);
-            function dz(e) {
+            dH.hash = "3aa545b4589bf0d967e46deb8f691360";
+            var dz = a(53904);
+            function dW(e) {
                 let l,
                     a,
                     n,
@@ -40183,13 +40169,13 @@ ${this.quotedText}`)
                     o = (0, sH.c)(15),
                     { milestoneRef: u } = e;
                 o[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = dU), (o[0] = l))
+                    ? ((l = dH), (o[0] = l))
                     : (l = o[0]);
                 let { title: d, repository: c } = (0, er.useFragment)(l, u),
                     m = `/${c.nameWithOwner}/milestones`;
                 return (
                     o[1] !== m
-                        ? ((a = (0, y.jsx)(dH.A.Item, {
+                        ? ((a = (0, y.jsx)(dz.A.Item, {
                               href: m,
                               children: "Milestones",
                           })),
@@ -40203,7 +40189,7 @@ ${this.quotedText}`)
                           (o[4] = n))
                         : (n = o[4]),
                     o[5] !== n
-                        ? ((t = (0, y.jsx)(dH.A.Item, {
+                        ? ((t = (0, y.jsx)(dz.A.Item, {
                               selected: !0,
                               children: (0, y.jsx)("span", { children: n }),
                           })),
@@ -40211,7 +40197,7 @@ ${this.quotedText}`)
                           (o[6] = t))
                         : (t = o[6]),
                     o[7] !== a || o[8] !== t
-                        ? ((s = (0, y.jsxs)(dH.A, { children: [a, t] })),
+                        ? ((s = (0, y.jsxs)(dz.A, { children: [a, t] })),
                           (o[7] = a),
                           (o[8] = t),
                           (o[9] = s))
@@ -40238,9 +40224,9 @@ ${this.quotedText}`)
                 );
             }
             try {
-                dz.displayName || (dz.displayName = "MilestoneTitle");
+                dW.displayName || (dW.displayName = "MilestoneTitle");
             } catch {}
-            let dW = {
+            let dG = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -40264,14 +40250,14 @@ ${this.quotedText}`)
                 type: "Milestone",
                 abstractKey: null,
             };
-            function dG(e) {
+            function dZ(e) {
                 let l,
                     a,
                     n,
                     t = (0, sH.c)(9),
                     { milestoneRef: s } = e;
                 t[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = dW), (t[0] = l))
+                    ? ((l = dG), (t[0] = l))
                     : (l = t[0]);
                 let i = (0, er.useFragment)(l, s),
                     r = (0, er.useRelayEnvironment)(),
@@ -40284,7 +40270,7 @@ ${this.quotedText}`)
                                   id: i.id,
                                   state: i.closed ? "OPEN" : "CLOSED",
                               },
-                              onCompleted: dZ,
+                              onCompleted: dX,
                               onError: () => {
                                   o({
                                       type: "error",
@@ -40304,7 +40290,7 @@ ${this.quotedText}`)
                     d = i.closed ? "Reopen Milestone" : "Close Milestone";
                 return (
                     t[6] !== u || t[7] !== d
-                        ? ((n = (0, y.jsx)(aq.Q, {
+                        ? ((n = (0, y.jsx)(aO.Q, {
                               onClick: u,
                               variant: "default",
                               children: d,
@@ -40316,12 +40302,12 @@ ${this.quotedText}`)
                     n
                 );
             }
-            function dZ() {}
-            dW.hash = "e9d04dbed832ecb0dfde42e7ee424484";
+            function dX() {}
+            dG.hash = "e9d04dbed832ecb0dfde42e7ee424484";
             try {
-                dG.displayName || (dG.displayName = "ToggleMilestoneState");
+                dZ.displayName || (dZ.displayName = "ToggleMilestoneState");
             } catch {}
-            function dX(e) {
+            function dY(e) {
                 let l,
                     a,
                     n,
@@ -40334,7 +40320,7 @@ ${this.quotedText}`)
                     d = (0, sH.c)(26),
                     { repositoryRef: c, optionConfig: m } = e;
                 d[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = dQ), (d[0] = l))
+                    ? ((l = dU), (d[0] = l))
                     : (l = d[0]);
                 let {
                         milestone: g,
@@ -40356,26 +40342,26 @@ ${this.quotedText}`)
                 let f = a;
                 if (!g) return null;
                 let C = `${A.fV.origin}/${k.login}/${h}`,
-                    F = `${C}/milestones/${g.number}/edit`;
+                    S = `${C}/milestones/${g.number}/edit`;
                 (d[4] !== g
-                    ? ((n = (0, y.jsx)(dz, { milestoneRef: g })),
+                    ? ((n = (0, y.jsx)(dW, { milestoneRef: g })),
                       (d[4] = g),
                       (d[5] = n))
                     : (n = d[5]),
-                    d[6] !== F || d[7] !== g || d[8] !== p
+                    d[6] !== S || d[7] !== g || d[8] !== p
                         ? ((t = p
                               ? (0, y.jsxs)(y.Fragment, {
                                     children: [
-                                        (0, y.jsx)(aq.Q, {
+                                        (0, y.jsx)(aO.Q, {
                                             as: "a",
-                                            href: F,
+                                            href: S,
                                             children: o2.editMilestone,
                                         }),
-                                        (0, y.jsx)(dG, { milestoneRef: g }),
+                                        (0, y.jsx)(dZ, { milestoneRef: g }),
                                     ],
                                 })
                               : null),
-                          (d[6] = F),
+                          (d[6] = S),
                           (d[7] = g),
                           (d[8] = p),
                           (d[9] = t))
@@ -40386,24 +40372,24 @@ ${this.quotedText}`)
                           (d[11] = k.login),
                           (d[12] = s))
                         : (s = d[12]));
-                let S = b !== L.l;
+                let F = b !== L.l;
                 return (
-                    d[13] !== m || d[14] !== s || d[15] !== S
+                    d[13] !== m || d[14] !== s || d[15] !== F
                         ? ((i = {
                               ...m,
                               showRepositoryPicker: !1,
                               issueCreateArguments: s,
                               showFullScreenButton: !0,
-                              navigateToFullScreenOnTemplateChoice: S,
+                              navigateToFullScreenOnTemplateChoice: F,
                               canBypassTemplateSelection: !0,
                           }),
                           (d[13] = m),
                           (d[14] = s),
-                          (d[15] = S),
+                          (d[15] = F),
                           (d[16] = i))
                         : (i = d[16]),
                     d[17] !== f || d[18] !== i
-                        ? ((r = (0, y.jsx)(aE.a, {
+                        ? ((r = (0, y.jsx)(aq.a, {
                               label: o2.newIssue,
                               navigate: f,
                               optionConfig: i,
@@ -40434,9 +40420,9 @@ ${this.quotedText}`)
                 );
             }
             try {
-                dX.displayName || (dX.displayName = "MilestoneActions");
+                dY.displayName || (dY.displayName = "MilestoneActions");
             } catch {}
-            let dY = {
+            let dJ = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -40486,10 +40472,10 @@ ${this.quotedText}`)
                 type: "Milestone",
                 abstractKey: null,
             };
-            dY.hash = "b924a97b25ba7fc66844fdbc57ca3181";
-            var dJ = a(333),
-                d1 = a(91089);
-            function d2(e) {
+            dJ.hash = "b924a97b25ba7fc66844fdbc57ca3181";
+            var d1 = a(333),
+                d2 = a(91089);
+            function d0(e) {
                 let l,
                     a,
                     n,
@@ -40509,24 +40495,24 @@ ${this.quotedText}`)
                     f = (0, sH.c)(44),
                     { milestoneRef: C } = e;
                 f[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = dY), (f[0] = l))
+                    ? ((l = dJ), (f[0] = l))
                     : (l = f[0]);
-                let F = (0, er.useFragment)(l, C),
-                    [S, L] = (0, b.useState)(!1),
-                    I = F.descriptionHTML && F.descriptionHTML.length > 600;
-                f[1] !== I || f[2] !== S
+                let S = (0, er.useFragment)(l, C),
+                    [F, L] = (0, b.useState)(!1),
+                    I = S.descriptionHTML && S.descriptionHTML.length > 600;
+                f[1] !== I || f[2] !== F
                     ? ((a = () =>
-                          I ? (S ? o6.expanded : o6.collapsed) : null),
+                          I ? (F ? o6.expanded : o6.collapsed) : null),
                       (f[1] = I),
-                      (f[2] = S),
+                      (f[2] = F),
                       (f[3] = a))
                     : (a = f[3]);
-                let K = a,
-                    _ = `${o6.milestoneDetailsWrapper} ${S && I ? o6.expanded : ""}`,
-                    v = F.closed ? "closed" : "open",
-                    x = F.closed ? o2.milestoneClosed : o2.milestoneOpen;
+                let _ = a,
+                    K = `${o6.milestoneDetailsWrapper} ${F && I ? o6.expanded : ""}`,
+                    v = S.closed ? "closed" : "open",
+                    x = S.closed ? o2.milestoneClosed : o2.milestoneOpen;
                 (f[4] !== v || f[5] !== x
-                    ? ((n = (0, y.jsx)(d1.A, {
+                    ? ((n = (0, y.jsx)(d2.A, {
                           className: o6.milestoneStatus,
                           variant: "small",
                           status: v,
@@ -40536,29 +40522,29 @@ ${this.quotedText}`)
                       (f[5] = x),
                       (f[6] = n))
                     : (n = f[6]),
-                    f[7] !== F
-                        ? ((t = (0, y.jsx)(db, { milestone: F })),
-                          (f[7] = F),
+                    f[7] !== S
+                        ? ((t = (0, y.jsx)(df, { milestone: S })),
+                          (f[7] = S),
                           (f[8] = t))
                         : (t = f[8]),
-                    f[9] !== F.closed
-                        ? ((s = F.closed
+                    f[9] !== S.closed
+                        ? ((s = S.closed
                               ? (0, y.jsx)(y.Fragment, {
                                     children: o2.milestoneClosed,
                                 })
                               : (0, y.jsx)(y.Fragment, {
                                     children: o2.milestoneLastUpdated,
                                 })),
-                          (f[9] = F.closed),
+                          (f[9] = S.closed),
                           (f[10] = s))
                         : (s = f[10]),
-                    f[11] !== F.updatedAt
-                        ? ((i = new Date(F.updatedAt)),
-                          (f[11] = F.updatedAt),
+                    f[11] !== S.updatedAt
+                        ? ((i = new Date(S.updatedAt)),
+                          (f[11] = S.updatedAt),
                           (f[12] = i))
                         : (i = f[12]),
                     f[13] !== i
-                        ? ((r = (0, y.jsx)(n7.A, { date: i, tense: "past" })),
+                        ? ((r = (0, y.jsx)(n9.A, { date: i, tense: "past" })),
                           (f[13] = i),
                           (f[14] = r))
                         : (r = f[14]),
@@ -40587,7 +40573,7 @@ ${this.quotedText}`)
                           (f[22] = n),
                           (f[23] = d))
                         : (d = f[23]));
-                let w = Math.floor(F.progressPercentage);
+                let w = Math.floor(S.progressPercentage);
                 f[24] !== w
                     ? ((c = (0, y.jsxs)("span", {
                           children: [
@@ -40602,10 +40588,10 @@ ${this.quotedText}`)
                       (f[24] = w),
                       (f[25] = c))
                     : (c = f[25]);
-                let N = Math.floor(F.progressPercentage);
+                let N = Math.floor(S.progressPercentage);
                 return (
                     f[26] !== N
-                        ? ((m = (0, y.jsx)(dS.z, {
+                        ? ((m = (0, y.jsx)(dL.z, {
                               progress: N,
                               "aria-hidden": "true",
                           })),
@@ -40630,48 +40616,48 @@ ${this.quotedText}`)
                           (f[32] = g),
                           (f[33] = p))
                         : (p = f[33]),
-                    f[34] !== F.description ||
-                    f[35] !== F.descriptionHTML ||
+                    f[34] !== S.description ||
+                    f[35] !== S.descriptionHTML ||
                     f[36] !== I ||
-                    f[37] !== S ||
-                    f[38] !== K
+                    f[37] !== F ||
+                    f[38] !== _
                         ? ((k =
-                              F.description && F.descriptionHTML
+                              S.description && S.descriptionHTML
                                   ? (0, y.jsxs)("div", {
                                         className: o6.milestoneDescription,
                                         id: "milestone-description",
                                         children: [
-                                            (0, y.jsx)(dJ.G, {
-                                                className: (0, nn.$)(
+                                            (0, y.jsx)(d1.G, {
+                                                className: (0, nt.$)(
                                                     o6.mdViewer,
-                                                    K()
+                                                    _()
                                                 ),
-                                                markdownValue: F.description,
-                                                verifiedHTML: F.descriptionHTML,
-                                                onChange: d0,
+                                                markdownValue: S.description,
+                                                verifiedHTML: S.descriptionHTML,
+                                                onChange: d3,
                                             }),
                                             I &&
                                                 (0, y.jsx)("div", {
-                                                    className: (0, nn.$)(
+                                                    className: (0, nt.$)(
                                                         o6.showMoreButtonContainer,
-                                                        S
+                                                        F
                                                             ? o6.expanded
                                                             : o6.collapsed
                                                     ),
-                                                    children: (0, y.jsx)(aq.Q, {
+                                                    children: (0, y.jsx)(aO.Q, {
                                                         size: "small",
                                                         variant: "invisible",
                                                         className: o6.button,
                                                         onClick: () => {
-                                                            L(!S);
+                                                            L(!F);
                                                         },
-                                                        "aria-expanded": S,
+                                                        "aria-expanded": F,
                                                         "aria-controls":
                                                             "milestone-description",
-                                                        trailingVisual: S
+                                                        trailingVisual: F
                                                             ? T.ChevronUpIcon
                                                             : T.ChevronDownIcon,
-                                                        children: S
+                                                        children: F
                                                             ? "Show less"
                                                             : "Show more",
                                                     }),
@@ -40679,31 +40665,31 @@ ${this.quotedText}`)
                                         ],
                                     })
                                   : null),
-                          (f[34] = F.description),
-                          (f[35] = F.descriptionHTML),
+                          (f[34] = S.description),
+                          (f[35] = S.descriptionHTML),
                           (f[36] = I),
-                          (f[37] = S),
-                          (f[38] = K),
+                          (f[37] = F),
+                          (f[38] = _),
                           (f[39] = k))
                         : (k = f[39]),
-                    f[40] !== p || f[41] !== k || f[42] !== _
+                    f[40] !== p || f[41] !== k || f[42] !== K
                         ? ((h = (0, y.jsxs)("div", {
-                              className: _,
+                              className: K,
                               children: [p, k],
                           })),
                           (f[40] = p),
                           (f[41] = k),
-                          (f[42] = _),
+                          (f[42] = K),
                           (f[43] = h))
                         : (h = f[43]),
                     h
                 );
             }
-            function d0() {}
+            function d3() {}
             try {
-                d2.displayName || (d2.displayName = "MilestoneDetail");
+                d0.displayName || (d0.displayName = "MilestoneDetail");
             } catch {}
-            let d3 = (function () {
+            let d4 = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -40905,14 +40891,14 @@ ${this.quotedText}`)
                         kind: "LinkedHandle",
                         name: "labels",
                     },
-                    F = {
+                    S = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "createdAt",
                         storageKey: null,
                     },
-                    S = {
+                    F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -40933,14 +40919,14 @@ ${this.quotedText}`)
                         name: "closedAt",
                         storageKey: null,
                     },
-                    K = {
+                    _ = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "login",
                         storageKey: null,
                     },
-                    _ = {
+                    K = {
                         alias: null,
                         args: null,
                         concreteType: null,
@@ -40948,7 +40934,7 @@ ${this.quotedText}`)
                         name: "author",
                         plural: !1,
                         selections: [
-                            K,
+                            _,
                             {
                                 alias: null,
                                 args: null,
@@ -40980,11 +40966,11 @@ ${this.quotedText}`)
                         selections: [
                             f,
                             C,
-                            F,
                             S,
+                            F,
                             L,
                             I,
-                            _,
+                            K,
                             {
                                 alias: null,
                                 args: null,
@@ -41017,7 +41003,7 @@ ${this.quotedText}`)
                         kind: "LinkedField",
                         name: "owner",
                         plural: !1,
-                        selections: [u, K, d],
+                        selections: [u, _, d],
                         storageKey: null,
                     };
                 return {
@@ -41161,11 +41147,11 @@ ${this.quotedText}`)
                                                                                                     [
                                                                                                         f,
                                                                                                         C,
-                                                                                                        F,
                                                                                                         S,
+                                                                                                        F,
                                                                                                         L,
                                                                                                         I,
-                                                                                                        _,
+                                                                                                        K,
                                                                                                         {
                                                                                                             alias: null,
                                                                                                             args: null,
@@ -41243,10 +41229,10 @@ ${this.quotedText}`)
                                                                                                     [
                                                                                                         f,
                                                                                                         C,
-                                                                                                        F,
                                                                                                         S,
+                                                                                                        F,
                                                                                                         I,
-                                                                                                        _,
+                                                                                                        K,
                                                                                                         x,
                                                                                                         w,
                                                                                                     ],
@@ -41307,7 +41293,7 @@ ${this.quotedText}`)
                                                 selections: [
                                                     d,
                                                     m,
-                                                    S,
+                                                    F,
                                                     {
                                                         alias: null,
                                                         args: null,
@@ -41380,8 +41366,8 @@ ${this.quotedText}`)
                     },
                 };
             })();
-            d3.hash = "51fbe7ba275adbf51fd5718aeca48151";
-            let d4 = (function () {
+            d4.hash = "51fbe7ba275adbf51fd5718aeca48151";
+            let d5 = (function () {
                 var e = ["search"],
                     l = {
                         alias: null,
@@ -41443,7 +41429,7 @@ ${this.quotedText}`)
                                 path: e,
                             },
                             fragmentPathInResult: ["node"],
-                            operation: d3,
+                            operation: d4,
                             identifierInfo: {
                                 identifierField: "id",
                                 identifierQueryVariableName: "id",
@@ -41693,8 +41679,8 @@ ${this.quotedText}`)
                     abstractKey: null,
                 };
             })();
-            d4.hash = "51fbe7ba275adbf51fd5718aeca48151";
-            let d5 = {
+            d5.hash = "51fbe7ba275adbf51fd5718aeca48151";
+            let d6 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -41730,13 +41716,13 @@ ${this.quotedText}`)
                 type: "Milestone",
                 abstractKey: null,
             };
-            d5.hash = "4b1062184102941393701896eeda1e42";
-            let d6 = {
+            d6.hash = "4b1062184102941393701896eeda1e42";
+            let d7 = {
                     emptyState: "EmptyState-module__emptyState--NgT69",
                     emptyStateHeading:
                         "EmptyState-module__emptyStateHeading--rzLtD",
                 },
-                d7 = (e) => {
+                d9 = (e) => {
                     let l,
                         a,
                         n,
@@ -41756,7 +41742,7 @@ ${this.quotedText}`)
                     return (
                         s[0] !== d
                             ? ((l = (0, y.jsx)("h3", {
-                                  className: d6.emptyStateHeading,
+                                  className: d7.emptyStateHeading,
                                   children: d,
                               })),
                               (s[0] = d),
@@ -41792,7 +41778,7 @@ ${this.quotedText}`)
                         s[7] !== r || s[8] !== o || s[9] !== l || s[10] !== n
                             ? ((t = (0, y.jsxs)("div", {
                                   id: o,
-                                  className: d6.emptyState,
+                                  className: d7.emptyState,
                                   role: "region",
                                   "aria-label": r,
                                   "aria-live": "polite",
@@ -41809,9 +41795,9 @@ ${this.quotedText}`)
                     );
                 };
             try {
-                d7.displayName || (d7.displayName = "EmptyState");
+                d9.displayName || (d9.displayName = "EmptyState");
             } catch {}
-            function d9() {
+            function d8() {
                 let e,
                     l,
                     a,
@@ -41821,13 +41807,13 @@ ${this.quotedText}`)
                     i,
                     r,
                     o = (0, sH.c)(7),
-                    u = d8;
+                    u = ce;
                 return (
                     o[0] === Symbol.for("react.memo_cache_sentinel")
                         ? ((l = {
                               key: "mark-as",
                               render: (e) =>
-                                  u(e, dp.issueIcons.CLOSED.icon, o2.markAs),
+                                  u(e, dy.issueIcons.CLOSED.icon, o2.markAs),
                           }),
                           (o[0] = l))
                         : (l = o[0]),
@@ -41889,28 +41875,28 @@ ${this.quotedText}`)
                     r
                 );
             }
-            function d8(e, l, a) {
+            function ce(e, l, a) {
                 return e
-                    ? (0, y.jsxs)(aX.l.Item, {
+                    ? (0, y.jsxs)(aY.l.Item, {
                           disabled: !0,
                           children: [
-                              (0, y.jsx)(aX.l.LeadingVisual, {
+                              (0, y.jsx)(aY.l.LeadingVisual, {
                                   children: (0, y.jsx)(l, {}),
                               }),
                               a,
-                              (0, y.jsx)(aX.l.TrailingVisual, {
+                              (0, y.jsx)(aY.l.TrailingVisual, {
                                   children: (0, y.jsx)(T.TriangleDownIcon, {}),
                               }),
                           ],
                       })
-                    : (0, y.jsx)(aq.Q, {
+                    : (0, y.jsx)(aO.Q, {
                           disabled: !0,
                           leadingVisual: l,
                           trailingVisual: T.TriangleDownIcon,
                           children: a,
                       });
             }
-            let ce = ({
+            let cl = ({
                 checkedItems: e,
                 issueNodes: l,
                 setCheckedItems: a,
@@ -41953,7 +41939,7 @@ ${this.quotedText}`)
                         },
                         [d]
                     ),
-                    F = (0, b.useMemo)(
+                    S = (0, b.useMemo)(
                         () => ({
                             useQueryForAction: !1,
                             onCompleted: f,
@@ -41966,7 +41952,7 @@ ${this.quotedText}`)
                         }),
                         [f, C, p, h, i]
                     ),
-                    S = (0, b.useCallback)(
+                    F = (0, b.useCallback)(
                         (e) => {
                             e
                                 ? (a(
@@ -41997,14 +41983,14 @@ ${this.quotedText}`)
                         }),
                         [s?.name, s?.owner]
                     ),
-                    K = (0, b.useMemo)(() => {
+                    _ = (0, b.useMemo)(() => {
                         if (!L) return;
                         let e = h.map((e) => e.id),
                             l = [
                                 {
                                     key: "mark-as",
                                     render: (e) =>
-                                        (0, y.jsx)(ig, { ...F, nested: e }),
+                                        (0, y.jsx)(ig, { ...S, nested: e }),
                                 },
                                 {
                                     key: "apply-labels",
@@ -42014,7 +42000,7 @@ ${this.quotedText}`)
                                             repo: s.name,
                                             nested: l,
                                             issueIds: e,
-                                            ...F,
+                                            ...S,
                                             repositoryId: s?.id,
                                         }),
                                 },
@@ -42024,7 +42010,7 @@ ${this.quotedText}`)
                                         (0, y.jsx)(sX, {
                                             nested: l,
                                             issueIds: e,
-                                            ...F,
+                                            ...S,
                                             repositoryId: s?.id,
                                             owner: s?.owner,
                                             repo: s?.name,
@@ -42039,7 +42025,7 @@ ${this.quotedText}`)
                                             repositoryId: s?.id,
                                             owner: s?.owner,
                                             repo: s?.name,
-                                            ...F,
+                                            ...S,
                                         }),
                                 },
                                 {
@@ -42051,7 +42037,7 @@ ${this.quotedText}`)
                                             nested: e,
                                             issueIds: h.map((e) => e.id),
                                             repositoryId: s.id,
-                                            ...F,
+                                            ...S,
                                         }),
                                 },
                             ];
@@ -42070,33 +42056,33 @@ ${this.quotedText}`)
                                                 nested: l,
                                                 issueIds: e,
                                                 repositoryId: s?.id,
-                                                ...F,
+                                                ...S,
                                             }),
                                         }),
                                 }),
                             l
                         );
-                    }, [F, s?.id, s?.owner, s?.name, h, L, I, u]);
+                    }, [S, s?.id, s?.owner, s?.name, h, L, I, u]);
                 return (0, y.jsx)(b.Suspense, {
-                    fallback: (0, y.jsx)(d9, {}),
+                    fallback: (0, y.jsx)(d8, {}),
                     children: (0, y.jsx)(ip.X, {
-                        onToggleSelectAll: S,
+                        onToggleSelectAll: F,
                         actionsLabel: o2.bulkActions,
-                        actions: K,
+                        actions: _,
                         density: "normal",
-                        ...F,
+                        ...S,
                     }),
                 });
             };
             try {
-                d9.displayName ||
-                    (d9.displayName = "ListItemsHeaderBulkFallback");
+                d8.displayName ||
+                    (d8.displayName = "ListItemsHeaderBulkFallback");
             } catch {}
             try {
-                ce.displayName ||
-                    (ce.displayName = "ListItemsHeaderWithBulkActions");
+                cl.displayName ||
+                    (cl.displayName = "ListItemsHeaderWithBulkActions");
             } catch {}
-            let cl = (e) => {
+            let ca = (e) => {
                 let l,
                     a,
                     n,
@@ -42134,8 +42120,8 @@ ${this.quotedText}`)
                 u[10] !== s
                     ? ((i = (e) => {
                           e
-                              ? (t(l.filter(ca).reduce(cn, new Map())),
-                                s(l.filter(ct).reduce(cs, new Map())))
+                              ? (t(l.filter(cn).reduce(ct, new Map())),
+                                s(l.filter(cs).reduce(ci, new Map())))
                               : (t(new Map()), d(0), c?.(!1));
                       }),
                       (u[6] = l),
@@ -42168,22 +42154,22 @@ ${this.quotedText}`)
                 );
             };
             try {
-                cl.displayName ||
-                    (cl.displayName = "ListItemsHeaderWithoutBulkActions");
+                ca.displayName ||
+                    (ca.displayName = "ListItemsHeaderWithoutBulkActions");
             } catch {}
-            function ca(e) {
+            function cn(e) {
                 return null != e;
             }
-            function cn(e, l) {
+            function ct(e, l) {
                 return e.set(l.id, l);
             }
-            function ct(e) {
+            function cs(e) {
                 return null != e;
             }
-            function cs(e, l) {
+            function ci(e, l) {
                 return e.set(l.id, l);
             }
-            function ci(e) {
+            function cr(e) {
                 let l,
                     a,
                     n = (0, sH.c)(6);
@@ -42195,7 +42181,7 @@ ${this.quotedText}`)
                     let e;
                     return (
                         n[2] !== l
-                            ? ((e = (0, y.jsx)(ce, { ...l })),
+                            ? ((e = (0, y.jsx)(cl, { ...l })),
                               (n[2] = l),
                               (n[3] = e))
                             : (e = n[3]),
@@ -42204,7 +42190,7 @@ ${this.quotedText}`)
                 }
                 return (
                     n[4] !== l
-                        ? ((a = (0, y.jsx)(cl, { ...l })),
+                        ? ((a = (0, y.jsx)(ca, { ...l })),
                           (n[4] = l),
                           (n[5] = a))
                         : (a = n[5]),
@@ -42212,9 +42198,9 @@ ${this.quotedText}`)
                 );
             }
             try {
-                ci.displayName || (ci.displayName = "ListItemsHeader");
+                cr.displayName || (cr.displayName = "ListItemsHeader");
             } catch {}
-            function cr(e) {
+            function co(e) {
                 let l,
                     a,
                     n,
@@ -42230,11 +42216,11 @@ ${this.quotedText}`)
                         handleNavigate: m,
                     } = e,
                     g = (0, li.Z)(),
-                    [p, k] = (0, er.useQueryLoader)(sF),
+                    [p, k] = (0, er.useQueryLoader)(sS),
                     h = null !== p;
                 (s[0] !== k || s[1] !== i
                     ? ((l = () => {
-                          A.X3 || k({ nodes: i.map(co), includeReactions: !1 });
+                          A.X3 || k({ nodes: i.map(cu), includeReactions: !1 });
                       }),
                       (s[0] = k),
                       (s[1] = i),
@@ -42286,7 +42272,7 @@ ${this.quotedText}`)
                                       );
                                   else
                                       return (0, y.jsx)(
-                                          tK,
+                                          t_,
                                           {
                                               pullRequestKey: e,
                                               includeGitDataFromMainQuery: !1,
@@ -42322,7 +42308,7 @@ ${this.quotedText}`)
                                                     e.id
                                                 )
                                               : (0, y.jsx)(
-                                                    tK,
+                                                    t_,
                                                     {
                                                         pullRequestKey: e,
                                                         includeGitDataFromMainQuery:
@@ -42359,13 +42345,13 @@ ${this.quotedText}`)
                     t
                 );
             }
-            function co(e) {
+            function cu(e) {
                 return e.id;
             }
             try {
-                cr.displayName || (cr.displayName = "MilestoneIssuesListPage");
+                co.displayName || (co.displayName = "MilestoneIssuesListPage");
             } catch {}
-            let cu = (function () {
+            let cd = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -42443,8 +42429,8 @@ ${this.quotedText}`)
                     },
                 };
             })();
-            cu.hash = "30aff72adf0f613394b97d1727b41dd0";
-            let cd = {
+            cd.hash = "30aff72adf0f613394b97d1727b41dd0";
+            let cc = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -42468,7 +42454,7 @@ ${this.quotedText}`)
                 type: "Milestone",
                 abstractKey: null,
             };
-            function cc(e) {
+            function cm(e) {
                 let l,
                     a,
                     n,
@@ -42483,7 +42469,7 @@ ${this.quotedText}`)
                     m = (0, sH.c)(25),
                     { milestoneRef: g } = e;
                 m[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = cd), (m[0] = l))
+                    ? ((l = cc), (m[0] = l))
                     : (l = m[0]);
                 let p = (0, er.useFragment)(l, g);
                 m[1] !== p?.openIssueCount
@@ -42511,15 +42497,15 @@ ${this.quotedText}`)
                 m[6] === Symbol.for("react.memo_cache_sentinel")
                     ? ((s = ["mac"]), (m[6] = s))
                     : (s = m[6]);
-                let F = (0, sO.X)(s),
-                    S = (0, li.Z)();
-                m[7] !== F || m[8] !== S
+                let S = (0, sO.X)(s),
+                    F = (0, li.Z)();
+                m[7] !== S || m[8] !== F
                     ? ((i = (e, l) => {
-                          (F ? e.metaKey : e.ctrlKey) ||
-                              (e.preventDefault(), S(l ? t : b));
+                          (S ? e.metaKey : e.ctrlKey) ||
+                              (e.preventDefault(), F(l ? t : b));
                       }),
-                      (m[7] = F),
-                      (m[8] = S),
+                      (m[7] = S),
+                      (m[8] = F),
                       (m[9] = i))
                     : (i = m[9]);
                 let L = i,
@@ -42532,7 +42518,7 @@ ${this.quotedText}`)
                               "li",
                               {
                                   children: (0, y.jsx)(
-                                      aW.L,
+                                      aG.L,
                                       {
                                           title: "Open",
                                           isSelected: I,
@@ -42550,20 +42536,20 @@ ${this.quotedText}`)
                           (m[14] = r),
                           (m[15] = o))
                         : (o = m[15]));
-                let K = A.KJ && "1" === C;
+                let _ = A.KJ && "1" === C;
                 return (
                     m[16] !== L
                         ? ((u = (e) => L(e, !1)), (m[16] = L), (m[17] = u))
                         : (u = m[17]),
-                    m[18] !== h || m[19] !== u || m[20] !== K
+                    m[18] !== h || m[19] !== u || m[20] !== _
                         ? ((d = (0, y.jsx)(
                               "li",
                               {
                                   children: (0, y.jsx)(
-                                      aW.L,
+                                      aG.L,
                                       {
                                           title: "Closed",
-                                          isSelected: K,
+                                          isSelected: _,
                                           count: h,
                                           href: b,
                                           onClick: u,
@@ -42575,13 +42561,13 @@ ${this.quotedText}`)
                           )),
                           (m[18] = h),
                           (m[19] = u),
-                          (m[20] = K),
+                          (m[20] = _),
                           (m[21] = d))
                         : (d = m[21]),
                     m[22] !== d || m[23] !== o
                         ? ((c = (0, y.jsx)("div", {
                               children: (0, y.jsxs)("ul", {
-                                  className: `list-style-none ${(0, nn.$)(o6.tabsContainer)}`,
+                                  className: `list-style-none ${(0, nt.$)(o6.tabsContainer)}`,
                                   children: [o, d],
                               }),
                           })),
@@ -42592,18 +42578,18 @@ ${this.quotedText}`)
                     c
                 );
             }
-            cd.hash = "91b6ba0a2d4f55865eaf8fbec036f6bd";
+            cc.hash = "91b6ba0a2d4f55865eaf8fbec036f6bd";
             try {
-                cc.displayName ||
-                    (cc.displayName = "OpenClosedMilestoneIssues");
+                cm.displayName ||
+                    (cm.displayName = "OpenClosedMilestoneIssues");
             } catch {}
-            function cm(e) {
+            function cg(e) {
                 let l,
                     a,
                     n = (0, sH.c)(6),
                     { repositoryRef: t, singleKeyShortcutsEnabled: s } = e;
                 n[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = d4), (n[0] = l))
+                    ? ((l = d5), (n[0] = l))
                     : (l = n[0]);
                 let {
                     data: i,
@@ -42612,7 +42598,7 @@ ${this.quotedText}`)
                 } = (0, er.usePaginationFragment)(l, t);
                 return i.milestone
                     ? (n[1] !== i || n[2] !== o || n[3] !== r || n[4] !== s
-                          ? ((a = (0, y.jsx)(cg, {
+                          ? ((a = (0, y.jsx)(cp, {
                                 data: i,
                                 milestone: i.milestone,
                                 loadNext: r,
@@ -42629,7 +42615,7 @@ ${this.quotedText}`)
                       a)
                     : null;
             }
-            function cg(e) {
+            function cp(e) {
                 let l,
                     a,
                     n,
@@ -42648,10 +42634,10 @@ ${this.quotedText}`)
                     h,
                     f,
                     C,
-                    F,
                     S,
+                    F,
                     I,
-                    K,
+                    _,
                     x,
                     N,
                     j,
@@ -42669,7 +42655,7 @@ ${this.quotedText}`)
                         viewerCanPush: $,
                     } = e;
                 V[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = d5), (V[0] = l))
+                    ? ((l = d6), (V[0] = l))
                     : (l = V[0]);
                 let Q = (0, er.useFragment)(l, E);
                 (V[1] !== D.id ||
@@ -42698,7 +42684,7 @@ ${this.quotedText}`)
                       (V[8] = n))
                     : (n = V[8]),
                     (a = n));
-                let [U, H] = (0, b.useState)(cL),
+                let [U, H] = (0, b.useState)(cI),
                     [z, W] = (0, b.useState)(),
                     { shiftKeyPressedRef: G } = (function () {
                         let e,
@@ -42738,7 +42724,7 @@ ${this.quotedText}`)
                         );
                     })();
                 (V[9] !== D.search?.edges
-                    ? ((s = D.search?.edges?.map(cS).filter(cF) || []),
+                    ? ((s = D.search?.edges?.map(cL).filter(cF) || []),
                       (V[9] = D.search?.edges),
                       (V[10] = s))
                     : (s = V[10]),
@@ -42751,7 +42737,7 @@ ${this.quotedText}`)
                 V[14] !== X
                     ? ((i = async (e, l, a) => (
                           (0, aF.SC)("react"),
-                          await (0, ab.n)(Z, D.owner.login, D.name, e),
+                          await (0, af.n)(Z, D.owner.login, D.name, e),
                           X(l, a)
                       )),
                       (V[11] = D.name),
@@ -42762,7 +42748,7 @@ ${this.quotedText}`)
                     : (i = V[15]);
                 let Y = i,
                     [J, ee] = (0, w.M)(
-                        dp.localStorageKeyBulkUpdateIssues,
+                        dy.localStorageKeyBulkUpdateIssues,
                         null
                     ),
                     [el, ea] = (0, b.useState)(!1),
@@ -42774,7 +42760,7 @@ ${this.quotedText}`)
                         !el;
                 V[16] === Symbol.for("react.memo_cache_sentinel")
                     ? ((r = (e) => {
-                          ea(Array.from(e.values()).some(cC));
+                          ea(Array.from(e.values()).some(cS));
                       }),
                       (V[16] = r))
                     : (r = V[16]);
@@ -42818,7 +42804,7 @@ ${this.quotedText}`)
                     ec = `${ed}/issues/?q=is%3Aissue%20state%3Aopen%20no%3Amilestone`,
                     em = `/${D.owner.login}/${D.name}/milestone/${Q.number}`,
                     eg = A.fV.pathname,
-                    [ep] = (0, _.ok)(),
+                    [ep] = (0, K.ok)(),
                     ey = ep.get("closed"),
                     ek = em === eg && "1" === ey;
                 V[24] === Symbol.for("react.memo_cache_sentinel")
@@ -42839,7 +42825,7 @@ ${this.quotedText}`)
                           eu((e) => {
                               let l = ek ? "CLOSED" : "OPEN",
                                   a = e.filter((e) => eh(e) === l),
-                                  n = new Set(a.map(cb));
+                                  n = new Set(a.map(cf));
                               return [
                                   ...a,
                                   ...t.filter(
@@ -42897,7 +42883,7 @@ ${this.quotedText}`)
                                       onCompleted: n,
                                   }) {
                                       (0, er.commitMutation)(e, {
-                                          mutation: cu,
+                                          mutation: cd,
                                           variables: { input: l },
                                           onError: (e) => a && a(e),
                                           onCompleted: (e) => n && n(e),
@@ -42942,12 +42928,12 @@ ${this.quotedText}`)
                     : (g = V[34]);
                 let ef = g,
                     eC = D.search?.issueCount || 0,
-                    eF = $ && eC < dp.maxPrioritizableItemCount && !ek,
-                    eS = dp.issuesPageSize;
+                    eS = $ && eC < dy.maxPrioritizableItemCount && !ek,
+                    eF = dy.issuesPageSize;
                 if (V[35] !== eo) {
                     k = [];
-                    for (let e = 0; e < eo.length; e += eS)
-                        k.push(eo.slice(e, e + eS));
+                    for (let e = 0; e < eo.length; e += eF)
+                        k.push(eo.slice(e, e + eF));
                     ((V[35] = eo), (V[36] = k));
                 } else k = V[36];
                 ((p = k),
@@ -42956,16 +42942,16 @@ ${this.quotedText}`)
                     V[39] !== ei ||
                     V[40] !== p ||
                     V[41] !== a ||
-                    V[42] !== eF
+                    V[42] !== eS
                         ? ((h = p.map((e) =>
                               (0, y.jsx)(
-                                  cr,
+                                  co,
                                   {
                                       orderedNodes: e,
                                       checkedItems: U,
                                       itemSelected: ei,
-                                      getMetadataHref: cf,
-                                      withDragAndDrop: eF,
+                                      getMetadataHref: cC,
+                                      withDragAndDrop: eS,
                                       scopedRepository: a,
                                       handleNavigate: Y,
                                   },
@@ -42977,18 +42963,18 @@ ${this.quotedText}`)
                           (V[39] = ei),
                           (V[40] = p),
                           (V[41] = a),
-                          (V[42] = eF),
+                          (V[42] = eS),
                           (V[43] = h))
                         : (h = V[43]));
                 let eL = h,
                     eI = D.isInOrganization;
                 (V[44] !== Q
-                    ? ((f = (0, y.jsx)(cc, { milestoneRef: Q })),
+                    ? ((f = (0, y.jsx)(cm, { milestoneRef: Q })),
                       (V[44] = Q),
                       (V[45] = f))
                     : (f = V[45]),
                     V[46] !== t
-                        ? ((C = t.filter(Boolean).reduce(ch, [])),
+                        ? ((C = t.filter(Boolean).reduce(cb, [])),
                           (V[46] = t),
                           (V[47] = C))
                         : (C = V[47]),
@@ -43002,7 +42988,7 @@ ${this.quotedText}`)
                     V[55] !== f ||
                     V[56] !== C ||
                     V[57] !== en
-                        ? ((F = (0, y.jsx)(ci, {
+                        ? ((S = (0, y.jsx)(cr, {
                               checkedItems: U,
                               scopedRepository: a,
                               isInOrganization: eI,
@@ -43026,27 +43012,27 @@ ${this.quotedText}`)
                           (V[55] = f),
                           (V[56] = C),
                           (V[57] = en),
-                          (V[58] = F))
-                        : (F = V[58]));
-                let eK = F;
+                          (V[58] = S))
+                        : (S = V[58]));
+                let e_ = S;
                 V[59] !== q
-                    ? ((S = () => {
-                          q(dp.issuesPageSize);
+                    ? ((F = () => {
+                          q(dy.issuesPageSize);
                       }),
                       (V[59] = q),
-                      (V[60] = S))
-                    : (S = V[60]);
-                let e_ = S;
+                      (V[60] = F))
+                    : (F = V[60]);
+                let eK = F;
                 e: {
-                    if (eC > dp.issuesPageSize) {
+                    if (eC > dy.issuesPageSize) {
                         let e;
-                        (V[61] !== O || V[62] !== e_
+                        (V[61] !== O || V[62] !== eK
                             ? ((e = O
                                   ? (0, y.jsx)("div", {
                                         className: o6.loadMoreButtonWrapper,
-                                        children: (0, y.jsx)(aq.Q, {
+                                        children: (0, y.jsx)(aO.Q, {
                                             variant: "invisible",
-                                            onClick: e_,
+                                            onClick: eK,
                                             className: o6.loadMoreButton,
                                             "data-testid": "load-more-button",
                                             children: (0, y.jsx)("span", {
@@ -43056,7 +43042,7 @@ ${this.quotedText}`)
                                     })
                                   : null),
                               (V[61] = O),
-                              (V[62] = e_),
+                              (V[62] = eK),
                               (V[63] = e))
                             : (e = V[63]),
                             (I = e));
@@ -43066,8 +43052,8 @@ ${this.quotedText}`)
                 }
                 let ev = I;
                 (V[64] !== eo
-                    ? ((K = eo.map(ck)), (V[64] = eo), (V[65] = K))
-                    : (K = V[65]),
+                    ? ((_ = eo.map(ch)), (V[64] = eo), (V[65] = _))
+                    : (_ = V[65]),
                     V[66] !== eo
                         ? ((x = (e, l) => {
                               let a = eo[l];
@@ -43077,18 +43063,18 @@ ${this.quotedText}`)
                                   (n = (0, y.jsx)(sL, {
                                       metadataRef: null,
                                       issueKey: a,
-                                      getMetadataHref: cy,
+                                      getMetadataHref: ck,
                                       onSelectRow: L.l,
                                       isActive: !1,
                                       sortingItemSelected: "",
                                       onNavigate: L.l,
                                   })),
                               "PullRequest" === a.__typename)
-                                  ? (0, y.jsx)(tK, {
+                                  ? (0, y.jsx)(t_, {
                                         metadataRef: null,
                                         pullRequestKey: a,
                                         includeGitDataFromMainQuery: !1,
-                                        getMetadataHref: cp,
+                                        getMetadataHref: cy,
                                         onSelectRow: L.l,
                                         isActive: !1,
                                         sortingItemSelected: "",
@@ -43116,9 +43102,9 @@ ${this.quotedText}`)
                           (V[66] = eo),
                           (V[67] = x))
                         : (x = V[67]),
-                    V[68] !== ef || V[69] !== K || V[70] !== x
+                    V[68] !== ef || V[69] !== _ || V[70] !== x
                         ? ((N = {
-                              items: K,
+                              items: _,
                               onDrop: ef,
                               className: o6.dndList,
                               direction: "vertical",
@@ -43126,20 +43112,20 @@ ${this.quotedText}`)
                               renderOverlay: x,
                           }),
                           (V[68] = ef),
-                          (V[69] = K),
+                          (V[69] = _),
                           (V[70] = x),
                           (V[71] = N))
                         : (N = V[71]));
                 let ex = N;
                 V[72] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((j = (0, nI.G)("repository-milestone-list-view")),
+                    ? ((j = (0, n_.G)("repository-milestone-list-view")),
                       (V[72] = j))
                     : (j = V[72]);
-                let ew = eF ? ox.BS : "ul";
-                V[73] !== ex || V[74] !== eF
-                    ? ((R = eF ? ex : {}),
+                let ew = eS ? ox.BS : "ul";
+                V[73] !== ex || V[74] !== eS
+                    ? ((R = eS ? ex : {}),
                       (V[73] = ex),
-                      (V[74] = eF),
+                      (V[74] = eS),
                       (V[75] = R))
                     : (R = V[75]);
                 let eN = eo.length > 0 && eL;
@@ -43147,7 +43133,7 @@ ${this.quotedText}`)
                     V[76] !== ek || V[77] !== ec || V[78] !== eL.length
                         ? ((P =
                               0 === eL.length &&
-                              (0, y.jsx)(d7, {
+                              (0, y.jsx)(d9, {
                                   selected: ek ? "closed" : "open",
                                   descriptionUrl: ec,
                               })),
@@ -43158,24 +43144,24 @@ ${this.quotedText}`)
                         : (P = V[79]),
                     V[80] !== U.size ||
                     V[81] !== eC ||
-                    V[82] !== eK ||
+                    V[82] !== e_ ||
                     V[83] !== ew ||
                     V[84] !== R ||
                     V[85] !== eN ||
                     V[86] !== P ||
-                    V[87] !== eF
+                    V[87] !== eS
                         ? ((T = (0, y.jsx)("div", {
                               className: o6.milestoneListWrapper,
                               "data-hpc": !0,
                               ...j,
-                              children: (0, y.jsxs)(nc.u, {
+                              children: (0, y.jsxs)(nm.u, {
                                   title: "",
                                   totalCount: eC,
                                   selectedCount: U.size,
                                   titleHeaderTag: "h2",
                                   isSelectable: !0,
-                                  hasDragHandle: eF,
-                                  metadata: eK,
+                                  hasDragHandle: eS,
+                                  metadata: e_,
                                   singularUnits: "issue",
                                   pluralUnits: "issues",
                                   as: ew,
@@ -43185,12 +43171,12 @@ ${this.quotedText}`)
                           })),
                           (V[80] = U.size),
                           (V[81] = eC),
-                          (V[82] = eK),
+                          (V[82] = e_),
                           (V[83] = ew),
                           (V[84] = R),
                           (V[85] = eN),
                           (V[86] = P),
-                          (V[87] = eF),
+                          (V[87] = eS),
                           (V[88] = T))
                         : (T = V[88]),
                     V[89] !== ev || V[90] !== T
@@ -43202,55 +43188,55 @@ ${this.quotedText}`)
                     M
                 );
             }
-            function cp() {
-                return "";
-            }
             function cy() {
                 return "";
             }
-            function ck(e) {
+            function ck() {
+                return "";
+            }
+            function ch(e) {
                 return { id: e.id, title: "" };
             }
-            function ch(e, l) {
+            function cb(e, l) {
                 return (e.push(l), e);
             }
-            function cb(e) {
+            function cf(e) {
                 return `${e.__typename}:${e.id}`;
             }
-            function cf(e, l) {
-                return ad({
-                    viewId: S.repository,
-                    query: ac("is:issue state:open", e, l),
+            function cC(e, l) {
+                return ac({
+                    viewId: F.repository,
+                    query: am("is:issue state:open", e, l),
                 });
             }
-            function cC(e) {
+            function cS(e) {
                 return "PullRequest" === e.__typename;
             }
             function cF(e) {
                 return !!e;
             }
-            function cS(e) {
+            function cL(e) {
                 return e?.node &&
                     ("PullRequest" === e.node.__typename ||
                         "Issue" === e.node.__typename)
                     ? e.node
                     : null;
             }
-            function cL() {
+            function cI() {
                 return new Map();
             }
             try {
-                cm.displayName || (cm.displayName = "MilestoneIssuesList");
+                cg.displayName || (cg.displayName = "MilestoneIssuesList");
             } catch {}
             try {
-                cg.displayName ||
-                    (cg.displayName = "MilestoneIssuesListInternal");
+                cp.displayName ||
+                    (cp.displayName = "MilestoneIssuesListInternal");
             } catch {}
-            function cI(e) {
+            function c_(e) {
                 let l,
                     a = (0, sH.c)(2),
                     { pageQueryRef: n } = e,
-                    t = (0, aS.usePreloadedQuery)(dB, n);
+                    t = (0, aL.usePreloadedQuery)(d$, n);
                 return t.repository
                     ? (a[0] !== t.repository
                           ? ((l = (0, y.jsx)(cK, { repository: t.repository })),
@@ -43275,10 +43261,10 @@ ${this.quotedText}`)
                     m = (0, sH.c)(25),
                     { repository: g, optionConfig: p } = e;
                 m[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((l = d$), (m[0] = l))
+                    ? ((l = dQ), (m[0] = l))
                     : (l = m[0]);
                 let k = (0, er.useFragment)(l, g),
-                    [h, f] = (0, w.M)(dp.localStorageKeyBulkUpdateIssues, null);
+                    [h, f] = (0, w.M)(dy.localStorageKeyBulkUpdateIssues, null);
                 if (
                     (m[1] !== k.milestone || m[2] !== k.nameWithOwner
                         ? ((a = () => {
@@ -43306,7 +43292,7 @@ ${this.quotedText}`)
                       (m[5] = t))
                     : (t = m[5]),
                     m[6] !== k || m[7] !== p
-                        ? ((s = (0, y.jsx)(dX, {
+                        ? ((s = (0, y.jsx)(dY, {
                               repositoryRef: k,
                               optionConfig: p,
                           })),
@@ -43315,7 +43301,7 @@ ${this.quotedText}`)
                           (m[8] = s))
                         : (s = m[8]),
                     m[9] !== k.milestone
-                        ? ((i = (0, y.jsx)(d2, { milestoneRef: k.milestone })),
+                        ? ((i = (0, y.jsx)(d0, { milestoneRef: k.milestone })),
                           (m[9] = k.milestone),
                           (m[10] = i))
                         : (i = m[10]),
@@ -43329,9 +43315,9 @@ ${this.quotedText}`)
                 let C = p?.singleKeyShortcutsEnabled;
                 return (
                     m[12] !== k || m[13] !== C
-                        ? ((o = (0, y.jsx)(sK.t, {
+                        ? ((o = (0, y.jsx)(s_.t, {
                               fallback: r,
-                              children: (0, y.jsx)(cm, {
+                              children: (0, y.jsx)(cg, {
                                   repositoryRef: k,
                                   singleKeyShortcutsEnabled: C,
                               }),
@@ -43350,13 +43336,13 @@ ${this.quotedText}`)
                           (m[17] = u))
                         : (u = m[17]),
                     m[18] !== u || m[19] !== s
-                        ? ((d = (0, y.jsx)(lY.Y, {
+                        ? ((d = (0, y.jsx)(lJ.Y, {
                               contentAs: "div",
                               resizeable: !1,
                               leftPaneWidth: "small",
                               middlePane: (0, y.jsx)("div", {
                                   className: o6.middlePaneWrapper,
-                                  children: (0, y.jsxs)(sK.t, {
+                                  children: (0, y.jsxs)(s_.t, {
                                       fallback: t,
                                       children: [s, u],
                                   }),
@@ -43386,7 +43372,7 @@ ${this.quotedText}`)
                         a,
                         n = (0, sH.c)(3),
                         { queryRef: t } = e,
-                        [s] = (0, aS.useQueryLoader)(dB, t);
+                        [s] = (0, aL.useQueryLoader)(d$, t);
                     return s
                         ? (n[0] === Symbol.for("react.memo_cache_sentinel")
                               ? ((l = (0, y.jsx)("div", {
@@ -43397,7 +43383,7 @@ ${this.quotedText}`)
                           n[1] !== s
                               ? ((a = (0, y.jsx)(b.Suspense, {
                                     fallback: l,
-                                    children: (0, y.jsx)(cI, {
+                                    children: (0, y.jsx)(c_, {
                                         pageQueryRef: s,
                                     }),
                                 })),
@@ -43409,33 +43395,33 @@ ${this.quotedText}`)
                 }).displayName || (r.displayName = "RepositoryMilestone");
             } catch {}
             try {
-                cI.displayName ||
-                    (cI.displayName = "RepositoryMilestoneContent");
+                c_.displayName ||
+                    (c_.displayName = "RepositoryMilestoneContent");
             } catch {}
             try {
                 cK.displayName ||
                     (cK.displayName = "RepositoryMilestoneInternal");
             } catch {}
-            let c_ = ({ queries: { pageQuery: e } }) => {
+            let cv = ({ queries: { pageQuery: e } }) => {
                 let { queryRef: l, loadQuery: a } = lc(e, e0);
                 return l
                     ? (0, y.jsx)(lk, {
                           category: "Repository Milestone Show",
-                          children: (0, y.jsx)(cv, {
+                          children: (0, y.jsx)(cx, {
                               pageQueryRef: l,
                               loadQuery: a,
                           }),
                       })
                     : null;
             };
-            function cv({ pageQueryRef: e }) {
+            function cx({ pageQueryRef: e }) {
                 let l = (0, er.usePreloadedQuery)(e0, e),
                     { setCurrentViewId: a } = eU();
                 return ((0, b.useEffect)(() => {
-                    a(S.repository);
+                    a(F.repository);
                 }, [e, a]),
                 l.repository)
-                    ? (0, y.jsx)(cx, { repository: l.repository })
+                    ? (0, y.jsx)(cw, { repository: l.repository })
                     : (reportError(
                           Error(
                               `Could not find repository when loading TemplateList for ${A.fV?.href.toString()}`
@@ -43443,9 +43429,9 @@ ${this.quotedText}`)
                       ),
                       (0, y.jsx)("div", { children: "Repository not found" }));
             }
-            function cx({ repository: e }) {
-                let l = (0, er.useFragment)(dO, e),
-                    { current_user_settings: a } = (0, K.X)(),
+            function cw({ repository: e }) {
+                let l = (0, er.useFragment)(dB, e),
+                    { current_user_settings: a } = (0, _.X)(),
                     n = {
                         useMonospaceFont: a.use_monospace_font,
                         pasteUrlsAsPlainText: a.paste_url_link_as_plain_text,
@@ -43454,14 +43440,14 @@ ${this.quotedText}`)
                 return (0, y.jsx)(cK, { repository: l, optionConfig: n });
             }
             try {
-                cv.displayName ||
-                    (cv.displayName = "RepositoryMilestoneContent");
+                cx.displayName ||
+                    (cx.displayName = "RepositoryMilestoneContent");
             } catch {}
             try {
-                cx.displayName ||
-                    (cx.displayName = "RepositoryMilestonePageContentInternal");
+                cw.displayName ||
+                    (cw.displayName = "RepositoryMilestonePageContentInternal");
             } catch {}
-            let cw = (e, l) => {
+            let cN = (e, l) => {
                     if (Object.keys(l.pathParams).length > 0) {
                         let a = l.searchParams.get("q"),
                             n = `${a || G.query}`,
@@ -43471,18 +43457,18 @@ ${this.quotedText}`)
                                 mentioned: l.pathParams.mentioned,
                                 label: l.pathParams.label,
                             });
-                        ((e.query = a6(t && !a ? `${n} ${t}` : n, {
+                        ((e.query = a7(t && !a ? `${n} ${t}` : n, {
                             owner: l.pathParams.owner,
                             name: l.pathParams.repo,
                         })),
                             eP(l.searchParams, e),
                             (e.owner = l.pathParams.owner),
                             (e.name = l.pathParams.repo),
-                            (e.includeReactions = !!a && a8(a)));
+                            (e.includeReactions = !!a && ne(a)));
                     }
                     return e;
                 },
-                cN = {
+                cj = {
                     "/:owner/:name/issues/new": (e, l) => {
                         let a = l.searchParams.get("assignees");
                         a && ((e.assigneeLogins = a), (e.withAssignees = !0));
@@ -43503,8 +43489,8 @@ ${this.quotedText}`)
                         );
                         if (r) {
                             let l = parseInt(r, 10);
-                            ((e.discussionNumber = cj(r) ? l : 0),
-                                (e.includeDiscussion = cj(r) && !!l));
+                            ((e.discussionNumber = cR(r) ? l : 0),
+                                (e.includeDiscussion = cR(r) && !!l));
                         }
                         let o = l.searchParams.get("template");
                         return (
@@ -43523,12 +43509,12 @@ ${this.quotedText}`)
                                 ...l.pathParams,
                                 author: `app/${l.pathParams.author}`,
                             }),
-                            cw(e, a)
+                            cN(e, a)
                         );
                     },
                     "/:owner/:repo/milestone/:number": (e, l) => {
                         ((e.id = G.id),
-                            (e.first = dp.issuesPageSize),
+                            (e.first = dy.issuesPageSize),
                             (e.owner = l.pathParams.owner),
                             (e.name = l.pathParams.repo));
                         let a = l.pathParams.number,
@@ -43537,14 +43523,14 @@ ${this.quotedText}`)
                         let t = l.searchParams.get("page");
                         if (
                             (t &&
-                                cj(t) &&
+                                cR(t) &&
                                 parseInt(t, 10) > 1 &&
                                 (e.skip =
-                                    (parseInt(t, 10) - 1) * dp.issuesPageSize),
+                                    (parseInt(t, 10) - 1) * dy.issuesPageSize),
                             a)
                         ) {
                             let l = parseInt(a, 10);
-                            ((e.number = cj(a) ? l : 0),
+                            ((e.number = cR(a) ? l : 0),
                                 (e.query = `state:${n ? "closed" : "open"} milestone-number:${e.number} archived:false sort:milestone_prio-desc`));
                         }
                         return e;
@@ -43587,7 +43573,7 @@ ${this.quotedText}`)
                             a)
                         ) {
                             let l = parseInt(a, 10);
-                            e.number = cj(a) ? l : 0;
+                            e.number = cR(a) ? l : 0;
                         }
                         return e;
                     },
@@ -43598,7 +43584,7 @@ ${this.quotedText}`)
                             (e.skip = 0));
                         let a = l.searchParams.get("page");
                         a &&
-                            cj(a) &&
+                            cR(a) &&
                             parseInt(a, 10) > 1 &&
                             (e.skip =
                                 (parseInt(a, 10) - 1) * uX.labelsPageSize);
@@ -43615,7 +43601,7 @@ ${this.quotedText}`)
                                       "asc" === a ? "ASC" : "DESC"));
                         }
                         let t = l.searchParams.get("q");
-                        return (t && (e.query = a7(t)), e);
+                        return (t && (e.query = a9(t)), e);
                     },
                     "/:owner/:repo/labels/:label": (e, l) => {
                         if (Object.keys(l.pathParams).length > 0) {
@@ -43625,7 +43611,7 @@ ${this.quotedText}`)
                                     [l.pathParams.label],
                                     "label"
                                 );
-                            ((e.query = a6(a?.trim() || n, {
+                            ((e.query = a7(a?.trim() || n, {
                                 owner: l.pathParams.owner,
                                 name: l.pathParams.repo,
                             })),
@@ -43636,10 +43622,10 @@ ${this.quotedText}`)
                         }
                         return e;
                     },
-                    "/:owner/:repo/issues": cw,
-                    "/:owner/:repo/issues/created_by/:author": cw,
-                    "/:owner/:repo/issues/assigned/:assignee": cw,
-                    "/:owner/:repo/issues/mentioned/:mentioned": cw,
+                    "/:owner/:repo/issues": cN,
+                    "/:owner/:repo/issues/created_by/:author": cN,
+                    "/:owner/:repo/issues/assigned/:assignee": cN,
+                    "/:owner/:repo/issues/mentioned/:mentioned": cN,
                     "/issues/:id": (e, l, a) => {
                         let n;
                         if ((l && (n = l.pathParams.id), n && a)) {
@@ -43647,18 +43633,18 @@ ${this.quotedText}`)
                                 s = a.getStore().getSource().get(n);
                             s &&
                                 (t
-                                    ? ((e.query = a7(t)),
-                                      (e.includeReactions = a8(t)))
+                                    ? ((e.query = a9(t)),
+                                      (e.includeReactions = ne(t)))
                                     : s.query &&
-                                      ((e.query = a7(`${s.query}`)),
-                                      (e.includeReactions = a8(`${s.query}`))));
+                                      ((e.query = a9(`${s.query}`)),
+                                      (e.includeReactions = ne(`${s.query}`))));
                         }
                         return (eP(l.searchParams, e), e);
                     },
                     "/:owner/:repo/issues/:number": (e, l) => {
                         ((e.id = G.id), (e.count = 15));
                         let a = l.searchParams.get("timeline_page");
-                        if (a && cj(a)) {
+                        if (a && cR(a)) {
                             let l = parseInt(a, 10);
                             l > 0 &&
                                 ((e.skip = 15 + (l - 1) * 150),
@@ -43670,8 +43656,8 @@ ${this.quotedText}`)
                         let a = l.searchParams.get("q");
                         return (
                             a &&
-                                ((e.query = a7(a)),
-                                (e.includeReactions = a8(a))),
+                                ((e.query = a9(a)),
+                                (e.includeReactions = ne(a))),
                             eP(l.searchParams, e),
                             e
                         );
@@ -43679,7 +43665,7 @@ ${this.quotedText}`)
                     "/issues/assigned": (e, l) => {
                         let a = l.searchParams.get("q");
                         return (
-                            (e.query = a ? a7(a) : I.Ds.assignedToMe),
+                            (e.query = a ? a9(a) : I.Ds.assignedToMe),
                             eP(l.searchParams, e),
                             e
                         );
@@ -43687,13 +43673,13 @@ ${this.quotedText}`)
                     "/issues/mentioned": (e, l) => {
                         let a = l.searchParams.get("q");
                         return (
-                            (e.query = a ? a7(a) : I.Ds.mentioned),
+                            (e.query = a ? a9(a) : I.Ds.mentioned),
                             eP(l.searchParams, e),
                             e
                         );
                     },
                     "/issues/recent": (e, l) => (
-                        (e.query = a7(
+                        (e.query = a9(
                             l.searchParams.get("q") || I.Ds.recentActivity
                         )),
                         eP(l.searchParams, e),
@@ -43702,22 +43688,22 @@ ${this.quotedText}`)
                     "/issues/created": (e, l) => {
                         let a = l.searchParams.get("q");
                         return (
-                            (e.query = a ? a7(a) : I.Ds.createdByMe),
+                            (e.query = a ? a9(a) : I.Ds.createdByMe),
                             eP(l.searchParams, e),
                             e
                         );
                     },
                 },
-                cj = (e) => /^\s*-?\d+\s*$/.test(e),
-                cR = () => !1,
-                cP = [d.A.params.name, o.A.params.name, c.params.name],
-                cT = (e) => {
+                cR = (e) => /^\s*-?\d+\s*$/.test(e),
+                cP = () => !1,
+                cT = [d.A.params.name, o.A.params.name, c.params.name],
+                cA = (e) => {
                     (e?.persistedQueryName &&
-                        cP.includes(e?.persistedQueryName) &&
+                        cT.includes(e?.persistedQueryName) &&
                         "SAML error" === e.errorMessage) ||
-                        cA();
+                        cM();
                 },
-                cA = () => {
+                cM = () => {
                     let e = ["reload", "1"],
                         l = new URL(
                             window.location.href,
@@ -43736,12 +43722,12 @@ ${this.quotedText}`)
                             variables: { ids: H },
                         }).subscribe({});
                     })({ environment: e }));
-                let l = { 404: { AUTHENTICATION: cA }, 200: { FORBIDDEN: cT } },
+                let l = { 404: { AUTHENTICATION: cM }, 200: { FORBIDDEN: cA } },
                     a = {
                         componentLoader: async () => {
                             throw Error("This method should not be called");
                         },
-                        fallback: cR() ? "Loading..." : "",
+                        fallback: cP() ? "Loading..." : "",
                         relayEnvironment: e,
                     };
                 return {
@@ -43753,7 +43739,7 @@ ${this.quotedText}`)
                             resourceName: "IssueRepoNew",
                             title: "New Issue",
                             Component: lz,
-                            transformVariables: cN["/:owner/:name/issues/new"],
+                            transformVariables: cj["/:owner/:name/issues/new"],
                             queryConfigs: {
                                 pageQuery: {
                                     concreteRequest: e6,
@@ -43771,7 +43757,7 @@ ${this.quotedText}`)
                             title: "Choose an Issue Template",
                             Component: lb,
                             transformVariables:
-                                cN["/:owner/:name/issues/new/choose"],
+                                cj["/:owner/:name/issues/new/choose"],
                             queryConfigs: {
                                 pageQuery: {
                                     concreteRequest: e7,
@@ -43789,7 +43775,7 @@ ${this.quotedText}`)
                             title: "Assigned to me",
                             Component: od,
                             transitionType: "transition-while-fetch",
-                            transformVariables: cN["/issues/assigned"],
+                            transformVariables: cj["/issues/assigned"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: eX },
                                 customViewsQuery: { concreteRequest: eW },
@@ -43802,7 +43788,7 @@ ${this.quotedText}`)
                             title: "Mentioned",
                             Component: od,
                             transitionType: "transition-while-fetch",
-                            transformVariables: cN["/issues/mentioned"],
+                            transformVariables: cj["/issues/mentioned"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: eX },
                                 customViewsQuery: { concreteRequest: eW },
@@ -43815,7 +43801,7 @@ ${this.quotedText}`)
                             title: "Created by me",
                             Component: od,
                             transitionType: "transition-while-fetch",
-                            transformVariables: cN["/issues/created"],
+                            transformVariables: cj["/issues/created"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: eX },
                                 customViewsQuery: { concreteRequest: eW },
@@ -43828,7 +43814,7 @@ ${this.quotedText}`)
                             title: "Recent Activity",
                             Component: od,
                             transitionType: "transition-while-fetch",
-                            transformVariables: cN["/issues/recent"],
+                            transformVariables: cj["/issues/recent"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: eX },
                                 customViewsQuery: { concreteRequest: eW },
@@ -43841,7 +43827,7 @@ ${this.quotedText}`)
                             title: "Issue",
                             Component: oW,
                             transformVariables:
-                                cN["/:owner/:repo/issues/:number"],
+                                cj["/:owner/:repo/issues/:number"],
                             queryConfigs: {
                                 issueViewerViewQuery: {
                                     concreteRequest: u.A,
@@ -43863,7 +43849,7 @@ ${this.quotedText}`)
                             resourceName: "IssueRepoIndex",
                             title: "Repo Issues",
                             Component: oq,
-                            transformVariables: cN["/:owner/:repo/issues"],
+                            transformVariables: cj["/:owner/:repo/issues"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: eJ },
                             },
@@ -43876,7 +43862,7 @@ ${this.quotedText}`)
                             title: "View",
                             Component: r9,
                             transitionType: "transition-while-fetch",
-                            transformVariables: cN["/issues/:id"],
+                            transformVariables: cj["/issues/:id"],
                             queryConfigs: {
                                 currentViewQuery: {
                                     concreteRequest: eG,
@@ -43894,7 +43880,7 @@ ${this.quotedText}`)
                             resourceName: "IssuesIndex",
                             title: "Issues",
                             Component: om,
-                            transformVariables: cN["/issues"],
+                            transformVariables: cj["/issues"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: eY },
                                 customViewsQuery: { concreteRequest: eW },
@@ -43907,7 +43893,7 @@ ${this.quotedText}`)
                             title: "Repo Issues",
                             Component: oq,
                             transformVariables:
-                                cN["/:owner/:repo/issues/created_by/:author"],
+                                cj["/:owner/:repo/issues/created_by/:author"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: eJ },
                             },
@@ -43919,7 +43905,7 @@ ${this.quotedText}`)
                             title: "Repo Issues",
                             Component: oq,
                             transformVariables:
-                                cN[
+                                cj[
                                     "/:owner/:repo/issues/created_by/app/:author"
                                 ],
                             queryConfigs: {
@@ -43933,7 +43919,7 @@ ${this.quotedText}`)
                             title: "Repo Issues",
                             Component: oq,
                             transformVariables:
-                                cN["/:owner/:repo/issues/assigned/:assignee"],
+                                cj["/:owner/:repo/issues/assigned/:assignee"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: eJ },
                             },
@@ -43943,9 +43929,9 @@ ${this.quotedText}`)
                             path: "/:owner/:repo/milestone/:number",
                             resourceName: "RepoMilestoneShow",
                             title: "",
-                            Component: c_,
+                            Component: cv,
                             transformVariables:
-                                cN["/:owner/:repo/milestone/:number"],
+                                cj["/:owner/:repo/milestone/:number"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: e0 },
                             },
@@ -43955,8 +43941,8 @@ ${this.quotedText}`)
                             path: "/:owner/:repo/milestones",
                             resourceName: "RepoMilestoneIndex",
                             title: "Milestone Index",
-                            Component: dD,
-                            transformVariables: cN["/:owner/:repo/milestones"],
+                            Component: dE,
+                            transformVariables: cj["/:owner/:repo/milestones"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: e2 },
                             },
@@ -43968,7 +43954,7 @@ ${this.quotedText}`)
                             title: "New Milestone",
                             Component: ug,
                             transformVariables:
-                                cN["/:owner/:repo/milestones/new"],
+                                cj["/:owner/:repo/milestones/new"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: ur },
                             },
@@ -43980,7 +43966,7 @@ ${this.quotedText}`)
                             title: "Edit Milestone",
                             Component: ut,
                             transformVariables:
-                                cN["/:owner/:repo/milestones/:number/edit"],
+                                cj["/:owner/:repo/milestones/:number/edit"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: oG },
                             },
@@ -43990,8 +43976,8 @@ ${this.quotedText}`)
                             path: "/:owner/:repo/labels",
                             resourceName: "RepoLabelsIndex",
                             title: "Labels Index",
-                            Component: di,
-                            transformVariables: cN["/:owner/:repo/labels"],
+                            Component: dr,
+                            transformVariables: cj["/:owner/:repo/labels"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: e1 },
                             },
@@ -44001,8 +43987,8 @@ ${this.quotedText}`)
                             path: "/:owner/:repo/issues/labels",
                             resourceName: "RepoLabelsIndex",
                             title: "Labels Index",
-                            Component: di,
-                            transformVariables: cN["/:owner/:repo/labels"],
+                            Component: dr,
+                            transformVariables: cj["/:owner/:repo/labels"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: e1 },
                             },
@@ -44014,7 +44000,7 @@ ${this.quotedText}`)
                             title: "Repo Issues",
                             Component: oq,
                             transformVariables:
-                                cN["/:owner/:repo/issues/mentioned/:mentioned"],
+                                cj["/:owner/:repo/issues/mentioned/:mentioned"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: eJ },
                             },
@@ -44023,7 +44009,7 @@ ${this.quotedText}`)
                             ...a,
                             path: "/:owner/:repo/labels/:label",
                             transformVariables:
-                                cN["/:owner/:repo/labels/:label"],
+                                cj["/:owner/:repo/labels/:label"],
                             resourceName: "IssueLabelIndex",
                             title: "Label Issues",
                             Component: oq,
@@ -44034,6 +44020,107 @@ ${this.quotedText}`)
                     ],
                 };
             });
+        },
+        77755: (e, l, a) => {
+            a.d(l, { V: () => i, q: () => s });
+            var n = a(38621),
+                t = a(19413);
+            function s(e) {
+                let l = {
+                    color: "fg.muted",
+                    icon: n.SkipIcon,
+                    description: t.g.issueIcons.NOT_PLANNED.description,
+                };
+                if (e) {
+                    let a = `${e}`;
+                    if (a in t.g.issueIcons) l = t.g.issueIcons[a];
+                    else if ("COMPLETED" !== e)
+                        throw Error("Invalid state reason");
+                }
+                return l;
+            }
+            function i(e) {
+                let l = {
+                    color: "fg.muted",
+                    icon: n.SkipIcon,
+                    description: t.g.pullRequestIcons.DRAFT.description,
+                };
+                if (e) {
+                    let a = `${e}`;
+                    if (a in t.g.pullRequestIcons) l = t.g.pullRequestIcons[a];
+                    else throw Error("Invalid state reason");
+                }
+                return l;
+            }
+        },
+        19413: (e, l, a) => {
+            a.d(l, { g: () => s, t: () => t });
+            var n = a(38621);
+            let t = {
+                    issueHierarchyItemChildrenFetchPageSize: 25,
+                    issueItemLabelFetchPageSize: 10,
+                    maxListSize: 100,
+                    copilotDisplayName: "Copilot",
+                    ghostUserLogin: "ghost",
+                    ghostUserAvatarUrl: "/ghost.png",
+                },
+                s = {
+                    issueIcons: {
+                        OPEN: {
+                            color: "open.fg",
+                            icon: n.IssueOpenedIcon,
+                            description: "Status: Open.",
+                        },
+                        CLOSED: {
+                            color: "done.fg",
+                            icon: n.IssueClosedIcon,
+                            description: "Status: Closed (completed).",
+                        },
+                        COMPLETED: {
+                            color: "done.fg",
+                            icon: n.IssueClosedIcon,
+                            description: "Status: Closed (completed).",
+                        },
+                        NOT_PLANNED: {
+                            color: "fg.muted",
+                            icon: n.SkipIcon,
+                            description: "Status: Not planned (skipped).",
+                        },
+                        DUPLICATE: {
+                            color: "fg.muted",
+                            icon: n.SkipIcon,
+                            description:
+                                "Status: Duplicate of an existing item.",
+                        },
+                    },
+                    pullRequestIcons: {
+                        MERGED: {
+                            color: "done.fg",
+                            icon: n.GitMergeIcon,
+                            description: "Status: Merged (completed).",
+                        },
+                        IN_MERGE_QUEUE: {
+                            color: "attention.fg",
+                            icon: n.GitMergeQueueIcon,
+                            description: "Status: In merge queue.",
+                        },
+                        OPEN: {
+                            color: "open.fg",
+                            icon: n.GitPullRequestIcon,
+                            description: "Status: Open (in progress).",
+                        },
+                        CLOSED: {
+                            color: "closed.fg",
+                            icon: n.GitPullRequestClosedIcon,
+                            description: "Status: Closed (abandoned).",
+                        },
+                        DRAFT: {
+                            color: "fg.muted",
+                            icon: n.GitPullRequestDraftIcon,
+                            description: "Status: Draft (not ready).",
+                        },
+                    },
+                };
         },
         33299: (e, l, a) => {
             a.d(l, { X: () => t });
@@ -44058,7 +44145,7 @@ ${this.quotedText}`)
         26807: (e, l, a) => {
             a.d(l, { Z: () => u, o: () => d });
             var n = a(96540),
-                t = a(85647),
+                t = a(85788),
                 s = a(72841),
                 i = a(97396),
                 r = a(32494),
@@ -44144,6 +44231,365 @@ ${this.quotedText}`)
                     [e?.sso_organizations, e?.base_avatar_url]
                 );
             };
+        },
+        3607: (e, l, a) => {
+            a.d(l, { Y0: () => _, $I: () => L });
+            var n = a(74848),
+                t = a(21728),
+                s = a(96540),
+                i = a(55847),
+                r = a(10569),
+                o = a(15385),
+                u = a(38911),
+                d = a(38621),
+                c = a(39459),
+                m = a(85788),
+                g = a(8367),
+                p = a(27851),
+                y = a(40319);
+            let k = {
+                bannerOuterWrapper:
+                    "GlobalSSOBanner-module__bannerOuterWrapper--gIJGf",
+                bannerInnerWrapper:
+                    "GlobalSSOBanner-module__bannerInnerWrapper--EKrn4",
+                banner: "GlobalSSOBanner-module__banner--HjESa",
+            };
+            function h({ children: e, hidden: l }) {
+                let [a, t] = s.useState("visible"),
+                    i = s.useRef(null),
+                    r = s.useRef(void 0);
+                return (s.useEffect(() => {
+                    if (l && "visible" === a) {
+                        t("collapsing");
+                        let e = i.current;
+                        if (e) {
+                            let l = e.getBoundingClientRect().height;
+                            ((r.current = l), (e.style.height = `${l}px`));
+                        }
+                    } else if ("collapsing" === a) {
+                        let e = setTimeout(() => {
+                            t("hidden");
+                        }, 300);
+                        return () => {
+                            clearTimeout(e);
+                        };
+                    }
+                }, [l, a]),
+                "hidden" === a)
+                    ? null
+                    : (0, n.jsx)("div", {
+                          ref: i,
+                          style: {
+                              height:
+                                  "visible" === a ? (r.current ?? "auto") : 0,
+                          },
+                          className: k.bannerOuterWrapper,
+                          children: (0, n.jsx)("div", {
+                              className: k.bannerInnerWrapper,
+                              style: {
+                                  transform:
+                                      "visible" === a
+                                          ? void 0
+                                          : `translateY(-${r.current ?? 0}px)`,
+                              },
+                              children: e,
+                          }),
+                      });
+            }
+            try {
+                (300).displayName || ((300).displayName = "ANIMATION_DURATION");
+            } catch {}
+            try {
+                h.displayName || (h.displayName = "SlideDismiss");
+            } catch {}
+            var b = a(64262);
+            let f = "dismissed_sso_orgs";
+            function C(e) {
+                return (
+                    "object" == typeof e &&
+                    null !== e &&
+                    "id" in e &&
+                    "name" in e &&
+                    "login" in e
+                );
+            }
+            function S(e, l) {
+                let a = `/orgs/${encodeURIComponent(e)}/sso`,
+                    n = l.pathname + l.search + l.hash;
+                return `${a}?return_to=${encodeURIComponent(n)}`;
+            }
+            function F(e) {
+                let l,
+                    a,
+                    s,
+                    u = (0, t.c)(13),
+                    { ssoOrgs: d, redirectLocation: m } = e;
+                if (0 === d.length) return null;
+                if (1 === d.length) {
+                    let e,
+                        l,
+                        a = d[0];
+                    return void 0 === a
+                        ? null
+                        : (u[0] !== a.login || u[1] !== m
+                              ? ((e = S(a.login, m)),
+                                (u[0] = a.login),
+                                (u[1] = m),
+                                (u[2] = e))
+                              : (e = u[2]),
+                          u[3] !== e
+                              ? ((l = (0, n.jsx)(i.Q, {
+                                    as: "a",
+                                    href: e,
+                                    children: "Single sign-on",
+                                })),
+                                (u[3] = e),
+                                (u[4] = l))
+                              : (l = u[4]),
+                          l);
+                }
+                if (
+                    (u[5] === Symbol.for("react.memo_cache_sentinel")
+                        ? ((l = (0, n.jsx)(r.W.Button, {
+                              size: "small",
+                              children: "Single sign-on",
+                          })),
+                          (u[5] = l))
+                        : (l = u[5]),
+                    u[6] !== m || u[7] !== d)
+                ) {
+                    let e;
+                    (u[9] !== m
+                        ? ((e = (e) =>
+                              (0, n.jsxs)(
+                                  o.l.LinkItem,
+                                  {
+                                      href: S(e.login, m),
+                                      children: [
+                                          e.avatar_url &&
+                                              (0, n.jsx)(o.l.LeadingVisual, {
+                                                  children: (0, n.jsx)(c.r, {
+                                                      size: 24,
+                                                      src: e.avatar_url,
+                                                  }),
+                                              }),
+                                          e.name,
+                                      ],
+                                  },
+                                  e.login
+                              )),
+                          (u[9] = m),
+                          (u[10] = e))
+                        : (e = u[10]),
+                        (a = d.map(e)),
+                        (u[6] = m),
+                        (u[7] = d),
+                        (u[8] = a));
+                } else a = u[8];
+                return (
+                    u[11] !== a
+                        ? ((s = (0, n.jsxs)(r.W, {
+                              children: [
+                                  l,
+                                  (0, n.jsx)(r.W.Overlay, {
+                                      children: (0, n.jsx)(o.l, {
+                                          children: a,
+                                      }),
+                                  }),
+                              ],
+                          })),
+                          (u[11] = a),
+                          (u[12] = s))
+                        : (s = u[12]),
+                    s
+                );
+            }
+            function L(e) {
+                let l,
+                    a,
+                    i,
+                    r,
+                    o,
+                    c,
+                    p,
+                    y = (0, t.c)(17),
+                    { ssoOrgs: b } = e,
+                    C = (0, m.zy)(),
+                    [S, L] = s.useState("visible");
+                if (0 === b.length) return null;
+                y[0] !== b
+                    ? ((l = () => {
+                          L("hidden");
+                          let e = b.map((e) => e.id).sort(),
+                              l = new Date(Date.now() + 2592e6).toUTCString();
+                          (0, g.TV)(f, JSON.stringify(e), l);
+                      }),
+                      (y[0] = b),
+                      (y[1] = l))
+                    : (l = y[1]);
+                let _ = l;
+                y[2] !== b
+                    ? ((a = () => {
+                          if (0 === b.length)
+                              return "Single sign-on to see results";
+                          let e = b.slice(0, 3),
+                              l = b.length - 3,
+                              a =
+                                  1 === b.length
+                                      ? "organization"
+                                      : "organizations";
+                          return (0, n.jsxs)(n.Fragment, {
+                              children: [
+                                  "Single sign-on to see results in the ",
+                                  (() => {
+                                      let a = e.map(I);
+                                      if (1 === a.length) return a[0];
+                                      {
+                                          if (2 === a.length)
+                                              return (0, n.jsxs)(n.Fragment, {
+                                                  children: [
+                                                      a[0],
+                                                      " and ",
+                                                      a[1],
+                                                  ],
+                                              });
+                                          let e = a.length - 1,
+                                              t = (0, n.jsxs)(n.Fragment, {
+                                                  children: [
+                                                      a[0],
+                                                      ", ",
+                                                      a[1],
+                                                      ", and ",
+                                                      a[e],
+                                                  ],
+                                              });
+                                          return l > 0
+                                              ? (0, n.jsxs)(n.Fragment, {
+                                                    children: [
+                                                        t,
+                                                        ", and ",
+                                                        l,
+                                                        " more",
+                                                    ],
+                                                })
+                                              : t;
+                                      }
+                                  })(),
+                                  " ",
+                                  a,
+                              ],
+                          });
+                      }),
+                      (y[2] = b),
+                      (y[3] = a))
+                    : (a = y[3]);
+                let K = a,
+                    v = "visible" !== S;
+                return (
+                    y[4] === Symbol.for("react.memo_cache_sentinel")
+                        ? ((i = (0, n.jsx)(d.ShieldLockIcon, {})), (y[4] = i))
+                        : (i = y[4]),
+                    y[5] !== K
+                        ? ((r = K()), (y[5] = K), (y[6] = r))
+                        : (r = y[6]),
+                    y[7] !== C || y[8] !== b
+                        ? ((o = (0, n.jsx)(F, {
+                              ssoOrgs: b,
+                              redirectLocation: C,
+                          })),
+                          (y[7] = C),
+                          (y[8] = b),
+                          (y[9] = o))
+                        : (o = y[9]),
+                    y[10] !== _ || y[11] !== r || y[12] !== o
+                        ? ((c = (0, n.jsx)(u.l, {
+                              title: "Single-sign on",
+                              className: k.banner,
+                              hideTitle: !0,
+                              icon: i,
+                              description: r,
+                              onDismiss: _,
+                              primaryAction: o,
+                              "data-testid": "global-sso-banner",
+                          })),
+                          (y[10] = _),
+                          (y[11] = r),
+                          (y[12] = o),
+                          (y[13] = c))
+                        : (c = y[13]),
+                    y[14] !== v || y[15] !== c
+                        ? ((p = (0, n.jsx)(h, { hidden: v, children: c })),
+                          (y[14] = v),
+                          (y[15] = c),
+                          (y[16] = p))
+                        : (p = y[16]),
+                    p
+                );
+            }
+            function I(e) {
+                return (0, n.jsx)("strong", { children: e.name }, e.login);
+            }
+            function _() {
+                let e,
+                    l = (0, t.c)(2),
+                    { ssoOrgs: a, suppressBanner: i } = (function () {
+                        let { ssoOrgs: e, baseAvatarUrl: l } = (0, y.N)(),
+                            { current_sso_orgs_match_dismissed_cookie: a } = (0,
+                            b.X)(),
+                            n = s.useMemo(
+                                () =>
+                                    e
+                                        .filter(C)
+                                        .map((e) => ({
+                                            ...e,
+                                            avatar_url: `${l}/u/${e.id}`,
+                                        })),
+                                [e, l]
+                            );
+                        return {
+                            suppressBanner:
+                                !0 === a ||
+                                (function (e) {
+                                    let l = (function () {
+                                        let e = (0, g.Ri)(f);
+                                        if (e?.value)
+                                            try {
+                                                let l = JSON.parse(e.value);
+                                                return Array.isArray(l)
+                                                    ? l
+                                                    : [];
+                                            } catch (e) {
+                                                (0, g.Yj)(f);
+                                            }
+                                        return [];
+                                    })();
+                                    return (
+                                        e.length === l.length &&
+                                        e.every((e) => l.includes(e.id))
+                                    );
+                                })(n),
+                            ssoOrgs: n,
+                            baseAvatarUrl: l,
+                        };
+                    })();
+                return 0 === a.length || !(0, p.G7)("global_sso_banner") || i
+                    ? null
+                    : (l[0] !== a
+                          ? ((e = (0, n.jsx)(L, { ssoOrgs: a })),
+                            (l[0] = a),
+                            (l[1] = e))
+                          : (e = l[1]),
+                      e);
+            }
+            try {
+                F.displayName || (F.displayName = "SSOActionMenu");
+            } catch {}
+            try {
+                L.displayName || (L.displayName = "GlobalSsoBanner");
+            } catch {}
+            try {
+                _.displayName || (_.displayName = "ContextualGlobalSsoBanner");
+            } catch {}
         },
         85466: (e, l, a) => {
             a.d(l, { v: () => m });
@@ -44251,41 +44697,6 @@ ${this.quotedText}`)
                 r.displayName || (r.displayName = "BetaLabel");
             } catch {}
         },
-        56693: (e, l, a) => {
-            a.d(l, { A: () => i });
-            var n = a(74848),
-                t = a(34614);
-            let s = { link: "FeedbackLink-module__link--uY6Kq" },
-                i = ({ feedbackUrl: e }) =>
-                    (0, n.jsx)(t.A, {
-                        className: s.link,
-                        href: e,
-                        children: "Give feedback",
-                    });
-            try {
-                i.displayName || (i.displayName = "FeedbackLink");
-            } catch {}
-        },
-        90735: (e, l, a) => {
-            a.d(l, { V: () => s });
-            var n = a(74848),
-                t = a(46309);
-            let s = ({ label: e, link: l, className: a }) =>
-                l
-                    ? (0, n.jsxs)(t.B, {
-                          direction: "horizontal",
-                          gap: "condensed",
-                          align: "baseline",
-                          className: a,
-                          children: [e, " ", l],
-                      })
-                    : a
-                      ? (0, n.jsx)("span", { className: a, children: e })
-                      : (0, n.jsx)(n.Fragment, { children: e });
-            try {
-                s.displayName || (s.displayName = "LabelWithLink");
-            } catch {}
-        },
         46404: (e, l, a) => {
             a.d(l, { z: () => d });
             var n = a(74848),
@@ -44374,7 +44785,7 @@ ${this.quotedText}`)
             } catch {}
         },
         66197: (e, l, a) => {
-            a.d(l, { X: () => _ });
+            a.d(l, { X: () => K });
             var n,
                 t = a(74848),
                 s = a(52811),
@@ -44456,13 +44867,13 @@ ${this.quotedText}`)
             var b = a(73451),
                 f = a(65607),
                 C = a(25654);
-            let F = {
+            let S = {
                 container: "SelectAllCheckbox-module__container--FJDtV",
                 formControlContainer:
                     "SelectAllCheckbox-module__formControlContainer--JTzPI",
                 count: "SelectAllCheckbox-module__count--xEF8c",
             };
-            var S = a(89992),
+            var F = a(89992),
                 L = a(74304);
             let I = ({ onToggle: e, style: l, className: a }) => {
                 let { title: n } = (0, L.t)(),
@@ -44475,11 +44886,11 @@ ${this.quotedText}`)
                         anyItemsSelected: p,
                         singularUnits: y,
                         pluralUnits: k,
-                    } = (0, S.v)(),
+                    } = (0, F.v)(),
                     { multiPageSelectionAllowed: h } = (0, C.P)(),
                     I = (0, o.useId)(),
-                    K = (0, o.useRef)(null),
                     _ = (0, o.useRef)(null),
+                    K = (0, o.useRef)(null),
                     v = (0, o.useMemo)(
                         () =>
                             h && "number" == typeof c
@@ -44496,20 +44907,20 @@ ${this.quotedText}`)
                     }, [x, g, e]);
                 if (
                     ((0, o.useEffect)(() => {
-                        _.current && (0, s.C)(_.current);
-                    }, [_, j]),
+                        K.current && (0, s.C)(K.current);
+                    }, [K, j]),
                     !u)
                 )
                     return null;
                 let P = `${I}-list-view-select-all`;
                 return (0, t.jsxs)("div", {
                     style: l,
-                    className: (0, r.$)(F.container, a),
+                    className: (0, r.$)(S.container, a),
                     ...(0, i.G)("list-view-select-all-container"),
                     id: `${I}-list-view-select-all-container`,
                     children: [
                         (0, t.jsx)("div", {
-                            className: F.formControlContainer,
+                            className: S.formControlContainer,
                             children: (0, t.jsxs)(b.A, {
                                 id: P,
                                 children: [
@@ -44524,7 +44935,7 @@ ${this.quotedText}`)
                                                 (e.preventDefault(), R());
                                         },
                                         tabIndex: 0,
-                                        ref: K,
+                                        ref: _,
                                         ...(0, i.G)("select-all-checkbox"),
                                     }),
                                     (0, t.jsxs)(b.A.Label, {
@@ -44537,7 +44948,7 @@ ${this.quotedText}`)
                         }),
                         (0, t.jsxs)("p", {
                             className: (0, r.$)(
-                                F.count,
+                                S.count,
                                 p ? void 0 : "sr-only"
                             ),
                             ...(0, i.G)("select-all-selected-count"),
@@ -44552,7 +44963,7 @@ ${this.quotedText}`)
                                 }),
                                 (0, t.jsx)("span", {
                                     className: "sr-only",
-                                    ref: _,
+                                    ref: K,
                                     ...(0, i.G)("sr-content"),
                                     children: j,
                                 }),
@@ -44564,7 +44975,7 @@ ${this.quotedText}`)
             try {
                 I.displayName || (I.displayName = "ListViewSelectAllCheckbox");
             } catch {}
-            let K = ({ sectionFilters: e }) =>
+            let _ = ({ sectionFilters: e }) =>
                     e
                         ? Array.isArray(e)
                             ? (0, t.jsx)(h, { links: e })
@@ -44572,7 +44983,7 @@ ${this.quotedText}`)
                               ? (0, t.jsx)(t.Fragment, { children: e })
                               : null
                         : null,
-                _ = ({
+                K = ({
                     title: e,
                     assistiveAnnouncement: l,
                     sectionFilters: a,
@@ -44585,13 +44996,13 @@ ${this.quotedText}`)
                     ...f
                 }) => {
                     let { idPrefix: C } = (0, p.If)(),
-                        { anyItemsSelected: F } = (0, S.v)(),
-                        { setHasMetadataTitle: _ } = (0, L.t)(),
+                        { anyItemsSelected: S } = (0, F.v)(),
+                        { setHasMetadataTitle: K } = (0, L.t)(),
                         x = (0, d.m)("list-view-metadata"),
                         w = (0, o.useRef)(null);
                     return (
                         (0, o.useEffect)(() => {
-                            _(!!e);
+                            K(!!e);
                         }),
                         (0, o.useEffect)(() => {
                             w.current && (0, s.C)(w.current);
@@ -44601,7 +45012,7 @@ ${this.quotedText}`)
                             className: (0, r.$)(
                                 y.container,
                                 m,
-                                F && u.spacious
+                                S && u.spacious
                             ),
                             style: c,
                             ...(0, i.G)("list-view-metadata"),
@@ -44611,8 +45022,8 @@ ${this.quotedText}`)
                                         b && b(e);
                                     },
                                 }),
-                                (0, t.jsx)(K, { sectionFilters: a }),
-                                !!(e && !F) &&
+                                (0, t.jsx)(_, { sectionFilters: a }),
+                                !!(e && !S) &&
                                     (0, t.jsx)(x, {
                                         className: y.heading,
                                         ...(0, i.G)("list-view-header-title"),
@@ -44650,10 +45061,10 @@ ${this.quotedText}`)
                         children: a,
                     });
             try {
-                K.displayName || (K.displayName = "ListFilters");
+                _.displayName || (_.displayName = "ListFilters");
             } catch {}
             try {
-                _.displayName || (_.displayName = "ListViewMetadata");
+                K.displayName || (K.displayName = "ListViewMetadata");
             } catch {}
             try {
                 (n = TitleTag).displayName || (n.displayName = "TitleTag");
@@ -44809,9 +45220,9 @@ ${this.quotedText}`)
                     fallback: b,
                     maxAge: f,
                     errorCallbacks: C,
-                    transitionType: F = u.E.FETCH_THEN_TRANSITION,
+                    transitionType: S = u.E.FETCH_THEN_TRANSITION,
                 },
-                S = {}
+                F = {}
             ) {
                 let L = l || n?.displayName;
                 if (void 0 === L) throw Error("invalid internal resourceName");
@@ -44854,7 +45265,7 @@ ${this.quotedText}`)
                         })(s, e, i, h),
                     }),
                 };
-                function K({
+                function _({
                     pathParams: e,
                     searchParams: l,
                     embeddedData: a,
@@ -44936,7 +45347,7 @@ ${this.quotedText}`)
                                       fallback: b,
                                       children: (0, t.jsx)(
                                           p.EntryPointContainer,
-                                          { entryPointReference: l, props: S }
+                                          { entryPointReference: l, props: F }
                                       ),
                                   }),
                               })
@@ -44946,12 +45357,12 @@ ${this.quotedText}`)
                         pathParams: e,
                         location: l,
                     }) {
-                        let a = K({
+                        let a = _({
                             pathParams: e,
                             searchParams: new URLSearchParams(l.search),
                         });
                         return (
-                            F === u.E.FETCH_THEN_TRANSITION &&
+                            S === u.E.FETCH_THEN_TRANSITION &&
                                 (await Promise.allSettled(
                                     Object.values(
                                         a.data.entryPointReference.queries
@@ -44965,21 +45376,21 @@ ${this.quotedText}`)
                         embeddedData: l,
                         location: a,
                     }) {
-                        let { data: n, isValid: t } = K({
+                        let { data: n, isValid: t } = _({
                             pathParams: e,
                             embeddedData: l,
                             searchParams: new URLSearchParams(a.search),
                         });
                         return { data: n, title: r, isValid: t };
                     },
-                    transitionType: F,
+                    transitionType: S,
                 };
             }
             try {
                 (n = Wrapper).displayName || (n.displayName = "Wrapper");
             } catch {}
         },
-        19139: (e, l, a) => {
+        87517: (e, l, a) => {
             a.d(l, { x: () => g });
             var n = a(74848),
                 t = a(38621),
@@ -44988,17 +45399,9 @@ ${this.quotedText}`)
                 r = a(34614),
                 o = a(10569),
                 u = a(15385),
-                d = a(85647);
-            let c = {
-                Box: "SingleSignOnBanner-module__Box--iwIEO",
-                Flash: "SingleSignOnBanner-module__Flash--XK1g3",
-                Box_1: "SingleSignOnBanner-module__Box_1--VPBly",
-                Octicon: "SingleSignOnBanner-module__Octicon--JXNw_",
-                Box_2: "SingleSignOnBanner-module__Box_2--kq0MT",
-                ForceWrap: "SingleSignOnBanner-module__ForceWrap--tZqOV",
-                Paragraph: "SingleSignOnBanner-module__Paragraph--rpV0k",
-            };
-            var m = a(34164);
+                d = a(85788),
+                c = a(34441),
+                m = a(34164);
             function g({
                 className: e,
                 portalContainerName: l,
@@ -45036,7 +45439,7 @@ ${this.quotedText}`)
                     className: e,
                     "data-testid": "sso-banner",
                     children: (0, n.jsx)("div", {
-                        className: c.Box,
+                        className: c.A.Box,
                         children: (0, n.jsx)("section", {
                             "aria-label": "Single sign-on information",
                             children: (0, n.jsx)(i.A, {
@@ -45044,15 +45447,15 @@ ${this.quotedText}`)
                                     borderRadius: 2 * !g,
                                     borderWidth: g ? "1px 0" : 1,
                                 },
-                                className: c.Flash,
+                                className: c.A.Flash,
                                 children:
                                     1 === a.length
                                         ? (0, n.jsxs)("div", {
                                               children: [
-                                                  (0, n.jsx)(
-                                                      t.ShieldLockIcon,
-                                                      {}
-                                                  ),
+                                                  (0, n.jsx)(t.ShieldLockIcon, {
+                                                      className:
+                                                          c.A.ShieldLockIcon,
+                                                  }),
                                                   (0, n.jsx)(r.A, {
                                                       inline: !0,
                                                       href: `/orgs/${a[0]}/sso?return_to=${y({ location: b, redirectURI: u })}`,
@@ -45068,20 +45471,21 @@ ${this.quotedText}`)
                                               ],
                                           })
                                         : (0, n.jsxs)("div", {
-                                              className: c.Box_1,
+                                              className: c.A.Box_1,
                                               children: [
                                                   (0, n.jsx)(t.ShieldLockIcon, {
-                                                      className: c.Octicon,
+                                                      className: c.A.Octicon,
                                                   }),
                                                   (0, n.jsxs)("div", {
                                                       className: (0, m.$)(
-                                                          c.Box_2,
-                                                          k && c.ForceWrap
+                                                          c.A.Box_2,
+                                                          k && c.A.ForceWrap
                                                       ),
                                                       children: [
                                                           (0, n.jsxs)("p", {
                                                               className:
-                                                                  c.Paragraph,
+                                                                  c.A
+                                                                      .ProtectedOrgs_FullList,
                                                               children: [
                                                                   "Single sign-on to see results in ",
                                                                   0 === f &&
@@ -45121,6 +45525,13 @@ ${this.quotedText}`)
                                                                       : "organization",
                                                                   ".",
                                                               ],
+                                                          }),
+                                                          (0, n.jsx)("p", {
+                                                              className:
+                                                                  c.A
+                                                                      .ProtectedOrgs_Shortened,
+                                                              children:
+                                                                  "Single sign-on to see results in your organizations",
                                                           }),
                                                           (0, n.jsx)("div", {
                                                               style: {
@@ -45164,8 +45575,9 @@ ${this.quotedText}`)
                                     (0, n.jsx)(
                                         u.l.Item,
                                         {
-                                            onSelect: () =>
-                                                (window.location.href = `/orgs/${encodeURIComponent(e)}/sso?return_to=${y({ location: t, redirectURI: a })}`),
+                                            onSelect: () => {
+                                                window.location.href = `/orgs/${encodeURIComponent(e)}/sso?return_to=${y({ location: t, redirectURI: a })}`;
+                                            },
                                             children: e,
                                         },
                                         `org-${e}`
@@ -45379,18 +45791,18 @@ ${this.quotedText}`)
                 "octicons-react",
                 "vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js",
                 "vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_stacktrace-parser_dist_s-1d3d52",
-                "vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-b1c483",
-                "vendors-node_modules_cookie_index_js-node_modules_primer_live-region-element_dist_esm_index_j-1ca8f6",
+                "vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-1fff13",
+                "vendors-node_modules_tanstack_query-core_build_modern_queryClient_js",
                 "vendors-node_modules_primer_behaviors_dist_esm_index_mjs",
                 "vendors-node_modules_dompurify_dist_purify_es_mjs",
-                "vendors-node_modules_lodash-es__Stack_js-node_modules_lodash-es__Uint8Array_js-node_modules_l-4faaa6",
                 "vendors-node_modules_tanstack_query-core_build_modern_queryObserver_js-node_modules_tanstack_-defd52",
                 "vendors-node_modules_date-fns_format_mjs",
                 "vendors-node_modules_date-fns_addWeeks_mjs-node_modules_date-fns_addYears_mjs-node_modules_da-827f4f",
                 "vendors-node_modules_github_relative-time-element_dist_index_js",
                 "vendors-node_modules_focus-visible_dist_focus-visible_js-node_modules_github_hotkey_dist_inde-70f9af",
-                "vendors-node_modules_lodash-es_isEqual_js",
-                "vendors-node_modules_dnd-kit_modifiers_dist_modifiers_esm_js-node_modules_dnd-kit_sortable_di-72228e",
+                "vendors-node_modules_lodash-es__Stack_js-node_modules_lodash-es__Uint8Array_js-node_modules_l-4faaa6",
+                "vendors-node_modules_github_hydro-analytics-client_dist_analytics-client_js-node_modules_gith-45114a",
+                "vendors-node_modules_dnd-kit_modifiers_dist_modifiers_esm_js-node_modules_dnd-kit_sortable_di-8b7697",
                 "vendors-node_modules_braintree_browser-detection_dist_browser-detection_js-node_modules_githu-bb80ec",
                 "vendors-node_modules_lodash-es_cloneDeep_js",
                 "vendors-node_modules_react-relay_index_js",
@@ -45405,21 +45817,22 @@ ${this.quotedText}`)
                 "ui_packages_date-picker_components_DatePicker_tsx",
                 "ui_packages_drag-and-drop_drag-and-drop_ts-ui_packages_hydro-analytics_hydro-analytics_ts",
                 "ui_packages_list-view_src_hooks_use-next-header-tag_ts-ui_packages_list-view_src_ListItem_Lis-0a5d95",
-                "ui_packages_filter_utils_index_ts-ui_packages_fuzzy-score_fuzzy-filter_ts-ui_packages_use-ana-cdfa54",
-                "ui_packages_filter_providers_index_ts",
+                "ui_packages_filter_utils_index_ts-ui_packages_fuzzy-score_fuzzy-score_ts-ui_packages_use-anal-3698d5",
+                "ui_packages_filter_Filter_tsx",
                 "ui_packages_relay-environment_relay-environment_ts",
+                "ui_packages_filter_providers_index_ts",
                 "ui_packages_item-picker_components_RepositoryPicker_tsx-ui_packages_safe-html_VerifiedHTML_tsx",
-                "ui_packages_issue-create_dialog_CreateIssueDialogEntry_tsx-ui_packages_date-picker_components-96ce24",
+                "ui_packages_issue-create_dialog_CreateIssueDialogEntry_tsx-ui_packages_copy-to-clipboard_Copy-437fc1",
                 "ui_packages_commenting_constants_values_ts-ui_packages_commenting_components_ActivityHeader_t-8a1940",
                 "ui_packages_query-builder-element_query-builder-element_ts",
                 "ui_packages_app-uuid_app-uuid_ts-ui_packages_signed-commit-badge_index_ts",
                 "ui_packages_markdown-viewer_NewMarkdownViewer_tsx",
-                "ui_packages_issue-viewer_components_IssueViewer_tsx-ui_packages_issue-viewer_contexts_IssueVi-bb0eb9",
-                "ui_packages_query-builder_utils_query_ts-ui_packages_issue-type-filter-provider_IssueTypeFilt-b3a6b0",
+                "ui_packages_issue-viewer_components_IssueViewer_tsx-ui_packages_issue-viewer_contexts_IssueVi-83922a",
+                "ui_packages_query-builder_utils_query_ts-ui_packages_copy-to-clipboard_CopyToClipboardButton_-45bb37",
             ],
-            () => l(49042)
+            () => l(2020)
         ),
             e.O());
     },
 ]);
-//# sourceMappingURL=issues-react-ad01fbb2c462.js.map
+//# sourceMappingURL=issues-react-cc25405007db.js.map

@@ -884,6 +884,9 @@
                 s = o({ key: "textStyles", prop: "textStyle" }),
                 l = o({ key: "colorStyles", prop: "colors" });
         },
+        16069: (e, t) => {
+            Object.prototype.toString;
+        },
         38267: (e, t, r) => {
             r.d(t, {
                 AH: () => em,
@@ -2619,7 +2622,7 @@
         },
         12201: (e, t, r) => {
             r.d(t, { Wy: () => QueryRoute, yT: () => b });
-            var n = r(85647),
+            var n = r(85788),
                 a = r(96679),
                 o = r(31993),
                 i = r(33957),
@@ -2967,7 +2970,7 @@
         60244: (e, t, r) => {
             r.d(t, { B1: () => s, ks: () => c, pw: () => h, xX: () => d });
             var n = r(21728),
-                a = r(85647),
+                a = r(85788),
                 o = r(97286),
                 i = r(12201);
             function s(e, t) {
@@ -3207,7 +3210,7 @@
                 o = r(39595),
                 i = r(13255),
                 s = r(66871),
-                l = r(85647),
+                l = r(85788),
                 u = r(97396),
                 c = n || (n = {});
             ((c.Pop = "POP"), (c.Push = "PUSH"), (c.Replace = "REPLACE"));
@@ -4760,7 +4763,7 @@
             r.d(t, { k: () => h });
             var n = r(74848),
                 a = r(39595),
-                o = r(85647),
+                o = r(85788),
                 i = r(9798),
                 s = r(58394),
                 l = r(37573);
@@ -5058,7 +5061,7 @@
         },
         50855: (e, t, r) => {
             r.d(t, { N: () => i });
-            var n = r(85647),
+            var n = r(85788),
                 a = r(96540),
                 o = r(11908);
             function i() {
@@ -5457,7 +5460,7 @@
             r.d(t, { N: () => c, k: () => d });
             var n = r(74848),
                 a = r(21728),
-                o = r(85647),
+                o = r(85788),
                 i = r(96679),
                 s = r(96540),
                 l = r(32494),
@@ -6295,8 +6298,8 @@
             var n = r(74848),
                 a = r(21728),
                 o = r(22353),
-                i = r(85647),
-                s = r(93116),
+                i = r(85788),
+                s = r(32647),
                 l = r(96540),
                 u = r(66300),
                 c = r(39627);
@@ -6504,7 +6507,7 @@
                 y.displayName || (y.displayName = "ResponseErrorElement");
             } catch {}
         },
-        85647: (e, t, r) => {
+        85788: (e, t, r) => {
             r.d(t, {
                 AO: () => g,
                 B6: () => A,
@@ -6547,7 +6550,7 @@
             var n,
                 a,
                 o = r(96540);
-            r(57427);
+            r(16069);
             var i = (e) => {
                     throw TypeError(e);
                 },
@@ -10980,7 +10983,7 @@ import(${JSON.stringify(n.entry.module)});`
                 void 0 !== window.document &&
                 void 0 !== window.document.createElement;
             try {
-                rU && (window.__reactRouterVersion = "7.6.1");
+                rU && (window.__reactRouterVersion = "7.6.3");
             } catch (e) {}
             function rH(e, t) {
                 return (function (e) {
@@ -13541,55 +13544,62 @@ import(${JSON.stringify(n.entry.module)});`
                 return JSON.stringify(e).replace(nv, (e) => ng[e]);
             }
             function nw(e, t) {
-                let r,
-                    n = t.errors
-                        ? t.matches.findIndex((e) => t.errors[e.route.id])
-                        : -1,
-                    a = n >= 0 ? t.matches.slice(0, n + 1) : t.matches;
-                if (n >= 0) {
-                    let {
-                        actionHeaders: e,
-                        actionData: a,
-                        loaderHeaders: o,
-                        loaderData: i,
-                    } = t;
-                    t.matches.slice(n).some((t) => {
-                        let n = t.route.id;
-                        return (
-                            !e[n] || (a && a.hasOwnProperty(n))
-                                ? o[n] && !i.hasOwnProperty(n) && (r = o[n])
-                                : (r = e[n]),
-                            null != r
-                        );
-                    });
-                }
-                return a.reduce((n, o, i) => {
-                    let { id: s } = o.route,
-                        l = e.routes[s];
-                    nm(l, `Route with id "${s}" not found in build`);
-                    let u = l.module,
-                        c = t.loaderHeaders[s] || new Headers(),
-                        d = t.actionHeaders[s] || new Headers(),
-                        h = null != r && i === a.length - 1,
-                        f = h && r !== c && r !== d;
-                    if (null == u.headers) {
-                        let e = new Headers(n);
-                        return (f && nS(r, e), nS(d, e), nS(c, e), e);
+                return (function (e, t) {
+                    let r,
+                        n = e.errors
+                            ? e.matches.findIndex((t) => e.errors[t.route.id])
+                            : -1,
+                        a = n >= 0 ? e.matches.slice(0, n + 1) : e.matches;
+                    if (n >= 0) {
+                        let {
+                            actionHeaders: t,
+                            actionData: a,
+                            loaderHeaders: o,
+                            loaderData: i,
+                        } = e;
+                        e.matches.slice(n).some((e) => {
+                            let n = e.route.id;
+                            return (
+                                !t[n] || (a && a.hasOwnProperty(n))
+                                    ? o[n] && !i.hasOwnProperty(n) && (r = o[n])
+                                    : (r = t[n]),
+                                null != r
+                            );
+                        });
                     }
-                    let p = new Headers(
-                        u.headers
-                            ? "function" == typeof u.headers
-                                ? u.headers({
-                                      loaderHeaders: c,
+                    return a.reduce((n, o, i) => {
+                        let { id: s } = o.route,
+                            l = e.loaderHeaders[s] || new Headers(),
+                            u = e.actionHeaders[s] || new Headers(),
+                            c = null != r && i === a.length - 1,
+                            d = c && r !== l && r !== u,
+                            h = t(o);
+                        if (null == h) {
+                            let e = new Headers(n);
+                            return (d && nS(r, e), nS(u, e), nS(l, e), e);
+                        }
+                        let f = new Headers(
+                            "function" == typeof h
+                                ? h({
+                                      loaderHeaders: l,
                                       parentHeaders: n,
-                                      actionHeaders: d,
-                                      errorHeaders: h ? r : void 0,
+                                      actionHeaders: u,
+                                      errorHeaders: c ? r : void 0,
                                   })
-                                : u.headers
-                            : void 0
+                                : h
+                        );
+                        return (d && nS(r, f), nS(u, f), nS(l, f), nS(n, f), f);
+                    }, new Headers());
+                })(t, (t) => {
+                    let r = e.routes[t.route.id];
+                    return (
+                        nm(
+                            r,
+                            `Route with id "${t.route.id}" not found in build`
+                        ),
+                        r.module.headers
                     );
-                    return (f && nS(r, p), nS(d, p), nS(c, p), nS(n, p), p);
-                }, new Headers());
+                });
             }
             function nS(e, t) {
                 let r = e.get("Set-Cookie");
@@ -14000,4 +14010,4 @@ ${String(e)}`),
         },
     },
 ]);
-//# sourceMappingURL=react-core-2086bc1e492f.js.map
+//# sourceMappingURL=react-core-15f06aca1883.js.map

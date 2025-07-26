@@ -1,0 +1,47 @@
+.prc-TabNav-TabNavTabList-0QtIV {
+    display: flex;
+    margin-bottom: -1px;
+    overflow: auto
+}
+
+.prc-TabNav-TabNavNav-rTAFO {
+    border-bottom: var(--borderWidth-thin, .0625rem) solid var(--borderColor-default, var(--color-border-default));
+    margin-top: 0
+}
+
+.prc-TabNav-TabNavLink-jXRq9 {
+    background-color: transparent;
+    border: var(--borderWidth-thin, .0625rem) solid transparent;
+    border-bottom: 0;
+    font-size: var(--text-body-size-medium, .875rem);
+    line-height: 20px;
+    padding: var(--base-size-8, .5rem) var(--base-size-12, .75rem)
+}
+
+.prc-TabNav-TabNavLink-jXRq9,
+.prc-TabNav-TabNavLink-jXRq9:hover {
+    color: var(--fgColor-default, var(--color-fg-default))
+}
+
+.prc-TabNav-TabNavLink-jXRq9,
+.prc-TabNav-TabNavLink-jXRq9:focus,
+.prc-TabNav-TabNavLink-jXRq9:hover {
+    -webkit-text-decoration: none;
+    text-decoration: none
+}
+
+.prc-TabNav-TabNavLink-jXRq9:focus {
+    box-shadow: none;
+    outline: 2px solid var(--focus-outlineColor, var(--color-accent-fg));
+    outline-offset: -6px
+}
+
+.prc-TabNav-TabNavLink-jXRq9.prc-TabNav-Selected-94A5r {
+    background-color: var(--bgColor-default, var(--color-canvas-default));
+    border-color: var(--borderColor-default, var(--color-border-default));
+    border-top-left-radius: var(--borderRadius-medium, .375rem);
+    border-top-right-radius: var(--borderRadius-medium, .375rem);
+    color: var(--fgColor-default, var(--color-fg-default))
+}
+
+/*# sourceMappingURL=TabNav-83c6145e.css.map */
