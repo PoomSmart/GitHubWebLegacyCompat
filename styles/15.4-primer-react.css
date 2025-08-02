@@ -1180,7 +1180,7 @@
     visibility: hidden
 }
 
-.prc-ActionList-ActionListItem-uq6I7:not(:has([aria-disabled], [disabled]), [aria-disabled=true], [data-has-subitem=true]):where([data-variant=danger]) * :not([popover], .prc-ActionList-TrailingVisual-XocgV) {
+.prc-ActionList-ActionListItem-uq6I7:not(:has([aria-disabled], [disabled]), [data-has-subitem=true]):where([data-variant=danger]) * :not([popover],.prc-ActionList-TrailingVisual-XocgV) {
     color: var(--control-danger-fgColor-rest, var(--color-danger-fg))
 }
 
@@ -5328,8 +5328,6 @@ input .prc-src-BaseStyles-dl-St:has([data-color-mode=dark]) {
 
 .prc-PageHeader-Title-LKOsd {
     display: block;
-    font-size: inherit;
-    font-weight: inherit;
     order: var(--title-area-region-order-title)
 }
 

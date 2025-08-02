@@ -6,6 +6,8 @@ const { execSync } = require("child_process");
 
 // For Node.js < 18, we need to use a fetch polyfill or alternative
 let fetch;
+let puppeteer;
+
 try {
     // Try to use built-in fetch
     fetch = globalThis.fetch;
@@ -17,6 +19,14 @@ try {
     console.log("Using curl as fetch fallback...");
 }
 
+// Try to load Puppeteer for better JavaScript page rendering
+try {
+    puppeteer = require("puppeteer");
+    console.log("Puppeteer available for JavaScript page rendering");
+} catch (error) {
+    console.log("Puppeteer not available, using basic fetch/curl");
+}
+
 const SCRIPTS_DIR = path.join(__dirname, "scripts");
 const TEMP_DIR = path.join(__dirname, "temp-downloads");
 
@@ -26,12 +36,19 @@ const FILE_PATTERNS = {
     "issue-viewer": /ui_packages_issue-viewer_.*-[a-f0-9]+\.js$/,
     "list-view": /ui_packages_list-view_.*-[a-f0-9]+\.js$/,
     "react-core": /react-core-[a-f0-9]+\.js$/,
+    "remark-vendors":
+        /vendors-node_modules_remark-gfm_lib_index_js-node_modules_remark-parse_lib_index_js-node_modu-[a-f0-9]+-[a-f0-9]+\.js$/,
+    // "repos-overview": /chunk-lazy-react-partial-repos-overview-[a-f0-9]+\.js$/,
+    // "wp-runtime": /wp-runtime-[a-f0-9]+\.js$/,
 };
 
 // Alternative patterns if primary ones don't match
 const ALTERNATIVE_PATTERNS = {
     "issue-viewer": /issue-viewer.*-[a-f0-9]+\.js$/,
     "list-view": /list-view.*-[a-f0-9]+\.js$/,
+    "remark-vendors": /vendors.*remark.*-[a-f0-9]+\.js$/,
+    // "repos-overview": /chunk.*repos.*overview.*-[a-f0-9]+\.js$/,
+    // "wp-runtime": /runtime.*-[a-f0-9]+\.js$/,
 };
 
 // Target files in scripts directory
@@ -40,37 +57,330 @@ const TARGET_FILES = {
     "issue-viewer": "16.4-issue-viewer.js",
     "list-view": "16.4-list-view.js",
     "react-core": "16.4-a-react-core.js",
+    "remark-vendors": "16.4-remark-vendors.js",
+    // "repos-overview": "16.4-repos-overview.js",
 };
 
-async function fetchGitHubPage() {
-    console.log("Fetching GitHub issues page to find asset URLs...");
+async function fetchPageWithPuppeteer(url) {
+    if (!puppeteer) {
+        throw new Error("Puppeteer not available");
+    }
 
+    console.log(`    Using Puppeteer to render ${url}...`);
+
+    let browser;
     try {
-        let html;
-        if (fetch) {
-            // Use built-in fetch
-            const response = await fetch(
-                "https://github.com/microsoft/vscode/issues"
-            );
-            html = await response.text();
-        } else {
-            // Use curl as fallback
-            html = execSync(
-                'curl -s "https://github.com/microsoft/vscode/issues"',
-                { encoding: "utf8" }
-            );
-        }
+        browser = await puppeteer.launch({
+            headless: "new",
+            args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        });
 
-        // Extract all GitHub assets URLs from the page
+        const page = await browser.newPage();
+        await page.setViewport({ width: 1920, height: 1080 });
+
+        await page.goto(url, {
+            waitUntil: "networkidle2",
+            timeout: 30000,
+        });
+
+        // Wait for potential lazy-loaded content
+        await new Promise((resolve) => setTimeout(resolve, 3000));
+
+        // Get all script sources that were actually loaded
+        const scriptSources = await page.evaluate(() => {
+            const scripts = Array.from(
+                document.querySelectorAll("script[src]")
+            );
+            return scripts
+                .map((script) => script.src)
+                .filter(
+                    (src) =>
+                        src.includes("github.githubassets.com/assets/") &&
+                        src.endsWith(".js")
+                );
+        });
+
+        // Also get HTML content as backup
+        const html = await page.content();
         const assetRegex =
             /https:\/\/github\.githubassets\.com\/assets\/[^"']+\.js/g;
-        const assets = [...html.matchAll(assetRegex)].map((match) => match[0]);
+        const htmlAssets = [...html.matchAll(assetRegex)].map(
+            (match) => match[0]
+        );
 
-        console.log(`Found ${assets.length} JavaScript asset URLs`);
-        return assets;
+        // Combine and deduplicate
+        const allAssets = [...new Set([...scriptSources, ...htmlAssets])];
+        return allAssets;
+    } finally {
+        if (browser) {
+            await browser.close();
+        }
+    }
+}
+
+async function fetchGitHubPage() {
+    console.log("Fetching GitHub pages to find asset URLs...");
+
+    try {
+        let allAssets = [];
+
+        const pages = [
+            {
+                name: "issues page",
+                url: "https://github.com/microsoft/vscode/issues",
+            },
+            {
+                name: "main repository page",
+                url: "https://github.com/microsoft/vscode",
+            },
+        ];
+
+        for (const { name, url } of pages) {
+            console.log(`  - Fetching from ${name}...`);
+
+            try {
+                let assets = [];
+
+                // Try Puppeteer first for better JS support
+                if (puppeteer) {
+                    try {
+                        assets = await fetchPageWithPuppeteer(url);
+                        console.log(
+                            `    Found ${assets.length} JavaScript asset URLs from ${name} (via Puppeteer)`
+                        );
+                    } catch (puppeteerError) {
+                        console.log(
+                            `    Puppeteer failed for ${name}, falling back to basic fetch: ${puppeteerError.message}`
+                        );
+                        // Fall back to basic fetch
+                        assets = await fetchPageBasic(url, name);
+                    }
+                } else {
+                    // Use basic fetch/curl
+                    assets = await fetchPageBasic(url, name);
+                }
+
+                allAssets.push(...assets);
+            } catch (error) {
+                console.log(
+                    `    Warning: Could not fetch ${name}: ${error.message}`
+                );
+            }
+        }
+
+        // Remove duplicates
+        const uniqueAssets = [...new Set(allAssets)];
+        console.log(
+            `Found ${uniqueAssets.length} unique JavaScript asset URLs total`
+        );
+
+        return uniqueAssets;
     } catch (error) {
-        console.error("Error fetching GitHub page:", error);
+        console.error("Error fetching GitHub pages:", error);
         process.exit(1);
+    }
+}
+
+async function fetchPageBasic(url, pageName) {
+    let html;
+    if (fetch) {
+        const response = await fetch(url);
+        html = await response.text();
+    } else {
+        html = execSync(`curl -s "${url}"`, { encoding: "utf8" });
+    }
+
+    const assetRegex =
+        /https:\/\/github\.githubassets\.com\/assets\/[^"']+\.js/g;
+    const assets = [...html.matchAll(assetRegex)].map((match) => match[0]);
+    console.log(
+        `    Found ${assets.length} JavaScript asset URLs from ${pageName}`
+    );
+
+    return assets;
+}
+
+async function tryFetchReposOverviewDirectly(discoveredUrls) {
+    try {
+        console.log(
+            "    Attempting to fetch repos-overview chunk directly from webpack runtime info..."
+        );
+
+        // First, try to get wp-runtime content from the live URL
+        const wpRuntimeUrl = discoveredUrls.find((url) =>
+            /wp-runtime-[a-f0-9]+\.js$/.test(url)
+        );
+        if (!wpRuntimeUrl) {
+            console.log("    ❌ No wp-runtime URL found in discovered assets");
+            return null;
+        }
+
+        console.log(`    📥 Fetching wp-runtime from: ${wpRuntimeUrl}`);
+
+        let wpRuntimeContent;
+        if (fetch) {
+            const response = await fetch(wpRuntimeUrl);
+            if (!response.ok) {
+                console.log(
+                    `    ❌ Could not fetch wp-runtime: HTTP ${response.status}`
+                );
+                return null;
+            }
+            wpRuntimeContent = await response.text();
+        } else {
+            try {
+                wpRuntimeContent = execSync(`curl -s "${wpRuntimeUrl}"`, {
+                    encoding: "utf8",
+                });
+                if (
+                    wpRuntimeContent.includes("<html") ||
+                    wpRuntimeContent.includes("<!DOCTYPE")
+                ) {
+                    console.log(
+                        "    ❌ Could not fetch wp-runtime: Got HTML error page"
+                    );
+                    return null;
+                }
+            } catch (error) {
+                console.log(
+                    `    ❌ Could not fetch wp-runtime: ${error.message}`
+                );
+                return null;
+            }
+        }
+
+        // Extract the current repos-overview hash from wp-runtime
+        // Get all matches and try them in reverse order (newest first)
+        const allMatches = [
+            ...wpRuntimeContent.matchAll(
+                /"lazy-react-partial-repos-overview":"([a-f0-9]+)"/g
+            ),
+        ];
+
+        if (allMatches.length === 0) {
+            console.log(
+                "    ❌ Could not extract repos-overview hash from wp-runtime"
+            );
+            return null;
+        }
+
+        console.log(`    📋 Found ${allMatches.length} repos-overview hashes`);
+
+        // Try both hashes starting with the newest
+        for (let i = allMatches.length - 1; i >= 0; i--) {
+            const hash = allMatches[i][1];
+            const expectedFilename = `chunk-lazy-react-partial-repos-overview-${hash}.js`;
+            const directUrl = `https://github.githubassets.com/assets/${expectedFilename}`;
+
+            console.log(
+                `    🔍 Trying direct fetch (${i + 1}/${allMatches.length}): ${expectedFilename}`
+            );
+
+            let content;
+            if (fetch) {
+                const response = await fetch(directUrl);
+                if (!response.ok) {
+                    console.log(
+                        `    ❌ Direct fetch failed: HTTP ${response.status}`
+                    );
+                    continue; // Try next hash
+                }
+                content = await response.text();
+            } else {
+                try {
+                    content = execSync(`curl -s "${directUrl}"`, {
+                        encoding: "utf8",
+                    });
+                    // Basic check if curl succeeded (curl returns HTML error pages on 404)
+                    if (
+                        content.includes("<html") ||
+                        content.includes("<!DOCTYPE")
+                    ) {
+                        console.log(
+                            "    ❌ Direct fetch failed: Got HTML error page"
+                        );
+                        continue; // Try next hash
+                    }
+                } catch (error) {
+                    console.log(`    ❌ Direct fetch failed: ${error.message}`);
+                    continue; // Try next hash
+                }
+            }
+
+            // Validate that this is the correct chunk
+            if (
+                content.includes('["lazy-react-partial-repos-overview"]') ||
+                content.includes("lazy-react-partial-repos-overview") ||
+                content.length > 1000
+            ) {
+                // Basic size check
+                console.log(
+                    `    ✅ Successfully fetched repos-overview chunk with hash: ${hash}`
+                );
+
+                // Save it to temp directory
+                const tempPath = path.join(
+                    TEMP_DIR,
+                    "repos-overview-direct.js"
+                );
+                fs.writeFileSync(tempPath, content);
+
+                return {
+                    url: directUrl,
+                    path: tempPath,
+                    content: content,
+                };
+            } else {
+                console.log(
+                    "    ❌ Direct fetch succeeded but content validation failed"
+                );
+                continue; // Try next hash
+            }
+        }
+
+        console.log("    ❌ All repos-overview hash attempts failed");
+        return null;
+    } catch (error) {
+        console.log(`    ❌ Direct fetch attempt failed: ${error.message}`);
+        return null;
+    }
+}
+
+async function validateWpRuntimeContent(url) {
+    try {
+        console.log(
+            `    Validating wp-runtime content of ${path.basename(url)}...`
+        );
+
+        let content;
+        if (fetch) {
+            const response = await fetch(url);
+            if (!response.ok) return false;
+            content = await response.text();
+        } else {
+            content = execSync(`curl -s "${url}"`, { encoding: "utf8" });
+        }
+
+        // Check if the wp-runtime references the repos-overview chunk
+        const hasReposOverviewReference =
+            content.includes("lazy-react-partial-repos-overview") ||
+            content.includes("repos-overview") ||
+            content.includes("repositories");
+
+        if (hasReposOverviewReference) {
+            console.log(
+                `    ✅ wp-runtime validated - contains repos-overview references`
+            );
+            return true;
+        } else {
+            console.log(
+                `    ❌ wp-runtime validation failed - no repos-overview references found`
+            );
+            return false;
+        }
+    } catch (error) {
+        console.log(`    ❌ wp-runtime validation failed: ${error.message}`);
+        return false;
     }
 }
 
@@ -159,13 +469,29 @@ function readPatchFile(filename) {
     const content = fs.readFileSync(filePath, "utf8");
     const lines = content.split("\n");
 
+    const patches = [];
     let isOldSection = false;
     let isNewSection = false;
     let oldPattern = "";
     let newReplacement = "";
 
+    const finalizePatch = () => {
+        if (oldPattern.trim() && newReplacement.trim()) {
+            patches.push({
+                oldPattern: oldPattern.trim(),
+                newReplacement: newReplacement.trim(),
+            });
+        }
+        oldPattern = "";
+        newReplacement = "";
+    };
+
     for (const line of lines) {
         if (line.startsWith("# Old")) {
+            // Finalize previous patch if it exists
+            if (isNewSection) {
+                finalizePatch();
+            }
             isOldSection = true;
             isNewSection = false;
             continue;
@@ -182,38 +508,58 @@ function readPatchFile(filename) {
         }
     }
 
-    return {
-        oldPattern: oldPattern.trim(),
-        newReplacement: newReplacement.trim(),
-    };
+    // Finalize the last patch
+    finalizePatch();
+
+    // Return array of patches, or null if no valid patches found
+    return patches.length > 0 ? patches : null;
 }
 
 function applyTextPatches(content, patchFile) {
-    const patch = readPatchFile(patchFile);
-    if (!patch || !patch.oldPattern || !patch.newReplacement) {
-        console.warn(`Invalid or missing patch in ${patchFile}`);
+    const patches = readPatchFile(patchFile);
+    if (!patches || patches.length === 0) {
+        console.warn(`Invalid or missing patches in ${patchFile}`);
         return content;
     }
 
-    console.log(`Applying patch from ${patchFile}:`);
-    console.log(
-        `  Old: ${patch.oldPattern.substring(0, 60)}${patch.oldPattern.length > 60 ? "..." : ""}`
-    );
-    console.log(
-        `  New: ${patch.newReplacement.substring(0, 60)}${patch.newReplacement.length > 60 ? "..." : ""}`
-    );
+    console.log(`Applying ${patches.length} patch(es) from ${patchFile}:`);
 
-    const originalLength = content.length;
     let modifiedContent = content;
+    const originalLength = content.length;
+    let totalChanges = 0;
 
-    // Apply the patch using simple string replacement
-    modifiedContent = content.replace(
-        patch.oldPattern,
-        patch.newReplacement
-    );
+    for (let i = 0; i < patches.length; i++) {
+        const patch = patches[i];
+        const beforeLength = modifiedContent.length;
+
+        console.log(`  Patch ${i + 1}/${patches.length}:`);
+        console.log(
+            `    Old: ${patch.oldPattern.substring(0, 60)}${patch.oldPattern.length > 60 ? "..." : ""}`
+        );
+        console.log(
+            `    New: ${patch.newReplacement.substring(0, 60)}${patch.newReplacement.length > 60 ? "..." : ""}`
+        );
+
+        // Apply the patch using simple string replacement
+        const patchedContent = modifiedContent.replace(
+            patch.oldPattern,
+            patch.newReplacement
+        );
+
+        if (patchedContent === modifiedContent) {
+            console.log(`    ⚠️  No match found for patch ${i + 1}`);
+        } else {
+            const changeSize = patchedContent.length - beforeLength;
+            console.log(
+                `    ✅ Applied patch ${i + 1}: ${beforeLength} → ${patchedContent.length} chars (${changeSize >= 0 ? "+" : ""}${changeSize})`
+            );
+            modifiedContent = patchedContent;
+            totalChanges++;
+        }
+    }
 
     console.log(
-        `  Patch result: ${originalLength} → ${modifiedContent.length} chars (${modifiedContent.length - originalLength >= 0 ? "+" : ""}${modifiedContent.length - originalLength})`
+        `  Total result: ${originalLength} → ${modifiedContent.length} chars (${modifiedContent.length - originalLength >= 0 ? "+" : ""}${modifiedContent.length - originalLength}), ${totalChanges}/${patches.length} patches applied`
     );
 
     return modifiedContent;
@@ -374,6 +720,55 @@ async function main() {
             );
         }
 
+        // Step 1.5: Handle repos-overview special case and validate content
+        console.log("\n--- Validating content ---");
+
+        // Special handling for repos-overview - try direct fetch if not found
+        if (!matches["repos-overview"] && matches["wp-runtime"]) {
+            console.log(
+                "repos-overview not found in page assets, attempting direct fetch..."
+            );
+            const directResult = await tryFetchReposOverviewDirectly(assets);
+            if (directResult) {
+                matches["repos-overview"] = directResult.url;
+                console.log(
+                    `Found repos-overview via direct fetch: ${directResult.url}`
+                );
+
+                // Remove wp-runtime from matches since we only use it to get repos-overview
+                delete matches["wp-runtime"];
+                console.log(
+                    "Removed wp-runtime from final output (used only for repos-overview discovery)"
+                );
+            } else {
+                // If repos-overview discovery failed, still remove wp-runtime
+                delete matches["wp-runtime"];
+                console.log(
+                    "Removed wp-runtime from final output (repos-overview discovery failed)"
+                );
+            }
+        } else if (matches["wp-runtime"] && !matches["repos-overview"]) {
+            // If we have wp-runtime but no repos-overview, remove wp-runtime
+            delete matches["wp-runtime"];
+            console.log(
+                "Removed wp-runtime from final output (not needed without repos-overview discovery)"
+            );
+        }
+
+        if (matches["wp-runtime"]) {
+            const isValid = await validateWpRuntimeContent(
+                matches["wp-runtime"]
+            );
+            if (!isValid) {
+                console.warn(
+                    "Warning: wp-runtime file does not contain repos-overview references"
+                );
+                console.warn(
+                    "Continuing with download, but the file may not load the repos-overview chunk"
+                );
+            }
+        }
+
         console.log("\n--- Downloading Files ---");
 
         // Step 2: Download matched files
@@ -445,9 +840,17 @@ async function main() {
                     fs.unlinkSync(tempFile);
                 }
             } else {
-                // Apply text patches to formatted content
+                // Apply text patches to formatted content (if patch file exists)
                 const patchFile = `${key}.txt`;
-                modifiedContent = applyTextPatches(content, patchFile);
+                const patchPath = path.join(__dirname, patchFile);
+
+                if (fs.existsSync(patchPath)) {
+                    modifiedContent = applyTextPatches(content, patchFile);
+                } else {
+                    console.log(
+                        `No patch file found for ${key}, using original content`
+                    );
+                }
             }
 
             console.log(
@@ -495,14 +898,12 @@ async function main() {
 
         // Cleanup temp directory, but preserve debug files if they exist
         if (fs.existsSync(TEMP_DIR)) {
-            const debugFiles = fs
-                .readdirSync(TEMP_DIR)
-                .filter(
-                    (file) =>
-                        file.includes("react-core-formatted.js") ||
-                        file.includes("react-core-temp.js") ||
-                        file.includes("-new.js") // Preserve all downloaded files for debugging
-                );
+            const debugFiles = fs.readdirSync(TEMP_DIR).filter(
+                (file) =>
+                    file.includes("react-core-formatted.js") ||
+                    file.includes("react-core-temp.js") ||
+                    file.includes("-new.js") // Preserve all downloaded files for debugging
+            );
 
             if (debugFiles.length > 0) {
                 console.log(

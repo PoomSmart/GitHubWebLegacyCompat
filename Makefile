@@ -43,7 +43,9 @@ js:
 css:
 	@for file in styles/*.css; do \
 		base=$$(basename "$$file" .css); \
-		npx cleancss "$$file" -o "$(ASSETS_PATH)/$$base.min.css"; \
+		npx postcss "$$file" --output "$(ASSETS_PATH)/$$base.processed.css"; \
+		npx cleancss "$(ASSETS_PATH)/$$base.processed.css" -o "$(ASSETS_PATH)/$$base.min.css"; \
+		rm "$(ASSETS_PATH)/$$base.processed.css"; \
 	done
 
 assets: js css
