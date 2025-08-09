@@ -153,7 +153,7 @@
                 Cp: () => d,
                 Jt: () => c,
                 Zz: () => y,
-                oK: () => p,
+                oK: () => f,
                 qU: () => m,
             });
             var n = r(45228),
@@ -203,16 +203,16 @@
                         e = e ? e[t[n]] : a;
                     return e === a ? r : e;
                 },
-                d = function e_(t) {
+                d = function e(t) {
                     var r = {},
                         n = function (e) {
                             var n = {},
                                 u = !1,
                                 d = e.theme && e.theme.disableStyledSystemCache;
-                            for (var p in e)
-                                if (t[p]) {
-                                    var m = t[p],
-                                        y = e[p],
+                            for (var f in e)
+                                if (t[f]) {
+                                    var m = t[f],
+                                        y = e[f],
                                         g = c(e.theme, m.scale, m.defaults);
                                     if ("object" == typeof y) {
                                         if (
@@ -239,7 +239,7 @@
                                         null !== y &&
                                             ((n = o(
                                                 n,
-                                                f(r.breakpoints, m, g, y, e)
+                                                p(r.breakpoints, m, g, y, e)
                                             )),
                                             (u = !0));
                                         continue;
@@ -258,7 +258,7 @@
                         u.length > 1 &&
                             u.forEach(function (r) {
                                 var a;
-                                n[r] = e_((((a = {})[r] = t[r]), a));
+                                n[r] = e((((a = {})[r] = t[r]), a));
                             }),
                         n
                     );
@@ -277,7 +277,7 @@
                         i
                     );
                 },
-                f = function (e, t, r, n, o) {
+                p = function (e, t, r, n, o) {
                     var i = {};
                     for (var s in n) {
                         var u = e[s],
@@ -290,7 +290,7 @@
                     }
                     return i;
                 },
-                p = function (e) {
+                f = function (e) {
                     var t = e.properties,
                         r = e.property,
                         n = e.scale,
@@ -318,14 +318,14 @@
                         Object.keys(e).forEach(function (r) {
                             var n = e[r];
                             if (!0 === n) {
-                                t[r] = p({ property: r, scale: r });
+                                t[r] = f({ property: r, scale: r });
                                 return;
                             }
                             if ("function" == typeof n) {
                                 t[r] = n;
                                 return;
                             }
-                            t[r] = p(n);
+                            t[r] = f(n);
                         }),
                         d(t)
                     );
@@ -499,8 +499,8 @@
                     void 0 === r && (r = {});
                     var c,
                         h = n({}, i, {}, r.theme || r),
-                        f = {},
-                        p = ((c = "function" == typeof t ? t(h) : t),
+                        p = {},
+                        f = ((c = "function" == typeof t ? t(h) : t),
                         function (e) {
                             var t = {},
                                 r = [null].concat(
@@ -537,28 +537,28 @@
                             }
                             return t;
                         })(h);
-                    for (var m in p) {
-                        var y = p[m],
+                    for (var m in f) {
+                        var y = f[m],
                             g = "function" == typeof y ? y(h) : y;
                         if ("variant" === m) {
                             var v = e(a(h, g))(h);
-                            f = n({}, f, {}, v);
+                            p = n({}, p, {}, v);
                             continue;
                         }
                         if (g && "object" == typeof g) {
-                            f[m] = e(g)(h);
+                            p[m] = e(g)(h);
                             continue;
                         }
                         var b = a(s, m, m),
                             w = a(u, b),
                             S = a(h, w, a(h, b, {})),
-                            E = a(d, b, a)(S, g, g);
+                            R = a(d, b, a)(S, g, g);
                         if (l[b])
-                            for (var R = l[b], x = 0; x < R.length; x++)
-                                f[R[x]] = E;
-                        else f[b] = E;
+                            for (var E = l[b], x = 0; x < E.length; x++)
+                                p[E[x]] = R;
+                        else p[b] = R;
                     }
-                    return f;
+                    return p;
                 };
             };
         },
@@ -890,9 +890,9 @@
         38267: (e, t, r) => {
             r.d(t, {
                 AH: () => em,
-                Ay: () => eP,
-                DU: () => ej,
-                Dx: () => eR,
+                Ay: () => ej,
+                DU: () => eP,
+                Dx: () => eE,
                 NP: () => ex,
                 i7: () => eT,
             });
@@ -918,12 +918,12 @@
                         return e;
                     }).apply(this, arguments);
             }
-            var f = function (e, t) {
+            var p = function (e, t) {
                     for (var r = [e[0]], n = 0, a = t.length; n < a; n += 1)
                         r.push(t[n], e[n + 1]);
                     return r;
                 },
-                p = function (e) {
+                f = function (e) {
                     return (
                         null !== e &&
                         "object" == typeof e &&
@@ -952,8 +952,8 @@
                             process.env.SC_ATTR)) ||
                     "data-styled",
                 S = "undefined" != typeof window && "HTMLElement" in window,
-                E = {};
-            function R(e) {
+                R = {};
+            function E(e) {
                 for (
                     var t = arguments.length,
                         r = Array(t > 1 ? t - 1 : 0),
@@ -970,12 +970,12 @@
                 );
             }
             var x = (function () {
-                    function e_(e) {
+                    function e(e) {
                         ((this.groupSizes = new Uint32Array(512)),
                             (this.length = 512),
                             (this.tag = e));
                     }
-                    var t = e_.prototype;
+                    var t = e.prototype;
                     return (
                         (t.indexOfGroup = function (e) {
                             for (var t = 0, r = 0; r < e; r++)
@@ -991,7 +991,7 @@
                                     e >= a;
 
                                 )
-                                    (a <<= 1) < 0 && R(16, "" + e);
+                                    (a <<= 1) < 0 && E(16, "" + e);
                                 ((this.groupSizes = new Uint32Array(a)),
                                     this.groupSizes.set(r),
                                     (this.length = a));
@@ -1036,13 +1036,13 @@
 `;
                             return t;
                         }),
-                        e_
+                        e
                     );
                 })(),
                 C = new Map(),
                 k = new Map(),
                 N = 1,
-                j = function (e) {
+                P = function (e) {
                     if (C.has(e)) return C.get(e);
                     for (; k.has(N); ) N++;
                     var t = N++;
@@ -1051,11 +1051,11 @@
                 T = function (e, t) {
                     (t >= N && (N = t + 1), C.set(e, t), k.set(t, e));
                 },
-                P = "style[" + w + '][data-styled-version="5.3.11"]',
-                A = RegExp(
+                j = "style[" + w + '][data-styled-version="5.3.11"]',
+                L = RegExp(
                     "^" + w + '\\.g(\\d+)\\[id="([\\w\\d-]+)"\\].*?"([^"]*)'
                 ),
-                L = function (e, t, r) {
+                A = function (e, t, r) {
                     for (
                         var n, a = r.split(","), o = 0, i = a.length;
                         o < i;
@@ -1075,23 +1075,23 @@
                     ) {
                         var i = r[a].trim();
                         if (i) {
-                            var s = i.match(A);
+                            var s = i.match(L);
                             if (s) {
                                 var l = 0 | parseInt(s[1], 10),
                                     u = s[2];
                                 (0 !== l &&
                                     (T(u, l),
-                                    L(e, u, s[3]),
+                                    A(e, u, s[3]),
                                     e.getTag().insertRules(l, n)),
                                     (n.length = 0));
                             } else n.push(i);
                         }
                     }
                 },
-                O = function () {
+                D = function () {
                     return r.nc;
                 },
-                $ = function (e) {
+                O = function (e) {
                     var t = document.head,
                         r = e || t,
                         n = document.createElement("style"),
@@ -1109,16 +1109,16 @@
                         o = void 0 !== a ? a.nextSibling : null;
                     (n.setAttribute(w, "active"),
                         n.setAttribute("data-styled-version", "5.3.11"));
-                    var i = O();
+                    var i = D();
                     return (
                         i && n.setAttribute("nonce", i),
                         r.insertBefore(n, o),
                         n
                     );
                 },
-                D = (function () {
-                    function e_(e) {
-                        var t = (this.element = $(e));
+                I = (function () {
+                    function e(e) {
+                        var t = (this.element = O(e));
                         (t.appendChild(document.createTextNode("")),
                             (this.sheet = (function (e) {
                                 if (e.sheet) return e.sheet;
@@ -1132,16 +1132,16 @@
                                     var a = t[r];
                                     if (a.ownerNode === e) return a;
                                 }
-                                R(17);
+                                E(17);
                             })(t)),
                             (this.length = 0));
                     }
-                    var t = e_.prototype;
+                    var t = e.prototype;
                     return (
-                        (t.insertRule = function (e__, t) {
+                        (t.insertRule = function (e, t) {
                             try {
                                 return (
-                                    this.sheet.insertRule(t, e__),
+                                    this.sheet.insertRule(t, e),
                                     this.length++,
                                     !0
                                 );
@@ -1158,15 +1158,15 @@
                                 ? t.cssText
                                 : "";
                         }),
-                        e_
+                        e
                     );
                 })(),
-                I = (function () {
-                    function e_(e) {
-                        var t = (this.element = $(e));
+                M = (function () {
+                    function e(e) {
+                        var t = (this.element = O(e));
                         ((this.nodes = t.childNodes), (this.length = 0));
                     }
-                    var t = e_.prototype;
+                    var t = e.prototype;
                     return (
                         (t.insertRule = function (e, t) {
                             if (e <= this.length && e >= 0) {
@@ -1189,14 +1189,14 @@
                                 ? this.nodes[e].textContent
                                 : "";
                         }),
-                        e_
+                        e
                     );
                 })(),
-                M = (function () {
-                    function e_(e) {
+                $ = (function () {
+                    function e(e) {
                         ((this.rules = []), (this.length = 0));
                     }
-                    var t = e_.prototype;
+                    var t = e.prototype;
                     return (
                         (t.insertRule = function (e, t) {
                             return (
@@ -1210,13 +1210,13 @@
                         (t.getRule = function (e) {
                             return e < this.length ? this.rules[e] : "";
                         }),
-                        e_
+                        e
                     );
                 })(),
                 z = S,
                 W = { isServer: !S, useCSSOMInjection: !0 },
                 U = (function () {
-                    function e_(e, t, r) {
+                    function e(e, t, r) {
                         (void 0 === e && (e = y),
                             void 0 === t && (t = {}),
                             (this.options = h({}, W, {}, e)),
@@ -1229,7 +1229,7 @@
                                 ((z = !1),
                                 (function (e) {
                                     for (
-                                        var t = document.querySelectorAll(P),
+                                        var t = document.querySelectorAll(j),
                                             r = 0,
                                             n = t.length;
                                         r < n;
@@ -1244,15 +1244,15 @@
                                     }
                                 })(this)));
                     }
-                    e_.registerId = function (e) {
-                        return j(e);
+                    e.registerId = function (e) {
+                        return P(e);
                     };
-                    var t = e_.prototype;
+                    var t = e.prototype;
                     return (
                         (t.reconstructWithOptions = function (t, r) {
                             return (
                                 void 0 === r && (r = !0),
-                                new e_(
+                                new e(
                                     h({}, this.options, {}, t),
                                     this.gs,
                                     (r && this.names) || void 0
@@ -1271,7 +1271,7 @@
                                     (r = e.useCSSOMInjection),
                                     (n = e.target),
                                     new x(
-                                        t ? new M(n) : r ? new D(n) : new I(n)
+                                        t ? new $(n) : r ? new I(n) : new M(n)
                                     )))
                             );
                         }),
@@ -1281,7 +1281,7 @@
                             );
                         }),
                         (t.registerName = function (e, t) {
-                            if ((j(e), this.names.has(e)))
+                            if ((P(e), this.names.has(e)))
                                 this.names.get(e).add(t);
                             else {
                                 var r = new Set();
@@ -1290,13 +1290,13 @@
                         }),
                         (t.insertRules = function (e, t, r) {
                             (this.registerName(e, t),
-                                this.getTag().insertRules(j(e), r));
+                                this.getTag().insertRules(P(e), r));
                         }),
                         (t.clearNames = function (e) {
                             this.names.has(e) && this.names.get(e).clear();
                         }),
                         (t.clearRules = function (e) {
-                            (this.getTag().clearGroup(j(e)),
+                            (this.getTag().clearGroup(P(e)),
                                 this.clearNames(e));
                         }),
                         (t.clearTag = function () {
@@ -1345,49 +1345,49 @@
                                 return n;
                             })(this);
                         }),
-                        e_
+                        e
                     );
                 })(),
-                H = /(a)(d)/gi,
-                B = function (e) {
+                B = /(a)(d)/gi,
+                F = function (e) {
                     return String.fromCharCode(e + (e > 25 ? 39 : 97));
                 };
-            function F(e) {
+            function H(e) {
                 var t,
                     r = "";
                 for (t = Math.abs(e); t > 52; t = (t / 52) | 0)
-                    r = B(t % 52) + r;
-                return (B(t % 52) + r).replace(H, "$1-$2");
+                    r = F(t % 52) + r;
+                return (F(t % 52) + r).replace(B, "$1-$2");
             }
             var q = function (e, t) {
                     for (var r = t.length; r; )
                         e = (33 * e) ^ t.charCodeAt(--r);
                     return e;
                 },
-                J = function (e) {
+                Y = function (e) {
                     return q(5381, e);
                 };
-            function Y(e) {
+            function V(e) {
                 for (var t = 0; t < e.length; t += 1) {
                     var r = e[t];
                     if (g(r) && !b(r)) return !1;
                 }
                 return !0;
             }
-            var V = J("5.3.11"),
-                X = (function () {
-                    function e_(e, t, r) {
+            var J = Y("5.3.11"),
+                G = (function () {
+                    function e(e, t, r) {
                         ((this.rules = e),
                             (this.staticRulesId = ""),
                             (this.isStatic =
-                                (void 0 === r || r.isStatic) && Y(e)),
+                                (void 0 === r || r.isStatic) && V(e)),
                             (this.componentId = t),
-                            (this.baseHash = q(V, t)),
+                            (this.baseHash = q(J, t)),
                             (this.baseStyle = r),
                             U.registerId(t));
                     }
                     return (
-                        (e_.prototype.generateAndInjectStyles = function (
+                        (e.prototype.generateAndInjectStyles = function (
                             e,
                             t,
                             r
@@ -1411,8 +1411,8 @@
                                 )
                                     a.push(this.staticRulesId);
                                 else {
-                                    var o = ef(this.rules, e, t, r).join(""),
-                                        i = F(q(this.baseHash, o) >>> 0);
+                                    var o = ep(this.rules, e, t, r).join(""),
+                                        i = H(q(this.baseHash, o) >>> 0);
                                     if (!t.hasNameForId(n, i)) {
                                         var s = r(o, "." + i, void 0, n);
                                         t.insertRules(n, i, s);
@@ -1431,15 +1431,15 @@
                                     var h = this.rules[d];
                                     if ("string" == typeof h) c += h;
                                     else if (h) {
-                                        var f = ef(h, e, t, r),
-                                            p = Array.isArray(f)
-                                                ? f.join("")
-                                                : f;
-                                        ((u = q(u, p + d)), (c += p));
+                                        var p = ep(h, e, t, r),
+                                            f = Array.isArray(p)
+                                                ? p.join("")
+                                                : p;
+                                        ((u = q(u, f + d)), (c += f));
                                     }
                                 }
                                 if (c) {
-                                    var m = F(u >>> 0);
+                                    var m = H(u >>> 0);
                                     if (!t.hasNameForId(n, m)) {
                                         var y = r(c, "." + m, void 0, n);
                                         t.insertRules(n, m, y);
@@ -1449,10 +1449,10 @@
                             }
                             return a.join(" ");
                         }),
-                        e_
+                        e
                     );
                 })(),
-                G = /^\s*\/\/.*$/gm,
+                X = /^\s*\/\/.*$/gm,
                 K = [":", "[", ".", "#"];
             function Q(e) {
                 var t,
@@ -1466,7 +1466,7 @@
                     c = void 0 === u ? m : u,
                     d = new s.A(l),
                     h = [],
-                    f = (function (e) {
+                    p = (function (e) {
                         function t(t) {
                             if (t)
                                 try {
@@ -1497,7 +1497,7 @@
                     })(function (e) {
                         h.push(e);
                     }),
-                    p = function (e, n, o) {
+                    f = function (e, n, o) {
                         return (0 === n && -1 !== K.indexOf(o[r.length])) ||
                             o.match(a)
                             ? e
@@ -1505,7 +1505,7 @@
                     };
                 function g(e, o, i, s) {
                     void 0 === s && (s = "&");
-                    var l = e.replace(G, ""),
+                    var l = e.replace(X, ""),
                         u = o && i ? i + " " + o + " { " + l + " }" : l;
                     return (
                         (t = s),
@@ -1521,9 +1521,9 @@
                                 2 === e &&
                                     a.length &&
                                     a[0].lastIndexOf(r) > 0 &&
-                                    (a[0] = a[0].replace(n, p));
+                                    (a[0] = a[0].replace(n, f));
                             },
-                            f,
+                            p,
                             function (e) {
                                 if (-2 === e) {
                                     var t = h;
@@ -1535,7 +1535,7 @@
                     (g.hash = c.length
                         ? c
                               .reduce(function (e, t) {
-                                  return (t.name || R(15), q(e, t.name));
+                                  return (t.name || E(15), q(e, t.name));
                               }, 5381)
                               .toString()
                         : ""),
@@ -1601,7 +1601,7 @@
                 );
             }
             var ei = (function () {
-                    function e_(e, t) {
+                    function e(e, t) {
                         var r = this;
                         ((this.inject = function (e, t) {
                             void 0 === t && (t = er);
@@ -1614,20 +1614,20 @@
                                 );
                         }),
                             (this.toString = function () {
-                                return R(12, String(r.name));
+                                return E(12, String(r.name));
                             }),
                             (this.name = e),
                             (this.id = "sc-keyframes-" + e),
                             (this.rules = t));
                     }
                     return (
-                        (e_.prototype.getName = function (e) {
+                        (e.prototype.getName = function (e) {
                             return (
                                 void 0 === e && (e = er),
                                 this.name + e.hash
                             );
                         }),
-                        e_
+                        e
                     );
                 })(),
                 es = /([A-Z])/,
@@ -1642,10 +1642,10 @@
             var eh = function (e) {
                 return null == e || !1 === e || "" === e;
             };
-            function ef(e, t, r, n) {
+            function ep(e, t, r, n) {
                 if (Array.isArray(e)) {
                     for (var a, o = [], i = 0, s = e.length; i < s; i += 1)
-                        "" !== (a = ef(e[i], t, r, n)) &&
+                        "" !== (a = ep(e[i], t, r, n)) &&
                             (Array.isArray(a) ? o.push.apply(o, a) : o.push(a));
                     return o;
                 }
@@ -1658,13 +1658,13 @@
                           (e.prototype && e.prototype.isReactComponent) ||
                           !t
                             ? e
-                            : ef(e(t), t, r, n)
+                            : ep(e(t), t, r, n)
                         : e instanceof ei
                           ? r
                               ? (e.inject(r, n), e.getName(n))
                               : e
-                          : p(e)
-                            ? (function e_(t, r) {
+                          : f(e)
+                            ? (function e(t, r) {
                                   var n,
                                       a = [];
                                   for (var o in t)
@@ -1674,8 +1674,8 @@
                                               t[o].isCss) ||
                                           g(t[o])
                                               ? a.push(ed(o) + ":", t[o], ";")
-                                              : p(t[o])
-                                                ? a.push.apply(a, e_(t[o], o))
+                                              : f(t[o])
+                                                ? a.push.apply(a, e(t[o], o))
                                                 : a.push(
                                                       ed(o) +
                                                           ": " +
@@ -1701,7 +1701,7 @@
                               })(e)
                             : e.toString();
             }
-            var ep = function (e) {
+            var ef = function (e) {
                 return (Array.isArray(e) && (e.isCss = !0), e);
             };
             function em(e) {
@@ -1713,13 +1713,13 @@
                     n++
                 )
                     r[n - 1] = arguments[n];
-                return g(e) || p(e)
-                    ? ep(ef(f(m, [e].concat(r))))
+                return g(e) || f(e)
+                    ? ef(ep(p(m, [e].concat(r))))
                     : 0 === r.length &&
                         1 === e.length &&
                         "string" == typeof e[0]
                       ? e
-                      : ep(ef(f(e, r)));
+                      : ef(ep(p(e, r)));
             }
             var ey = function (e, t, r) {
                     return (
@@ -1733,12 +1733,12 @@
                 return e.replace(eg, "-").replace(ev, "");
             }
             var ew = function (e) {
-                return F(J(e) >>> 0);
+                return H(Y(e) >>> 0);
             };
             function eS(e) {
                 return "string" == typeof e;
             }
-            var eE = function (e) {
+            var eR = function (e) {
                     return (
                         "function" == typeof e ||
                         ("object" == typeof e &&
@@ -1746,9 +1746,9 @@
                             !Array.isArray(e))
                     );
                 },
-                eR = a.createContext();
+                eE = a.createContext();
             function ex(e) {
-                var t = (0, a.useContext)(eR),
+                var t = (0, a.useContext)(eE),
                     r = (0, a.useMemo)(
                         function () {
                             var r;
@@ -1759,37 +1759,37 @@
                                         ? r(t)
                                         : Array.isArray(r) ||
                                             "object" != typeof r
-                                          ? R(8)
+                                          ? E(8)
                                           : t
                                             ? h({}, t, {}, r)
                                             : r
-                                    : R(14)
+                                    : E(14)
                             );
                         },
                         [e.theme, t]
                     );
                 return e.children
-                    ? a.createElement(eR.Provider, { value: r }, e.children)
+                    ? a.createElement(eE.Provider, { value: r }, e.children)
                     : null;
             }
-            eR.Consumer;
+            eE.Consumer;
             var eC = {},
                 ek = function (e) {
-                    return (function e_(t, r, a) {
+                    return (function e(t, r, a) {
                         if (
                             (void 0 === a && (a = y),
                             !(0, n.isValidElementType)(r))
                         )
-                            return R(1, String(r));
+                            return E(1, String(r));
                         var o = function () {
                             return t(r, a, em.apply(void 0, arguments));
                         };
                         return (
                             (o.withConfig = function (n) {
-                                return e_(t, r, h({}, a, {}, n));
+                                return e(t, r, h({}, a, {}, n));
                             }),
                             (o.attrs = function (n) {
-                                return e_(
+                                return e(
                                     t,
                                     r,
                                     h({}, a, {
@@ -1801,13 +1801,13 @@
                             }),
                             o
                         );
-                    })(function e_(t, r, n) {
+                    })(function e(t, r, n) {
                         var o = b(t),
                             i = !eS(t),
                             s = r.attrs,
                             l = void 0 === s ? m : s,
                             c = r.componentId,
-                            f =
+                            p =
                                 void 0 === c
                                     ? ((x = r.displayName),
                                       (C = r.parentComponentId),
@@ -1820,27 +1820,27 @@
                                       (N = k + "-" + ew("5.3.11" + k + eC[k])),
                                       C ? C + "-" + N : N)
                                     : c,
-                            p = r.displayName,
+                            f = r.displayName,
                             w =
-                                void 0 === p
+                                void 0 === f
                                     ? eS(t)
                                         ? "styled." + t
                                         : "Styled(" + v(t) + ")"
-                                    : p,
+                                    : f,
                             S =
                                 r.displayName && r.componentId
                                     ? eb(r.displayName) + "-" + r.componentId
-                                    : r.componentId || f,
-                            E =
+                                    : r.componentId || p,
+                            R =
                                 o && t.attrs
                                     ? Array.prototype
                                           .concat(t.attrs, l)
                                           .filter(Boolean)
                                     : l,
-                            R = r.shouldForwardProp;
+                            E = r.shouldForwardProp;
                         o &&
                             t.shouldForwardProp &&
-                            (R = r.shouldForwardProp
+                            (E = r.shouldForwardProp
                                 ? function (e, n, a) {
                                       return (
                                           t.shouldForwardProp(e, n, a) &&
@@ -1852,10 +1852,10 @@
                             C,
                             k,
                             N,
-                            j,
-                            T = new X(n, S, o ? t.componentStyle : void 0),
-                            P = T.isStatic && 0 === l.length,
-                            A = function (e, t) {
+                            P,
+                            T = new G(n, S, o ? t.componentStyle : void 0),
+                            j = T.isStatic && 0 === l.length,
+                            L = function (e, t) {
                                 return (function (e, t, r, n) {
                                     var o,
                                         i,
@@ -1863,8 +1863,8 @@
                                         l,
                                         c,
                                         d = e.attrs,
-                                        f = e.componentStyle,
-                                        p = e.defaultProps,
+                                        p = e.componentStyle,
+                                        f = e.defaultProps,
                                         m = e.foldedComponentIds,
                                         v = e.shouldForwardProp,
                                         b = e.styledComponentId,
@@ -1873,8 +1873,8 @@
                                             ((o =
                                                 ey(
                                                     t,
-                                                    (0, a.useContext)(eR),
-                                                    p
+                                                    (0, a.useContext)(eE),
+                                                    f
                                                 ) || y),
                                             void 0 === o && (o = y),
                                             (i = h({}, t, { theme: o })),
@@ -1896,74 +1896,74 @@
                                                             : a[t];
                                             }),
                                             [i, s]),
-                                        E = S[0],
-                                        R = S[1],
+                                        R = S[0],
+                                        E = S[1],
                                         x =
                                             ((l = en()),
                                             (c = ea()),
                                             n
-                                                ? f.generateAndInjectStyles(
+                                                ? p.generateAndInjectStyles(
                                                       y,
                                                       l,
                                                       c
                                                   )
-                                                : f.generateAndInjectStyles(
-                                                      E,
+                                                : p.generateAndInjectStyles(
+                                                      R,
                                                       l,
                                                       c
                                                   )),
-                                        C = R.$as || t.$as || R.as || t.as || w,
+                                        C = E.$as || t.$as || E.as || t.as || w,
                                         k = eS(C),
-                                        N = R !== t ? h({}, t, {}, R) : t,
-                                        j = {};
+                                        N = E !== t ? h({}, t, {}, E) : t,
+                                        P = {};
                                     for (var T in N)
                                         "$" !== T[0] &&
                                             "as" !== T &&
                                             ("forwardedAs" === T
-                                                ? (j.as = N[T])
+                                                ? (P.as = N[T])
                                                 : (v
                                                       ? v(T, u.A, C)
                                                       : !k || (0, u.A)(T)) &&
-                                                  (j[T] = N[T]));
+                                                  (P[T] = N[T]));
                                     return (
                                         t.style &&
-                                            R.style !== t.style &&
-                                            (j.style = h(
+                                            E.style !== t.style &&
+                                            (P.style = h(
                                                 {},
                                                 t.style,
                                                 {},
-                                                R.style
+                                                E.style
                                             )),
-                                        (j.className = Array.prototype
+                                        (P.className = Array.prototype
                                             .concat(
                                                 m,
                                                 b,
                                                 x !== b ? x : null,
                                                 t.className,
-                                                R.className
+                                                E.className
                                             )
                                             .filter(Boolean)
                                             .join(" ")),
-                                        (j.ref = r),
-                                        (0, a.createElement)(C, j)
+                                        (P.ref = r),
+                                        (0, a.createElement)(C, P)
                                     );
-                                })(j, e, t, P);
+                                })(P, e, t, j);
                             };
                         return (
-                            (A.displayName = w),
-                            ((j = a.forwardRef(A)).attrs = E),
-                            (j.componentStyle = T),
-                            (j.displayName = w),
-                            (j.shouldForwardProp = R),
-                            (j.foldedComponentIds = o
+                            (L.displayName = w),
+                            ((P = a.forwardRef(L)).attrs = R),
+                            (P.componentStyle = T),
+                            (P.displayName = w),
+                            (P.shouldForwardProp = E),
+                            (P.foldedComponentIds = o
                                 ? Array.prototype.concat(
                                       t.foldedComponentIds,
                                       t.styledComponentId
                                   )
                                 : m),
-                            (j.styledComponentId = S),
-                            (j.target = o ? t.target : t),
-                            (j.withComponent = function (t) {
+                            (P.styledComponentId = S),
+                            (P.target = o ? t.target : t),
+                            (P.withComponent = function (t) {
                                 var a = r.componentId,
                                     o = (function (e, t) {
                                         if (null == e) return {};
@@ -1977,17 +1977,17 @@
                                         return a;
                                     })(r, ["componentId"]),
                                     i = a && a + "-" + (eS(t) ? t : eb(v(t)));
-                                return e_(
+                                return e(
                                     t,
-                                    h({}, o, { attrs: E, componentId: i }),
+                                    h({}, o, { attrs: R, componentId: i }),
                                     n
                                 );
                             }),
-                            Object.defineProperty(j, "defaultProps", {
+                            Object.defineProperty(P, "defaultProps", {
                                 get: function () {
                                     return this._foldedDefaultProps;
                                 },
-                                set: function (e_) {
+                                set: function (e) {
                                     this._foldedDefaultProps = o
                                         ? (function e(t) {
                                               for (
@@ -2006,7 +2006,7 @@
                                                   o++
                                               ) {
                                                   var i = n[o];
-                                                  if (eE(i))
+                                                  if (eR(i))
                                                       for (var s in i)
                                                           "__proto__" !== s &&
                                                               "constructor" !==
@@ -2019,24 +2019,24 @@
                                                                   n
                                                               ) {
                                                                   var a = t[n];
-                                                                  eE(r) && eE(a)
+                                                                  eR(r) && eR(a)
                                                                       ? e(a, r)
                                                                       : (t[n] =
                                                                             r);
                                                               })(t, i[s], s);
                                               }
                                               return t;
-                                          })({}, t.defaultProps, e_)
-                                        : e_;
+                                          })({}, t.defaultProps, e)
+                                        : e;
                                 },
                             }),
-                            Object.defineProperty(j, "toString", {
+                            Object.defineProperty(P, "toString", {
                                 value: function () {
-                                    return "." + j.styledComponentId;
+                                    return "." + P.styledComponentId;
                                 },
                             }),
                             i &&
-                                d()(j, t, {
+                                d()(P, t, {
                                     attrs: !0,
                                     componentStyle: !0,
                                     displayName: !0,
@@ -2046,7 +2046,7 @@
                                     target: !0,
                                     withComponent: !0,
                                 }),
-                            j
+                            P
                         );
                     }, e);
                 };
@@ -2191,16 +2191,16 @@
                 ek[e] = ek(e);
             });
             var eN = (function () {
-                function e_(e, t) {
+                function e(e, t) {
                     ((this.rules = e),
                         (this.componentId = t),
-                        (this.isStatic = Y(e)),
+                        (this.isStatic = V(e)),
                         U.registerId(this.componentId + 1));
                 }
-                var t = e_.prototype;
+                var t = e.prototype;
                 return (
                     (t.createStyles = function (e, t, r, n) {
-                        var a = n(ef(this.rules, t, r, n).join(""), ""),
+                        var a = n(ep(this.rules, t, r, n).join(""), ""),
                             o = this.componentId + e;
                         r.insertRules(o, o, a);
                     }),
@@ -2212,10 +2212,10 @@
                             this.removeStyles(e, r),
                             this.createStyles(e, t, r, n));
                     }),
-                    e_
+                    e
                 );
             })();
-            function ej(e) {
+            function eP(e) {
                 for (
                     var t = arguments.length,
                         r = Array(t > 1 ? t - 1 : 0),
@@ -2230,7 +2230,7 @@
                 function l(e) {
                     var t = en(),
                         r = ea(),
-                        n = (0, a.useContext)(eR),
+                        n = (0, a.useContext)(eE),
                         o = (0, a.useRef)(t.allocateGSInstance(i)).current;
                     return (
                         t.server && u(o, e, t, n, r),
@@ -2250,7 +2250,7 @@
                     );
                 }
                 function u(e, t, r, n, a) {
-                    if (s.isStatic) s.renderStyles(e, E, r, a);
+                    if (s.isStatic) s.renderStyles(e, R, r, a);
                     else {
                         var o = h({}, t, { theme: ey(t, n, l.defaultProps) });
                         s.renderStyles(e, o, r, a);
@@ -2276,7 +2276,7 @@
                     ((this._emitSheetCSS = function () {
                         var t = e.instance.toString();
                         if (!t) return "";
-                        var r = O();
+                        var r = D();
                         return (
                             "<style " +
                             [
@@ -2292,10 +2292,10 @@
                         );
                     }),
                         (this.getStyleTags = function () {
-                            return e.sealed ? R(2) : e._emitSheetCSS();
+                            return e.sealed ? E(2) : e._emitSheetCSS();
                         }),
                         (this.getStyleElement = function () {
-                            if (e.sealed) return R(2);
+                            if (e.sealed) return E(2);
                             var t,
                                 r =
                                     (((t = {})[w] = ""),
@@ -2304,7 +2304,7 @@
                                         __html: e.instance.toString(),
                                     }),
                                     t),
-                                n = O();
+                                n = D();
                             return (
                                 n && (r.nonce = n),
                                 [
@@ -2323,14 +2323,14 @@
                 }.prototype;
                 ((e.collectStyles = function (e) {
                     return this.sealed
-                        ? R(2)
+                        ? E(2)
                         : a.createElement(eo, { sheet: this.instance }, e);
                 }),
                     (e.interleaveWithNodeStream = function (e) {
-                        return R(3);
+                        return E(3);
                     }));
             })();
-            let eP = ek;
+            let ej = ek;
         },
         32420: (e, t, r) => {
             r.d(t, { E: () => n });
@@ -2465,26 +2465,24 @@
                 }
             };
             function h() {
-                return "function" == typeof i(this, c)
-                    ? i(this, c).call(this, {
-                          isEnabled: (e) => {
-                              let t =
-                                  this.embeddedData?.appPayload
-                                      ?.enabled_features;
-                              if (t && e in t) return t[e];
-                          },
-                      })
-                    : i(this, c);
+                if ("function" == typeof i(this, c)) {
+                    let e = (e) => {
+                        let t = this.embeddedData?.appPayload?.enabled_features;
+                        if (t && e in t) return t[e];
+                    };
+                    return i(this, c).call(this, { isEnabled: e });
+                }
+                return i(this, c);
             }
-            var f = new WeakMap();
+            var p = new WeakMap();
             let DataRouterApplicationBuilder = class DataRouterApplicationBuilder {
                 static create(e) {
                     return new DataRouterApplicationBuilder(e);
                 }
                 createDataRouterAppFromRoutes(e) {
                     return (
-                        l(this, f, new DataRouterApplication(this.name, e)),
-                        i(this, f)
+                        l(this, p, new DataRouterApplication(this.name, e)),
+                        i(this, p)
                     );
                 }
                 createQueryRouteConfig(
@@ -2507,7 +2505,7 @@
                                 let t = new Set();
                                 return Object.fromEntries(
                                     e.map(({ queryName: e, ...r }) => {
-                                        if (t.has(e)) throw new p(e);
+                                        if (t.has(e)) throw new f(e);
                                         return (t.add(e), [e, r]);
                                     })
                                 );
@@ -2519,18 +2517,18 @@
                 }
                 constructor(e) {
                     (u(this, "name", void 0),
-                        s(this, f, { writable: !0, value: void 0 }),
+                        s(this, p, { writable: !0, value: void 0 }),
                         u(this, "getEmbeddedData", () => {
-                            if (!i(this, f))
+                            if (!i(this, p))
                                 throw Error(
                                     "getEmbeddedData should only be called after createDataRouterAppFromRoutes"
                                 );
-                            return i(this, f).embeddedData;
+                            return i(this, p).embeddedData;
                         }),
                         (this.name = e));
                 }
             };
-            let p = class DuplicateRouteQueryNameError extends Error {
+            let f = class DuplicateRouteQueryNameError extends Error {
                     constructor(e) {
                         (super(
                             `query names cannot be duplicated: \`${e}\` has already been defined for this route.`
@@ -2653,11 +2651,11 @@
                     );
                 return t.get(e);
             }
-            function f(e, t) {
+            function p(e, t) {
                 var r = h(e, t, "get");
                 return r.get ? r.get.call(e) : r.value;
             }
-            function p(e, t, r) {
+            function f(e, t, r) {
                 (d(e, t), t.set(e, r));
             }
             function m(e, t, r) {
@@ -2705,8 +2703,8 @@
                     staleTime: 864e5,
                 },
                 S = 200;
-            var E = new WeakMap(),
-                R = new WeakMap(),
+            var R = new WeakMap(),
+                E = new WeakMap(),
                 x = new WeakSet(),
                 C = new WeakMap(),
                 k = new WeakSet();
@@ -2732,13 +2730,13 @@
                 constructor(e) {
                     (g(this, x),
                         g(this, k),
-                        p(this, E, { writable: !0, value: void 0 }),
-                        p(this, R, { writable: !0, value: void 0 }),
+                        f(this, R, { writable: !0, value: void 0 }),
+                        f(this, E, { writable: !0, value: void 0 }),
                         v(this, "id", void 0),
                         v(this, "path", void 0),
                         v(this, "queries", void 0),
                         v(this, "index", void 0),
-                        p(this, C, {
+                        f(this, C, {
                             writable: !0,
                             value: async ({ request: e, params: t }) => {
                                 let r = [],
@@ -2766,7 +2764,7 @@
                                                 queryDeps: i,
                                                 type: d = s.g.Deferred,
                                                 staleTimeForNavigation: h = S,
-                                                ...p
+                                                ...f
                                             },
                                         ]) => {
                                             let m =
@@ -2776,7 +2774,7 @@
                                                         searchParams: l,
                                                     }) ?? {},
                                                 g = {
-                                                    appName: f(this, E),
+                                                    appName: p(this, R),
                                                     routeId: this.id,
                                                     routePath: this.path,
                                                     queryName: e.toString(),
@@ -2801,7 +2799,7 @@
                                                             signal: e,
                                                             meta: t,
                                                         }),
-                                                    ...p,
+                                                    ...f,
                                                 });
                                             if (
                                                 (y(this, x, N).call(
@@ -2858,7 +2856,7 @@
                                           children: void 0,
                                           path: this.path,
                                           index: this.index,
-                                          loader: f(this, C),
+                                          loader: p(this, C),
                                           element: c(this.id, {
                                               element: t,
                                               Component: e,
@@ -2869,33 +2867,33 @@
                                           id: this.id,
                                           path: this.path,
                                           index: this.index,
-                                          loader: f(this, C),
+                                          loader: p(this, C),
                                           element: c(this.id, {
                                               element: t,
                                               Component: e,
                                           }),
                                       }
                         ),
-                        m(this, E, e.appName),
+                        m(this, R, e.appName),
                         (this.id = e.id),
                         (this.path = e.path),
                         (this.queries = e.queries),
                         (this.index = e.index),
-                        m(this, R, e.getEmbeddedData));
+                        m(this, E, e.getEmbeddedData));
                 }
             };
             function N(e, t) {
                 let r = (0, i.S)(),
-                    n = f(this, R).call(this),
+                    n = p(this, E).call(this),
                     a = n?.payload,
-                    o = y(this, k, j).call(this, n, e);
+                    o = y(this, k, P).call(this, n, e);
                 o &&
                     ("mainQuery" === e
                         ? delete a?.[this.id]
                         : delete a?.[this.id]?.[e],
                     r.setQueryData(t, o));
             }
-            function j(e, t) {
+            function P(e, t) {
                 let r = e?.payload,
                     n = r?.[this.id];
                 if (!n) return;
@@ -3204,7 +3202,7 @@
             }
         },
         48551: (e, t, r) => {
-            r.d(t, { w: () => eq, o: () => eF });
+            r.d(t, { w: () => eF, o: () => eB });
             var n,
                 a = r(74848),
                 o = r(39595),
@@ -3216,10 +3214,10 @@
             ((c.Pop = "POP"), (c.Push = "PUSH"), (c.Replace = "REPLACE"));
             var d = r(63809);
             let h = new d.R();
-            async function f(e) {
+            async function p(e) {
                 return h.getRegistration(e).promise;
             }
-            var p = r(78448),
+            var f = r(78448),
                 m = r(34788),
                 y = r(21728),
                 g = r(96540),
@@ -3232,7 +3230,7 @@
                         let e;
                         return (
                             t[0] !== r
-                                ? ((e = (0, a.jsx)(E, { routes: r })),
+                                ? ((e = (0, a.jsx)(R, { routes: r })),
                                   (t[0] = r),
                                   (t[1] = e))
                                 : (e = t[1]),
@@ -3279,11 +3277,11 @@
                               (i[7] = n),
                               (i[8] = o))
                             : (o = i[8]),
-                        R(o),
+                        E(o),
                         null
                     );
                 }),
-                E = (0, g.memo)(function (e) {
+                R = (0, g.memo)(function (e) {
                     let t,
                         r,
                         n,
@@ -3303,11 +3301,11 @@
                               (a[4] = t),
                               (a[5] = n))
                             : (n = a[5]),
-                        R(n),
+                        E(n),
                         null
                     );
                 });
-            function R(e) {
+            function E(e) {
                 let t,
                     r,
                     n,
@@ -3402,7 +3400,7 @@
                 S.displayName || (S.displayName = "NavigatorRouterDevTools");
             } catch {}
             try {
-                E.displayName || (E.displayName = "DataRouterDevTools");
+                R.displayName || (R.displayName = "DataRouterDevTools");
             } catch {}
             function k(e) {
                 return (function ({ pathname: e, route: t, params: r }) {
@@ -3416,9 +3414,9 @@
                 })(e);
             }
             var N = r(45499),
-                j = r(64262),
+                P = r(64262),
                 T = r(32494);
-            function P(e, t, r) {
+            function j(e, t, r) {
                 let n,
                     a,
                     o,
@@ -3476,27 +3474,27 @@
                         : ((a = i[6]), (o = i[7])),
                     (0, g.useEffect)(a, o));
             }
-            function A() {
-                return (P(!1, (0, l.zy)(), (0, l.wQ)()), null);
+            function L() {
+                return (j(!1, (0, l.zy)(), (0, l.wQ)()), null);
             }
             try {
-                A.displayName || (A.displayName = "NavigationFocusListener");
+                L.displayName || (L.displayName = "NavigationFocusListener");
             } catch {}
-            var L = r(97665),
+            var A = r(97665),
                 _ = r(46320),
-                O = r(21715),
-                $ = r(11608),
-                D = r(12201);
-            let I = O.z.INITIAL;
-            function M() {
+                D = r(21715),
+                O = r(11608),
+                I = r(12201);
+            let M = D.z.INITIAL;
+            function $() {
                 let e,
                     t,
                     r,
                     n,
                     a = (0, y.c)(10),
-                    o = (0, j.X)(),
-                    i = (0, D.yT)(),
-                    s = (0, L.jE)();
+                    o = (0, P.X)(),
+                    i = (0, I.yT)(),
+                    s = (0, A.jE)();
                 return (
                     a[0] !== o || a[1] !== i || a[2] !== s
                         ? ((e = () => {
@@ -3522,9 +3520,9 @@
                                   );
                               };
                               return (
-                                  document.addEventListener(I, e),
+                                  document.addEventListener(M, e),
                                   () => {
-                                      document.removeEventListener(I, e);
+                                      document.removeEventListener(M, e);
                                   }
                               );
                           }),
@@ -3545,46 +3543,46 @@
                     if (!n.data) continue;
                     let e = n.data.route.id;
                     for (let a of Object.values(n.data.queries))
-                        a.type === $.g.Blocking &&
+                        a.type === O.g.Blocking &&
                             (r[e] = t.getQueryData(a.queryConfig.queryKey));
                 }
                 return r;
             }
             try {
-                M.displayName || (M.displayName = "PublishPayload");
+                $.displayName || ($.displayName = "PublishPayload");
             } catch {}
             var W = r(2604),
                 U = r(13233),
-                H = r(96679),
-                B = r(17515);
-            let F = new Map(),
+                B = r(96679),
+                F = r(17515);
+            let H = new Map(),
                 q = !1,
-                J = H.fV.href;
-            async function Y() {
+                Y = B.fV.href;
+            async function V() {
                 let { session: e } = await r
                     .e(
                         "vendors-node_modules_github_turbo_dist_turbo_es2017-esm_js"
                     )
                     .then(r.bind(r, 7332));
                 (document.addEventListener("turbo:click", (e) => {
-                    J = e.detail.url;
+                    Y = e.detail.url;
                 }),
                     window.addEventListener("popstate", () => {
                         let { scrollPosition: t } =
                             e.history.getRestorationDataForIdentifier(
                                 e.history.restorationIdentifier
                             ) || {};
-                        t && F.set(window.location.href, t);
+                        t && H.set(window.location.href, t);
                     }));
             }
-            async function V() {
-                H.cg && (q || (await Y(), (q = !0)));
+            async function J() {
+                B.cg && (q || (await V(), (q = !0)));
             }
-            function X() {
+            function G() {
                 let e = window.location.href;
-                if (e === J && e.includes("#")) return;
-                J = e;
-                let t = F.get(e);
+                if (e === Y && e.includes("#")) return;
+                Y = e;
+                let t = H.get(e);
                 if (!t) return;
                 let r = setTimeout(() => {
                     window.scrollTo(t.x, t.y);
@@ -3593,22 +3591,22 @@
                     clearTimeout(r);
                 };
             }
-            let G = H.cg
+            let X = B.cg
                 ? function () {
-                      (0, B.N)(X);
+                      (0, F.N)(G);
                   }
                 : U.l;
             function K() {
                 let e,
                     t = (0, y.c)(1);
-                return (G(), "undefined" != typeof jest)
+                return (X(), "undefined" != typeof jest)
                     ? null
                     : (t[0] === Symbol.for("react.memo_cache_sentinel")
                           ? ((e = (0, a.jsx)(l.OA, {})), (t[0] = e))
                           : (e = t[0]),
                       e);
             }
-            V();
+            J();
             try {
                 K.displayName || (K.displayName = "CombinedScrollRestoration");
             } catch {}
@@ -3630,14 +3628,14 @@
                                   ((0, Q.LM)()
                                       ? (et(r),
                                         (function (e) {
-                                            let t = H.XC?.querySelector(
+                                            let t = B.XC?.querySelector(
                                                 "meta[name=visitor-payload]"
                                             );
                                             if (!t) return;
                                             let r = JSON.parse(atob(t.content));
                                             ((r.referrer = new URL(
                                                 e,
-                                                H.fV.origin
+                                                B.fV.origin
                                             ).href),
                                                 (t.content = btoa(
                                                     JSON.stringify(r)
@@ -3689,8 +3687,8 @@
                 let e,
                     t,
                     r = (0, y.c)(4),
-                    n = (0, D.yT)(),
-                    a = (0, L.jE)();
+                    n = (0, I.yT)(),
+                    a = (0, A.jE)();
                 return (
                     r[0] !== n || r[1] !== a
                         ? ((e = () => {
@@ -3742,13 +3740,13 @@
                             n,
                             a = (0, y.c)(8),
                             o = (0, eu.B)(),
-                            i = (0, j.X)();
+                            i = (0, P.X)();
                         (a[0] !== i || a[1] !== o
                             ? ((e = () => {
                                   let e = new AbortController();
                                   return (
                                       document.addEventListener(
-                                          O.z.INITIAL,
+                                          D.z.INITIAL,
                                           function () {
                                               document.dispatchEvent(
                                                   new _.gh({
@@ -3805,55 +3803,44 @@
             } catch {}
             var ed = r(70179),
                 eh = r(11583),
-                ef = r(32420);
-            let ep = (e, t) =>
-                    null !== e &&
-                    null !== t &&
-                    e.pathname === t.pathname &&
-                    e.search === t.search &&
-                    !!t.hash,
-                em = (e) => {
-                    let t =
-                        404 === e.httpStatus
-                            ? "404 Page not found"
-                            : 500 === e.httpStatus
-                              ? "500 Internal server error"
-                              : e.httpStatus
-                                ? `Error ${e.httpStatus}`
-                                : "Error";
-                    return (0, eo.Y)(t);
-                };
-            function ey(e, t) {
+                ep = r(32420);
+            let ef = (e, t) =>
+                null !== e &&
+                null !== t &&
+                e.pathname === t.pathname &&
+                e.search === t.search &&
+                !!t.hash;
+            function em(e, t) {
                 if (t.has(e))
                     throw TypeError(
                         "Cannot initialize the same private elements twice on an object"
                     );
             }
-            function eg(e, t, r) {
+            function ey(e, t, r) {
                 if (!t.has(e))
                     throw TypeError(
                         "attempted to " + r + " private field on non-instance"
                     );
                 return t.get(e);
             }
-            function ev(e, t) {
-                var r = eg(e, t, "get");
+            function eg(e, t) {
+                var r = ey(e, t, "get");
                 return r.get ? r.get.call(e) : r.value;
             }
-            function eb(e, t, r) {
-                (ey(e, t), t.set(e, r));
+            function ev(e, t, r) {
+                (em(e, t), t.set(e, r));
             }
-            function ew(e, t, r) {
+            function eb(e, t, r) {
                 if (!t.has(e))
                     throw TypeError(
                         "attempted to get private field on non-instance"
                     );
                 return r;
             }
-            function eS(e, t) {
-                (ey(e, t), t.add(e));
+            function ew(e, t) {
+                (em(e, t), t.add(e));
             }
-            function eE(e, t, r) {
+            function eS(e, t, r) {
                 return (
                     t in e
                         ? Object.defineProperty(e, t, {
@@ -3867,21 +3854,21 @@
                 );
             }
             var eR = new WeakMap(),
-                ex = new WeakMap(),
-                eC = new WeakSet(),
-                ek = new WeakMap(),
-                eN = new WeakSet();
-            let ej = class Navigator {
+                eE = new WeakMap(),
+                ex = new WeakSet(),
+                eC = new WeakMap(),
+                ek = new WeakSet();
+            let eN = class Navigator {
                 update(e) {
                     var t;
                     this.state = Object.assign({}, this.state, e);
                     let r = this.getAppNavigationState();
-                    null == (t = ew(this, eC, eT)) || t.call(this, r);
+                    null == (t = eb(this, ex, eP)) || t.call(this, r);
                 }
                 subscribe(e) {
-                    let t = ev(this, ex).push(e);
+                    let t = eg(this, eE).push(e);
                     return () => {
-                        ev(this, ex)[t] = null;
+                        eg(this, eE)[t] = null;
                     };
                 }
                 async handleHistoryUpdate(e) {
@@ -3905,10 +3892,10 @@
                             );
                         if (
                             (t.route.transitionType ===
-                                ef.E.TRANSITION_WHILE_FETCHING &&
+                                ep.E.TRANSITION_WHILE_FETCHING &&
                                 this.navigateWithoutPayload(e),
                             t.route.transitionType ===
-                                ef.E.TRANSITION_WITHOUT_FETCH)
+                                ep.E.TRANSITION_WITHOUT_FETCH)
                         )
                             return void this.navigateWithoutPayload(e);
                         let r = (0, s.JV)().usr?.__prefetched_data;
@@ -3956,13 +3943,13 @@
                 matchLocation(e) {
                     var t, r;
                     return (
-                        (t = ev(this, eR)),
+                        (t = eg(this, eR)),
                         (r = e),
                         (0, l.ue)(t, r.pathname)?.[0]
                     );
                 }
                 isHashNavigation(e) {
-                    return ep(this.state.location, e.location);
+                    return ef(this.state.location, e.location);
                 }
                 navigateFromHistory(e) {
                     this.update({
@@ -4019,14 +4006,14 @@
                     });
                 }
                 constructor(e, t, r, n) {
-                    (eS(this, eC),
-                        eS(this, eN),
-                        eE(this, "state", void 0),
-                        eb(this, eR, { writable: !0, value: void 0 }),
-                        eb(this, ex, { writable: !0, value: [] }),
-                        eb(this, ek, { writable: !0, value: new WeakMap() }),
-                        eE(this, "getAppNavigationState", () => {
-                            let e = ev(this, ek).get(this.state);
+                    (ew(this, ex),
+                        ew(this, ek),
+                        eS(this, "state", void 0),
+                        ev(this, eR, { writable: !0, value: void 0 }),
+                        ev(this, eE, { writable: !0, value: [] }),
+                        ev(this, eC, { writable: !0, value: new WeakMap() }),
+                        eS(this, "getAppNavigationState", () => {
+                            let e = eg(this, eC).get(this.state);
                             if (e) return e;
                             let {
                                     location: t,
@@ -4044,10 +4031,10 @@
                                     appPayload: o,
                                     isLoading: !!i,
                                 };
-                            return (ev(this, ek).set(this.state, s), s);
+                            return (eg(this, eC).set(this.state, s), s);
                         }),
                         (function (e, t, r) {
-                            var n = eg(e, t, "set");
+                            var n = ey(e, t, "set");
                             if (n.set) n.set.call(e, r);
                             else {
                                 if (!n.writable)
@@ -4060,7 +4047,7 @@
                     let a = this.matchLocation(e);
                     if (!a)
                         throw Error(
-                            `No route found for initial location: ${e.pathname} in [${ew(this, eN, eP).call(this)}]`
+                            `No route found for initial location: ${e.pathname} in [${eb(this, ek, eT).call(this)}]`
                         );
                     let {
                         data: o,
@@ -4089,15 +4076,15 @@
                     };
                 }
             };
-            function eT(e) {
-                for (let t of ev(this, ex)) t?.(e);
+            function eP(e) {
+                for (let t of eg(this, eE)) t?.(e);
             }
-            function eP() {
-                return ev(this, eR)
+            function eT() {
+                return eg(this, eR)
                     .map((e) => e.path)
                     .join(", ");
             }
-            function eA(e) {
+            function ej(e) {
                 let t,
                     r,
                     n,
@@ -4109,24 +4096,24 @@
                     d,
                     h = (0, y.c)(33),
                     {
-                        appName: f,
+                        appName: p,
                         initialLocation: v,
                         history: b,
                         embeddedData: w,
                         routes: S,
-                        App: E,
-                        wasServerRendered: R,
+                        App: R,
+                        wasServerRendered: E,
                         ssrError: x,
                         onError: C,
                     } = e;
-                h[0] !== f || h[1] !== w || h[2] !== v || h[3] !== S
+                h[0] !== p || h[1] !== w || h[2] !== v || h[3] !== S
                     ? ((t = {
                           initialLocation: v,
-                          appName: f,
+                          appName: p,
                           embeddedData: w,
                           routes: S,
                       }),
-                      (h[0] = f),
+                      (h[0] = p),
                       (h[1] = w),
                       (h[2] = v),
                       (h[3] = S),
@@ -4147,7 +4134,7 @@
                         i[0] !== l || i[1] !== s || i[2] !== u
                             ? ((t = () => {
                                   let { appPayload: e, ...t } = l;
-                                  return new ej(
+                                  return new eN(
                                       s,
                                       {
                                           ...t,
@@ -4206,14 +4193,14 @@
                         );
                     })(t),
                     {
-                        location: j,
+                        location: P,
                         error: T,
-                        routeStateMap: A,
-                        appPayload: L,
+                        routeStateMap: L,
+                        appPayload: A,
                         navigateOnError: _,
-                        isLoading: O,
+                        isLoading: D,
                     } = k,
-                    { handleHistoryUpdate: $ } = N;
+                    { handleHistoryUpdate: O } = N;
                 return (
                     !(function (e, t, r) {
                         let n,
@@ -4224,10 +4211,20 @@
                             ? ((n = () => {
                                   if (
                                       (i.current || (i.current = r),
-                                      !ep(i.current, r) && (t || e))
+                                      !ef(i.current, r) && (t || e))
                                   )
                                       if (t) {
-                                          let e = em(t);
+                                          let e = ((e) => {
+                                              let t =
+                                                  404 === e.httpStatus
+                                                      ? "404 Page not found"
+                                                      : 500 === e.httpStatus
+                                                        ? "500 Internal server error"
+                                                        : e.httpStatus
+                                                          ? `Error ${e.httpStatus}`
+                                                          : "Error";
+                                              return (0, eo.Y)(t);
+                                          })(t);
                                           (0, eo.D)(e);
                                       } else
                                           e?.type === "loaded" &&
@@ -4243,33 +4240,33 @@
                               (o[4] = a))
                             : ((n = o[3]), (a = o[4])),
                             (0, g.useEffect)(n, a));
-                    })(A[j.key], T, j),
-                    P(O, j),
-                    ee(j, O, T),
-                    G(),
-                    h[5] !== $ || h[6] !== b
-                        ? ((r = () => b.listen($)),
-                          (n = [b, $]),
-                          (h[5] = $),
+                    })(L[P.key], T, P),
+                    j(D, P),
+                    ee(P, D, T),
+                    X(),
+                    h[5] !== O || h[6] !== b
+                        ? ((r = () => b.listen(O)),
+                          (n = [b, O]),
+                          (h[5] = O),
                           (h[6] = b),
                           (h[7] = r),
                           (h[8] = n))
                         : ((r = h[7]), (n = h[8])),
-                    (0, B.N)(r, n),
-                    h[9] !== E || h[10] !== S
-                        ? ((o = (0, a.jsx)(eL, { routes: S, App: E })),
-                          (h[9] = E),
+                    (0, F.N)(r, n),
+                    h[9] !== R || h[10] !== S
+                        ? ((o = (0, a.jsx)(eL, { routes: S, App: R })),
+                          (h[9] = R),
                           (h[10] = S),
                           (h[11] = o))
                         : (o = h[11]),
-                    h[12] !== b || h[13] !== j || h[14] !== o
+                    h[12] !== b || h[13] !== P || h[14] !== o
                         ? ((i = (0, a.jsx)(l.Ix, {
-                              location: j,
+                              location: P,
                               navigator: b,
                               children: o,
                           })),
                           (h[12] = b),
-                          (h[13] = j),
+                          (h[13] = P),
                           (h[14] = o),
                           (h[15] = i))
                         : (i = h[15]),
@@ -4278,25 +4275,25 @@
                           (h[16] = x),
                           (h[17] = s))
                         : (s = h[17]),
-                    h[18] !== L ||
+                    h[18] !== A ||
                     h[19] !== T ||
                     h[20] !== _ ||
-                    h[21] !== A ||
+                    h[21] !== L ||
                     h[22] !== S ||
                     h[23] !== i ||
                     h[24] !== s
                         ? ((u = (0, a.jsxs)(eh.l, {
-                              appPayload: L,
+                              appPayload: A,
                               error: T,
                               navigateOnError: _,
                               routes: S,
-                              routeStateMap: A,
+                              routeStateMap: L,
                               children: [i, s],
                           })),
-                          (h[18] = L),
+                          (h[18] = A),
                           (h[19] = T),
                           (h[20] = _),
-                          (h[21] = A),
+                          (h[21] = L),
                           (h[22] = S),
                           (h[23] = i),
                           (h[24] = s),
@@ -4312,16 +4309,16 @@
                           (h[27] = u),
                           (h[28] = c))
                         : (c = h[28]),
-                    h[29] !== f || h[30] !== c || h[31] !== R
-                        ? ((d = (0, a.jsx)(p.U, {
-                              appName: f,
-                              wasServerRendered: R,
+                    h[29] !== p || h[30] !== c || h[31] !== E
+                        ? ((d = (0, a.jsx)(f.U, {
+                              appName: p,
+                              wasServerRendered: E,
                               dataRouterEnabled: !1,
                               children: c,
                           })),
-                          (h[29] = f),
+                          (h[29] = p),
                           (h[30] = c),
-                          (h[31] = R),
+                          (h[31] = E),
                           (h[32] = d))
                         : (d = h[32]),
                     d
@@ -4360,17 +4357,17 @@
                     (0, l.Ye)(o)
                 );
             }
-            V();
+            J();
             try {
-                eA.displayName || (eA.displayName = "NavigatorClientEntry");
+                ej.displayName || (ej.displayName = "NavigatorClientEntry");
             } catch {}
             try {
                 eL.displayName || (eL.displayName = "AppRoutes");
             } catch {}
-            var e_ = r(58394),
-                eO = r(33957),
-                e$ = r(13856);
-            function eD(e, t, r) {
+            var eA = r(58394),
+                e_ = r(33957),
+                eD = r(13856);
+            function eO(e, t, r) {
                 if (!t.has(e))
                     throw TypeError(
                         "attempted to get private field on non-instance"
@@ -4397,10 +4394,9 @@
                     e
                 );
             }
-            let ez = () => Math.random().toString(36).substr(2, 8);
-            var eW = new WeakSet(),
-                eU = new WeakSet();
-            let ReactAppElement = class ReactAppElement extends e$.H {
+            var e$ = new WeakSet(),
+                ez = new WeakSet();
+            let ReactAppElement = class ReactAppElement extends eD.H {
                 connectedCallback() {
                     (super.connectedCallback(),
                         (this.uuid = (0, i._S)()),
@@ -4427,8 +4423,8 @@
                 }
                 async getReactNode(e, t) {
                     if (this.isDataRouterEnabled) {
-                        let r = await f(this.name);
-                        return eD(this, eW, eH).call(
+                        let r = await p(this.name);
+                        return eO(this, e$, eW).call(
                             this,
                             e,
                             t,
@@ -4436,15 +4432,15 @@
                         );
                     }
                     let r = await el(this.name);
-                    return eD(this, eU, eB).call(this, e, t, r.registration);
+                    return eO(this, ez, eU).call(this, e, t, r.registration);
                 }
                 get isLazy() {
                     return "true" === this.getAttribute("data-lazy");
                 }
                 constructor(...e) {
                     (super(...e),
-                        eI(this, eW),
-                        eI(this, eU),
+                        eI(this, e$),
+                        eI(this, ez),
                         eM(this, "nameAttribute", "app-name"),
                         eM(this, "popStateListener", (e) => {
                             e.state &&
@@ -4453,8 +4449,8 @@
                         }));
                 }
             };
-            async function eH(e, t, r) {
-                e && (0, eO.S)().removeQueries({ queryKey: [this.name] });
+            async function eW(e, t, r) {
+                e && (0, e_.S)().removeQueries({ queryKey: [this.name] });
                 let { routes: n } = r({ embeddedData: e });
                 return (
                     (this.routerOrHistory = new Proxy(
@@ -4478,11 +4474,11 @@
                                             appName: r,
                                         }),
                                         HydrateFallback: i,
-                                        element: (0, a.jsx)(p.U, {
+                                        element: (0, a.jsx)(f.U, {
                                             appName: r,
                                             wasServerRendered: n,
                                             dataRouterEnabled: s,
-                                            children: (0, a.jsx)(j.z.Provider, {
+                                            children: (0, a.jsx)(P.z.Provider, {
                                                 value: u,
                                                 children: (0, a.jsxs)(N.d, {
                                                     routes: e,
@@ -4493,9 +4489,9 @@
                                                             ssrError: t,
                                                         }),
                                                         (0, a.jsx)(ea, {}),
-                                                        (0, a.jsx)(A, {}),
+                                                        (0, a.jsx)(L, {}),
                                                         (0, a.jsx)(K, {}),
-                                                        (0, a.jsx)(M, {}),
+                                                        (0, a.jsx)($, {}),
                                                         (0, a.jsx)(ei, {}),
                                                         (0, a.jsx)(w, {
                                                             routes: e,
@@ -4592,10 +4588,10 @@
                                     : Reflect.get(e, t, r),
                         }
                     )),
-                    (0, a.jsx)(e_.f, {
+                    (0, a.jsx)(eA.f, {
                         appName: this.name,
                         isDataRouterEnabled: !0,
-                        children: (0, a.jsx)(e_.U, {
+                        children: (0, a.jsx)(eA.U, {
                             id: this.name,
                             children: (0, a.jsx)(l.pg, {
                                 router: this.routerOrHistory,
@@ -4604,7 +4600,7 @@
                     })
                 );
             }
-            async function eB(e, t, r) {
+            async function eU(e, t, r) {
                 let { App: n, routes: o } = r(),
                     i = this.getAttribute("initial-path");
                 if (this.isLazy) {
@@ -4625,8 +4621,8 @@
                         `${i}${u?.location.hash ?? ""}`,
                         u?.location.href ?? "https://github.com"
                     );
-                (0, s.C3)({ key: ez() });
-                let f = (function (e = {}) {
+                (0, s.C3)({ key: Math.random().toString(36).substr(2, 8) });
+                let p = (function (e = {}) {
                     let t,
                         r = (0, l.zR)({ ...e, v5Compat: !0 }),
                         n = [],
@@ -4700,23 +4696,23 @@
                         ),
                     };
                 })({ window: u });
-                this.routerOrHistory = f;
-                let { key: p, state: m } = f.location;
-                return (0, a.jsx)(e_.f, {
+                this.routerOrHistory = p;
+                let { key: f, state: m } = p.location;
+                return (0, a.jsx)(eA.f, {
                     appName: this.name,
                     isDataRouterEnabled: !1,
-                    children: (0, a.jsx)(e_.U, {
+                    children: (0, a.jsx)(eA.U, {
                         id: this.name,
-                        children: (0, a.jsx)(eA, {
+                        children: (0, a.jsx)(ej, {
                             appName: this.name,
                             initialLocation: {
                                 pathname: c,
                                 search: d,
                                 hash: h,
-                                key: p,
+                                key: f,
                                 state: m,
                             },
-                            history: f,
+                            history: p,
                             embeddedData: e,
                             routes: o,
                             App: n,
@@ -4727,10 +4723,10 @@
                     }),
                 });
             }
-            function eF(e, t) {
+            function eB(e, t) {
                 es.register(e, { type: "NavigatorApp", registration: t });
             }
-            function eq(e) {
+            function eF(e) {
                 h.register(e.name, {
                     type: "DataRouterApp",
                     registration: e.registration,
@@ -4895,16 +4891,16 @@
                     }
                 };
             var h = new WeakMap();
-            let f = class RouterStore extends EventTarget {
+            let p = class RouterStore extends EventTarget {
                 static getInstance() {
                     var e;
                     return (
-                        l(RouterStore, RouterStore, p) ||
+                        l(RouterStore, RouterStore, f) ||
                             ((e = new RouterStore()),
                             u(RouterStore, RouterStore),
-                            o(p, "set"),
-                            a(RouterStore, p, e)),
-                        l(RouterStore, RouterStore, p)
+                            o(f, "set"),
+                            a(RouterStore, f, e)),
+                        l(RouterStore, RouterStore, f)
                     );
                 }
                 getState() {
@@ -4941,9 +4937,9 @@
                         })(this, h, { writable: !0, value: null }));
                 }
             };
-            var p = { writable: !0, value: void 0 };
+            var f = { writable: !0, value: void 0 };
             function m() {
-                return f.getInstance();
+                return p.getInstance();
             }
         },
         23818: (e, t, r) => {
@@ -5011,12 +5007,12 @@
                       d[0] === Symbol.for("react.memo_cache_sentinel")
                           ? ((e = () => s(h.dataset)), (d[0] = e))
                           : (e = d[0]);
-                      let [f, p] = (0, i.useState)(e);
+                      let [p, f] = (0, i.useState)(e);
                       return (
                           d[1] === Symbol.for("react.memo_cache_sentinel")
                               ? ((t = () => {
                                     let e = new MutationObserver(() =>
-                                        p(s(h.dataset))
+                                        f(s(h.dataset))
                                     );
                                     return (
                                         e.observe(h, {
@@ -5035,19 +5031,19 @@
                                 (d[2] = r))
                               : ((t = d[1]), (r = d[2])),
                           (0, i.useEffect)(t, r),
-                          d[3] !== f.dayScheme
-                              ? ((n = c(f.dayScheme)),
-                                (d[3] = f.dayScheme),
+                          d[3] !== p.dayScheme
+                              ? ((n = c(p.dayScheme)),
+                                (d[3] = p.dayScheme),
                                 (d[4] = n))
                               : (n = d[4]),
-                          d[5] !== f.nightScheme
-                              ? ((l = c(f.nightScheme)),
-                                (d[5] = f.nightScheme),
+                          d[5] !== p.nightScheme
+                              ? ((l = c(p.nightScheme)),
+                                (d[5] = p.nightScheme),
                                 (d[6] = l))
                               : (l = d[6]),
-                          d[7] !== f || d[8] !== n || d[9] !== l
-                              ? ((u = { ...f, dayScheme: n, nightScheme: l }),
-                                (d[7] = f),
+                          d[7] !== p || d[8] !== n || d[9] !== l
+                              ? ((u = { ...p, dayScheme: n, nightScheme: l }),
+                                (d[7] = p),
                                 (d[8] = n),
                                 (d[9] = l),
                                 (d[10] = u))
@@ -5103,8 +5099,8 @@
                 c = r(30729),
                 d = r(97710),
                 h = r(52469),
-                f = r(33957),
-                p = r(7044);
+                p = r(33957),
+                f = r(7044);
             let m = {};
             function y(e) {
                 let t,
@@ -5116,25 +5112,25 @@
                     w,
                     S = (0, a.c)(20),
                     {
-                        appName: E,
-                        children: R,
+                        appName: R,
+                        children: E,
                         wasServerRendered: x,
                         dataRouterEnabled: C,
                     } = e,
-                    { colorMode: k, dayScheme: N, nightScheme: j } = (0, p.A)();
+                    { colorMode: k, dayScheme: N, nightScheme: P } = (0, f.A)();
                 S[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((t = (0, f.S)()), (S[0] = t))
+                    ? ((t = (0, p.S)()), (S[0] = t))
                     : (t = S[0]);
                 let T = t;
                 return (
-                    S[1] !== R
-                        ? ((r = (0, n.jsx)(s.k6, { children: R })),
-                          (S[1] = R),
+                    S[1] !== E
+                        ? ((r = (0, n.jsx)(s.k6, { children: E })),
+                          (S[1] = E),
                           (S[2] = r))
                         : (r = S[2]),
-                    S[3] !== E || S[4] !== r
-                        ? ((y = (0, n.jsx)(d.V, { appName: E, children: r })),
-                          (S[3] = E),
+                    S[3] !== R || S[4] !== r
+                        ? ((y = (0, n.jsx)(d.V, { appName: R, children: r })),
+                          (S[3] = R),
                           (S[4] = r),
                           (S[5] = y))
                         : (y = S[5]),
@@ -5144,30 +5140,30 @@
                           (S[7] = y),
                           (S[8] = g))
                         : (g = S[8]),
-                    S[9] !== k || S[10] !== N || S[11] !== j || S[12] !== g
+                    S[9] !== k || S[10] !== N || S[11] !== P || S[12] !== g
                         ? ((v = (0, n.jsx)(h.n, {
                               children: (0, n.jsx)(l.NP, {
                                   colorMode: k,
                                   dayScheme: N,
-                                  nightScheme: j,
+                                  nightScheme: P,
                                   preventSSRMismatch: !0,
                                   children: g,
                               }),
                           })),
                           (S[9] = k),
                           (S[10] = N),
-                          (S[11] = j),
+                          (S[11] = P),
                           (S[12] = g),
                           (S[13] = v))
                         : (v = S[13]),
-                    S[14] !== E || S[15] !== v
+                    S[14] !== R || S[15] !== v
                         ? ((b = (0, n.jsx)(o.y, {
-                              appName: E,
+                              appName: R,
                               category: "",
                               metadata: m,
                               children: v,
                           })),
-                          (S[14] = E),
+                          (S[14] = R),
                           (S[15] = v),
                           (S[16] = b))
                         : (b = S[16]),
@@ -5407,7 +5403,7 @@
                 return {
                     path: e,
                     Component: t,
-                    coreLoader: async function e_({ location: e }) {
+                    coreLoader: async function e({ location: e }) {
                         let t;
                         try {
                             let r = `${e.pathname}${e.search}`;
@@ -5470,8 +5466,8 @@
                     c,
                     d,
                     h,
-                    f,
                     p,
+                    f,
                     m = (0, a.c)(14);
                 m[0] !== e
                     ? (({
@@ -5491,31 +5487,31 @@
                 return (
                     (d = d ?? !(0, o.ue)(y, g)),
                     m[5] !== r || m[6] !== c.state
-                        ? ((f = r ? { [l.V]: !0, ...c.state } : c.state),
+                        ? ((p = r ? { [l.V]: !0, ...c.state } : c.state),
                           (m[5] = r),
                           (m[6] = c.state),
-                          (m[7] = f))
-                        : (f = m[7]),
+                          (m[7] = p))
+                        : (p = m[7]),
                     m[8] !== c ||
                     m[9] !== t ||
                     m[10] !== d ||
-                    m[11] !== f ||
+                    m[11] !== p ||
                     m[12] !== h
-                        ? ((p = (0, n.jsx)(o.N_, {
+                        ? ((f = (0, n.jsx)(o.N_, {
                               to: h,
                               ...c,
-                              state: f,
+                              state: p,
                               reloadDocument: d,
                               ref: t,
                           })),
                           (m[8] = c),
                           (m[9] = t),
                           (m[10] = d),
-                          (m[11] = f),
+                          (m[11] = p),
                           (m[12] = h),
-                          (m[13] = p))
-                        : (p = m[13]),
-                    p
+                          (m[13] = f))
+                        : (f = m[13]),
+                    f
                 );
             });
             c.displayName = "Link";
@@ -5524,8 +5520,8 @@
                     c,
                     d,
                     h,
-                    f,
                     p,
+                    f,
                     m = (0, a.c)(14);
                 m[0] !== e
                     ? (({
@@ -5545,31 +5541,31 @@
                 return (
                     (d = d ?? !(0, o.ue)(y, g)),
                     m[5] !== r || m[6] !== c.state
-                        ? ((f = r ? { [l.V]: !0, ...c.state } : c.state),
+                        ? ((p = r ? { [l.V]: !0, ...c.state } : c.state),
                           (m[5] = r),
                           (m[6] = c.state),
-                          (m[7] = f))
-                        : (f = m[7]),
+                          (m[7] = p))
+                        : (p = m[7]),
                     m[8] !== c ||
                     m[9] !== t ||
                     m[10] !== d ||
-                    m[11] !== f ||
+                    m[11] !== p ||
                     m[12] !== h
-                        ? ((p = (0, n.jsx)(o.k2, {
+                        ? ((f = (0, n.jsx)(o.k2, {
                               to: h,
                               ...c,
-                              state: f,
+                              state: p,
                               reloadDocument: d,
                               ref: t,
                           })),
                           (m[8] = c),
                           (m[9] = t),
                           (m[10] = d),
-                          (m[11] = f),
+                          (m[11] = p),
                           (m[12] = h),
-                          (m[13] = p))
-                        : (p = m[13]),
-                    p
+                          (m[13] = f))
+                        : (f = m[13]),
+                    f
                 );
             });
             try {
@@ -5593,24 +5589,24 @@
                     {
                         appPayload: d,
                         children: h,
-                        error: f,
-                        navigateOnError: p,
+                        error: p,
+                        navigateOnError: f,
                         routes: m,
                         routeStateMap: y,
                     } = e;
                 return (
                     o[0] !== d ||
                     o[1] !== h ||
-                    o[2] !== f ||
-                    o[3] !== p ||
+                    o[2] !== p ||
+                    o[3] !== f ||
                     o[4] !== y
                         ? ((t =
-                              f && !p
-                                  ? (0, n.jsx)(i.M, { ...f })
+                              p && !f
+                                  ? (0, n.jsx)(i.M, { ...p })
                                   : (0, n.jsx)(u.z.Provider, {
                                         value: d,
                                         children: (0, n.jsx)(c.Provider, {
-                                            value: f,
+                                            value: p,
                                             children: (0, n.jsx)(s.Y.Provider, {
                                                 value: y,
                                                 children: h,
@@ -5619,8 +5615,8 @@
                                     })),
                           (o[0] = d),
                           (o[1] = h),
-                          (o[2] = f),
-                          (o[3] = p),
+                          (o[2] = p),
+                          (o[3] = f),
                           (o[4] = y),
                           (o[5] = t))
                         : (t = o[5]),
@@ -5656,8 +5652,8 @@
                     d,
                     h = (0, a.c)(12),
                     {
-                        partialName: f,
-                        wasServerRendered: p,
+                        partialName: p,
+                        wasServerRendered: f,
                         onError: m,
                         children: y,
                         ssrError: g,
@@ -5683,16 +5679,16 @@
                           (h[6] = r),
                           (h[7] = c))
                         : (c = h[7]),
-                    h[8] !== f || h[9] !== c || h[10] !== p
+                    h[8] !== p || h[9] !== c || h[10] !== f
                         ? ((d = (0, n.jsx)(o.U, {
-                              appName: f,
-                              wasServerRendered: p,
+                              appName: p,
+                              wasServerRendered: f,
                               dataRouterEnabled: !1,
                               children: c,
                           })),
-                          (h[8] = f),
+                          (h[8] = p),
                           (h[9] = c),
-                          (h[10] = p),
+                          (h[10] = f),
                           (h[11] = d))
                         : (d = h[11]),
                     d
@@ -5735,7 +5731,7 @@
             } catch {}
         },
         58394: (e, t, r) => {
-            r.d(t, { U: () => h, f: () => c });
+            r.d(t, { U: () => d, f: () => c });
             var n = r(74848),
                 a = r(21728),
                 o = r(13233),
@@ -5754,7 +5750,7 @@
                           (o[1] = c),
                           (o[2] = t))
                         : (t = o[2]);
-                    let { onRender: f } = (function (e) {
+                    let { onRender: p } = (function (e) {
                         let t,
                             r,
                             n = (0, a.c)(5),
@@ -5792,34 +5788,33 @@
                         );
                     })(t);
                     return (
-                        o[3] !== h || o[4] !== f
+                        o[3] !== h || o[4] !== p
                             ? ((r = (0, n.jsx)(u.Provider, {
-                                  value: f,
+                                  value: p,
                                   children: h,
                               })),
                               (o[3] = h),
-                              (o[4] = f),
+                              (o[4] = p),
                               (o[5] = r))
                             : (r = o[5]),
                         r
                     );
                 }),
-                d = () => (0, i.useContext)(u),
-                h = (0, i.memo)(function (e) {
+                d = (0, i.memo)(function (e) {
                     let t,
                         r = (0, a.c)(4),
                         { id: s, children: l } = e,
-                        u = d() ?? o.l;
+                        c = (0, i.useContext)(u) ?? o.l;
                     return (
-                        r[0] !== l || r[1] !== s || r[2] !== u
+                        r[0] !== l || r[1] !== s || r[2] !== c
                             ? ((t = (0, n.jsx)(i.Profiler, {
                                   id: s,
-                                  onRender: u,
+                                  onRender: c,
                                   children: l,
                               })),
                               (r[0] = l),
                               (r[1] = s),
-                              (r[2] = u),
+                              (r[2] = c),
                               (r[3] = t))
                             : (t = r[3]),
                         t
@@ -5832,7 +5827,7 @@
                 c.displayName || (c.displayName = "ProfilerProvider");
             } catch {}
             try {
-                h.displayName || (h.displayName = "Profiler");
+                d.displayName || (d.displayName = "Profiler");
             } catch {}
         },
         13856: (e, t, r) => {
@@ -5852,22 +5847,22 @@
                         "Cannot initialize the same private elements twice on an object"
                     );
             }
-            function f(e, t, r) {
+            function p(e, t, r) {
                 if (!t.has(e))
                     throw TypeError(
                         "attempted to " + r + " private field on non-instance"
                     );
                 return t.get(e);
             }
-            function p(e, t) {
-                var r = f(e, t, "get");
+            function f(e, t) {
+                var r = p(e, t, "get");
                 return r.get ? r.get.call(e) : r.value;
             }
             function m(e, t, r) {
                 (h(e, t), t.set(e, r));
             }
             function y(e, t, r) {
-                var n = f(e, t, "set");
+                var n = p(e, t, "set");
                 if (n.set) n.set.call(e, r);
                 else {
                     if (!n.writable)
@@ -5912,13 +5907,13 @@
             }
             let w = /Minified React error #(?<invariant>\d+)/,
                 S = ["419", "421"];
-            var E = new WeakMap(),
-                R = new WeakMap(),
+            var R = new WeakMap(),
+                E = new WeakMap(),
                 x = new WeakSet(),
                 C = new WeakSet(),
                 k = new WeakSet(),
                 N = new WeakSet(),
-                j = new WeakSet(),
+                P = new WeakSet(),
                 T = new WeakSet();
             let ReactBaseElement = class ReactBaseElement extends HTMLElement {
                 get name() {
@@ -5931,24 +5926,24 @@
                     return "true" === this.getAttribute("data-attempted-ssr");
                 }
                 connectedCallback() {
-                    g(this, N, O).call(this);
+                    g(this, N, D).call(this);
                 }
                 disconnectedCallback() {
-                    (p(this, E)?.unmount(), y(this, E, void 0));
+                    (f(this, R)?.unmount(), y(this, R, void 0));
                 }
                 constructor(...e) {
                     (super(...e),
-                        m(this, R, { get: P, set: void 0 }),
+                        m(this, E, { get: j, set: void 0 }),
                         v(this, x),
                         v(this, C),
                         v(this, k),
                         v(this, N),
-                        v(this, j),
+                        v(this, P),
                         v(this, T),
-                        m(this, E, { writable: !0, value: void 0 }));
+                        m(this, R, { writable: !0, value: void 0 }));
                 }
             };
-            function P() {
+            function j() {
                 let e = this.embeddedData?.textContent;
                 if (!e)
                     throw Error(
@@ -5956,13 +5951,13 @@
                     );
                 return e;
             }
-            function A() {
+            function L() {
                 return (
                     s.A.isEnabled() ||
                     "true" === this.getAttribute("data-react-profiling")
                 );
             }
-            function L(e, t, r) {
+            function A(e, t, r) {
                 try {
                     (window.performance.mark(r),
                         queueMicrotask(() => {
@@ -6007,31 +6002,32 @@
                     return (
                         window.performance.mark(r),
                         () => {
-                            g(this, C, L).call(this, a, r, n);
+                            g(this, C, A).call(this, a, r, n);
                         }
                     );
                 } catch {
                     return i.l;
                 }
             }
-            async function O() {
+            async function D() {
                 if (!this.reactRoot) throw Error("No react root provided");
                 let e = { createRoot: c.H, hydrateRoot: c.c };
-                g(this, x, A).call(this) &&
-                    (e = await g(this, j, $).call(this));
+                g(this, x, L).call(this) &&
+                    (e = await g(this, P, O).call(this));
                 let t = g(this, k, _).call(this),
                     r = !1,
-                    a = JSON.parse(p(this, R)),
-                    i = this.ssrError?.textContent,
-                    s = await this.getReactNode(a, (e, t = {}) => {
+                    a = (e, t = {}) => {
                         r = !0;
                         let n = { critical: !0, reactAppName: this.name, ...t };
                         setTimeout(() => {
                             (0, o.N7)(e, n);
                         });
-                    }),
-                    d = (0, n.jsx)(u.StrictMode, { children: s });
-                if ((i && g(this, T, D).call(this, i), this.hasSSRContent)) {
+                    },
+                    i = JSON.parse(f(this, E)),
+                    s = this.ssrError?.textContent,
+                    d = await this.getReactNode(i, a),
+                    h = (0, n.jsx)(u.StrictMode, { children: d });
+                if ((s && g(this, T, I).call(this, s), this.hasSSRContent)) {
                     let t = [
                         ...this.querySelectorAll('style[data-styled="true"]'),
                         ...this.querySelectorAll(
@@ -6041,8 +6037,8 @@
                     for (let e of t) document.head.appendChild(e);
                     (y(
                         this,
-                        E,
-                        e.hydrateRoot(this.reactRoot, d, {
+                        R,
+                        e.hydrateRoot(this.reactRoot, h, {
                             onRecoverableError: (e, t) => {
                                 if (!(e instanceof Error)) return;
                                 let n = w.exec(e.message),
@@ -6092,8 +6088,8 @@
                             },
                         }));
                 } else
-                    (y(this, E, e.createRoot(this.reactRoot)),
-                        p(this, E).render(d),
+                    (y(this, R, e.createRoot(this.reactRoot)),
+                        f(this, R).render(h),
                         (0, l.i)({
                             incrementKey: "REACT_RENDER",
                             incrementTags: {
@@ -6106,10 +6102,10 @@
                         }));
                 (this.classList.add("loaded"), t());
             }
-            function $() {
+            function O() {
                 return r.e("react-profiling").then(r.t.bind(r, 87335, 19));
             }
-            function D(e) {
+            function I(e) {
                 if ((0, l.X)()) {
                     if (d.z[e])
                         return console.error(
@@ -6234,19 +6230,19 @@
                         u,
                         c,
                         d = (0, a.c)(9),
-                        { appName: h, children: f, critical: p } = e;
-                    d[0] !== p || d[1] !== h
-                        ? ((t = { reactAppName: h, critical: p }),
-                          (d[0] = p),
+                        { appName: h, children: p, critical: f } = e;
+                    d[0] !== f || d[1] !== h
+                        ? ((t = { reactAppName: h, critical: f }),
+                          (d[0] = f),
                           (d[1] = h),
                           (d[2] = t))
                         : (t = d[2]);
                     let m = (0, i.useRef)(t);
-                    (d[3] !== p || d[4] !== h
+                    (d[3] !== f || d[4] !== h
                         ? ((r = () => {
-                              m.current = { reactAppName: h, critical: p };
+                              m.current = { reactAppName: h, critical: f };
                           }),
-                          (d[3] = p),
+                          (d[3] = f),
                           (d[4] = h),
                           (d[5] = r))
                         : (r = d[5]),
@@ -6267,12 +6263,12 @@
                             : (u = d[6]));
                     let y = u;
                     return (
-                        d[7] !== f
+                        d[7] !== p
                             ? ((c = (0, n.jsx)(l.Provider, {
                                   value: y,
-                                  children: f,
+                                  children: p,
                               })),
-                              (d[7] = f),
+                              (d[7] = p),
                               (d[8] = c))
                             : (c = d[8]),
                         c
@@ -6294,7 +6290,7 @@
             } catch {}
         },
         2604: (e, t, r) => {
-            r.d(t, { Ly: () => m, hw: () => f, km: () => h });
+            r.d(t, { Ly: () => m, hw: () => p, km: () => h });
             var n = r(74848),
                 a = r(21728),
                 o = r(22353),
@@ -6307,7 +6303,7 @@
             function h(e, t) {
                 d.has(e) || (d.add(e), t(e));
             }
-            let f = (e) => {
+            let p = (e) => {
                 let t,
                     r = (0, a.c)(3),
                     { appName: o } = e,
@@ -6316,7 +6312,7 @@
                     return (0, i.pX)(e) && 404 === e.status;
                 })(s)
                     ? (r[0] !== o || r[1] !== s
-                          ? ((t = (0, n.jsx)(p, { appName: o, routeError: s })),
+                          ? ((t = (0, n.jsx)(f, { appName: o, routeError: s })),
                             (r[0] = o),
                             (r[1] = s),
                             (r[2] = t))
@@ -6324,35 +6320,35 @@
                       t)
                     : null;
             };
-            function p(e) {
+            function f(e) {
                 let t,
                     r,
                     i,
                     u,
                     c = (0, a.c)(6),
-                    { appName: d, routeError: f } = e,
-                    p = (0, l.useRef)(d);
+                    { appName: d, routeError: p } = e,
+                    f = (0, l.useRef)(d);
                 return (
                     c[0] !== d
                         ? ((t = () => {
-                              p.current = d;
+                              f.current = d;
                           }),
                           (c[0] = d),
                           (c[1] = t))
                         : (t = c[1]),
                     (0, l.useEffect)(t),
-                    c[2] !== f
+                    c[2] !== p
                         ? ((r = () => {
-                              f &&
-                                  h(f, (e) => {
+                              p &&
+                                  h(p, (e) => {
                                       (0, o.N7)(e, {
                                           critical: !0,
-                                          reactAppName: p.current,
+                                          reactAppName: f.current,
                                       });
                                   });
                           }),
-                          (i = [f]),
-                          (c[2] = f),
+                          (i = [p]),
+                          (c[2] = p),
                           (c[3] = r),
                           (c[4] = i))
                         : ((r = c[3]), (i = c[4])),
@@ -6398,7 +6394,7 @@
                 }
                 return (
                     r[3] !== o || r[4] !== s
-                        ? ((t = (0, n.jsx)(p, { routeError: s, appName: o })),
+                        ? ((t = (0, n.jsx)(f, { routeError: s, appName: o })),
                           (r[3] = o),
                           (r[4] = s),
                           (r[5] = t))
@@ -6412,8 +6408,8 @@
                     i,
                     u,
                     d,
-                    f,
                     p,
+                    f,
                     m,
                     y,
                     g = (0, a.c)(11),
@@ -6439,10 +6435,10 @@
                       (w[2] = y))
                     : ((m = w[1]), (y = w[2])),
                     (0, l.useEffect)(m, y));
-                let E = (0, l.useRef)(v);
+                let R = (0, l.useRef)(v);
                 (g[0] !== v
                     ? ((t = () => {
-                          E.current = v;
+                          R.current = v;
                       }),
                       (g[0] = v),
                       (g[1] = t))
@@ -6453,7 +6449,7 @@
                               h(b, (e) => {
                                   (0, o.N7)(e, {
                                       critical: !0,
-                                      reactAppName: E.current,
+                                      reactAppName: R.current,
                                   });
                               });
                           }),
@@ -6469,36 +6465,36 @@
                           })),
                           (g[5] = u))
                         : (u = g[5]));
-                let R = `Status: ${b.response.status} Message: ${b.message}`;
+                let E = `Status: ${b.response.status} Message: ${b.message}`;
                 return (
-                    g[6] !== R
-                        ? ((d = (0, n.jsx)(s.E.Description, { children: R })),
-                          (g[6] = R),
+                    g[6] !== E
+                        ? ((d = (0, n.jsx)(s.E.Description, { children: E })),
+                          (g[6] = E),
                           (g[7] = d))
                         : (d = g[7]),
                     g[8] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((f = (0, n.jsx)(s.E.Description, {
+                        ? ((p = (0, n.jsx)(s.E.Description, {
                               children: "Please reload page and try again",
                           })),
-                          (g[8] = f))
-                        : (f = g[8]),
+                          (g[8] = p))
+                        : (p = g[8]),
                     g[9] !== d
-                        ? ((p = (0, n.jsxs)(s.E, {
+                        ? ((f = (0, n.jsxs)(s.E, {
                               border: !1,
                               spacious: !1,
-                              children: [u, d, f],
+                              children: [u, d, p],
                           })),
                           (g[9] = d),
-                          (g[10] = p))
-                        : (p = g[10]),
-                    p
+                          (g[10] = f))
+                        : (f = g[10]),
+                    f
                 );
             }
             try {
-                f.displayName || (f.displayName = "UnhandledRouteError");
+                p.displayName || (p.displayName = "UnhandledRouteError");
             } catch {}
             try {
-                p.displayName || (p.displayName = "BaseRouteErrorBoundary");
+                f.displayName || (f.displayName = "BaseRouteErrorBoundary");
             } catch {}
             try {
                 m.displayName || (m.displayName = "RootAppRouteErrorElement");
@@ -6509,74 +6505,163 @@
         },
         85788: (e, t, r) => {
             r.d(t, {
-                AO: () => g,
-                B6: () => A,
-                BV: () => tF,
-                C5: () => tW,
-                Ew: () => tN,
-                FE: () => tC,
-                Gy: () => rK,
-                Ix: () => tB,
-                K: () => r3,
-                KP: () => tP,
-                Kd: () => rB,
-                LG: () => tk,
-                N_: () => rq,
-                OA: () => rV,
-                PI: () => tV,
-                RQ: () => tl,
-                Ye: () => tm,
-                Ys: () => rH,
-                Zp: () => td,
-                _3: () => tt,
-                cq: () => tx,
-                g: () => tf,
-                k2: () => rJ,
-                o1: () => $,
-                ok: () => rQ,
-                pX: () => X,
-                pg: () => tM,
-                qh: () => tH,
-                r5: () => tj,
-                rc: () => c,
-                sv: () => tU,
-                tW: () => P,
-                ue: () => C,
-                wQ: () => ts,
-                x$: () => tp,
-                zR: () => h,
-                zy: () => ti,
+                AO: () => f,
+                B6: () => N,
+                BV: () => tx,
+                C5: () => tw,
+                Ew: () => ts,
+                FE: () => to,
+                Gy: () => t1,
+                Ix: () => tE,
+                K: () => t7,
+                KP: () => tc,
+                Kd: () => tJ,
+                LG: () => ti,
+                N_: () => tX,
+                OA: () => tQ,
+                PI: () => tP,
+                RQ: () => eQ,
+                Ye: () => e5,
+                Ys: () => tV,
+                Zp: () => e1,
+                _3: () => eq,
+                cq: () => ta,
+                g: () => e4,
+                k2: () => tK,
+                o1: () => j,
+                ok: () => t2,
+                pX: () => W,
+                pg: () => tv,
+                qh: () => tR,
+                r5: () => tl,
+                rc: () => s,
+                sv: () => tS,
+                tW: () => k,
+                ue: () => S,
+                wQ: () => eK,
+                x$: () => e3,
+                zR: () => u,
+                zy: () => eX,
             });
             var n,
-                a,
-                o = r(96540);
+                a = r(96540);
             r(16069);
-            var i = (e) => {
+            var o = (e) => {
                     throw TypeError(e);
                 },
-                s = (e, t, r) => t.has(e) || i("Cannot " + r),
-                l = (e, t, r) => (
-                    s(e, t, "read from private field"),
+                i = (e, t, r) => (
+                    t.has(e) || o("Cannot read from private field"),
                     r ? r.call(e) : t.get(e)
                 ),
-                u = (e, t, r) =>
-                    t.has(e)
-                        ? i("Cannot add the same private member more than once")
-                        : t instanceof WeakSet
-                          ? t.add(e)
-                          : t.set(e, r),
-                c = ((e) => (
+                s = ((e) => (
                     (e.Pop = "POP"),
                     (e.Push = "PUSH"),
                     (e.Replace = "REPLACE"),
                     e
-                ))(c || {}),
-                d = "popstate";
-            function h(e = {}) {
-                return b(
+                ))(s || {}),
+                l = "popstate";
+            function u(e = {}) {
+                return (function (e, t, r, n = {}) {
+                    let { window: a = document.defaultView, v5Compat: o = !1 } =
+                            n,
+                        i = a.history,
+                        s = "POP",
+                        u = null,
+                        c = d();
+                    function d() {
+                        return (i.state || { idx: null }).idx;
+                    }
+                    function f() {
+                        s = "POP";
+                        let e = d(),
+                            t = null == e ? null : e - c;
+                        ((c = e),
+                            u &&
+                                u({
+                                    action: s,
+                                    location: m.location,
+                                    delta: t,
+                                }));
+                    }
+                    null == c &&
+                        ((c = 0), i.replaceState({ ...i.state, idx: c }, ""));
+                    let m = {
+                        get action() {
+                            return s;
+                        },
+                        get location() {
+                            return e(a, i);
+                        },
+                        listen(e) {
+                            if (u)
+                                throw Error(
+                                    "A history only accepts one active listener"
+                                );
+                            return (
+                                a.addEventListener(l, f),
+                                (u = e),
+                                () => {
+                                    (a.removeEventListener(l, f), (u = null));
+                                }
+                            );
+                        },
+                        createHref: (e) => t(a, e),
+                        createURL: function (e) {
+                            return y(e);
+                        },
+                        encodeLocation(e) {
+                            let t = y(e);
+                            return {
+                                pathname: t.pathname,
+                                search: t.search,
+                                hash: t.hash,
+                            };
+                        },
+                        push: function (e, t) {
+                            s = "PUSH";
+                            let r = p(m.location, e, t);
+                            let n = h(r, (c = d() + 1)),
+                                l = m.createHref(r);
+                            try {
+                                i.pushState(n, "", l);
+                            } catch (e) {
+                                if (
+                                    e instanceof DOMException &&
+                                    "DataCloneError" === e.name
+                                )
+                                    throw e;
+                                a.location.assign(l);
+                            }
+                            o &&
+                                u &&
+                                u({
+                                    action: s,
+                                    location: m.location,
+                                    delta: 1,
+                                });
+                        },
+                        replace: function (e, t) {
+                            s = "REPLACE";
+                            let n = p(m.location, e, t);
+                            r && r(n, e);
+                            let a = h(n, (c = d())),
+                                l = m.createHref(n);
+                            (i.replaceState(a, "", l),
+                                o &&
+                                    u &&
+                                    u({
+                                        action: s,
+                                        location: m.location,
+                                        delta: 0,
+                                    }));
+                        },
+                        go: (e) => i.go(e),
+                    };
+                    return m;
+                })(
                     function (e, t) {
                         let { pathname: r, search: n, hash: a } = e.location;
-                        return y(
+                        return p(
                             "",
                             { pathname: r, search: n, hash: a },
                             (t.state && t.state.usr) || null,
@@ -6584,16 +6669,16 @@
                         );
                     },
                     function (e, t) {
-                        return "string" == typeof t ? t : g(t);
+                        return "string" == typeof t ? t : f(t);
                     },
                     null,
                     e
                 );
             }
-            function f(e, t) {
+            function c(e, t) {
                 if (!1 === e || null == e) throw Error(t);
             }
-            function p(e, t) {
+            function d(e, t) {
                 if (!e) {
                     "undefined" != typeof console && console.warn(t);
                     try {
@@ -6601,15 +6686,15 @@
                     } catch (e) {}
                 }
             }
-            function m(e, t) {
+            function h(e, t) {
                 return { usr: e.state, key: e.key, idx: t };
             }
-            function y(e, t, r = null, n) {
+            function p(e, t, r = null, n) {
                 return {
                     pathname: "string" == typeof e ? e : e.pathname,
                     search: "",
                     hash: "",
-                    ...("string" == typeof t ? v(t) : t),
+                    ...("string" == typeof t ? m(t) : t),
                     state: r,
                     key:
                         (t && t.key) ||
@@ -6617,14 +6702,14 @@
                         Math.random().toString(36).substring(2, 10),
                 };
             }
-            function g({ pathname: e = "/", search: t = "", hash: r = "" }) {
+            function f({ pathname: e = "/", search: t = "", hash: r = "" }) {
                 return (
                     t && "?" !== t && (e += "?" === t.charAt(0) ? t : "?" + t),
                     r && "#" !== r && (e += "#" === r.charAt(0) ? r : "#" + r),
                     e
                 );
             }
-            function v(e) {
+            function m(e) {
                 let t = {};
                 if (e) {
                     let r = e.indexOf("#");
@@ -6637,129 +6722,50 @@
                 }
                 return t;
             }
-            function b(e, t, r, n = {}) {
-                let { window: a = document.defaultView, v5Compat: o = !1 } = n,
-                    i = a.history,
-                    s = "POP",
-                    l = null,
-                    u = c();
-                function c() {
-                    return (i.state || { idx: null }).idx;
-                }
-                function h() {
-                    s = "POP";
-                    let e = c(),
-                        t = null == e ? null : e - u;
-                    ((u = e),
-                        l && l({ action: s, location: f.location, delta: t }));
-                }
-                null == u &&
-                    ((u = 0), i.replaceState({ ...i.state, idx: u }, ""));
-                let f = {
-                    get action() {
-                        return s;
-                    },
-                    get location() {
-                        return e(a, i);
-                    },
-                    listen(e) {
-                        if (l)
-                            throw Error(
-                                "A history only accepts one active listener"
-                            );
-                        return (
-                            a.addEventListener(d, h),
-                            (l = e),
-                            () => {
-                                (a.removeEventListener(d, h), (l = null));
-                            }
-                        );
-                    },
-                    createHref: (e) => t(a, e),
-                    createURL: function (e) {
-                        return w(e);
-                    },
-                    encodeLocation(e) {
-                        let t = w(e);
-                        return {
-                            pathname: t.pathname,
-                            search: t.search,
-                            hash: t.hash,
-                        };
-                    },
-                    push: function (e, t) {
-                        s = "PUSH";
-                        let n = y(f.location, e, t);
-                        r && r(n, e);
-                        let d = m(n, (u = c() + 1)),
-                            h = f.createHref(n);
-                        try {
-                            i.pushState(d, "", h);
-                        } catch (e) {
-                            if (
-                                e instanceof DOMException &&
-                                "DataCloneError" === e.name
-                            )
-                                throw e;
-                            a.location.assign(h);
-                        }
-                        o &&
-                            l &&
-                            l({ action: s, location: f.location, delta: 1 });
-                    },
-                    replace: function (e, t) {
-                        s = "REPLACE";
-                        let n = y(f.location, e, t);
-                        r && r(n, e);
-                        let a = m(n, (u = c())),
-                            d = f.createHref(n);
-                        (i.replaceState(a, "", d),
-                            o &&
-                                l &&
-                                l({
-                                    action: s,
-                                    location: f.location,
-                                    delta: 0,
-                                }));
-                    },
-                    go: (e) => i.go(e),
-                };
-                return f;
-            }
-            function w(e, t = !1) {
+            function y(e, t = !1) {
                 let r = "http://localhost";
                 ("undefined" != typeof window &&
                     (r =
                         "null" !== window.location.origin
                             ? window.location.origin
                             : window.location.href),
-                    f(
+                    c(
                         r,
                         "No window.location.(origin|href) available to create URL"
                     ));
-                let n = "string" == typeof e ? e : g(e);
+                let n = "string" == typeof e ? e : f(e);
                 return (
                     (n = n.replace(/ $/, "%20")),
                     !t && n.startsWith("//") && (n = r + n),
                     new URL(n, r)
                 );
             }
-            var S = class {
+            var g = class {
                 constructor(e) {
-                    if ((u(this, n, new Map()), e))
+                    if (
+                        (((e, t, r) =>
+                            t.has(e)
+                                ? o(
+                                      "Cannot add the same private member more than once"
+                                  )
+                                : t instanceof WeakSet
+                                  ? t.add(e)
+                                  : t.set(e, r))(this, n, new Map()),
+                        e)
+                    )
                         for (let [t, r] of e) this.set(t, r);
                 }
                 get(e) {
-                    if (l(this, n).has(e)) return l(this, n).get(e);
+                    if (i(this, n).has(e)) return i(this, n).get(e);
                     if (void 0 !== e.defaultValue) return e.defaultValue;
                     throw Error("No value found for context");
                 }
                 set(e, t) {
-                    l(this, n).set(e, t);
+                    i(this, n).set(e, t);
                 }
             };
             n = new WeakMap();
-            var E = new Set([
+            var v = new Set([
                     "lazy",
                     "caseSensitive",
                     "path",
@@ -6767,7 +6773,7 @@
                     "index",
                     "children",
                 ]),
-                R = new Set([
+                b = new Set([
                     "lazy",
                     "caseSensitive",
                     "path",
@@ -6776,16 +6782,16 @@
                     "unstable_middleware",
                     "children",
                 ]);
-            function x(e, t, r = [], n = {}) {
+            function w(e, t, r = [], n = {}) {
                 return e.map((e, a) => {
                     let o = [...r, String(a)],
                         i = "string" == typeof e.id ? e.id : o.join("-");
                     if (
-                        (f(
+                        (c(
                             !0 !== e.index || !e.children,
                             "Cannot specify children on an index route"
                         ),
-                        f(
+                        c(
                             !n[i],
                             `Found a route id collision on id "${i}".  Route id's must be globally unique within Data Router usages`
                         ),
@@ -6798,66 +6804,66 @@
                         let r = { ...e, ...t(e), id: i, children: void 0 };
                         return (
                             (n[i] = r),
-                            e.children && (r.children = x(e.children, t, o, n)),
+                            e.children && (r.children = w(e.children, t, o, n)),
                             r
                         );
                     }
                 });
             }
-            function C(e, t, r = "/") {
-                return k(e, t, r, !1);
+            function S(e, t, r = "/") {
+                return R(e, t, r, !1);
             }
-            function k(e, t, r, n) {
-                let a = O(("string" == typeof t ? v(t) : t).pathname || "/", r);
+            function R(e, t, r, n) {
+                let a = T(("string" == typeof t ? m(t) : t).pathname || "/", r);
                 if (null == a) return null;
                 let o = (function e(t, r = [], n = [], a = "") {
                     let o = (t, o, i) => {
                         var s, l;
                         let u,
-                            c,
-                            d = {
+                            d,
+                            h = {
                                 relativePath: void 0 === i ? t.path || "" : i,
                                 caseSensitive: !0 === t.caseSensitive,
                                 childrenIndex: o,
                                 route: t,
                             };
-                        d.relativePath.startsWith("/") &&
-                            (f(
-                                d.relativePath.startsWith(a),
-                                `Absolute route path "${d.relativePath}" nested under path "${a}" is not valid. An absolute child route path must start with the combined path of all its parent routes.`
+                        h.relativePath.startsWith("/") &&
+                            (c(
+                                h.relativePath.startsWith(a),
+                                `Absolute route path "${h.relativePath}" nested under path "${a}" is not valid. An absolute child route path must start with the combined path of all its parent routes.`
                             ),
-                            (d.relativePath = d.relativePath.slice(a.length)));
-                        let h = W([a, d.relativePath]),
-                            p = n.concat(d);
+                            (h.relativePath = h.relativePath.slice(a.length)));
+                        let p = O([a, h.relativePath]),
+                            f = n.concat(h);
                         (t.children &&
                             t.children.length > 0 &&
-                            (f(
+                            (c(
                                 !0 !== t.index,
-                                `Index routes must not have child routes. Please remove all child routes from route path "${h}".`
+                                `Index routes must not have child routes. Please remove all child routes from route path "${p}".`
                             ),
-                            e(t.children, r, p, h)),
+                            e(t.children, r, f, p)),
                             (null != t.path || t.index) &&
                                 r.push({
-                                    path: h,
+                                    path: p,
                                     score:
-                                        ((s = h),
+                                        ((s = p),
                                         (l = t.index),
-                                        (c = (u = s.split("/")).length),
-                                        u.some(T) && (c += -2),
-                                        l && (c += 2),
+                                        (d = (u = s.split("/")).length),
+                                        u.some(C) && (d += -2),
+                                        l && (d += 2),
                                         u
-                                            .filter((e) => !T(e))
+                                            .filter((e) => !C(e))
                                             .reduce(
                                                 (e, t) =>
                                                     e +
-                                                    (j.test(t)
+                                                    (x.test(t)
                                                         ? 3
                                                         : "" === t
                                                           ? 1
                                                           : 10),
-                                                c
+                                                d
                                             )),
-                                    routesMeta: p,
+                                    routesMeta: f,
                                 }));
                     };
                     return (
@@ -6906,7 +6912,7 @@
                 });
                 let i = null;
                 for (let e = 0; null == i && e < o.length; ++e) {
-                    let t = _(a);
+                    let t = P(a);
                     i = (function (e, t, r = !1) {
                         let { routesMeta: n } = e,
                             a = {},
@@ -6916,7 +6922,7 @@
                             let s = n[e],
                                 l = e === n.length - 1,
                                 u = "/" === o ? t : t.slice(o.length) || "/",
-                                c = A(
+                                c = N(
                                     {
                                         path: s.relativePath,
                                         caseSensitive: s.caseSensitive,
@@ -6930,7 +6936,7 @@
                                     l &&
                                     r &&
                                     !n[n.length - 1].route.index &&
-                                    (c = A(
+                                    (c = N(
                                         {
                                             path: s.relativePath,
                                             caseSensitive: s.caseSensitive,
@@ -6944,19 +6950,19 @@
                             (Object.assign(a, c.params),
                                 i.push({
                                     params: a,
-                                    pathname: W([o, c.pathname]),
-                                    pathnameBase: U(W([o, c.pathnameBase])),
+                                    pathname: O([o, c.pathname]),
+                                    pathnameBase: I(O([o, c.pathnameBase])),
                                     route: d,
                                 }),
                                 "/" !== c.pathnameBase &&
-                                    (o = W([o, c.pathnameBase])));
+                                    (o = O([o, c.pathnameBase])));
                         }
                         return i;
                     })(o[e], t, n);
                 }
                 return i;
             }
-            function N(e, t) {
+            function E(e, t) {
                 let { route: r, pathname: n, params: a } = e;
                 return {
                     id: r.id,
@@ -6966,14 +6972,14 @@
                     handle: r.handle,
                 };
             }
-            var j = /^:[\w-]+$/,
-                T = (e) => "*" === e;
-            function P(e, t = {}) {
+            var x = /^:[\w-]+$/,
+                C = (e) => "*" === e;
+            function k(e, t = {}) {
                 let r = e;
                 r.endsWith("*") &&
                     "*" !== r &&
                     !r.endsWith("/*") &&
-                    (p(
+                    (d(
                         !1,
                         `Route path "${r}" will be treated as if it were "${r.replace(/\*$/, "/*")}" because the \`*\` character must always follow a \`/\` in the pattern. To get rid of this warning, please change the route path to "${r.replace(/\*$/, "/*")}".`
                     ),
@@ -6993,7 +6999,7 @@
                                 let [, e, r] = o,
                                     n = t[e];
                                 return (
-                                    f(
+                                    c(
                                         "?" === r || null != n,
                                         `Missing ":${e}" param`
                                     ),
@@ -7006,10 +7012,46 @@
                         .join("/")
                 );
             }
-            function A(e, t) {
+            function N(e, t) {
                 "string" == typeof e &&
                     (e = { path: e, caseSensitive: !1, end: !0 });
-                let [r, n] = L(e.path, e.caseSensitive, e.end),
+                let [r, n] = (function (e, t = !1, r = !0) {
+                        d(
+                            "*" === e || !e.endsWith("*") || e.endsWith("/*"),
+                            `Route path "${e}" will be treated as if it were "${e.replace(/\*$/, "/*")}" because the \`*\` character must always follow a \`/\` in the pattern. To get rid of this warning, please change the route path to "${e.replace(/\*$/, "/*")}".`
+                        );
+                        let n = [],
+                            a =
+                                "^" +
+                                e
+                                    .replace(/\/*\*?$/, "")
+                                    .replace(/^\/*/, "/")
+                                    .replace(/[\\.*+^${}|()[\]]/g, "\\$&")
+                                    .replace(
+                                        /\/:([\w-]+)(\?)?/g,
+                                        (e, t, r) => (
+                                            n.push({
+                                                paramName: t,
+                                                isOptional: null != r,
+                                            }),
+                                            r ? "/?([^\\/]+)?" : "/([^\\/]+)"
+                                        )
+                                    );
+                        return (
+                            e.endsWith("*")
+                                ? (n.push({ paramName: "*" }),
+                                  (a +=
+                                      "*" === e || "/*" === e
+                                          ? "(.*)$"
+                                          : "(?:\\/(.+)|\\/*)$"))
+                                : r
+                                  ? (a += "\\/*$")
+                                  : "" !== e &&
+                                    "/" !== e &&
+                                    (a += "(?:(?=\\/|$))"),
+                            [new RegExp(a, t ? void 0 : "i"), n]
+                        );
+                    })(e.path, e.caseSensitive, e.end),
                     a = t.match(r);
                 if (!a) return null;
                 let o = a[0],
@@ -7039,42 +7081,7 @@
                     pattern: e,
                 };
             }
-            function L(e, t = !1, r = !0) {
-                p(
-                    "*" === e || !e.endsWith("*") || e.endsWith("/*"),
-                    `Route path "${e}" will be treated as if it were "${e.replace(/\*$/, "/*")}" because the \`*\` character must always follow a \`/\` in the pattern. To get rid of this warning, please change the route path to "${e.replace(/\*$/, "/*")}".`
-                );
-                let n = [],
-                    a =
-                        "^" +
-                        e
-                            .replace(/\/*\*?$/, "")
-                            .replace(/^\/*/, "/")
-                            .replace(/[\\.*+^${}|()[\]]/g, "\\$&")
-                            .replace(
-                                /\/:([\w-]+)(\?)?/g,
-                                (e, t, r) => (
-                                    n.push({
-                                        paramName: t,
-                                        isOptional: null != r,
-                                    }),
-                                    r ? "/?([^\\/]+)?" : "/([^\\/]+)"
-                                )
-                            );
-                return (
-                    e.endsWith("*")
-                        ? (n.push({ paramName: "*" }),
-                          (a +=
-                              "*" === e || "/*" === e
-                                  ? "(.*)$"
-                                  : "(?:\\/(.+)|\\/*)$"))
-                        : r
-                          ? (a += "\\/*$")
-                          : "" !== e && "/" !== e && (a += "(?:(?=\\/|$))"),
-                    [new RegExp(a, t ? void 0 : "i"), n]
-                );
-            }
-            function _(e) {
+            function P(e) {
                 try {
                     return e
                         .split("/")
@@ -7082,7 +7089,7 @@
                         .join("/");
                 } catch (t) {
                     return (
-                        p(
+                        d(
                             !1,
                             `The URL path "${e}" could not be decoded because it is a malformed URL segment. This is probably due to a bad percent encoding (${t}).`
                         ),
@@ -7090,21 +7097,21 @@
                     );
                 }
             }
-            function O(e, t) {
+            function T(e, t) {
                 if ("/" === t) return e;
                 if (!e.toLowerCase().startsWith(t.toLowerCase())) return null;
                 let r = t.endsWith("/") ? t.length - 1 : t.length,
                     n = e.charAt(r);
                 return n && "/" !== n ? null : e.slice(r) || "/";
             }
-            function $(e, t = "/") {
+            function j(e, t = "/") {
                 var r;
                 let n,
                     {
                         pathname: a,
                         search: o = "",
                         hash: i = "",
-                    } = "string" == typeof e ? v(e) : e;
+                    } = "string" == typeof e ? m(e) : e;
                 return {
                     pathname: a
                         ? a.startsWith("/")
@@ -7118,40 +7125,40 @@
                               }),
                               n.length > 1 ? n.join("/") : "/")
                         : t,
-                    search: H(o),
-                    hash: B(i),
+                    search: M(o),
+                    hash: $(i),
                 };
             }
-            function D(e, t, r, n) {
+            function L(e, t, r, n) {
                 return `Cannot include a '${e}' character in a manually specified \`to.${t}\` field [${JSON.stringify(n)}].  Please separate it out to the \`to.${r}\` field. Alternatively you may provide the full path as a string in <Link to="..."> and the router will parse it for you.`;
             }
-            function I(e) {
+            function A(e) {
                 return e.filter(
                     (e, t) =>
                         0 === t || (e.route.path && e.route.path.length > 0)
                 );
             }
-            function M(e) {
-                let t = I(e);
+            function _(e) {
+                let t = A(e);
                 return t.map((e, r) =>
                     r === t.length - 1 ? e.pathname : e.pathnameBase
                 );
             }
-            function z(e, t, r, n = !1) {
+            function D(e, t, r, n = !1) {
                 let a, o;
                 "string" == typeof e
-                    ? (a = v(e))
-                    : (f(
+                    ? (a = m(e))
+                    : (c(
                           !(a = { ...e }).pathname || !a.pathname.includes("?"),
-                          D("?", "pathname", "search", a)
+                          L("?", "pathname", "search", a)
                       ),
-                      f(
+                      c(
                           !a.pathname || !a.pathname.includes("#"),
-                          D("#", "pathname", "hash", a)
+                          L("#", "pathname", "hash", a)
                       ),
-                      f(
+                      c(
                           !a.search || !a.search.includes("#"),
-                          D("#", "search", "hash", a)
+                          L("#", "search", "hash", a)
                       ));
                 let i = "" === e || "" === a.pathname,
                     s = i ? "/" : a.pathname;
@@ -7165,52 +7172,23 @@
                     }
                     o = e >= 0 ? t[e] : "/";
                 }
-                let l = $(a, o),
+                let l = j(a, o),
                     u = s && "/" !== s && s.endsWith("/"),
-                    c = (i || "." === s) && r.endsWith("/");
+                    d = (i || "." === s) && r.endsWith("/");
                 return (
                     !l.pathname.endsWith("/") &&
-                        (u || c) &&
+                        (u || d) &&
                         (l.pathname += "/"),
                     l
                 );
             }
-            var W = (e) => e.join("/").replace(/\/\/+/g, "/"),
-                U = (e) => e.replace(/\/+$/, "").replace(/^\/*/, "/"),
-                H = (e) =>
+            var O = (e) => e.join("/").replace(/\/\/+/g, "/"),
+                I = (e) => e.replace(/\/+$/, "").replace(/^\/*/, "/"),
+                M = (e) =>
                     e && "?" !== e ? (e.startsWith("?") ? e : "?" + e) : "",
-                B = (e) =>
+                $ = (e) =>
                     e && "#" !== e ? (e.startsWith("#") ? e : "#" + e) : "",
-                F = class {
-                    constructor(e, t) {
-                        ((this.type = "DataWithResponseInit"),
-                            (this.data = e),
-                            (this.init = t || null));
-                    }
-                },
-                q = (e, t = 302) => {
-                    let r = t;
-                    "number" == typeof r
-                        ? (r = { status: r })
-                        : void 0 === r.status && (r.status = 302);
-                    let n = new Headers(r.headers);
-                    return (
-                        n.set("Location", e),
-                        new Response(null, { ...r, headers: n })
-                    );
-                },
-                J = (e, t) => {
-                    let r = q(e, t);
-                    return (
-                        r.headers.set("X-Remix-Reload-Document", "true"),
-                        r
-                    );
-                },
-                Y = (e, t) => {
-                    let r = q(e, t);
-                    return (r.headers.set("X-Remix-Replace", "true"), r);
-                },
-                V = class {
+                z = class {
                     constructor(e, t, r, n = !1) {
                         ((this.status = e),
                             (this.statusText = t || ""),
@@ -7220,7 +7198,7 @@
                                 : (this.data = r));
                     }
                 };
-            function X(e) {
+            function W(e) {
                 return (
                     null != e &&
                     "number" == typeof e.status &&
@@ -7229,12 +7207,12 @@
                     "data" in e
                 );
             }
-            var G = ["POST", "PUT", "PATCH", "DELETE"],
-                K = new Set(G),
-                Q = new Set(["GET", ...G]),
-                Z = new Set([301, 302, 303, 307, 308]),
-                ee = new Set([307, 308]),
-                et = {
+            var U = ["POST", "PUT", "PATCH", "DELETE"],
+                B = new Set(U),
+                F = new Set(["GET", ...U]),
+                H = new Set([301, 302, 303, 307, 308]),
+                q = new Set([307, 308]),
+                Y = {
                     state: "idle",
                     location: void 0,
                     formMethod: void 0,
@@ -7244,7 +7222,7 @@
                     json: void 0,
                     text: void 0,
                 },
-                er = {
+                V = {
                     state: "idle",
                     data: void 0,
                     formMethod: void 0,
@@ -7254,31 +7232,17 @@
                     json: void 0,
                     text: void 0,
                 },
-                en = {
+                J = {
                     state: "unblocked",
                     proceed: void 0,
                     reset: void 0,
                     location: void 0,
                 },
-                ea = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,
-                eo = (e) => ({ hasErrorBoundary: !!e.hasErrorBoundary }),
-                ei = "remix-router-transitions",
-                es = Symbol("ResetLoaderData");
-            function el(e, t, r, n) {
-                let a = n || t._deepestRenderedBoundaryId || e[0].id;
-                return {
-                    ...t,
-                    statusCode: X(r) ? r.status : 500,
-                    errors: { [a]: r },
-                };
-            }
-            function eu(e, t) {
-                if (void 0 !== e.signal.reason) throw e.signal.reason;
-                throw Error(
-                    `${t ? "queryRoute" : "query"}() call aborted without an \`AbortSignal.reason\`: ${e.method} ${e.url}`
-                );
-            }
-            function ec(e, t, r, n, a, o) {
+                G = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,
+                X = (e) => ({ hasErrorBoundary: !!e.hasErrorBoundary }),
+                K = "remix-router-transitions",
+                Q = Symbol("ResetLoaderData");
+            function Z(e, t, r, n, a, o) {
                 let i, s;
                 if (a) {
                     for (let e of ((i = []), t))
@@ -7287,17 +7251,17 @@
                             break;
                         }
                 } else ((i = t), (s = t[t.length - 1]));
-                let l = z(
+                let l = D(
                     n || ".",
-                    M(i),
-                    O(e.pathname, r) || e.pathname,
+                    _(i),
+                    T(e.pathname, r) || e.pathname,
                     "path" === o
                 );
                 if (
                     (null == n && ((l.search = e.search), (l.hash = e.hash)),
                     (null == n || "" === n || "." === n) && s)
                 ) {
-                    let e = e0(l.search);
+                    let e = eO(l.search);
                     if (s.route.index && !e)
                         l.search = l.search
                             ? l.search.replace(/^\?/, "?index&")
@@ -7316,12 +7280,13 @@
                 return (
                     "/" !== r &&
                         (l.pathname =
-                            "/" === l.pathname ? r : W([r, l.pathname])),
-                    g(l)
+                            "/" === l.pathname ? r : O([r, l.pathname])),
+                    f(l)
                 );
             }
-            function ed(e, t, r) {
-                let n, a;
+            function ee(e, t, r) {
+                var n;
+                let a, o;
                 if (
                     !r ||
                     !(
@@ -7331,20 +7296,23 @@
                     )
                 )
                     return { path: t };
-                if (r.formMethod && !eQ(r.formMethod))
+                if (
+                    r.formMethod &&
+                    ((n = r.formMethod), !F.has(n.toUpperCase()))
+                )
                     return {
                         path: t,
-                        error: eH(405, { method: r.formMethod }),
+                        error: eN(405, { method: r.formMethod }),
                     };
-                let o = () => ({
+                let i = () => ({
                         path: t,
-                        error: eH(400, { type: "invalid-body" }),
+                        error: eN(400, { type: "invalid-body" }),
                     }),
-                    i = (r.formMethod || "get").toUpperCase(),
-                    s = eF(t);
+                    s = (r.formMethod || "get").toUpperCase(),
+                    l = eT(t);
                 if (void 0 !== r.body) {
                     if ("text/plain" === r.formEncType) {
-                        if (!eZ(i)) return o();
+                        if (!eD(s)) return i();
                         let e =
                             "string" == typeof r.body
                                 ? r.body
@@ -7359,8 +7327,8 @@
                         return {
                             path: t,
                             submission: {
-                                formMethod: i,
-                                formAction: s,
+                                formMethod: s,
+                                formAction: l,
                                 formEncType: r.formEncType,
                                 formData: void 0,
                                 json: void 0,
@@ -7368,7 +7336,7 @@
                             },
                         };
                     } else if ("application/json" === r.formEncType) {
-                        if (!eZ(i)) return o();
+                        if (!eD(s)) return i();
                         try {
                             let e =
                                 "string" == typeof r.body
@@ -7377,8 +7345,8 @@
                             return {
                                 path: t,
                                 submission: {
-                                    formMethod: i,
-                                    formAction: s,
+                                    formMethod: s,
+                                    formAction: l,
                                     formEncType: r.formEncType,
                                     formData: void 0,
                                     json: e,
@@ -7386,49 +7354,49 @@
                                 },
                             };
                         } catch (e) {
-                            return o();
+                            return i();
                         }
                     }
                 }
                 if (
-                    (f(
+                    (c(
                         "function" == typeof FormData,
                         "FormData is not available in this environment"
                     ),
                     r.formData)
                 )
-                    ((n = eO(r.formData)), (a = r.formData));
+                    ((a = ew(r.formData)), (o = r.formData));
                 else if (r.body instanceof FormData)
-                    ((n = eO(r.body)), (a = r.body));
+                    ((a = ew(r.body)), (o = r.body));
                 else if (r.body instanceof URLSearchParams)
-                    a = e$((n = r.body));
+                    o = eS((a = r.body));
                 else if (null == r.body)
-                    ((n = new URLSearchParams()), (a = new FormData()));
+                    ((a = new URLSearchParams()), (o = new FormData()));
                 else
                     try {
-                        ((n = new URLSearchParams(r.body)), (a = e$(n)));
+                        ((a = new URLSearchParams(r.body)), (o = eS(a)));
                     } catch (e) {
-                        return o();
+                        return i();
                     }
-                let l = {
-                    formMethod: i,
-                    formAction: s,
+                let u = {
+                    formMethod: s,
+                    formAction: l,
                     formEncType:
                         (r && r.formEncType) ||
                         "application/x-www-form-urlencoded",
-                    formData: a,
+                    formData: o,
                     json: void 0,
                     text: void 0,
                 };
-                if (eZ(l.formMethod)) return { path: t, submission: l };
-                let u = v(t);
+                if (eD(u.formMethod)) return { path: t, submission: u };
+                let d = m(t);
                 return (
-                    e && u.search && e0(u.search) && n.append("index", ""),
-                    (u.search = `?${n}`),
-                    { path: g(u), submission: l }
+                    e && d.search && eO(d.search) && a.append("index", ""),
+                    (d.search = `?${a}`),
+                    { path: f(d), submission: u }
                 );
             }
-            function eh(
+            function et(
                 e,
                 t,
                 r,
@@ -7442,8 +7410,8 @@
                 c,
                 d,
                 h,
-                f,
                 p,
+                f,
                 m,
                 y,
                 g,
@@ -7451,29 +7419,29 @@
                 b
             ) {
                 let w,
-                    S = b ? (eJ(b[1]) ? b[1].error : b[1].data) : void 0,
+                    R = b ? (ej(b[1]) ? b[1].error : b[1].data) : void 0,
                     E = a.createURL(o.location),
-                    R = a.createURL(l);
+                    x = a.createURL(l);
                 if (c && o.errors) {
                     let e = Object.keys(o.errors)[0];
                     w = i.findIndex((t) => t.route.id === e);
-                } else if (b && eJ(b[1])) {
+                } else if (b && ej(b[1])) {
                     let e = b[0];
                     w = i.findIndex((t) => t.route.id === e) - 1;
                 }
-                let x = b ? b[1].statusCode : void 0,
-                    k = x && x >= 400,
+                let C = b ? b[1].statusCode : void 0,
+                    k = C && C >= 400,
                     N = {
                         currentUrl: E,
                         currentParams: o.matches[0]?.params || {},
-                        nextUrl: R,
+                        nextUrl: x,
                         nextParams: i[0].params,
                         ...s,
-                        actionResult: S,
-                        actionStatus: x,
+                        actionResult: R,
+                        actionStatus: C,
                     },
-                    j = i.map((a, i) => {
-                        var s, l, h, f, p;
+                    P = i.map((a, i) => {
+                        var s, l, h, p, f;
                         let m,
                             y,
                             g,
@@ -7487,7 +7455,7 @@
                                   : null == v.loader
                                     ? (b = !1)
                                     : c
-                                      ? (b = ef(v, o.loaderData, o.errors))
+                                      ? (b = er(v, o.loaderData, o.errors))
                                       : ((s = o.loaderData),
                                         (l = o.matches[i]),
                                         (h = a),
@@ -7496,38 +7464,38 @@
                                         (m || y) && (b = !0)),
                             null !== b)
                         )
-                            return ek(r, n, e, a, u, t, b);
+                            return ep(r, n, e, a, u, t, b);
                         let S =
                                 !k &&
                                 (d ||
                                     E.pathname + E.search ===
-                                        R.pathname + R.search ||
-                                    E.search !== R.search ||
-                                    ((f = o.matches[i]),
-                                    (p = a),
-                                    (g = f.route.path),
-                                    f.pathname !== p.pathname ||
+                                        x.pathname + x.search ||
+                                    E.search !== x.search ||
+                                    ((p = o.matches[i]),
+                                    (f = a),
+                                    (g = p.route.path),
+                                    p.pathname !== f.pathname ||
                                         (null != g &&
                                             g.endsWith("*") &&
-                                            f.params["*"] !== p.params["*"]))),
-                            x = { ...N, defaultShouldRevalidate: S },
-                            C = ep(a, x);
-                        return ek(r, n, e, a, u, t, C, x);
+                                            p.params["*"] !== f.params["*"]))),
+                            R = { ...N, defaultShouldRevalidate: S },
+                            C = en(a, R);
+                        return ep(r, n, e, a, u, t, C, R);
                     }),
                     T = [];
                 return (
-                    p.forEach((e, s) => {
+                    f.forEach((e, s) => {
                         if (
                             c ||
                             !i.some((t) => t.route.id === e.routeId) ||
-                            f.has(s)
+                            p.has(s)
                         )
                             return;
                         let l = o.fetchers.get(s),
-                            p = l && "idle" !== l.state && void 0 === l.data,
-                            b = C(y, e.path, g);
+                            f = l && "idle" !== l.state && void 0 === l.data,
+                            b = S(y, e.path, g);
                         if (!b) {
-                            if (v && p) return;
+                            if (v && f) return;
                             T.push({
                                 key: s,
                                 routeId: e.routeId,
@@ -7540,32 +7508,32 @@
                             return;
                         }
                         if (m.has(s)) return;
-                        let w = e1(b, e.path),
-                            S = new AbortController(),
-                            E = e_(a, e.path, S.signal),
-                            R = null;
+                        let w = eI(b, e.path),
+                            R = new AbortController(),
+                            E = eb(a, e.path, R.signal),
+                            x = null;
                         if (h.has(s))
-                            (h.delete(s), (R = eN(r, n, E, b, w, u, t)));
-                        else if (p) d && (R = eN(r, n, E, b, w, u, t));
+                            (h.delete(s), (x = ef(r, n, E, b, w, u, t)));
+                        else if (f) d && (x = ef(r, n, E, b, w, u, t));
                         else {
                             let e = { ...N, defaultShouldRevalidate: !k && d };
-                            ep(w, e) && (R = eN(r, n, E, b, w, u, t, e));
+                            en(w, e) && (x = ef(r, n, E, b, w, u, t, e));
                         }
-                        R &&
+                        x &&
                             T.push({
                                 key: s,
                                 routeId: e.routeId,
                                 path: e.path,
-                                matches: R,
+                                matches: x,
                                 match: w,
                                 request: E,
-                                controller: S,
+                                controller: R,
                             });
                     }),
-                    { dsMatches: j, revalidatingFetchers: T }
+                    { dsMatches: P, revalidatingFetchers: T }
                 );
             }
-            function ef(e, t, r) {
+            function er(e, t, r) {
                 if (e.lazy) return !0;
                 if (!e.loader) return !1;
                 let n = null != t && e.id in t,
@@ -7577,25 +7545,25 @@
                         (!n && !a))
                 );
             }
-            function ep(e, t) {
+            function en(e, t) {
                 if (e.route.shouldRevalidate) {
                     let r = e.route.shouldRevalidate(t);
                     if ("boolean" == typeof r) return r;
                 }
                 return t.defaultShouldRevalidate;
             }
-            function em(e, t, r, n, a) {
+            function ea(e, t, r, n, a) {
                 let o;
                 if (e) {
                     let t = n[e];
-                    (f(
+                    (c(
                         t,
                         `No route found to patch children into: routeId = ${e}`
                     ),
                         t.children || (t.children = []),
                         (o = t.children));
                 } else o = r;
-                let i = x(
+                let i = w(
                     t.filter(
                         (e) =>
                             !o.some((t) =>
@@ -7627,8 +7595,8 @@
                 );
                 o.push(...i);
             }
-            var ey = new WeakMap(),
-                eg = ({
+            var eo = new WeakMap(),
+                ei = ({
                     key: e,
                     route: t,
                     manifest: r,
@@ -7636,21 +7604,21 @@
                 }) => {
                     let a = r[t.id];
                     if (
-                        (f(a, "No route found in manifest"),
+                        (c(a, "No route found in manifest"),
                         !a.lazy || "object" != typeof a.lazy)
                     )
                         return;
                     let o = a.lazy[e];
                     if (!o) return;
-                    let i = ey.get(a);
-                    i || ((i = {}), ey.set(a, i));
+                    let i = eo.get(a);
+                    i || ((i = {}), eo.set(a, i));
                     let s = i[e];
                     if (s) return s;
                     let l = (async () => {
-                        let t = E.has(e),
+                        let t = v.has(e),
                             r = void 0 !== a[e] && "hasErrorBoundary" !== e;
                         if (t)
-                            (p(
+                            (d(
                                 !t,
                                 "Route property " +
                                     e +
@@ -7658,7 +7626,7 @@
                             ),
                                 (i[e] = Promise.resolve()));
                         else if (r)
-                            p(
+                            d(
                                 !1,
                                 `Route "${a.id}" has a static property "${e}" defined. The lazy property will be ignored.`
                             );
@@ -7675,28 +7643,8 @@
                     })();
                     return ((i[e] = l), l);
                 },
-                ev = new WeakMap();
-            function eb(e) {
-                return void 0 !== e;
-            }
-            function ew(e, t, r) {
-                let n = e
-                    .map(({ route: e }) => {
-                        if (
-                            "object" == typeof e.lazy &&
-                            e.lazy.unstable_middleware
-                        )
-                            return eg({
-                                key: "unstable_middleware",
-                                route: e,
-                                manifest: t,
-                                mapRouteProperties: r,
-                            });
-                    })
-                    .filter(eb);
-                return n.length > 0 ? Promise.all(n) : void 0;
-            }
-            async function eS(e) {
+                es = new WeakMap();
+            async function el(e) {
                 let t = e.matches.filter((e) => e.shouldLoad),
                     r = {};
                 return (
@@ -7708,17 +7656,17 @@
                     r
                 );
             }
-            async function eE(e) {
+            async function eu(e) {
                 return e.matches.some((e) => e.route.unstable_middleware)
-                    ? eR(
+                    ? ec(
                           e,
                           !1,
-                          () => eS(e),
+                          () => el(e),
                           (e, t) => ({ [t]: { type: "error", result: e } })
                       )
-                    : eS(e);
+                    : el(e);
             }
-            async function eR(e, t, r, n) {
+            async function ec(e, t, r, n) {
                 let { matches: a, request: o, params: i, context: s } = e,
                     l = { handlerResult: void 0 };
                 try {
@@ -7730,7 +7678,7 @@
                                   ])
                                 : []
                         ),
-                        n = await ex(
+                        n = await ed(
                             { request: o, params: i, context: s },
                             e,
                             t,
@@ -7748,7 +7696,7 @@
                     return Object.assign(l.handlerResult, e);
                 }
             }
-            async function ex(e, t, r, n, a, o = 0) {
+            async function ed(e, t, r, n, a, o = 0) {
                 let i,
                     { request: s } = e;
                 if (s.signal.aborted) {
@@ -7767,7 +7715,7 @@
                                 "You may only call `next()` once per middleware"
                             );
                         d = !0;
-                        let s = await ex(e, t, r, n, a, o + 1);
+                        let s = await ed(e, t, r, n, a, o + 1);
                         if (r) return (i = s);
                     };
                 try {
@@ -7792,8 +7740,8 @@
                     );
                 }
             }
-            function eC(e, t, r, n, a) {
-                let o = eg({
+            function eh(e, t, r, n, a) {
+                let o = ei({
                         key: "unstable_middleware",
                         route: n.route,
                         manifest: t,
@@ -7802,20 +7750,20 @@
                     i = (function (e, t, r, n, a) {
                         let o,
                             i = r[e.id];
-                        if ((f(i, "No route found in manifest"), !e.lazy))
+                        if ((c(i, "No route found in manifest"), !e.lazy))
                             return {
                                 lazyRoutePromise: void 0,
                                 lazyHandlerPromise: void 0,
                             };
                         if ("function" == typeof e.lazy) {
-                            let t = ev.get(i);
+                            let t = es.get(i);
                             if (t)
                                 return {
                                     lazyRoutePromise: t,
                                     lazyHandlerPromise: t,
                                 };
                             let r = (async () => {
-                                f(
+                                c(
                                     "function" == typeof e.lazy,
                                     "No lazy route function found"
                                 );
@@ -7824,19 +7772,19 @@
                                 for (let e in t) {
                                     let n = t[e];
                                     if (void 0 === n) continue;
-                                    let a = R.has(e),
+                                    let a = b.has(e),
                                         o =
                                             void 0 !== i[e] &&
                                             "hasErrorBoundary" !== e;
                                     a
-                                        ? p(
+                                        ? d(
                                               !a,
                                               "Route property " +
                                                   e +
                                                   " is not a supported property to be returned from a lazy route function. This property will be ignored."
                                           )
                                         : o
-                                          ? p(
+                                          ? d(
                                                 !o,
                                                 `Route "${i.id}" has a static property "${e}" defined but its lazy function is also returning a value for this property. The lazy route property "${e}" will be ignored.`
                                             )
@@ -7849,7 +7797,7 @@
                                     }));
                             })();
                             return (
-                                ev.set(i, r),
+                                es.set(i, r),
                                 r.catch(() => {}),
                                 { lazyRoutePromise: r, lazyHandlerPromise: r }
                             );
@@ -7858,7 +7806,7 @@
                             l = [];
                         for (let i of s) {
                             if (a && a.includes(i)) continue;
-                            let s = eg({
+                            let s = ei({
                                 key: i,
                                 route: e,
                                 manifest: r,
@@ -7875,16 +7823,16 @@
                             o?.catch(() => {}),
                             { lazyRoutePromise: u, lazyHandlerPromise: o }
                         );
-                    })(n.route, eZ(r.method) ? "action" : "loader", t, e, a);
+                    })(n.route, eD(r.method) ? "action" : "loader", t, e, a);
                 return {
                     middleware: o,
                     route: i.lazyRoutePromise,
                     handler: i.lazyHandlerPromise,
                 };
             }
-            function ek(e, t, r, n, a, o, i, s = null) {
+            function ep(e, t, r, n, a, o, i, s = null) {
                 let l = !1,
-                    u = eC(e, t, r, n, a);
+                    u = eh(e, t, r, n, a);
                 return {
                     ...n,
                     _lazyPromises: u,
@@ -7893,8 +7841,8 @@
                     unstable_shouldCallHandler: (e) =>
                         ((l = !0), s)
                             ? "boolean" == typeof e
-                                ? ep(n, { ...s, defaultShouldRevalidate: e })
-                                : ep(n, s)
+                                ? en(n, { ...s, defaultShouldRevalidate: e })
+                                : en(n, s)
                             : i,
                     resolve: (e) =>
                         l ||
@@ -7902,7 +7850,7 @@
                         (e &&
                             "GET" === r.method &&
                             (n.route.lazy || n.route.loader))
-                            ? eT({
+                            ? ey({
                                   request: r,
                                   match: n,
                                   lazyHandlerPromise: u?.handler,
@@ -7913,7 +7861,7 @@
                             : Promise.resolve({ type: "data", result: void 0 }),
                 };
             }
-            function eN(e, t, r, n, a, o, i, s = null) {
+            function ef(e, t, r, n, a, o, i, s = null) {
                 return n.map((n) =>
                     n.route.id !== a.route.id
                         ? {
@@ -7921,17 +7869,17 @@
                               shouldLoad: !1,
                               unstable_shouldRevalidateArgs: s,
                               unstable_shouldCallHandler: () => !1,
-                              _lazyPromises: eC(e, t, r, n, o),
+                              _lazyPromises: eh(e, t, r, n, o),
                               resolve: () =>
                                   Promise.resolve({
                                       type: "data",
                                       result: void 0,
                                   }),
                           }
-                        : ek(e, t, r, n, o, i, !0, s)
+                        : ep(e, t, r, n, o, i, !0, s)
                 );
             }
-            async function ej(e, t, r, n, a, o) {
+            async function em(e, t, r, n, a, o) {
                 r.some((e) => e._lazyPromises?.middleware) &&
                     (await Promise.all(
                         r.map((e) => e._lazyPromises?.middleware)
@@ -7949,7 +7897,7 @@
                               );
                           }
                         : (e) =>
-                              eR(
+                              ec(
                                   i,
                                   !1,
                                   () =>
@@ -7981,7 +7929,7 @@
                 } catch (e) {}
                 return l;
             }
-            async function eT({
+            async function ey({
                 request: e,
                 match: t,
                 lazyHandlerPromise: r,
@@ -7991,7 +7939,7 @@
             }) {
                 let i,
                     s,
-                    l = eZ(e.method),
+                    l = eD(e.method),
                     u = l ? "action" : "loader",
                     c = (r) => {
                         let n,
@@ -8048,7 +7996,7 @@
                                     return { type: "data", result: void 0 };
                                 let r = new URL(e.url),
                                     n = r.pathname + r.search;
-                                throw eH(405, {
+                                throw eN(405, {
                                     method: e.method,
                                     pathname: n,
                                     routeId: t.route.id,
@@ -8059,7 +8007,7 @@
                     else {
                         let t = new URL(e.url),
                             r = t.pathname + t.search;
-                        throw eH(404, { pathname: r });
+                        throw eN(404, { pathname: r });
                     }
                 } catch (e) {
                     return { type: "error", result: e };
@@ -8068,9 +8016,9 @@
                 }
                 return i;
             }
-            async function eP(e) {
+            async function eg(e) {
                 let { result: t, type: r } = e;
-                if (eX(t)) {
+                if (e_(t)) {
                     let e;
                     try {
                         let r = t.headers.get("Content-Type");
@@ -8086,7 +8034,7 @@
                     return "error" === r
                         ? {
                               type: "error",
-                              error: new V(t.status, t.statusText, e),
+                              error: new z(t.status, t.statusText, e),
                               statusCode: t.status,
                               headers: t.headers,
                           }
@@ -8098,7 +8046,7 @@
                           };
                 }
                 if ("error" === r)
-                    return eV(t)
+                    return eA(t)
                         ? t.data instanceof Error
                             ? {
                                   type: "error",
@@ -8110,12 +8058,12 @@
                               }
                             : {
                                   type: "error",
-                                  error: new V(
+                                  error: new z(
                                       t.init?.status || 500,
                                       void 0,
                                       t.data
                                   ),
-                                  statusCode: X(t) ? t.status : void 0,
+                                  statusCode: W(t) ? t.status : void 0,
                                   headers: t.init?.headers
                                       ? new Headers(t.init.headers)
                                       : void 0,
@@ -8123,9 +8071,9 @@
                         : {
                               type: "error",
                               error: t,
-                              statusCode: X(t) ? t.status : void 0,
+                              statusCode: W(t) ? t.status : void 0,
                           };
-                return eV(t)
+                return eA(t)
                     ? {
                           type: "data",
                           data: t.data,
@@ -8136,37 +8084,19 @@
                       }
                     : { type: "data", data: t };
             }
-            function eA(e, t, r, n, a) {
-                let o = e.headers.get("Location");
-                if (
-                    (f(
-                        o,
-                        "Redirects returned/thrown from loaders/actions must have a Location header"
-                    ),
-                    !ea.test(o))
-                ) {
-                    let i = n.slice(
-                        0,
-                        n.findIndex((e) => e.route.id === r) + 1
-                    );
-                    ((o = ec(new URL(t.url), i, a, o)),
-                        e.headers.set("Location", o));
-                }
-                return e;
-            }
-            function eL(e, t, r) {
-                if (ea.test(e)) {
+            function ev(e, t, r) {
+                if (G.test(e)) {
                     let n = new URL(e.startsWith("//") ? t.protocol + e : e),
-                        a = null != O(n.pathname, r);
+                        a = null != T(n.pathname, r);
                     if (n.origin === t.origin && a)
                         return n.pathname + n.search + n.hash;
                 }
                 return e;
             }
-            function e_(e, t, r, n) {
-                let a = e.createURL(eF(t)).toString(),
+            function eb(e, t, r, n) {
+                let a = e.createURL(eT(t)).toString(),
                     o = { signal: r };
-                if (n && eZ(n.formMethod)) {
+                if (n && eD(n.formMethod)) {
                     let { formMethod: e, formEncType: t } = n;
                     ((o.method = e.toUpperCase()),
                         "application/json" === t
@@ -8176,78 +8106,86 @@
                               ? (o.body = n.text)
                               : "application/x-www-form-urlencoded" === t &&
                                   n.formData
-                                ? (o.body = eO(n.formData))
+                                ? (o.body = ew(n.formData))
                                 : (o.body = n.formData));
                 }
                 return new Request(a, o);
             }
-            function eO(e) {
+            function ew(e) {
                 let t = new URLSearchParams();
                 for (let [r, n] of e.entries())
                     t.append(r, "string" == typeof n ? n : n.name);
                 return t;
             }
-            function e$(e) {
+            function eS(e) {
                 let t = new FormData();
                 for (let [r, n] of e.entries()) t.append(r, n);
                 return t;
             }
-            function eD(e, t, r, n = !1, a = !1) {
-                let o,
-                    i = {},
-                    s = null,
-                    l = !1,
-                    u = {},
-                    c = r && eJ(r[1]) ? r[1].error : void 0;
-                return (
-                    e.forEach((r) => {
-                        if (!(r.route.id in t)) return;
-                        let d = r.route.id,
-                            h = t[d];
-                        if (
-                            (f(
-                                !eY(h),
-                                "Cannot handle redirect results in processLoaderData"
-                            ),
-                            eJ(h))
-                        ) {
-                            let t = h.error;
+            function eR(e, t, r, n, a, o) {
+                let { loaderData: i, errors: s } = (function (
+                    e,
+                    t,
+                    r,
+                    n = !1,
+                    a = !1
+                ) {
+                    let o,
+                        i = {},
+                        s = null,
+                        l = !1,
+                        u = {},
+                        d = r && ej(r[1]) ? r[1].error : void 0;
+                    return (
+                        e.forEach((r) => {
+                            if (!(r.route.id in t)) return;
+                            let h = r.route.id,
+                                p = t[h];
                             if (
-                                (void 0 !== c && ((t = c), (c = void 0)),
-                                (s = s || {}),
-                                a)
-                            )
-                                s[d] = t;
-                            else {
-                                let r = eW(e, d);
-                                null == s[r.route.id] && (s[r.route.id] = t);
-                            }
-                            (n || (i[d] = es),
-                                l ||
-                                    ((l = !0),
-                                    (o = X(h.error) ? h.error.status : 500)),
-                                h.headers && (u[d] = h.headers));
-                        } else
-                            ((i[d] = h.data),
-                                h.statusCode &&
-                                    200 !== h.statusCode &&
-                                    !l &&
-                                    (o = h.statusCode),
-                                h.headers && (u[d] = h.headers));
-                    }),
-                    void 0 !== c &&
-                        r &&
-                        ((s = { [r[0]]: c }), r[2] && (i[r[2]] = void 0)),
-                    {
-                        loaderData: i,
-                        errors: s,
-                        statusCode: o || 200,
-                        loaderHeaders: u,
-                    }
-                );
-            }
-            function eI(e, t, r, n, a, o) {
-                let { loaderData: i, errors: s } = eD(t, r, n);
+                                (c(
+                                    !eL(p),
+                                    "Cannot handle redirect results in processLoaderData"
+                                ),
+                                ej(p))
+                            ) {
+                                let t = p.error;
+                                if (
+                                    (void 0 !== d && ((t = d), (d = void 0)),
+                                    (s = s || {}),
+                                    a)
+                                )
+                                    s[h] = t;
+                                else {
+                                    let r = eC(e, h);
+                                    null == s[r.route.id] &&
+                                        (s[r.route.id] = t);
+                                }
+                                (n || (i[h] = Q),
+                                    l ||
+                                        ((l = !0),
+                                        (o = W(p.error)
+                                            ? p.error.status
+                                            : 500)),
+                                    p.headers && (u[h] = p.headers));
+                            } else
+                                ((i[h] = p.data),
+                                    p.statusCode &&
+                                        200 !== p.statusCode &&
+                                        !l &&
+                                        (o = p.statusCode),
+                                    p.headers && (u[h] = p.headers));
+                        }),
+                        void 0 !== d &&
+                            r &&
+                            ((s = { [r[0]]: d }), r[2] && (i[r[2]] = void 0)),
+                        {
+                            loaderData: i,
+                            errors: s,
+                            statusCode: o || 200,
+                            loaderHeaders: u,
+                        }
+                    );
+                })(t, r, n);
                 return (
                     a
                         .filter(
@@ -8259,33 +8197,33 @@
                             let { key: r, match: n, controller: a } = t,
                                 i = o[r];
                             if (
-                                (f(
+                                (c(
                                     i,
                                     "Did not find corresponding fetcher result"
                                 ),
                                 !a || !a.signal.aborted)
                             )
-                                if (eJ(i)) {
-                                    let t = eW(e.matches, n?.route.id);
+                                if (ej(i)) {
+                                    let t = eC(e.matches, n?.route.id);
                                     ((s && s[t.route.id]) ||
                                         (s = { ...s, [t.route.id]: i.error }),
                                         e.fetchers.delete(r));
-                                } else if (eY(i))
-                                    f(
+                                } else if (eL(i))
+                                    c(
                                         !1,
                                         "Unhandled fetcher revalidation redirect"
                                     );
                                 else {
-                                    let t = e5(i.data);
+                                    let t = eW(i.data);
                                     e.fetchers.set(r, t);
                                 }
                         }),
                     { loaderData: i, errors: s }
                 );
             }
-            function eM(e, t, r, n) {
+            function eE(e, t, r, n) {
                 let a = Object.entries(t)
-                    .filter(([, e]) => e !== es)
+                    .filter(([, e]) => e !== Q)
                     .reduce((e, [t, r]) => ((e[t] = r), e), {});
                 for (let o of r) {
                     let r = o.route.id;
@@ -8300,14 +8238,14 @@
                 }
                 return a;
             }
-            function ez(e) {
+            function ex(e) {
                 return e
-                    ? eJ(e[1])
+                    ? ej(e[1])
                         ? { actionData: {} }
                         : { actionData: { [e[0]]: e[1].data } }
                     : {};
             }
-            function eW(e, t) {
+            function eC(e, t) {
                 return (
                     (t
                         ? e.slice(0, e.findIndex((e) => e.route.id === t) + 1)
@@ -8317,7 +8255,7 @@
                         .find((e) => !0 === e.route.hasErrorBoundary) || e[0]
                 );
             }
-            function eU(e) {
+            function ek(e) {
                 let t =
                     1 === e.length
                         ? e[0]
@@ -8336,7 +8274,7 @@
                     route: t,
                 };
             }
-            function eH(
+            function eN(
                 e,
                 { pathname: t, routeId: r, method: n, type: a, message: o } = {}
             ) {
@@ -8361,29 +8299,26 @@
                                   ? (s = `You made a ${n.toUpperCase()} request to "${t}" but did not provide an \`action\` for route "${r}", so there is no way to handle the request.`)
                                   : n &&
                                     (s = `Invalid request method "${n.toUpperCase()}"`)),
-                    new V(e || 500, i, Error(s), !0)
+                    new z(e || 500, i, Error(s), !0)
                 );
             }
-            function eB(e) {
+            function eP(e) {
                 let t = Object.entries(e);
                 for (let e = t.length - 1; e >= 0; e--) {
                     let [r, n] = t[e];
-                    if (eY(n)) return { key: r, result: n };
+                    if (eL(n)) return { key: r, result: n };
                 }
             }
-            function eF(e) {
-                return g({ ...("string" == typeof e ? v(e) : e), hash: "" });
+            function eT(e) {
+                return f({ ...("string" == typeof e ? m(e) : e), hash: "" });
             }
-            function eq(e) {
-                return eX(e.result) && Z.has(e.result.status);
-            }
-            function eJ(e) {
+            function ej(e) {
                 return "error" === e.type;
             }
-            function eY(e) {
+            function eL(e) {
                 return "redirect" === (e && e.type);
             }
-            function eV(e) {
+            function eA(e) {
                 return (
                     "object" == typeof e &&
                     null != e &&
@@ -8393,7 +8328,7 @@
                     "DataWithResponseInit" === e.type
                 );
             }
-            function eX(e) {
+            function e_(e) {
                 return (
                     null != e &&
                     "number" == typeof e.status &&
@@ -8402,31 +8337,22 @@
                     void 0 !== e.body
                 );
             }
-            function eG(e) {
-                return Z.has(e);
+            function eD(e) {
+                return B.has(e.toUpperCase());
             }
-            function eK(e) {
-                return eX(e) && eG(e.status) && e.headers.has("Location");
-            }
-            function eQ(e) {
-                return Q.has(e.toUpperCase());
-            }
-            function eZ(e) {
-                return K.has(e.toUpperCase());
-            }
-            function e0(e) {
+            function eO(e) {
                 return new URLSearchParams(e)
                     .getAll("index")
                     .some((e) => "" === e);
             }
-            function e1(e, t) {
-                let r = "string" == typeof t ? v(t).search : t.search;
-                if (e[e.length - 1].route.index && e0(r || ""))
+            function eI(e, t) {
+                let r = "string" == typeof t ? m(t).search : t.search;
+                if (e[e.length - 1].route.index && eO(r || ""))
                     return e[e.length - 1];
-                let n = I(e);
+                let n = A(e);
                 return n[n.length - 1];
             }
-            function e2(e) {
+            function eM(e) {
                 let {
                     formMethod: t,
                     formAction: r,
@@ -8465,7 +8391,7 @@
                         };
                 }
             }
-            function e4(e, t) {
+            function e$(e, t) {
                 return t
                     ? {
                           state: "loading",
@@ -8488,7 +8414,7 @@
                           text: void 0,
                       };
             }
-            function e3(e, t) {
+            function ez(e, t) {
                 return e
                     ? {
                           state: "loading",
@@ -8511,7 +8437,7 @@
                           data: t,
                       };
             }
-            function e5(e) {
+            function eW(e) {
                 return {
                     state: "idle",
                     formMethod: void 0,
@@ -8523,70 +8449,69 @@
                     data: e,
                 };
             }
-            var e8 = o.createContext(null);
-            e8.displayName = "DataRouter";
-            var e6 = o.createContext(null);
-            e6.displayName = "DataRouterState";
-            var e7 = o.createContext({ isTransitioning: !1 });
-            e7.displayName = "ViewTransition";
-            var e9 = o.createContext(new Map());
-            e9.displayName = "Fetchers";
-            var te = o.createContext(null);
-            te.displayName = "Await";
-            var tt = o.createContext(null);
-            tt.displayName = "Navigation";
-            var tr = o.createContext(null);
-            tr.displayName = "Location";
-            var tn = o.createContext({
+            var eU = a.createContext(null);
+            eU.displayName = "DataRouter";
+            var eB = a.createContext(null);
+            eB.displayName = "DataRouterState";
+            var eF = a.createContext({ isTransitioning: !1 });
+            eF.displayName = "ViewTransition";
+            var eH = a.createContext(new Map());
+            ((eH.displayName = "Fetchers"),
+                (a.createContext(null).displayName = "Await"));
+            var eq = a.createContext(null);
+            eq.displayName = "Navigation";
+            var eY = a.createContext(null);
+            eY.displayName = "Location";
+            var eV = a.createContext({
                 outlet: null,
                 matches: [],
                 isDataRoute: !1,
             });
-            tn.displayName = "Route";
-            var ta = o.createContext(null);
-            function to() {
-                return null != o.useContext(tr);
+            eV.displayName = "Route";
+            var eJ = a.createContext(null);
+            function eG() {
+                return null != a.useContext(eY);
             }
-            function ti() {
+            function eX() {
                 return (
-                    f(
-                        to(),
+                    c(
+                        eG(),
                         "useLocation() may be used only in the context of a <Router> component."
                     ),
-                    o.useContext(tr).location
+                    a.useContext(eY).location
                 );
             }
-            function ts() {
-                return o.useContext(tr).navigationType;
+            function eK() {
+                return a.useContext(eY).navigationType;
             }
-            function tl(e) {
-                f(
-                    to(),
+            function eQ(e) {
+                c(
+                    eG(),
                     "useMatch() may be used only in the context of a <Router> component."
                 );
-                let { pathname: t } = ti();
-                return o.useMemo(() => A(e, _(t)), [t, e]);
+                let { pathname: t } = eX();
+                return a.useMemo(() => N(e, P(t)), [t, e]);
             }
-            ta.displayName = "RouteError";
-            var tu =
+            eJ.displayName = "RouteError";
+            var eZ =
                 "You should call navigate() in a React.useEffect(), not when your component is first rendered.";
-            function tc(e) {
-                o.useContext(tt).static || o.useLayoutEffect(e);
+            function e0(e) {
+                a.useContext(eq).static || a.useLayoutEffect(e);
             }
-            function td() {
-                let { isDataRoute: e } = o.useContext(tn);
+            function e1() {
+                let { isDataRoute: e } = a.useContext(eV);
                 return e
                     ? (function () {
-                          let { router: e } = tS("useNavigate"),
-                              t = tR("useNavigate"),
-                              r = o.useRef(!1);
+                          let { router: e } = tt("useNavigate"),
+                              t = tn("useNavigate"),
+                              r = a.useRef(!1);
                           return (
-                              tc(() => {
+                              e0(() => {
                                   r.current = !0;
                               }),
-                              o.useCallback(
+                              a.useCallback(
                                   async (n, a = {}) => {
-                                      (p(r.current, tu),
+                                      (d(r.current, eZ),
                                           r.current &&
                                               ("number" == typeof n
                                                   ? e.navigate(n)
@@ -8600,122 +8525,122 @@
                           );
                       })()
                     : (function () {
-                          f(
-                              to(),
+                          c(
+                              eG(),
                               "useNavigate() may be used only in the context of a <Router> component."
                           );
-                          let e = o.useContext(e8),
-                              { basename: t, navigator: r } = o.useContext(tt),
-                              { matches: n } = o.useContext(tn),
-                              { pathname: a } = ti(),
-                              i = JSON.stringify(M(n)),
-                              s = o.useRef(!1);
+                          let e = a.useContext(eU),
+                              { basename: t, navigator: r } = a.useContext(eq),
+                              { matches: n } = a.useContext(eV),
+                              { pathname: o } = eX(),
+                              i = JSON.stringify(_(n)),
+                              s = a.useRef(!1);
                           return (
-                              tc(() => {
+                              e0(() => {
                                   s.current = !0;
                               }),
-                              o.useCallback(
-                                  (n, o = {}) => {
-                                      if ((p(s.current, tu), !s.current))
+                              a.useCallback(
+                                  (n, a = {}) => {
+                                      if ((d(s.current, eZ), !s.current))
                                           return;
                                       if ("number" == typeof n)
                                           return void r.go(n);
-                                      let l = z(
+                                      let l = D(
                                           n,
                                           JSON.parse(i),
-                                          a,
-                                          "path" === o.relative
+                                          o,
+                                          "path" === a.relative
                                       );
                                       (null == e &&
                                           "/" !== t &&
                                           (l.pathname =
                                               "/" === l.pathname
                                                   ? t
-                                                  : W([t, l.pathname])),
-                                          (o.replace ? r.replace : r.push)(
+                                                  : O([t, l.pathname])),
+                                          (a.replace ? r.replace : r.push)(
                                               l,
-                                              o.state,
-                                              o
+                                              a.state,
+                                              a
                                           ));
                                   },
-                                  [t, r, i, a, e]
+                                  [t, r, i, o, e]
                               )
                           );
                       })();
             }
-            var th = o.createContext(null);
-            function tf() {
-                let { matches: e } = o.useContext(tn),
+            var e2 = a.createContext(null);
+            function e4() {
+                let { matches: e } = a.useContext(eV),
                     t = e[e.length - 1];
                 return t ? t.params : {};
             }
-            function tp(e, { relative: t } = {}) {
-                let { matches: r } = o.useContext(tn),
-                    { pathname: n } = ti(),
-                    a = JSON.stringify(M(r));
-                return o.useMemo(
-                    () => z(e, JSON.parse(a), n, "path" === t),
-                    [e, a, n, t]
+            function e3(e, { relative: t } = {}) {
+                let { matches: r } = a.useContext(eV),
+                    { pathname: n } = eX(),
+                    o = JSON.stringify(_(r));
+                return a.useMemo(
+                    () => D(e, JSON.parse(o), n, "path" === t),
+                    [e, o, n, t]
                 );
             }
-            function tm(e, t) {
-                return ty(e, t);
+            function e5(e, t) {
+                return e8(e, t);
             }
-            function ty(e, t, r, n) {
-                let a;
-                f(
-                    to(),
+            function e8(e, t, r, n) {
+                let o;
+                c(
+                    eG(),
                     "useRoutes() may be used only in the context of a <Router> component."
                 );
-                let { navigator: i } = o.useContext(tt),
-                    { matches: s } = o.useContext(tn),
+                let { navigator: i } = a.useContext(eq),
+                    { matches: s } = a.useContext(eV),
                     l = s[s.length - 1],
                     u = l ? l.params : {},
-                    c = l ? l.pathname : "/",
-                    d = l ? l.pathnameBase : "/",
-                    h = l && l.route;
+                    h = l ? l.pathname : "/",
+                    p = l ? l.pathnameBase : "/",
+                    f = l && l.route;
                 {
-                    let e = (h && h.path) || "";
-                    tL(
-                        c,
-                        !h || e.endsWith("*") || e.endsWith("*?"),
-                        `You rendered descendant <Routes> (or called \`useRoutes()\`) at "${c}" (under <Route path="${e}">) but the parent route path has no trailing "*". This means if you navigate deeper, the parent won't match anymore and therefore the child routes will never render.
+                    let e = (f && f.path) || "";
+                    th(
+                        h,
+                        !f || e.endsWith("*") || e.endsWith("*?"),
+                        `You rendered descendant <Routes> (or called \`useRoutes()\`) at "${h}" (under <Route path="${e}">) but the parent route path has no trailing "*". This means if you navigate deeper, the parent won't match anymore and therefore the child routes will never render.
 
 Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" : `${e}/*`}">.`
                     );
                 }
-                let m = ti();
+                let y = eX();
                 if (t) {
-                    let e = "string" == typeof t ? v(t) : t;
-                    (f(
-                        "/" === d || e.pathname?.startsWith(d),
-                        `When overriding the location using \`<Routes location>\` or \`useRoutes(routes, location)\`, the location pathname must begin with the portion of the URL pathname that was matched by all parent routes. The current pathname base is "${d}" but pathname "${e.pathname}" was given in the \`location\` prop.`
+                    let e = "string" == typeof t ? m(t) : t;
+                    (c(
+                        "/" === p || e.pathname?.startsWith(p),
+                        `When overriding the location using \`<Routes location>\` or \`useRoutes(routes, location)\`, the location pathname must begin with the portion of the URL pathname that was matched by all parent routes. The current pathname base is "${p}" but pathname "${e.pathname}" was given in the \`location\` prop.`
                     ),
-                        (a = e));
-                } else a = m;
-                let y = a.pathname || "/",
-                    g = y;
-                if ("/" !== d) {
-                    let e = d.replace(/^\//, "").split("/");
-                    g =
+                        (o = e));
+                } else o = y;
+                let g = o.pathname || "/",
+                    v = g;
+                if ("/" !== p) {
+                    let e = p.replace(/^\//, "").split("/");
+                    v =
                         "/" +
-                        y
+                        g
                             .replace(/^\//, "")
                             .split("/")
                             .slice(e.length)
                             .join("/");
                 }
-                let b = C(e, { pathname: g });
-                (p(
-                    h || null != b,
-                    `No routes matched location "${a.pathname}${a.search}${a.hash}" `
+                let b = S(e, { pathname: v });
+                (d(
+                    f || null != b,
+                    `No routes matched location "${o.pathname}${o.search}${o.hash}" `
                 ),
-                    p(
+                    d(
                         null == b ||
                             void 0 !== b[b.length - 1].route.element ||
                             void 0 !== b[b.length - 1].route.Component ||
                             void 0 !== b[b.length - 1].route.lazy,
-                        `Matched leaf route at location "${a.pathname}${a.search}${a.hash}" does not have an element or Component. This means it will render an <Outlet /> with a null value by default resulting in an "empty" page.`
+                        `Matched leaf route at location "${o.pathname}${o.search}${o.hash}" does not have an element or Component. This means it will render an <Outlet /> with a null value by default resulting in an "empty" page.`
                     ));
                 let w = (function (e, t = [], r = null, n = null) {
                     if (null == e) {
@@ -8731,23 +8656,23 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                             e = r.matches;
                         }
                     }
-                    let a = e,
+                    let o = e,
                         i = r?.errors;
                     if (null != i) {
-                        let e = a.findIndex(
+                        let e = o.findIndex(
                             (e) => e.route.id && i?.[e.route.id] !== void 0
                         );
-                        (f(
+                        (c(
                             e >= 0,
                             `Could not find a matching route for errors on route IDs: ${Object.keys(i).join(",")}`
                         ),
-                            (a = a.slice(0, Math.min(a.length, e + 1))));
+                            (o = o.slice(0, Math.min(o.length, e + 1))));
                     }
                     let s = !1,
                         l = -1;
                     if (r)
-                        for (let e = 0; e < a.length; e++) {
-                            let t = a[e];
+                        for (let e = 0; e < o.length; e++) {
+                            let t = o[e];
                             if (
                                 ((t.route.HydrateFallback ||
                                     t.route.hydrateFallbackElement) &&
@@ -8755,63 +8680,63 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                                 t.route.id)
                             ) {
                                 let { loaderData: e, errors: n } = r,
-                                    o =
+                                    a =
                                         t.route.loader &&
                                         !e.hasOwnProperty(t.route.id) &&
                                         (!n || void 0 === n[t.route.id]);
-                                if (t.route.lazy || o) {
+                                if (t.route.lazy || a) {
                                     ((s = !0),
-                                        (a =
+                                        (o =
                                             l >= 0
-                                                ? a.slice(0, l + 1)
-                                                : [a[0]]));
+                                                ? o.slice(0, l + 1)
+                                                : [o[0]]));
                                     break;
                                 }
                             }
                         }
-                    return a.reduceRight((e, n, u) => {
+                    return o.reduceRight((e, n, u) => {
                         let c,
                             d = !1,
                             h = null,
-                            f = null;
+                            p = null;
                         r &&
                             ((c = i && n.route.id ? i[n.route.id] : void 0),
-                            (h = n.route.errorElement || tg),
+                            (h = n.route.errorElement || e7),
                             s &&
                                 (l < 0 && 0 === u
-                                    ? (tL(
+                                    ? (th(
                                           "route-fallback",
                                           !1,
                                           "No `HydrateFallback` element provided to render during initial hydration"
                                       ),
                                       (d = !0),
-                                      (f = null))
+                                      (p = null))
                                     : l === u &&
                                       ((d = !0),
-                                      (f =
+                                      (p =
                                           n.route.hydrateFallbackElement ||
                                           null))));
-                        let p = t.concat(a.slice(0, u + 1)),
+                        let f = t.concat(o.slice(0, u + 1)),
                             m = () => {
                                 let t;
                                 return (
                                     (t = c
                                         ? h
                                         : d
-                                          ? f
+                                          ? p
                                           : n.route.Component
-                                            ? o.createElement(
+                                            ? a.createElement(
                                                   n.route.Component,
                                                   null
                                               )
                                             : n.route.element
                                               ? n.route.element
                                               : e),
-                                    o.createElement(tb, {
+                                    a.createElement(e9, {
                                         match: n,
                                         routeContext: {
                                             outlet: e,
-                                            matches: p,
+                                            matches: f,
                                             isDataRoute: null != r,
                                         },
                                         children: t,
@@ -8822,7 +8747,7 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                             (n.route.ErrorBoundary ||
                                 n.route.errorElement ||
                                 0 === u)
-                            ? o.createElement(tv, {
+                            ? a.createElement(e6, {
                                   location: r.location,
                                   revalidation: r.revalidation,
                                   component: h,
@@ -8830,7 +8755,7 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                                   children: m(),
                                   routeContext: {
                                       outlet: null,
-                                      matches: p,
+                                      matches: f,
                                       isDataRoute: !0,
                                   },
                               })
@@ -8841,17 +8766,17 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                         b.map((e) =>
                             Object.assign({}, e, {
                                 params: Object.assign({}, u, e.params),
-                                pathname: W([
-                                    d,
+                                pathname: O([
+                                    p,
                                     i.encodeLocation
                                         ? i.encodeLocation(e.pathname).pathname
                                         : e.pathname,
                                 ]),
                                 pathnameBase:
                                     "/" === e.pathnameBase
-                                        ? d
-                                        : W([
-                                              d,
+                                        ? p
+                                        : O([
+                                              p,
                                               i.encodeLocation
                                                   ? i.encodeLocation(
                                                         e.pathnameBase
@@ -8865,8 +8790,8 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                     n
                 );
                 return t && w
-                    ? o.createElement(
-                          tr.Provider,
+                    ? a.createElement(
+                          eY.Provider,
                           {
                               value: {
                                   location: {
@@ -8875,7 +8800,7 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                                       hash: "",
                                       state: null,
                                       key: "default",
-                                      ...a,
+                                      ...o,
                                   },
                                   navigationType: "POP",
                               },
@@ -8884,64 +8809,64 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                       )
                     : w;
             }
-            var tg = o.createElement(function () {
-                    let e = tj(),
-                        t = X(e)
+            var e7 = a.createElement(function () {
+                    let e = tl(),
+                        t = W(e)
                             ? `${e.status} ${e.statusText}`
                             : e instanceof Error
                               ? e.message
                               : JSON.stringify(e),
                         r = e instanceof Error ? e.stack : null,
                         n = "rgba(200,200,200, 0.5)",
-                        a = { padding: "2px 4px", backgroundColor: n },
+                        o = { padding: "2px 4px", backgroundColor: n },
                         i = null;
                     return (
                         console.error(
                             "Error handled by React Router default ErrorBoundary:",
                             e
                         ),
-                        (i = o.createElement(
-                            o.Fragment,
+                        (i = a.createElement(
+                            a.Fragment,
                             null,
-                            o.createElement(
+                            a.createElement(
                                 "p",
                                 null,
                                 "\u{1F4BF} Hey developer \u{1F44B}"
                             ),
-                            o.createElement(
+                            a.createElement(
                                 "p",
                                 null,
                                 "You can provide a way better UX than this when your app throws errors by providing your own ",
-                                o.createElement(
+                                a.createElement(
                                     "code",
-                                    { style: a },
+                                    { style: o },
                                     "ErrorBoundary"
                                 ),
                                 " or",
                                 " ",
-                                o.createElement(
+                                a.createElement(
                                     "code",
-                                    { style: a },
+                                    { style: o },
                                     "errorElement"
                                 ),
                                 " prop on your route."
                             )
                         )),
-                        o.createElement(
-                            o.Fragment,
+                        a.createElement(
+                            a.Fragment,
                             null,
-                            o.createElement(
+                            a.createElement(
                                 "h2",
                                 null,
                                 "Unexpected Application Error!"
                             ),
-                            o.createElement(
+                            a.createElement(
                                 "h3",
                                 { style: { fontStyle: "italic" } },
                                 t
                             ),
                             r
-                                ? o.createElement(
+                                ? a.createElement(
                                       "pre",
                                       {
                                           style: {
@@ -8956,7 +8881,7 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                         )
                     );
                 }, null),
-                tv = class extends o.Component {
+                e6 = class extends a.Component {
                     constructor(e) {
                         (super(e),
                             (this.state = {
@@ -8993,10 +8918,10 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                     }
                     render() {
                         return void 0 !== this.state.error
-                            ? o.createElement(
-                                  tn.Provider,
+                            ? a.createElement(
+                                  eV.Provider,
                                   { value: this.props.routeContext },
-                                  o.createElement(ta.Provider, {
+                                  a.createElement(eJ.Provider, {
                                       value: this.state.error,
                                       children: this.props.component,
                                   })
@@ -9004,8 +8929,8 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                             : this.props.children;
                     }
                 };
-            function tb({ routeContext: e, match: t, children: r }) {
-                let n = o.useContext(e8);
+            function e9({ routeContext: e, match: t, children: r }) {
+                let n = a.useContext(eU);
                 return (
                     n &&
                         n.static &&
@@ -9013,59 +8938,59 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                         (t.route.errorElement || t.route.ErrorBoundary) &&
                         (n.staticContext._deepestRenderedBoundaryId =
                             t.route.id),
-                    o.createElement(tn.Provider, { value: e }, r)
+                    a.createElement(eV.Provider, { value: e }, r)
                 );
             }
-            function tw(e) {
+            function te(e) {
                 return `${e} must be used within a data router.  See https://reactrouter.com/en/main/routers/picking-a-router.`;
             }
-            function tS(e) {
-                let t = o.useContext(e8);
-                return (f(t, tw(e)), t);
+            function tt(e) {
+                let t = a.useContext(eU);
+                return (c(t, te(e)), t);
             }
-            function tE(e) {
-                let t = o.useContext(e6);
-                return (f(t, tw(e)), t);
+            function tr(e) {
+                let t = a.useContext(eB);
+                return (c(t, te(e)), t);
             }
-            function tR(e) {
+            function tn(e) {
                 let t,
-                    r = (f((t = o.useContext(tn)), tw(e)), t),
+                    r = (c((t = a.useContext(eV)), te(e)), t),
                     n = r.matches[r.matches.length - 1];
                 return (
-                    f(
+                    c(
                         n.route.id,
                         `${e} can only be used on routes that contain a unique "id"`
                     ),
                     n.route.id
                 );
             }
-            function tx() {
-                return tE("useNavigation").navigation;
+            function ta() {
+                return tr("useNavigation").navigation;
             }
-            function tC() {
-                let { matches: e, loaderData: t } = tE("useMatches");
-                return o.useMemo(() => e.map((e) => N(e, t)), [e, t]);
+            function to() {
+                let { matches: e, loaderData: t } = tr("useMatches");
+                return a.useMemo(() => e.map((e) => E(e, t)), [e, t]);
             }
-            function tk() {
-                let e = tE("useLoaderData"),
-                    t = tR("useLoaderData");
+            function ti() {
+                let e = tr("useLoaderData"),
+                    t = tn("useLoaderData");
                 return e.loaderData[t];
             }
-            function tN(e) {
-                return tE("useRouteLoaderData").loaderData[e];
+            function ts(e) {
+                return tr("useRouteLoaderData").loaderData[e];
             }
-            function tj() {
-                let e = o.useContext(ta),
-                    t = tE("useRouteError"),
-                    r = tR("useRouteError");
+            function tl() {
+                let e = a.useContext(eJ),
+                    t = tr("useRouteError"),
+                    r = tn("useRouteError");
                 return void 0 !== e ? e : t.errors?.[r];
             }
-            var tT = 0;
-            function tP(e) {
-                let { router: t, basename: r } = tS("useBlocker"),
-                    n = tE("useBlocker"),
-                    [a, i] = o.useState(""),
-                    s = o.useCallback(
+            var tu = 0;
+            function tc(e) {
+                let { router: t, basename: r } = tt("useBlocker"),
+                    n = tr("useBlocker"),
+                    [o, i] = a.useState(""),
+                    s = a.useCallback(
                         (t) => {
                             if ("function" != typeof e) return !!e;
                             if ("/" === r) return e(t);
@@ -9077,11 +9002,11 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                             return e({
                                 currentLocation: {
                                     ...n,
-                                    pathname: O(n.pathname, r) || n.pathname,
+                                    pathname: T(n.pathname, r) || n.pathname,
                                 },
                                 nextLocation: {
                                     ...a,
-                                    pathname: O(a.pathname, r) || a.pathname,
+                                    pathname: T(a.pathname, r) || a.pathname,
                                 },
                                 historyAction: o,
                             });
@@ -9089,25 +9014,25 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                         [r, e]
                     );
                 return (
-                    o.useEffect(() => {
-                        let e = String(++tT);
+                    a.useEffect(() => {
+                        let e = String(++tu);
                         return (i(e), () => t.deleteBlocker(e));
                     }, [t]),
-                    o.useEffect(() => {
-                        "" !== a && t.getBlocker(a, s);
-                    }, [t, a, s]),
-                    a && n.blockers.has(a) ? n.blockers.get(a) : en
+                    a.useEffect(() => {
+                        "" !== o && t.getBlocker(o, s);
+                    }, [t, o, s]),
+                    o && n.blockers.has(o) ? n.blockers.get(o) : J
                 );
             }
-            var tA = {};
-            function tL(e, t, r) {
-                t || tA[e] || ((tA[e] = !0), p(!1, r));
+            var td = {};
+            function th(e, t, r) {
+                t || td[e] || ((td[e] = !0), d(!1, r));
             }
-            var t_ = {};
-            function tO(e, t) {
-                e || t_[t] || ((t_[t] = !0), console.warn(t));
+            var tp = {};
+            function tf(e, t) {
+                e || tp[t] || ((tp[t] = !0), console.warn(t));
             }
-            function t$(e) {
+            function tm(e) {
                 let t = {
                     hasErrorBoundary:
                         e.hasErrorBoundary ||
@@ -9117,41 +9042,41 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                 return (
                     e.Component &&
                         (e.element &&
-                            p(
+                            d(
                                 !1,
                                 "You should not include both `Component` and `element` on your route - `Component` will be used."
                             ),
                         Object.assign(t, {
-                            element: o.createElement(e.Component),
+                            element: a.createElement(e.Component),
                             Component: void 0,
                         })),
                     e.HydrateFallback &&
                         (e.hydrateFallbackElement &&
-                            p(
+                            d(
                                 !1,
                                 "You should not include both `HydrateFallback` and `hydrateFallbackElement` on your route - `HydrateFallback` will be used."
                             ),
                         Object.assign(t, {
-                            hydrateFallbackElement: o.createElement(
+                            hydrateFallbackElement: a.createElement(
                                 e.HydrateFallback
                             ),
                             HydrateFallback: void 0,
                         })),
                     e.ErrorBoundary &&
                         (e.errorElement &&
-                            p(
+                            d(
                                 !1,
                                 "You should not include both `ErrorBoundary` and `errorElement` on your route - `ErrorBoundary` will be used."
                             ),
                         Object.assign(t, {
-                            errorElement: o.createElement(e.ErrorBoundary),
+                            errorElement: a.createElement(e.ErrorBoundary),
                             ErrorBoundary: void 0,
                         })),
                     t
                 );
             }
-            var tD = ["HydrateFallback", "hydrateFallbackElement"],
-                tI = class {
+            var ty = ["HydrateFallback", "hydrateFallbackElement"],
+                tg = class {
                     constructor() {
                         ((this.status = "pending"),
                             (this.promise = new Promise((e, t) => {
@@ -9166,28 +9091,28 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                             })));
                     }
                 };
-            function tM({ router: e, flushSync: t }) {
-                let [r, n] = o.useState(e.state),
-                    [a, i] = o.useState(),
-                    [s, l] = o.useState({ isTransitioning: !1 }),
-                    [u, c] = o.useState(),
-                    [d, h] = o.useState(),
-                    [f, p] = o.useState(),
-                    m = o.useRef(new Map()),
-                    y = o.useCallback(
+            function tv({ router: e, flushSync: t }) {
+                let [r, n] = a.useState(e.state),
+                    [o, i] = a.useState(),
+                    [s, l] = a.useState({ isTransitioning: !1 }),
+                    [u, c] = a.useState(),
+                    [d, h] = a.useState(),
+                    [p, f] = a.useState(),
+                    m = a.useRef(new Map()),
+                    y = a.useCallback(
                         (
                             r,
                             {
-                                deletedFetchers: a,
+                                deletedFetchers: o,
                                 flushSync: s,
-                                viewTransitionOpts: f,
+                                viewTransitionOpts: p,
                             }
                         ) => {
                             (r.fetchers.forEach((e, t) => {
                                 void 0 !== e.data && m.current.set(t, e.data);
                             }),
-                                a.forEach((e) => m.current.delete(e)),
-                                tO(
+                                o.forEach((e) => m.current.delete(e)),
+                                tf(
                                     !1 === s || null != t,
                                     'You provided the `flushSync` option to a router update, but you are not using the `<RouterProvider>` from `react-router/dom` so `ReactDOM.flushSync()` is unavailable.  Please update your app to `import { RouterProvider } from "react-router/dom"` and ensure you have `react-dom` installed as a dependency to use the `flushSync` option.'
                                 ));
@@ -9198,15 +9123,15 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                                     typeof e.window.document
                                         .startViewTransition;
                             if (
-                                (tO(
-                                    null == f || y,
+                                (tf(
+                                    null == p || y,
                                     "You provided the `viewTransition` option to a router update, but you do not appear to be running in a DOM environment as `window.startViewTransition` is not available."
                                 ),
-                                !f || !y)
+                                !p || !y)
                             )
                                 return void (t && s
                                     ? t(() => n(r))
-                                    : o.startTransition(() => n(r)));
+                                    : a.startTransition(() => n(r)));
                             if (t && s) {
                                 t(() => {
                                     (d &&
@@ -9214,8 +9139,8 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                                         l({
                                             isTransitioning: !0,
                                             flushSync: !0,
-                                            currentLocation: f.currentLocation,
-                                            nextLocation: f.nextLocation,
+                                            currentLocation: p.currentLocation,
+                                            nextLocation: p.nextLocation,
                                         }));
                                 });
                                 let a = e.window.document.startViewTransition(
@@ -9237,31 +9162,31 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                             d
                                 ? (u && u.resolve(),
                                   d.skipTransition(),
-                                  p({
+                                  f({
                                       state: r,
-                                      currentLocation: f.currentLocation,
-                                      nextLocation: f.nextLocation,
+                                      currentLocation: p.currentLocation,
+                                      nextLocation: p.nextLocation,
                                   }))
                                 : (i(r),
                                   l({
                                       isTransitioning: !0,
                                       flushSync: !1,
-                                      currentLocation: f.currentLocation,
-                                      nextLocation: f.nextLocation,
+                                      currentLocation: p.currentLocation,
+                                      nextLocation: p.nextLocation,
                                   }));
                         },
                         [e.window, t, d, u]
                     );
-                (o.useLayoutEffect(() => e.subscribe(y), [e, y]),
-                    o.useEffect(() => {
-                        s.isTransitioning && !s.flushSync && c(new tI());
+                (a.useLayoutEffect(() => e.subscribe(y), [e, y]),
+                    a.useEffect(() => {
+                        s.isTransitioning && !s.flushSync && c(new tg());
                     }, [s]),
-                    o.useEffect(() => {
-                        if (u && a && e.window) {
+                    a.useEffect(() => {
+                        if (u && o && e.window) {
                             let t = u.promise,
                                 r = e.window.document.startViewTransition(
                                     async () => {
-                                        (o.startTransition(() => n(a)),
+                                        (a.startTransition(() => n(o)),
                                             await t);
                                     }
                                 );
@@ -9273,26 +9198,26 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                             }),
                                 h(r));
                         }
-                    }, [a, u, e.window]),
-                    o.useEffect(() => {
+                    }, [o, u, e.window]),
+                    a.useEffect(() => {
                         u &&
-                            a &&
-                            r.location.key === a.location.key &&
+                            o &&
+                            r.location.key === o.location.key &&
                             u.resolve();
-                    }, [u, d, r.location, a]),
-                    o.useEffect(() => {
+                    }, [u, d, r.location, o]),
+                    a.useEffect(() => {
                         !s.isTransitioning &&
-                            f &&
-                            (i(f.state),
+                            p &&
+                            (i(p.state),
                             l({
                                 isTransitioning: !0,
                                 flushSync: !1,
-                                currentLocation: f.currentLocation,
-                                nextLocation: f.nextLocation,
+                                currentLocation: p.currentLocation,
+                                nextLocation: p.nextLocation,
                             }),
-                            p(void 0));
-                    }, [s.isTransitioning, f]));
-                let g = o.useMemo(
+                            f(void 0));
+                    }, [s.isTransitioning, p]));
+                let g = a.useMemo(
                         () => ({
                             createHref: e.createHref,
                             encodeLocation: e.encodeLocation,
@@ -9312,7 +9237,7 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                         [e]
                     ),
                     v = e.basename || "/",
-                    b = o.useMemo(
+                    b = a.useMemo(
                         () => ({
                             router: e,
                             navigator: g,
@@ -9321,30 +9246,30 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                         }),
                         [e, g, v]
                     );
-                return o.createElement(
-                    o.Fragment,
+                return a.createElement(
+                    a.Fragment,
                     null,
-                    o.createElement(
-                        e8.Provider,
+                    a.createElement(
+                        eU.Provider,
                         { value: b },
-                        o.createElement(
-                            e6.Provider,
+                        a.createElement(
+                            eB.Provider,
                             { value: r },
-                            o.createElement(
-                                e9.Provider,
+                            a.createElement(
+                                eH.Provider,
                                 { value: m.current },
-                                o.createElement(
-                                    e7.Provider,
+                                a.createElement(
+                                    eF.Provider,
                                     { value: s },
-                                    o.createElement(
-                                        tB,
+                                    a.createElement(
+                                        tE,
                                         {
                                             basename: v,
                                             location: r.location,
                                             navigationType: r.historyAction,
                                             navigator: g,
                                         },
-                                        o.createElement(tz, {
+                                        a.createElement(tb, {
                                             routes: e.routes,
                                             future: e.future,
                                             state: r,
@@ -9357,124 +9282,124 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                     null
                 );
             }
-            var tz = o.memo(function ({ routes: e, future: t, state: r }) {
-                return ty(e, void 0, r, t);
+            var tb = a.memo(function ({ routes: e, future: t, state: r }) {
+                return e8(e, void 0, r, t);
             });
-            function tW({ to: e, replace: t, state: r, relative: n }) {
-                f(
-                    to(),
+            function tw({ to: e, replace: t, state: r, relative: n }) {
+                c(
+                    eG(),
                     "<Navigate> may be used only in the context of a <Router> component."
                 );
-                let { static: a } = o.useContext(tt);
-                p(
-                    !a,
+                let { static: o } = a.useContext(eq);
+                d(
+                    !o,
                     "<Navigate> must not be used on the initial render in a <StaticRouter>. This is a no-op, but you should modify your code so the <Navigate> is only ever rendered in response to some user interaction or state change."
                 );
-                let { matches: i } = o.useContext(tn),
-                    { pathname: s } = ti(),
-                    l = td(),
-                    u = JSON.stringify(z(e, M(i), s, "path" === n));
+                let { matches: i } = a.useContext(eV),
+                    { pathname: s } = eX(),
+                    l = e1(),
+                    u = JSON.stringify(D(e, _(i), s, "path" === n));
                 return (
-                    o.useEffect(() => {
+                    a.useEffect(() => {
                         l(JSON.parse(u), { replace: t, state: r, relative: n });
                     }, [l, u, n, t, r]),
                     null
                 );
             }
-            function tU(e) {
+            function tS(e) {
                 var t;
                 let r;
                 return (
                     (t = e.context),
-                    (r = o.useContext(tn).outlet)
-                        ? o.createElement(th.Provider, { value: t }, r)
+                    (r = a.useContext(eV).outlet)
+                        ? a.createElement(e2.Provider, { value: t }, r)
                         : r
                 );
             }
-            function tH(e) {
-                f(
+            function tR(e) {
+                c(
                     !1,
                     "A <Route> is only ever to be used as the child of <Routes> element, never rendered directly. Please wrap your <Route> in a <Routes>."
                 );
             }
-            function tB({
+            function tE({
                 basename: e = "/",
                 children: t = null,
                 location: r,
                 navigationType: n = "POP",
-                navigator: a,
+                navigator: o,
                 static: i = !1,
             }) {
-                f(
-                    !to(),
+                c(
+                    !eG(),
                     "You cannot render a <Router> inside another <Router>. You should never have more than one in your app."
                 );
                 let s = e.replace(/^\/*/, "/"),
-                    l = o.useMemo(
+                    l = a.useMemo(
                         () => ({
                             basename: s,
-                            navigator: a,
+                            navigator: o,
                             static: i,
                             future: {},
                         }),
-                        [s, a, i]
+                        [s, o, i]
                     );
-                "string" == typeof r && (r = v(r));
+                "string" == typeof r && (r = m(r));
                 let {
                         pathname: u = "/",
-                        search: c = "",
-                        hash: d = "",
-                        state: h = null,
-                        key: m = "default",
+                        search: h = "",
+                        hash: p = "",
+                        state: f = null,
+                        key: y = "default",
                     } = r,
-                    y = o.useMemo(() => {
-                        let e = O(u, s);
+                    g = a.useMemo(() => {
+                        let e = T(u, s);
                         return null == e
                             ? null
                             : {
                                   location: {
                                       pathname: e,
-                                      search: c,
-                                      hash: d,
-                                      state: h,
-                                      key: m,
+                                      search: h,
+                                      hash: p,
+                                      state: f,
+                                      key: y,
                                   },
                                   navigationType: n,
                               };
-                    }, [s, u, c, d, h, m, n]);
-                return (p(
-                    null != y,
-                    `<Router basename="${s}"> is not able to match the URL "${u}${c}${d}" because it does not start with the basename, so the <Router> won't render anything.`
+                    }, [s, u, h, p, f, y, n]);
+                return (d(
+                    null != g,
+                    `<Router basename="${s}"> is not able to match the URL "${u}${h}${p}" because it does not start with the basename, so the <Router> won't render anything.`
                 ),
-                null == y)
+                null == g)
                     ? null
-                    : o.createElement(
-                          tt.Provider,
+                    : a.createElement(
+                          eq.Provider,
                           { value: l },
-                          o.createElement(tr.Provider, {
+                          a.createElement(eY.Provider, {
                               children: t,
-                              value: y,
+                              value: g,
                           })
                       );
             }
-            function tF({ children: e, location: t }) {
-                return ty(
+            function tx({ children: e, location: t }) {
+                return e8(
                     (function e(t, r = []) {
                         let n = [];
                         return (
-                            o.Children.forEach(t, (t, a) => {
-                                if (!o.isValidElement(t)) return;
-                                let i = [...r, a];
-                                if (t.type === o.Fragment)
+                            a.Children.forEach(t, (t, o) => {
+                                if (!a.isValidElement(t)) return;
+                                let i = [...r, o];
+                                if (t.type === a.Fragment)
                                     return void n.push.apply(
                                         n,
                                         e(t.props.children, i)
                                     );
-                                (f(
-                                    t.type === tH,
+                                (c(
+                                    t.type === tR,
                                     `[${"string" == typeof t.type ? t.type : t.type.name}] is not a <Route> component. All component children of <Routes> must be a <Route> or <React.Fragment>`
                                 ),
-                                    f(
+                                    c(
                                         !t.props.index || !t.props.children,
                                         "An index route cannot have child routes."
                                     ));
@@ -9510,13 +9435,13 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                     t
                 );
             }
-            o.Component;
-            var tq = "get",
-                tJ = "application/x-www-form-urlencoded";
-            function tY(e) {
+            a.Component;
+            var tC = "get",
+                tk = "application/x-www-form-urlencoded";
+            function tN(e) {
                 return null != e && "string" == typeof e.tagName;
             }
-            function tV(e = "") {
+            function tP(e = "") {
                 return new URLSearchParams(
                     "string" == typeof e ||
                     Array.isArray(e) ||
@@ -9532,25 +9457,25 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                           }, [])
                 );
             }
-            var tX = null,
-                tG = new Set([
+            var tT = null,
+                tj = new Set([
                     "application/x-www-form-urlencoded",
                     "multipart/form-data",
                     "text/plain",
                 ]);
-            function tK(e) {
-                return null == e || tG.has(e)
+            function tL(e) {
+                return null == e || tj.has(e)
                     ? e
-                    : (p(
+                    : (d(
                           !1,
-                          `"${e}" is not a valid \`encType\` for \`<Form>\`/\`<fetcher.Form>\` and will default to "${tJ}"`
+                          `"${e}" is not a valid \`encType\` for \`<Form>\`/\`<fetcher.Form>\` and will default to "${tk}"`
                       ),
                       null);
             }
-            function tQ(e, t) {
+            function tA(e, t) {
                 if (!1 === e || null == e) throw Error(t);
             }
-            async function tZ(e, t) {
+            async function t_(e, t) {
                 if (e.id in t) return t[e.id];
                 try {
                     let r = await import(e.module);
@@ -9568,72 +9493,7 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                     );
                 }
             }
-            function t0(e) {
-                return e.css
-                    ? e.css.map((e) => ({ rel: "stylesheet", href: e }))
-                    : [];
-            }
-            async function t1(e) {
-                if (!e.css) return;
-                let t = t0(e);
-                await Promise.all(t.map(t4));
-            }
-            async function t2(e, t) {
-                if (
-                    (!e.css && !t.links) ||
-                    !(function () {
-                        if (void 0 !== a) return a;
-                        let e = document.createElement("link");
-                        return (
-                            (a = e.relList.supports("preload")),
-                            (e = null),
-                            a
-                        );
-                    })()
-                )
-                    return;
-                let r = [];
-                if (
-                    (e.css && r.push(...t0(e)),
-                    t.links && r.push(...t.links()),
-                    0 === r.length)
-                )
-                    return;
-                let n = [];
-                for (let e of r)
-                    t3(e) ||
-                        "stylesheet" !== e.rel ||
-                        n.push({ ...e, rel: "preload", as: "style" });
-                await Promise.all(n.map(t4));
-            }
-            async function t4(e) {
-                return new Promise((t) => {
-                    if (
-                        (e.media && !window.matchMedia(e.media).matches) ||
-                        document.querySelector(
-                            `link[rel="stylesheet"][href="${e.href}"]`
-                        )
-                    )
-                        return t();
-                    let r = document.createElement("link");
-                    function n() {
-                        document.head.contains(r) &&
-                            document.head.removeChild(r);
-                    }
-                    (Object.assign(r, e),
-                        (r.onload = () => {
-                            (n(), t());
-                        }),
-                        (r.onerror = () => {
-                            (n(), t());
-                        }),
-                        document.head.appendChild(r));
-                });
-            }
-            function t3(e) {
-                return null != e && "string" == typeof e.page;
-            }
-            function t5(e) {
+            function tD(e) {
                 return (
                     null != e &&
                     (null == e.href
@@ -9643,39 +9503,16 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                         : "string" == typeof e.rel && "string" == typeof e.href)
                 );
             }
-            async function t8(e, t, r) {
-                return (function (e, t) {
-                    let r = new Set(),
-                        n = new Set(t);
-                    return e.reduce((e, a) => {
-                        if (
-                            t &&
-                            !t3(a) &&
-                            "script" === a.as &&
-                            a.href &&
-                            n.has(a.href)
-                        )
-                            return e;
-                        let o = JSON.stringify(
-                            (function (e) {
-                                let t = {};
-                                for (let r of Object.keys(e).sort())
-                                    t[r] = e[r];
-                                return t;
-                            })(a)
-                        );
-                        return (
-                            r.has(o) || (r.add(o), e.push({ key: o, link: a })),
-                            e
-                        );
-                    }, []);
-                })(
-                    (
+            async function tO(e, t, r) {
+                var n, a;
+                let o, i;
+                return (
+                    (n = (
                         await Promise.all(
                             e.map(async (e) => {
                                 let n = t.routes[e.route.id];
                                 if (n) {
-                                    let e = await tZ(n, r);
+                                    let e = await t_(n, r);
                                     return e.links ? e.links() : [];
                                 }
                                 return [];
@@ -9683,7 +9520,7 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                         )
                     )
                         .flat(1)
-                        .filter(t5)
+                        .filter(tD)
                         .filter(
                             (e) => "stylesheet" === e.rel || "preload" === e.rel
                         )
@@ -9691,10 +9528,34 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                             "stylesheet" === e.rel
                                 ? { ...e, rel: "prefetch", as: "style" }
                                 : { ...e, rel: "prefetch" }
+                        )),
+                    (o = new Set()),
+                    (i = new Set(void 0)),
+                    n.reduce((e, t) => {
+                        if (
+                            a &&
+                            (null == t || "string" != typeof t.page) &&
+                            "script" === t.as &&
+                            t.href &&
+                            i.has(t.href)
                         )
+                            return e;
+                        let r = JSON.stringify(
+                            (function (e) {
+                                let t = {};
+                                for (let r of Object.keys(e).sort())
+                                    t[r] = e[r];
+                                return t;
+                            })(t)
+                        );
+                        return (
+                            o.has(r) || (o.add(r), e.push({ key: r, link: t })),
+                            e
+                        );
+                    }, [])
                 );
             }
-            function t6(e, t, r, n, a, o) {
+            function tI(e, t, r, n, a, o) {
                 let i = (e, t) => !r[t] || e.route.id !== r[t].route.id,
                     s = (e, t) =>
                         r[t].pathname !== e.pathname ||
@@ -9724,7 +9585,7 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                         })
                       : [];
             }
-            function t7(e, t, { includeHydrateFallback: r } = {}) {
+            function tM(e, t, { includeHydrateFallback: r } = {}) {
                 return [
                     ...new Set(
                         e
@@ -9748,1002 +9609,78 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                     ),
                 ];
             }
-            var t9 = {
-                    "&": "\\u0026",
-                    ">": "\\u003e",
-                    "<": "\\u003c",
-                    "\u2028": "\\u2028",
-                    "\u2029": "\\u2029",
-                },
-                re = /[&><\u2028\u2029]/g,
-                rt = class {
-                    constructor() {
-                        this.promise = new Promise((e, t) => {
-                            ((this.resolve = e), (this.reject = t));
-                        });
-                    }
-                };
-            function rr(e) {
-                let { indices: t } = this,
-                    r = t.get(e);
-                if (r) return [r];
-                if (
-                    null == e ||
-                    Number.isNaN(e) ||
-                    e === Number.POSITIVE_INFINITY ||
-                    e === Number.NEGATIVE_INFINITY ||
-                    (0 === e && 1 / e < 0)
-                )
-                    return null;
-                let n = this.index++;
-                return (t.set(e, n), rn.call(this, e, n), n);
-            }
-            function rn(e, t) {
-                let { deferred: r, plugins: n, postPlugins: a } = this,
-                    o = this.stringified,
-                    i = [[e, t]];
-                for (; i.length > 0; ) {
-                    let [e, t] = i.pop(),
-                        s = (e) =>
-                            Object.keys(e)
-                                .map(
-                                    (t) =>
-                                        `"_${rr.call(this, t)}":${rr.call(this, e[t])}`
-                                )
-                                .join(","),
-                        l = null;
-                    switch (typeof e) {
-                        case "boolean":
-                        case "number":
-                        case "string":
-                            o[t] = JSON.stringify(e);
-                            break;
-                        case "bigint":
-                            o[t] = `["B","${e}"]`;
-                            break;
-                        case "symbol": {
-                            let r = Symbol.keyFor(e);
-                            r
-                                ? (o[t] = `["Y",${JSON.stringify(r)}]`)
-                                : (l = Error(
-                                      "Cannot encode symbol unless created with Symbol.for()"
-                                  ));
-                            break;
-                        }
-                        case "object": {
-                            if (!e) {
-                                o[t] = "null";
-                                break;
-                            }
-                            let a = Array.isArray(e),
-                                i = !1;
-                            if (!a && n)
-                                for (let r of n) {
-                                    let n = r(e);
-                                    if (Array.isArray(n)) {
-                                        i = !0;
-                                        let [e, ...r] = n;
-                                        ((o[t] = `[${JSON.stringify(e)}`),
-                                            r.length > 0 &&
-                                                (o[t] +=
-                                                    `,${r.map((e) => rr.call(this, e)).join(",")}`),
-                                            (o[t] += "]"));
-                                        break;
-                                    }
-                                }
-                            if (!i) {
-                                let n = a ? "[" : "{";
-                                if (a) {
-                                    for (let t = 0; t < e.length; t++)
-                                        n +=
-                                            (t ? "," : "") +
-                                            (t in e
-                                                ? rr.call(this, e[t])
-                                                : null);
-                                    o[t] = `${n}]`;
-                                } else
-                                    e instanceof Date
-                                        ? (o[t] = `["D",${e.getTime()}]`)
-                                        : e instanceof URL
-                                          ? (o[t] =
-                                                `["U",${JSON.stringify(e.href)}]`)
-                                          : e instanceof RegExp
-                                            ? (o[t] =
-                                                  `["R",${JSON.stringify(e.source)},${JSON.stringify(e.flags)}]`)
-                                            : e instanceof Set
-                                              ? e.size > 0
-                                                  ? (o[t] =
-                                                        `["S",${[...e].map((e) => rr.call(this, e)).join(",")}]`)
-                                                  : (o[t] = '["S"]')
-                                              : e instanceof Map
-                                                ? e.size > 0
-                                                    ? (o[t] =
-                                                          `["M",${[...e].flatMap(([e, t]) => [rr.call(this, e), rr.call(this, t)]).join(",")}]`)
-                                                    : (o[t] = '["M"]')
-                                                : e instanceof Promise
-                                                  ? ((o[t] = `["P",${t}]`),
-                                                    (r[t] = e))
-                                                  : e instanceof Error
-                                                    ? ((o[t] =
-                                                          `["E",${JSON.stringify(e.message)}`),
-                                                      "Error" !== e.name &&
-                                                          (o[t] +=
-                                                              `,${JSON.stringify(e.name)}`),
-                                                      (o[t] += "]"))
-                                                    : null ===
-                                                        Object.getPrototypeOf(e)
-                                                      ? (o[t] =
-                                                            `["N",{${s(e)}}]`)
-                                                      : (function (e) {
-                                                              let t =
-                                                                  Object.getPrototypeOf(
-                                                                      e
-                                                                  );
-                                                              return (
-                                                                  t ===
-                                                                      Object.prototype ||
-                                                                  null === t ||
-                                                                  Object.getOwnPropertyNames(
-                                                                      t
-                                                                  )
-                                                                      .sort()
-                                                                      .join(
-                                                                          "\0"
-                                                                      ) === ra
-                                                              );
-                                                          })(e)
-                                                        ? (o[t] = `{${s(e)}}`)
-                                                        : (l = Error(
-                                                              "Cannot encode object with prototype"
-                                                          ));
-                            }
-                            break;
-                        }
-                        default: {
-                            let r = Array.isArray(e),
-                                a = !1;
-                            if (!r && n)
-                                for (let r of n) {
-                                    let n = r(e);
-                                    if (Array.isArray(n)) {
-                                        a = !0;
-                                        let [e, ...r] = n;
-                                        ((o[t] = `[${JSON.stringify(e)}`),
-                                            r.length > 0 &&
-                                                (o[t] +=
-                                                    `,${r.map((e) => rr.call(this, e)).join(",")}`),
-                                            (o[t] += "]"));
-                                        break;
-                                    }
-                                }
-                            a ||
-                                (l = Error(
-                                    "Cannot encode function or unexpected type"
-                                ));
-                        }
-                    }
-                    if (l) {
-                        let r = !1;
-                        if (a)
-                            for (let n of a) {
-                                let a = n(e);
-                                if (Array.isArray(a)) {
-                                    r = !0;
-                                    let [e, ...n] = a;
-                                    ((o[t] = `[${JSON.stringify(e)}`),
-                                        n.length > 0 &&
-                                            (o[t] +=
-                                                `,${n.map((e) => rr.call(this, e)).join(",")}`),
-                                        (o[t] += "]"));
-                                    break;
-                                }
-                            }
-                        if (!r) throw l;
-                    }
-                }
-            }
-            var ra = Object.getOwnPropertyNames(Object.prototype)
-                    .sort()
-                    .join("\0"),
-                ro =
-                    "undefined" != typeof window
-                        ? window
-                        : "undefined" != typeof globalThis
-                          ? globalThis
-                          : void 0;
-            function ri(e) {
-                let { hydrated: t, values: r } = this;
-                if ("number" == typeof e) return rs.call(this, e);
-                if (!Array.isArray(e) || !e.length) throw SyntaxError();
-                let n = r.length;
-                for (let t of e) r.push(t);
-                return ((t.length = r.length), rs.call(this, n));
-            }
-            function rs(e) {
-                let t,
-                    { hydrated: r, values: n, deferred: a, plugins: o } = this,
-                    i = [
-                        [
-                            e,
-                            (e) => {
-                                t = e;
-                            },
-                        ],
-                    ],
-                    s = [];
-                for (; i.length > 0; ) {
-                    let [e, t] = i.pop();
-                    switch (e) {
-                        case null:
-                            t(void 0);
-                            continue;
-                        case null:
-                            t(null);
-                            continue;
-                        case null:
-                            t(NaN);
-                            continue;
-                        case null:
-                            t(1 / 0);
-                            continue;
-                        case null:
-                            t(-1 / 0);
-                            continue;
-                        case null:
-                            t(-0);
-                            continue;
-                    }
-                    if (r[e]) {
-                        t(r[e]);
-                        continue;
-                    }
-                    let l = n[e];
-                    if (!l || "object" != typeof l) {
-                        ((r[e] = l), t(l));
-                        continue;
-                    }
-                    if (Array.isArray(l))
-                        if ("string" == typeof l[0]) {
-                            let [n, u, c] = l;
-                            switch (n) {
-                                case "D":
-                                    t((r[e] = new Date(u)));
-                                    continue;
-                                case "U":
-                                    t((r[e] = new URL(u)));
-                                    continue;
-                                case "B":
-                                    t((r[e] = BigInt(u)));
-                                    continue;
-                                case "R":
-                                    t((r[e] = new RegExp(u, c)));
-                                    continue;
-                                case "Y":
-                                    t((r[e] = Symbol.for(u)));
-                                    continue;
-                                case "S":
-                                    let d = new Set();
-                                    r[e] = d;
-                                    for (let e = l.length - 1; e > 0; e--)
-                                        i.push([
-                                            l[e],
-                                            (e) => {
-                                                d.add(e);
-                                            },
-                                        ]);
-                                    t(d);
-                                    continue;
-                                case "M":
-                                    let h = new Map();
-                                    r[e] = h;
-                                    for (let e = l.length - 2; e > 0; e -= 2) {
-                                        let t = [];
-                                        (i.push([
-                                            l[e + 1],
-                                            (e) => {
-                                                t[1] = e;
-                                            },
-                                        ]),
-                                            i.push([
-                                                l[e],
-                                                (e) => {
-                                                    t[0] = e;
-                                                },
-                                            ]),
-                                            s.push(() => {
-                                                h.set(t[0], t[1]);
-                                            }));
-                                    }
-                                    t(h);
-                                    continue;
-                                case "N":
-                                    let f = Object.create(null);
-                                    for (let t of ((r[e] = f),
-                                    Object.keys(u).reverse())) {
-                                        let e = [];
-                                        (i.push([
-                                            u[t],
-                                            (t) => {
-                                                e[1] = t;
-                                            },
-                                        ]),
-                                            i.push([
-                                                Number(t.slice(1)),
-                                                (t) => {
-                                                    e[0] = t;
-                                                },
-                                            ]),
-                                            s.push(() => {
-                                                f[e[0]] = e[1];
-                                            }));
-                                    }
-                                    t(f);
-                                    continue;
-                                case "P":
-                                    if (r[u]) t((r[e] = r[u]));
-                                    else {
-                                        let n = new rt();
-                                        ((a[u] = n), t((r[e] = n.promise)));
-                                    }
-                                    continue;
-                                case "E":
-                                    let [, p, m] = l,
-                                        y =
-                                            m && ro && ro[m]
-                                                ? new ro[m](p)
-                                                : Error(p);
-                                    ((r[e] = y), t(y));
-                                    continue;
-                                case "Z":
-                                    t((r[e] = r[u]));
-                                    continue;
-                                default:
-                                    if (Array.isArray(o)) {
-                                        let n = [],
-                                            a = l.slice(1);
-                                        for (let e = 0; e < a.length; e++) {
-                                            let t = a[e];
-                                            i.push([
-                                                t,
-                                                (t) => {
-                                                    n[e] = t;
-                                                },
-                                            ]);
-                                        }
-                                        s.push(() => {
-                                            for (let a of o) {
-                                                let o = a(l[0], ...n);
-                                                if (o)
-                                                    return void t(
-                                                        (r[e] = o.value)
-                                                    );
-                                            }
-                                            throw SyntaxError();
-                                        });
-                                        continue;
-                                    }
-                                    throw SyntaxError();
-                            }
-                        } else {
-                            let n = [];
-                            r[e] = n;
-                            for (let e = 0; e < l.length; e++) {
-                                let t = l[e];
-                                null !== t &&
-                                    i.push([
-                                        t,
-                                        (t) => {
-                                            n[e] = t;
-                                        },
-                                    ]);
-                            }
-                            t(n);
-                            continue;
-                        }
-                    {
-                        let n = {};
-                        for (let t of ((r[e] = n), Object.keys(l).reverse())) {
-                            let e = [];
-                            (i.push([
-                                l[t],
-                                (t) => {
-                                    e[1] = t;
-                                },
-                            ]),
-                                i.push([
-                                    Number(t.slice(1)),
-                                    (t) => {
-                                        e[0] = t;
-                                    },
-                                ]),
-                                s.push(() => {
-                                    n[e[0]] = e[1];
-                                }));
-                        }
-                        t(n);
-                        continue;
-                    }
-                }
-                for (; s.length > 0; ) s.pop()();
-                return t;
-            }
-            async function rl(e, t) {
-                let { plugins: r } = t ?? {},
-                    n = new rt(),
-                    a = e
-                        .pipeThrough(
-                            (function () {
-                                let e = new TextDecoder(),
-                                    t = "";
-                                return new TransformStream({
-                                    transform(r, n) {
-                                        let a = e.decode(r, { stream: !0 }),
-                                            o = (t + a).split(`
-`);
-                                        for (let e of ((t = o.pop() || ""), o))
-                                            n.enqueue(e);
-                                    },
-                                    flush(e) {
-                                        t && e.enqueue(t);
-                                    },
-                                });
-                            })()
-                        )
-                        .getReader(),
-                    o = { values: [], hydrated: [], deferred: {}, plugins: r },
-                    i = await ru.call(o, a),
-                    s = n.promise;
+            (Object.getOwnPropertyNames(Object.prototype).sort().join("\0"),
+                "undefined" != typeof window && window,
+                Symbol("SingleFetchRedirect"));
+            var t$ = new Set([100, 101, 204, 205]);
+            function tz() {
+                let e = a.useContext(eU);
                 return (
-                    i.done
-                        ? n.resolve()
-                        : (s = rc
-                              .call(o, a)
-                              .then(n.resolve)
-                              .catch((e) => {
-                                  for (let t of Object.values(o.deferred))
-                                      t.reject(e);
-                                  n.reject(e);
-                              })),
-                    { done: s.then(() => a.closed), value: i.value }
-                );
-            }
-            async function ru(e) {
-                let t,
-                    r = await e.read();
-                if (!r.value) throw SyntaxError();
-                try {
-                    t = JSON.parse(r.value);
-                } catch (e) {
-                    throw SyntaxError();
-                }
-                return { done: r.done, value: ri.call(this, t) };
-            }
-            async function rc(e) {
-                let t = await e.read();
-                for (; !t.done; ) {
-                    if (!t.value) continue;
-                    let r = t.value;
-                    switch (r[0]) {
-                        case "P": {
-                            let e,
-                                t = r.indexOf(":"),
-                                n = Number(r.slice(1, t)),
-                                a = this.deferred[n];
-                            if (!a)
-                                throw Error(
-                                    `Deferred ID ${n} not found in stream`
-                                );
-                            let o = r.slice(t + 1);
-                            try {
-                                e = JSON.parse(o);
-                            } catch (e) {
-                                throw SyntaxError();
-                            }
-                            let i = ri.call(this, e);
-                            a.resolve(i);
-                            break;
-                        }
-                        case "E": {
-                            let e,
-                                t = r.indexOf(":"),
-                                n = Number(r.slice(1, t)),
-                                a = this.deferred[n];
-                            if (!a)
-                                throw Error(
-                                    `Deferred ID ${n} not found in stream`
-                                );
-                            let o = r.slice(t + 1);
-                            try {
-                                e = JSON.parse(o);
-                            } catch (e) {
-                                throw SyntaxError();
-                            }
-                            let i = ri.call(this, e);
-                            a.reject(i);
-                            break;
-                        }
-                        default:
-                            throw SyntaxError();
-                    }
-                    t = await e.read();
-                }
-            }
-            async function rd(e) {
-                let t = { signal: e.signal };
-                if ("GET" !== e.method) {
-                    t.method = e.method;
-                    let r = e.headers.get("Content-Type");
-                    r && /\bapplication\/json\b/.test(r)
-                        ? ((t.headers = { "Content-Type": r }),
-                          (t.body = JSON.stringify(await e.json())))
-                        : r && /\btext\/plain\b/.test(r)
-                          ? ((t.headers = { "Content-Type": r }),
-                            (t.body = await e.text()))
-                          : r &&
-                              /\bapplication\/x-www-form-urlencoded\b/.test(r)
-                            ? (t.body = new URLSearchParams(await e.text()))
-                            : (t.body = await e.formData());
-                }
-                return t;
-            }
-            var rh = Symbol("SingleFetchRedirect"),
-                rf = class extends null {},
-                rp = new Set([100, 101, 204, 205]);
-            function rm({
-                context: e,
-                identifier: t,
-                reader: r,
-                textDecoder: n,
-                nonce: a,
-            }) {
-                if (!e.renderMeta || !e.renderMeta.didRenderScripts)
-                    return null;
-                e.renderMeta.streamCache || (e.renderMeta.streamCache = {});
-                let { streamCache: o } = e.renderMeta,
-                    i = o[t];
-                if (
-                    (i ||
-                        (i = o[t] =
-                            r
-                                .read()
-                                .then((e) => {
-                                    o[t].result = {
-                                        done: e.done,
-                                        value: n.decode(e.value, {
-                                            stream: !0,
-                                        }),
-                                    };
-                                })
-                                .catch((e) => {
-                                    o[t].error = e;
-                                })),
-                    i.error)
-                )
-                    throw i.error;
-                if (void 0 === i.result) throw i;
-                let { done: s, value: l } = i.result,
-                    u = l
-                        ? React4.createElement("script", {
-                              nonce: a,
-                              dangerouslySetInnerHTML: {
-                                  __html: `window.__reactRouterContext.streamController.enqueue(${JSON.stringify(l).replace(re, (e) => t9[e])});`,
-                              },
-                          })
-                        : null;
-                return s
-                    ? React4.createElement(
-                          React4.Fragment,
-                          null,
-                          u,
-                          React4.createElement("script", {
-                              nonce: a,
-                              dangerouslySetInnerHTML: {
-                                  __html: "window.__reactRouterContext.streamController.close();",
-                              },
-                          })
-                      )
-                    : React4.createElement(
-                          React4.Fragment,
-                          null,
-                          u,
-                          React4.createElement(
-                              React4.Suspense,
-                              null,
-                              React4.createElement(rm, {
-                                  context: e,
-                                  identifier: t + 1,
-                                  reader: r,
-                                  textDecoder: n,
-                                  nonce: a,
-                              })
-                          )
-                      );
-            }
-            async function ry(e, t, r, n) {
-                try {
-                    let a,
-                        o = await e;
-                    if ("routes" in o) {
-                        for (let e of t)
-                            if (e.route.id in o.routes) {
-                                let t = o.routes[e.route.id];
-                                if ("error" in t) {
-                                    a = t.error;
-                                    break;
-                                }
-                            }
-                    }
-                    void 0 !== a &&
-                        Array.from(r.values()).forEach((e) => {
-                            n[e].result instanceof rf && (n[e].result = a);
-                        });
-                } catch (e) {}
-            }
-            function rg(e, t) {
-                let r =
-                    "string" == typeof e
-                        ? new URL(
-                              e,
-                              "undefined" == typeof window
-                                  ? "server://singlefetch/"
-                                  : window.location.origin
-                          )
-                        : e;
-                return (
-                    "/" === r.pathname
-                        ? (r.pathname = "_root.data")
-                        : t && "/" === O(r.pathname, t)
-                          ? (r.pathname = `${t.replace(/\/$/, "")}/_root.data`)
-                          : (r.pathname = `${r.pathname.replace(/\/$/, "")}.data`),
-                    r
-                );
-            }
-            function rv(e, t) {
-                return rl(e, {
-                    plugins: [
-                        (e, ...r) => {
-                            if ("SanitizedError" === e) {
-                                let [e, n, a] = r,
-                                    o = Error;
-                                e &&
-                                    e in t &&
-                                    "function" == typeof t[e] &&
-                                    (o = t[e]);
-                                let i = new o(n);
-                                return ((i.stack = a), { value: i });
-                            }
-                            if ("ErrorResponse" === e) {
-                                let [e, t, n] = r;
-                                return { value: new V(t, n, e) };
-                            }
-                            return "SingleFetchRedirect" === e
-                                ? { value: { [rh]: r[0] } }
-                                : "SingleFetchClassInstance" === e
-                                  ? { value: r[0] }
-                                  : "SingleFetchFallback" === e
-                                    ? { value: void 0 }
-                                    : void 0;
-                        },
-                    ],
-                });
-            }
-            function rb(e, t) {
-                if ("redirect" in e) {
-                    let {
-                        redirect: t,
-                        revalidate: r,
-                        reload: n,
-                        replace: a,
-                        status: o,
-                    } = e.redirect;
-                    throw q(t, {
-                        status: o,
-                        headers: {
-                            ...(r ? { "X-Remix-Revalidate": "yes" } : null),
-                            ...(n
-                                ? { "X-Remix-Reload-Document": "yes" }
-                                : null),
-                            ...(a ? { "X-Remix-Replace": "yes" } : null),
-                        },
-                    });
-                }
-                let r = e.routes[t];
-                if (null == r)
-                    throw new rf(`No result found for routeId "${t}"`);
-                if ("error" in r) throw r.error;
-                if ("data" in r) return r.data;
-                throw Error(`Invalid response found for routeId "${t}"`);
-            }
-            function rw() {
-                let e,
-                    t,
-                    r = new Promise((n, a) => {
-                        ((e = async (e) => {
-                            n(e);
-                            try {
-                                await r;
-                            } catch (e) {}
-                        }),
-                            (t = async (e) => {
-                                a(e);
-                                try {
-                                    await r;
-                                } catch (e) {}
-                            }));
-                    });
-                return { promise: r, resolve: e, reject: t };
-            }
-            function rS({ error: e, isOutsideRemixApp: t }) {
-                let r;
-                console.error(e);
-                let n = o.createElement("script", {
-                    dangerouslySetInnerHTML: {
-                        __html: `
-        console.log(
-          "\u{1F4BF} Hey developer \u{1F44B}. You can provide a way better UX than this when your app throws errors. Check out https://reactrouter.com/how-to/error-boundary for more information."
-        );
-      `,
-                    },
-                });
-                return X(e)
-                    ? o.createElement(
-                          rE,
-                          { title: "Unhandled Thrown Response!" },
-                          o.createElement(
-                              "h1",
-                              { style: { fontSize: "24px" } },
-                              e.status,
-                              " ",
-                              e.statusText
-                          ),
-                          n
-                      )
-                    : ((r =
-                          e instanceof Error
-                              ? e
-                              : Error(
-                                    null == e
-                                        ? "Unknown Error"
-                                        : "object" == typeof e &&
-                                            "toString" in e
-                                          ? e.toString()
-                                          : JSON.stringify(e)
-                                )),
-                      o.createElement(
-                          rE,
-                          { title: "Application Error!", isOutsideRemixApp: t },
-                          o.createElement(
-                              "h1",
-                              { style: { fontSize: "24px" } },
-                              "Application Error"
-                          ),
-                          o.createElement(
-                              "pre",
-                              {
-                                  style: {
-                                      padding: "2rem",
-                                      background: "hsla(10, 50%, 50%, 0.1)",
-                                      color: "red",
-                                      overflow: "auto",
-                                  },
-                              },
-                              r.stack
-                          ),
-                          n
-                      ));
-            }
-            function rE({
-                title: e,
-                renderScripts: t,
-                isOutsideRemixApp: r,
-                children: n,
-            }) {
-                let { routeModules: a } = r$();
-                return a.root?.Layout && !r
-                    ? n
-                    : o.createElement(
-                          "html",
-                          { lang: "en" },
-                          o.createElement(
-                              "head",
-                              null,
-                              o.createElement("meta", { charSet: "utf-8" }),
-                              o.createElement("meta", {
-                                  name: "viewport",
-                                  content:
-                                      "width=device-width,initial-scale=1,viewport-fit=cover",
-                              }),
-                              o.createElement("title", null, e)
-                          ),
-                          o.createElement(
-                              "body",
-                              null,
-                              o.createElement(
-                                  "main",
-                                  {
-                                      style: {
-                                          fontFamily: "system-ui, sans-serif",
-                                          padding: "2rem",
-                                      },
-                                  },
-                                  n,
-                                  t ? o.createElement(rW, null) : null
-                              )
-                          )
-                      );
-            }
-            function rR() {
-                return React6.createElement(
-                    rE,
-                    { title: "Loading...", renderScripts: !0 },
-                    React6.createElement("script", {
-                        dangerouslySetInnerHTML: {
-                            __html: `
-              console.log(
-                "\u{1F4BF} Hey developer \u{1F44B}. You can provide a way better UX than this " +
-                "when your app is loading JS modules and/or running \`clientLoader\` " +
-                "functions. Check out https://reactrouter.com/start/framework/route-module#hydratefallback " +
-                "for more information."
-              );
-            `,
-                        },
-                    })
-                );
-            }
-            o.Component;
-            function rx(e, t) {
-                if (
-                    ("loader" === e && !t.hasLoader) ||
-                    ("action" === e && !t.hasAction)
-                ) {
-                    let r = `You are trying to call ${"action" === e ? "serverAction()" : "serverLoader()"} on a route that does not have a server ${e} (routeId: "${t.id}")`;
-                    throw (
-                        console.error(r),
-                        new V(400, "Bad Request", Error(r), !0)
-                    );
-                }
-            }
-            function rC(e, t) {
-                let r = "clientAction" === e ? "a" : "an",
-                    n = `Route "${t}" does not have ${r} ${e}, but you are trying to submit to it. To fix this, please add ${r} \`${e}\` function to the route`;
-                throw (
-                    console.error(n),
-                    new V(405, "Method Not Allowed", Error(n), !0)
-                );
-            }
-            function rk(e, t, r, n, a) {
-                if (a) {
-                    var o, i, s;
-                    let e;
-                    return (
-                        (o = r.id),
-                        (i = t.shouldRevalidate),
-                        (s = a),
-                        (e = !1),
-                        (t) =>
-                            e
-                                ? i
-                                    ? i(t)
-                                    : t.defaultShouldRevalidate
-                                : ((e = !0), s.has(o))
-                    );
-                }
-                if (!n && r.hasLoader && !r.hasClientLoader) {
-                    let r = e ? L(e)[1].map((e) => e.paramName) : [],
-                        n = (e) =>
-                            r.some(
-                                (t) => e.currentParams[t] !== e.nextParams[t]
-                            );
-                    if (!t.shouldRevalidate) return (e) => n(e);
-                    {
-                        let e = t.shouldRevalidate;
-                        return (t) =>
-                            e({ ...t, defaultShouldRevalidate: n(t) });
-                    }
-                }
-                if (n && t.shouldRevalidate) {
-                    let e = t.shouldRevalidate;
-                    return (t) => e({ ...t, defaultShouldRevalidate: !0 });
-                }
-                return t.shouldRevalidate;
-            }
-            async function rN(e, t) {
-                let r = tZ(e, t),
-                    n = t1(e),
-                    a = await r;
-                return (
-                    await Promise.all([n, t2(e, a)]),
-                    {
-                        Component: rj(a),
-                        ErrorBoundary: a.ErrorBoundary,
-                        unstable_clientMiddleware: a.unstable_clientMiddleware,
-                        clientAction: a.clientAction,
-                        clientLoader: a.clientLoader,
-                        handle: a.handle,
-                        links: a.links,
-                        meta: a.meta,
-                        shouldRevalidate: a.shouldRevalidate,
-                    }
-                );
-            }
-            function rj(e) {
-                if (
-                    null != e.default &&
-                    ("object" != typeof e.default ||
-                        0 !== Object.keys(e.default).length)
-                )
-                    return e.default;
-            }
-            var rT = new Set(),
-                rP = new Set(),
-                rA = "react-router-manifest-version";
-            function rL() {
-                let e = o.useContext(e8);
-                return (
-                    tQ(
+                    tA(
                         e,
                         "You must render this element inside a <DataRouterContext.Provider> element"
                     ),
                     e
                 );
             }
-            function r_() {
-                let e = o.useContext(e6);
+            function tW() {
+                let e = a.useContext(eB);
                 return (
-                    tQ(
+                    tA(
                         e,
                         "You must render this element inside a <DataRouterStateContext.Provider> element"
                     ),
                     e
                 );
             }
-            var rO = o.createContext(void 0);
-            function r$() {
-                let e = o.useContext(rO);
+            a.Component;
+            var tU = a.createContext(void 0);
+            function tB() {
+                let e = a.useContext(tU);
                 return (
-                    tQ(
+                    tA(
                         e,
                         "You must render this element inside a <HydratedRouter> element"
                     ),
                     e
                 );
             }
-            function rD(e, t) {
+            function tF(e, t) {
                 return (r) => {
                     (e && e(r), r.defaultPrevented || t(r));
                 };
             }
-            rO.displayName = "FrameworkContext";
-            function rI({ page: e, ...t }) {
-                let { router: r } = rL(),
-                    n = o.useMemo(
-                        () => C(r.routes, e, r.basename),
+            function tH({ page: e, ...t }) {
+                let { router: r } = tz(),
+                    n = a.useMemo(
+                        () => S(r.routes, e, r.basename),
                         [r.routes, e, r.basename]
                     );
                 return n
-                    ? o.createElement(rM, { page: e, matches: n, ...t })
+                    ? a.createElement(tq, { page: e, matches: n, ...t })
                     : null;
             }
-            function rM({ page: e, matches: t, ...r }) {
-                let n = ti(),
-                    { manifest: a, routeModules: i } = r$(),
-                    { basename: s } = rL(),
-                    { loaderData: l, matches: u } = r_(),
-                    c = o.useMemo(
-                        () => t6(e, t, u, a, n, "data"),
-                        [e, t, u, a, n]
+            function tq({ page: e, matches: t, ...r }) {
+                let n = eX(),
+                    { manifest: o, routeModules: i } = tB(),
+                    { basename: s } = tz(),
+                    { loaderData: l, matches: u } = tW(),
+                    c = a.useMemo(
+                        () => tI(e, t, u, o, n, "data"),
+                        [e, t, u, o, n]
                     ),
-                    d = o.useMemo(
-                        () => t6(e, t, u, a, n, "assets"),
-                        [e, t, u, a, n]
+                    d = a.useMemo(
+                        () => tI(e, t, u, o, n, "assets"),
+                        [e, t, u, o, n]
                     ),
-                    h = o.useMemo(() => {
+                    h = a.useMemo(() => {
+                        let r;
                         if (e === n.pathname + n.search + n.hash) return [];
-                        let r = new Set(),
-                            o = !1;
+                        let a = new Set(),
+                            u = !1;
                         if (
                             (t.forEach((e) => {
-                                let t = a.routes[e.route.id];
+                                let t = o.routes[e.route.id];
                                 t &&
                                     t.hasLoader &&
                                     ((!c.some(
@@ -10752,36 +9689,51 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                                         e.route.id in l &&
                                         i[e.route.id]?.shouldRevalidate) ||
                                     t.hasClientLoader
-                                        ? (o = !0)
-                                        : r.add(e.route.id));
+                                        ? (u = !0)
+                                        : a.add(e.route.id));
                             }),
-                            0 === r.size)
+                            0 === a.size)
                         )
                             return [];
-                        let u = rg(e, s);
+                        let d =
+                            ("/" ===
+                            (r =
+                                "string" == typeof e
+                                    ? new URL(
+                                          e,
+                                          "undefined" == typeof window
+                                              ? "server://singlefetch/"
+                                              : window.location.origin
+                                      )
+                                    : e).pathname
+                                ? (r.pathname = "_root.data")
+                                : s && "/" === T(r.pathname, s)
+                                  ? (r.pathname = `${s.replace(/\/$/, "")}/_root.data`)
+                                  : (r.pathname = `${r.pathname.replace(/\/$/, "")}.data`),
+                            r);
                         return (
-                            o &&
-                                r.size > 0 &&
-                                u.searchParams.set(
+                            u &&
+                                a.size > 0 &&
+                                d.searchParams.set(
                                     "_routes",
                                     t
-                                        .filter((e) => r.has(e.route.id))
+                                        .filter((e) => a.has(e.route.id))
                                         .map((e) => e.route.id)
                                         .join(",")
                                 ),
-                            [u.pathname + u.search]
+                            [d.pathname + d.search]
                         );
-                    }, [s, l, n, a, c, t, e, i]),
-                    f = o.useMemo(() => t7(d, a), [d, a]),
-                    p = (function (e) {
-                        let { manifest: t, routeModules: r } = r$(),
-                            [n, a] = o.useState([]);
+                    }, [s, l, n, o, c, t, e, i]),
+                    p = a.useMemo(() => tM(d, o), [d, o]),
+                    f = (function (e) {
+                        let { manifest: t, routeModules: r } = tB(),
+                            [n, o] = a.useState([]);
                         return (
-                            o.useEffect(() => {
+                            a.useEffect(() => {
                                 let n = !1;
                                 return (
-                                    t8(e, t, r).then((e) => {
-                                        n || a(e);
+                                    tO(e, t, r).then((e) => {
+                                        n || o(e);
                                     }),
                                     () => {
                                         n = !0;
@@ -10791,11 +9743,11 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                             n
                         );
                     })(d);
-                return o.createElement(
-                    o.Fragment,
+                return a.createElement(
+                    a.Fragment,
                     null,
                     h.map((e) =>
-                        o.createElement("link", {
+                        a.createElement("link", {
                             key: e,
                             rel: "prefetch",
                             as: "fetch",
@@ -10803,189 +9755,29 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
                             ...r,
                         })
                     ),
-                    f.map((e) =>
-                        o.createElement("link", {
+                    p.map((e) =>
+                        a.createElement("link", {
                             key: e,
                             rel: "modulepreload",
                             href: e,
                             ...r,
                         })
                     ),
-                    p.map(({ key: e, link: t }) =>
-                        o.createElement("link", { key: e, ...t })
+                    f.map(({ key: e, link: t }) =>
+                        a.createElement("link", { key: e, ...t })
                     )
                 );
             }
-            var rz = !1;
-            function rW(e) {
-                var t, r;
-                let {
-                        manifest: n,
-                        serverHandoffString: a,
-                        isSpaMode: i,
-                        renderMeta: s,
-                        routeDiscovery: l,
-                        ssr: u,
-                    } = r$(),
-                    { router: c, static: d, staticContext: h } = rL(),
-                    { matches: f } = r_(),
-                    p = ((t = l), (r = u), "lazy" === t.mode && !0 === r);
-                s && (s.didRenderScripts = !0);
-                let m = (function (e, t, r) {
-                    if (r && !rz) return [e[0]];
-                    !1;
-                    return e;
-                })(f, null, i);
-                o.useEffect(() => {
-                    rz = !0;
-                }, []);
-                let y = o.useMemo(() => {
-                        let t = h
-                                ? `window.__reactRouterContext = ${a};window.__reactRouterContext.stream = new ReadableStream({start(controller){window.__reactRouterContext.streamController = controller;}}).pipeThrough(new TextEncoderStream());`
-                                : " ",
-                            r = d
-                                ? `${n.hmr?.runtime ? `import ${JSON.stringify(n.hmr.runtime)};` : ""}${!p ? `import ${JSON.stringify(n.url)}` : ""};
-${m.map((e, t) => {
-    let r = `route${t}`,
-        a = n.routes[e.route.id];
-    tQ(a, `Route ${e.route.id} not found in manifest`);
-    let {
-            clientActionModule: o,
-            clientLoaderModule: i,
-            clientMiddlewareModule: s,
-            hydrateFallbackModule: l,
-            module: u,
-        } = a,
-        c = [
-            ...(o ? [{ module: o, varName: `${r}_clientAction` }] : []),
-            ...(i ? [{ module: i, varName: `${r}_clientLoader` }] : []),
-            ...(s ? [{ module: s, varName: `${r}_clientMiddleware` }] : []),
-            ...(l ? [{ module: l, varName: `${r}_HydrateFallback` }] : []),
-            { module: u, varName: `${r}_main` },
-        ];
-    return 1 === c.length
-        ? `import * as ${r} from ${JSON.stringify(u)};`
-        : [
-              c.map((e) => `import * as ${e.varName} from "${e.module}";`)
-                  .join(`
-`),
-              `const ${r} = {${c.map((e) => `...${e.varName}`).join(",")}};`,
-          ].join(`
-`);
-}).join(`
-`)}
-  ${
-      p
-          ? `window.__reactRouterManifest = ${JSON.stringify(
-                (function ({ sri: e, ...t }, r) {
-                    let n = new Set(r.state.matches.map((e) => e.route.id)),
-                        a = r.state.location.pathname
-                            .split("/")
-                            .filter(Boolean),
-                        o = ["/"];
-                    for (a.pop(); a.length > 0; )
-                        (o.push(`/${a.join("/")}`), a.pop());
-                    o.forEach((e) => {
-                        let t = C(r.routes, e, r.basename);
-                        t && t.forEach((e) => n.add(e.route.id));
-                    });
-                    let i = [...n].reduce(
-                        (e, r) => Object.assign(e, { [r]: t.routes[r] }),
-                        {}
-                    );
-                    return { ...t, routes: i, sri: !!e || void 0 };
-                })(n, c),
-                null,
-                2
-            )};`
-          : ""
-  }
-  window.__reactRouterRouteModules = {${m.map((e, t) => `${JSON.stringify(e.route.id)}:route${t}`).join(",")}};
-
-import(${JSON.stringify(n.entry.module)});`
-                                : " ";
-                        return o.createElement(
-                            o.Fragment,
-                            null,
-                            o.createElement("script", {
-                                ...e,
-                                suppressHydrationWarning: !0,
-                                dangerouslySetInnerHTML: { __html: t },
-                                type: void 0,
-                            }),
-                            o.createElement("script", {
-                                ...e,
-                                suppressHydrationWarning: !0,
-                                dangerouslySetInnerHTML: { __html: r },
-                                type: "module",
-                                async: !0,
-                            })
-                        );
-                    }, []),
-                    g = rz
-                        ? []
-                        : [
-                              ...new Set(
-                                  n.entry.imports.concat(
-                                      t7(m, n, { includeHydrateFallback: !0 })
-                                  )
-                              ),
-                          ],
-                    v = "object" == typeof n.sri ? n.sri : {};
-                return rz
-                    ? null
-                    : o.createElement(
-                          o.Fragment,
-                          null,
-                          "object" == typeof n.sri
-                              ? o.createElement("script", {
-                                    "rr-importmap": "",
-                                    type: "importmap",
-                                    suppressHydrationWarning: !0,
-                                    dangerouslySetInnerHTML: {
-                                        __html: JSON.stringify({
-                                            integrity: v,
-                                        }),
-                                    },
-                                })
-                              : null,
-                          p
-                              ? null
-                              : o.createElement("link", {
-                                    rel: "modulepreload",
-                                    href: n.url,
-                                    crossOrigin: e.crossOrigin,
-                                    integrity: v[n.url],
-                                    suppressHydrationWarning: !0,
-                                }),
-                          o.createElement("link", {
-                              rel: "modulepreload",
-                              href: n.entry.module,
-                              crossOrigin: e.crossOrigin,
-                              integrity: v[n.entry.module],
-                              suppressHydrationWarning: !0,
-                          }),
-                          g.map((t) =>
-                              o.createElement("link", {
-                                  key: t,
-                                  rel: "modulepreload",
-                                  href: t,
-                                  crossOrigin: e.crossOrigin,
-                                  integrity: v[t],
-                                  suppressHydrationWarning: !0,
-                              })
-                          ),
-                          y
-                      );
-            }
-            var rU =
+            tU.displayName = "FrameworkContext";
+            var tY =
                 "undefined" != typeof window &&
                 void 0 !== window.document &&
                 void 0 !== window.document.createElement;
             try {
-                rU && (window.__reactRouterVersion = "7.6.3");
+                tY && (window.__reactRouterVersion = "7.6.3");
             } catch (e) {}
-            function rH(e, t) {
+            function tV(e, t) {
+                let r;
                 return (function (e) {
                     let t,
                         r,
@@ -11001,36 +9793,36 @@ import(${JSON.stringify(n.entry.module)});`
                             void 0 !== i &&
                             void 0 !== i.document &&
                             void 0 !== i.document.createElement;
-                    f(
+                    c(
                         e.routes.length > 0,
                         "You must provide a non-empty routes array to createRouter"
                     );
                     let l = e.hydrationRouteProperties || [],
-                        u = e.mapRouteProperties || eo,
-                        c = {},
-                        d = x(e.routes, u, void 0, c),
-                        h = e.basename || "/",
-                        m = e.dataStrategy || eE,
-                        g = { unstable_middleware: !1, ...e.future },
-                        v = null,
-                        b = new Set(),
-                        E = null,
-                        R = null,
-                        j = null,
-                        T = null != e.hydrationData,
-                        P = C(d, e.history.location, h),
+                        u = e.mapRouteProperties || X,
+                        h = {},
+                        f = w(e.routes, u, void 0, h),
+                        m = e.basename || "/",
+                        v = e.dataStrategy || eu,
+                        b = { unstable_middleware: !1, ...e.future },
+                        x = null,
+                        C = new Set(),
+                        k = null,
+                        N = null,
+                        P = null,
+                        j = null != e.hydrationData,
+                        L = S(f, e.history.location, m),
                         A = !1,
-                        L = null;
-                    if (null != P || e.patchRoutesOnNavigation)
+                        _ = null;
+                    if (null != L || e.patchRoutesOnNavigation)
                         if (
-                            (P &&
+                            (L &&
                                 !e.hydrationData &&
-                                e7(P, d, e.history.location.pathname).active &&
-                                (P = null),
-                            P)
+                                e6(L, f, e.history.location.pathname).active &&
+                                (L = null),
+                            L)
                         )
-                            if (P.some((e) => e.route.lazy)) r = !1;
-                            else if (P.some((e) => e.route.loader)) {
+                            if (L.some((e) => e.route.lazy)) r = !1;
+                            else if (L.some((e) => e.route.loader)) {
                                 let t = e.hydrationData
                                         ? e.hydrationData.loaderData
                                         : null,
@@ -11038,34 +9830,34 @@ import(${JSON.stringify(n.entry.module)});`
                                         ? e.hydrationData.errors
                                         : null;
                                 if (n) {
-                                    let e = P.findIndex(
+                                    let e = L.findIndex(
                                         (e) => void 0 !== n[e.route.id]
                                     );
-                                    r = P.slice(0, e + 1).every(
-                                        (e) => !ef(e.route, t, n)
+                                    r = L.slice(0, e + 1).every(
+                                        (e) => !er(e.route, t, n)
                                     );
-                                } else r = P.every((e) => !ef(e.route, t, n));
+                                } else r = L.every((e) => !er(e.route, t, n));
                             } else r = !0;
                         else {
-                            ((r = !1), (P = []));
-                            let t = e7(null, d, e.history.location.pathname);
+                            ((r = !1), (L = []));
+                            let t = e6(null, f, e.history.location.pathname);
                             t.active &&
                                 t.matches &&
-                                ((A = !0), (P = t.matches));
+                                ((A = !0), (L = t.matches));
                         }
                     else {
-                        let t = eH(404, {
+                        let t = eN(404, {
                                 pathname: e.history.location.pathname,
                             }),
-                            { matches: n, route: a } = eU(d);
-                        ((r = !0), (P = n), (L = { [a.id]: t }));
+                            { matches: n, route: a } = ek(f);
+                        ((r = !0), (L = n), (_ = { [a.id]: t }));
                     }
-                    let _ = {
+                    let D = {
                             historyAction: e.history.action,
                             location: e.history.location,
-                            matches: P,
+                            matches: L,
                             initialized: r,
-                            navigation: et,
+                            navigation: Y,
                             restoreScrollPosition:
                                 null == e.hydrationData && null,
                             preventScrollReset: !1,
@@ -11080,160 +9872,160 @@ import(${JSON.stringify(n.entry.module)});`
                                 null,
                             errors:
                                 (e.hydrationData && e.hydrationData.errors) ||
-                                L,
+                                _,
                             fetchers: new Map(),
                             blockers: new Map(),
                         },
-                        $ = "POP",
-                        D = !1,
+                        O = "POP",
                         I = !1,
-                        M = new Map(),
+                        M = !1,
+                        $ = new Map(),
                         z = null,
-                        W = !1,
                         U = !1,
-                        H = new Set(),
-                        B = new Map(),
-                        F = 0,
-                        q = -1,
-                        J = new Map(),
-                        Y = new Set(),
-                        V = new Map(),
-                        G = new Map(),
-                        K = new Set(),
+                        B = !1,
+                        F = new Set(),
                         Q = new Map(),
-                        Z = null;
-                    function es(e, t = {}) {
-                        _ = { ..._, ...e };
+                        en = 0,
+                        eo = -1,
+                        ei = new Map(),
+                        es = new Set(),
+                        el = new Map(),
+                        ec = new Map(),
+                        ed = new Set(),
+                        eh = new Map(),
+                        ep = null;
+                    function ey(e, t = {}) {
+                        D = { ...D, ...e };
                         let r = [],
                             n = [];
-                        (_.fetchers.forEach((e, t) => {
+                        (D.fetchers.forEach((e, t) => {
                             "idle" === e.state &&
-                                (K.has(t) ? r.push(t) : n.push(t));
+                                (ed.has(t) ? r.push(t) : n.push(t));
                         }),
-                            K.forEach((e) => {
-                                _.fetchers.has(e) || B.has(e) || r.push(e);
+                            ed.forEach((e) => {
+                                D.fetchers.has(e) || Q.has(e) || r.push(e);
                             }),
-                            [...b].forEach((e) =>
-                                e(_, {
+                            [...C].forEach((e) =>
+                                e(D, {
                                     deletedFetchers: r,
                                     viewTransitionOpts: t.viewTransitionOpts,
                                     flushSync: !0 === t.flushSync,
                                 })
                             ),
-                            r.forEach((e) => e$(e)),
-                            n.forEach((e) => _.fetchers.delete(e)));
+                            r.forEach((e) => eK(e)),
+                            n.forEach((e) => D.fetchers.delete(e)));
                     }
-                    function el(r, n, { flushSync: a } = {}) {
+                    function ew(r, n, { flushSync: a } = {}) {
                         let o,
                             i,
                             s =
-                                null != _.actionData &&
-                                null != _.navigation.formMethod &&
-                                eZ(_.navigation.formMethod) &&
-                                "loading" === _.navigation.state &&
+                                null != D.actionData &&
+                                null != D.navigation.formMethod &&
+                                eD(D.navigation.formMethod) &&
+                                "loading" === D.navigation.state &&
                                 r.state?._isRedirect !== !0;
                         o = n.actionData
                             ? Object.keys(n.actionData).length > 0
                                 ? n.actionData
                                 : null
                             : s
-                              ? _.actionData
+                              ? D.actionData
                               : null;
                         let l = n.loaderData
-                                ? eM(
-                                      _.loaderData,
+                                ? eE(
+                                      D.loaderData,
                                       n.loaderData,
                                       n.matches || [],
                                       n.errors
                                   )
-                                : _.loaderData,
-                            u = _.blockers;
+                                : D.loaderData,
+                            u = D.blockers;
                         u.size > 0 &&
-                            (u = new Map(u)).forEach((e, t) => u.set(t, en));
+                            (u = new Map(u)).forEach((e, t) => u.set(t, J));
                         let c =
-                            !0 === D ||
-                            (null != _.navigation.formMethod &&
-                                eZ(_.navigation.formMethod) &&
+                            !0 === I ||
+                            (null != D.navigation.formMethod &&
+                                eD(D.navigation.formMethod) &&
                                 r.state?._isRedirect !== !0);
                         if (
-                            (t && ((d = t), (t = void 0)),
-                            W ||
-                                "POP" === $ ||
-                                ("PUSH" === $
+                            (t && ((f = t), (t = void 0)),
+                            U ||
+                                "POP" === O ||
+                                ("PUSH" === O
                                     ? e.history.push(r, r.state)
-                                    : "REPLACE" === $ &&
+                                    : "REPLACE" === O &&
                                       e.history.replace(r, r.state)),
-                            "POP" === $)
+                            "POP" === O)
                         ) {
-                            let e = M.get(_.location.pathname);
+                            let e = $.get(D.location.pathname);
                             e && e.has(r.pathname)
                                 ? (i = {
-                                      currentLocation: _.location,
+                                      currentLocation: D.location,
                                       nextLocation: r,
                                   })
-                                : M.has(r.pathname) &&
+                                : $.has(r.pathname) &&
                                   (i = {
                                       currentLocation: r,
-                                      nextLocation: _.location,
+                                      nextLocation: D.location,
                                   });
-                        } else if (I) {
-                            let e = M.get(_.location.pathname);
+                        } else if (M) {
+                            let e = $.get(D.location.pathname);
                             (e
                                 ? e.add(r.pathname)
                                 : ((e = new Set([r.pathname])),
-                                  M.set(_.location.pathname, e)),
+                                  $.set(D.location.pathname, e)),
                                 (i = {
-                                    currentLocation: _.location,
+                                    currentLocation: D.location,
                                     nextLocation: r,
                                 }));
                         }
-                        (es(
+                        (ey(
                             {
                                 ...n,
                                 actionData: o,
                                 loaderData: l,
-                                historyAction: $,
+                                historyAction: O,
                                 location: r,
                                 initialized: !0,
-                                navigation: et,
+                                navigation: Y,
                                 revalidation: "idle",
-                                restoreScrollPosition: e6(
+                                restoreScrollPosition: e7(
                                     r,
-                                    n.matches || _.matches
+                                    n.matches || D.matches
                                 ),
                                 preventScrollReset: c,
                                 blockers: u,
                             },
                             { viewTransitionOpts: i, flushSync: !0 === a }
                         ),
-                            ($ = "POP"),
-                            (D = !1),
+                            (O = "POP"),
                             (I = !1),
-                            (W = !1),
+                            (M = !1),
                             (U = !1),
-                            Z?.resolve(),
-                            (Z = null));
+                            (B = !1),
+                            ep?.resolve(),
+                            (ep = null));
                     }
-                    async function eu(t, r) {
+                    async function eS(t, r) {
                         if ("number" == typeof t) return void e.history.go(t);
                         let {
                                 path: n,
                                 submission: a,
                                 error: o,
-                            } = ed(
+                            } = ee(
                                 !1,
-                                ec(
-                                    _.location,
-                                    _.matches,
-                                    h,
+                                Z(
+                                    D.location,
+                                    D.matches,
+                                    m,
                                     t,
                                     r?.fromRouteId,
                                     r?.relative
                                 ),
                                 r
                             ),
-                            i = _.location,
-                            s = y(_.location, n, r && r.state);
+                            i = D.location,
+                            s = p(D.location, n, r && r.state);
                         s = { ...s, ...e.history.encodeLocation(s) };
                         let l = r && null != r.replace ? r.replace : void 0,
                             u = "PUSH";
@@ -11241,39 +10033,39 @@ import(${JSON.stringify(n.entry.module)});`
                             ? (u = "REPLACE")
                             : !1 === l ||
                               (null != a &&
-                                  eZ(a.formMethod) &&
+                                  eD(a.formMethod) &&
                                   a.formAction ===
-                                      _.location.pathname + _.location.search &&
+                                      D.location.pathname + D.location.search &&
                                   (u = "REPLACE"));
                         let c =
                                 r && "preventScrollReset" in r
                                     ? !0 === r.preventScrollReset
                                     : void 0,
                             d = !0 === (r && r.flushSync),
-                            f = eQ({
+                            h = e3({
                                 currentLocation: i,
                                 nextLocation: s,
                                 historyAction: u,
                             });
-                        if (f)
-                            return void eK(f, {
+                        if (h)
+                            return void e4(h, {
                                 state: "blocked",
                                 location: s,
                                 proceed() {
-                                    (eK(f, {
+                                    (e4(h, {
                                         state: "proceeding",
                                         proceed: void 0,
                                         reset: void 0,
                                         location: s,
                                     }),
-                                        eu(t, r));
+                                        eS(t, r));
                                 },
                                 reset() {
-                                    let e = new Map(_.blockers);
-                                    (e.set(f, en), es({ blockers: e }));
+                                    let e = new Map(D.blockers);
+                                    (e.set(h, J), ey({ blockers: e }));
                                 },
                             });
-                        await ep(u, s, {
+                        await eT(u, s, {
                             submission: a,
                             pendingError: o,
                             preventScrollReset: c,
@@ -11282,34 +10074,34 @@ import(${JSON.stringify(n.entry.module)});`
                             flushSync: d,
                         });
                     }
-                    async function ep(r, n, o) {
+                    async function eT(r, n, o) {
                         var i, s, l, u;
                         let c;
                         (a && a.abort(),
                             (a = null),
-                            ($ = r),
-                            (W =
+                            (O = r),
+                            (U =
                                 !0 === (o && o.startUninterruptedRevalidation)),
-                            (i = _.location),
-                            (s = _.matches),
-                            E && j && (E[e8(i, s)] = j()),
-                            (D = !0 === (o && o.preventScrollReset)),
-                            (I = !0 === (o && o.enableViewTransition)));
-                        let f = t || d,
-                            p = o && o.overrideNavigation,
-                            m =
+                            (i = D.location),
+                            (s = D.matches),
+                            k && P && (k[e8(i, s)] = P()),
+                            (I = !0 === (o && o.preventScrollReset)),
+                            (M = !0 === (o && o.enableViewTransition)));
+                        let d = t || f,
+                            h = o && o.overrideNavigation,
+                            p =
                                 o?.initialHydration &&
-                                _.matches &&
-                                _.matches.length > 0 &&
+                                D.matches &&
+                                D.matches.length > 0 &&
                                 !A
-                                    ? _.matches
-                                    : C(f, n, h),
+                                    ? D.matches
+                                    : S(d, n, m),
                             y = !0 === (o && o.flushSync);
                         if (
-                            m &&
-                            _.initialized &&
-                            !U &&
-                            ((l = _.location),
+                            p &&
+                            D.initialized &&
+                            !B &&
+                            ((l = D.location),
                             (u = n),
                             l.pathname === u.pathname &&
                                 l.search === u.search &&
@@ -11318,17 +10110,17 @@ import(${JSON.stringify(n.entry.module)});`
                                     : l.hash === u.hash ||
                                       "" !== u.hash ||
                                       !1)) &&
-                            !(o && o.submission && eZ(o.submission.formMethod))
+                            !(o && o.submission && eD(o.submission.formMethod))
                         )
-                            return void el(n, { matches: m }, { flushSync: y });
-                        let g = e7(m, f, n.pathname);
-                        if ((g.active && g.matches && (m = g.matches), !m)) {
+                            return void ew(n, { matches: p }, { flushSync: y });
+                        let v = e6(p, d, n.pathname);
+                        if ((v.active && v.matches && (p = v.matches), !p)) {
                             let {
                                 error: e,
                                 notFoundMatches: t,
                                 route: r,
-                            } = e0(n.pathname);
-                            el(
+                            } = e5(n.pathname);
+                            ew(
                                 n,
                                 {
                                     matches: t,
@@ -11340,29 +10132,29 @@ import(${JSON.stringify(n.entry.module)});`
                             return;
                         }
                         a = new AbortController();
-                        let v = e_(e.history, n, a.signal, o && o.submission),
-                            b = new S(
+                        let b = eb(e.history, n, a.signal, o && o.submission),
+                            w = new g(
                                 e.unstable_getContext
                                     ? await e.unstable_getContext()
                                     : void 0
                             );
                         if (o && o.pendingError)
                             c = [
-                                eW(m).route.id,
+                                eC(p).route.id,
                                 { type: "error", error: o.pendingError },
                             ];
                         else if (
                             o &&
                             o.submission &&
-                            eZ(o.submission.formMethod)
+                            eD(o.submission.formMethod)
                         ) {
-                            let t = await ey(
-                                v,
+                            let t = await eA(
+                                b,
                                 n,
                                 o.submission,
-                                m,
-                                b,
-                                g.active,
+                                p,
+                                w,
+                                v.active,
                                 o && !0 === o.initialHydration,
                                 { replace: o.replace, flushSync: y }
                             );
@@ -11370,12 +10162,12 @@ import(${JSON.stringify(n.entry.module)});`
                             if (t.pendingActionResult) {
                                 let [e, r] = t.pendingActionResult;
                                 if (
-                                    eJ(r) &&
-                                    X(r.error) &&
+                                    ej(r) &&
+                                    W(r.error) &&
                                     404 === r.error.status
                                 ) {
                                     ((a = null),
-                                        el(n, {
+                                        ew(n, {
                                             matches: t.matches,
                                             loaderData: {},
                                             errors: { [e]: r.error },
@@ -11383,25 +10175,25 @@ import(${JSON.stringify(n.entry.module)});`
                                     return;
                                 }
                             }
-                            ((m = t.matches || m),
+                            ((p = t.matches || p),
                                 (c = t.pendingActionResult),
-                                (p = e4(n, o.submission)),
+                                (h = e$(n, o.submission)),
                                 (y = !1),
-                                (g.active = !1),
-                                (v = e_(e.history, v.url, v.signal)));
+                                (v.active = !1),
+                                (b = eb(e.history, b.url, b.signal)));
                         }
                         let {
-                            shortCircuited: w,
-                            matches: R,
+                            shortCircuited: R,
+                            matches: E,
                             loaderData: x,
-                            errors: k,
-                        } = await eg(
-                            v,
-                            n,
-                            m,
+                            errors: C,
+                        } = await eO(
                             b,
-                            g.active,
+                            n,
                             p,
+                            w,
+                            v.active,
+                            h,
                             o && o.submission,
                             o && o.fetcherSubmission,
                             o && o.replace,
@@ -11409,31 +10201,31 @@ import(${JSON.stringify(n.entry.module)});`
                             y,
                             c
                         );
-                        w ||
+                        R ||
                             ((a = null),
-                            el(n, {
-                                matches: R || m,
-                                ...ez(c),
+                            ew(n, {
+                                matches: E || p,
+                                ...ex(c),
                                 loaderData: x,
-                                errors: k,
+                                errors: C,
                             }));
                     }
-                    async function ey(e, t, r, n, a, o, i, s = {}) {
-                        var d;
-                        let f;
+                    async function eA(e, t, r, n, a, o, i, s = {}) {
+                        var c;
+                        let d;
                         if (
-                            (eC(),
-                            es(
+                            (eV(),
+                            ey(
                                 {
                                     navigation: {
                                         state: "submitting",
                                         location: t,
-                                        formMethod: (d = r).formMethod,
-                                        formAction: d.formAction,
-                                        formEncType: d.formEncType,
-                                        formData: d.formData,
-                                        json: d.json,
-                                        text: d.text,
+                                        formMethod: (c = r).formMethod,
+                                        formAction: c.formAction,
+                                        formEncType: c.formEncType,
+                                        formData: c.formData,
+                                        json: c.json,
+                                        text: c.text,
                                     },
                                 },
                                 { flushSync: !0 === s.flushSync }
@@ -11444,7 +10236,7 @@ import(${JSON.stringify(n.entry.module)});`
                             if ("aborted" === r.type)
                                 return { shortCircuited: !0 };
                             if ("error" === r.type) {
-                                let e = eW(r.partialMatches).route.id;
+                                let e = eC(r.partialMatches).route.id;
                                 return {
                                     matches: r.partialMatches,
                                     pendingActionResult: [
@@ -11459,7 +10251,7 @@ import(${JSON.stringify(n.entry.module)});`
                                     notFoundMatches: e,
                                     error: r,
                                     route: n,
-                                } = e0(t.pathname);
+                                } = e5(t.pathname);
                                 return {
                                     matches: e,
                                     pendingActionResult: [
@@ -11469,58 +10261,58 @@ import(${JSON.stringify(n.entry.module)});`
                                 };
                             }
                         }
-                        let p = e1(n, t);
+                        let p = eI(n, t);
                         if (p.route.action || p.route.lazy) {
-                            let t = eN(u, c, e, n, p, i ? [] : l, a),
-                                r = await eR(e, t, a, null);
-                            if (!(f = r[p.route.id])) {
+                            let t = ef(u, h, e, n, p, i ? [] : l, a),
+                                r = await eq(e, t, a, null);
+                            if (!(d = r[p.route.id])) {
                                 for (let e of n)
                                     if (r[e.route.id]) {
-                                        f = r[e.route.id];
+                                        d = r[e.route.id];
                                         break;
                                     }
                             }
                             if (e.signal.aborted) return { shortCircuited: !0 };
                         } else
-                            f = {
+                            d = {
                                 type: "error",
-                                error: eH(405, {
+                                error: eN(405, {
                                     method: e.method,
                                     pathname: t.pathname,
                                     routeId: p.route.id,
                                 }),
                             };
-                        if (eY(f)) {
+                        if (eL(d)) {
                             let t;
                             return (
                                 (t =
                                     s && null != s.replace
                                         ? s.replace
-                                        : eL(
-                                              f.response.headers.get(
+                                        : ev(
+                                              d.response.headers.get(
                                                   "Location"
                                               ),
                                               new URL(e.url),
-                                              h
+                                              m
                                           ) ===
-                                          _.location.pathname +
-                                              _.location.search),
-                                await eS(e, f, !0, {
+                                          D.location.pathname +
+                                              D.location.search),
+                                await eH(e, d, !0, {
                                     submission: r,
                                     replace: t,
                                 }),
                                 { shortCircuited: !0 }
                             );
                         }
-                        if (eJ(f)) {
-                            let e = eW(n, p.route.id);
+                        if (ej(d)) {
+                            let e = eC(n, p.route.id);
                             return (
-                                !0 !== (s && s.replace) && ($ = "PUSH"),
+                                !0 !== (s && s.replace) && (O = "PUSH"),
                                 {
                                     matches: n,
                                     pendingActionResult: [
                                         e.route.id,
-                                        f,
+                                        d,
                                         p.route.id,
                                     ],
                                 }
@@ -11528,17 +10320,17 @@ import(${JSON.stringify(n.entry.module)});`
                         }
                         return {
                             matches: n,
-                            pendingActionResult: [p.route.id, f],
+                            pendingActionResult: [p.route.id, d],
                         };
                     }
-                    async function eg(r, n, o, i, s, f, p, m, y, g, v, b) {
-                        let w = f || e4(n, p),
-                            S = p || m || e2(w),
-                            E = !W && !g;
+                    async function eO(r, n, o, i, s, c, d, p, y, g, v, b) {
+                        let w = c || e$(n, d),
+                            S = d || p || eM(w),
+                            R = !U && !g;
                         if (s) {
-                            if (E) {
-                                let e = ev(b);
-                                es(
+                            if (R) {
+                                let e = eU(b);
+                                ey(
                                     {
                                         navigation: w,
                                         ...(void 0 !== e
@@ -11552,7 +10344,7 @@ import(${JSON.stringify(n.entry.module)});`
                             if ("aborted" === e.type)
                                 return { shortCircuited: !0 };
                             if ("error" === e.type) {
-                                let t = eW(e.partialMatches).route.id;
+                                let t = eC(e.partialMatches).route.id;
                                 return {
                                     matches: e.partialMatches,
                                     loaderData: {},
@@ -11565,7 +10357,7 @@ import(${JSON.stringify(n.entry.module)});`
                                     error: e,
                                     notFoundMatches: t,
                                     route: r,
-                                } = e0(n.pathname);
+                                } = e5(n.pathname);
                                 return {
                                     matches: t,
                                     loaderData: {},
@@ -11573,49 +10365,49 @@ import(${JSON.stringify(n.entry.module)});`
                                 };
                             }
                         }
-                        let R = t || d,
-                            { dsMatches: x, revalidatingFetchers: C } = eh(
+                        let E = t || f,
+                            { dsMatches: x, revalidatingFetchers: C } = et(
                                 r,
                                 i,
                                 u,
-                                c,
+                                h,
                                 e.history,
-                                _,
+                                D,
                                 o,
                                 S,
                                 n,
                                 g ? [] : l,
                                 !0 === g,
-                                U,
-                                H,
-                                K,
-                                V,
-                                Y,
-                                R,
-                                h,
+                                B,
+                                F,
+                                ed,
+                                el,
+                                es,
+                                E,
+                                m,
                                 null != e.patchRoutesOnNavigation,
                                 b
                             );
                         if (
-                            ((q = ++F),
+                            ((eo = ++en),
                             !e.dataStrategy &&
                                 !x.some((e) => e.shouldLoad) &&
                                 0 === C.length)
                         ) {
-                            let e = eV();
+                            let e = e0();
                             return (
-                                el(
+                                ew(
                                     n,
                                     {
                                         matches: o,
                                         loaderData: {},
                                         errors:
-                                            b && eJ(b[1])
+                                            b && ej(b[1])
                                                 ? { [b[0]]: b[1].error }
                                                 : null,
-                                        ...ez(b),
+                                        ...ex(b),
                                         ...(e
-                                            ? { fetchers: new Map(_.fetchers) }
+                                            ? { fetchers: new Map(D.fetchers) }
                                             : {}),
                                     },
                                     { flushSync: v }
@@ -11623,29 +10415,29 @@ import(${JSON.stringify(n.entry.module)});`
                                 { shortCircuited: !0 }
                             );
                         }
-                        if (E) {
+                        if (R) {
                             let e = {};
                             if (!s) {
                                 e.navigation = w;
-                                let t = ev(b);
+                                let t = eU(b);
                                 void 0 !== t && (e.actionData = t);
                             }
                             (C.length > 0 &&
                                 (C.forEach((e) => {
-                                    let t = _.fetchers.get(e.key),
-                                        r = e3(void 0, t ? t.data : void 0);
-                                    _.fetchers.set(e.key, r);
+                                    let t = D.fetchers.get(e.key),
+                                        r = ez(void 0, t ? t.data : void 0);
+                                    D.fetchers.set(e.key, r);
                                 }),
-                                (e.fetchers = new Map(_.fetchers))),
-                                es(e, { flushSync: v }));
+                                (e.fetchers = new Map(D.fetchers))),
+                                ey(e, { flushSync: v }));
                         }
                         C.forEach((e) => {
-                            (eD(e.key),
-                                e.controller && B.set(e.key, e.controller));
+                            (eQ(e.key),
+                                e.controller && Q.set(e.key, e.controller));
                         });
-                        let k = () => C.forEach((e) => eD(e.key));
+                        let k = () => C.forEach((e) => eQ(e.key));
                         a && a.signal.addEventListener("abort", k);
-                        let { loaderResults: N, fetcherResults: j } = await ex(
+                        let { loaderResults: N, fetcherResults: P } = await eY(
                             x,
                             C,
                             r,
@@ -11653,55 +10445,55 @@ import(${JSON.stringify(n.entry.module)});`
                         );
                         if (r.signal.aborted) return { shortCircuited: !0 };
                         (a && a.signal.removeEventListener("abort", k),
-                            C.forEach((e) => B.delete(e.key)));
-                        let T = eB(N);
+                            C.forEach((e) => Q.delete(e.key)));
+                        let T = eP(N);
                         if (T)
                             return (
-                                await eS(r, T.result, !0, { replace: y }),
+                                await eH(r, T.result, !0, { replace: y }),
                                 { shortCircuited: !0 }
                             );
-                        if ((T = eB(j)))
+                        if ((T = eP(P)))
                             return (
-                                Y.add(T.key),
-                                await eS(r, T.result, !0, { replace: y }),
+                                es.add(T.key),
+                                await eH(r, T.result, !0, { replace: y }),
                                 { shortCircuited: !0 }
                             );
-                        let { loaderData: P, errors: A } = eI(_, o, N, b, C, j);
-                        g && _.errors && (A = { ..._.errors, ...A });
-                        let L = eV(),
-                            O = eX(q);
+                        let { loaderData: j, errors: L } = eR(D, o, N, b, C, P);
+                        g && D.errors && (L = { ...D.errors, ...L });
+                        let A = e0(),
+                            _ = e1(eo);
                         return {
                             matches: o,
-                            loaderData: P,
-                            errors: A,
-                            ...(L || O || C.length > 0
-                                ? { fetchers: new Map(_.fetchers) }
+                            loaderData: j,
+                            errors: L,
+                            ...(A || _ || C.length > 0
+                                ? { fetchers: new Map(D.fetchers) }
                                 : {}),
                         };
                     }
-                    function ev(e) {
-                        if (e && !eJ(e[1])) return { [e[0]]: e[1].data };
-                        if (_.actionData)
-                            if (0 === Object.keys(_.actionData).length)
+                    function eU(e) {
+                        if (e && !ej(e[1])) return { [e[0]]: e[1].data };
+                        if (D.actionData)
+                            if (0 === Object.keys(D.actionData).length)
                                 return null;
-                            else return _.actionData;
+                            else return D.actionData;
                     }
-                    async function eb(r, n, o, i, s, p, m, y, g, v) {
+                    async function eB(r, n, o, i, s, d, p, y, g, v) {
                         var b, w;
-                        function S(e) {
+                        function R(e) {
                             if (!e.route.action && !e.route.lazy) {
-                                let e = eH(405, {
+                                let e = eN(405, {
                                     method: v.formMethod,
                                     pathname: o,
                                     routeId: n,
                                 });
-                                return (eT(r, n, e, { flushSync: y }), !0);
+                                return (eG(r, n, e, { flushSync: y }), !0);
                             }
                             return !1;
                         }
-                        if ((eC(), V.delete(r), !m && S(i))) return;
-                        let E = _.fetchers.get(r);
-                        ek(
+                        if ((eV(), el.delete(r), !p && R(i))) return;
+                        let E = D.fetchers.get(r);
+                        eJ(
                             r,
                             ((b = v),
                             (w = E),
@@ -11717,176 +10509,176 @@ import(${JSON.stringify(n.entry.module)});`
                             }),
                             { flushSync: y }
                         );
-                        let R = new AbortController(),
-                            x = e_(e.history, o, R.signal, v);
-                        if (m) {
-                            let e = await e9(s, o, x.signal, r);
+                        let x = new AbortController(),
+                            C = eb(e.history, o, x.signal, v);
+                        if (p) {
+                            let e = await e9(s, o, C.signal, r);
                             if ("aborted" === e.type) return;
                             if ("error" === e.type)
-                                return void eT(r, n, e.error, { flushSync: y });
+                                return void eG(r, n, e.error, { flushSync: y });
                             if (!e.matches)
-                                return void eT(r, n, eH(404, { pathname: o }), {
+                                return void eG(r, n, eN(404, { pathname: o }), {
                                     flushSync: y,
                                 });
-                            if (S((i = e1((s = e.matches), o)))) return;
+                            if (R((i = eI((s = e.matches), o)))) return;
                         }
-                        B.set(r, R);
-                        let k = F,
-                            N = eN(u, c, x, s, i, l, p),
-                            j = (await eR(x, N, p, r))[i.route.id];
-                        if (x.signal.aborted) {
-                            B.get(r) === R && B.delete(r);
+                        Q.set(r, x);
+                        let k = en,
+                            N = ef(u, h, C, s, i, l, d),
+                            P = (await eq(C, N, d, r))[i.route.id];
+                        if (C.signal.aborted) {
+                            Q.get(r) === x && Q.delete(r);
                             return;
                         }
-                        if (K.has(r)) {
-                            if (eY(j) || eJ(j)) return void ek(r, e5(void 0));
+                        if (ed.has(r)) {
+                            if (eL(P) || ej(P)) return void eJ(r, eW(void 0));
                         } else {
-                            if (eY(j))
-                                return (B.delete(r), q > k)
-                                    ? void ek(r, e5(void 0))
-                                    : (Y.add(r),
-                                      ek(r, e3(v)),
-                                      eS(x, j, !1, {
+                            if (eL(P))
+                                return (Q.delete(r), eo > k)
+                                    ? void eJ(r, eW(void 0))
+                                    : (es.add(r),
+                                      eJ(r, ez(v)),
+                                      eH(C, P, !1, {
                                           fetcherSubmission: v,
                                           preventScrollReset: g,
                                       }));
-                            if (eJ(j)) return void eT(r, n, j.error);
+                            if (ej(P)) return void eG(r, n, P.error);
                         }
-                        let T = _.navigation.location || _.location,
-                            P = e_(e.history, T, R.signal),
-                            A = t || d,
-                            L =
-                                "idle" !== _.navigation.state
-                                    ? C(A, _.navigation.location, h)
-                                    : _.matches;
-                        f(L, "Didn't find any matches after fetcher action");
-                        let O = ++F;
-                        J.set(r, O);
-                        let D = e3(v, j.data);
-                        _.fetchers.set(r, D);
-                        let { dsMatches: I, revalidatingFetchers: M } = eh(
-                            P,
-                            p,
+                        let T = D.navigation.location || D.location,
+                            j = eb(e.history, T, x.signal),
+                            L = t || f,
+                            A =
+                                "idle" !== D.navigation.state
+                                    ? S(L, D.navigation.location, m)
+                                    : D.matches;
+                        c(A, "Didn't find any matches after fetcher action");
+                        let _ = ++en;
+                        ei.set(r, _);
+                        let I = ez(v, P.data);
+                        D.fetchers.set(r, I);
+                        let { dsMatches: M, revalidatingFetchers: $ } = et(
+                            j,
+                            d,
                             u,
-                            c,
+                            h,
                             e.history,
-                            _,
-                            L,
+                            D,
+                            A,
                             v,
                             T,
                             l,
                             !1,
-                            U,
-                            H,
-                            K,
-                            V,
-                            Y,
-                            A,
-                            h,
+                            B,
+                            F,
+                            ed,
+                            el,
+                            es,
+                            L,
+                            m,
                             null != e.patchRoutesOnNavigation,
-                            [i.route.id, j]
+                            [i.route.id, P]
                         );
-                        (M.filter((e) => e.key !== r).forEach((e) => {
+                        ($.filter((e) => e.key !== r).forEach((e) => {
                             let t = e.key,
-                                r = _.fetchers.get(t),
-                                n = e3(void 0, r ? r.data : void 0);
-                            (_.fetchers.set(t, n),
-                                eD(t),
-                                e.controller && B.set(t, e.controller));
+                                r = D.fetchers.get(t),
+                                n = ez(void 0, r ? r.data : void 0);
+                            (D.fetchers.set(t, n),
+                                eQ(t),
+                                e.controller && Q.set(t, e.controller));
                         }),
-                            es({ fetchers: new Map(_.fetchers) }));
-                        let z = () => M.forEach((e) => eD(e.key));
-                        R.signal.addEventListener("abort", z);
-                        let { loaderResults: W, fetcherResults: X } = await ex(
-                            I,
+                            ey({ fetchers: new Map(D.fetchers) }));
+                        let z = () => $.forEach((e) => eQ(e.key));
+                        x.signal.addEventListener("abort", z);
+                        let { loaderResults: W, fetcherResults: U } = await eY(
                             M,
-                            P,
-                            p
+                            $,
+                            j,
+                            d
                         );
-                        if (R.signal.aborted) return;
+                        if (x.signal.aborted) return;
                         if (
-                            (R.signal.removeEventListener("abort", z),
-                            J.delete(r),
-                            B.delete(r),
-                            M.forEach((e) => B.delete(e.key)),
-                            _.fetchers.has(r))
+                            (x.signal.removeEventListener("abort", z),
+                            ei.delete(r),
+                            Q.delete(r),
+                            $.forEach((e) => Q.delete(e.key)),
+                            D.fetchers.has(r))
                         ) {
-                            let e = e5(j.data);
-                            _.fetchers.set(r, e);
+                            let e = eW(P.data);
+                            D.fetchers.set(r, e);
                         }
-                        let G = eB(W);
-                        if (G)
-                            return eS(P, G.result, !1, {
+                        let H = eP(W);
+                        if (H)
+                            return eH(j, H.result, !1, {
                                 preventScrollReset: g,
                             });
-                        if ((G = eB(X)))
+                        if ((H = eP(U)))
                             return (
-                                Y.add(G.key),
-                                eS(P, G.result, !1, { preventScrollReset: g })
+                                es.add(H.key),
+                                eH(j, H.result, !1, { preventScrollReset: g })
                             );
-                        let { loaderData: Q, errors: Z } = eI(
-                            _,
-                            L,
+                        let { loaderData: q, errors: Y } = eR(
+                            D,
+                            A,
                             W,
                             void 0,
-                            M,
-                            X
+                            $,
+                            U
                         );
-                        (eX(O),
-                            "loading" === _.navigation.state && O > q
-                                ? (f($, "Expected pending action"),
+                        (e1(_),
+                            "loading" === D.navigation.state && _ > eo
+                                ? (c(O, "Expected pending action"),
                                   a && a.abort(),
-                                  el(_.navigation.location, {
-                                      matches: L,
-                                      loaderData: Q,
-                                      errors: Z,
-                                      fetchers: new Map(_.fetchers),
+                                  ew(D.navigation.location, {
+                                      matches: A,
+                                      loaderData: q,
+                                      errors: Y,
+                                      fetchers: new Map(D.fetchers),
                                   }))
-                                : (es({
-                                      errors: Z,
-                                      loaderData: eM(_.loaderData, Q, L, Z),
-                                      fetchers: new Map(_.fetchers),
+                                : (ey({
+                                      errors: Y,
+                                      loaderData: eE(D.loaderData, q, A, Y),
+                                      fetchers: new Map(D.fetchers),
                                   }),
-                                  (U = !1)));
+                                  (B = !1)));
                     }
-                    async function ew(t, r, n, a, o, i, s, d, h, f) {
-                        let p = _.fetchers.get(t);
-                        ek(t, e3(f, p ? p.data : void 0), { flushSync: d });
+                    async function eF(t, r, n, a, o, i, s, c, d, p) {
+                        let f = D.fetchers.get(t);
+                        eJ(t, ez(p, f ? f.data : void 0), { flushSync: c });
                         let m = new AbortController(),
-                            y = e_(e.history, n, m.signal);
+                            y = eb(e.history, n, m.signal);
                         if (s) {
                             let e = await e9(o, n, y.signal, t);
                             if ("aborted" === e.type) return;
                             if ("error" === e.type)
-                                return void eT(t, r, e.error, { flushSync: d });
+                                return void eG(t, r, e.error, { flushSync: c });
                             if (!e.matches)
-                                return void eT(t, r, eH(404, { pathname: n }), {
-                                    flushSync: d,
+                                return void eG(t, r, eN(404, { pathname: n }), {
+                                    flushSync: c,
                                 });
-                            a = e1((o = e.matches), n);
+                            a = eI((o = e.matches), n);
                         }
-                        B.set(t, m);
-                        let g = F,
-                            v = eN(u, c, y, o, a, l, i),
-                            b = (await eR(y, v, i, t))[a.route.id];
+                        Q.set(t, m);
+                        let g = en,
+                            v = ef(u, h, y, o, a, l, i),
+                            b = (await eq(y, v, i, t))[a.route.id];
                         if (
-                            (B.get(t) === m && B.delete(t), !y.signal.aborted)
+                            (Q.get(t) === m && Q.delete(t), !y.signal.aborted)
                         ) {
-                            if (K.has(t)) return void ek(t, e5(void 0));
-                            if (eY(b))
-                                if (q > g) return void ek(t, e5(void 0));
+                            if (ed.has(t)) return void eJ(t, eW(void 0));
+                            if (eL(b))
+                                if (eo > g) return void eJ(t, eW(void 0));
                                 else {
-                                    (Y.add(t),
-                                        await eS(y, b, !1, {
-                                            preventScrollReset: h,
+                                    (es.add(t),
+                                        await eH(y, b, !1, {
+                                            preventScrollReset: d,
                                         }));
                                     return;
                                 }
-                            if (eJ(b)) return void eT(t, r, b.error);
-                            ek(t, e5(b.data));
+                            if (ej(b)) return void eG(t, r, b.error);
+                            eJ(t, eW(b.data));
                         }
                     }
-                    async function eS(
+                    async function eH(
                         e,
                         t,
                         r,
@@ -11898,14 +10690,14 @@ import(${JSON.stringify(n.entry.module)});`
                         } = {}
                     ) {
                         t.response.headers.has("X-Remix-Revalidate") &&
-                            (U = !0);
-                        let c = t.response.headers.get("Location");
-                        (f(
-                            c,
+                            (B = !0);
+                        let d = t.response.headers.get("Location");
+                        (c(
+                            d,
                             "Expected a Location header on the redirect Response"
                         ),
-                            (c = eL(c, new URL(e.url), h)));
-                        let d = y(_.location, c, { _isRedirect: !0 });
+                            (d = ev(d, new URL(e.url), m)));
+                        let h = p(D.location, d, { _isRedirect: !0 });
                         if (s) {
                             let e = !1;
                             if (
@@ -11914,51 +10706,51 @@ import(${JSON.stringify(n.entry.module)});`
                                 )
                             )
                                 e = !0;
-                            else if (ea.test(c)) {
-                                let t = w(c, !0);
+                            else if (G.test(d)) {
+                                let t = y(d, !0);
                                 e =
                                     t.origin !== i.location.origin ||
-                                    null == O(t.pathname, h);
+                                    null == T(t.pathname, m);
                             }
                             if (e)
                                 return void (u
-                                    ? i.location.replace(c)
-                                    : i.location.assign(c));
+                                    ? i.location.replace(d)
+                                    : i.location.assign(d));
                         }
                         a = null;
-                        let p =
+                        let f =
                                 !0 === u ||
                                 t.response.headers.has("X-Remix-Replace")
                                     ? "REPLACE"
                                     : "PUSH",
                             {
-                                formMethod: m,
-                                formAction: g,
-                                formEncType: v,
-                            } = _.navigation;
-                        !n && !o && m && g && v && (n = e2(_.navigation));
-                        let b = n || o;
-                        if (ee.has(t.response.status) && b && eZ(b.formMethod))
-                            await ep(p, d, {
-                                submission: { ...b, formAction: c },
-                                preventScrollReset: l || D,
-                                enableViewTransition: r ? I : void 0,
+                                formMethod: g,
+                                formAction: v,
+                                formEncType: b,
+                            } = D.navigation;
+                        !n && !o && g && v && b && (n = eM(D.navigation));
+                        let w = n || o;
+                        if (q.has(t.response.status) && w && eD(w.formMethod))
+                            await eT(f, h, {
+                                submission: { ...w, formAction: d },
+                                preventScrollReset: l || I,
+                                enableViewTransition: r ? M : void 0,
                             });
                         else {
-                            let e = e4(d, n);
-                            await ep(p, d, {
+                            let e = e$(h, n);
+                            await eT(f, h, {
                                 overrideNavigation: e,
                                 fetcherSubmission: o,
-                                preventScrollReset: l || D,
-                                enableViewTransition: r ? I : void 0,
+                                preventScrollReset: l || I,
+                                enableViewTransition: r ? M : void 0,
                             });
                         }
                     }
-                    async function eR(e, t, r, n) {
+                    async function eq(e, t, r, n) {
                         let a,
                             o = {};
                         try {
-                            a = await ej(m, e, t, n, r, !1);
+                            a = await em(v, e, t, n, r, !1);
                         } catch (e) {
                             return (
                                 t
@@ -11973,18 +10765,39 @@ import(${JSON.stringify(n.entry.module)});`
                             );
                         }
                         if (e.signal.aborted) return o;
-                        for (let [r, n] of Object.entries(a))
-                            if (eq(n)) {
+                        for (let [r, n] of Object.entries(a)) {
+                            var i;
+                            if (e_((i = n).result) && H.has(i.result.status)) {
                                 let a = n.result;
                                 o[r] = {
                                     type: "redirect",
-                                    response: eA(a, e, r, t, h),
+                                    response: (function (e, t, r, n, a) {
+                                        let o = e.headers.get("Location");
+                                        if (
+                                            (c(
+                                                o,
+                                                "Redirects returned/thrown from loaders/actions must have a Location header"
+                                            ),
+                                            !G.test(o))
+                                        ) {
+                                            let i = n.slice(
+                                                0,
+                                                n.findIndex(
+                                                    (e) => e.route.id === r
+                                                ) + 1
+                                            );
+                                            ((o = Z(new URL(t.url), i, a, o)),
+                                                e.headers.set("Location", o));
+                                        }
+                                        return e;
+                                    })(a, e, r, t, m),
                                 };
-                            } else o[r] = await eP(n);
+                            } else o[r] = await eg(n);
+                        }
                         return o;
                     }
-                    async function ex(e, t, r, n) {
-                        let a = eR(r, e, n, null),
+                    async function eY(e, t, r, n) {
+                        let a = eq(r, e, n, null),
                             o = Promise.all(
                                 t.map(async (e) => {
                                     if (
@@ -11996,14 +10809,14 @@ import(${JSON.stringify(n.entry.module)});`
                                         return Promise.resolve({
                                             [e.key]: {
                                                 type: "error",
-                                                error: eH(404, {
+                                                error: eN(404, {
                                                     pathname: e.path,
                                                 }),
                                             },
                                         });
                                     {
                                         let t = (
-                                            await eR(
+                                            await eq(
                                                 e.request,
                                                 e.matches,
                                                 n,
@@ -12022,87 +10835,87 @@ import(${JSON.stringify(n.entry.module)});`
                             ),
                         };
                     }
-                    function eC() {
-                        ((U = !0),
-                            V.forEach((e, t) => {
-                                (B.has(t) && H.add(t), eD(t));
+                    function eV() {
+                        ((B = !0),
+                            el.forEach((e, t) => {
+                                (Q.has(t) && F.add(t), eQ(t));
                             }));
                     }
-                    function ek(e, t, r = {}) {
-                        (_.fetchers.set(e, t),
-                            es(
-                                { fetchers: new Map(_.fetchers) },
+                    function eJ(e, t, r = {}) {
+                        (D.fetchers.set(e, t),
+                            ey(
+                                { fetchers: new Map(D.fetchers) },
                                 { flushSync: !0 === (r && r.flushSync) }
                             ));
                     }
-                    function eT(e, t, r, n = {}) {
-                        let a = eW(_.matches, t);
-                        (e$(e),
-                            es(
+                    function eG(e, t, r, n = {}) {
+                        let a = eC(D.matches, t);
+                        (eK(e),
+                            ey(
                                 {
                                     errors: { [a.route.id]: r },
-                                    fetchers: new Map(_.fetchers),
+                                    fetchers: new Map(D.fetchers),
                                 },
                                 { flushSync: !0 === (n && n.flushSync) }
                             ));
                     }
-                    function eO(e) {
+                    function eX(e) {
                         return (
-                            G.set(e, (G.get(e) || 0) + 1),
-                            K.has(e) && K.delete(e),
-                            _.fetchers.get(e) || er
+                            ec.set(e, (ec.get(e) || 0) + 1),
+                            ed.has(e) && ed.delete(e),
+                            D.fetchers.get(e) || V
                         );
                     }
-                    function e$(e) {
-                        let t = _.fetchers.get(e);
-                        (B.has(e) &&
-                            !(t && "loading" === t.state && J.has(e)) &&
-                            eD(e),
-                            V.delete(e),
-                            J.delete(e),
-                            Y.delete(e),
-                            K.delete(e),
-                            H.delete(e),
-                            _.fetchers.delete(e));
+                    function eK(e) {
+                        let t = D.fetchers.get(e);
+                        (Q.has(e) &&
+                            !(t && "loading" === t.state && ei.has(e)) &&
+                            eQ(e),
+                            el.delete(e),
+                            ei.delete(e),
+                            es.delete(e),
+                            ed.delete(e),
+                            F.delete(e),
+                            D.fetchers.delete(e));
                     }
-                    function eD(e) {
-                        let t = B.get(e);
-                        t && (t.abort(), B.delete(e));
+                    function eQ(e) {
+                        let t = Q.get(e);
+                        t && (t.abort(), Q.delete(e));
                     }
-                    function eF(e) {
+                    function eZ(e) {
                         for (let t of e) {
-                            let e = e5(eO(t).data);
-                            _.fetchers.set(t, e);
+                            let e = eW(eX(t).data);
+                            D.fetchers.set(t, e);
                         }
                     }
-                    function eV() {
+                    function e0() {
                         let e = [],
                             t = !1;
-                        for (let r of Y) {
-                            let n = _.fetchers.get(r);
-                            (f(n, `Expected fetcher: ${r}`),
+                        for (let r of es) {
+                            let n = D.fetchers.get(r);
+                            (c(n, `Expected fetcher: ${r}`),
                                 "loading" === n.state &&
-                                    (Y.delete(r), e.push(r), (t = !0)));
+                                    (es.delete(r), e.push(r), (t = !0)));
                         }
-                        return (eF(e), t);
+                        return (eZ(e), t);
                     }
-                    function eX(e) {
+                    function e1(e) {
                         let t = [];
-                        for (let [r, n] of J)
+                        for (let [r, n] of ei)
                             if (n < e) {
-                                let e = _.fetchers.get(r);
-                                (f(e, `Expected fetcher: ${r}`),
+                                let e = D.fetchers.get(r);
+                                (c(e, `Expected fetcher: ${r}`),
                                     "loading" === e.state &&
-                                        (eD(r), J.delete(r), t.push(r)));
+                                        (eQ(r), ei.delete(r), t.push(r)));
                             }
-                        return (eF(t), t.length > 0);
+                        return (eZ(t), t.length > 0);
                     }
-                    function eG(e) {
-                        (_.blockers.delete(e), Q.delete(e));
+                    function e2(e) {
+                        (D.blockers.delete(e), eh.delete(e));
                     }
-                    function eK(e, t) {
-                        let r = _.blockers.get(e) || en;
-                        f(
+                    function e4(e, t) {
+                        let r = D.blockers.get(e) || J;
+                        c(
                             ("unblocked" === r.state &&
                                 "blocked" === t.state) ||
                                 ("blocked" === r.state &&
@@ -12115,23 +10928,23 @@ import(${JSON.stringify(n.entry.module)});`
                                     "unblocked" === t.state),
                             `Invalid blocker state transition: ${r.state} -> ${t.state}`
                         );
-                        let n = new Map(_.blockers);
-                        (n.set(e, t), es({ blockers: n }));
+                        let n = new Map(D.blockers);
+                        (n.set(e, t), ey({ blockers: n }));
                     }
-                    function eQ({
+                    function e3({
                         currentLocation: e,
                         nextLocation: t,
                         historyAction: r,
                     }) {
-                        if (0 === Q.size) return;
-                        Q.size > 1 &&
-                            p(
+                        if (0 === eh.size) return;
+                        eh.size > 1 &&
+                            d(
                                 !1,
                                 "A router only supports one blocker at a time"
                             );
-                        let n = Array.from(Q.entries()),
+                        let n = Array.from(eh.entries()),
                             [a, o] = n[n.length - 1],
-                            i = _.blockers.get(a);
+                            i = D.blockers.get(a);
                         if (
                             (!i || "proceeding" !== i.state) &&
                             o({
@@ -12142,37 +10955,37 @@ import(${JSON.stringify(n.entry.module)});`
                         )
                             return a;
                     }
-                    function e0(e) {
-                        let r = eH(404, { pathname: e }),
-                            { matches: n, route: a } = eU(t || d);
+                    function e5(e) {
+                        let r = eN(404, { pathname: e }),
+                            { matches: n, route: a } = ek(t || f);
                         return { notFoundMatches: n, route: a, error: r };
                     }
                     function e8(e, t) {
                         return (
-                            (R &&
-                                R(
+                            (N &&
+                                N(
                                     e,
-                                    t.map((e) => N(e, _.loaderData))
+                                    t.map((e) => E(e, D.loaderData))
                                 )) ||
                             e.key
                         );
                     }
-                    function e6(e, t) {
-                        if (E) {
-                            let r = E[e8(e, t)];
+                    function e7(e, t) {
+                        if (k) {
+                            let r = k[e8(e, t)];
                             if ("number" == typeof r) return r;
                         }
                         return null;
                     }
-                    function e7(t, r, n) {
+                    function e6(t, r, n) {
                         if (e.patchRoutesOnNavigation) {
                             if (!t)
                                 return {
                                     active: !0,
-                                    matches: k(r, n, h, !0) || [],
+                                    matches: R(r, n, m, !0) || [],
                                 };
                             else if (Object.keys(t[0].params).length > 0)
-                                return { active: !0, matches: k(r, n, h, !0) };
+                                return { active: !0, matches: R(r, n, m, !0) };
                         }
                         return { active: !1, matches: null };
                     }
@@ -12182,8 +10995,8 @@ import(${JSON.stringify(n.entry.module)});`
                         let i = r;
                         for (;;) {
                             let r = null == t,
-                                s = t || d,
-                                l = c;
+                                s = t || f,
+                                l = h;
                             try {
                                 await e.patchRoutesOnNavigation({
                                     signal: a,
@@ -12191,7 +11004,7 @@ import(${JSON.stringify(n.entry.module)});`
                                     matches: i,
                                     fetcherKey: o,
                                     patch: (e, t) => {
-                                        a.aborted || em(e, t, s, l, u);
+                                        a.aborted || ea(e, t, s, l, u);
                                     },
                                 });
                             } catch (e) {
@@ -12201,53 +11014,53 @@ import(${JSON.stringify(n.entry.module)});`
                                     partialMatches: i,
                                 };
                             } finally {
-                                r && !a.aborted && (d = [...d]);
+                                r && !a.aborted && (f = [...f]);
                             }
                             if (a.aborted) return { type: "aborted" };
-                            let f = C(s, n, h);
-                            if (f) return { type: "success", matches: f };
-                            let p = k(s, n, h, !0);
+                            let c = S(s, n, m);
+                            if (c) return { type: "success", matches: c };
+                            let d = R(s, n, m, !0);
                             if (
-                                !p ||
-                                (i.length === p.length &&
+                                !d ||
+                                (i.length === d.length &&
                                     i.every(
-                                        (e, t) => e.route.id === p[t].route.id
+                                        (e, t) => e.route.id === d[t].route.id
                                     ))
                             )
                                 return { type: "success", matches: null };
-                            i = p;
+                            i = d;
                         }
                     }
                     return (n = {
                         get basename() {
-                            return h;
+                            return m;
                         },
                         get future() {
-                            return g;
+                            return b;
                         },
                         get state() {
-                            return _;
+                            return D;
                         },
                         get routes() {
-                            return d;
+                            return f;
                         },
                         get window() {
                             return i;
                         },
                         initialize: function () {
                             if (
-                                ((v = e.history.listen(
+                                ((x = e.history.listen(
                                     ({ action: t, location: r, delta: n }) => {
                                         if (o) {
                                             (o(), (o = void 0));
                                             return;
                                         }
-                                        p(
-                                            0 === Q.size || null != n,
+                                        d(
+                                            0 === eh.size || null != n,
                                             "You are trying to use a blocker on a POP navigation to a location that was not created by @remix-run/router. This will fail silently in production. This can happen if you are navigating outside the router via `window.history.pushState`/`window.location.hash` instead of using router navigation APIs.  This can also happen if you are using createHashRouter and the user manually changes the URL."
                                         );
-                                        let a = eQ({
-                                            currentLocation: _.location,
+                                        let a = e3({
+                                            currentLocation: D.location,
                                             nextLocation: r,
                                             historyAction: t,
                                         });
@@ -12256,11 +11069,11 @@ import(${JSON.stringify(n.entry.module)});`
                                                 o = e;
                                             });
                                             (e.history.go(-1 * n),
-                                                eK(a, {
+                                                e4(a, {
                                                     state: "blocked",
                                                     location: r,
                                                     proceed() {
-                                                        (eK(a, {
+                                                        (e4(a, {
                                                             state: "proceeding",
                                                             proceed: void 0,
                                                             reset: void 0,
@@ -12272,25 +11085,25 @@ import(${JSON.stringify(n.entry.module)});`
                                                     },
                                                     reset() {
                                                         let e = new Map(
-                                                            _.blockers
+                                                            D.blockers
                                                         );
-                                                        (e.set(a, en),
-                                                            es({
+                                                        (e.set(a, J),
+                                                            ey({
                                                                 blockers: e,
                                                             }));
                                                     },
                                                 }));
                                             return;
                                         }
-                                        return ep(t, r);
+                                        return eT(t, r);
                                     }
                                 )),
                                 s)
                             ) {
                                 var t = i,
-                                    r = M;
+                                    r = $;
                                 try {
-                                    let e = t.sessionStorage.getItem(ei);
+                                    let e = t.sessionStorage.getItem(K);
                                     if (e) {
                                         let t = JSON.parse(e);
                                         for (let [e, n] of Object.entries(
@@ -12308,99 +11121,99 @@ import(${JSON.stringify(n.entry.module)});`
                                             for (let [e, n] of t) r[e] = [...n];
                                             try {
                                                 e.sessionStorage.setItem(
-                                                    ei,
+                                                    K,
                                                     JSON.stringify(r)
                                                 );
                                             } catch (e) {
-                                                p(
+                                                d(
                                                     !1,
                                                     `Failed to save applied view transitions in sessionStorage (${e}).`
                                                 );
                                             }
                                         }
-                                    })(i, M);
+                                    })(i, $);
                                 (i.addEventListener("pagehide", e),
                                     (z = () =>
                                         i.removeEventListener("pagehide", e)));
                             }
                             return (
-                                _.initialized ||
-                                    ep("POP", _.location, {
+                                D.initialized ||
+                                    eT("POP", D.location, {
                                         initialHydration: !0,
                                     }),
                                 n
                             );
                         },
                         subscribe: function (e) {
-                            return (b.add(e), () => b.delete(e));
+                            return (C.add(e), () => C.delete(e));
                         },
                         enableScrollRestoration: function (e, t, r) {
                             if (
-                                ((E = e),
-                                (j = t),
-                                (R = r || null),
-                                !T && _.navigation === et)
+                                ((k = e),
+                                (P = t),
+                                (N = r || null),
+                                !j && D.navigation === Y)
                             ) {
-                                T = !0;
-                                let e = e6(_.location, _.matches);
-                                null != e && es({ restoreScrollPosition: e });
+                                j = !0;
+                                let e = e7(D.location, D.matches);
+                                null != e && ey({ restoreScrollPosition: e });
                             }
                             return () => {
-                                ((E = null), (j = null), (R = null));
+                                ((k = null), (P = null), (N = null));
                             };
                         },
-                        navigate: eu,
+                        navigate: eS,
                         fetch: async function r(r, n, a, o) {
-                            eD(r);
+                            eQ(r);
                             let i = !0 === (o && o.flushSync),
-                                s = t || d,
-                                l = ec(
-                                    _.location,
-                                    _.matches,
-                                    h,
+                                s = t || f,
+                                l = Z(
+                                    D.location,
+                                    D.matches,
+                                    m,
                                     a,
                                     n,
                                     o?.relative
                                 ),
-                                u = C(s, l, h),
-                                c = e7(u, s, l);
+                                u = S(s, l, m),
+                                c = e6(u, s, l);
                             if ((c.active && c.matches && (u = c.matches), !u))
-                                return void eT(r, n, eH(404, { pathname: l }), {
+                                return void eG(r, n, eN(404, { pathname: l }), {
                                     flushSync: i,
                                 });
                             let {
-                                path: f,
-                                submission: p,
-                                error: m,
-                            } = ed(!0, l, o);
-                            if (m) return void eT(r, n, m, { flushSync: i });
-                            let y = e1(u, f),
-                                g = new S(
+                                path: d,
+                                submission: h,
+                                error: p,
+                            } = ee(!0, l, o);
+                            if (p) return void eG(r, n, p, { flushSync: i });
+                            let y = eI(u, d),
+                                v = new g(
                                     e.unstable_getContext
                                         ? await e.unstable_getContext()
                                         : void 0
                                 ),
-                                v = !0 === (o && o.preventScrollReset);
-                            if (p && eZ(p.formMethod))
-                                return void (await eb(
+                                b = !0 === (o && o.preventScrollReset);
+                            if (h && eD(h.formMethod))
+                                return void (await eB(
                                     r,
                                     n,
-                                    f,
+                                    d,
                                     y,
                                     u,
-                                    g,
+                                    v,
                                     c.active,
                                     i,
-                                    v,
-                                    p
+                                    b,
+                                    h
                                 ));
-                            (V.set(r, { routeId: n, path: f }),
-                                await ew(r, n, f, y, u, g, c.active, i, v, p));
+                            (el.set(r, { routeId: n, path: d }),
+                                await eF(r, n, d, y, u, v, c.active, i, b, h));
                         },
                         revalidate: function () {
                             let e, t, r;
-                            (Z ||
-                                (Z = {
+                            (ep ||
+                                (ep = {
                                     promise: (r = new Promise((n, a) => {
                                         ((e = async (e) => {
                                             n(e);
@@ -12418,24 +11231,24 @@ import(${JSON.stringify(n.entry.module)});`
                                     resolve: e,
                                     reject: t,
                                 }),
-                                eC(),
-                                es({ revalidation: "loading" }));
-                            let n = Z.promise;
+                                eV(),
+                                ey({ revalidation: "loading" }));
+                            let n = ep.promise;
                             return (
-                                "submitting" === _.navigation.state ||
-                                    ("idle" === _.navigation.state
-                                        ? ep(_.historyAction, _.location, {
+                                "submitting" === D.navigation.state ||
+                                    ("idle" === D.navigation.state
+                                        ? eT(D.historyAction, D.location, {
                                               startUninterruptedRevalidation:
                                                   !0,
                                           })
-                                        : ep(
-                                              $ || _.historyAction,
-                                              _.navigation.location,
+                                        : eT(
+                                              O || D.historyAction,
+                                              D.navigation.location,
                                               {
                                                   overrideNavigation:
-                                                      _.navigation,
+                                                      D.navigation,
                                                   enableViewTransition:
-                                                      !0 === I,
+                                                      !0 === M,
                                               }
                                           )),
                                 n
@@ -12443,196 +11256,180 @@ import(${JSON.stringify(n.entry.module)});`
                         },
                         createHref: (t) => e.history.createHref(t),
                         encodeLocation: (t) => e.history.encodeLocation(t),
-                        getFetcher: eO,
+                        getFetcher: eX,
                         deleteFetcher: function (e) {
-                            let t = (G.get(e) || 0) - 1;
-                            (t <= 0 ? (G.delete(e), K.add(e)) : G.set(e, t),
-                                es({ fetchers: new Map(_.fetchers) }));
+                            let t = (ec.get(e) || 0) - 1;
+                            (t <= 0 ? (ec.delete(e), ed.add(e)) : ec.set(e, t),
+                                ey({ fetchers: new Map(D.fetchers) }));
                         },
                         dispose: function () {
-                            (v && v(),
+                            (x && x(),
                                 z && z(),
-                                b.clear(),
+                                C.clear(),
                                 a && a.abort(),
-                                _.fetchers.forEach((e, t) => e$(t)),
-                                _.blockers.forEach((e, t) => eG(t)));
+                                D.fetchers.forEach((e, t) => eK(t)),
+                                D.blockers.forEach((e, t) => e2(t)));
                         },
                         getBlocker: function (e, t) {
-                            let r = _.blockers.get(e) || en;
-                            return (Q.get(e) !== t && Q.set(e, t), r);
+                            let r = D.blockers.get(e) || J;
+                            return (eh.get(e) !== t && eh.set(e, t), r);
                         },
-                        deleteBlocker: eG,
+                        deleteBlocker: e2,
                         patchRoutes: function (e, r) {
                             let n = null == t;
-                            (em(e, r, t || d, c, u),
-                                n && ((d = [...d]), es({})));
+                            (ea(e, r, t || f, h, u),
+                                n && ((f = [...f]), ey({})));
                         },
-                        _internalFetchControllers: B,
+                        _internalFetchControllers: Q,
                         _internalSetRoutes: function (e) {
-                            t = x(e, u, void 0, (c = {}));
+                            t = w(e, u, void 0, (h = {}));
                         },
                     });
                 })({
                     basename: t?.basename,
                     unstable_getContext: t?.unstable_getContext,
                     future: t?.future,
-                    history: h({ window: t?.window }),
+                    history: u({ window: t?.window }),
                     hydrationData:
                         t?.hydrationData ||
-                        (function () {
-                            let e = window?.__staticRouterHydrationData;
-                            return (
-                                e &&
-                                    e.errors &&
-                                    (e = {
-                                        ...e,
-                                        errors: (function (e) {
-                                            if (!e) return null;
-                                            let t = Object.entries(e),
-                                                r = {};
-                                            for (let [e, n] of t)
-                                                if (
-                                                    n &&
-                                                    "RouteErrorResponse" ===
-                                                        n.__type
-                                                )
-                                                    r[e] = new V(
-                                                        n.status,
-                                                        n.statusText,
-                                                        n.data,
-                                                        !0 === n.internal
-                                                    );
-                                                else if (
-                                                    n &&
-                                                    "Error" === n.__type
-                                                ) {
-                                                    if (n.__subType) {
-                                                        let t =
-                                                            window[n.__subType];
-                                                        if (
-                                                            "function" ==
-                                                            typeof t
-                                                        )
-                                                            try {
-                                                                let a = new t(
-                                                                    n.message
-                                                                );
-                                                                ((a.stack = ""),
-                                                                    (r[e] = a));
-                                                            } catch (e) {}
-                                                    }
-                                                    if (null == r[e]) {
-                                                        let t = Error(
+                        ((r = window?.__staticRouterHydrationData) &&
+                            r.errors &&
+                            (r = {
+                                ...r,
+                                errors: (function (e) {
+                                    if (!e) return null;
+                                    let t = Object.entries(e),
+                                        r = {};
+                                    for (let [e, n] of t)
+                                        if (
+                                            n &&
+                                            "RouteErrorResponse" === n.__type
+                                        )
+                                            r[e] = new z(
+                                                n.status,
+                                                n.statusText,
+                                                n.data,
+                                                !0 === n.internal
+                                            );
+                                        else if (n && "Error" === n.__type) {
+                                            if (n.__subType) {
+                                                let t = window[n.__subType];
+                                                if ("function" == typeof t)
+                                                    try {
+                                                        let a = new t(
                                                             n.message
                                                         );
-                                                        ((t.stack = ""),
-                                                            (r[e] = t));
-                                                    }
-                                                } else r[e] = n;
-                                            return r;
-                                        })(e.errors),
-                                    }),
-                                e
-                            );
-                        })(),
+                                                        ((a.stack = ""),
+                                                            (r[e] = a));
+                                                    } catch (e) {}
+                                            }
+                                            if (null == r[e]) {
+                                                let t = Error(n.message);
+                                                ((t.stack = ""), (r[e] = t));
+                                            }
+                                        } else r[e] = n;
+                                    return r;
+                                })(r.errors),
+                            }),
+                        r),
                     routes: e,
-                    mapRouteProperties: t$,
-                    hydrationRouteProperties: tD,
+                    mapRouteProperties: tm,
+                    hydrationRouteProperties: ty,
                     dataStrategy: t?.dataStrategy,
                     patchRoutesOnNavigation: t?.patchRoutesOnNavigation,
                     window: t?.window,
                 }).initialize();
             }
-            function rB({ basename: e, children: t, window: r }) {
-                let n = o.useRef();
+            function tJ({ basename: e, children: t, window: r }) {
+                let n = a.useRef();
                 null == n.current &&
-                    (n.current = h({ window: r, v5Compat: !0 }));
-                let a = n.current,
-                    [i, s] = o.useState({
-                        action: a.action,
-                        location: a.location,
+                    (n.current = u({ window: r, v5Compat: !0 }));
+                let o = n.current,
+                    [i, s] = a.useState({
+                        action: o.action,
+                        location: o.location,
                     }),
-                    l = o.useCallback(
+                    l = a.useCallback(
                         (e) => {
-                            o.startTransition(() => s(e));
+                            a.startTransition(() => s(e));
                         },
                         [s]
                     );
                 return (
-                    o.useLayoutEffect(() => a.listen(l), [a, l]),
-                    o.createElement(tB, {
+                    a.useLayoutEffect(() => o.listen(l), [o, l]),
+                    a.createElement(tE, {
                         basename: e,
                         children: t,
                         location: i.location,
                         navigationType: i.action,
-                        navigator: a,
+                        navigator: o,
                     })
                 );
             }
-            var rF = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,
-                rq = o.forwardRef(function (
+            var tG = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,
+                tX = a.forwardRef(function (
                     {
                         onClick: e,
                         discover: t = "render",
                         prefetch: r = "none",
                         relative: n,
-                        reloadDocument: a,
+                        reloadDocument: o,
                         replace: i,
                         state: s,
                         target: l,
                         to: u,
-                        preventScrollReset: c,
-                        viewTransition: d,
-                        ...h
+                        preventScrollReset: h,
+                        viewTransition: p,
+                        ...f
                     },
                     m
                 ) {
                     let y,
-                        { basename: g } = o.useContext(tt),
-                        v = "string" == typeof u && rF.test(u),
+                        { basename: g } = a.useContext(eq),
+                        v = "string" == typeof u && tG.test(u),
                         b = !1;
-                    if ("string" == typeof u && v && ((y = u), rU))
+                    if ("string" == typeof u && v && ((y = u), tY))
                         try {
                             let e = new URL(window.location.href),
                                 t = new URL(
                                     u.startsWith("//") ? e.protocol + u : u
                                 ),
-                                r = O(t.pathname, g);
+                                r = T(t.pathname, g);
                             t.origin === e.origin && null != r
                                 ? (u = r + t.search + t.hash)
                                 : (b = !0);
                         } catch (e) {
-                            p(
+                            d(
                                 !1,
                                 `<Link to="${u}"> contains an invalid URL which will probably break when clicked - please update to a valid URL path.`
                             );
                         }
                     let w = (function (e, { relative: t } = {}) {
-                            f(
-                                to(),
+                            c(
+                                eG(),
                                 "useHref() may be used only in the context of a <Router> component."
                             );
                             let { basename: r, navigator: n } =
-                                    o.useContext(tt),
+                                    a.useContext(eq),
                                 {
-                                    hash: a,
+                                    hash: o,
                                     pathname: i,
                                     search: s,
-                                } = tp(e, { relative: t }),
+                                } = e3(e, { relative: t }),
                                 l = i;
                             return (
-                                "/" !== r && (l = "/" === i ? r : W([r, i])),
+                                "/" !== r && (l = "/" === i ? r : O([r, i])),
                                 n.createHref({
                                     pathname: l,
                                     search: s,
-                                    hash: a,
+                                    hash: o,
                                 })
                             );
                         })(u, { relative: n }),
-                        [S, E, R] = (function (e, t) {
-                            let r = o.useContext(rO),
-                                [n, a] = o.useState(!1),
-                                [i, s] = o.useState(!1),
+                        [S, R, E] = (function (e, t) {
+                            let r = a.useContext(tU),
+                                [n, o] = a.useState(!1),
+                                [i, s] = a.useState(!1),
                                 {
                                     onFocus: l,
                                     onBlur: u,
@@ -12640,8 +11437,8 @@ import(${JSON.stringify(n.entry.module)});`
                                     onMouseLeave: d,
                                     onTouchStart: h,
                                 } = t,
-                                f = o.useRef(null);
-                            (o.useEffect(() => {
+                                p = a.useRef(null);
+                            (a.useEffect(() => {
                                 if (
                                     ("render" === e && s(!0), "viewport" === e)
                                 ) {
@@ -12654,14 +11451,14 @@ import(${JSON.stringify(n.entry.module)});`
                                         { threshold: 0.5 }
                                     );
                                     return (
-                                        f.current && e.observe(f.current),
+                                        p.current && e.observe(p.current),
                                         () => {
                                             e.disconnect();
                                         }
                                     );
                                 }
                             }, [e]),
-                                o.useEffect(() => {
+                                a.useEffect(() => {
                                     if (n) {
                                         let e = setTimeout(() => {
                                             s(!0);
@@ -12671,42 +11468,42 @@ import(${JSON.stringify(n.entry.module)});`
                                         };
                                     }
                                 }, [n]));
-                            let p = () => {
-                                    a(!0);
+                            let f = () => {
+                                    o(!0);
                                 },
                                 m = () => {
-                                    (a(!1), s(!1));
+                                    (o(!1), s(!1));
                                 };
                             return r
                                 ? "intent" !== e
-                                    ? [i, f, {}]
+                                    ? [i, p, {}]
                                     : [
                                           i,
-                                          f,
+                                          p,
                                           {
-                                              onFocus: rD(l, p),
-                                              onBlur: rD(u, m),
-                                              onMouseEnter: rD(c, p),
-                                              onMouseLeave: rD(d, m),
-                                              onTouchStart: rD(h, p),
+                                              onFocus: tF(l, f),
+                                              onBlur: tF(u, m),
+                                              onMouseEnter: tF(c, f),
+                                              onMouseLeave: tF(d, m),
+                                              onTouchStart: tF(h, f),
                                           },
                                       ]
-                                : [!1, f, {}];
-                        })(r, h),
-                        x = rK(u, {
+                                : [!1, p, {}];
+                        })(r, f),
+                        x = t1(u, {
                             replace: i,
                             state: s,
                             target: l,
-                            preventScrollReset: c,
+                            preventScrollReset: h,
                             relative: n,
-                            viewTransition: d,
+                            viewTransition: p,
                         }),
-                        C = o.createElement("a", {
-                            ...h,
-                            ...R,
+                        C = a.createElement("a", {
+                            ...f,
+                            ...E,
                             href: y || w,
                             onClick:
-                                b || a
+                                b || o
                                     ? e
                                     : function (t) {
                                           (e && e(t),
@@ -12720,67 +11517,67 @@ import(${JSON.stringify(n.entry.module)});`
                                             : null != e && (e.current = t);
                                     });
                                 };
-                            })(m, E),
+                            })(m, R),
                             target: l,
                             "data-discover":
                                 v || "render" !== t ? void 0 : "true",
                         });
                     return S && !v
-                        ? o.createElement(
-                              o.Fragment,
+                        ? a.createElement(
+                              a.Fragment,
                               null,
                               C,
-                              o.createElement(rI, { page: w })
+                              a.createElement(tH, { page: w })
                           )
                         : C;
                 });
-            rq.displayName = "Link";
-            var rJ = o.forwardRef(function (
+            tX.displayName = "Link";
+            var tK = a.forwardRef(function (
                 {
                     "aria-current": e = "page",
                     caseSensitive: t = !1,
                     className: r = "",
                     end: n = !1,
-                    style: a,
+                    style: o,
                     to: i,
                     viewTransition: s,
                     children: l,
                     ...u
                 },
-                c
+                d
             ) {
-                let d,
-                    h = tp(i, { relative: u.relative }),
-                    p = ti(),
-                    m = o.useContext(e6),
-                    { navigator: y, basename: g } = o.useContext(tt),
+                let h,
+                    p = e3(i, { relative: u.relative }),
+                    f = eX(),
+                    m = a.useContext(eB),
+                    { navigator: y, basename: g } = a.useContext(eq),
                     v =
                         null != m &&
                         (function (e, t = {}) {
-                            let r = o.useContext(e7);
-                            f(
+                            let r = a.useContext(eF);
+                            c(
                                 null != r,
                                 "`useViewTransitionState` must be used within `react-router-dom`'s `RouterProvider`.  Did you accidentally import `RouterProvider` from `react-router`?"
                             );
-                            let { basename: n } = rG("useViewTransitionState"),
-                                a = tp(e, { relative: t.relative });
+                            let { basename: n } = t0("useViewTransitionState"),
+                                o = e3(e, { relative: t.relative });
                             if (!r.isTransitioning) return !1;
                             let i =
-                                    O(r.currentLocation.pathname, n) ||
+                                    T(r.currentLocation.pathname, n) ||
                                     r.currentLocation.pathname,
                                 s =
-                                    O(r.nextLocation.pathname, n) ||
+                                    T(r.nextLocation.pathname, n) ||
                                     r.nextLocation.pathname;
                             return (
-                                null != A(a.pathname, s) ||
-                                null != A(a.pathname, i)
+                                null != N(o.pathname, s) ||
+                                null != N(o.pathname, i)
                             );
-                        })(h) &&
+                        })(p) &&
                         !0 === s,
                     b = y.encodeLocation
-                        ? y.encodeLocation(h).pathname
-                        : h.pathname,
-                    w = p.pathname,
+                        ? y.encodeLocation(p).pathname
+                        : p.pathname,
+                    w = f.pathname,
                     S =
                         m && m.navigation && m.navigation.location
                             ? m.navigation.location.pathname
@@ -12789,297 +11586,64 @@ import(${JSON.stringify(n.entry.module)});`
                     ((w = w.toLowerCase()),
                     (S = S ? S.toLowerCase() : null),
                     (b = b.toLowerCase())),
-                    S && g && (S = O(S, g) || S));
-                let E = "/" !== b && b.endsWith("/") ? b.length - 1 : b.length,
-                    R =
+                    S && g && (S = T(S, g) || S));
+                let R = "/" !== b && b.endsWith("/") ? b.length - 1 : b.length,
+                    E =
                         w === b ||
-                        (!n && w.startsWith(b) && "/" === w.charAt(E)),
+                        (!n && w.startsWith(b) && "/" === w.charAt(R)),
                     x =
                         null != S &&
                         (S === b ||
                             (!n &&
                                 S.startsWith(b) &&
                                 "/" === S.charAt(b.length))),
-                    C = { isActive: R, isPending: x, isTransitioning: v },
-                    k = R ? e : void 0;
-                d =
+                    C = { isActive: E, isPending: x, isTransitioning: v },
+                    k = E ? e : void 0;
+                h =
                     "function" == typeof r
                         ? r(C)
                         : [
                               r,
-                              R ? "active" : null,
+                              E ? "active" : null,
                               x ? "pending" : null,
                               v ? "transitioning" : null,
                           ]
                               .filter(Boolean)
                               .join(" ");
-                let N = "function" == typeof a ? a(C) : a;
-                return o.createElement(
-                    rq,
+                let P = "function" == typeof o ? o(C) : o;
+                return a.createElement(
+                    tX,
                     {
                         ...u,
                         "aria-current": k,
-                        className: d,
-                        ref: c,
-                        style: N,
+                        className: h,
+                        ref: d,
+                        style: P,
                         to: i,
                         viewTransition: s,
                     },
                     "function" == typeof l ? l(C) : l
                 );
             });
-            rJ.displayName = "NavLink";
-            var rY = o.forwardRef(
-                (
-                    {
-                        discover: e = "render",
-                        fetcherKey: t,
-                        navigate: r,
-                        reloadDocument: n,
-                        replace: a,
-                        state: i,
-                        method: s = tq,
-                        action: l,
-                        onSubmit: u,
-                        relative: c,
-                        preventScrollReset: d,
-                        viewTransition: h,
-                        ...p
-                    },
-                    m
-                ) => {
-                    let y = (function () {
-                            let { router: e } = rG("useSubmit"),
-                                { basename: t } = o.useContext(tt),
-                                r = tR("useRouteId");
-                            return o.useCallback(
-                                async (n, a = {}) => {
-                                    let {
-                                        action: o,
-                                        method: i,
-                                        encType: s,
-                                        formData: l,
-                                        body: u,
-                                    } = (function (e, t) {
-                                        let r, n, a, o, i;
-                                        if (
-                                            tY(e) &&
-                                            "form" === e.tagName.toLowerCase()
-                                        ) {
-                                            let i = e.getAttribute("action");
-                                            ((n = i ? O(i, t) : null),
-                                                (r =
-                                                    e.getAttribute("method") ||
-                                                    tq),
-                                                (a =
-                                                    tK(
-                                                        e.getAttribute(
-                                                            "enctype"
-                                                        )
-                                                    ) || tJ),
-                                                (o = new FormData(e)));
-                                        } else if (
-                                            (tY(e) &&
-                                                "button" ===
-                                                    e.tagName.toLowerCase()) ||
-                                            (tY(e) &&
-                                                "input" ===
-                                                    e.tagName.toLowerCase() &&
-                                                ("submit" === e.type ||
-                                                    "image" === e.type))
-                                        ) {
-                                            let i = e.form;
-                                            if (null == i)
-                                                throw Error(
-                                                    'Cannot submit a <button> or <input type="submit"> without a <form>'
-                                                );
-                                            let s =
-                                                e.getAttribute("formaction") ||
-                                                i.getAttribute("action");
-                                            if (
-                                                ((n = s ? O(s, t) : null),
-                                                (r =
-                                                    e.getAttribute(
-                                                        "formmethod"
-                                                    ) ||
-                                                    i.getAttribute("method") ||
-                                                    tq),
-                                                (a =
-                                                    tK(
-                                                        e.getAttribute(
-                                                            "formenctype"
-                                                        )
-                                                    ) ||
-                                                    tK(
-                                                        i.getAttribute(
-                                                            "enctype"
-                                                        )
-                                                    ) ||
-                                                    tJ),
-                                                (o = new FormData(i, e)),
-                                                !(function () {
-                                                    if (null === tX)
-                                                        try {
-                                                            (new FormData(
-                                                                document.createElement(
-                                                                    "form"
-                                                                ),
-                                                                0
-                                                            ),
-                                                                (tX = !1));
-                                                        } catch (e) {
-                                                            tX = !0;
-                                                        }
-                                                    return tX;
-                                                })())
-                                            ) {
-                                                let {
-                                                    name: t,
-                                                    type: r,
-                                                    value: n,
-                                                } = e;
-                                                if ("image" === r) {
-                                                    let e = t ? `${t}.` : "";
-                                                    (o.append(`${e}x`, "0"),
-                                                        o.append(`${e}y`, "0"));
-                                                } else t && o.append(t, n);
-                                            }
-                                        } else if (tY(e))
-                                            throw Error(
-                                                'Cannot submit element that is not <form>, <button>, or <input type="submit|image">'
-                                            );
-                                        else
-                                            ((r = tq),
-                                                (n = null),
-                                                (a = tJ),
-                                                (i = e));
-                                        return (
-                                            o &&
-                                                "text/plain" === a &&
-                                                ((i = o), (o = void 0)),
-                                            {
-                                                action: n,
-                                                method: r.toLowerCase(),
-                                                encType: a,
-                                                formData: o,
-                                                body: i,
-                                            }
-                                        );
-                                    })(n, t);
-                                    if (!1 === a.navigate) {
-                                        let t = a.fetcherKey || r0();
-                                        await e.fetch(t, r, a.action || o, {
-                                            preventScrollReset:
-                                                a.preventScrollReset,
-                                            formData: l,
-                                            body: u,
-                                            formMethod: a.method || i,
-                                            formEncType: a.encType || s,
-                                            flushSync: a.flushSync,
-                                        });
-                                    } else
-                                        await e.navigate(a.action || o, {
-                                            preventScrollReset:
-                                                a.preventScrollReset,
-                                            formData: l,
-                                            body: u,
-                                            formMethod: a.method || i,
-                                            formEncType: a.encType || s,
-                                            replace: a.replace,
-                                            state: a.state,
-                                            fromRouteId: r,
-                                            flushSync: a.flushSync,
-                                            viewTransition: a.viewTransition,
-                                        });
-                                },
-                                [e, t, r]
-                            );
-                        })(),
-                        v = (function (e, { relative: t } = {}) {
-                            let { basename: r } = o.useContext(tt),
-                                n = o.useContext(tn);
-                            f(
-                                n,
-                                "useFormAction must be used inside a RouteContext"
-                            );
-                            let [a] = n.matches.slice(-1),
-                                i = { ...tp(e || ".", { relative: t }) },
-                                s = ti();
-                            if (null == e) {
-                                i.search = s.search;
-                                let e = new URLSearchParams(i.search),
-                                    t = e.getAll("index");
-                                if (t.some((e) => "" === e)) {
-                                    (e.delete("index"),
-                                        t
-                                            .filter((e) => e)
-                                            .forEach((t) =>
-                                                e.append("index", t)
-                                            ));
-                                    let r = e.toString();
-                                    i.search = r ? `?${r}` : "";
-                                }
-                            }
-                            return (
-                                (!e || "." === e) &&
-                                    a.route.index &&
-                                    (i.search = i.search
-                                        ? i.search.replace(/^\?/, "?index&")
-                                        : "?index"),
-                                "/" !== r &&
-                                    (i.pathname =
-                                        "/" === i.pathname
-                                            ? r
-                                            : W([r, i.pathname])),
-                                g(i)
-                            );
-                        })(l, { relative: c }),
-                        b = "get" === s.toLowerCase() ? "get" : "post",
-                        w = "string" == typeof l && rF.test(l);
-                    return o.createElement("form", {
-                        ref: m,
-                        method: b,
-                        action: v,
-                        onSubmit: n
-                            ? u
-                            : (e) => {
-                                  if ((u && u(e), e.defaultPrevented)) return;
-                                  e.preventDefault();
-                                  let n = e.nativeEvent.submitter,
-                                      o = n?.getAttribute("formmethod") || s;
-                                  y(n || e.currentTarget, {
-                                      fetcherKey: t,
-                                      method: o,
-                                      navigate: r,
-                                      replace: a,
-                                      state: i,
-                                      relative: c,
-                                      preventScrollReset: d,
-                                      viewTransition: h,
-                                  });
-                              },
-                        ...p,
-                        "data-discover": w || "render" !== e ? void 0 : "true",
-                    });
-                }
-            );
-            function rV({ getKey: e, storageKey: t, ...r }) {
-                let n = o.useContext(rO),
-                    { basename: a } = o.useContext(tt),
-                    i = ti(),
-                    s = tC();
+            function tQ({ getKey: e, storageKey: t, ...r }) {
+                let n = a.useContext(tU),
+                    { basename: o } = a.useContext(eq),
+                    i = eX(),
+                    s = to();
                 !(function ({ getKey: e, storageKey: t } = {}) {
-                    let { router: r } = rG("useScrollRestoration"),
-                        { restoreScrollPosition: n, preventScrollReset: a } =
-                            (function (e) {
-                                let t = o.useContext(e6);
-                                return (f(t, rX(e)), t);
-                            })("useScrollRestoration"),
-                        { basename: i } = o.useContext(tt),
-                        s = ti(),
-                        l = tC(),
-                        u = tx();
-                    (o.useEffect(
+                    let r,
+                        { router: n } = t0("useScrollRestoration"),
+                        { restoreScrollPosition: o, preventScrollReset: i } =
+                            (c(
+                                (r = a.useContext(eB)),
+                                tZ("useScrollRestoration")
+                            ),
+                            r),
+                        { basename: s } = a.useContext(eq),
+                        l = eX(),
+                        u = to(),
+                        h = ta();
+                    (a.useEffect(
                         () => (
                             (window.history.scrollRestoration = "manual"),
                             () => {
@@ -13090,7 +11654,7 @@ import(${JSON.stringify(n.entry.module)});`
                     ),
                         (function (e, t) {
                             let { capture: r } = {};
-                            o.useEffect(() => {
+                            a.useEffect(() => {
                                 let t = null != r ? { capture: r } : void 0;
                                 return (
                                     window.addEventListener("pagehide", e, t),
@@ -13104,55 +11668,55 @@ import(${JSON.stringify(n.entry.module)});`
                                 );
                             }, [e, r]);
                         })(
-                            o.useCallback(() => {
-                                "idle" === u.state &&
-                                    (r2[r4(s, l, i, e)] = window.scrollY);
+                            a.useCallback(() => {
+                                "idle" === h.state &&
+                                    (t5[t8(l, u, s, e)] = window.scrollY);
                                 try {
                                     sessionStorage.setItem(
-                                        t || r1,
-                                        JSON.stringify(r2)
+                                        t || t3,
+                                        JSON.stringify(t5)
                                     );
                                 } catch (e) {
-                                    p(
+                                    d(
                                         !1,
                                         `Failed to save scroll positions in sessionStorage, <ScrollRestoration /> will not work properly (${e}).`
                                     );
                                 }
                                 window.history.scrollRestoration = "auto";
-                            }, [u.state, e, i, s, l, t])
+                            }, [h.state, e, s, l, u, t])
                         ),
                         "undefined" != typeof document &&
-                            (o.useLayoutEffect(() => {
+                            (a.useLayoutEffect(() => {
                                 try {
-                                    let e = sessionStorage.getItem(t || r1);
-                                    e && (r2 = JSON.parse(e));
+                                    let e = sessionStorage.getItem(t || t3);
+                                    e && (t5 = JSON.parse(e));
                                 } catch (e) {}
                             }, [t]),
-                            o.useLayoutEffect(() => {
-                                let t = r?.enableScrollRestoration(
-                                    r2,
+                            a.useLayoutEffect(() => {
+                                let t = n?.enableScrollRestoration(
+                                    t5,
                                     () => window.scrollY,
-                                    e ? (t, r) => r4(t, r, i, e) : void 0
+                                    e ? (t, r) => t8(t, r, s, e) : void 0
                                 );
                                 return () => t && t();
-                            }, [r, i, e]),
-                            o.useLayoutEffect(() => {
-                                if (!1 !== n) {
-                                    if ("number" == typeof n)
-                                        return void window.scrollTo(0, n);
-                                    if (s.hash) {
+                            }, [n, s, e]),
+                            a.useLayoutEffect(() => {
+                                if (!1 !== o) {
+                                    if ("number" == typeof o)
+                                        return void window.scrollTo(0, o);
+                                    if (l.hash) {
                                         let e = document.getElementById(
-                                            decodeURIComponent(s.hash.slice(1))
+                                            decodeURIComponent(l.hash.slice(1))
                                         );
                                         if (e) return void e.scrollIntoView();
                                     }
-                                    !0 !== a && window.scrollTo(0, 0);
+                                    !0 !== i && window.scrollTo(0, 0);
                                 }
-                            }, [s, n, a])));
+                            }, [l, o, i])));
                 })({ getKey: e, storageKey: t });
-                let l = o.useMemo(() => {
+                let l = a.useMemo(() => {
                     if (!n || !e) return null;
-                    let t = r4(i, s, a, e);
+                    let t = t8(i, s, o, e);
                     return t !== i.key ? t : null;
                 }, []);
                 if (!n || n.isSpaMode) return null;
@@ -13170,70 +11734,70 @@ import(${JSON.stringify(n.entry.module)});`
                         (console.error(t), sessionStorage.removeItem(e));
                     }
                 }).toString();
-                return o.createElement("script", {
+                return a.createElement("script", {
                     ...r,
                     suppressHydrationWarning: !0,
                     dangerouslySetInnerHTML: {
-                        __html: `(${u})(${JSON.stringify(t || r1)}, ${JSON.stringify(l)})`,
+                        __html: `(${u})(${JSON.stringify(t || t3)}, ${JSON.stringify(l)})`,
                     },
                 });
             }
-            function rX(e) {
+            function tZ(e) {
                 return `${e} must be used within a data router.  See https://reactrouter.com/en/main/routers/picking-a-router.`;
             }
-            function rG(e) {
-                let t = o.useContext(e8);
-                return (f(t, rX(e)), t);
+            function t0(e) {
+                let t = a.useContext(eU);
+                return (c(t, tZ(e)), t);
             }
-            function rK(
+            function t1(
                 e,
                 {
                     target: t,
                     replace: r,
                     state: n,
-                    preventScrollReset: a,
+                    preventScrollReset: o,
                     relative: i,
                     viewTransition: s,
                 } = {}
             ) {
-                let l = td(),
-                    u = ti(),
-                    c = tp(e, { relative: i });
-                return o.useCallback(
-                    (o) => {
-                        0 !== o.button ||
+                let l = e1(),
+                    u = eX(),
+                    c = e3(e, { relative: i });
+                return a.useCallback(
+                    (a) => {
+                        0 !== a.button ||
                             (t && "_self" !== t) ||
-                            o.metaKey ||
-                            o.altKey ||
-                            o.ctrlKey ||
-                            o.shiftKey ||
-                            (o.preventDefault(),
+                            a.metaKey ||
+                            a.altKey ||
+                            a.ctrlKey ||
+                            a.shiftKey ||
+                            (a.preventDefault(),
                             l(e, {
-                                replace: void 0 !== r ? r : g(u) === g(c),
+                                replace: void 0 !== r ? r : f(u) === f(c),
                                 state: n,
-                                preventScrollReset: a,
+                                preventScrollReset: o,
                                 relative: i,
                                 viewTransition: s,
                             }));
                     },
-                    [u, l, c, r, n, t, e, a, i, s]
+                    [u, l, c, r, n, t, e, o, i, s]
                 );
             }
-            function rQ(e) {
-                p(
+            function t2(e) {
+                d(
                     "undefined" != typeof URLSearchParams,
                     "You cannot use the `useSearchParams` hook in a browser that does not support the URLSearchParams API. If you need to support Internet Explorer 11, we recommend you load a polyfill such as https://github.com/ungap/url-search-params."
                 );
-                let t = o.useRef(tV(e)),
-                    r = o.useRef(!1),
-                    n = ti(),
-                    a = o.useMemo(() => {
+                let t = a.useRef(tP(e)),
+                    r = a.useRef(!1),
+                    n = eX(),
+                    o = a.useMemo(() => {
                         var e, a;
                         let o;
                         return (
                             (e = n.search),
                             (a = r.current ? null : t.current),
-                            (o = tV(e)),
+                            (o = tP(e)),
                             a &&
                                 a.forEach((e, t) => {
                                     o.has(t) ||
@@ -13244,22 +11808,275 @@ import(${JSON.stringify(n.entry.module)});`
                             o
                         );
                     }, [n.search]),
-                    i = td(),
-                    s = o.useCallback(
+                    i = e1(),
+                    s = a.useCallback(
                         (e, t) => {
-                            let n = tV("function" == typeof e ? e(a) : e);
+                            let n = tP("function" == typeof e ? e(o) : e);
                             ((r.current = !0), i("?" + n, t));
                         },
-                        [i, a]
+                        [i, o]
                     );
-                return [a, s];
+                return [o, s];
             }
-            ((rY.displayName = "Form"), (rV.displayName = "ScrollRestoration"));
-            var rZ = 0,
-                r0 = () => `__${String(++rZ)}__`,
-                r1 = "react-router-scroll-positions",
-                r2 = {};
-            function r4(e, t, r, n) {
+            ((tK.displayName = "NavLink"),
+                (a.forwardRef(
+                    (
+                        {
+                            discover: e = "render",
+                            fetcherKey: t,
+                            navigate: r,
+                            reloadDocument: n,
+                            replace: o,
+                            state: i,
+                            method: s = tC,
+                            action: l,
+                            onSubmit: u,
+                            relative: d,
+                            preventScrollReset: h,
+                            viewTransition: p,
+                            ...m
+                        },
+                        y
+                    ) => {
+                        let g = (function () {
+                                let { router: e } = t0("useSubmit"),
+                                    { basename: t } = a.useContext(eq),
+                                    r = tn("useRouteId");
+                                return a.useCallback(
+                                    async (n, a = {}) => {
+                                        let {
+                                            action: o,
+                                            method: i,
+                                            encType: s,
+                                            formData: l,
+                                            body: u,
+                                        } = (function (e, t) {
+                                            let r, n, a, o, i;
+                                            if (
+                                                tN(e) &&
+                                                "form" ===
+                                                    e.tagName.toLowerCase()
+                                            ) {
+                                                let i =
+                                                    e.getAttribute("action");
+                                                ((n = i ? T(i, t) : null),
+                                                    (r =
+                                                        e.getAttribute(
+                                                            "method"
+                                                        ) || tC),
+                                                    (a =
+                                                        tL(
+                                                            e.getAttribute(
+                                                                "enctype"
+                                                            )
+                                                        ) || tk),
+                                                    (o = new FormData(e)));
+                                            } else if (
+                                                (tN(e) &&
+                                                    "button" ===
+                                                        e.tagName.toLowerCase()) ||
+                                                (tN(e) &&
+                                                    "input" ===
+                                                        e.tagName.toLowerCase() &&
+                                                    ("submit" === e.type ||
+                                                        "image" === e.type))
+                                            ) {
+                                                let i = e.form;
+                                                if (null == i)
+                                                    throw Error(
+                                                        'Cannot submit a <button> or <input type="submit"> without a <form>'
+                                                    );
+                                                let s =
+                                                    e.getAttribute(
+                                                        "formaction"
+                                                    ) ||
+                                                    i.getAttribute("action");
+                                                if (
+                                                    ((n = s ? T(s, t) : null),
+                                                    (r =
+                                                        e.getAttribute(
+                                                            "formmethod"
+                                                        ) ||
+                                                        i.getAttribute(
+                                                            "method"
+                                                        ) ||
+                                                        tC),
+                                                    (a =
+                                                        tL(
+                                                            e.getAttribute(
+                                                                "formenctype"
+                                                            )
+                                                        ) ||
+                                                        tL(
+                                                            i.getAttribute(
+                                                                "enctype"
+                                                            )
+                                                        ) ||
+                                                        tk),
+                                                    (o = new FormData(i, e)),
+                                                    !(function () {
+                                                        if (null === tT)
+                                                            try {
+                                                                (new FormData(
+                                                                    document.createElement(
+                                                                        "form"
+                                                                    ),
+                                                                    0
+                                                                ),
+                                                                    (tT = !1));
+                                                            } catch (e) {
+                                                                tT = !0;
+                                                            }
+                                                        return tT;
+                                                    })())
+                                                ) {
+                                                    let {
+                                                        name: t,
+                                                        type: r,
+                                                        value: n,
+                                                    } = e;
+                                                    if ("image" === r) {
+                                                        let e = t
+                                                            ? `${t}.`
+                                                            : "";
+                                                        (o.append(`${e}x`, "0"),
+                                                            o.append(
+                                                                `${e}y`,
+                                                                "0"
+                                                            ));
+                                                    } else t && o.append(t, n);
+                                                }
+                                            } else if (tN(e))
+                                                throw Error(
+                                                    'Cannot submit element that is not <form>, <button>, or <input type="submit|image">'
+                                                );
+                                            else
+                                                ((r = tC),
+                                                    (n = null),
+                                                    (a = tk),
+                                                    (i = e));
+                                            return (
+                                                o &&
+                                                    "text/plain" === a &&
+                                                    ((i = o), (o = void 0)),
+                                                {
+                                                    action: n,
+                                                    method: r.toLowerCase(),
+                                                    encType: a,
+                                                    formData: o,
+                                                    body: i,
+                                                }
+                                            );
+                                        })(n, t);
+                                        if (!1 === a.navigate) {
+                                            let t =
+                                                a.fetcherKey ||
+                                                `__${String(++t4)}__`;
+                                            await e.fetch(t, r, a.action || o, {
+                                                preventScrollReset:
+                                                    a.preventScrollReset,
+                                                formData: l,
+                                                body: u,
+                                                formMethod: a.method || i,
+                                                formEncType: a.encType || s,
+                                                flushSync: a.flushSync,
+                                            });
+                                        } else
+                                            await e.navigate(a.action || o, {
+                                                preventScrollReset:
+                                                    a.preventScrollReset,
+                                                formData: l,
+                                                body: u,
+                                                formMethod: a.method || i,
+                                                formEncType: a.encType || s,
+                                                replace: a.replace,
+                                                state: a.state,
+                                                fromRouteId: r,
+                                                flushSync: a.flushSync,
+                                                viewTransition:
+                                                    a.viewTransition,
+                                            });
+                                    },
+                                    [e, t, r]
+                                );
+                            })(),
+                            v = (function (e, { relative: t } = {}) {
+                                let { basename: r } = a.useContext(eq),
+                                    n = a.useContext(eV);
+                                c(
+                                    n,
+                                    "useFormAction must be used inside a RouteContext"
+                                );
+                                let [o] = n.matches.slice(-1),
+                                    i = { ...e3(e || ".", { relative: t }) },
+                                    s = eX();
+                                if (null == e) {
+                                    i.search = s.search;
+                                    let e = new URLSearchParams(i.search),
+                                        t = e.getAll("index");
+                                    if (t.some((e) => "" === e)) {
+                                        (e.delete("index"),
+                                            t
+                                                .filter((e) => e)
+                                                .forEach((t) =>
+                                                    e.append("index", t)
+                                                ));
+                                        let r = e.toString();
+                                        i.search = r ? `?${r}` : "";
+                                    }
+                                }
+                                return (
+                                    (!e || "." === e) &&
+                                        o.route.index &&
+                                        (i.search = i.search
+                                            ? i.search.replace(/^\?/, "?index&")
+                                            : "?index"),
+                                    "/" !== r &&
+                                        (i.pathname =
+                                            "/" === i.pathname
+                                                ? r
+                                                : O([r, i.pathname])),
+                                    f(i)
+                                );
+                            })(l, { relative: d }),
+                            b = "get" === s.toLowerCase() ? "get" : "post",
+                            w = "string" == typeof l && tG.test(l);
+                        return a.createElement("form", {
+                            ref: y,
+                            method: b,
+                            action: v,
+                            onSubmit: n
+                                ? u
+                                : (e) => {
+                                      if ((u && u(e), e.defaultPrevented))
+                                          return;
+                                      e.preventDefault();
+                                      let n = e.nativeEvent.submitter,
+                                          a =
+                                              n?.getAttribute("formmethod") ||
+                                              s;
+                                      g(n || e.currentTarget, {
+                                          fetcherKey: t,
+                                          method: a,
+                                          navigate: r,
+                                          replace: o,
+                                          state: i,
+                                          relative: d,
+                                          preventScrollReset: h,
+                                          viewTransition: p,
+                                      });
+                                  },
+                            ...m,
+                            "data-discover":
+                                w || "render" !== e ? void 0 : "true",
+                        });
+                    }
+                ).displayName = "Form"),
+                (tQ.displayName = "ScrollRestoration"));
+            var t4 = 0,
+                t3 = "react-router-scroll-positions",
+                t5 = {};
+            function t8(e, t, r, n) {
                 let a = null;
                 return (
                     n &&
@@ -13267,7 +12084,7 @@ import(${JSON.stringify(n.entry.module)});`
                             "/" !== r
                                 ? {
                                       ...e,
-                                      pathname: O(e.pathname, r) || e.pathname,
+                                      pathname: T(e.pathname, r) || e.pathname,
                                   }
                                 : e,
                             t
@@ -13276,9 +12093,9 @@ import(${JSON.stringify(n.entry.module)});`
                     a
                 );
             }
-            function r3(e, t) {
+            function t7(e, t) {
                 let { capture: r } = t || {};
-                o.useEffect(() => {
+                a.useEffect(() => {
                     let t = null != r ? { capture: r } : void 0;
                     return (
                         window.addEventListener("beforeunload", e, t),
@@ -13288,726 +12105,14 @@ import(${JSON.stringify(n.entry.module)});`
                     );
                 }, [e, r]);
             }
-            function r5({ routes: e, future: t, state: r }) {
-                return ty(e, void 0, r, t);
-            }
-            function r8(e) {
-                return "string" == typeof e ? e : g(e);
-            }
-            function r6(e) {
-                let t = "string" == typeof e ? e : g(e),
-                    r = r7.test((t = t.replace(/ $/, "%20")))
-                        ? new URL(t)
-                        : new URL(t, "http://localhost");
-                return { pathname: r.pathname, search: r.search, hash: r.hash };
-            }
-            var r7 = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,
-                r9 = {
-                    "&": "\\u0026",
-                    ">": "\\u003e",
-                    "<": "\\u003c",
-                    "\u2028": "\\u2028",
-                    "\u2029": "\\u2029",
-                },
-                ne = /[&><\u2028\u2029]/g,
-                nt = new TextEncoder(),
-                nr = async (e, t) => {
-                    let r = nt.encode(e),
-                        n = await na(t, ["sign"]);
-                    return (
-                        e +
-                        "." +
-                        btoa(
-                            String.fromCharCode(
-                                ...new Uint8Array(
-                                    await crypto.subtle.sign("HMAC", n, r)
-                                )
-                            )
-                        ).replace(/=+$/, "")
-                    );
-                },
-                nn = async (e, t) => {
-                    let r = e.lastIndexOf("."),
-                        n = e.slice(0, r),
-                        a = e.slice(r + 1),
-                        o = nt.encode(n),
-                        i = await na(t, ["verify"]),
-                        s = (function (e) {
-                            let t = new Uint8Array(e.length);
-                            for (let r = 0; r < e.length; r++)
-                                t[r] = e.charCodeAt(r);
-                            return t;
-                        })(atob(a));
-                    return !!(await crypto.subtle.verify("HMAC", i, s, o)) && n;
-                },
-                na = async (e, t) =>
-                    crypto.subtle.importKey(
-                        "raw",
-                        nt.encode(e),
-                        { name: "HMAC", hash: "SHA-256" },
-                        !1,
-                        t
-                    );
-            async function no(e, t) {
-                let r = btoa(
-                    (function (e) {
-                        let t,
-                            r,
-                            n = e.toString(),
-                            a = "",
-                            o = 0;
-                        for (; o < n.length; ) {
-                            if ("%" === (t = n.charAt(o++))) {
-                                if ("u" === n.charAt(o)) {
-                                    if (
-                                        ((r = n.slice(o + 1, o + 5)),
-                                        /^[\da-f]{4}$/i.exec(r))
-                                    ) {
-                                        ((a += String.fromCharCode(
-                                            parseInt(r, 16)
-                                        )),
-                                            (o += 5));
-                                        continue;
-                                    }
-                                } else if (
-                                    ((r = n.slice(o, o + 2)),
-                                    /^[\da-f]{2}$/i.exec(r))
-                                ) {
-                                    ((a += String.fromCharCode(
-                                        parseInt(r, 16)
-                                    )),
-                                        (o += 2));
-                                    continue;
-                                }
-                            }
-                            a += t;
-                        }
-                        return a;
-                    })(encodeURIComponent(JSON.stringify(e)))
-                );
-                return (t.length > 0 && (r = await nr(r, t[0])), r);
-            }
-            async function ni(e, t) {
-                if (t.length > 0) {
-                    for (let r of t) {
-                        let t = await nn(e, r);
-                        if (!1 !== t) return ns(t);
-                    }
-                    return null;
-                }
-                return ns(e);
-            }
-            function ns(e) {
-                try {
-                    return JSON.parse(
-                        decodeURIComponent(
-                            (function (e) {
-                                let t,
-                                    r,
-                                    n = e.toString(),
-                                    a = "",
-                                    o = 0;
-                                for (; o < n.length; )
-                                    ((t = n.charAt(o++)),
-                                        /[\w*+\-./@]/.exec(t)
-                                            ? (a += t)
-                                            : (r = t.charCodeAt(0)) < 256
-                                              ? (a += "%" + nl(r, 2))
-                                              : (a +=
-                                                    "%u" +
-                                                    nl(r, 4).toUpperCase()));
-                                return a;
-                            })(atob(e))
-                        )
-                    );
-                } catch (e) {
-                    return {};
-                }
-            }
-            function nl(e, t) {
-                let r = e.toString(16);
-                for (; r.length < t; ) r = "0" + r;
-                return r;
-            }
-            var nu = ((e) => (
+            var t6 = ((e) => (
                 (e.Development = "development"),
                 (e.Production = "production"),
                 (e.Test = "test"),
                 e
-            ))(nu || {});
-            function nc(e, t) {
-                if (e instanceof Error && "development" !== t) {
-                    let e = Error("Unexpected Server Error");
-                    return ((e.stack = void 0), e);
-                }
-                return e;
-            }
-            function nd(e, t) {
-                return Object.entries(e).reduce(
-                    (e, [r, n]) => Object.assign(e, { [r]: nc(n, t) }),
-                    {}
-                );
-            }
-            function nh(e, t) {
-                let r = nc(e, t);
-                return { message: r.message, stack: r.stack };
-            }
-            function nf(e, t) {
-                if (!e) return null;
-                let r = Object.entries(e),
-                    n = {};
-                for (let [e, a] of r)
-                    if (X(a)) n[e] = { ...a, __type: "RouteErrorResponse" };
-                    else if (a instanceof Error) {
-                        let r = nc(a, t);
-                        n[e] = {
-                            message: r.message,
-                            stack: r.stack,
-                            __type: "Error",
-                            ...("Error" !== r.name
-                                ? { __subType: r.name }
-                                : {}),
-                        };
-                    } else n[e] = a;
-                return n;
-            }
-            async function np(e, t) {
-                var r;
-                let n,
-                    a,
-                    o = await e({
-                        request:
-                            ((r = (function (e) {
-                                let t = new URL(e.url),
-                                    r = t.searchParams.getAll("index");
-                                t.searchParams.delete("index");
-                                let n = [];
-                                for (let e of r) e && n.push(e);
-                                for (let e of n)
-                                    t.searchParams.append("index", e);
-                                let a = {
-                                    method: e.method,
-                                    body: e.body,
-                                    headers: e.headers,
-                                    signal: e.signal,
-                                };
-                                return (
-                                    a.body && (a.duplex = "half"),
-                                    new Request(t.href, a)
-                                );
-                            })(t.request)),
-                            (n = new URL(r.url)).searchParams.delete("_routes"),
-                            (a = {
-                                method: r.method,
-                                body: r.body,
-                                headers: r.headers,
-                                signal: r.signal,
-                            }).body && (a.duplex = "half"),
-                            new Request(n.href, a)),
-                        params: t.params,
-                        context: t.context,
-                    });
-                if (eV(o) && o.init && o.init.status && eG(o.init.status))
-                    throw new Response(null, o.init);
-                return o;
-            }
-            function nm(e, t) {
-                if (!1 === e || null == e)
-                    throw (
-                        console.error(
-                            "The following error is a bug in React Router; please open an issue! https://github.com/remix-run/react-router/issues/new/choose"
-                        ),
-                        Error(t)
-                    );
-            }
-            function ny(e) {
-                let t = {};
-                return (
-                    Object.values(e).forEach((e) => {
-                        if (e) {
-                            let r = e.parentId || "";
-                            (t[r] || (t[r] = []), t[r].push(e));
-                        }
-                    }),
-                    t
-                );
-            }
-            var ng = {
-                    "&": "\\u0026",
-                    ">": "\\u003e",
-                    "<": "\\u003c",
-                    "\u2028": "\\u2028",
-                    "\u2029": "\\u2029",
-                },
-                nv = /[&><\u2028\u2029]/g;
-            function nb(e) {
-                return JSON.stringify(e).replace(nv, (e) => ng[e]);
-            }
-            function nw(e, t) {
-                return (function (e, t) {
-                    let r,
-                        n = e.errors
-                            ? e.matches.findIndex((t) => e.errors[t.route.id])
-                            : -1,
-                        a = n >= 0 ? e.matches.slice(0, n + 1) : e.matches;
-                    if (n >= 0) {
-                        let {
-                            actionHeaders: t,
-                            actionData: a,
-                            loaderHeaders: o,
-                            loaderData: i,
-                        } = e;
-                        e.matches.slice(n).some((e) => {
-                            let n = e.route.id;
-                            return (
-                                !t[n] || (a && a.hasOwnProperty(n))
-                                    ? o[n] && !i.hasOwnProperty(n) && (r = o[n])
-                                    : (r = t[n]),
-                                null != r
-                            );
-                        });
-                    }
-                    return a.reduce((n, o, i) => {
-                        let { id: s } = o.route,
-                            l = e.loaderHeaders[s] || new Headers(),
-                            u = e.actionHeaders[s] || new Headers(),
-                            c = null != r && i === a.length - 1,
-                            d = c && r !== l && r !== u,
-                            h = t(o);
-                        if (null == h) {
-                            let e = new Headers(n);
-                            return (d && nS(r, e), nS(u, e), nS(l, e), e);
-                        }
-                        let f = new Headers(
-                            "function" == typeof h
-                                ? h({
-                                      loaderHeaders: l,
-                                      parentHeaders: n,
-                                      actionHeaders: u,
-                                      errorHeaders: c ? r : void 0,
-                                  })
-                                : h
-                        );
-                        return (d && nS(r, f), nS(u, f), nS(l, f), nS(n, f), f);
-                    }, new Headers());
-                })(t, (t) => {
-                    let r = e.routes[t.route.id];
-                    return (
-                        nm(
-                            r,
-                            `Route with id "${t.route.id}" not found in build`
-                        ),
-                        r.module.headers
-                    );
-                });
-            }
-            function nS(e, t) {
-                let r = e.get("Set-Cookie");
-                if (r) {
-                    let e = splitCookiesString(r),
-                        n = new Set(t.getSetCookie());
-                    e.forEach((e) => {
-                        n.has(e) || t.append("Set-Cookie", e);
-                    });
-                }
-            }
-            var nE = new Set([...rp, 304]);
-            async function nR(e, t, r, n, a, o, i) {
-                try {
-                    let s = function (r) {
-                            let a,
-                                o = nw(e, r);
-                            return eG(r.statusCode) && o.has("Location")
-                                ? nC(n, e, t, {
-                                      result: nk(r.statusCode, o, e.basename),
-                                      headers: o,
-                                      status: 202,
-                                  })
-                                : (r.errors &&
-                                      (Object.values(r.errors).forEach((e) => {
-                                          (!X(e) || e.error) && i(e);
-                                      }),
-                                      (r.errors = nd(r.errors, t))),
-                                  (a = r.errors
-                                      ? { error: Object.values(r.errors)[0] }
-                                      : {
-                                            data: Object.values(
-                                                r.actionData || {}
-                                            )[0],
-                                        }),
-                                  nC(n, e, t, {
-                                      result: a,
-                                      headers: o,
-                                      status: r.statusCode,
-                                  }));
-                        },
-                        l = new Request(a, {
-                            method: n.method,
-                            body: n.body,
-                            headers: n.headers,
-                            signal: n.signal,
-                            ...(n.body ? { duplex: "half" } : void 0),
-                        }),
-                        u = await r.query(l, {
-                            requestContext: o,
-                            skipLoaderErrorBubbling: !0,
-                            skipRevalidation: !0,
-                            unstable_respond: s,
-                        });
-                    if ((eX(u) || (u = s(u)), eK(u)))
-                        return nC(n, e, t, {
-                            result: nk(u.status, u.headers, e.basename),
-                            headers: u.headers,
-                            status: 202,
-                        });
-                    return u;
-                } catch (r) {
-                    return (
-                        i(r),
-                        nC(n, e, t, {
-                            result: { error: r },
-                            headers: new Headers(),
-                            status: 500,
-                        })
-                    );
-                }
-            }
-            async function nx(e, t, r, n, a, o, i) {
-                try {
-                    let s = function (r) {
-                            let a = nw(e, r);
-                            if (eG(r.statusCode) && a.has("Location"))
-                                return nC(n, e, t, {
-                                    result: {
-                                        [rh]: nk(r.statusCode, a, e.basename),
-                                    },
-                                    headers: a,
-                                    status: 202,
-                                });
-                            r.errors &&
-                                (Object.values(r.errors).forEach((e) => {
-                                    (!X(e) || e.error) && i(e);
-                                }),
-                                (r.errors = nd(r.errors, t)));
-                            let o = {},
-                                s = new Set(
-                                    r.matches
-                                        .filter((e) =>
-                                            c
-                                                ? c.has(e.route.id)
-                                                : null != e.route.loader
-                                        )
-                                        .map((e) => e.route.id)
-                                );
-                            if (r.errors)
-                                for (let [e, t] of Object.entries(r.errors))
-                                    o[e] = { error: t };
-                            for (let [e, t] of Object.entries(r.loaderData))
-                                !(e in o) && s.has(e) && (o[e] = { data: t });
-                            return nC(n, e, t, {
-                                result: o,
-                                headers: a,
-                                status: r.statusCode,
-                            });
-                        },
-                        l = new Request(a, {
-                            headers: n.headers,
-                            signal: n.signal,
-                        }),
-                        u = new URL(n.url).searchParams.get("_routes"),
-                        c = u ? new Set(u.split(",")) : null,
-                        d = await r.query(l, {
-                            requestContext: o,
-                            filterMatchesToLoad: (e) => !c || c.has(e.route.id),
-                            skipLoaderErrorBubbling: !0,
-                            unstable_respond: s,
-                        });
-                    if ((eX(d) || (d = s(d)), eK(d)))
-                        return nC(n, e, t, {
-                            result: {
-                                [rh]: nk(d.status, d.headers, e.basename),
-                            },
-                            headers: d.headers,
-                            status: 202,
-                        });
-                    return d;
-                } catch (r) {
-                    return (
-                        i(r),
-                        nC(n, e, t, {
-                            result: { root: { error: r } },
-                            headers: new Headers(),
-                            status: 500,
-                        })
-                    );
-                }
-            }
-            function nC(e, t, r, { result: n, headers: a, status: o }) {
-                let i = new Headers(a);
-                return (i.set("X-Remix-Response", "yes"), nE.has(o))
-                    ? new Response(null, { status: o, headers: i })
-                    : (i.set("Content-Type", "text/x-script"),
-                      new Response(
-                          nN(n, e.signal, t.entry.module.streamTimeout, r),
-                          { status: o || 200, headers: i }
-                      ));
-            }
-            function nk(e, t, r) {
-                let n = t.get("Location");
-                return (
-                    r && (n = O(n, r) || n),
-                    {
-                        redirect: n,
-                        status: e,
-                        revalidate:
-                            t.has("X-Remix-Revalidate") || t.has("Set-Cookie"),
-                        reload: t.has("X-Remix-Reload-Document"),
-                        replace: t.has("X-Remix-Replace"),
-                    }
-                );
-            }
-            function nN(e, t, r, n) {
-                let a = new AbortController(),
-                    o = setTimeout(
-                        () => a.abort(Error("Server Timeout")),
-                        "number" == typeof r ? r : 4950
-                    );
-                return (
-                    t.addEventListener("abort", () => clearTimeout(o)),
-                    (function (e, t) {
-                        let { plugins: r, postPlugins: n, signal: a } = t ?? {},
-                            o = {
-                                deferred: {},
-                                index: 0,
-                                indices: new Map(),
-                                stringified: [],
-                                plugins: r,
-                                postPlugins: n,
-                                signal: a,
-                            },
-                            i = new TextEncoder(),
-                            s = 0;
-                        return new ReadableStream({
-                            async start(t) {
-                                let r = rr.call(o, e);
-                                if (Array.isArray(r))
-                                    throw Error("This should never happen");
-                                r < 0
-                                    ? t.enqueue(
-                                          i.encode(`${r}
-`)
-                                      )
-                                    : (t.enqueue(
-                                          i.encode(`[${o.stringified.join(",")}]
-`)
-                                      ),
-                                      (s = o.stringified.length - 1));
-                                let n = new WeakSet();
-                                if (Object.keys(o.deferred).length) {
-                                    let e,
-                                        r = new Promise((t, r) => {
-                                            if (((e = t), a)) {
-                                                let e = () =>
-                                                    r(
-                                                        a.reason ||
-                                                            Error(
-                                                                "Signal was aborted."
-                                                            )
-                                                    );
-                                                a.aborted
-                                                    ? e()
-                                                    : a.addEventListener(
-                                                          "abort",
-                                                          (t) => {
-                                                              e();
-                                                          }
-                                                      );
-                                            }
-                                        });
-                                    for (
-                                        ;
-                                        Object.keys(o.deferred).length > 0;
-
-                                    ) {
-                                        for (let [e, a] of Object.entries(
-                                            o.deferred
-                                        ))
-                                            n.has(a) ||
-                                                n.add(
-                                                    (o.deferred[Number(e)] =
-                                                        Promise.race([r, a])
-                                                            .then(
-                                                                (r) => {
-                                                                    let n =
-                                                                        rr.call(
-                                                                            o,
-                                                                            r
-                                                                        );
-                                                                    if (
-                                                                        Array.isArray(
-                                                                            n
-                                                                        )
-                                                                    )
-                                                                        (t.enqueue(
-                                                                            i.encode(`P${e}:[["Z",${n[0]}]]
-`)
-                                                                        ),
-                                                                            o.index++,
-                                                                            s++);
-                                                                    else if (
-                                                                        n < 0
-                                                                    )
-                                                                        t.enqueue(
-                                                                            i.encode(`P${e}:${n}
-`)
-                                                                        );
-                                                                    else {
-                                                                        let r =
-                                                                            o.stringified
-                                                                                .slice(
-                                                                                    s +
-                                                                                        1
-                                                                                )
-                                                                                .join(
-                                                                                    ","
-                                                                                );
-                                                                        (t.enqueue(
-                                                                            i.encode(`P${e}:[${r}]
-`)
-                                                                        ),
-                                                                            (s =
-                                                                                o
-                                                                                    .stringified
-                                                                                    .length -
-                                                                                1));
-                                                                    }
-                                                                },
-                                                                (r) => {
-                                                                    (r &&
-                                                                        "object" ==
-                                                                            typeof r &&
-                                                                        r instanceof
-                                                                            Error) ||
-                                                                        (r =
-                                                                            Error(
-                                                                                "An unknown error occurred"
-                                                                            ));
-                                                                    let n =
-                                                                        rr.call(
-                                                                            o,
-                                                                            r
-                                                                        );
-                                                                    if (
-                                                                        Array.isArray(
-                                                                            n
-                                                                        )
-                                                                    )
-                                                                        (t.enqueue(
-                                                                            i.encode(`E${e}:[["Z",${n[0]}]]
-`)
-                                                                        ),
-                                                                            o.index++,
-                                                                            s++);
-                                                                    else if (
-                                                                        n < 0
-                                                                    )
-                                                                        t.enqueue(
-                                                                            i.encode(`E${e}:${n}
-`)
-                                                                        );
-                                                                    else {
-                                                                        let r =
-                                                                            o.stringified
-                                                                                .slice(
-                                                                                    s +
-                                                                                        1
-                                                                                )
-                                                                                .join(
-                                                                                    ","
-                                                                                );
-                                                                        (t.enqueue(
-                                                                            i.encode(`E${e}:[${r}]
-`)
-                                                                        ),
-                                                                            (s =
-                                                                                o
-                                                                                    .stringified
-                                                                                    .length -
-                                                                                1));
-                                                                    }
-                                                                }
-                                                            )
-                                                            .finally(() => {
-                                                                delete o
-                                                                    .deferred[
-                                                                    Number(e)
-                                                                ];
-                                                            }))
-                                                );
-                                        await Promise.race(
-                                            Object.values(o.deferred)
-                                        );
-                                    }
-                                    e();
-                                }
-                                (await Promise.all(Object.values(o.deferred)),
-                                    t.close());
-                            },
-                        });
-                    })(e, {
-                        signal: a.signal,
-                        plugins: [
-                            (e) => {
-                                if (e instanceof Error) {
-                                    let {
-                                        name: t,
-                                        message: r,
-                                        stack: a,
-                                    } = "production" === n ? nc(e, n) : e;
-                                    return ["SanitizedError", t, r, a];
-                                }
-                                if (e instanceof V) {
-                                    let {
-                                        data: t,
-                                        status: r,
-                                        statusText: n,
-                                    } = e;
-                                    return ["ErrorResponse", t, r, n];
-                                }
-                                if (e && "object" == typeof e && rh in e)
-                                    return ["SingleFetchRedirect", e[rh]];
-                            },
-                        ],
-                        postPlugins: [
-                            (e) => {
-                                if (e && "object" == typeof e)
-                                    return [
-                                        "SingleFetchClassInstance",
-                                        Object.fromEntries(Object.entries(e)),
-                                    ];
-                            },
-                            () => ["SingleFetchFallback"],
-                        ],
-                    })
-                );
-            }
-            function nj(e, t) {
-                let r = "Unexpected Server Error";
-                return (
-                    "production" !== t &&
-                        (r += `
-
-${String(e)}`),
-                    new Response(r, {
-                        status: 500,
-                        headers: { "Content-Type": "text/plain" },
-                    })
-                );
-            }
-            function nT(e) {
-                return `__flash_${e}__`;
-            }
+            ))(t6 || {});
+            [...t$];
         },
     },
 ]);
-//# sourceMappingURL=react-core-15f06aca1883.js.map
+//# sourceMappingURL=react-core-8f382be732d8.js.map
