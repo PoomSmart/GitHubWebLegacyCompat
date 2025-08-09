@@ -597,84 +597,84 @@ async function applyDiffPatch(filePath) {
                 console.log("  ✅ react-core.diff applied with fuzzy matching");
             } catch (patchError2) {
                 // If patch fails, fall back to manual transformations
-                console.log(
-                    "  ⚠️  react-core.diff failed to apply, falling back to manual transformations..."
-                );
-                console.log(`  📁 Keeping ${tempFile} for debugging`);
-                console.log(
-                    `  📁 Keeping ${filePath} (formatted) for debugging`
-                );
+                // console.log(
+                //     "  ⚠️  react-core.diff failed to apply, falling back to manual transformations..."
+                // );
+                // console.log(`  📁 Keeping ${tempFile} for debugging`);
+                // console.log(
+                //     `  📁 Keeping ${filePath} (formatted) for debugging`
+                // );
 
-                let content = fs.readFileSync(filePath, "utf8");
+                // let content = fs.readFileSync(filePath, "utf8");
 
-                // Fallback transformations based on the exact patterns in react-core.diff
-                const transformations = [
-                    // Main function declarations: function e( -> function e_(
-                    { from: /function e\(/g, to: "function e_(" },
+                // // Fallback transformations based on the exact patterns in react-core.diff
+                // const transformations = [
+                //     // Main function declarations: function e( -> function e_(
+                //     { from: /function e\(/g, to: "function e_(" },
 
-                    // Prototype assignments: var t = e.prototype -> var t = e_.prototype
-                    {
-                        from: /var t = e\.prototype/g,
-                        to: "var t = e_.prototype",
-                    },
+                //     // Prototype assignments: var t = e.prototype -> var t = e_.prototype
+                //     {
+                //         from: /var t = e\.prototype/g,
+                //         to: "var t = e_.prototype",
+                //     },
 
-                    // Function assignments: = function e( -> = function e_(
-                    { from: /= function e\(/g, to: "= function e_(" },
+                //     // Function assignments: = function e( -> = function e_(
+                //     { from: /= function e\(/g, to: "= function e_(" },
 
-                    // Recursive calls: n[r] = e( -> n[r] = e_(
-                    { from: /n\[r\] = e\(/g, to: "n[r] = e_(" },
+                //     // Recursive calls: n[r] = e( -> n[r] = e_(
+                //     { from: /n\[r\] = e\(/g, to: "n[r] = e_(" },
 
-                    // Return statements: return e -> return e_
-                    { from: /return e$/gm, to: "return e_" },
-                    { from: /return e;/g, to: "return e_;" },
+                //     // Return statements: return e -> return e_
+                //     { from: /return e$/gm, to: "return e_" },
+                //     { from: /return e;/g, to: "return e_;" },
 
-                    // Function calls within returns: return e( -> return e_(
-                    { from: /return e\(/g, to: "return e_(" },
+                //     // Function calls within returns: return e( -> return e_(
+                //     { from: /return e\(/g, to: "return e_(" },
 
-                    // New instances: new e( -> new e_(
-                    { from: /new e\(/g, to: "new e_(" },
+                //     // New instances: new e( -> new e_(
+                //     { from: /new e\(/g, to: "new e_(" },
 
-                    // Method calls: e.registerId -> e_.registerId
-                    { from: /e\.registerId/g, to: "e_.registerId" },
+                //     // Method calls: e.registerId -> e_.registerId
+                //     { from: /e\.registerId/g, to: "e_.registerId" },
 
-                    // Prototype method definitions: e.prototype. -> e_.prototype.
-                    { from: /e\.prototype\./g, to: "e_.prototype." },
+                //     // Prototype method definitions: e.prototype. -> e_.prototype.
+                //     { from: /e\.prototype\./g, to: "e_.prototype." },
 
-                    // Function parameter shadowing: function (e, t) with first param -> function (e__, t)
-                    {
-                        from: /\(t\.insertRule = function \(e, t\)/g,
-                        to: "(t.insertRule = function (e__, t)",
-                    },
-                    {
-                        from: /this\.sheet\.insertRule\(t, e\)/g,
-                        to: "this.sheet.insertRule(t, e__)",
-                    },
+                //     // Function parameter shadowing: function (e, t) with first param -> function (e__, t)
+                //     {
+                //         from: /\(t\.insertRule = function \(e, t\)/g,
+                //         to: "(t.insertRule = function (e__, t)",
+                //     },
+                //     {
+                //         from: /this\.sheet\.insertRule\(t, e\)/g,
+                //         to: "this.sheet.insertRule(t, e__)",
+                //     },
 
-                    // Set function parameter: set: function (e) -> set: function (e_)
-                    { from: /set: function \(e\)/g, to: "set: function (e_)" },
-                    { from: /: e;$/gm, to: ": e_;" },
+                //     // Set function parameter: set: function (e) -> set: function (e_)
+                //     { from: /set: function \(e\)/g, to: "set: function (e_)" },
+                //     { from: /: e;$/gm, to: ": e_;" },
 
-                    // Async function: async function e({ -> async function e_({
-                    {
-                        from: /coreLoader: async function e\(/g,
-                        to: "coreLoader: async function e_(",
-                    },
-                ];
+                //     // Async function: async function e({ -> async function e_({
+                //     {
+                //         from: /coreLoader: async function e\(/g,
+                //         to: "coreLoader: async function e_(",
+                //     },
+                // ];
 
-                let changesApplied = 0;
+                // let changesApplied = 0;
 
-                for (const transform of transformations) {
-                    const before = content;
-                    content = content.replace(transform.from, transform.to);
-                    if (content !== before) {
-                        changesApplied++;
-                    }
-                }
+                // for (const transform of transformations) {
+                //     const before = content;
+                //     content = content.replace(transform.from, transform.to);
+                //     if (content !== before) {
+                //         changesApplied++;
+                //     }
+                // }
 
-                console.log(
-                    `  Applied ${changesApplied} fallback transformations`
-                );
-                fs.writeFileSync(tempFile, content);
+                // console.log(
+                //     `  Applied ${changesApplied} fallback transformations`
+                // );
+                // fs.writeFileSync(tempFile, content);
             }
         }
 
