@@ -1,8 +1,8 @@
 .theos/
 packages/
 .DS_Store
-*.js.disabled
-*.js.backup.*
+*.disabled
+*.backup.*
 node_modules/
 bak/
 temp-downloads/

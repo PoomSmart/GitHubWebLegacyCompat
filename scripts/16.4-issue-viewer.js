@@ -19194,7 +19194,7 @@
             let sh = ({ metadataKey: e }) => {
                     let l = (0, N.useFragment)(si, e),
                         n = (0, N.useFragment)(sr.Wj, l),
-                        a = st.sC ? (0, N.useFragment)(st.sC, l) : undefined,
+                        a = (0, N.useFragment)(st.sC, l),
                         s = (0, N.useFragment)(su.zD, l),
                         i = (0, Q.useMemo)(
                             () =>

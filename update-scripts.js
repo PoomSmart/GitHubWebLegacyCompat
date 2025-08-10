@@ -7,6 +7,7 @@ const { execSync } = require("child_process");
 // For Node.js < 18, we need to use a fetch polyfill or alternative
 let fetch;
 let puppeteer;
+let prettier;
 
 try {
     // Try to use built-in fetch
@@ -27,7 +28,15 @@ try {
     console.log("Puppeteer not available, using basic fetch/curl");
 }
 
+// Try to load Prettier programmatically for CSS formatting
+try {
+    prettier = require("prettier");
+} catch (e) {
+    // Will fallback to manual beautifier later
+}
+
 const SCRIPTS_DIR = path.join(__dirname, "scripts");
+const STYLES_DIR = path.join(__dirname, "styles");
 const TEMP_DIR = path.join(__dirname, "temp-downloads");
 
 // File patterns to search for
@@ -40,6 +49,8 @@ const FILE_PATTERNS = {
         /vendors-node_modules_remark-gfm_lib_index_js-node_modules_remark-parse_lib_index_js-node_modu-[a-f0-9]+-[a-f0-9]+\.js$/,
     // "repos-overview": /chunk-lazy-react-partial-repos-overview-[a-f0-9]+\.js$/,
     // "wp-runtime": /wp-runtime-[a-f0-9]+\.js$/,
+    // CSS
+    "primer-react-css": /primer-react\.[a-f0-9]+\.module\.css$/,
 };
 
 // Alternative patterns if primary ones don't match
@@ -59,6 +70,7 @@ const TARGET_FILES = {
     "react-core": "16.4-a-react-core.js",
     "remark-vendors": "16.4-remark-vendors.js",
     // "repos-overview": "16.4-repos-overview.js",
+    "primer-react-css": "15.4-primer-react.css",
 };
 
 async function fetchPageWithPuppeteer(url) {
@@ -88,22 +100,23 @@ async function fetchPageWithPuppeteer(url) {
 
         // Get all script sources that were actually loaded
         const scriptSources = await page.evaluate(() => {
-            const scripts = Array.from(
-                document.querySelectorAll("script[src]")
-            );
-            return scripts
-                .map((script) => script.src)
-                .filter(
-                    (src) =>
-                        src.includes("github.githubassets.com/assets/") &&
-                        src.endsWith(".js")
+            const elements = [
+                ...Array.from(document.querySelectorAll("script[src]")),
+                ...Array.from(document.querySelectorAll('link[rel="stylesheet"][href]')),
+            ];
+            return elements
+                .map((el) => el.src || el.href)
+                .filter((src) =>
+                    src &&
+                    src.includes("github.githubassets.com/assets/") &&
+                    (src.endsWith(".js") || src.endsWith(".css"))
                 );
         });
 
         // Also get HTML content as backup
         const html = await page.content();
         const assetRegex =
-            /https:\/\/github\.githubassets\.com\/assets\/[^"']+\.js/g;
+            /https:\/\/github\.githubassets\.com\/assets\/[^"']+\.(?:js|css)/g;
         const htmlAssets = [...html.matchAll(assetRegex)].map(
             (match) => match[0]
         );
@@ -191,10 +204,10 @@ async function fetchPageBasic(url, pageName) {
     }
 
     const assetRegex =
-        /https:\/\/github\.githubassets\.com\/assets\/[^"']+\.js/g;
+        /https:\/\/github\.githubassets\.com\/assets\/[^"']+\.(?:js|css)/g;
     const assets = [...html.matchAll(assetRegex)].map((match) => match[0]);
     console.log(
-        `    Found ${assets.length} JavaScript asset URLs from ${pageName}`
+        `    Found ${assets.length} JavaScript/CSS asset URLs from ${pageName}`
     );
 
     return assets;
@@ -459,6 +472,100 @@ function formatWithPrettier(filePath) {
     }
 }
 
+// Additional CSS beautifier when Prettier doesn't expand (e.g. minified remains single line)
+function beautifyCss(css) {
+    let result = "";
+    let indent = 0;
+    const indentStr = "  ";
+    let i = 0;
+    let inString = false;
+    let stringChar = null;
+    let inComment = false;
+    while (i < css.length) {
+        const ch = css[i];
+        const next = css[i + 1];
+        // Handle comment start/end
+        if (!inString && !inComment && ch === "/" && next === "*") {
+            inComment = true;
+            result += "/*";
+            i += 2;
+            continue;
+        }
+        if (inComment && ch === "*" && next === "/") {
+            inComment = false;
+            result += "*/\n" + indentStr.repeat(indent);
+            i += 2;
+            continue;
+        }
+        if (inComment) {
+            result += ch;
+            i++;
+            continue;
+        }
+        // Strings
+        if (!inString && (ch === '"' || ch === "'")) {
+            inString = true;
+            stringChar = ch;
+            result += ch;
+            i++;
+            continue;
+        } else if (inString && ch === stringChar) {
+            inString = false;
+            stringChar = null;
+            result += ch;
+            i++;
+            continue;
+        }
+        if (inString) {
+            result += ch;
+            i++;
+            continue;
+        }
+        if (ch === '{') {
+            result = result.trimEnd();
+            result += ' {\n';
+            indent++;
+            result += indentStr.repeat(indent);
+        } else if (ch === '}') {
+            indent = Math.max(0, indent - 1);
+            result = result.trimEnd();
+            result += '\n' + indentStr.repeat(indent) + '}\n' + indentStr.repeat(indent);
+        } else if (ch === ';') {
+            result = result.trimEnd();
+            result += ';\n' + indentStr.repeat(indent);
+        } else if (ch === '\n' || ch === '\r') {
+            // skip existing newlines (we control them)
+        } else {
+            result += ch;
+        }
+        i++;
+    }
+    // Collapse multiple blank lines
+    return result
+        .split('\n')
+        .map((l) => l.trimEnd())
+        .filter((_, idx, arr) => !(!_.trim() && arr[idx - 1] === ''))
+        .join('\n')
+        .trim() + '\n';
+}
+
+function formatCssFileIfNeeded(filePath) {
+    try {
+        let content = fs.readFileSync(filePath, 'utf8');
+        const lines = content.split('\n');
+        const longest = lines.reduce((m, l) => Math.max(m, l.length), 0);
+        // Heuristic: if single (or very few) very long lines (> 400 chars) treat as minified
+        if (lines.length < 10 && longest > 400) {
+            console.log(`  Applying manual CSS beautifier to ${path.basename(filePath)}...`);
+            const pretty = beautifyCss(content);
+            fs.writeFileSync(filePath, pretty, 'utf8');
+            console.log('  CSS beautified');
+        }
+    } catch (e) {
+        console.warn(`  CSS beautify skipped: ${e.message}`);
+    }
+}
+
 function readPatchFile(filename) {
     const filePath = path.join(__dirname, filename);
     if (!fs.existsSync(filePath)) {
@@ -565,134 +672,6 @@ function applyTextPatches(content, patchFile) {
     return modifiedContent;
 }
 
-async function applyDiffPatch(filePath) {
-    console.log(`Applying react-core.diff to ${filePath}...`);
-
-    try {
-        // Create a temporary copy for patching
-        const tempFile = path.join(TEMP_DIR, "react-core-temp.js");
-        fs.copyFileSync(filePath, tempFile);
-
-        // Apply the patch using the patch command
-        const diffPath = path.join(__dirname, "react-core.diff");
-
-        try {
-            execSync(`patch --fuzz=3 "${tempFile}" < "${diffPath}"`, {
-                cwd: __dirname,
-                stdio: "pipe", // Capture output to handle errors gracefully
-            });
-
-            console.log("  ✅ react-core.diff applied successfully");
-        } catch (patchError) {
-            // Try with more aggressive fuzzy matching
-            console.log("  🔄 Trying patch with more fuzzy matching...");
-            try {
-                execSync(
-                    `patch --fuzz=5 --force "${tempFile}" < "${diffPath}"`,
-                    {
-                        cwd: __dirname,
-                        stdio: "pipe",
-                    }
-                );
-                console.log("  ✅ react-core.diff applied with fuzzy matching");
-            } catch (patchError2) {
-                // If patch fails, fall back to manual transformations
-                // console.log(
-                //     "  ⚠️  react-core.diff failed to apply, falling back to manual transformations..."
-                // );
-                // console.log(`  📁 Keeping ${tempFile} for debugging`);
-                // console.log(
-                //     `  📁 Keeping ${filePath} (formatted) for debugging`
-                // );
-
-                // let content = fs.readFileSync(filePath, "utf8");
-
-                // // Fallback transformations based on the exact patterns in react-core.diff
-                // const transformations = [
-                //     // Main function declarations: function e( -> function e_(
-                //     { from: /function e\(/g, to: "function e_(" },
-
-                //     // Prototype assignments: var t = e.prototype -> var t = e_.prototype
-                //     {
-                //         from: /var t = e\.prototype/g,
-                //         to: "var t = e_.prototype",
-                //     },
-
-                //     // Function assignments: = function e( -> = function e_(
-                //     { from: /= function e\(/g, to: "= function e_(" },
-
-                //     // Recursive calls: n[r] = e( -> n[r] = e_(
-                //     { from: /n\[r\] = e\(/g, to: "n[r] = e_(" },
-
-                //     // Return statements: return e -> return e_
-                //     { from: /return e$/gm, to: "return e_" },
-                //     { from: /return e;/g, to: "return e_;" },
-
-                //     // Function calls within returns: return e( -> return e_(
-                //     { from: /return e\(/g, to: "return e_(" },
-
-                //     // New instances: new e( -> new e_(
-                //     { from: /new e\(/g, to: "new e_(" },
-
-                //     // Method calls: e.registerId -> e_.registerId
-                //     { from: /e\.registerId/g, to: "e_.registerId" },
-
-                //     // Prototype method definitions: e.prototype. -> e_.prototype.
-                //     { from: /e\.prototype\./g, to: "e_.prototype." },
-
-                //     // Function parameter shadowing: function (e, t) with first param -> function (e__, t)
-                //     {
-                //         from: /\(t\.insertRule = function \(e, t\)/g,
-                //         to: "(t.insertRule = function (e__, t)",
-                //     },
-                //     {
-                //         from: /this\.sheet\.insertRule\(t, e\)/g,
-                //         to: "this.sheet.insertRule(t, e__)",
-                //     },
-
-                //     // Set function parameter: set: function (e) -> set: function (e_)
-                //     { from: /set: function \(e\)/g, to: "set: function (e_)" },
-                //     { from: /: e;$/gm, to: ": e_;" },
-
-                //     // Async function: async function e({ -> async function e_({
-                //     {
-                //         from: /coreLoader: async function e\(/g,
-                //         to: "coreLoader: async function e_(",
-                //     },
-                // ];
-
-                // let changesApplied = 0;
-
-                // for (const transform of transformations) {
-                //     const before = content;
-                //     content = content.replace(transform.from, transform.to);
-                //     if (content !== before) {
-                //         changesApplied++;
-                //     }
-                // }
-
-                // console.log(
-                //     `  Applied ${changesApplied} fallback transformations`
-                // );
-                // fs.writeFileSync(tempFile, content);
-            }
-        }
-
-        // Read the patched content
-        const patchedContent = fs.readFileSync(tempFile, "utf8");
-
-        // Only clean up temp file if patch was successful
-        if (fs.existsSync(tempFile) && !tempFile.includes("debug")) {
-            fs.unlinkSync(tempFile);
-        }
-
-        return patchedContent;
-    } catch (error) {
-        console.error("Error applying react-core patches:", error);
-        throw error;
-    }
-}
-
 async function main() {
     const args = process.argv.slice(2);
     const isDryRun = args.includes("--dry-run") || args.includes("-n");
@@ -707,6 +686,10 @@ async function main() {
     // Create temp directory
     if (!fs.existsSync(TEMP_DIR)) {
         fs.mkdirSync(TEMP_DIR);
+    }
+    // Ensure styles directory exists for CSS target file output
+    if (!fs.existsSync(STYLES_DIR)) {
+        try { fs.mkdirSync(STYLES_DIR); } catch (_) {}
     }
 
     try {
@@ -769,7 +752,7 @@ async function main() {
             }
         }
 
-        console.log("\n--- Downloading Files ---");
+    console.log("\n--- Downloading Files ---");
 
         // Step 2: Download matched files
         const downloadedFiles = {};
@@ -780,11 +763,11 @@ async function main() {
             downloadedFiles[key] = downloadPath;
         }
 
-        console.log("\n--- Processing Files (Skipping Formatting) ---");
+    console.log("\n--- Processing Files (Skipping Formatting) ---");
 
         // Step 3: Work directly with downloaded minified files
         const processedFiles = {};
-        for (const [key, downloadPath] of Object.entries(downloadedFiles)) {
+    for (const [key, downloadPath] of Object.entries(downloadedFiles)) {
             console.log(`Processing ${key} (keeping minified format)...`);
             const content = fs.readFileSync(downloadPath, "utf8");
             processedFiles[key] = content;
@@ -793,51 +776,60 @@ async function main() {
         console.log("\n--- Applying Patches ---");
 
         // Step 4: Apply patches to minified files
-        for (const [key, content] of Object.entries(processedFiles)) {
+        // Helper to extract inner rules of all @layer blocks, removing wrappers
+        function extractLayerContent(css) {
+            let result = "";
+            let pos = 0;
+            while (true) {
+                const idx = css.indexOf("@layer", pos);
+                if (idx === -1) break;
+                // Find opening brace of this layer block
+                const openBrace = css.indexOf("{", idx);
+                if (openBrace === -1) break; // malformed
+                let depth = 0;
+                let i = openBrace;
+                for (; i < css.length; i++) {
+                    const ch = css[i];
+                    if (ch === '{') depth++;
+                    else if (ch === '}') {
+                        depth--;
+                        if (depth === 0) { i++; break; }
+                    }
+                }
+                const block = css.substring(openBrace + 1, i - 1); // contents inside layer braces
+                result += block.trim() + "\n";
+                pos = i;
+            }
+            return result.trim() + (result.endsWith("\n") ? "" : "\n");
+        }
+
+    for (const [key, content] of Object.entries(processedFiles)) {
             const originalLength = content.length;
             let modifiedContent = content;
 
-            if (key === "react-core") {
-                // For react-core, try applying the diff before formatting for better compatibility
-                const unformattedPath = downloadedFiles[key];
-
-                // Try to apply diff to unformatted file first
-                const tempFile = path.join(
-                    TEMP_DIR,
-                    "react-core-temp-unformatted.js"
-                );
-                fs.copyFileSync(unformattedPath, tempFile);
-
-                const diffPath = path.join(__dirname, "react-core.diff");
-                let diffApplied = false;
-
-                try {
-                    execSync(`patch "${tempFile}" < "${diffPath}"`, {
-                        cwd: __dirname,
-                        stdio: "pipe",
-                    });
-
-                    console.log(
-                        "  ✅ react-core.diff applied to unformatted file"
-                    );
-
-                    // Now format the patched file
-                    modifiedContent = formatWithPrettier(tempFile);
-                    diffApplied = true;
-                } catch (patchError) {
-                    console.log(
-                        "  🔄 Patch failed on unformatted file, trying formatted file..."
-                    );
-
-                    // Fall back to the original approach - format first, then patch
-                    const tempPath = path.join(TEMP_DIR, `${key}-formatted.js`);
-                    fs.writeFileSync(tempPath, content);
-                    modifiedContent = await applyDiffPatch(tempPath);
-                }
-
-                // Clean up temporary file
-                if (fs.existsSync(tempFile)) {
-                    fs.unlinkSync(tempFile);
+            if (key === "primer-react-css") {
+                // Extract only rules inside @layer blocks and drop the @layer wrapper for legacy compatibility
+                const extracted = extractLayerContent(content);
+                if (extracted && extracted.length > 0) {
+                    console.log(`  Extracted @layer content: ${content.length} → ${extracted.length} chars`);
+                    modifiedContent = extracted;
+                    // Programmatic Prettier formatting (parser: css)
+                    if (prettier) {
+                        try {
+                            const pretty = await prettier.format(modifiedContent, { parser: 'css' });
+                            if (pretty && typeof pretty.then === 'function') {
+                                // Shouldn't happen after await, but guard just in case
+                                modifiedContent = await pretty;
+                            } else {
+                                modifiedContent = pretty;
+                            }
+                            console.log("  Applied Prettier CSS formatting (programmatic)");
+                        } catch (e) {
+                            console.log(`  Prettier CSS formatting failed: ${e.message}`);
+                        }
+                    }
+                } else {
+                    console.log("  ⚠️  No @layer content extracted; keeping original CSS");
                 }
             } else {
                 // Apply text patches to formatted content (if patch file exists)
@@ -853,21 +845,28 @@ async function main() {
                 }
             }
 
-            console.log(
-                `  Processed ${key}: ${originalLength} → ${modifiedContent.length} chars`
-            );
+            if (modifiedContent && typeof modifiedContent.then === 'function') {
+                modifiedContent = await modifiedContent;
+            }
+            console.log(`  Processed ${key}: ${originalLength} → ${modifiedContent.length} chars`);
             processedFiles[key] = modifiedContent;
         }
 
         console.log("\n--- Updating Script Files ---");
 
         // Step 4: Replace files in scripts directory
-        for (const [key, content] of Object.entries(processedFiles)) {
-            const targetFile = path.join(SCRIPTS_DIR, TARGET_FILES[key]);
+    for (const [key, contentRaw] of Object.entries(processedFiles)) {
+        let content = contentRaw;
+        if (content && typeof content.then === 'function') {
+            content = await content; // resolve any stray promise
+        }
+        const isCss = key === "primer-react-css";
+        const targetDir = isCss ? STYLES_DIR : SCRIPTS_DIR;
+        const targetFile = path.join(targetDir, TARGET_FILES[key]);
 
             if (isDryRun) {
                 console.log(
-                    `Would update: ${TARGET_FILES[key]} (${content.length} chars)`
+            `Would update: ${TARGET_FILES[key]} (${content.length} chars) in ${path.relative(__dirname, targetDir)}`
                 );
                 continue;
             }
@@ -881,17 +880,26 @@ async function main() {
             }
 
             // Write and format the final content
-            fs.writeFileSync(targetFile, content);
+            if (typeof content !== 'string') {
+                content = String(content || '');
+            }
+            fs.writeFileSync(targetFile, content, 'utf8');
 
             // Apply Prettier formatting to the final file
             try {
                 formatWithPrettier(targetFile);
+                if (isCss) {
+                    formatCssFileIfNeeded(targetFile);
+                }
                 console.log(`Updated and formatted: ${TARGET_FILES[key]}`);
             } catch (formatError) {
                 console.warn(
                     `  Warning: Final formatting failed for ${TARGET_FILES[key]}: ${formatError.message}`
                 );
-                console.log(`Updated: ${TARGET_FILES[key]} (unformatted)`);
+                if (isCss) {
+                    formatCssFileIfNeeded(targetFile);
+                }
+                console.log(`Updated: ${TARGET_FILES[key]} (unformatted or partially formatted)`);
             }
         }
         console.log("\n--- Cleanup ---");

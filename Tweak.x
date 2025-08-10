@@ -19,8 +19,8 @@ static NSString *injectStyles(NSString *identifier, NSString *styles) {
     return [NSString stringWithFormat:@"if(document.getElementById('%@')===null){const styleSheet=document.createElement('style');styleSheet.type='text/css';styleSheet.innerText=`%@`;styleSheet.id='no-polyfill-%@';document.head.appendChild(styleSheet);}", identifier, styles, identifier];
 }
 
-static void injectScript(WKWebView *webview, NSString *identifier, NSString *script) {
-    WKUserScript *userScript = [[WKUserScript alloc] initWithSource:script injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+static void injectScript(WKWebView *webview, NSString *identifier, NSString *script, WKUserScriptInjectionTime injectionTime) {
+    WKUserScript *userScript = [[WKUserScript alloc] initWithSource:script injectionTime:injectionTime forMainFrameOnly:YES];
     [webview.configuration.userContentController addUserScript:userScript];
 }
 
@@ -59,7 +59,7 @@ static void inject(WKWebView *webview) {
         NSString *cssContent = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         if (cssContent) {
             NSString *cssIdentifier = [actualFileName stringByReplacingOccurrencesOfString:@"-" withString:@"_"];
-            injectScript(webview, cssIdentifier, injectStyles(cssIdentifier, cssContent));
+            injectScript(webview, cssIdentifier, injectStyles(cssIdentifier, cssContent), WKUserScriptInjectionTimeAtDocumentEnd);
         } else
             HBLogDebug(@"GitHubWebLegacyCompat failed to read CSS file %@", cssFile);
     }
@@ -87,7 +87,7 @@ static void inject(WKWebView *webview) {
         NSString *scriptContent = [NSString stringWithContentsOfFile:filePath encoding:NSUTF8StringEncoding error:nil];
         if (scriptContent) {
             NSString *scriptIdentifier = [actualFileName stringByReplacingOccurrencesOfString:@"-" withString:@"_"];
-            injectScript(webview, scriptIdentifier, scriptContent);
+            injectScript(webview, scriptIdentifier, scriptContent, WKUserScriptInjectionTimeAtDocumentStart);
         } else
             HBLogDebug(@"GitHubWebLegacyCompat failed to read script file %@", jsFile);
     }
