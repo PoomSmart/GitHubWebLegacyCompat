@@ -1,19 +1,20 @@
 "use strict";
-(globalThis.webpackChunk = globalThis.webpackChunk || []).push([
+(globalThis.webpackChunk_github_ui_github_ui =
+    globalThis.webpackChunk_github_ui_github_ui || []).push([
     [
-        "ui_packages_issue-viewer_components_IssueViewer_tsx-ui_packages_issue-viewer_contexts_IssueVi-df51bd",
+        "packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-51dbb8",
     ],
     {
-        74253: (e, l, n) => {
+        1075: (e, l, n) => {
             n.d(l, { A: () => a });
             let a = {
                 responsiveContainer:
-                    "NestedListView-module__responsiveContainer--m4jHL",
-                container: "NestedListView-module__container--Yi1eg",
-                collapsible: "NestedListView-module__collapsible--wfiy1",
+                    "NestedListView-module__responsiveContainer--Z7mCj",
+                container: "NestedListView-module__container--AjxDm",
+                collapsible: "NestedListView-module__collapsible--fUdI9",
             };
         },
-        27215: (e, l, n) => {
+        72683: (e, l, n) => {
             n.d(l, { t: () => a });
             let a = {
                 bodyLoadingSkeletonCount: 6,
@@ -27,9 +28,9 @@
                 },
             };
         },
-        58087: (e, l, n) => {
+        96747: (e, l, n) => {
             n.d(l, { C: () => s });
-            var a = n(13233);
+            var a = n(73189);
             let s = {
                 navigate: a.l,
                 navigateBack: a.l,
@@ -53,7 +54,7 @@
                 useViewportQueries: !1,
             };
         },
-        20551: (e, l, n) => {
+        6403: (e, l, n) => {
             n.d(l, { A: () => s });
             let a = (function () {
                 var e = {
@@ -1357,7 +1358,7 @@
                         ],
                     },
                     params: {
-                        id: "d96747c7f044c4f942cac2660b7dd2ad",
+                        id: "241367664488b34e6fcc1be28504ed7e",
                         metadata: {},
                         name: "IssueViewerSecondaryViewQuery",
                         operationKind: "query",
@@ -1368,7 +1369,7 @@
             a.hash = "4ace59b498083162062aa1fcd4030248";
             let s = a;
         },
-        69689: (e, l, n) => {
+        81469: (e, l, n) => {
             n.d(l, { A: () => s });
             let a = (function () {
                 var e = {
@@ -4414,7 +4415,7 @@
                         ],
                     },
                     params: {
-                        id: "d349b42a56163fbb56b4faad035bb8df",
+                        id: "805eb34eafdb5bed4094f1e085f548e1",
                         metadata: {},
                         name: "IssueViewerViewQuery",
                         operationKind: "query",
@@ -4425,7 +4426,7 @@
             a.hash = "6c7887cee58a1677480269f0fbb66fa2";
             let s = a;
         },
-        23086: (e, l, n) => {
+        66730: (e, l, n) => {
             n.d(l, { l: () => a });
             let a = {
                 copyIssueLink: "Copy link",
@@ -4453,7 +4454,7 @@
                 duplicateIssue: "Duplicate issue",
             };
         },
-        66268: (e, l, n) => {
+        50560: (e, l, n) => {
             n.d(l, { k: () => a });
             let a = {
                 applyButtonLabel: "Apply",
@@ -4601,7 +4602,7 @@
                 },
             };
         },
-        13836: (e, l, n) => {
+        13712: (e, l, n) => {
             n.d(l, { Y: () => a });
             let a = {
                 commentHeaderHamburger: "comment-header-hamburger",
@@ -4640,7 +4641,7 @@
                 crawlerPagination: "timeline-crawler-pagination",
             };
         },
-        16965: (e, l, n) => {
+        91985: (e, l, n) => {
             n.d(l, { t: () => a });
             let a = {
                 timelineAvatarSize: 32,
@@ -4659,7 +4660,7 @@
                 commentVideo: ".markdown-body video",
             };
         },
-        8341: (e, l, n) => {
+        82899: (e, l, n) => {
             n.d(l, { e: () => i });
             let a = (function () {
                 var e = [
@@ -4830,9 +4831,9 @@
                 });
             }
         },
-        4122: (e, l, n) => {
+        72822: (e, l, n) => {
             n.d(l, { Fj: () => i, us: () => s });
-            var a = n(27851);
+            var a = n(69599);
             function s(e, l) {
                 return (0, a.G7)("issues_react_prohibit_title_fallback")
                     ? l
@@ -4847,14 +4848,14 @@
                 return `${s}?q=${i}`;
             };
         },
-        65741: (e, l, n) => {
+        8521: (e, l, n) => {
             n.d(l, { $9: () => a, ET: () => s, H7: () => i, Q_: () => t });
             let a = (e) => `/${e.owner}/${e.repo}/issues/${e.number}`,
                 s = (e) => `/${e.owner}/${e.repo}/pull/${e.number}`,
                 i = (e) => `/signup?return_to=${e}`,
                 t = (e) => `/login?return_to=${e}`;
         },
-        73307: (e, l, n) => {
+        19695: (e, l, n) => {
             n.d(l, { I: () => s });
             var a = n(38621);
             let s = {
@@ -4871,7 +4872,7 @@
                 DRAFT: { color: "fg.muted", icon: a.GitPullRequestDraftIcon },
             };
         },
-        64527: (e, l, n) => {
+        43491: (e, l, n) => {
             n.d(l, { A: () => s });
             let a = (function () {
                 var e = {
@@ -5172,7 +5173,7 @@
             a.hash = "7805f5acc9dd7dba8b26177327542d38";
             let s = a;
         },
-        30467: (e, l, n) => {
+        7151: (e, l, n) => {
             n.d(l, { G: () => r, a: () => t });
             var a = n(55966),
                 s = n(96540);
@@ -5199,7 +5200,7 @@
                 }, [e, l]);
             }
         },
-        80837: (e, l, n) => {
+        305: (e, l, n) => {
             n.d(l, {
                 Dy: () => s,
                 O1: () => t,
@@ -5223,7 +5224,7 @@
                 r = !1,
                 u = "List view";
         },
-        27945: (e, l, n) => {
+        4578: (e, l, n) => {
             n.d(l, { w: () => t });
             var a = n(30391),
                 s = n(96540);
@@ -5287,10 +5288,10 @@
                 );
             };
         },
-        28714: (e, l, n) => {
+        2694: (e, l, n) => {
             n.d(l, { B: () => t });
-            var a = n(13233),
-                s = n(96679),
+            var a = n(73189),
+                s = n(71315),
                 i = n(96540);
             function t(e, l) {
                 if (!s.KJ) return [a.l, a.l, a.l];
@@ -5307,10 +5308,10 @@
                 ];
             }
         },
-        93539: (e, l, n) => {
+        28199: (e, l, n) => {
             n.d(l, { a: () => t });
             var a = n(96540),
-                s = n(28714);
+                s = n(2694);
             let i = {
                 position: "sticky",
                 top: "-1px",
@@ -5345,23 +5346,23 @@
                 };
             }
         },
-        13272: (e, l, n) => {
+        12137: (e, l, n) => {
             n.d(l, { i: () => m });
             var a = n(74848),
-                s = n(94232),
+                s = n(81945),
                 i = n(96540),
-                t = n(1457),
+                t = n(46173),
                 r = n(75177),
-                u = n(63867);
+                u = n(12004);
             let o = {
                     CommentDividerContainer:
-                        "CommentDivider-module__CommentDividerContainer--u90jt",
+                        "CommentDivider-module__CommentDividerContainer--fCCZA",
                     CommentDividerLeftLine:
-                        "CommentDivider-module__CommentDividerLeftLine--wJYhx",
+                        "CommentDivider-module__CommentDividerLeftLine--TwR8y",
                     CommentDividerLoadingSkeleton:
-                        "CommentDivider-module__CommentDividerLoadingSkeleton--wsm0y",
+                        "CommentDivider-module__CommentDividerLoadingSkeleton--SSscZ",
                     CommentDividerRightLine:
-                        "CommentDivider-module__CommentDividerRightLine--mvtS7",
+                        "CommentDivider-module__CommentDividerRightLine--_guT1",
                 },
                 d = ({ large: e, isLoading: l, isHovered: n }) =>
                     (0, a.jsxs)("div", {
@@ -5390,15 +5391,15 @@
             } catch {}
             let c = {
                     CommentLoadingContainer:
-                        "CommentLoading-module__CommentLoadingContainer--vDaxP",
+                        "CommentLoading-module__CommentLoadingContainer--I9JkW",
                     CommentLoadingContentWrapper:
-                        "CommentLoading-module__CommentLoadingContentWrapper--xxqYQ",
+                        "CommentLoading-module__CommentLoadingContentWrapper--Qd0Vg",
                     CommentLoadingCard:
-                        "CommentLoading-module__CommentLoadingCard--goL4r",
+                        "CommentLoading-module__CommentLoadingCard--QQ_c8",
                     CommentLoadingHeader:
-                        "CommentLoading-module__CommentLoadingHeader--KUkK_",
+                        "CommentLoading-module__CommentLoadingHeader--_JjPE",
                     CommentLoadingContent:
-                        "CommentLoading-module__CommentLoadingContent--nb4e3",
+                        "CommentLoading-module__CommentLoadingContent--QWS3r",
                 },
                 m = ({ inHighlightedTimeline: e }) => {
                     let l = (0, i.useMemo)(
@@ -5466,7 +5467,7 @@
                 m.displayName || (m.displayName = "CommentLoading");
             } catch {}
         },
-        93067: (e, l, n) => {
+        36724: (e, l, n) => {
             n.d(l, { N: () => u, b: () => r });
             var a = n(74848),
                 s = n(96540);
@@ -5514,16 +5515,16 @@
                     (r.displayName = "CommentEditsContextProvider");
             } catch {}
         },
-        79345: (e, l, n) => {
+        92559: (e, l, n) => {
             n.d(l, { a: () => y });
             var a = n(74848),
-                s = n(7799),
-                i = n(42080),
-                t = n(26807),
+                s = n(21067),
+                i = n(83494),
+                t = n(96459),
                 r = n(55847),
                 u = n(96540),
                 o = n(94977),
-                d = n(90486);
+                d = n(98338);
             let c = ({ label: e, size: l = "medium" }) =>
                 (0, a.jsx)(o.A, {
                     "aria-label": d.k.loadingTooltip,
@@ -5536,8 +5537,8 @@
             try {
                 c.displayName || (c.displayName = "CreateIssueButtonLoading");
             } catch {}
-            var m = n(21168),
-                g = n(14979);
+            var m = n(59464),
+                g = n(94007);
             let y = ({ label: e, size: l = "medium", ...n }) => {
                     let [r, o] = (0, u.useState)(!1),
                         [d, y] = (0, u.useState)(!1),
@@ -5631,13 +5632,13 @@
                 y.displayName || (y.displayName = "CreateIssueButton");
             } catch {}
         },
-        1484: (e, l, n) => {
+        83855: (e, l, n) => {
             n.d(l, { H: () => t });
             var a = n(74848),
                 s = n(75177);
             let i = {
                 contentContainer:
-                    "ContentWrapper-module__contentContainer--UBLwW",
+                    "ContentWrapper-module__contentContainer--AGolz",
             };
             function t({ children: e, sx: l }) {
                 return (0, a.jsx)(s.A, {
@@ -5650,15 +5651,15 @@
                 t.displayName || (t.displayName = "ContentWrapper");
             } catch {}
         },
-        81657: (e, l, n) => {
+        2593: (e, l, n) => {
             n.d(l, { p: () => u });
             var a = n(74848),
-                s = n(13272),
-                i = n(13836),
-                t = n(16965);
+                s = n(12137),
+                i = n(13712),
+                t = n(91985);
             let r = {
                     delaySkeletonLoad:
-                        "issue-timeline-loading-module__delaySkeletonLoad--qiw2o",
+                        "issue-timeline-loading-module__delaySkeletonLoad--OE2Lq",
                 },
                 u = ({
                     rowCount: e = t.t.rowLoadingSkeletonCount,
@@ -5679,7 +5680,7 @@
                 u.displayName || (u.displayName = "IssueTimelineLoading");
             } catch {}
         },
-        48975: (e, l, n) => {
+        59907: (e, l, n) => {
             n.d(l, { cI: () => gg, Hc: () => gc, k5: () => gm });
             var a,
                 s,
@@ -5813,7 +5814,7 @@
                 abstractKey: null,
             };
             b.hash = "0ac96e039835aa2f23a4264238dae24f";
-            var h = n(69689);
+            var h = n(81469);
             let f = {
                 argumentDefinitions: [
                     {
@@ -5944,7 +5945,7 @@
                 abstractKey: null,
             };
             K.hash = "50782e9d3bbfe8dd1726ec639ad06b5b";
-            var S = n(93067);
+            var S = n(36724);
             let I = (function () {
                 var e = {
                         alias: null,
@@ -6134,8 +6135,8 @@
                 abstractKey: null,
             };
             L.hash = "a3fc475b7d098c92deda0596a5d5a864";
-            var T = n(33368),
-                C = n(71302);
+            var T = n(8046),
+                C = n(60912);
             let x = {
                 argumentDefinitions: [],
                 kind: "Fragment",
@@ -6175,7 +6176,7 @@
                 abstractKey: null,
             };
             x.hash = "a2fe72eb7ec1d9cd1393d0645985a492";
-            var R = n(77724),
+            var R = n(24550),
                 N = n(18312);
             function j({ repositoryKey: e, sx: l, className: n }) {
                 let a = (0, N.useFragment)(x, e);
@@ -6198,8 +6199,8 @@
             try {
                 j.displayName || (j.displayName = "LazyContributorFooter");
             } catch {}
-            var _ = n(27851),
-                E = n(39459);
+            var _ = n(69599),
+                E = n(77430);
             let w = {
                 argumentDefinitions: [],
                 kind: "Fragment",
@@ -6288,17 +6289,17 @@
                 };
             })();
             A.hash = "59e7d1237bf5f5d0300e9b0bd885478e";
-            var P = n(52811),
-                B = n(26062),
-                D = n(32703),
-                M = n(99543),
+            var P = n(4559),
+                B = n(86645),
+                D = n(62568),
+                M = n(43258),
                 V = n(38621),
-                U = n(91321),
-                O = n(10569),
+                U = n(83294),
+                O = n(5945),
                 q = n(87330),
-                H = n(15385),
+                H = n(52446),
                 $ = n(55847),
-                z = n(53110),
+                z = n(30729),
                 W = n(94977),
                 Q = n(96540);
             let G = {
@@ -6331,13 +6332,13 @@
                 },
                 X = {
                     IssueActionsButtonGroup:
-                        "IssueActions-module__IssueActionsButtonGroup--k8eny",
+                        "IssueActions-module__IssueActionsButtonGroup--Usbpc",
                     issueStateOptionsMenu:
-                        "IssueActions-module__issueStateOptionsMenu--qXQEV",
+                        "IssueActions-module__issueStateOptionsMenu--vycCp",
                     reopenIssueIcon:
-                        "IssueActions-module__reopenIssueIcon--HcmS0",
+                        "IssueActions-module__reopenIssueIcon--RW1V1",
                     closeCompletedIssueIcon:
-                        "IssueActions-module__closeCompletedIssueIcon--CnXnl",
+                        "IssueActions-module__closeCompletedIssueIcon--aNgiV",
                 },
                 J = (function () {
                     var e = {
@@ -6658,7 +6659,7 @@
                 };
             })();
             Z.hash = "ca935e60ecf589dc4afd48ce97e1708b";
-            var ee = n(89195);
+            var ee = n(10991);
             function el({
                 environment: e,
                 input: { issueId: l, newStateReason: n, duplicateIssue: a },
@@ -7236,15 +7237,15 @@
                     return "";
                 }
             }
-            var eg = n(96235),
-                ey = n(96679),
-                ep = n(98386),
-                ek = n(34614),
-                eF = n(84217),
+            var eg = n(25407),
+                ey = n(71315),
+                ep = n(29731),
+                ek = n(81246),
+                eF = n(63557),
                 eb = n(34164),
                 eh = n(69487);
             let ef = { comment: "Comment", updateComment: "Update comment" };
-            var eK = n(83692);
+            var eK = n(96760);
             let eS = {
                 couldNotComment:
                     "There was a problem saving your comment. Please try again.",
@@ -7254,9 +7255,9 @@
                 couldNotEditCommentStale:
                     "The content you are editing has changed. Please copy your edits and refresh the page.",
             };
-            var eI = n(39017),
-                ev = n(1457),
-                eL = n(77283),
+            var eI = n(96901),
+                ev = n(46173),
+                eL = n(81034),
                 eT = n(58748);
             let eC = (function () {
                 var e = [
@@ -7986,23 +7987,23 @@
                 };
             })();
             eC.hash = "1b7d8e14670bb26b4f6889905fe612c7";
-            var ex = n(55179);
+            var ex = n(61423);
             let eR = {
-                    CommentBox: "Shared-module__CommentBox--x3rre",
-                    Condensed: "Shared-module__Condensed--p_BOv",
+                    CommentBox: "Shared-module__CommentBox--layUN",
+                    Condensed: "Shared-module__Condensed--uqHpD",
                 },
                 eN = {
                     commentComposerWrapper:
-                        "IssueCommentComposer-module__commentComposerWrapper--Q7F8C",
+                        "IssueCommentComposer-module__commentComposerWrapper--U1i4y",
                     commentComposer:
-                        "IssueCommentComposer-module__commentComposer--rCshf",
+                        "IssueCommentComposer-module__commentComposer--AwVsE",
                     commentBoxWrapper:
-                        "IssueCommentComposer-module__commentBoxWrapper--ovicb",
+                        "IssueCommentComposer-module__commentBoxWrapper--uTEnw",
                     avatarLink:
-                        "IssueCommentComposer-module__avatarLink--fjI6K",
-                    heading: "IssueCommentComposer-module__heading--qeyvK",
+                        "IssueCommentComposer-module__avatarLink--T0RGB",
+                    heading: "IssueCommentComposer-module__heading--zo78w",
                     LazyContributorFooter:
-                        "IssueCommentComposer-module__LazyContributorFooter--FHFq8",
+                        "IssueCommentComposer-module__LazyContributorFooter--x76sy",
                 },
                 ej = (0, Q.forwardRef)(
                     (
@@ -8575,7 +8576,7 @@
                 e_.displayName ||
                     (e_.displayName = "CommentDisabledDueToDiscussion");
             } catch {}
-            var eE = n(9808);
+            var eE = n(81156);
             let ew = {
                 argumentDefinitions: [],
                 kind: "Fragment",
@@ -8941,8 +8942,8 @@
                 abstractKey: null,
             };
             eB.hash = "aa4df7b9e6a8e7545c9fcfd9c3de151e";
-            var eD = n(8489),
-                eM = n(67943);
+            var eD = n(13771),
+                eM = n(20459);
             function eV({
                 id: e,
                 bodyHTML: l,
@@ -9004,11 +9005,11 @@
                 (a = IMAGE_VIDEO_TAG_REGEX).displayName ||
                     (a.displayName = "IMAGE_VIDEO_TAG_REGEX");
             } catch {}
-            var eU = n(23812),
+            var eU = n(40104),
                 eO = n(75177),
                 eq = n(34784),
-                eH = n(50363),
-                e$ = n(6869);
+                eH = n(62559),
+                e$ = n(69410);
             let ez = {
                 issueBodyHeader: "Description",
                 issueBodyPlaceholder: "Type your description here\u2026",
@@ -9016,10 +9017,10 @@
                 staleBodyErrorPrefix: "GraphQL error: STALE_DATA",
                 authorLabel: (e) => `${e ? "bot" : "mannequin"}`,
             };
-            var eW = n(59942);
+            var eW = n(51802);
             let eQ = {
                 validationErrorFlash:
-                    "IssueBodyEditor-module__validationErrorFlash--xB10i",
+                    "IssueBodyEditor-module__validationErrorFlash--Xu_Pj",
             };
             function eG({
                 subjectId: e,
@@ -9247,41 +9248,41 @@
                 abstractKey: "__isComment",
             };
             eJ.hash = "f8a94f3b140c255a1ba95f78f369e6ff";
-            var eZ = n(58924),
-                e0 = n(85837),
-                e1 = n(38846),
-                e2 = n(72372),
-                e6 = n(66499),
-                e4 = n(89169),
-                e3 = n(47139),
-                e5 = n(27215);
-            let e7 = {
-                    dateLink: "IssueBodyHeader-module__dateLink--0HRj6",
-                    RelativeTime: "IssueBodyHeader-module__RelativeTime--YdtKY",
-                    authorLabel: "IssueBodyHeader-module__authorLabel--Tl_Ga",
+            var eZ = n(29554),
+                e0 = n(41248),
+                e1 = n(85757),
+                e2 = n(23656),
+                e4 = n(21086),
+                e6 = n(89169),
+                e7 = n(21654),
+                e5 = n(72683);
+            let e3 = {
+                    dateLink: "IssueBodyHeader-module__dateLink--GZfps",
+                    RelativeTime: "IssueBodyHeader-module__RelativeTime--LRd7n",
+                    authorLabel: "IssueBodyHeader-module__authorLabel--uvjyy",
                     IssueBodyHeaderContainer:
-                        "IssueBodyHeader-module__IssueBodyHeaderContainer--K_UcQ",
+                        "IssueBodyHeader-module__IssueBodyHeaderContainer--omzzd",
                     viewerDidAuthor:
-                        "IssueBodyHeader-module__viewerDidAuthor--SlN1A",
+                        "IssueBodyHeader-module__viewerDidAuthor--hiddX",
                     viewerDidNotAuthor:
-                        "IssueBodyHeader-module__viewerDidNotAuthor--AuLdY",
+                        "IssueBodyHeader-module__viewerDidNotAuthor--QE49X",
                     activityHeaderWrapper:
-                        "IssueBodyHeader-module__activityHeaderWrapper--AuHSB",
+                        "IssueBodyHeader-module__activityHeaderWrapper--WDoKj",
                     avatarContainer:
-                        "IssueBodyHeader-module__avatarContainer--NXjSJ",
+                        "IssueBodyHeader-module__avatarContainer--tVAqx",
                     narrowViewportWrapper:
-                        "IssueBodyHeader-module__narrowViewportWrapper--XfEFl",
-                    titleSection: "IssueBodyHeader-module__titleSection--mIIEU",
+                        "IssueBodyHeader-module__narrowViewportWrapper--cUGQk",
+                    titleSection: "IssueBodyHeader-module__titleSection--a171Q",
                     footerSection:
-                        "IssueBodyHeader-module__footerSection--mIHCZ",
+                        "IssueBodyHeader-module__footerSection--R3Cax",
                     actionsWrapper:
-                        "IssueBodyHeader-module__actionsWrapper--fSJZC",
-                    editsSection: "IssueBodyHeader-module__editsSection--dH32c",
+                        "IssueBodyHeader-module__actionsWrapper--nZngh",
+                    editsSection: "IssueBodyHeader-module__editsSection--ptNnu",
                     badgesSection:
-                        "IssueBodyHeader-module__badgesSection--Elchd",
-                    badgeGroup: "IssueBodyHeader-module__badgeGroup--ZQNrg",
+                        "IssueBodyHeader-module__badgesSection--izNBK",
+                    badgeGroup: "IssueBodyHeader-module__badgeGroup--xiI1A",
                     actionsSection:
-                        "IssueBodyHeader-module__actionsSection--Y5zwc",
+                        "IssueBodyHeader-module__actionsSection--CZDiB",
                 },
                 e8 = {
                     argumentDefinitions: [],
@@ -9326,10 +9327,10 @@
                 abstractKey: "__isComment",
             };
             e9.hash = "e65d1b4543dae8f62c447cba44e163f1";
-            var le = n(7799),
-                ll = n(70467),
-                ln = n(18571),
-                la = n(99450);
+            var le = n(21067),
+                ll = n(59123),
+                ln = n(14969),
+                la = n(14406);
             function ls({
                 url: e,
                 issueBodyRef: l,
@@ -9666,7 +9667,7 @@
             li.hash = "18098578fa2042c3862894ceb62ea79b";
             let lt = {
                 authorLoginLink:
-                    "IssueBodyHeaderAuthor-module__authorLoginLink--_S7aT",
+                    "IssueBodyHeaderAuthor-module__authorLoginLink--MsgZJ",
             };
             function lr({ author: e }) {
                 let { login: l, profileUrl: n } =
@@ -9709,10 +9710,10 @@
                                 ? (0, F.jsx)(ek.A, {
                                       href: n,
                                       "data-testid": "issue-body-header-link",
-                                      className: e7.dateLink,
-                                      children: (0, F.jsxs)(e4.A, {
+                                      className: e3.dateLink,
+                                      children: (0, F.jsxs)(e6.A, {
                                           date: u,
-                                          className: e7.RelativeTime,
+                                          className: e3.RelativeTime,
                                           children: [
                                               "on ",
                                               u.toLocaleDateString("en-US", {
@@ -9723,9 +9724,9 @@
                                           ],
                                       }),
                                   })
-                                : (0, F.jsxs)(e4.A, {
+                                : (0, F.jsxs)(e6.A, {
                                       date: u,
-                                      className: e7.RelativeTime,
+                                      className: e3.RelativeTime,
                                       children: [
                                           "on ",
                                           u.toLocaleDateString("en-US", {
@@ -9735,13 +9736,13 @@
                                           }),
                                       ],
                                   }),
-                            (0, F.jsx)(e6._, {
+                            (0, F.jsx)(e4._, {
                                 editInformation: o,
                                 includeSeparator: !0,
                             }),
                             a &&
-                                (0, F.jsx)(e3.A, {
-                                    className: e7.authorLabel,
+                                (0, F.jsx)(e7.A, {
+                                    className: e3.authorLabel,
                                     children: "Author",
                                 }),
                         ],
@@ -9753,15 +9754,15 @@
                     } = r.author ?? e5.t.ghost;
                 return (0, F.jsx)("div", {
                     className: (0, eb.$)(
-                        e7.IssueBodyHeaderContainer,
+                        e3.IssueBodyHeaderContainer,
                         r.viewerDidAuthor
-                            ? e7.viewerDidAuthor
-                            : e7.viewerDidNotAuthor
+                            ? e3.viewerDidAuthor
+                            : e3.viewerDidNotAuthor
                     ),
                     children: (0, F.jsxs)("div", {
                         className: (0, eb.$)(
                             eZ.A.activityHeader,
-                            e7.activityHeaderWrapper
+                            e3.activityHeaderWrapper
                         ),
                         children: [
                             (0, F.jsx)(eO.A, {
@@ -9772,7 +9773,7 @@
                                 },
                                 className: (0, eb.$)(
                                     eD.A.avatarInner,
-                                    e7.avatarContainer
+                                    e3.avatarContainer
                                 ),
                                 children: (0, F.jsx)(ek.A, {
                                     href: k ?? void 0,
@@ -9792,24 +9793,24 @@
                             (0, F.jsxs)("div", {
                                 className: (0, eb.$)(
                                     eZ.A.narrowViewportWrapper,
-                                    e7.narrowViewportWrapper
+                                    e3.narrowViewportWrapper
                                 ),
                                 children: [
                                     (0, F.jsx)("div", {
-                                        className: e7.titleSection,
+                                        className: e3.titleSection,
                                         children: (0, F.jsx)(lr, {
                                             author: r.author || null,
                                         }),
                                     }),
                                     (c || m) &&
-                                        (0, F.jsx)(e3.A, {
+                                        (0, F.jsx)(e7.A, {
                                             variant: "secondary",
                                             children: ez.authorLabel(c),
                                         }),
                                     (0, F.jsx)("div", {
                                         className: (0, eb.$)(
                                             eZ.A.footer,
-                                            e7.footerSection
+                                            e3.footerSection
                                         ),
                                         children: g,
                                     }),
@@ -9818,23 +9819,23 @@
                             (0, F.jsxs)("div", {
                                 className: (0, eb.$)(
                                     eZ.A.narrowViewportWrapper,
-                                    e7.actionsWrapper
+                                    e3.actionsWrapper
                                 ),
                                 children: [
                                     (0, F.jsx)("div", {
                                         className: (0, eb.$)(
                                             eZ.A.edits,
-                                            e7.editsSection
+                                            e3.editsSection
                                         ),
                                         children: (0, F.jsx)(e2.W, {
                                             editHistory: o,
                                         }),
                                     }),
                                     (0, F.jsxs)("div", {
-                                        className: e7.badgesSection,
+                                        className: e3.badgesSection,
                                         children: [
                                             (0, F.jsxs)("div", {
-                                                className: e7.badgeGroup,
+                                                className: e3.badgeGroup,
                                                 children: [
                                                     o?.showSpammyBadge &&
                                                         (0, F.jsx)(e1.b, {}),
@@ -9858,7 +9859,7 @@
                                                 ],
                                             }),
                                             (0, F.jsxs)("div", {
-                                                className: e7.actionsSection,
+                                                className: e3.actionsSection,
                                                 children: [
                                                     e,
                                                     s &&
@@ -9975,11 +9976,11 @@
             };
             lc.hash = "ffe6c65fee4a26af6f1e00275849906c";
             var lm = n(70170),
-                lg = n(26768),
-                ly = n(17515);
+                lg = n(39837),
+                ly = n(88431);
             let lp = {
                     MarkdownViewerHelpText:
-                        "IssueMarkdownViewer-module__MarkdownViewerHelpText--oBt5c",
+                        "IssueMarkdownViewer-module__MarkdownViewerHelpText--JIEBY",
                 },
                 lk = ({
                     html: e,
@@ -10064,7 +10065,7 @@
             try {
                 lk.displayName || (lk.displayName = "IssueMarkdownViewer");
             } catch {}
-            var lF = n(38184);
+            var lF = n(97911);
             let lb = (function () {
                 var e = [
                         {
@@ -10276,16 +10277,16 @@
                 };
             })();
             lh.hash = "f212877fb92ba509747e831e18ea73a2";
-            var lf = n(53526),
-                lK = n(42080),
-                lS = n(65165),
-                lI = n(9852);
+            var lf = n(69948),
+                lK = n(83494),
+                lS = n(45147),
+                lI = n(96665);
             let lv = {
-                    body: "RelationshipsAlertDialog-module__body--N0A8F",
-                    footer: "RelationshipsAlertDialog-module__footer--WeHt1",
-                    header: "RelationshipsAlertDialog-module__header--a2KnC",
+                    body: "RelationshipsAlertDialog-module__body--TvN_e",
+                    footer: "RelationshipsAlertDialog-module__footer--s1b7P",
+                    header: "RelationshipsAlertDialog-module__header--xYnz6",
                     headerItem:
-                        "RelationshipsAlertDialog-module__headerItem--LbFex",
+                        "RelationshipsAlertDialog-module__headerItem--rONbx",
                 },
                 lL = ({ children: e }) =>
                     (0, F.jsx)("div", { className: lv.body, children: e }),
@@ -10781,8 +10782,8 @@
                 };
             })();
             lR.hash = "863cf3166cf35a8c3b52e824cacf5df9";
-            var lN = n(76575),
-                lj = n(13233);
+            var lN = n(87118),
+                lj = n(73189);
             function l_() {
                 let [e, l] = (0, Q.useState)(null),
                     n = (0, Q.useCallback)(() => l(null), []),
@@ -10869,7 +10870,7 @@
                     showServerAlert: o,
                 };
             }
-            let lE = { Box: "AddSubIssueButtonGroup-module__Box--Txhdj" };
+            let lE = { Box: "AddSubIssueButtonGroup-module__Box--Vv1Xr" };
             function lw({ issue: e, insideSidePanel: l }) {
                 let [n, a] = (0, Q.useState)(!1),
                     {
@@ -12131,13 +12132,13 @@
             }
             lq.hash = "27df1ecd4ef284768c3bd4ba7f514d94";
             let l$ = {
-                    IssueBody: "IssueBodyViewer-module__IssueBody--MXyFt",
+                    IssueBody: "IssueBodyViewer-module__IssueBody--Zg6Wy",
                     IssueBodyTaskList:
-                        "IssueBodyViewer-module__IssueBodyTaskList--r4XEH",
+                        "IssueBodyViewer-module__IssueBodyTaskList--xb3uu",
                     IssueBodySubIssueButtonContainer:
-                        "IssueBodyViewer-module__IssueBodySubIssueButtonContainer--EZm50",
+                        "IssueBodyViewer-module__IssueBodySubIssueButtonContainer--Mx2W_",
                 },
-                lz = Q.lazy(() => Promise.resolve().then(n.bind(n, 12617)));
+                lz = Q.lazy(() => Promise.resolve().then(n.bind(n, 19805)));
             function lW({
                 html: e,
                 markdown: l,
@@ -12376,8 +12377,8 @@
                     n.e(
                         "vendors-node_modules_micromark_index_js-node_modules_remark_index_js"
                     ),
-                    n.e("ui_packages_tasklist-block-operations_operations_ts"),
-                ]).then(n.bind(n, 29003));
+                    n.e("packages_tasklist-block-operations_operations_ts"),
+                ]).then(n.bind(n, 48271));
                 if ("append_item" === l.operation) {
                     if (!/^\s*(https?:|#)/.test(l.value))
                         return a(e, l.position, l.value);
@@ -12912,10 +12913,10 @@
             try {
                 lG.displayName || (lG.displayName = "IssueBody");
             } catch {}
-            var lY = n(54538),
-                lX = n(70179),
+            var lY = n(34267),
+                lX = n(75202),
                 lJ = n(85788),
-                lZ = n(6294);
+                lZ = n(76873);
             let l0 = (function () {
                 var e = {
                     alias: null,
@@ -12974,9 +12975,9 @@
                 };
             })();
             l0.hash = "8afd4d0d354e2724ab109f4169d2bde2";
-            var l1 = n(21168),
-                l2 = n(64262);
-            function l6({ issue: e, open: l, setOpen: n, onCreateSuccess: a }) {
+            var l1 = n(59464),
+                l2 = n(79634);
+            function l4({ issue: e, open: l, setOpen: n, onCreateSuccess: a }) {
                 let { alert: s, resetAlert: i, showServerAlert: t } = l_(),
                     r = (0, l2.X)(),
                     u = (0, N.useFragment)(l0, e),
@@ -13014,9 +13015,9 @@
                 });
             }
             try {
-                l6.displayName || (l6.displayName = "SubIssuesCreateDialog");
+                l4.displayName || (l4.displayName = "SubIssuesCreateDialog");
             } catch {}
-            let l4 = {
+            let l6 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -13042,8 +13043,8 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            l4.hash = "5392781363d352b5a0f552def559897f";
-            let l3 = (function () {
+            l6.hash = "5392781363d352b5a0f552def559897f";
+            let l7 = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -13122,21 +13123,21 @@
                     abstractKey: null,
                 };
             })();
-            l3.hash = "b30f0f8a4b70acd5c66207b059fb8e6d";
-            var l5 = n(95629),
-                l7 = n(83779),
-                l8 = n(50146),
-                l9 = n(57643),
-                ne = n(13922);
+            l7.hash = "b30f0f8a4b70acd5c66207b059fb8e6d";
+            var l5 = n(15106),
+                l3 = n(46036),
+                l8 = n(43063),
+                l9 = n(56742),
+                ne = n(90928);
             let nl = {
-                progressIcon: "CompletionPill-module__progressIcon--pSINc",
+                progressIcon: "CompletionPill-module__progressIcon--eChof",
                 hoverExpandIcon:
-                    "CompletionPill-module__hoverExpandIcon--Rlmjv",
-                completionPill: "CompletionPill-module__completionPill--DjsfR",
-                expandOnHover: "CompletionPill-module__expandOnHover--hfMOP",
+                    "CompletionPill-module__hoverExpandIcon--AnG85",
+                completionPill: "CompletionPill-module__completionPill--uW8S9",
+                expandOnHover: "CompletionPill-module__expandOnHover--UR1nV",
             };
-            var nn = n(98292),
-                na = n(22533);
+            var nn = n(28755),
+                na = n(74142);
             function ns({
                 progress: { total: e, completed: l, percentCompleted: n },
                 ...a
@@ -13198,8 +13199,8 @@
                 ns.displayName ||
                     (ns.displayName = "NestedListViewCompletionPill");
             } catch {}
-            var ni = n(42101),
-                nt = n(93539);
+            var ni = n(81070),
+                nt = n(28199);
             let nr = (function () {
                 var e = [
                         {
@@ -13894,12 +13895,12 @@
                 };
             })();
             no.hash = "952243a95ff6bb14a888fc60d18a1134";
-            var nd = n(17063);
+            var nd = n(66457);
             let nc = {
-                    container: "Metadata-module__container--eLLCr",
-                    primary: "Metadata-module__primary--ZdmZ1",
-                    secondary: "Metadata-module__secondary--lJnoe",
-                    alignRight: "Metadata-module__alignRight--xsWO0",
+                    container: "Metadata-module__container--fKWJM",
+                    primary: "Metadata-module__primary--kNM7s",
+                    secondary: "Metadata-module__secondary--xki9B",
+                    alignRight: "Metadata-module__alignRight--DDxqM",
                 },
                 nm = ({
                     children: e,
@@ -13923,9 +13924,9 @@
             try {
                 nm.displayName || (nm.displayName = "NestedListItemMetadata");
             } catch {}
-            var ng = n(70892),
-                ny = n(630),
-                np = n(69403);
+            var ng = n(7970),
+                ny = n(921),
+                np = n(82082);
             let nk = (function () {
                 var e = [
                         {
@@ -14334,8 +14335,8 @@
                 });
             }
             nk.hash = "3e41422515e6f86a4588c5f1e596869e";
-            var nb = n(9039),
-                nh = n(640);
+            var nb = n(58321),
+                nh = n(40260);
             function nf({ textToCopy: e, children: l, ...n }) {
                 let a = (0, Q.useCallback)(async () => {
                     await (0, nh.D)(e);
@@ -14454,7 +14455,7 @@
                     abstractKey: null,
                 };
             nI.hash = "98b73e2943e6e0438220762134149de5";
-            var nv = n(25862);
+            var nv = n(85391);
             let nL = { NOT_PLANNED: "NOT_PLANNED", DUPLICATE: "DUPLICATE" },
                 nT = { CLOSED: "CLOSED" },
                 nC = {
@@ -14615,12 +14616,12 @@
                     ),
                 };
             }
-            var n_ = n(60183);
+            var n_ = n(91747);
             let nE = {
                     blockedIssueIconWrapper:
-                        "SubIssueStateIcon-module__blockedIssueIconWrapper--Fsftq",
-                    issueIcon: "SubIssueStateIcon-module__issueIcon--eFtPg",
-                    blockedIcon: "SubIssueStateIcon-module__blockedIcon--s0SnX",
+                        "SubIssueStateIcon-module__blockedIssueIconWrapper--NFWXN",
+                    issueIcon: "SubIssueStateIcon-module__issueIcon--Hz8pH",
+                    blockedIcon: "SubIssueStateIcon-module__blockedIcon--Fwfr_",
                 },
                 nw = () =>
                     (0, F.jsxs)("svg", {
@@ -14697,17 +14698,17 @@
             } catch {}
             let nP = {
                     metadataContainer:
-                        "SubIssuesListItem-module__metadataContainer--Z6neq",
+                        "SubIssuesListItem-module__metadataContainer--nVUFL",
                     itemMetadataContainer:
-                        "SubIssuesListItem-module__itemMetadataContainer--IR8bE",
+                        "SubIssuesListItem-module__itemMetadataContainer--xTb_j",
                     NestedListItemMetadata_0:
-                        "SubIssuesListItem-module__NestedListItemMetadata_0--ox10d",
-                    Box_0: "SubIssuesListItem-module__Box_0--LIFjq",
-                    Box_1: "SubIssuesListItem-module__Box_1--L5xv7",
-                    Box_2: "SubIssuesListItem-module__Box_2--fwVFu",
-                    Octicon_0: "SubIssuesListItem-module__Octicon_0--QX52V",
-                    Octicon_1: "SubIssuesListItem-module__Octicon_1--c5kSt",
-                    Link_0: "SubIssuesListItem-module__Link_0--Ixl0i",
+                        "SubIssuesListItem-module__NestedListItemMetadata_0--vlzqi",
+                    Box_0: "SubIssuesListItem-module__Box_0--DvDHF",
+                    Box_1: "SubIssuesListItem-module__Box_1--SiGrl",
+                    Box_2: "SubIssuesListItem-module__Box_2--em64X",
+                    Octicon_0: "SubIssuesListItem-module__Octicon_0--ONIWP",
+                    Octicon_1: "SubIssuesListItem-module__Octicon_1--BwjUW",
+                    Link_0: "SubIssuesListItem-module__Link_0--y5IUu",
                 },
                 nB = (function () {
                     var e = {
@@ -15447,7 +15448,7 @@
                 abstractKey: null,
             };
             nM.hash = "e376c37263bb0bff11cb5ab377b21c80";
-            var nV = n(70924);
+            var nV = n(97764);
             let nU = (function () {
                 var e = {
                     alias: null,
@@ -15531,12 +15532,12 @@
                 };
             })();
             nU.hash = "c8e44f514d979b1f8816f991e03767d0";
-            var nO = n(25903),
-                nq = n(31442);
+            var nO = n(14307),
+                nq = n(82961);
             let nH = {
-                container: "LeadingBadge-module__container--ZDh9V",
-                titleLabel: "LeadingBadge-module__titleLabel--JQD9R",
-                titleText: "LeadingBadge-module__titleText--p_nwt",
+                container: "LeadingBadge-module__container--U1Q5H",
+                titleLabel: "LeadingBadge-module__titleLabel--tRXZQ",
+                titleText: "LeadingBadge-module__titleText--GqciC",
             };
             function n$({ title: e, href: l, className: n, color: a, ...s }) {
                 let { setLeadingBadge: i } = (0, nq.$)();
@@ -15544,7 +15545,7 @@
                 let { fg: t, bg: r, border: u } = (0, nO.Wk)(a),
                     o = (0, F.jsxs)(F.Fragment, {
                         children: [
-                            (0, F.jsx)(e3.A, {
+                            (0, F.jsx)(e7.A, {
                                 className: nH.titleLabel,
                                 ...(0, ep.G)(
                                     "nested-list-view-item-leading-badge-label"
@@ -15586,7 +15587,7 @@
                     (n$.displayName = "NestedListItemLeadingBadge");
             } catch {}
             let nz = {
-                    container: "SubIssueTypeIndicator-module__container--x9PE7",
+                    container: "SubIssueTypeIndicator-module__container--fzqQp",
                 },
                 nW = ({ dataKey: e, onRender: l }) => {
                     let {
@@ -15621,11 +15622,11 @@
             try {
                 nW.displayName || (nW.displayName = "SubIssueTypeIndicator");
             } catch {}
-            var nQ = n(30467);
+            var nQ = n(7151);
             let nG = {
-                    container: "TrailingBadge-module__container--SrPiH",
-                    label: "TrailingBadge-module__label--GYsDy",
-                    title: "TrailingBadge-module__title--x5Q7Q",
+                    container: "TrailingBadge-module__container--wMID_",
+                    label: "TrailingBadge-module__label--cD4bB",
+                    title: "TrailingBadge-module__title--O0RpP",
                 },
                 nY = ({ title: e, className: l, children: n, ...a }) => {
                     let s = (0, Q.useRef)(null);
@@ -15640,7 +15641,7 @@
                             ref: s,
                             children:
                                 n ||
-                                (0, F.jsx)(e3.A, {
+                                (0, F.jsx)(e7.A, {
                                     className: nG.label,
                                     ...a,
                                     children: (0, F.jsx)("span", {
@@ -15838,11 +15839,11 @@
             } catch {}
             var n1 = n(65848);
             let n2 = {
-                titleNumber: "SubIssueTitle-module__titleNumber--BswFN",
-                titleAnchor: "SubIssueTitle-module__titleAnchor--kSQVC",
+                titleNumber: "SubIssueTitle-module__titleNumber--PdnWi",
+                titleAnchor: "SubIssueTitle-module__titleAnchor--MtUue",
             };
-            var n6 = n(4122);
-            function n4({ issueKey: e, onClick: l, parentRepoName: n }) {
+            var n4 = n(72822);
+            function n6({ issueKey: e, onClick: l, parentRepoName: n }) {
                 let a = (0, N.useFragment)(nD, e),
                     {
                         databaseId: s,
@@ -15891,7 +15892,7 @@
                         if (l) return [l];
                     }, [g, a]),
                     p = n !== o.name ? `${o.name}` : "",
-                    k = `${(0, n6.us)(d, c)} ${(0, n1.F0)((0, F.jsxs)("span", { className: n2.titleNumber, children: [p, "#", u] }))}`;
+                    k = `${(0, n4.us)(d, c)} ${(0, n1.F0)((0, F.jsxs)("span", { className: n2.titleNumber, children: [p, "#", u] }))}`;
                 return (0, F.jsx)(nV.T, {
                     value: k,
                     href: r,
@@ -15906,9 +15907,9 @@
                 });
             }
             try {
-                n4.displayName || (n4.displayName = "SubIssueTitle");
+                n6.displayName || (n6.displayName = "SubIssueTitle");
             } catch {}
-            function n3({
+            function n7({
                 parentIssueId: e,
                 parentRepoName: l,
                 issueKey: n,
@@ -15925,7 +15926,7 @@
                                 n &&
                                     e.push(
                                         (0, F.jsx)(
-                                            n3,
+                                            n7,
                                             {
                                                 issueKey: n,
                                                 parentRepoName: l,
@@ -15969,7 +15970,7 @@
                                   showTrigger: s,
                                   itemId: r.id,
                               },
-                              title: (0, F.jsx)(n4, {
+                              title: (0, F.jsx)(n6, {
                                   issueKey: u,
                                   onClick: a,
                                   parentRepoName: l,
@@ -16090,16 +16091,16 @@
                     : null;
             }
             try {
-                n3.displayName || (n3.displayName = "SubIssuesListItem");
+                n7.displayName || (n7.displayName = "SubIssuesListItem");
             } catch {}
             let n5 = {
-                    container: "SubIssuesListView-module__container--UgTu_",
+                    container: "SubIssuesListView-module__container--io5Ze",
                     stickyHeader:
-                        "SubIssuesListView-module__stickyHeader--pzB8Z",
+                        "SubIssuesListView-module__stickyHeader--Wmd5W",
                     observableBox:
-                        "SubIssuesListView-module__observableBox--oiZPP",
+                        "SubIssuesListView-module__observableBox--OJx_C",
                 },
-                n7 = (function () {
+                n3 = (function () {
                     var e = [
                             {
                                 defaultValue: null,
@@ -16472,13 +16473,13 @@
                         },
                     };
                 })();
-            n7.hash = "df88a2e7bb24a566ac0feaace455b2f1";
-            var n8 = n(94232);
+            n3.hash = "df88a2e7bb24a566ac0feaace455b2f1";
+            var n8 = n(81945);
             let n9 = {
-                Box: "SubIssuesListLoadingSkeleton-module__Box--9_8_Y",
-                Heading: "SubIssuesListLoadingSkeleton-module__Heading--SHBDh",
+                Box: "SubIssuesListLoadingSkeleton-module__Box--pWEPu",
+                Heading: "SubIssuesListLoadingSkeleton-module__Heading--Cis6D",
                 LoadingBox:
-                    "SubIssuesListLoadingSkeleton-module__LoadingBox--g0vzL",
+                    "SubIssuesListLoadingSkeleton-module__LoadingBox--q55M8",
             };
             function ae() {
                 return (0, F.jsxs)("div", {
@@ -16503,7 +16504,7 @@
                     (ae.displayName = "SubIssuesListLoadingSkeleton");
             } catch {}
             function al({ onSubIssueClick: e, issueKey: l, readonly: n = !1 }) {
-                let a = (0, N.useFragment)(l3, l),
+                let a = (0, N.useFragment)(l7, l),
                     s = (0, N.useRelayEnvironment)(),
                     { addToast: i } = (0, M.Y6)(),
                     t = (0, Q.useCallback)(
@@ -16520,7 +16521,7 @@
                                 onCompleted: a,
                             }) {
                                 (0, N.commitMutation)(e, {
-                                    mutation: n7,
+                                    mutation: n3,
                                     variables: { input: l },
                                     optimisticUpdater: (e) => {
                                         let n = e
@@ -16577,7 +16578,7 @@
                           title: "Sub-issues",
                           singularUnits: "Issue",
                           pluralUnits: "Issues",
-                          header: (0, F.jsx)(l7.s, {
+                          header: (0, F.jsx)(l3.s, {
                               title: (0, F.jsx)(l8.c, {
                                   title: "Sub-issues",
                                   scrollToOnCollapseOffset: u ? -52 : void 0,
@@ -16612,7 +16613,7 @@
                                             title: "overlay",
                                             isReadOnly: n,
                                             children: (0, F.jsx)(
-                                                n3,
+                                                n7,
                                                 {
                                                     issueKey: s,
                                                     parentRepoName:
@@ -16644,7 +16645,7 @@
                               a.subIssues.nodes?.map((l) =>
                                   l && a.id
                                       ? (0, F.jsx)(
-                                            n3,
+                                            n7,
                                             {
                                                 issueKey: l,
                                                 parentIssueId: a.id,
@@ -16666,8 +16667,8 @@
                 al.displayName || (al.displayName = "SubIssuesListView");
             } catch {}
             let an = {
-                Box: "SubIssuesList-module__Box--swtyj",
-                ButtonGroup: "SubIssuesList-module__ButtonGroup--j4X5w",
+                Box: "SubIssuesList-module__Box--Gjjw_",
+                ButtonGroup: "SubIssuesList-module__ButtonGroup--zLqq7",
             };
             function aa({
                 issueKey: e,
@@ -16675,7 +16676,7 @@
                 insideSidePanel: n,
                 readonly: a = !1,
             }) {
-                let s = (0, N.useFragment)(l4, e);
+                let s = (0, N.useFragment)(l6, e);
                 return (0, F.jsxs)("div", {
                     className: an.Box,
                     children: [
@@ -16839,30 +16840,30 @@
                 undoMarkIssueAsDuplicate: (e) =>
                     `Undo marking issue as duplicate of issue #${e}`,
             };
-            var au = n(27945);
+            var au = n(4578);
             let ao = { commentsContainer: "react-comments-container" },
                 ad = { itemPicker: "item-picker", newComment: "new-comment" };
-            var ac = n(13836),
-                am = n(16768),
-                ag = n(1484),
-                ay = n(66268);
+            var ac = n(13712),
+                am = n(57611),
+                ag = n(83855),
+                ay = n(50560);
             let ap = {
                     bannerContainer:
-                        "converted-to-discussion-banner-module__bannerContainer--RqWMr",
+                        "converted-to-discussion-banner-module__bannerContainer--HDrY9",
                     bannerContent:
-                        "converted-to-discussion-banner-module__bannerContent--Yb3NN",
+                        "converted-to-discussion-banner-module__bannerContent--Glqcn",
                     textContent:
-                        "converted-to-discussion-banner-module__textContent--XIPPI",
+                        "converted-to-discussion-banner-module__textContent--rleYu",
                 },
                 ak = {
                     infoIcon:
-                        "ConvertedToDiscussionBanner-module__infoIcon--V1mAj",
+                        "ConvertedToDiscussionBanner-module__infoIcon--bvGtg",
                     convertedText:
-                        "ConvertedToDiscussionBanner-module__convertedText--N1WyS",
+                        "ConvertedToDiscussionBanner-module__convertedText--QpJOJ",
                     discussionLink:
-                        "ConvertedToDiscussionBanner-module__discussionLink--K9QdI",
+                        "ConvertedToDiscussionBanner-module__discussionLink--Lj2RH",
                     arrowIcon:
-                        "ConvertedToDiscussionBanner-module__arrowIcon--rJgxE",
+                        "ConvertedToDiscussionBanner-module__arrowIcon--IE0Ys",
                 },
                 aF = ({ discussionUrl: e }) =>
                     (0, F.jsx)("div", {
@@ -16908,7 +16909,7 @@
             } catch {}
             let ab = {
                     contributionBlockedBanner:
-                        "EmuContributionBlockedBanner-module__contributionBlockedBanner--Jey2t",
+                        "EmuContributionBlockedBanner-module__contributionBlockedBanner--ULSSa",
                 },
                 ah = () =>
                     (0, F.jsx)(e$.A, {
@@ -17551,7 +17552,7 @@
                         ],
                     },
                     params: {
-                        id: "b98377ed43be7b2c932d81f66cb6b9a1",
+                        id: "7cc34418434ab8ab48676357f9cb5a7b",
                         metadata: {},
                         name: "HeaderQuery",
                         operationKind: "query",
@@ -17641,16 +17642,16 @@
                 abstractKey: null,
             };
             aK.hash = "58a7f4c970dd56751203ee21d03734e9";
-            var aS = n(39627),
-                aI = n(55463);
+            var aS = n(76143),
+                aI = n(18651);
             let av = {
                     transferWarningFlash:
-                        "Header-module__transferWarningFlash--AcK9D",
+                        "Header-module__transferWarningFlash--It5Qy",
                     stickyObservableBox:
-                        "Header-module__stickyObservableBox--UY7Oc",
+                        "Header-module__stickyObservableBox--GRl72",
                     HeaderContentWrapper:
-                        "Header-module__HeaderContentWrapper--KP3yk",
-                    headerSpacer: "Header-module__headerSpacer--LjoEh",
+                        "Header-module__HeaderContentWrapper--WtTMs",
+                    headerSpacer: "Header-module__headerSpacer--lQCuP",
                 },
                 aL = {
                     couldNotUpdateLinkedPullRequests:
@@ -17747,12 +17748,12 @@
                     };
                 })();
             aT.hash = "b5d09b83ee3a8c70127f501e0b43b95a";
-            var aC = n(7361),
-                ax = n(73451),
-                aR = n(9591);
+            var aC = n(62180),
+                ax = n(65029),
+                aR = n(24815);
             let aN = {
                 titleInputWrapper:
-                    "IssueTitleInput-module__titleInputWrapper--LoKRO",
+                    "IssueTitleInput-module__titleInputWrapper--uzdt2",
             };
             function aj({
                 titleRef: e,
@@ -17821,7 +17822,7 @@
             } catch {}
             let a_ = {
                 HeaderEditorContainer:
-                    "HeaderEditor-module__HeaderEditorContainer--cj48M",
+                    "HeaderEditor-module__HeaderEditorContainer--wOi9p",
             };
             function aE({
                 onTitleChange: e,
@@ -18101,19 +18102,19 @@
                 abstractKey: null,
             };
             aA.hash = "2129a899a414f5a13ae80b5f838f6843";
-            var aP = n(45968);
+            var aP = n(73017);
             let aB = {
-                    token: "HeaderBlockedBySummary-module__token--BrBMc",
+                    token: "HeaderBlockedBySummary-module__token--LwUD7",
                     smallSummary:
-                        "HeaderBlockedBySummary-module__smallSummary--IEHTH",
+                        "HeaderBlockedBySummary-module__smallSummary--yl4te",
                     visualLabel:
-                        "HeaderBlockedBySummary-module__visualLabel--vWQf8",
+                        "HeaderBlockedBySummary-module__visualLabel--a0fGx",
                     issueLink:
-                        "HeaderBlockedBySummary-module__issueLink--p1VSf",
+                        "HeaderBlockedBySummary-module__issueLink--JAMjM",
                 },
                 aD = {
                     dividerLine:
-                        "HeaderMetadataDivider-module__dividerLine--Unh8g",
+                        "HeaderMetadataDivider-module__dividerLine--MdX7r",
                 },
                 aM = ({ blockedBySecondaryKey: e, size: l = "xlarge" }) => {
                     let n = (0, N.useFragment)(aA, e),
@@ -18262,10 +18263,10 @@
                 abstractKey: null,
             };
             aU.hash = "3a1498cc17779675a39bb326162e80dd";
-            var aO = n(94672);
+            var aO = n(25983);
             let aq = {
-                smallToken: "HeaderIssueType-module__smallToken--TDqWJ",
-                IssueTypeToken: "HeaderIssueType-module__IssueTypeToken--C2d57",
+                smallToken: "HeaderIssueType-module__smallToken--rVNy9",
+                IssueTypeToken: "HeaderIssueType-module__IssueTypeToken--nunfj",
             };
             function aH({ data: e }) {
                 let { issueType: l, repository: n } = (0, N.useFragment)(aU, e);
@@ -18363,14 +18364,14 @@
                 abstractKey: null,
             };
             az.hash = "68e12e73fdda766945082c3e81656d3a";
-            var aW = n(8579),
-                aQ = n(79345),
-                aG = n(23086);
+            var aW = n(98755),
+                aQ = n(92559),
+                aG = n(66730);
             let aY = {
                 menuActionsContainer:
-                    "HeaderMenu-module__menuActionsContainer--YhKI5",
-                buttonContainer: "HeaderMenu-module__buttonContainer--FFZDV",
-                kebabMenuButton: "HeaderMenu-module__kebabMenuButton--ZoEiM",
+                    "HeaderMenu-module__menuActionsContainer--Gf9W9",
+                buttonContainer: "HeaderMenu-module__buttonContainer--Nazjm",
+                kebabMenuButton: "HeaderMenu-module__kebabMenuButton--zRRqL",
             };
             function aX({
                 headerMenuData: e,
@@ -18538,19 +18539,19 @@
             } catch {}
             let aZ = {
                     metadataContainer:
-                        "HeaderMetadata-module__metadataContainer--_PF3H",
+                        "HeaderMetadata-module__metadataContainer--BhB7Q",
                     metadataBorder:
-                        "HeaderMetadata-module__metadataBorder--D3sHw",
+                        "HeaderMetadata-module__metadataBorder--oeBkI",
                     metadataContent:
-                        "HeaderMetadata-module__metadataContent--xV4If",
+                        "HeaderMetadata-module__metadataContent--HC0b2",
                     stickyContainer:
-                        "HeaderMetadata-module__stickyContainer--xk69x",
+                        "HeaderMetadata-module__stickyContainer--JBJvS",
                     stickyContent:
-                        "HeaderMetadata-module__stickyContent--_V4Oe",
+                        "HeaderMetadata-module__stickyContent--jGltj",
                     titleAndMetadata:
-                        "HeaderMetadata-module__titleAndMetadata--z52aq",
+                        "HeaderMetadata-module__titleAndMetadata--I5cx4",
                     smallMetadataRow:
-                        "HeaderMetadata-module__smallMetadataRow--te7E4",
+                        "HeaderMetadata-module__smallMetadataRow--gVhbT",
                 },
                 a0 = {
                     argumentDefinitions: [],
@@ -18661,25 +18662,25 @@
             a0.hash = "df07200f5e684b113ccb00965a3e4b1b";
             let a1 = {
                     parentTitleContainer:
-                        "HeaderParentTitle-module__parentTitleContainer--H8JYQ",
+                        "HeaderParentTitle-module__parentTitleContainer--NDi4M",
                     parentTitleLink:
-                        "HeaderParentTitle-module__parentTitleLink--rBgNZ",
+                        "HeaderParentTitle-module__parentTitleLink--kuLfE",
                     parentTitleToken:
-                        "HeaderParentTitle-module__parentTitleToken--qwjjm",
+                        "HeaderParentTitle-module__parentTitleToken--fxGes",
                 },
                 a2 = ({ parentKey: e, optionConfig: l, small: n = !1 }) => {
                     let a = (0, N.useFragment)(a0, e);
                     if (!a) return null;
                     let { parent: s } = a;
                     return s?.repository && s.repository.owner
-                        ? (0, F.jsx)(a6, {
+                        ? (0, F.jsx)(a4, {
                               parent: s,
                               optionConfig: l,
                               small: n,
                           })
                         : null;
                 },
-                a6 = ({ parent: e, optionConfig: l, small: n = !1 }) => {
+                a4 = ({ parent: e, optionConfig: l, small: n = !1 }) => {
                     let a = e.repository.name,
                         s = e.repository.owner.login,
                         { sourceIcon: i } = nj({
@@ -18720,7 +18721,7 @@
                             l?.navigate &&
                                 (n.preventDefault(), l?.navigate?.(e.url));
                         },
-                        u = (0, n6.us)(e.title, e.titleHTML),
+                        u = (0, n4.us)(e.title, e.titleHTML),
                         o = (0, F.jsxs)(eO.A, {
                             sx: { maxWidth: 500 },
                             className: a1.parentTitleContainer,
@@ -18788,14 +18789,14 @@
                 a2.displayName || (a2.displayName = "HeaderParentTitle");
             } catch {}
             try {
-                a6.displayName ||
-                    (a6.displayName = "HeaderParentTitleInternal");
+                a4.displayName ||
+                    (a4.displayName = "HeaderParentTitleInternal");
             } catch {}
             try {
                 (i = IconComponent).displayName ||
                     (i.displayName = "IconComponent");
             } catch {}
-            let a4 = {
+            let a6 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -18880,26 +18881,26 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            a4.hash = "1734dea2e72680881d4fd73c708b6b74";
-            var a3 = n(91089);
+            a6.hash = "1734dea2e72680881d4fd73c708b6b74";
+            var a7 = n(91089);
             let a5 = {
-                stateLabel: "HeaderState-module__stateLabel--r_Sbk",
+                stateLabel: "HeaderState-module__stateLabel--Na0HJ",
                 duplicateIssueLink:
-                    "HeaderState-module__duplicateIssueLink--LUxYA",
+                    "HeaderState-module__duplicateIssueLink--gPcio",
             };
-            function a7({ isSticky: e, stateData: l }) {
+            function a3({ isSticky: e, stateData: l }) {
                 let {
                         state: n,
                         stateReason: a,
                         duplicateOf: s,
-                    } = (0, N.useFragment)(a4, l),
+                    } = (0, N.useFragment)(a6, l),
                     { stateString: i, stateStatus: t } = nj({
                         state: n,
                         stateReason: a,
                         options: { longText: !e },
                     });
                 return (0, F.jsx)("div", {
-                    children: (0, F.jsxs)(a3.A, {
+                    children: (0, F.jsxs)(a7.A, {
                         "data-testid": ac.Y.headerState,
                         status: t,
                         className: a5.stateLabel,
@@ -18931,7 +18932,7 @@
                 });
             }
             try {
-                a7.displayName || (a7.displayName = "HeaderState");
+                a3.displayName || (a3.displayName = "HeaderState");
             } catch {}
             try {
                 a8.displayName || (a8.displayName = "DuplicateIssueLink");
@@ -18987,11 +18988,11 @@
             };
             se.hash = "02a4f342f6c913a3e3f1bba2edd8295d";
             let sl = {
-                token: "HeaderSubIssuesSummary-module__token--M4gHr",
+                token: "HeaderSubIssuesSummary-module__token--n6xYv",
                 smallSummary:
-                    "HeaderSubIssuesSummary-module__smallSummary--n9ukK",
+                    "HeaderSubIssuesSummary-module__smallSummary--cqVuG",
                 visualLabel:
-                    "HeaderSubIssuesSummary-module__visualLabel--h5fQk",
+                    "HeaderSubIssuesSummary-module__visualLabel--SJYaK",
             };
             function sn({
                 subIssuePrimaryKey: e,
@@ -19112,16 +19113,16 @@
                 abstractKey: null,
             };
             si.hash = "d58846f98442c160672513c6ce32b5a2";
-            var st = n(35857),
-                sr = n(10356),
-                su = n(19992),
-                so = n(52374),
-                sd = n(62110),
-                sc = n(47943),
-                sm = n(44427);
+            var st = n(41139),
+                sr = n(44963),
+                su = n(36365),
+                so = n(72429),
+                sd = n(14111),
+                sc = n(17402),
+                sm = n(41305);
             let sg = {
-                    avatarStack: "AssigneesMetadata-module__avatarStack--KLbQ9",
-                    avatar: "AssigneesMetadata-module__avatar--b8UaK",
+                    avatarStack: "AssigneesMetadata-module__avatarStack--wphoi",
+                    avatar: "AssigneesMetadata-module__avatar--Ythxm",
                 },
                 sy = ({ assignees: e }) =>
                     (0, F.jsx)(ng.A, {
@@ -19153,19 +19154,19 @@
                 sy.displayName || (sy.displayName = "AssigneesMetadata");
             } catch {}
             let sp = {
-                issueMetadata: "IssueMetadata-module__issueMetadata--KKAau",
-                metadata: "IssueMetadata-module__metadata--NFeDC",
-                metadataTitle: "IssueMetadata-module__metadataTitle--QU1pi",
-                metadataValue: "IssueMetadata-module__metadataValue--wfbKs",
+                issueMetadata: "IssueMetadata-module__issueMetadata--hs7HR",
+                metadata: "IssueMetadata-module__metadata--bttzx",
+                metadataTitle: "IssueMetadata-module__metadataTitle--k9r__",
+                metadataValue: "IssueMetadata-module__metadataValue--d40kf",
             };
-            var sk = n(58569);
+            var sk = n(1002);
             let sF = {
                     milestoneLink:
-                        "MilestoneMetadata-module__milestoneLink--h6yOq",
+                        "MilestoneMetadata-module__milestoneLink--SF0lK",
                     milestoneTitle:
-                        "MilestoneMetadata-module__milestoneTitle--i5UbL",
+                        "MilestoneMetadata-module__milestoneTitle--hLT9z",
                     truncatedText:
-                        "MilestoneMetadata-module__truncatedText--aE6Yc",
+                        "MilestoneMetadata-module__truncatedText--B4slr",
                 },
                 sb = ({ milestone: e }) =>
                     (0, F.jsxs)(ek.A, {
@@ -19433,16 +19434,16 @@
                 abstractKey: null,
             };
             sS.hash = "f39bd0d3ddec45f9362bcc669024de6b";
-            var sI = n(18828);
+            var sI = n(3614);
             let sv = {
                     pullRequestLink:
-                        "LinkedPullRequest-module__pullRequestLink--a00qJ",
+                        "LinkedPullRequest-module__pullRequestLink--P8RgZ",
                     pullRequestTitle:
-                        "LinkedPullRequest-module__pullRequestTitle--xbq6y",
+                        "LinkedPullRequest-module__pullRequestTitle--_Yd2O",
                     externalRepoContainer:
-                        "LinkedPullRequest-module__externalRepoContainer--EURMB",
+                        "LinkedPullRequest-module__externalRepoContainer--ASVub",
                     repositoryName:
-                        "LinkedPullRequest-module__repositoryName--UbEkc",
+                        "LinkedPullRequest-module__repositoryName--OQ5GI",
                 },
                 sL = (e) => {
                     let {
@@ -19552,17 +19553,17 @@
             } catch {}
             let sN = {
                     linkedPullRequestsPill:
-                        "LinkedPullRequests-module__linkedPullRequestsPill--qrF2g",
+                        "LinkedPullRequests-module__linkedPullRequestsPill--Ok1o0",
                     pullRequestsContainer:
-                        "LinkedPullRequests-module__pullRequestsContainer--R6VVx",
+                        "LinkedPullRequests-module__pullRequestsContainer--zrJ8_",
                     twoColumnLayout:
-                        "LinkedPullRequests-module__twoColumnLayout--AF7r1",
+                        "LinkedPullRequests-module__twoColumnLayout--PGVGf",
                     flexRowContainer:
-                        "LinkedPullRequests-module__flexRowContainer--_VU_x",
+                        "LinkedPullRequests-module__flexRowContainer--ane_A",
                     commaSeparatedList:
-                        "LinkedPullRequests-module__commaSeparatedList--tPS5L",
+                        "LinkedPullRequests-module__commaSeparatedList--pAtQU",
                     ActionMenu_Button:
-                        "LinkedPullRequests-module__ActionMenu_Button--BMBxQ",
+                        "LinkedPullRequests-module__ActionMenu_Button--l39MW",
                 },
                 sj = (e) =>
                     (0, F.jsx)("div", {
@@ -19884,16 +19885,16 @@
             sA.hash = "af4e78176ece26a434c7bc6c19f0ce64";
             let sP = {
                     repositoryInfoContainer:
-                        "RepositoryPill-module__repositoryInfoContainer--sDFGy",
+                        "RepositoryPill-module__repositoryInfoContainer--hx8t7",
                     repositoryIcon:
-                        "RepositoryPill-module__repositoryIcon--d1h4M",
-                    ownerLink: "RepositoryPill-module__ownerLink--reKs5",
+                        "RepositoryPill-module__repositoryIcon--ta4XG",
+                    ownerLink: "RepositoryPill-module__ownerLink--Fbl6Q",
                     repositoryNameLink:
-                        "RepositoryPill-module__repositoryNameLink--x5wFN",
+                        "RepositoryPill-module__repositoryNameLink--cPREy",
                     smallRepositoryPill:
-                        "RepositoryPill-module__smallRepositoryPill--a0sGV",
+                        "RepositoryPill-module__smallRepositoryPill--IAsHi",
                     repositoryLabel:
-                        "RepositoryPill-module__repositoryLabel--SHoPx",
+                        "RepositoryPill-module__repositoryLabel--Yutrq",
                 },
                 sB = (e) => (0, F.jsx)(sD, { ...e, isSmall: !0 });
             function sD({ repositoryPillData: e, sx: l, isSmall: n = !1 }) {
@@ -19931,7 +19932,7 @@
                           className: sP.smallRepositoryPill,
                           children: [
                               t,
-                              (0, F.jsx)(e3.A, {
+                              (0, F.jsx)(e7.A, {
                                   size: "small",
                                   "data-watch-overflow": !0,
                                   className: sP.repositoryLabel,
@@ -20013,14 +20014,14 @@
                 abstractKey: null,
             };
             sM.hash = "a96a1e535b8b6dbdc71a34cd918e382f";
-            var sV = n(66871);
+            var sV = n(53627);
             let sU = {
                 stickyTitleContainer:
-                    "StickyHeaderTitle-module__stickyTitleContainer--EbzmY",
+                    "StickyHeaderTitle-module__stickyTitleContainer--tWFM_",
                 stickyTitleLink:
-                    "StickyHeaderTitle-module__stickyTitleLink--nH4Ae",
+                    "StickyHeaderTitle-module__stickyTitleLink--H6l16",
                 issueNumberText:
-                    "StickyHeaderTitle-module__issueNumberText--cvVGn",
+                    "StickyHeaderTitle-module__issueNumberText--t7CBp",
             };
             function sO({ headerTitleData: e, scrollToTopOnClick: l }) {
                 let {
@@ -20130,11 +20131,11 @@
             sq.hash = "85d7e05c6822546f03500dc2828ef942";
             let sH = {
                     trackingItemContainer:
-                        "TrackedBy-module__trackingItemContainer--jNAHI",
-                    trackingToken: "TrackedBy-module__trackingToken--ryz0H",
-                    trackedByText: "TrackedBy-module__trackedByText--JjW6q",
+                        "TrackedBy-module__trackingItemContainer--Kl2xy",
+                    trackingToken: "TrackedBy-module__trackingToken--P69TJ",
+                    trackedByText: "TrackedBy-module__trackedByText--RLpr7",
                     trackingInfoContainer:
-                        "TrackedBy-module__trackingInfoContainer--ia7lN",
+                        "TrackedBy-module__trackingInfoContainer--TtEkR",
                 },
                 s$ = (e) => (0, F.jsx)(sz, { ...e, isSmall: !0 });
             function sz({ trackedByKey: e, url: l, isSmall: n = !1 }) {
@@ -20264,7 +20265,7 @@
                                         children: (0, F.jsxs)("div", {
                                             className: aZ.metadataContent,
                                             children: [
-                                                (0, F.jsx)(a7, {
+                                                (0, F.jsx)(a3, {
                                                     isSticky: n,
                                                     stateData: u,
                                                 }),
@@ -20316,7 +20317,7 @@
                                     children: (0, F.jsxs)("div", {
                                         className: aZ.stickyContent,
                                         children: [
-                                            (0, F.jsx)(a7, {
+                                            (0, F.jsx)(a3, {
                                                 isSticky: n,
                                                 stateData: u,
                                             }),
@@ -20494,28 +20495,28 @@
                 abstractKey: null,
             };
             sY.hash = "3cf3147bbe18ccb67717436d818f5d22";
-            var sX = n(1653);
+            var sX = n(9583);
             let sJ = {
-                headerContainer: "HeaderViewer-module__headerContainer--p0Eo1",
-                minimalHeader: "HeaderViewer-module__minimalHeader--jTSpm",
+                headerContainer: "HeaderViewer-module__headerContainer--kkVCB",
+                minimalHeader: "HeaderViewer-module__minimalHeader--O9qRU",
                 PageHeader_TitleArea:
-                    "HeaderViewer-module__PageHeader_TitleArea--aw8nU",
+                    "HeaderViewer-module__PageHeader_TitleArea--RYvOA",
                 PageHeader_Title:
-                    "HeaderViewer-module__PageHeader_Title--FtJ26",
-                VerifiedHTMLBox: "HeaderViewer-module__VerifiedHTMLBox--EQCNM",
+                    "HeaderViewer-module__PageHeader_Title--n_x9h",
+                VerifiedHTMLBox: "HeaderViewer-module__VerifiedHTMLBox--_DgIv",
                 issueNumberContainer:
-                    "HeaderViewer-module__issueNumberContainer--TSBK5",
-                issueNumberLink: "HeaderViewer-module__issueNumberLink--BLqo9",
-                issueNumberText: "HeaderViewer-module__issueNumberText--GQIsT",
+                    "HeaderViewer-module__issueNumberContainer--hF8U2",
+                issueNumberLink: "HeaderViewer-module__issueNumberLink--QVBTb",
+                issueNumberText: "HeaderViewer-module__issueNumberText--ofQHQ",
                 PageHeader_ContextAreaActions:
-                    "HeaderViewer-module__PageHeader_ContextAreaActions--yr4iv",
+                    "HeaderViewer-module__PageHeader_ContextAreaActions--zjX2m",
                 PageHeader_ContextArea:
-                    "HeaderViewer-module__PageHeader_ContextArea--qF1Bh",
+                    "HeaderViewer-module__PageHeader_ContextArea--sRz2x",
                 desktopMetadataContainer:
-                    "HeaderViewer-module__desktopMetadataContainer--araeO",
-                metadataWrapper: "HeaderViewer-module__metadataWrapper--FuOrf",
+                    "HeaderViewer-module__desktopMetadataContainer--m1a4Z",
+                metadataWrapper: "HeaderViewer-module__metadataWrapper--b43vN",
                 PageHeader_Actions:
-                    "HeaderViewer-module__PageHeader_Actions--jMiBQ",
+                    "HeaderViewer-module__PageHeader_Actions--SRZVA",
             };
             function sZ({
                 headerViewerKey: e,
@@ -20658,7 +20659,7 @@
                 sZ.displayName || (sZ.displayName = "HeaderViewer");
             } catch {}
             let s0 = {
-                jumpToBottom: "JumpToBottom-module__jumpToBottom--M3pZ0",
+                jumpToBottom: "JumpToBottom-module__jumpToBottom--JczYs",
             };
             function s1() {
                 let e = (function () {
@@ -20805,7 +20806,7 @@
             try {
                 s2.displayName || (s2.displayName = "Header");
             } catch {}
-            let s6 = {
+            let s4 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -20825,8 +20826,8 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            s6.hash = "8fc24bb52effd976666af3d674ce0d7d";
-            let s4 = {
+            s4.hash = "8fc24bb52effd976666af3d674ce0d7d";
+            let s6 = {
                 argumentDefinitions: [
                     {
                         defaultValue: null,
@@ -20883,12 +20884,12 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            s4.hash = "dedc5f445c2698fbfc52de57413c66a9";
-            var s3 = n(80739),
-                s5 = n(90105),
-                s7 = n(40245),
+            s6.hash = "dedc5f445c2698fbfc52de57413c66a9";
+            var s7 = n(80159),
+                s5 = n(30107),
+                s3 = n(77622),
                 s8 = n(21728),
-                s9 = n(81367);
+                s9 = n(65787);
             function ie(e) {
                 let l,
                     n,
@@ -20937,7 +20938,8 @@
                         w = (0, Q.useRef)(0),
                         A = (0, Q.useRef)(0),
                         P = (0, Q.useRef)(0),
-                        B = (0, Q.useRef)(0);
+                        B = (0, Q.useRef)(0),
+                        D = (0, Q.useRef)(null);
                     (f[1] === Symbol.for("react.memo_cache_sentinel")
                         ? ((n = () => {
                               let e = S.current;
@@ -20959,7 +20961,7 @@
                                   let e = S.current;
                                   if (!e) return;
                                   let l = e.offsetTop - B.current;
-                                  if (w.current < l + P.current - 10)
+                                  if (w.current < l + P.current - 30)
                                       return void v({
                                           position: "absolute",
                                           bottom: 0,
@@ -20997,8 +20999,8 @@
                               (f[3] = K),
                               (f[4] = s))
                             : (s = f[4]));
-                    let D = s;
-                    f[5] !== D
+                    let M = s;
+                    f[5] !== M
                         ? ((i = (e) => {
                               let l =
                                   "sticky-sidebar-top-sentinel" === e.target.id;
@@ -21013,21 +21015,21 @@
                                             Math.floor(
                                                 e.intersectionRect.height
                                             ))),
-                                  R.current || D());
+                                  R.current || M());
                           }),
-                          (f[5] = D),
+                          (f[5] = M),
                           (f[6] = i))
                         : (i = f[6]);
-                    let M = i;
-                    (f[7] !== D
+                    let V = i;
+                    (f[7] !== M
                         ? ((t = () => {
                               let e = S.current;
                               e &&
                                   e.getBoundingClientRect().top < 0 &&
-                                  ((R.current = !0), D());
+                                  ((R.current = !0), M());
                           }),
-                          (r = [D]),
-                          (f[7] = D),
+                          (r = [M]),
+                          (f[7] = M),
                           (f[8] = t),
                           (f[9] = r))
                         : ((t = f[8]), (r = f[9])),
@@ -21041,20 +21043,20 @@
                                       : 0),
                               (f[10] = u))
                             : (u = f[10]));
-                    let V = u;
+                    let U = u;
                     return (
-                        f[11] !== D
+                        f[11] !== M
                             ? ((d = () => {
                                   let e = !1;
                                   if (!_.current) return;
                                   let l = _.current,
-                                      n = V(),
+                                      n = U(),
                                       a = () => {
-                                          let l = V(),
+                                          let l = U(),
                                               a = Math.abs(l - n);
                                           if (
                                               (a > 600
-                                                  ? ((R.current = !0), D())
+                                                  ? ((R.current = !0), M())
                                                   : (N.current || j.current) &&
                                                     (R.current = !1),
                                               a < 10)
@@ -21066,7 +21068,7 @@
                                           (T.current !== s &&
                                               ((T.current = s),
                                               (j.current = !0),
-                                              D()),
+                                              M()),
                                               (n = l > 0 ? l : 0),
                                               (e = !1));
                                       },
@@ -21080,52 +21082,63 @@
                                       () => l.removeEventListener("scroll", s)
                                   );
                               }),
-                              (o = [D, S, _, V]),
-                              (f[11] = D),
+                              (o = [M, S, _, U]),
+                              (f[11] = M),
                               (f[12] = o),
                               (f[13] = d))
                             : ((o = f[12]), (d = f[13])),
                         (0, Q.useEffect)(d, o),
-                        f[14] !== K || f[15] !== M
+                        f[14] !== K || f[15] !== V
                             ? ((c = () => {
                                   let e = S.current;
                                   if (!e) return;
-                                  let l = document.createElement("div"),
-                                      n = document.createElement("div");
-                                  return (
-                                      (l.style.position = "absolute"),
-                                      (l.style.top = `calc(-1 * ${K})`),
-                                      (l.style.height = "1px"),
-                                      (l.style.width = "1px"),
-                                      (l.style.pointerEvents = "none"),
-                                      (l.id = "sticky-sidebar-top-sentinel"),
-                                      (n.style.position = "absolute"),
-                                      (n.style.bottom = "-300px"),
-                                      (n.style.height = "300px"),
+                                  let l = e.parentElement;
+                                  if (!l) return;
+                                  let n = document.createElement("div"),
+                                      a = document.createElement("div");
+                                  ((n.style.position = "absolute"),
+                                      (n.style.top = `calc(-1 * ${K})`),
+                                      (n.style.height = "1px"),
                                       (n.style.width = "1px"),
                                       (n.style.pointerEvents = "none"),
-                                      (n.id = "sticky-sidebar-bottom-sentinel"),
-                                      e.appendChild(l),
+                                      (n.id = "sticky-sidebar-top-sentinel"),
+                                      (a.style.position = "absolute"),
+                                      (a.style.bottom = "-300px"),
+                                      (a.style.height = "300px"),
+                                      (a.style.width = "1px"),
+                                      (a.style.pointerEvents = "none"),
+                                      (a.id = "sticky-sidebar-bottom-sentinel"),
                                       e.appendChild(n),
+                                      e.appendChild(a),
                                       (L.current = new IntersectionObserver(
                                           (e) => {
-                                              for (let l of e) M(l);
+                                              for (let l of e) V(l);
                                           }
                                       )),
-                                      L.current.observe(l),
                                       L.current.observe(n),
+                                      L.current.observe(a));
+                                  let s = document.createElement("div");
+                                  return (
+                                      (s.style.position = "relative"),
+                                      (s.style.height = "0px"),
+                                      (s.style.width = "0px"),
+                                      (s.style.pointerEvents = "none"),
+                                      l.insertBefore(s, e),
+                                      (D.current = s),
                                       () => {
                                           (L.current && L.current.disconnect(),
-                                              l.parentNode === e &&
-                                                  e.removeChild(l),
                                               n.parentNode === e &&
-                                                  e.removeChild(n));
+                                                  e.removeChild(n),
+                                              a.parentNode === e &&
+                                                  e.removeChild(a),
+                                              D.current?.parentNode === l &&
+                                                  l.removeChild(D.current));
                                       }
                                   );
                               }),
-                              (m = [K, M, S]),
+                              (m = [K, V, S]),
                               (f[14] = K),
-                              (f[15] = M),
+                              (f[15] = V),
                               (f[16] = c),
                               (f[17] = m))
                             : ((c = f[16]), (m = f[17])),
@@ -21147,22 +21160,22 @@
                               (f[19] = y))
                             : ((g = f[18]), (y = f[19])),
                         (0, Q.useEffect)(g, y),
-                        f[20] !== D
+                        f[20] !== M
                             ? ((p = () => {
                                   if (!S.current || !S.current.parentElement)
                                       return;
                                   let e = new ResizeObserver((e) => {
                                       for (let l of e)
                                           w.current = l.contentRect.height;
-                                      D();
+                                      M();
                                   });
                                   return (
                                       e.observe(S.current.parentElement),
                                       () => e.disconnect()
                                   );
                               }),
-                              (k = [D, S]),
-                              (f[20] = D),
+                              (k = [M, S]),
+                              (f[20] = M),
                               (f[21] = p),
                               (f[22] = k))
                             : ((p = f[21]), (k = f[22])),
@@ -21172,7 +21185,7 @@
                                   if (!S.current || !S.current.parentElement)
                                       return;
                                   let e = new ResizeObserver((e) => {
-                                      B.current = S.current?.offsetTop || 0;
+                                      B.current = D.current?.offsetTop || 0;
                                   });
                                   return (
                                       e.observe(document.body),
@@ -21213,7 +21226,7 @@
             } catch {}
             let il = {
                     sidebarContent:
-                        "IssueSidebar-module__sidebarContent--bgjet",
+                        "IssueSidebar-module__sidebarContent--II51T",
                 },
                 ia = {
                     argumentDefinitions: [],
@@ -22521,9 +22534,9 @@
                 };
             })();
             it.hash = "0a1350710c29aaa34c077fb8f1e8841c";
-            var ir = n(91240),
-                iu = n(93930),
-                io = n(23008);
+            var ir = n(2495),
+                iu = n(16810),
+                io = n(21798);
             (function () {
                 var e = {
                         defaultValue: null,
@@ -23309,10 +23322,10 @@
                 };
             })();
             iy.hash = "a9785b05fefd0c1ae7aea87d04f60956";
-            var ip = n(5834),
-                ik = n(82106),
-                iF = n(21491),
-                ib = n(52550);
+            var ip = n(67126),
+                ik = n(19918),
+                iF = n(38143),
+                ib = n(86391);
             (function () {
                 var e = {
                         defaultValue: null,
@@ -23912,7 +23925,7 @@
                 };
             })();
             iK.hash = "7926eae095a68017f748df671436de12";
-            var iS = n(44263),
+            var iS = n(46747),
                 iI = n(46309);
             function iv({ fetchSearchData: e, ...l }) {
                 let [n, a] = (0, Q.useState)(""),
@@ -24113,7 +24126,7 @@
             } catch {}
             let ij = {
                 branchPickerContainer:
-                    "BranchPicker-module__branchPickerContainer--MWYZj",
+                    "BranchPicker-module__branchPickerContainer--_N8dW",
             };
             function i_(e) {
                 return e ? (0, eh.readInlineData)(iw, e) : null;
@@ -24868,14 +24881,14 @@
                 };
             })();
             iV.hash = "8dbbb085c7f66c21dc7898ad77f765d3";
-            var iU = n(73307);
+            var iU = n(19695);
             let iO = {
                     pullRequestItemContainer:
-                        "PullRequestAndBranchPicker-module__pullRequestItemContainer--gyWST",
+                        "PullRequestAndBranchPicker-module__pullRequestItemContainer--aphtv",
                     subtitleText:
-                        "PullRequestAndBranchPicker-module__subtitleText--RvUzg",
+                        "PullRequestAndBranchPicker-module__subtitleText--tT_MJ",
                     pickerContainer:
-                        "PullRequestAndBranchPicker-module__pickerContainer--gAETb",
+                        "PullRequestAndBranchPicker-module__pickerContainer--R4naP",
                 },
                 iq = { groupId: "selected" },
                 iH = {
@@ -25348,9 +25361,9 @@
                     (iY.displayName =
                         "PullRequestAndBranchPickerInternalFuture");
             } catch {}
-            var i1 = n(38911),
-                i2 = n(16965);
-            let i6 = (function () {
+            var i1 = n(87131),
+                i2 = n(91985);
+            let i4 = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -25474,20 +25487,20 @@
                     },
                 };
             })();
-            i6.hash = "d507f64d80526dd7fa065bad1d2ae573";
-            var i4 = n(28835),
-                i3 = n(60039);
+            i4.hash = "d507f64d80526dd7fa065bad1d2ae573";
+            var i6 = n(58615),
+                i7 = n(96379);
             function i5({ repoId: e, issueDatabaseId: l }) {
                 let n = (0, N.useRelayEnvironment)(),
-                    [a] = (0, i4.M)("vscs_target", void 0),
-                    [s] = (0, i4.M)("vscs_target_url", void 0),
+                    [a] = (0, i6.M)("vscs_target", void 0),
+                    [s] = (0, i6.M)("vscs_target_url", void 0),
                     [i, t] = (0, Q.useState)(""),
                     r = (0, Q.useCallback)(
                         async (i) => {
                             (i && i.preventDefault(), t(""));
                             let r = ey.cg?.open("about:blank");
                             try {
-                                let i = await (0, eh.fetchQuery)(n, i6, {
+                                let i = await (0, eh.fetchQuery)(n, i4, {
                                     id: e,
                                 }).toPromise();
                                 if (!i?.node) {
@@ -25513,7 +25526,7 @@
                                             "codespace[vscs_target_url]",
                                             s
                                         ));
-                                let o = await (0, i3.DI)((0, eg.UzS)(), {
+                                let o = await (0, i7.DI)((0, eg.UzS)(), {
                                         method: "POST",
                                         body: u,
                                     }),
@@ -25535,9 +25548,9 @@
                     handleCopilotAgentModeSubmit: r,
                 };
             }
-            let i7 = {
+            let i3 = {
                     desktopInstructionsText:
-                        "BranchNextStepDesktop-module__desktopInstructionsText--Bs45Q",
+                        "BranchNextStepDesktop-module__desktopInstructionsText--rO9Qr",
                 },
                 i8 = ({ branch: e, repository: l, owner: n, onClose: a }) => {
                     let s = `x-github-client://openRepo/${ey.cg?.origin}/${n}/${l}?branch=${e}`;
@@ -25551,7 +25564,7 @@
                             title: "Opening branch in GitHub Desktop...",
                             onClose: a,
                             children: (0, F.jsxs)("span", {
-                                className: i7.desktopInstructionsText,
+                                className: i3.desktopInstructionsText,
                                 children: [
                                     "If nothing happens, make sure\xa0",
                                     (0, F.jsx)(ek.A, {
@@ -25578,11 +25591,11 @@
             } catch {}
             let i9 = {
                     localInstructionsText:
-                        "BranchNextStepLocal-module__localInstructionsText--LRpxY",
+                        "BranchNextStepLocal-module__localInstructionsText--E_jax",
                     commandContainer:
-                        "BranchNextStepLocal-module__commandContainer--ymOWX",
+                        "BranchNextStepLocal-module__commandContainer--l4Fg3",
                     commandText:
-                        "BranchNextStepLocal-module__commandText--YcZNO",
+                        "BranchNextStepLocal-module__commandText--sK1mS",
                 },
                 te = ({ branch: e, onClose: l }) => {
                     let n = `git fetch origin
@@ -25619,10 +25632,10 @@ git checkout ${e}`;
             try {
                 te.displayName || (te.displayName = "BranchNextStepLocal");
             } catch {}
-            var tl = n(60439);
+            var tl = n(16654);
             let tn = {
                     buttonGroup:
-                        "CopilotAgentModeButton-module__buttonGroup--sXExg",
+                        "CopilotAgentModeButton-module__buttonGroup--ReOsn",
                 },
                 ta = ({
                     isOpen: e,
@@ -26562,9 +26575,9 @@ git checkout ${e}`;
             tr.hash = "796463ae38b055a2a747688e2050d8af";
             let tu = {
                 navigationHeader:
-                    "DevelopmentPicker-module__navigationHeader--yJol2",
-                IconButton: "DevelopmentPicker-module__IconButton--Hne0C",
-                Truncate: "DevelopmentPicker-module__Truncate--z9PH4",
+                    "DevelopmentPicker-module__navigationHeader--v2NIi",
+                IconButton: "DevelopmentPicker-module__IconButton--tOgOR",
+                Truncate: "DevelopmentPicker-module__Truncate--piMRW",
             };
             function to({ anchorElement: e, ...l }) {
                 let [n, a] = (0, Q.useState)(!1);
@@ -26917,17 +26930,17 @@ git checkout ${e}`;
             } catch {}
             let tm = {
                     developmentSectionContainer:
-                        "DevelopmentSection-module__developmentSectionContainer--Abl_Z",
+                        "DevelopmentSection-module__developmentSectionContainer--bRXJq",
                     developmentHelpText:
-                        "DevelopmentSection-module__developmentHelpText--f7qnx",
+                        "DevelopmentSection-module__developmentHelpText--IfUod",
                     developmentActionList:
-                        "DevelopmentSection-module__developmentActionList--VXl7P",
+                        "DevelopmentSection-module__developmentActionList--LPUYb",
                 },
                 tg = {
                     ActionList_LinkItem:
-                        "LinkedBranches-module__ActionList_LinkItem--Yap8A",
+                        "LinkedBranches-module__ActionList_LinkItem--wbhvK",
                     ActionList_LeadingVisual:
-                        "LinkedBranches-module__ActionList_LeadingVisual--TSoN2",
+                        "LinkedBranches-module__ActionList_LeadingVisual--SZUjq",
                 };
             function ty({ linkedBranches: e }) {
                 return (0, F.jsx)(F.Fragment, {
@@ -26966,7 +26979,7 @@ git checkout ${e}`;
             } catch {}
             let tp = {
                 ActionList_LinkItem:
-                    "LinkedPullRequests-module__ActionList_LinkItem--ceIhZ",
+                    "LinkedPullRequests-module__ActionList_LinkItem--QmAhr",
             };
             function tk({ linkedPullRequests: e }) {
                 return (0, F.jsx)(F.Fragment, {
@@ -27008,7 +27021,7 @@ git checkout ${e}`;
                 tk.displayName || (tk.displayName = "LinkedPullRequests");
             } catch {}
             var tF = n(89015),
-                tb = n(15198);
+                tb = n(66895);
             let th = (function () {
                 var e = [
                         {
@@ -27454,25 +27467,25 @@ git checkout ${e}`;
             th.hash = "8508860a2381afaf82f018063bdcc512";
             let tf = {
                     RadioGroup_Label:
-                        "CreateBranchDialog-module__RadioGroup_Label--Uc3Xv",
+                        "CreateBranchDialog-module__RadioGroup_Label--gFZM6",
                     Dialog_Footer:
-                        "CreateBranchDialog-module__Dialog_Footer--TJq5f",
+                        "CreateBranchDialog-module__Dialog_Footer--e5c4q",
                     branchNameContainer:
-                        "CreateBranchDialog-module__branchNameContainer--I9DN_",
-                    fieldLabel: "CreateBranchDialog-module__fieldLabel--BI1hR",
-                    TextInput: "CreateBranchDialog-module__TextInput--zn4a0",
+                        "CreateBranchDialog-module__branchNameContainer--SGPeX",
+                    fieldLabel: "CreateBranchDialog-module__fieldLabel--R9lnl",
+                    TextInput: "CreateBranchDialog-module__TextInput--_h6C6",
                     repositoryBranchRow:
-                        "CreateBranchDialog-module__repositoryBranchRow--AW079",
+                        "CreateBranchDialog-module__repositoryBranchRow--FAb3K",
                     repositoryPickerContainer:
-                        "CreateBranchDialog-module__repositoryPickerContainer--cCNW4",
+                        "CreateBranchDialog-module__repositoryPickerContainer--aViMx",
                     repositoryPickerHeader:
-                        "CreateBranchDialog-module__repositoryPickerHeader--MOxul",
+                        "CreateBranchDialog-module__repositoryPickerHeader--H1drO",
                     branchSourceContainer:
-                        "CreateBranchDialog-module__branchSourceContainer--p9zUu",
+                        "CreateBranchDialog-module__branchSourceContainer--zIALE",
                     loadingRepositoryBranchRow:
-                        "CreateBranchDialog-module__loadingRepositoryBranchRow--Njbok",
+                        "CreateBranchDialog-module__loadingRepositoryBranchRow--D4hIa",
                     loadingBranchSourceContainer:
-                        "CreateBranchDialog-module__loadingBranchSourceContainer--XfVy5",
+                        "CreateBranchDialog-module__loadingBranchSourceContainer--Q79tG",
                 },
                 tK = ({
                     title: e,
@@ -27925,7 +27938,7 @@ git checkout ${e}`;
             } catch {}
             let tL = {
                 createBranchLink:
-                    "NoBranchesOrLinkedPullRequests-module__createBranchLink--_QIEZ",
+                    "NoBranchesOrLinkedPullRequests-module__createBranchLink--e7VM0",
             };
             function tT({
                 issueId: e,
@@ -28281,16 +28294,59 @@ git checkout ${e}`;
                 abstractKey: null,
             };
             tj.hash = "8b167d1b7995165bc1a49a7fb28d38bb";
-            let t_ = {
-                argumentDefinitions: [],
-                kind: "Fragment",
-                metadata: null,
-                name: "ParticipantFragment",
-                selections: [
+            let t_ = (function () {
+                var e = [
                     {
-                        kind: "InlineDataFragmentSpread",
-                        name: "AssigneePickerAssignee",
+                        kind: "InlineFragment",
                         selections: [
+                            {
+                                alias: null,
+                                args: null,
+                                kind: "ScalarField",
+                                name: "__typename",
+                                storageKey: null,
+                            },
+                            {
+                                alias: null,
+                                args: null,
+                                kind: "ScalarField",
+                                name: "id",
+                                storageKey: null,
+                            },
+                            {
+                                alias: null,
+                                args: null,
+                                kind: "ScalarField",
+                                name: "login",
+                                storageKey: null,
+                            },
+                            {
+                                alias: null,
+                                args: null,
+                                kind: "ScalarField",
+                                name: "name",
+                                storageKey: null,
+                            },
+                            {
+                                alias: null,
+                                args: null,
+                                kind: "ScalarField",
+                                name: "profileResourcePath",
+                                storageKey: null,
+                            },
+                            {
+                                alias: null,
+                                args: [
+                                    {
+                                        kind: "Literal",
+                                        name: "size",
+                                        value: 64,
+                                    },
+                                ],
+                                kind: "ScalarField",
+                                name: "avatarUrl",
+                                storageKey: "avatarUrl(size:64)",
+                            },
                             {
                                 kind: "InlineFragment",
                                 selections: [
@@ -28298,79 +28354,46 @@ git checkout ${e}`;
                                         alias: null,
                                         args: null,
                                         kind: "ScalarField",
-                                        name: "__typename",
+                                        name: "isCopilot",
                                         storageKey: null,
-                                    },
-                                    {
-                                        alias: null,
-                                        args: null,
-                                        kind: "ScalarField",
-                                        name: "id",
-                                        storageKey: null,
-                                    },
-                                    {
-                                        alias: null,
-                                        args: null,
-                                        kind: "ScalarField",
-                                        name: "login",
-                                        storageKey: null,
-                                    },
-                                    {
-                                        alias: null,
-                                        args: null,
-                                        kind: "ScalarField",
-                                        name: "name",
-                                        storageKey: null,
-                                    },
-                                    {
-                                        alias: null,
-                                        args: null,
-                                        kind: "ScalarField",
-                                        name: "profileResourcePath",
-                                        storageKey: null,
-                                    },
-                                    {
-                                        alias: null,
-                                        args: [
-                                            {
-                                                kind: "Literal",
-                                                name: "size",
-                                                value: 64,
-                                            },
-                                        ],
-                                        kind: "ScalarField",
-                                        name: "avatarUrl",
-                                        storageKey: "avatarUrl(size:64)",
-                                    },
-                                    {
-                                        kind: "InlineFragment",
-                                        selections: [
-                                            {
-                                                alias: null,
-                                                args: null,
-                                                kind: "ScalarField",
-                                                name: "isCopilot",
-                                                storageKey: null,
-                                            },
-                                        ],
-                                        type: "Bot",
-                                        abstractKey: null,
                                     },
                                 ],
-                                type: "Actor",
-                                abstractKey: "__isActor",
+                                type: "Bot",
+                                abstractKey: null,
                             },
                         ],
-                        args: null,
-                        argumentDefinitions: [],
+                        type: "Actor",
+                        abstractKey: "__isActor",
                     },
-                ],
-                type: "User",
-                abstractKey: null,
-            };
-            t_.hash = "16e1de1ea70e67fb233b6a8edf20f284";
+                ];
+                return {
+                    argumentDefinitions: [],
+                    kind: "Fragment",
+                    metadata: null,
+                    name: "ParticipantFragment",
+                    selections: [
+                        {
+                            kind: "InlineDataFragmentSpread",
+                            name: "AssigneePickerSharedAssignee",
+                            selections: e,
+                            args: null,
+                            argumentDefinitions: [],
+                        },
+                        {
+                            kind: "InlineDataFragmentSpread",
+                            name: "AssigneePickerAssignee",
+                            selections: e,
+                            args: null,
+                            argumentDefinitions: [],
+                        },
+                    ],
+                    type: "User",
+                    abstractKey: null,
+                };
+            })();
+            t_.hash = "22715083d3273deddcff3e03ce0a393c";
             let tE = {
-                GitHubAvatar: "Participant-module__GitHubAvatar--QzbCR",
+                GitHubAvatar: "Participant-module__GitHubAvatar--mQldG",
             };
             function tw({ participant: e }) {
                 let l = (0, N.useFragment)(t_, e),
@@ -28577,7 +28600,7 @@ git checkout ${e}`;
                 };
             })();
             tA.hash = "8010e539d87c30432d481854383e2493";
-            var tP = n(57771);
+            var tP = n(73454);
             let tB = {
                     couldNotLoad: "Couldn't load",
                     issueNotFound: "Issue not found",
@@ -28607,14 +28630,14 @@ git checkout ${e}`;
                 },
                 tD = {
                     ErrorWithRetry:
-                        "IssueViewerError-module__ErrorWithRetry--q8gGY",
+                        "IssueViewerError-module__ErrorWithRetry--_NZVY",
                     notFoundContainer:
-                        "IssueViewerError-module__notFoundContainer--eiHFJ",
-                    errorIcon: "IssueViewerError-module__errorIcon--ehYrX",
+                        "IssueViewerError-module__notFoundContainer--e__mQ",
+                    errorIcon: "IssueViewerError-module__errorIcon--iOC6Z",
                     errorMessageContainer:
-                        "IssueViewerError-module__errorMessageContainer--VEYve",
+                        "IssueViewerError-module__errorMessageContainer--oM5U1",
                     descriptionText:
-                        "IssueViewerError-module__descriptionText--R4mlR",
+                        "IssueViewerError-module__descriptionText--RLauU",
                 },
                 tM = ({ retry: e }) =>
                     (0, F.jsx)(tP.h, {
@@ -28658,9 +28681,9 @@ git checkout ${e}`;
             } catch {}
             let tq = {
                 participantAvatar:
-                    "ParticipantsList-module__participantAvatar--W_DRV",
+                    "ParticipantsList-module__participantAvatar--poMuO",
                 participantLimitNotice:
-                    "ParticipantsList-module__participantLimitNotice--AzQx0",
+                    "ParticipantsList-module__participantLimitNotice--uz4xv",
             };
             function tH({ repo: e, owner: l, number: n, totalCount: a }) {
                 let [s, i] = (0, N.useQueryLoader)(tA);
@@ -28738,10 +28761,10 @@ git checkout ${e}`;
             try {
                 t$.displayName || (t$.displayName = "ParticipantsListInternal");
             } catch {}
-            var tz = n(48824);
+            var tz = n(41057);
             let tW = {
                 participantsLoadingContainer:
-                    "ParticipantsListLoading-module__participantsLoadingContainer--CJ3sB",
+                    "ParticipantsListLoading-module__participantsLoadingContainer--sGp0C",
             };
             function tQ() {
                 return (0, F.jsxs)("div", {
@@ -28760,13 +28783,13 @@ git checkout ${e}`;
             } catch {}
             let tG = {
                 participantsContainer:
-                    "ParticipantsSection-module__participantsContainer--yBm6F",
+                    "ParticipantsSection-module__participantsContainer--GG2PJ",
                 participantsListContainer:
-                    "ParticipantsSection-module__participantsListContainer--CuhDN",
+                    "ParticipantsSection-module__participantsListContainer--blMv1",
                 showMoreButton:
-                    "ParticipantsSection-module__showMoreButton--sXIO9",
+                    "ParticipantsSection-module__showMoreButton--bFh78",
                 participantsDialogContent:
-                    "ParticipantsSection-module__participantsDialogContent--LSxOo",
+                    "ParticipantsSection-module__participantsDialogContent--Xikfx",
             };
             function tY({ issue: e }) {
                 let {
@@ -29369,8 +29392,8 @@ git checkout ${e}`;
                 };
             })();
             tJ.hash = "f90dad947a48313e268c8bb0d3e824f5";
-            var tZ = n(7479),
-                t0 = n(12528);
+            var tZ = n(11083),
+                t0 = n(90352);
             let t1 = (function () {
                 var e = [
                         {
@@ -29835,9 +29858,9 @@ git checkout ${e}`;
                 };
             })();
             t2.hash = "5256acc8a89667f2e629c973029c8f67";
-            var t6 = n(96615),
-                t4 = n(75367);
-            let t3 = (function () {
+            var t4 = n(30721),
+                t6 = n(30459);
+            let t7 = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -30227,7 +30250,7 @@ git checkout ${e}`;
                     },
                 };
             })();
-            t3.hash = "8500c41903f52b72cdb6ca44ecb913ec";
+            t7.hash = "8500c41903f52b72cdb6ca44ecb913ec";
             let t5 = (function () {
                 var e = {
                         defaultValue: null,
@@ -30633,7 +30656,7 @@ git checkout ${e}`;
                 };
             })();
             t5.hash = "7213d1e34ddacd390d75418f447a0d76";
-            let t7 = (function () {
+            let t3 = (function () {
                 var e = ["blockedBy"],
                     l = {
                         alias: null,
@@ -30786,7 +30809,7 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            t7.hash = "7213d1e34ddacd390d75418f447a0d76";
+            t3.hash = "7213d1e34ddacd390d75418f447a0d76";
             let t8 = (function () {
                 var e = {
                         defaultValue: null,
@@ -31353,23 +31376,23 @@ git checkout ${e}`;
                 };
             })();
             t9.hash = "e7b61df876bd71053686b197a57ceca3";
-            var re = n(84905),
-                rl = n(78168),
-                rn = n(93715),
-                ra = n(42265),
-                rs = n(67307),
-                ri = n(81346),
-                rt = n(52369),
-                rr = n(81584);
+            var re = n(97174),
+                rl = n(2970),
+                rn = n(98994),
+                ra = n(51880),
+                rs = n(65964),
+                ri = n(43617),
+                rt = n(4929),
+                rr = n(95378);
             let ru = {
                 PaginatedRelationshipsListAllView_AvatarArea:
-                    "PaginatedRelationshipsListAllView-module__PaginatedRelationshipsListAllView_AvatarArea--Y5hRT",
+                    "PaginatedRelationshipsListAllView-module__PaginatedRelationshipsListAllView_AvatarArea--R_CQm",
                 PaginatedRelationshipsListAllView_AvatarLink:
-                    "PaginatedRelationshipsListAllView-module__PaginatedRelationshipsListAllView_AvatarLink--WH0Qb",
+                    "PaginatedRelationshipsListAllView-module__PaginatedRelationshipsListAllView_AvatarLink--Rabg5",
                 PaginatedRelationshipsListAllView_EmptyAvatar:
-                    "PaginatedRelationshipsListAllView-module__PaginatedRelationshipsListAllView_EmptyAvatar--jDNMZ",
+                    "PaginatedRelationshipsListAllView-module__PaginatedRelationshipsListAllView_EmptyAvatar--iXqQu",
                 PaginatedRelationshipsListAllView_ControlWrapper:
-                    "PaginatedRelationshipsListAllView-module__PaginatedRelationshipsListAllView_ControlWrapper--hQWRh",
+                    "PaginatedRelationshipsListAllView-module__PaginatedRelationshipsListAllView_ControlWrapper--ytK3g",
             };
             function ro({
                 accessibleTitle: e,
@@ -31438,7 +31461,7 @@ git checkout ${e}`;
                 });
             }
             function rm({ issue: e }) {
-                let l = (0, n6.us)(e.title, e.titleHTML);
+                let l = (0, n4.us)(e.title, e.titleHTML);
                 return (0, F.jsx)(rr.ao, {
                     value: l,
                     href: e.url,
@@ -31478,7 +31501,7 @@ git checkout ${e}`;
                         (0, F.jsx)(
                             ek.A,
                             {
-                                href: (0, n6.Fj)(
+                                href: (0, n4.Fj)(
                                     { owner: e, repo: l },
                                     "assignee",
                                     n.login
@@ -31595,7 +31618,7 @@ git checkout ${e}`;
                         data: s,
                         loadNext: i,
                         isLoadingNext: t,
-                    } = (0, N.usePaginationFragment)(t7, a),
+                    } = (0, N.usePaginationFragment)(t3, a),
                     r = (0, Q.useCallback)(() => i(25), [i]),
                     u = (0, F.jsx)(i1.l, {
                         variant: "info",
@@ -32715,7 +32738,7 @@ git checkout ${e}`;
                 onCompleted: a,
             }) {
                 return (0, N.commitMutation)(e, {
-                    mutation: t3,
+                    mutation: t7,
                     variables: { input: l },
                     onError: (e) => n && n(e),
                     onCompleted: (e) => a && a(e),
@@ -33167,7 +33190,7 @@ git checkout ${e}`;
             rx.hash = "fb9c648571be9539ea2d490c926f1f2c";
             let rN = {
                 DependenciesPicker:
-                    "DependenciesPicker-module__DependenciesPicker--zO9g2",
+                    "DependenciesPicker-module__DependenciesPicker--WryxL",
             };
             function rj({
                 type: e,
@@ -33181,10 +33204,10 @@ git checkout ${e}`;
                 let r = (0, N.useRelayEnvironment)(),
                     [u, o] = (0, Q.useState)("idle"),
                     [d, c] = (0, Q.useState)(null),
-                    { sendAnalyticsEvent: m } = (0, t4.s)(),
+                    { sendAnalyticsEvent: m } = (0, t6.s)(),
                     g = (0, Q.useCallback)(async () => {
                         (o("loading"),
-                            (0, t6.SD)({
+                            (0, t4.SD)({
                                 environment: r,
                                 query: t2,
                                 variables: { id: n },
@@ -33923,13 +33946,13 @@ git checkout ${e}`;
             rP.hash = "5a7187edce3938a43fece98cebbed5eb";
             let rB = {
                     summaryContainer:
-                        "SubIssuesSummary-module__summaryContainer--HQJR0",
+                        "SubIssuesSummary-module__summaryContainer--_jmHd",
                 },
                 rD = {
                     expandTriangleIcon:
-                        "SubIssuesSummaryToken-module__expandTriangleIcon--_zFQW",
+                        "SubIssuesSummaryToken-module__expandTriangleIcon--xSUo8",
                     SubIssuesSummaryToken:
-                        "SubIssuesSummaryToken-module__SubIssuesSummaryToken--qIYQo",
+                        "SubIssuesSummaryToken-module__SubIssuesSummaryToken--JkzLS",
                 };
             function rM({
                 progress: { total: e, completed: l, percentCompleted: n },
@@ -33994,7 +34017,7 @@ git checkout ${e}`;
                         stateReason: n.stateReason,
                     }),
                     r = t("Issue"),
-                    u = (0, n6.us)(n.title, n.titleHTML);
+                    u = (0, n4.us)(n.title, n.titleHTML);
                 return (0, F.jsxs)(H.l.LinkItem, {
                     href: n.url,
                     target: "_blank",
@@ -34034,26 +34057,26 @@ git checkout ${e}`;
             } catch {}
             let rO = {
                 ActionList_Relationship_Overrides:
-                    "RelationshipsSection-module__ActionList_Relationship_Overrides--lsRLl",
+                    "RelationshipsSection-module__ActionList_Relationship_Overrides--P_Q2y",
                 ActionList_GroupHeading:
-                    "RelationshipsSection-module__ActionList_GroupHeading--BdSOR",
+                    "RelationshipsSection-module__ActionList_GroupHeading--WjmKu",
                 DependenciesFeedback_Link:
-                    "RelationshipsSection-module__DependenciesFeedback_Link--YUpQ6",
+                    "RelationshipsSection-module__DependenciesFeedback_Link--Btiz6",
                 DependenciesFeedback_linkText:
-                    "RelationshipsSection-module__DependenciesFeedback_linkText--rsuhJ",
+                    "RelationshipsSection-module__DependenciesFeedback_linkText--b0Yhr",
                 ActionList_Divider:
-                    "RelationshipsSection-module__ActionList_Divider--Sq2ud",
+                    "RelationshipsSection-module__ActionList_Divider--sMKMZ",
                 RelationshipCountLabel:
-                    "RelationshipsSection-module__RelationshipCountLabel--GSbRS",
+                    "RelationshipsSection-module__RelationshipCountLabel--_8UK6",
                 DependencyErrorBanner:
-                    "RelationshipsSection-module__DependencyErrorBanner--BHj5L",
+                    "RelationshipsSection-module__DependencyErrorBanner--AzOUr",
             };
-            var rq = n(39705);
+            var rq = n(34392);
             let rH = {
                 RelationshipsListAllModal_TitleCounter:
-                    "RelationshipsListAllModal-module__RelationshipsListAllModal_TitleCounter--BnybY",
+                    "RelationshipsListAllModal-module__RelationshipsListAllModal_TitleCounter--mHg2F",
                 RelationshipsListAllModal_HovercardWrapper:
-                    "RelationshipsListAllModal-module__RelationshipsListAllModal_HovercardWrapper--cRGNH",
+                    "RelationshipsListAllModal-module__RelationshipsListAllModal_HovercardWrapper--ILfOX",
             };
             function r$({
                 dialogTitle: e,
@@ -34113,9 +34136,9 @@ git checkout ${e}`;
             } catch {}
             let rW = {
                 RelationshipsViewAllButton_LeadingSpacer:
-                    "RelationshipsViewAllButton-module__RelationshipsViewAllButton_LeadingSpacer--LEsiM",
+                    "RelationshipsViewAllButton-module__RelationshipsViewAllButton_LeadingSpacer--c1ZnA",
                 RelationshipsViewAllButton_Label:
-                    "RelationshipsViewAllButton-module__RelationshipsViewAllButton_Label--eTiaY",
+                    "RelationshipsViewAllButton-module__RelationshipsViewAllButton_Label--RLzv2",
             };
             function rQ({ dialogTitle: e, countOpenItems: l, children: n }) {
                 let [a, s] = (0, Q.useState)(!1),
@@ -34735,7 +34758,7 @@ git checkout ${e}`;
                             className: rO.DependenciesFeedback_linkText,
                             children: "Give feedback",
                         }),
-                        (0, F.jsx)(e3.A, {
+                        (0, F.jsx)(e7.A, {
                             variant: e ? "accent" : "success",
                             children: e ? "Staff" : "Beta",
                         }),
@@ -34928,14 +34951,14 @@ git checkout ${e}`;
                 abstractKey: null,
             };
             r1.hash = "a8282d39d09432e901a117d06a51d732";
-            var r2 = n(98013);
-            let r6 = {
+            var r2 = n(40235);
+            let r4 = {
                     SUBSCRIBED:
                         "thread subscription status changed to subscribed",
                     UNSUBSCRIBED:
                         "thread subscription status changed to unsubscribed",
                 },
-                r4 = (function () {
+                r6 = (function () {
                     var e = [
                             {
                                 defaultValue: null,
@@ -35063,14 +35086,14 @@ git checkout ${e}`;
                         },
                     };
                 })();
-            function r3({
+            function r7({
                 environment: e,
                 input: l,
                 onCompleted: n,
                 onError: a,
             }) {
                 return (0, N.commitMutation)(e, {
-                    mutation: r4,
+                    mutation: r6,
                     variables: { input: l },
                     optimisticResponse: {
                         updateSubscription: {
@@ -35090,14 +35113,14 @@ git checkout ${e}`;
                     onError: (e) => a && a(e),
                 });
             }
-            r4.hash = "27627c886a77b2b26e6d72dcc5d7bf40";
-            var r5 = n(65607),
-                r7 = n(19797);
+            r6.hash = "27627c886a77b2b26e6d72dcc5d7bf40";
+            var r5 = n(87826),
+                r3 = n(19797);
             let r8 = {
                     radioGroup:
-                        "NotificationSettingsDialog-module__radioGroup--P5Re2",
+                        "NotificationSettingsDialog-module__radioGroup--PySak",
                     checkboxGroup:
-                        "NotificationSettingsDialog-module__checkboxGroup--E1WEW",
+                        "NotificationSettingsDialog-module__checkboxGroup--J3Kdr",
                 },
                 r9 = ({
                     onClose: e,
@@ -35143,7 +35166,7 @@ git checkout ${e}`;
                                     if (h) return void k(!0);
                                     (y(!1),
                                         m(!0),
-                                        r3({
+                                        r7({
                                             environment: b,
                                             input: {
                                                 subscribableId: i,
@@ -35280,9 +35303,9 @@ git checkout ${e}`;
                                                 className: (0, eb.$)(
                                                     r8.checkboxGroup
                                                 ),
-                                                children: (0, F.jsxs)(r7.A, {
+                                                children: (0, F.jsxs)(r3.A, {
                                                     children: [
-                                                        (0, F.jsx)(r7.A.Label, {
+                                                        (0, F.jsx)(r3.A.Label, {
                                                             visuallyHidden: !0,
                                                             children:
                                                                 ay.k
@@ -35407,9 +35430,9 @@ git checkout ${e}`;
                     (r9.displayName = "NotificationSettingsDialog");
             } catch {}
             let ue = {
-                container: "SubscriptionSection-module__container--zVUWs",
-                button: "SubscriptionSection-module__button--WSUPv",
-                header: "SubscriptionSection-module__header--wa_Pf",
+                container: "SubscriptionSection-module__container--uhQPW",
+                button: "SubscriptionSection-module__button--pP4tz",
+                header: "SubscriptionSection-module__header--Q93Cn",
             };
             function ul({ issue: e, viewer: l }) {
                 let { threadSubscriptionChannel: n, id: a } = (0,
@@ -35468,7 +35491,7 @@ git checkout ${e}`;
                 }, [p, o]);
                 let h = (0, Q.useCallback)(() => {
                     let l = !p;
-                    r3({
+                    r7({
                         environment: i,
                         input: {
                             subscribableId: e,
@@ -35482,8 +35505,8 @@ git checkout ${e}`;
                 }, [i, e, p, o]);
                 (0, r2.x)(n, (e) => {
                     e?.reason &&
-                        (e.reason !== r6.SUBSCRIBED || p
-                            ? e.reason === r6.UNSUBSCRIBED && p && b()
+                        (e.reason !== r4.SUBSCRIBED || p
+                            ? e.reason === r4.UNSUBSCRIBED && p && b()
                             : b());
                 });
                 let f = (0, Q.useRef)(null),
@@ -35963,7 +35986,7 @@ git checkout ${e}`;
                 };
             })();
             uu.hash = "2fa017a8b26ffc47e692978b43841a97";
-            var uo = n(8341);
+            var uo = n(82899);
             let ud = (function () {
                 var e = {
                         defaultValue: null,
@@ -36388,8 +36411,8 @@ git checkout ${e}`;
                 };
             })();
             um.hash = "353cc6edd6233ed44d3a6fc8019e346d";
-            var ug = n(22353),
-                uy = n(2922);
+            var ug = n(38102),
+                uy = n(16567);
             function up({
                 discussionCategories: e,
                 onSelect: l,
@@ -36565,11 +36588,11 @@ git checkout ${e}`;
             uk.hash = "9c0881a204d862d4b0167b6ded699944";
             let uF = {
                     firstLoader:
-                        "ConvertToDiscussionDialog-module__firstLoader--H8K_f",
+                        "ConvertToDiscussionDialog-module__firstLoader--czbUo",
                     container:
-                        "ConvertToDiscussionDialog-module__container--KvHiS",
+                        "ConvertToDiscussionDialog-module__container--IIC2N",
                     commonLoader:
-                        "ConvertToDiscussionDialog-module__commonLoader--IqUqi",
+                        "ConvertToDiscussionDialog-module__commonLoader--GFRDR",
                 },
                 ub = (e) => {
                     let l = (0, N.useLazyLoadQuery)(ud, {
@@ -36871,9 +36894,9 @@ git checkout ${e}`;
             try {
                 uv.displayName || (uv.displayName = "Result");
             } catch {}
-            var uL = n(3213),
-                uT = n(90189),
-                uC = n(26807);
+            var uL = n(52927),
+                uT = n(2271),
+                uC = n(96459);
             let ux = ({
                 title: e,
                 body: l,
@@ -36887,8 +36910,8 @@ git checkout ${e}`;
                 let u = (0, uC.Z)(),
                     o = (0, N.useFragment)(st.Qq, r),
                     d = (0, N.useFragment)(st.sC, o),
-                    c = (0, N.useFragment)(s7.PT, r),
-                    m = (0, N.useFragment)(s7.Dd, c),
+                    c = (0, N.useFragment)(s3.PT, r),
+                    m = (0, N.useFragment)(s3.Dd, c),
                     g = (0, N.useFragment)(sr.Pv, r),
                     y = (0, N.useFragment)(sr.Wj, g),
                     p = (0, N.useFragment)(su.Bk, r),
@@ -37200,9 +37223,9 @@ git checkout ${e}`;
             uN.hash = "34e21dfc29143cca408e732be35ca356";
             let uj = {
                     RadioGroup:
-                        "IssueConversationLock-module__RadioGroup--iaYYM",
+                        "IssueConversationLock-module__RadioGroup--ECuD5",
                     dialogContent:
-                        "IssueConversationLock-module__dialogContent--C_Cpd",
+                        "IssueConversationLock-module__dialogContent--foWXK",
                 },
                 u_ = (e) => {
                     let l = (0, N.useRelayEnvironment)(),
@@ -37471,7 +37494,7 @@ git checkout ${e}`;
             uP.hash = "03043bd9975becdb0e86cee81f237bb7";
             let uB = {
                     confirmationContent:
-                        "IssueDeletionConfirmationDialog-module__confirmationContent--dImC0",
+                        "IssueDeletionConfirmationDialog-module__confirmationContent--iOcR3",
                 },
                 uD = ({
                     issueId: e,
@@ -37678,9 +37701,9 @@ git checkout ${e}`;
             uM.hash = "a43fa3afdf97ee18c302ed5a02198d56";
             let uV = {
                     transferWarningFlash:
-                        "IssueTransferDialog-module__transferWarningFlash--gXTMV",
+                        "IssueTransferDialog-module__transferWarningFlash--z3tha",
                     noResultsContainer:
-                        "IssueTransferDialog-module__noResultsContainer--zRwIj",
+                        "IssueTransferDialog-module__noResultsContainer--_HI9A",
                 },
                 uU = ({ owner: e, ...l }) => {
                     let n = (0, N.useRelayEnvironment)(),
@@ -37865,11 +37888,11 @@ git checkout ${e}`;
                     (uO.displayName = "IssueTransferDialogInternal");
             } catch {}
             let u$ = {
-                DisablePin: "OptionsSection-module__DisablePin--TM5vc",
+                DisablePin: "OptionsSection-module__DisablePin--I7DX3",
                 ActionListOverrides:
-                    "OptionsSection-module__ActionListOverrides--M6klF",
+                    "OptionsSection-module__ActionListOverrides--DkWge",
                 fullWidthTooltip:
-                    "OptionsSection-module__fullWidthTooltip--ycrpQ",
+                    "OptionsSection-module__fullWidthTooltip--ppBaf",
             };
             function uz({
                 issue: e,
@@ -38128,8 +38151,8 @@ git checkout ${e}`;
                 optionConfig: n,
                 viewer: a,
             }) {
-                let s = (0, N.useFragment)(s4, e),
-                    i = (0, N.useFragment)(s6, l),
+                let s = (0, N.useFragment)(s6, e),
+                    i = (0, N.useFragment)(s4, l),
                     t = (0, _.G7)("issues_sticky_sidebar"),
                     r = (0, Q.useMemo)(
                         () =>
@@ -38152,14 +38175,14 @@ git checkout ${e}`;
                                             n.singleKeyShortcutsEnabled || !1,
                                         insideSidePanel: n.insideSidePanel,
                                     }),
-                                    (0, F.jsx)(s7.S7, {
+                                    (0, F.jsx)(s3.S7, {
                                         issue: s,
                                         singleKeyShortcutsEnabled:
                                             n.singleKeyShortcutsEnabled || !1,
                                         onIssueUpdate: n.onIssueUpdate,
                                         insideSidePanel: n.insideSidePanel,
                                     }),
-                                    (0, F.jsx)(s3.E, {
+                                    (0, F.jsx)(s7.E, {
                                         issue: s,
                                         singleKeyShortcutsEnabled:
                                             n.singleKeyShortcutsEnabled || !1,
@@ -38214,7 +38237,7 @@ git checkout ${e}`;
             try {
                 uW.displayName || (uW.displayName = "IssueSidebar");
             } catch {}
-            var uQ = n(32647);
+            var uQ = n(88657);
             function uG() {
                 return (0, F.jsxs)(uQ.E, {
                     children: [
@@ -38250,29 +38273,29 @@ git checkout ${e}`;
                 uG.displayName ||
                     (uG.displayName = "IssueTimelineErrorFallback");
             } catch {}
-            var uY = n(81657);
+            var uY = n(2593);
             let uX = {
                 issueViewerContainer:
-                    "IssueViewer-module__issueViewerContainer--flht4",
+                    "IssueViewer-module__issueViewerContainer--C18gM",
                 issueViewerMetadataPane:
-                    "IssueViewer-module__issueViewerMetadataPane--Q1n1b",
-                metadataHeader: "IssueViewer-module__metadataHeader--ZtOKL",
+                    "IssueViewer-module__issueViewerMetadataPane--i01ta",
+                metadataHeader: "IssueViewer-module__metadataHeader--OGi4i",
                 largeScreenMetadataHeader:
-                    "IssueViewer-module__largeScreenMetadataHeader--YW31U",
+                    "IssueViewer-module__largeScreenMetadataHeader--xPLHt",
                 crawlerPagination:
-                    "IssueViewer-module__crawlerPagination--s0M8v",
-                mainContainer: "IssueViewer-module__mainContainer--xvqRF",
+                    "IssueViewer-module__crawlerPagination--sBqD_",
+                mainContainer: "IssueViewer-module__mainContainer--PhquW",
                 contentAndSidebarWrapper:
-                    "IssueViewer-module__contentAndSidebarWrapper--If3X6",
-                contentArea: "IssueViewer-module__contentArea--mHr61",
+                    "IssueViewer-module__contentAndSidebarWrapper--KA1nM",
+                contentArea: "IssueViewer-module__contentArea--IpMnd",
                 subIssuesContainer:
-                    "IssueViewer-module__subIssuesContainer--hE2cc",
+                    "IssueViewer-module__subIssuesContainer--IiVhy",
                 commentsContainer:
-                    "IssueViewer-module__commentsContainer--BOa75",
-                metadataSidebar: "IssueViewer-module__metadataSidebar--Pw9h0",
+                    "IssueViewer-module__commentsContainer--H8wxg",
+                metadataSidebar: "IssueViewer-module__metadataSidebar--QdJ2b",
             };
-            var uJ = n(76487),
-                uZ = n(20551);
+            var uJ = n(66827),
+                uZ = n(6403);
             let u0 = {
                 argumentDefinitions: [
                     {
@@ -38344,21 +38367,21 @@ git checkout ${e}`;
             };
             u1.hash = "221066fe0c64c313f75897f3e96bb136";
             let u2 = uZ.A;
-            var u6 = n(58087),
-                u4 = n(10871),
-                u3 = n(65741);
+            var u4 = n(96747),
+                u6 = n(10871),
+                u7 = n(8521);
             let u5 = {
                     signedOutBanner:
-                        "SignedOutBanner-module__signedOutBanner--ycf6Y",
+                        "SignedOutBanner-module__signedOutBanner--ltCMn",
                 },
-                u7 = () =>
+                u3 = () =>
                     (0, F.jsxs)(e$.A, {
                         variant: "warning",
                         className: u5.signedOutBanner,
                         children: [
-                            (0, F.jsx)(u4.z, {
+                            (0, F.jsx)(u6.z, {
                                 variant: "primary",
-                                href: (0, u3.H7)(ey.fV.href),
+                                href: (0, u7.H7)(ey.fV.href),
                                 "data-jump-to-bottom-target": !0,
                                 id: "signed-out-banner-sign-up",
                                 children: aG.l.signUp,
@@ -38377,13 +38400,13 @@ git checkout ${e}`;
                                 ],
                             }),
                             (0, F.jsx)(ek.A, {
-                                href: (0, u3.Q_)(ey.fV.href),
+                                href: (0, u7.Q_)(ey.fV.href),
                                 children: aG.l.signIn,
                             }),
                         ],
                     });
             try {
-                u7.displayName || (u7.displayName = "SignedOutBanner");
+                u3.displayName || (u3.displayName = "SignedOutBanner");
             } catch {}
             let u8 = (function () {
                 var e = {
@@ -38520,7 +38543,7 @@ git checkout ${e}`;
                 closingViaCommitMessageUrl:
                     "https://docs.github.com/articles/closing-issues-via-commit-messages",
             };
-            var ol = n(93597);
+            var ol = n(98130);
             async function on() {
                 return Promise.all(
                     Array.from(
@@ -40959,7 +40982,7 @@ git checkout ${e}`;
                         ],
                     },
                     params: {
-                        id: "87a995373e603f1bc0cc5debcbed7135",
+                        id: "a91d92e131749d8707f2257f95569b85",
                         metadata: {},
                         name: "IssueViewerSubscriptionMetadataSubscription",
                         operationKind: "subscription",
@@ -43300,7 +43323,7 @@ git checkout ${e}`;
                 or.displayName || (or.displayName = "CrawlerPagination");
             } catch {}
             let ou = {
-                    Flash: "TimelineTransferringFlash-module__Flash--Ppxqn",
+                    Flash: "TimelineTransferringFlash-module__Flash--W75Lj",
                 },
                 oo = () =>
                     (0, F.jsx)(e$.A, {
@@ -54553,9 +54576,9 @@ git checkout ${e}`;
             })();
             oj.hash = "ccd3b10437b5d35f704f99ca1d9a6735";
             let o_ = {
-                    CommentBox: "IssueCommentEditor-module__CommentBox--JfMp5",
+                    CommentBox: "IssueCommentEditor-module__CommentBox--fbuga",
                     EditorMarginContainer:
-                        "IssueCommentEditor-module__EditorMarginContainer--qYWwo",
+                        "IssueCommentEditor-module__EditorMarginContainer--vSuW7",
                 },
                 oE = (function () {
                     var e = {
@@ -55226,13 +55249,13 @@ git checkout ${e}`;
                 };
             })();
             oB.hash = "03ac2faeeddfe3c11f404095d6800e93";
-            var oD = n(29935),
-                oM = n(2427),
-                oV = n(94169);
+            var oD = n(38829),
+                oM = n(26156),
+                oV = n(71073);
             function oU({ id: e }) {
                 let l = (0, oD.f)({ id: e });
                 return l
-                    ? (0, F.jsx)(e6._, {
+                    ? (0, F.jsx)(e4._, {
                           editInformation: l,
                           includeSeparator: !0,
                       })
@@ -56150,21 +56173,21 @@ git checkout ${e}`;
                 abstractKey: "__isReactable",
             };
             oJ.hash = "1f31ee0a210f3cb1c233957b963326e0";
-            var oZ = n(12617),
-                o0 = n(8241),
-                o1 = n(13272);
+            var oZ = n(19805),
+                o0 = n(80293),
+                o1 = n(12137);
             let o2 = {
                 IssueCommentLayout:
-                    "IssueCommentViewer-module__IssueCommentLayout--PA204",
+                    "IssueCommentViewer-module__IssueCommentLayout--dw0jX",
                 IssueCommentContent:
-                    "IssueCommentViewer-module__IssueCommentContent--kTuSn",
+                    "IssueCommentViewer-module__IssueCommentContent--NdGAG",
                 IssueCommentBody:
-                    "IssueCommentViewer-module__IssueCommentBody--yozBB",
+                    "IssueCommentViewer-module__IssueCommentBody--xvkt3",
             };
-            function o6({ comment: e, ...l }) {
+            function o4({ comment: e, ...l }) {
                 let n = (0, eq.useFragment)(oQ, e);
                 return null != n.author
-                    ? (0, F.jsx)(o3, {
+                    ? (0, F.jsx)(o7, {
                           comment: e,
                           ...l,
                           commentAuthorLogin: n.author.login,
@@ -56175,17 +56198,17 @@ git checkout ${e}`;
                       })
                     : (0, F.jsx)(Q.Suspense, {
                           fallback: (0, F.jsx)(o1.i, {}),
-                          children: (0, F.jsx)(o4, { comment: e, ...l }),
+                          children: (0, F.jsx)(o6, { comment: e, ...l }),
                       });
             }
-            function o4(e) {
+            function o6(e) {
                 let l = (0, N.useLazyLoadQuery)(
                     oX,
                     { ghostLogin: eE.t.ghostUser.login },
                     { fetchPolicy: "store-or-network" }
                 );
                 if (null == l.user) throw Error("Ghost user not found");
-                return (0, F.jsx)(o3, {
+                return (0, F.jsx)(o7, {
                     ...e,
                     commentAuthorLogin: l.user.login,
                     avatarUrl: l.user.avatarUrl,
@@ -56193,7 +56216,7 @@ git checkout ${e}`;
                     createdViaEmail: e.createdViaEmail,
                 });
             }
-            function o3({
+            function o7({
                 anchorBaseUrl: e,
                 comment: l,
                 setIsEditing: n,
@@ -56308,21 +56331,21 @@ git checkout ${e}`;
                 });
             }
             try {
-                o6.displayName || (o6.displayName = "IssueCommentViewer");
+                o4.displayName || (o4.displayName = "IssueCommentViewer");
             } catch {}
             try {
-                o4.displayName ||
-                    (o4.displayName =
+                o6.displayName ||
+                    (o6.displayName =
                         "IssueCommentViewerInternalWithoutAuthor");
             } catch {}
             try {
-                o3.displayName ||
-                    (o3.displayName = "IssueCommentViewerInternal");
+                o7.displayName ||
+                    (o7.displayName = "IssueCommentViewerInternal");
             } catch {}
             try {
                 o5.displayName || (o5.displayName = "CommentMarkdownViewer");
             } catch {}
-            function o7({
+            function o3({
                 anchorBaseUrl: e,
                 comment: l,
                 navigate: n,
@@ -56377,7 +56400,7 @@ git checkout ${e}`;
                                   initialValue: S,
                                   onChange: L,
                               })
-                            : (0, F.jsx)(o6, {
+                            : (0, F.jsx)(o4, {
                                   anchorBaseUrl: e,
                                   comment: K,
                                   reactable: K,
@@ -56395,7 +56418,7 @@ git checkout ${e}`;
                 });
             }
             try {
-                o7.displayName || (o7.displayName = "IssueComment");
+                o3.displayName || (o3.displayName = "IssueComment");
             } catch {}
             let o8 = {
                 argumentDefinitions: [],
@@ -56466,13 +56489,13 @@ git checkout ${e}`;
             let o9 = (e, l) => `${e}#event-${l}`,
                 de = {
                     projectNameWrapper:
-                        "AddedToProjectV2Event-module__projectNameWrapper--I5IVR",
+                        "AddedToProjectV2Event-module__projectNameWrapper--nTvru",
                     commaSeparator:
-                        "AddedToProjectV2Event-module__commaSeparator--N_1M1",
+                        "AddedToProjectV2Event-module__commaSeparator--HH4BL",
                     andSeparator:
-                        "AddedToProjectV2Event-module__andSeparator--whCTg",
+                        "AddedToProjectV2Event-module__andSeparator--zRcP3",
                 },
-                dl = { projectLink: "ProjectV2-module__projectLink--q5lqm" };
+                dl = { projectLink: "ProjectV2-module__projectLink--jNx3U" };
             function dn({ url: e, title: l }) {
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
@@ -56550,9 +56573,9 @@ git checkout ${e}`;
             };
             da.hash = "93b212ec62b6f7cb3f7acfc9102277db";
             let ds = {
-                    Text: "RemovedFromProjectV2Event-module__Text--oTWiO",
-                    Text_1: "RemovedFromProjectV2Event-module__Text_1--d4VNR",
-                    Text_2: "RemovedFromProjectV2Event-module__Text_2--IzNpa",
+                    Text: "RemovedFromProjectV2Event-module__Text--iKzZo",
+                    Text_1: "RemovedFromProjectV2Event-module__Text_1--v82mO",
+                    Text_2: "RemovedFromProjectV2Event-module__Text_2--ISVRT",
                 },
                 di = {
                     argumentDefinitions: [],
@@ -56570,26 +56593,26 @@ git checkout ${e}`;
                     abstractKey: "__isActor",
                 };
             di.hash = "2dc15c7f313b6ec0395f08c1257a4d96";
-            var dt = n(46847),
+            var dt = n(42931),
                 dr = n(24021);
             let du = {
                 timelineBodyRowContainer:
-                    "row-module__timelineBodyRowContainer--ml7YX",
-                timelineBodyContent: "row-module__timelineBodyContent--yAgzD",
+                    "row-module__timelineBodyRowContainer--O67ft",
+                timelineBodyContent: "row-module__timelineBodyContent--eiX2y",
                 timelineBodyTrailingContent:
-                    "row-module__timelineBodyTrailingContent--KfoTB",
-                timelineAgoLink: "row-module__timelineAgoLink--gny6d",
-                eventActorContainer: "row-module__eventActorContainer--c6I2H",
-                eventActorLink: "row-module__eventActorLink--h1DeD",
-                alignSelfCenter: "row-module__alignSelfCenter--BxEL2",
-                body: "row-module__body--n5xf2",
-                fillRow: "row-module__fillRow--ENEl2",
+                    "row-module__timelineBodyTrailingContent--ma8On",
+                timelineAgoLink: "row-module__timelineAgoLink--qFdse",
+                eventActorContainer: "row-module__eventActorContainer--_Dhnk",
+                eventActorLink: "row-module__eventActorLink--tltLA",
+                alignSelfCenter: "row-module__alignSelfCenter--KezXO",
+                body: "row-module__body--T5IWm",
+                fillRow: "row-module__fillRow--AP4Pe",
             };
             function dd({ timestamp: e, linkUrl: l }) {
                 return (0, F.jsx)(ek.A, {
                     href: l,
                     className: du.timelineAgoLink,
-                    children: (0, F.jsxs)(e4.A, {
+                    children: (0, F.jsxs)(e6.A, {
                         date: e,
                         children: [
                             "on ",
@@ -56658,8 +56681,8 @@ git checkout ${e}`;
                 abstractKey: "__isActor",
             };
             dc.hash = "de12bf60d1c717928803f50b1bf9c2a5";
-            var dm = n(91560),
-                dg = n(50879);
+            var dm = n(12360),
+                dg = n(20403);
             function dy() {
                 return (0, F.jsxs)("span", { children: [oe.ghost.login, " "] });
             }
@@ -56742,8 +56765,8 @@ git checkout ${e}`;
                 dF.displayName || (dF.displayName = "EventActorBase");
             } catch {}
             let db = {
-                    Timeline_Item: "TimelineRow-module__Timeline_Item--bJ6Dr",
-                    Octicon: "TimelineRow-module__Octicon--Pp07b",
+                    Timeline_Item: "TimelineRow-module__Timeline_Item--JB78Z",
+                    Octicon: "TimelineRow-module__Octicon--nrVo5",
                 },
                 dh = ({ actor: e, children: l, ...n }) => {
                     let a = (0, dr.H)(l, {
@@ -57155,12 +57178,12 @@ git checkout ${e}`;
             dE.hash = "a8f2fa7634a679969efc39b7b8f2d616";
             let dw = {
                     assigneeEventContainer:
-                        "assignees-module__assigneeEventContainer--q_r2n",
+                        "assignees-module__assigneeEventContainer--v2Y7W",
                     assigneeMarginRight:
-                        "assignees-module__assigneeMarginRight--ymfFJ",
+                        "assignees-module__assigneeMarginRight--OlmkA",
                     assigneeMarginHorizontal:
-                        "assignees-module__assigneeMarginHorizontal--q_TyN",
-                    assigneeLink: "assignees-module__assigneeLink--cKOZG",
+                        "assignees-module__assigneeMarginHorizontal--TqdMb",
+                    assigneeLink: "assignees-module__assigneeLink--wLhcw",
                 },
                 dA = (function () {
                     var e = {
@@ -57614,9 +57637,9 @@ git checkout ${e}`;
             d$.hash = "9b71c7c5f106935993845ab688a12ef9";
             let dW = {
                     issueDependenciesList:
-                        "DependencyEvent-module__issueDependenciesList--R3UBc",
+                        "DependencyEvent-module__issueDependenciesList--jkHQC",
                     issueDependencyItem:
-                        "DependencyEvent-module__issueDependencyItem--zCQcL",
+                        "DependencyEvent-module__issueDependencyItem--YsJF8",
                 },
                 dQ = (function () {
                     var e = {
@@ -57768,11 +57791,11 @@ git checkout ${e}`;
                 })();
             dQ.hash = "863d75bbc29beaf8626fd20f4653cc17";
             let dG = {
-                issueLinkAnchor: "IssueLink-module__issueLinkAnchor--hut8f",
+                issueLinkAnchor: "IssueLink-module__issueLinkAnchor--fsPzL",
                 issueTitleContainer:
-                    "IssueLink-module__issueTitleContainer--OgMee",
-                repoIssueNumber: "IssueLink-module__repoIssueNumber--lmWrb",
-                issueContainer: "IssueLink-module__issueContainer--kTBb8",
+                    "IssueLink-module__issueTitleContainer--jwBZJ",
+                repoIssueNumber: "IssueLink-module__repoIssueNumber--c52hS",
+                issueContainer: "IssueLink-module__issueContainer--cuJCD",
             };
             function dY({ data: e, targetRepositoryId: l, inline: n = !1 }) {
                 let a = (0, N.useFragment)(dQ, e),
@@ -58155,7 +58178,7 @@ git checkout ${e}`;
                 type: "BlockingAddedEvent",
                 abstractKey: null,
             };
-            function d6({
+            function d4({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -58209,7 +58232,7 @@ git checkout ${e}`;
                                 className: dW.issueDependenciesList,
                                 children: g.map((e, l) =>
                                     (0, F.jsx)(
-                                        d4,
+                                        d6,
                                         { event: e, targetRepositoryId: t },
                                         `${d}_${l}`
                                     )
@@ -58219,7 +58242,7 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function d4({ event: e, targetRepositoryId: l }) {
+            function d6({ event: e, targetRepositoryId: l }) {
                 let { blockedIssue: n } = (0, eq.useFragment)(d2, e);
                 return n
                     ? (0, F.jsx)("li", {
@@ -58233,12 +58256,12 @@ git checkout ${e}`;
             }
             d2.hash = "c786519e55ce29bd725c36d300448d25";
             try {
-                d6.displayName || (d6.displayName = "BlockingAddedEvent");
+                d4.displayName || (d4.displayName = "BlockingAddedEvent");
             } catch {}
             try {
-                d4.displayName || (d4.displayName = "BlockingAddedEventItem");
+                d6.displayName || (d6.displayName = "BlockingAddedEventItem");
             } catch {}
-            let d3 = {
+            let d7 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -58308,7 +58331,7 @@ git checkout ${e}`;
                     createdAt: u,
                     blockedIssue: o,
                     databaseId: d,
-                } = (0, eq.useFragment)(d3, e);
+                } = (0, eq.useFragment)(d7, e);
                 if (!o) return null;
                 let c = String(d) === a,
                     m = i?.BlockingRemovedEvent || [],
@@ -58348,7 +58371,7 @@ git checkout ${e}`;
                                 className: dW.issueDependenciesList,
                                 children: g.map((e, l) =>
                                     (0, F.jsx)(
-                                        d7,
+                                        d3,
                                         { event: e, targetRepositoryId: t },
                                         `${d}_${l}`
                                     )
@@ -58358,8 +58381,8 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function d7({ event: e, targetRepositoryId: l }) {
-                let { blockedIssue: n } = (0, eq.useFragment)(d3, e);
+            function d3({ event: e, targetRepositoryId: l }) {
+                let { blockedIssue: n } = (0, eq.useFragment)(d7, e);
                 return n
                     ? (0, F.jsx)("li", {
                           className: dW.issueDependencyItem,
@@ -58370,12 +58393,12 @@ git checkout ${e}`;
                       })
                     : null;
             }
-            d3.hash = "8fc66f0b4dcd2b845d5859474da4ab49";
+            d7.hash = "8fc66f0b4dcd2b845d5859474da4ab49";
             try {
                 d5.displayName || (d5.displayName = "BlockingRemovedEvent");
             } catch {}
             try {
-                d7.displayName || (d7.displayName = "BlockingRemovedEventItem");
+                d3.displayName || (d3.displayName = "BlockingRemovedEventItem");
             } catch {}
             let d8 = (function () {
                 var e = {
@@ -58559,8 +58582,8 @@ git checkout ${e}`;
             })();
             d8.hash = "c6e77b32911689a07a3fe151bbccf48d";
             let d9 = {
-                stateReasonLink: "ClosedEvent-module__stateReasonLink--zoJ1G",
-                closerLink: "ClosedEvent-module__closerLink--N3mNB",
+                stateReasonLink: "ClosedEvent-module__stateReasonLink--YEqx6",
+                closerLink: "ClosedEvent-module__closerLink--GQXSl",
             };
             function ce({
                 queryRef: e,
@@ -58752,7 +58775,7 @@ git checkout ${e}`;
             cl.hash = "60765ec10a7e0eb7ec5c8d4eca344b84";
             let cn = {
                 deletedCommentAuthorLink:
-                    "CommentDeletedEvent-module__deletedCommentAuthorLink--FqckU",
+                    "CommentDeletedEvent-module__deletedCommentAuthorLink--AXfHQ",
             };
             function ca({
                 queryRef: e,
@@ -58932,7 +58955,7 @@ git checkout ${e}`;
             cs.hash = "6dbcebd6baa492ec1cc25caab2e70a45";
             let ci = {
                 linkedPullRequestLink:
-                    "ConnectedEvent-module__linkedPullRequestLink--_2f4B",
+                    "ConnectedEvent-module__linkedPullRequestLink--Ir1pv",
             };
             function ct({
                 queryRef: e,
@@ -59136,7 +59159,7 @@ git checkout ${e}`;
             co.hash = "57a32d9c56f6a2acde82f09bc62414cb";
             let cd = {
                 discussionLink:
-                    "ConvertedToDiscussionEvent-module__discussionLink--POOQp",
+                    "ConvertedToDiscussionEvent-module__discussionLink--wYj_L",
             };
             function cc({
                 queryRef: e,
@@ -59288,7 +59311,7 @@ git checkout ${e}`;
             cm.hash = "ec7feca796fa98d8893f957d5a9fb2e3";
             let cg = {
                 crossReferencesList:
-                    "CrossReferencedEvent-module__crossReferencesList--xgSdj",
+                    "CrossReferencedEvent-module__crossReferencesList--bL1RG",
             };
             function cy({
                 queryRef: e,
@@ -59459,7 +59482,7 @@ git checkout ${e}`;
             ck.hash = "6ddaa1761b9fc007b083bf94d27ea749";
             let cF = {
                     milestoneLink:
-                        "DemilestonedEvent-module__milestoneLink--CgW42",
+                        "DemilestonedEvent-module__milestoneLink--JUC3Q",
                 },
                 cb = {
                     argumentDefinitions: [],
@@ -59817,7 +59840,7 @@ git checkout ${e}`;
             cL.hash = "aea0d6e09caea75d847e9bd6ecfc11ce";
             let cT = {
                 disconnectedPullRequestLink:
-                    "DisconnectedEvent-module__disconnectedPullRequestLink--oA9Wq",
+                    "DisconnectedEvent-module__disconnectedPullRequestLink--yJ0aO",
             };
             function cC({
                 queryRef: e,
@@ -59951,7 +59974,7 @@ git checkout ${e}`;
             cx.hash = "c883158dedd491fa3112db2b1a21dc2c";
             let cR = {
                 issueTypeTokenWrapper:
-                    "IssueTypeEvent-module__issueTypeTokenWrapper--_qtQ7",
+                    "IssueTypeEvent-module__issueTypeTokenWrapper--qTWB6",
             };
             function cN({
                 queryRef: e,
@@ -60352,14 +60375,14 @@ git checkout ${e}`;
                 abstractKey: null,
             };
             cP.hash = "a842ed2c9f0767be6cd6e10b360be097";
-            var cB = n(59434);
+            var cB = n(2892);
             let cD = {
                     labelDescriptionTooltip:
-                        "Label-module__labelDescriptionTooltip--Tv8up",
+                        "Label-module__labelDescriptionTooltip--DmL8l",
                 },
                 cM = {
-                    labelContainer: "labels-module__labelContainer--F_y_s",
-                    labelLink: "labels-module__labelLink--H8Gx4",
+                    labelContainer: "labels-module__labelContainer--gEfYq",
+                    labelLink: "labels-module__labelLink--rVvrD",
                 };
             function cV({ queryRef: e, timelineEventBaseUrl: l }) {
                 let {
@@ -60645,9 +60668,9 @@ git checkout ${e}`;
                     (cQ.displayName = "InternalAddedLabelRendering");
             } catch {}
             let cG = {
-                timelineElement: "LayoutHelpers-module__timelineElement--tFGhF",
+                timelineElement: "LayoutHelpers-module__timelineElement--IsjVR",
                 nonLeadingElement:
-                    "LayoutHelpers-module__nonLeadingElement--wM9lU",
+                    "LayoutHelpers-module__nonLeadingElement--XSKiQ",
             };
             function cY(e, l, n) {
                 return (0, F.jsxs)(
@@ -61097,7 +61120,7 @@ git checkout ${e}`;
                 type: "MentionedEvent",
                 abstractKey: null,
             };
-            function c6({
+            function c4({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -61125,9 +61148,9 @@ git checkout ${e}`;
             }
             c2.hash = "2c24d4c180d9855e7f633b2541aa9d07";
             try {
-                c6.displayName || (c6.displayName = "MentionedEvent");
+                c4.displayName || (c4.displayName = "MentionedEvent");
             } catch {}
-            let c4 = (function () {
+            let c6 = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -61205,12 +61228,12 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            c4.hash = "ed8538609cce9b5c550e2d19e1adfb12";
-            let c3 = {
+            c6.hash = "ed8538609cce9b5c550e2d19e1adfb12";
+            let c7 = {
                 parentIssuesList:
-                    "ParentIssueAddedEvent-module__parentIssuesList--_rKMa",
+                    "ParentIssueAddedEvent-module__parentIssuesList--mKImF",
                 parentIssueItem:
-                    "ParentIssueAddedEvent-module__parentIssueItem--Fx0mb",
+                    "ParentIssueAddedEvent-module__parentIssueItem--geDWe",
             };
             function c5({
                 queryRef: e,
@@ -61225,7 +61248,7 @@ git checkout ${e}`;
                     createdAt: r,
                     parent: u,
                     databaseId: o,
-                } = (0, eq.useFragment)(c4, e);
+                } = (0, eq.useFragment)(c6, e);
                 if (!u) return null;
                 let d = String(u.databaseId) === a,
                     c =
@@ -61257,10 +61280,10 @@ git checkout ${e}`;
                         }),
                         (0, F.jsx)(dL.Secondary, {
                             children: (0, F.jsx)("ul", {
-                                className: c3.parentIssuesList,
+                                className: c7.parentIssuesList,
                                 children: m.map((e, l) =>
                                     (0, F.jsx)(
-                                        c7,
+                                        c3,
                                         {
                                             event: e,
                                             targetRepositoryId: u.repository.id,
@@ -61273,11 +61296,11 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function c7({ event: e, targetRepositoryId: l }) {
-                let { parent: n } = (0, eq.useFragment)(c4, e);
+            function c3({ event: e, targetRepositoryId: l }) {
+                let { parent: n } = (0, eq.useFragment)(c6, e);
                 return n
                     ? (0, F.jsx)("li", {
-                          className: c3.parentIssueItem,
+                          className: c7.parentIssueItem,
                           children: (0, F.jsx)(dY, {
                               data: n,
                               targetRepositoryId: l,
@@ -61289,7 +61312,7 @@ git checkout ${e}`;
                 c5.displayName || (c5.displayName = "ParentIssueAddedEvent");
             } catch {}
             try {
-                c7.displayName || (c7.displayName = "SubIssueEventItem");
+                c3.displayName || (c3.displayName = "SubIssueEventItem");
             } catch {}
             let c8 = (function () {
                 var e = {
@@ -61372,9 +61395,9 @@ git checkout ${e}`;
             c8.hash = "61299a6b9c018206a776d27cdca04d3b";
             let c9 = {
                 removedParentIssuesList:
-                    "ParentIssueRemovedEvent-module__removedParentIssuesList--DymD_",
+                    "ParentIssueRemovedEvent-module__removedParentIssuesList--r23Sc",
                 removedParentIssueItem:
-                    "ParentIssueRemovedEvent-module__removedParentIssueItem--I1cuJ",
+                    "ParentIssueRemovedEvent-module__removedParentIssueItem--dORNe",
             };
             function me({
                 queryRef: e,
@@ -61600,7 +61623,7 @@ git checkout ${e}`;
             ms.hash = "74055539c00657f2a6fdc0662376e744";
             let mi = {
                 projectWrapper:
-                    "ProjectV2ItemStatusChangedEvent-module__projectWrapper--hBPof",
+                    "ProjectV2ItemStatusChangedEvent-module__projectWrapper--uTer2",
             };
             function mt({ queryRef: e, issueUrl: l, onLinkClick: n }) {
                 let {
@@ -61733,7 +61756,7 @@ git checkout ${e}`;
                 abstractKey: null,
             };
             mr.hash = "0ea02b53f9b2e3cf07a02b3869b9fe85";
-            let mu = { Box: "ReferencedEvent-module__Box--YkqPJ" },
+            let mu = { Box: "ReferencedEvent-module__Box--leWmo" },
                 mo = {
                     argumentDefinitions: [],
                     kind: "Fragment",
@@ -61823,26 +61846,26 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             mo.hash = "89d6ea56d087536089c85b4dc325ea33";
-            var md = n(333);
+            var md = n(26076);
             let mc = {
                     referencedCommitContainer:
-                        "ReferencedEventInner-module__referencedCommitContainer--maRfl",
+                        "ReferencedEventInner-module__referencedCommitContainer--Qobk1",
                     commitHeaderRow:
-                        "ReferencedEventInner-module__commitHeaderRow--UQ7YY",
+                        "ReferencedEventInner-module__commitHeaderRow--xYQIS",
                     commitMetadata:
-                        "ReferencedEventInner-module__commitMetadata--QpCE0",
+                        "ReferencedEventInner-module__commitMetadata--otxxW",
                     commitMessageText:
-                        "ReferencedEventInner-module__commitMessageText--xIO67",
+                        "ReferencedEventInner-module__commitMessageText--sfkN9",
                     commitHashLink:
-                        "ReferencedEventInner-module__commitHashLink--IXpnA",
+                        "ReferencedEventInner-module__commitHashLink--AOTAA",
                     toggleButton:
-                        "ReferencedEventInner-module__toggleButton--UI5gk",
+                        "ReferencedEventInner-module__toggleButton--c9J8l",
                     commitActions:
-                        "ReferencedEventInner-module__commitActions--Nw0ae",
+                        "ReferencedEventInner-module__commitActions--eupA_",
                     repoNameLink:
-                        "ReferencedEventInner-module__repoNameLink--QXLD6",
+                        "ReferencedEventInner-module__repoNameLink--WIPRx",
                     referencedEventVerificationStatusFailure:
-                        "ReferencedEventInner-module__referencedEventVerificationStatusFailure--mPmH_",
+                        "ReferencedEventInner-module__referencedEventVerificationStatusFailure--kwO0x",
                 },
                 mm = (function () {
                     var e = [
@@ -62022,7 +62045,7 @@ git checkout ${e}`;
                     };
                 })();
             mm.hash = "7b9e63906504488a948fdb5b1e76d1d7";
-            var mg = n(87606);
+            var mg = n(44185);
             function my() {
                 return (0, F.jsxs)("span", {
                     className: mc.referencedEventVerificationStatusFailure,
@@ -62683,9 +62706,9 @@ git checkout ${e}`;
             };
             mv.hash = "51c475b1e987f59acbc80c0754983081";
             let mL = {
-                defaultColor: "RenamedTitleEvent-module__defaultColor--HvjsI",
-                noUnderline: "RenamedTitleEvent-module__noUnderline--rSpxK",
-                strikeThrough: "RenamedTitleEvent-module__strikeThrough--l68K9",
+                defaultColor: "RenamedTitleEvent-module__defaultColor--yf7kG",
+                noUnderline: "RenamedTitleEvent-module__noUnderline--em5Gm",
+                strikeThrough: "RenamedTitleEvent-module__strikeThrough--Gjm9V",
             };
             function mT({
                 queryRef: e,
@@ -62895,8 +62918,8 @@ git checkout ${e}`;
             })();
             mR.hash = "6a27c73ef025222e54654739072c2d24";
             let mN = {
-                Box: "SubIssueAddedEvent-module__Box--FNMk0",
-                Box_1: "SubIssueAddedEvent-module__Box_1--PVN5X",
+                Box: "SubIssueAddedEvent-module__Box--N8W4N",
+                Box_1: "SubIssueAddedEvent-module__Box_1--eiyEN",
             };
             function mj({
                 queryRef: e,
@@ -63034,8 +63057,8 @@ git checkout ${e}`;
             })();
             mE.hash = "0fe9d2b98241be788b327b4a8a55ad18";
             let mw = {
-                Box: "SubIssueRemovedEvent-module__Box--bvq7v",
-                Box_1: "SubIssueRemovedEvent-module__Box_1--gW0DM",
+                Box: "SubIssueRemovedEvent-module__Box--jlh0k",
+                Box_1: "SubIssueRemovedEvent-module__Box_1--pk1pA",
             };
             function mA({
                 queryRef: e,
@@ -63184,12 +63207,12 @@ git checkout ${e}`;
             try {
                 mD.displayName || (mD.displayName = "SubscribedEvent");
             } catch {}
-            var mM = n(63867);
+            var mM = n(12004);
             let mV = { timelineDivider: (e) => `timeline-divider-${e}` },
                 mU = {
-                    Box: "TimelineDivider-module__Box--mXVKT",
-                    Box_1: "TimelineDivider-module__Box_1--UKj6b",
-                    Box_2: "TimelineDivider-module__Box_2--WcW6m",
+                    Box: "TimelineDivider-module__Box--rX5hB",
+                    Box_1: "TimelineDivider-module__Box_1--nXo59",
+                    Box_2: "TimelineDivider-module__Box_2--lsm39",
                 },
                 mO = ({ isLoading: e, isHovered: l, id: n }) =>
                     (0, F.jsx)(eO.A, {
@@ -63213,7 +63236,7 @@ git checkout ${e}`;
             try {
                 mO.displayName || (mO.displayName = "TimelineDivider");
             } catch {}
-            let mq = { Box: "TimelineRowBorder-module__Box--StHNM" },
+            let mq = { Box: "TimelineRowBorder-module__Box--wRiZZ" },
                 mH = {
                     display: "flex",
                     flexDirection: "column",
@@ -63351,7 +63374,7 @@ git checkout ${e}`;
                 abstractKey: null,
             };
             mz.hash = "509da787f2e80dcb7a04a4d0b0ce102e";
-            let mW = { Link: "TransferredEvent-module__Link--jJ0M2" };
+            let mW = { Link: "TransferredEvent-module__Link--czJbK" };
             function mQ({
                 queryRef: e,
                 issueUrl: l,
@@ -63739,7 +63762,7 @@ git checkout ${e}`;
             try {
                 m2.displayName || (m2.displayName = "UnsubscribedEvent");
             } catch {}
-            let m6 = {
+            let m4 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -63804,9 +63827,9 @@ git checkout ${e}`;
                 type: "UserBlockedEvent",
                 abstractKey: null,
             };
-            m6.hash = "6b9c2c6b2924af46270fda70b956f73d";
-            let m4 = { Link: "UserBlockedEvent-module__Link--TO5pG" };
-            function m3({
+            m4.hash = "6b9c2c6b2924af46270fda70b956f73d";
+            let m6 = { Link: "UserBlockedEvent-module__Link--erhs1" };
+            function m7({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -63819,7 +63842,7 @@ git checkout ${e}`;
                         blockedUser: r,
                         blockDuration: u,
                         databaseId: o,
-                    } = (0, eq.useFragment)(m6, e),
+                    } = (0, eq.useFragment)(m4, e),
                     d = String(o) === a;
                 return (0, F.jsx)(dL, {
                     highlighted: d,
@@ -63837,7 +63860,7 @@ git checkout ${e}`;
                             (0, F.jsx)(ek.A, {
                                 href: `/${r?.login}`,
                                 inline: !0,
-                                className: m4.Link,
+                                className: m6.Link,
                                 children: r?.login,
                             }),
                         ],
@@ -63845,12 +63868,12 @@ git checkout ${e}`;
                 });
             }
             try {
-                m3.displayName || (m3.displayName = "UserBlockedEvent");
+                m7.displayName || (m7.displayName = "UserBlockedEvent");
             } catch {}
             let m5 = {
                     SubscribedEvent: mD,
                     UnsubscribedEvent: m2,
-                    MentionedEvent: c6,
+                    MentionedEvent: c4,
                     ClosedEvent: ce,
                     ReopenedEvent: mx,
                     RenamedTitleEvent: mT,
@@ -63864,10 +63887,10 @@ git checkout ${e}`;
                     AssignedEvent: dO,
                     BlockedByAddedEvent: dX,
                     BlockedByRemovedEvent: d0,
-                    BlockingAddedEvent: d6,
+                    BlockingAddedEvent: d4,
                     BlockingRemovedEvent: d5,
                     CommentDeletedEvent: ca,
-                    UserBlockedEvent: m3,
+                    UserBlockedEvent: m7,
                     MilestonedEvent: ch,
                     DemilestonedEvent: cS,
                     CrossReferencedEvent: cy,
@@ -63890,7 +63913,7 @@ git checkout ${e}`;
                     IssueTypeRemovedEvent: cw,
                     IssueTypeChangedEvent: c_,
                 },
-                m7 = ({
+                m3 = ({
                     item: { item: e, rollupGroup: l },
                     issueId: n,
                     repositoryId: a,
@@ -63916,7 +63939,7 @@ git checkout ${e}`;
                             last: !1,
                             viewerDidAuthor: e.viewerDidAuthor,
                         }),
-                        (b = (0, F.jsx)(o7, {
+                        (b = (0, F.jsx)(o3, {
                             comment: e,
                             commentSubjectAuthorLogin:
                                 e.issue?.author?.login ?? "",
@@ -64005,7 +64028,7 @@ git checkout ${e}`;
                 m5.displayName || (m5.displayName = "TIMELINE_ITEMS");
             } catch {}
             try {
-                m7.displayName || (m7.displayName = "IssueTimelineItem");
+                m3.displayName || (m3.displayName = "IssueTimelineItem");
             } catch {}
             try {
                 m8.displayName || (m8.displayName = "TimelineItemAvatar");
@@ -64055,12 +64078,12 @@ git checkout ${e}`;
             } catch {}
             let ga = {
                     loadMoreWrapper:
-                        "IssueTimeline-module__loadMoreWrapper--JMR39",
+                        "IssueTimeline-module__loadMoreWrapper--RVb8K",
                 },
                 gs = {
                     directionPickerContainer:
-                        "LoadDirectionPicker-module__directionPickerContainer--vDyxo",
-                    ActionList: "LoadDirectionPicker-module__ActionList--YE3bQ",
+                        "LoadDirectionPicker-module__directionPickerContainer--r5ppb",
+                    ActionList: "LoadDirectionPicker-module__ActionList--KMe4j",
                 },
                 gi = ({
                     loadFromTopFn: e,
@@ -64119,18 +64142,18 @@ git checkout ${e}`;
             } catch {}
             let gt = {
                     buttonChildrenWrapper:
-                        "LoadMore-module__buttonChildrenWrapper--_sKVA",
+                        "LoadMore-module__buttonChildrenWrapper--m9hqd",
                     LoadMoreContainer:
-                        "LoadMore-module__LoadMoreContainer--W_fBO",
+                        "LoadMore-module__LoadMoreContainer--q12Fr",
                     loadMoreContentContainer:
-                        "LoadMore-module__loadMoreContentContainer--mKG1N",
+                        "LoadMore-module__loadMoreContentContainer--itAxg",
                     innerContentWrapper:
-                        "LoadMore-module__innerContentWrapper--ufj74",
-                    centeredContent: "LoadMore-module__centeredContent--MPjjH",
-                    headingWrapper: "LoadMore-module__headingWrapper--P8xu_",
+                        "LoadMore-module__innerContentWrapper--Ykjgf",
+                    centeredContent: "LoadMore-module__centeredContent--fSLdA",
+                    headingWrapper: "LoadMore-module__headingWrapper--VOXFk",
                     remainingItemsHeading:
-                        "LoadMore-module__remainingItemsHeading--ZYWR4",
-                    buttonWrapper: "LoadMore-module__buttonWrapper--sxtNO",
+                        "LoadMore-module__remainingItemsHeading--s1c0Z",
+                    buttonWrapper: "LoadMore-module__buttonWrapper--jObLK",
                 },
                 gr = ({
                     numberOfRemainingItems: e,
@@ -64148,7 +64171,7 @@ git checkout ${e}`;
                     let [c, m] = (0, Q.useState)(!1),
                         g = e < oe.timeline.maxPreloadCount,
                         [y, p] = (0, Q.useState)(void 0),
-                        [k, b] = (0, i4.M)(
+                        [k, b] = (0, i6.M)(
                             "loadMoreFromTopPreference",
                             void 0 !== l
                         ),
@@ -64432,7 +64455,7 @@ git checkout ${e}`;
                             isAddedToGroupedEvents: !1,
                             timelineItem: p,
                             render: (0, F.jsx)(
-                                m7,
+                                m3,
                                 {
                                     item: p,
                                     issueId: s,
@@ -64979,7 +65002,7 @@ git checkout ${e}`;
             } catch {}
             let gc = b,
                 gm = h.A;
-            function gg({ itemIdentifier: e, optionConfig: l = u6.C }) {
+            function gg({ itemIdentifier: e, optionConfig: l = u4.C }) {
                 let { repo: n, owner: a, number: s } = e,
                     i = new URLSearchParams(ey.fV.search).get("timeline_page"),
                     [t, r] = (0, N.useQueryLoader)(
@@ -65428,7 +65451,7 @@ git checkout ${e}`;
                                                                         !o &&
                                                                             (0,
                                                                             F.jsx)(
-                                                                                u7,
+                                                                                u3,
                                                                                 {}
                                                                             ),
                                                                     ],
@@ -65468,7 +65491,7 @@ git checkout ${e}`;
                         i &&
                             D &&
                             M === u.id &&
-                            (0, F.jsx)(l6, {
+                            (0, F.jsx)(l4, {
                                 open: D,
                                 setOpen: V,
                                 issue: i,
@@ -65490,7 +65513,7 @@ git checkout ${e}`;
                         [i, t] = (0, Q.useState)(null);
                     (0, Q.useEffect)(() => {
                         ey.X3 ||
-                            (0, t6.SD)({
+                            (0, t4.SD)({
                                 environment: s,
                                 query: u2,
                                 variables: {
@@ -65542,15 +65565,15 @@ git checkout ${e}`;
                     (gk.displayName = "IsssueViewerWithSecondary");
             } catch {}
         },
-        76487: (e, l, n) => {
+        66827: (e, l, n) => {
             n.d(l, { Q: () => h });
             var a = n(74848),
-                s = n(48824),
-                i = n(59942),
-                t = n(27215);
+                s = n(41057),
+                i = n(51802),
+                t = n(72683);
             let r = {
                     IssueBodyLoadingContainer:
-                        "IssueBodyLoading-module__IssueBodyLoadingContainer--ZjIb0",
+                        "IssueBodyLoading-module__IssueBodyLoadingContainer--beSXm",
                 },
                 u = () =>
                     (0, a.jsx)("div", {
@@ -65568,15 +65591,15 @@ git checkout ${e}`;
             try {
                 u.displayName || (u.displayName = "IssueBodyLoading");
             } catch {}
-            var o = n(27945),
+            var o = n(4578),
                 d = n(75177),
                 c = n(96540),
-                m = n(1484);
+                m = n(83855);
             let g = {
                     titleLoadingSkeleton:
-                        "HeaderLoading-module__titleLoadingSkeleton--OkGeb",
+                        "HeaderLoading-module__titleLoadingSkeleton--xejEX",
                     metadataLoadingSkeleton:
-                        "HeaderLoading-module__metadataLoadingSkeleton--yig6W",
+                        "HeaderLoading-module__metadataLoadingSkeleton--KVtbP",
                 },
                 y = () =>
                     (0, a.jsxs)(a.Fragment, {
@@ -65607,24 +65630,24 @@ git checkout ${e}`;
             try {
                 y.displayName || (y.displayName = "HeaderLoading");
             } catch {}
-            var p = n(81657);
+            var p = n(2593);
             let k = {
                     loadingContainer:
-                        "IssueViewerLoading-module__loadingContainer--BziDK",
+                        "IssueViewerLoading-module__loadingContainer--q3yBO",
                     headerLoadingWrapper:
-                        "IssueViewerLoading-module__headerLoadingWrapper--ZwVRL",
+                        "IssueViewerLoading-module__headerLoadingWrapper--RE8Ix",
                     contentAndSidebarWrapper:
-                        "IssueViewerLoading-module__contentAndSidebarWrapper--mguOQ",
+                        "IssueViewerLoading-module__contentAndSidebarWrapper--kYEWH",
                     contentLoadingArea:
-                        "IssueViewerLoading-module__contentLoadingArea--yDN7a",
+                        "IssueViewerLoading-module__contentLoadingArea--g7mjT",
                     timelineLoadingWrapper:
-                        "IssueViewerLoading-module__timelineLoadingWrapper--tuHq3",
+                        "IssueViewerLoading-module__timelineLoadingWrapper--qgGYZ",
                     sidebarLoadingArea:
-                        "IssueViewerLoading-module__sidebarLoadingArea--nLQgb",
+                        "IssueViewerLoading-module__sidebarLoadingArea--YUTdW",
                 },
                 F = {
                     sidebarSectionsLoadingContainer:
-                        "SidebarSectionsLoading-module__sidebarSectionsLoadingContainer--feM1F",
+                        "SidebarSectionsLoading-module__sidebarSectionsLoadingContainer--mQz1f",
                 },
                 b = () =>
                     (0, a.jsxs)("div", {
@@ -65724,7 +65747,7 @@ git checkout ${e}`;
                 h.displayName || (h.displayName = "IssueViewerLoading");
             } catch {}
         },
-        16768: (e, l, n) => {
+        57611: (e, l, n) => {
             n.d(l, { B: () => u, T: () => r });
             var a = n(74848),
                 s = n(96540);
@@ -65772,13 +65795,13 @@ git checkout ${e}`;
                     (r.displayName = "InputElementActiveContextProvider");
             } catch {}
         },
-        16815: (e, l, n) => {
+        76158: (e, l, n) => {
             n.d(l, { e: () => c });
             var a = n(74848),
-                s = n(54538),
-                i = n(76575),
-                t = n(16768),
-                r = n(93067),
+                s = n(34267),
+                i = n(87118),
+                t = n(57611),
+                r = n(36724),
                 u = n(96540);
             let o = (0, u.createContext)(null),
                 d = ({ children: e }) => {
@@ -65817,10 +65840,10 @@ git checkout ${e}`;
                 c.displayName || (c.displayName = "IssueViewerContextProvider");
             } catch {}
         },
-        26062: (e, l, n) => {
+        86645: (e, l, n) => {
             n.d(l, { R: () => r, V: () => u });
             var a = n(74848),
-                s = n(13233),
+                s = n(73189),
                 i = n(96540);
             let t = (0, i.createContext)(null);
             function r({ children: e }) {
@@ -65843,10 +65866,10 @@ git checkout ${e}`;
                     (r.displayName = "FocusTrapManagementContextProvider");
             } catch {}
         },
-        32703: (e, l, n) => {
+        62568: (e, l, n) => {
             n.d(l, { D: () => E });
             var a = n(74848),
-                s = n(54538),
+                s = n(34267),
                 i = n(38621),
                 t = n(87330),
                 r = n(96540),
@@ -66090,12 +66113,12 @@ git checkout ${e}`;
                         abstractKey: null,
                     };
                 })().hash = "196c5dfa10bac249c09a7e5a825a3eb9"));
-            var d = n(82106),
-                c = n(52550),
-                m = n(52781),
-                g = n(96615),
-                y = n(53110),
-                p = n(64527);
+            var d = n(19918),
+                c = n(86391),
+                m = n(81709),
+                g = n(30721),
+                y = n(30729),
+                p = n(43491);
             let k = (function () {
                 var e = {
                         kind: "Variable",
@@ -66334,13 +66357,13 @@ git checkout ${e}`;
                 };
             })();
             k.hash = "c49d3e50365f7955d0d96fe3eaaa3d66";
-            var F = n(21491),
-                b = n(99662),
-                h = n(44263);
+            var F = n(38143),
+                b = n(89850),
+                h = n(46747);
             let f = p.A,
                 K = {
                     issueNumberText:
-                        "IssuePicker-module__issueNumberText--trt00",
+                        "IssuePicker-module__issueNumberText--eQZT6",
                 },
                 S = (e) => e.id,
                 I = { groupId: "selected", header: { title: "Selected" } },
@@ -66606,9 +66629,9 @@ git checkout ${e}`;
             } catch {}
             let R = {
                 BackToRepositorySelectionButton:
-                    "RepositoryAndIssuePicker-module__BackToRepositorySelectionButton--b4A8b",
+                    "RepositoryAndIssuePicker-module__BackToRepositorySelectionButton--bl2wm",
             };
-            var N = n(60439);
+            var N = n(16654);
             let j = "repository-picker",
                 _ = "issue-picker";
             function E({
@@ -66747,7 +66770,7 @@ git checkout ${e}`;
                     (w.displayName = "RepositoryAndIssuePickerInternal");
             } catch {}
         },
-        69403: (e, l, n) => {
+        82082: (e, l, n) => {
             n.d(l, { d: () => v });
             var a = n(74848);
             let s = {
@@ -67182,22 +67205,22 @@ git checkout ${e}`;
             };
             t.hash = "6677b0485535910a7fd3d9173953cc99";
             var r = n(38621),
-                u = n(10569),
-                o = n(15385),
+                u = n(5945),
+                o = n(52446),
                 d = n(75177),
-                c = n(63867),
+                c = n(12004),
                 m = n(94977),
                 g = n(96540),
                 y = n(18312);
             let p = {
                     pullRequestsDropdown:
-                        "ClosedByPullRequestsReferences-module__pullRequestsDropdown--k7a3O",
+                        "ClosedByPullRequestsReferences-module__pullRequestsDropdown--K__wO",
                     pullRequestCountAnchor:
-                        "ClosedByPullRequestsReferences-module__pullRequestCountAnchor--M8yyg",
+                        "ClosedByPullRequestsReferences-module__pullRequestCountAnchor--fVT2z",
                     pullRequestCountText:
-                        "ClosedByPullRequestsReferences-module__pullRequestCountText--KpLaN",
+                        "ClosedByPullRequestsReferences-module__pullRequestCountText--FPNxe",
                     loadingSpinnerContainer:
-                        "ClosedByPullRequestsReferences-module__loadingSpinnerContainer--UoGWt",
+                        "ClosedByPullRequestsReferences-module__loadingSpinnerContainer--YxWNt",
                 },
                 k = {
                     argumentDefinitions: [],
@@ -67295,18 +67318,18 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             k.hash = "070dcbf85630ee9d2e1fc4bb18f732ba";
-            var F = n(96235),
+            var F = n(25407),
                 b = n(30391),
-                h = n(34614),
-                f = n(53110),
+                h = n(81246),
+                f = n(30729),
                 K = n(34784);
             let S = {
-                draftIcon: "PullRequest-module__draftIcon--G4Miz",
-                hovercardLink: "PullRequest-module__hovercardLink--Txsax",
-                countText: "PullRequest-module__countText--IRood",
+                draftIcon: "PullRequest-module__draftIcon--gAo6q",
+                hovercardLink: "PullRequest-module__hovercardLink--gbZff",
+                countText: "PullRequest-module__countText--qThNN",
                 pullRequestItemContent:
-                    "PullRequest-module__pullRequestItemContent--MBJTm",
-                repositoryInfo: "PullRequest-module__repositoryInfo--clqNF",
+                    "PullRequest-module__pullRequestItemContent--csLjR",
+                repositoryInfo: "PullRequest-module__repositoryInfo--VyAWT",
             };
             function I({ pullRequest: e, hovercard: l }) {
                 let {
@@ -67576,12 +67599,12 @@ git checkout ${e}`;
                 R.displayName || (R.displayName = "CenteredLoadingSpinner");
             } catch {}
         },
-        49111: (e, l, n) => {
+        94838: (e, l, n) => {
             n.d(l, { F: () => u });
             var a = n(74848),
-                s = n(70179),
+                s = n(75202),
                 i = n(38621),
-                t = n(32647),
+                t = n(88657),
                 r = n(96540);
             let u = ({ children: e, onError: l }) => {
                 let [n, u] = (0, r.useState)(
@@ -67615,19 +67638,19 @@ git checkout ${e}`;
                     (u.displayName = "NestedListViewErrorBoundary");
             } catch {}
         },
-        9039: (e, l, n) => {
+        58321: (e, l, n) => {
             n.d(l, { o: () => c });
             var a = n(74848),
-                s = n(31668),
-                i = n(98386),
+                s = n(91230),
+                i = n(29731),
                 t = n(34164),
                 r = n(96540),
-                u = n(97782);
+                u = n(94273);
             let o = {
-                container: "ActionBar-module__container--_pDop",
-                withoutActions: "ActionBar-module__withoutActions--TLtcY",
+                container: "ActionBar-module__container--z3OVC",
+                withoutActions: "ActionBar-module__withoutActions--RFXnQ",
             };
-            var d = n(30467);
+            var d = n(7151);
             function c({
                 anchorIcon: e,
                 label: l = "list item action bar",
@@ -67669,12 +67692,12 @@ git checkout ${e}`;
                 c.displayName || (c.displayName = "NestedListItemActionBar");
             } catch {}
         },
-        630: (e, l, n) => {
+        921: (e, l, n) => {
             n.d(l, { Q: () => r });
             var a = n(74848),
-                s = n(98386),
+                s = n(29731),
                 i = n(34164);
-            let t = { container: "LeadingContent-module__container--CC4ob" };
+            let t = { container: "LeadingContent-module__container--NJeKw" };
             function r({ children: e, className: l }) {
                 return (0, a.jsx)("div", {
                     className: (0, i.$)(t.container, l),
@@ -67687,23 +67710,23 @@ git checkout ${e}`;
                     (r.displayName = "NestedListItemLeadingContent");
             } catch {}
         },
-        25862: (e, l, n) => {
+        85391: (e, l, n) => {
             n.d(l, { D: () => g });
             var a = n(74848),
-                s = n(98386),
-                i = n(53110),
+                s = n(29731),
+                i = n(30729),
                 t = n(34164),
                 r = n(96540),
-                u = n(10558),
-                o = n(19933);
+                u = n(45379),
+                o = n(55482);
             let d = {
-                    container: "LeadingVisual-module__container--x58cX",
+                    container: "LeadingVisual-module__container--lXqCp",
                     hasNewActivity:
-                        "LeadingVisual-module__hasNewActivity--_pcEM",
+                        "LeadingVisual-module__hasNewActivity--cLEiZ",
                     visualContainer:
-                        "LeadingVisual-module__visualContainer--r2z_9",
+                        "LeadingVisual-module__visualContainer--xKxNe",
                 },
-                c = { container: "UnreadIndicator-module__container--Gifky" },
+                c = { container: "UnreadIndicator-module__container--E_dd7" },
                 m = () =>
                     (0, a.jsx)("div", {
                         className: c.container,
@@ -67776,21 +67799,21 @@ git checkout ${e}`;
                     (g.displayName = "NestedListItemLeadingVisual");
             } catch {}
         },
-        17063: (e, l, n) => {
+        66457: (e, l, n) => {
             n.d(l, { r: () => $ });
             var a = n(74848),
-                s = n(96222),
-                i = n(55463),
-                t = n(13233),
-                r = n(42080),
-                u = n(55864),
+                s = n(87670),
+                i = n(18651),
+                t = n(73189),
+                r = n(83494),
+                u = n(20426),
                 o = n(34164),
                 d = n(96540),
-                c = n(97782),
-                m = n(62931),
-                g = n(98292),
-                y = n(49111),
-                p = n(9039);
+                c = n(94273),
+                m = n(62102),
+                g = n(28755),
+                y = n(94838),
+                p = n(58321);
             let k = (0, d.createContext)({
                     actionsOpen: !1,
                     setActionsOpen: t.l,
@@ -67811,8 +67834,8 @@ git checkout ${e}`;
                 F.displayName ||
                     (F.displayName = "NestedListItemActionsProvider");
             } catch {}
-            var b = n(22533),
-                h = n(71001);
+            var b = n(74142),
+                h = n(16474);
             let f = (0, d.createContext)(void 0),
                 K = ({ children: e }) => {
                     let [l, n] = (0, d.useState)(""),
@@ -67830,10 +67853,10 @@ git checkout ${e}`;
                 K.displayName ||
                     (K.displayName = "NestedListItemDescriptionProvider");
             } catch {}
-            var S = n(31442),
-                I = n(10558),
-                v = n(52811),
-                L = n(85315);
+            var S = n(82961),
+                I = n(45379),
+                v = n(4559),
+                L = n(34082);
             let T = (0, d.createContext)({ isSelected: !1, onSelect: t.l }),
                 C = ({
                     children: e,
@@ -67865,15 +67888,15 @@ git checkout ${e}`;
                 C.displayName ||
                     (C.displayName = "NestedListItemSelectionProvider");
             } catch {}
-            var R = n(19933),
-                N = n(9852),
-                j = n(74253);
-            let _ = { Dialog: "ControlsDialog-module__Dialog--T6258" };
-            var E = n(30467),
-                w = n(98386);
+            var R = n(55482),
+                N = n(96665),
+                j = n(1075);
+            let _ = { Dialog: "ControlsDialog-module__Dialog--HWRIK" };
+            var E = n(7151),
+                w = n(29731);
             let A = {
                 metadataContainer:
-                    "MetadataContainer-module__metadataContainer--OVo0K",
+                    "MetadataContainer-module__metadataContainer--_O_j_",
             };
             function P({ children: e, className: l }) {
                 let n = (0, d.useRef)(null),
@@ -67894,12 +67917,12 @@ git checkout ${e}`;
                     (P.displayName = "NestedListItemMetadataContainer");
             } catch {}
             let B = {
-                    item: "NestedListItem-module__item--I5eiN",
-                    selected: "NestedListItem-module__selected--MXGXK",
-                    itemGrid: "NestedListItem-module__itemGrid--t21qv",
+                    item: "NestedListItem-module__item--Tl61a",
+                    selected: "NestedListItem-module__selected--dE3Sl",
+                    itemGrid: "NestedListItem-module__itemGrid--CnhyY",
                     hasResizableActionsWithActionBar:
-                        "NestedListItem-module__hasResizableActionsWithActionBar--WxeDW",
-                    dragHandle: "NestedListItem-module__dragHandle--eFWSw",
+                        "NestedListItem-module__hasResizableActionsWithActionBar--qqDY9",
+                    dragHandle: "NestedListItem-module__dragHandle--Esd2j",
                 },
                 D = ({
                     onClose: e,
@@ -67932,7 +67955,7 @@ git checkout ${e}`;
             try {
                 D.displayName || (D.displayName = "ControlsDialog");
             } catch {}
-            let M = { hint: "ControlsDialogHint-module__hint--mP5WV" };
+            let M = { hint: "ControlsDialogHint-module__hint--B9wWI" };
             function V() {
                 return (0, a.jsxs)("div", {
                     className: M.hint,
@@ -67949,10 +67972,10 @@ git checkout ${e}`;
             try {
                 V.displayName || (V.displayName = "ControlsDialogHint");
             } catch {}
-            var U = n(65607);
+            var U = n(87826);
             let O = {
-                    container: "Selection-module__container--aiuiu",
-                    checkbox: "Selection-module__checkbox--usQJl",
+                    container: "Selection-module__container--GeDCA",
+                    checkbox: "Selection-module__checkbox--KyrMU",
                 },
                 q = () => {
                     let { isSelectable: e } = (0, g.c)(),
@@ -68297,21 +68320,21 @@ git checkout ${e}`;
                 $.displayName || ($.displayName = "NestedListItem");
             } catch {}
         },
-        70924: (e, l, n) => {
+        97764: (e, l, n) => {
             n.d(l, { T: () => m });
             var a = n(74848),
-                s = n(30422),
-                i = n(98386),
-                t = n(34614),
+                s = n(20263),
+                i = n(29731),
+                t = n(81246),
                 r = n(34164),
                 u = n(96540),
-                o = n(71001),
-                d = n(85315);
+                o = n(16474),
+                d = n(34082);
             let c = {
-                container: "Title-module__container--NiU4i",
-                anchor: "Title-module__anchor--lijbH",
-                truncate: "Title-module__truncate--PeDFJ",
-                trailingBadges: "Title-module__trailingBadges--K0tM5",
+                container: "Title-module__container--iESYk",
+                anchor: "Title-module__anchor--uebmc",
+                truncate: "Title-module__truncate--BAKr7",
+                trailingBadges: "Title-module__trailingBadges--rIk0t",
             };
             function m({
                 additionalLinkProps: e = {},
@@ -68383,7 +68406,7 @@ git checkout ${e}`;
                 m.displayName || (m.displayName = "NestedListItemTitle");
             } catch {}
         },
-        22533: (e, l, n) => {
+        74142: (e, l, n) => {
             n.d(l, { g: () => t, s: () => r });
             var a = n(74848),
                 s = n(96540);
@@ -68406,10 +68429,10 @@ git checkout ${e}`;
                     (t.displayName = "NestedListItemCompletionProvider");
             } catch {}
         },
-        71001: (e, l, n) => {
+        16474: (e, l, n) => {
             n.d(l, { m: () => r, q: () => u });
             var a = n(74848),
-                s = n(13233),
+                s = n(73189),
                 i = n(96540);
             let t = (0, i.createContext)({
                     controlsDialogOpen: !1,
@@ -68436,7 +68459,7 @@ git checkout ${e}`;
                     (r.displayName = "NestedListItemControlsDialogProvider");
             } catch {}
         },
-        31442: (e, l, n) => {
+        82961: (e, l, n) => {
             n.d(l, { $: () => r, X: () => t });
             var a = n(74848),
                 s = n(96540);
@@ -68466,7 +68489,7 @@ git checkout ${e}`;
                     (t.displayName = "NestedListItemLeadingBadgeProvider");
             } catch {}
         },
-        10558: (e, l, n) => {
+        45379: (e, l, n) => {
             n.d(l, { V: () => t, b: () => r });
             var a = n(74848),
                 s = n(96540);
@@ -68496,7 +68519,7 @@ git checkout ${e}`;
                     (t.displayName = "NestedListItemNewActivityProvider");
             } catch {}
         },
-        19933: (e, l, n) => {
+        55482: (e, l, n) => {
             n.d(l, { i: () => r, s: () => t });
             var a = n(74848),
                 s = n(96540);
@@ -68526,7 +68549,7 @@ git checkout ${e}`;
                     (t.displayName = "NestedListItemStatusProvider");
             } catch {}
         },
-        85315: (e, l, n) => {
+        34082: (e, l, n) => {
             n.d(l, { $: () => r, s: () => t });
             var a = n(74848),
                 s = n(96540);
@@ -68561,21 +68584,21 @@ git checkout ${e}`;
                     (t.displayName = "NestedListItemTitleProvider");
             } catch {}
         },
-        95629: (e, l, n) => {
+        15106: (e, l, n) => {
             n.d(l, { v: () => b });
             var a = n(74848),
-                s = n(96222),
-                i = n(98386),
-                t = n(84217),
-                r = n(55864),
+                s = n(87670),
+                i = n(29731),
+                t = n(63557),
+                r = n(20426),
                 u = n(34164),
                 o = n(96540),
-                d = n(97782),
-                c = n(62931),
-                m = n(98292),
-                g = n(89004),
-                y = n(49111),
-                p = n(74253);
+                d = n(94273),
+                c = n(62102),
+                m = n(28755),
+                g = n(19983),
+                y = n(94838),
+                p = n(1075);
             let k = {
                     onDrop: () => {},
                     renderOverlay: () => (0, a.jsx)(a.Fragment, {}),
@@ -68684,24 +68707,24 @@ git checkout ${e}`;
                 h.displayName || (h.displayName = "NestedListViewInternal");
             } catch {}
         },
-        83779: (e, l, n) => {
+        46036: (e, l, n) => {
             n.d(l, { s: () => I });
             var a,
                 s = n(74848),
-                i = n(98386),
+                i = n(29731),
                 t = n(34164),
                 r = n(96540),
-                u = n(62931),
-                o = n(98292),
-                d = n(89004),
-                c = n(31668);
+                u = n(62102),
+                o = n(28755),
+                d = n(19983),
+                c = n(91230);
             let m = {
-                    actionBar: "ActionBar-module__actionBar--a9Qj3",
-                    noneDensity: "ActionBar-module__noneDensity--MLnQV",
+                    actionBar: "ActionBar-module__actionBar--XFS0S",
+                    noneDensity: "ActionBar-module__noneDensity--GnLQO",
                     condensedDensity:
-                        "ActionBar-module__condensedDensity--nsUj1",
-                    normalDensity: "ActionBar-module__normalDensity--E9yGq",
-                    spaciousDensity: "ActionBar-module__spaciousDensity--dmrxR",
+                        "ActionBar-module__condensedDensity--m4vXo",
+                    normalDensity: "ActionBar-module__normalDensity--wiNpl",
+                    spaciousDensity: "ActionBar-module__spaciousDensity--VGXpJ",
                 },
                 g = ({
                     actions: e,
@@ -68733,9 +68756,9 @@ git checkout ${e}`;
                     (g.displayName = "NestedListViewHeaderActionBar");
             } catch {}
             let y = {
-                    container: "NestedListViewHeader-module__container--kNKM5",
+                    container: "NestedListViewHeader-module__container--RY50I",
                 },
-                p = { list: "SectionFilters-module__list--sssTu" },
+                p = { list: "SectionFilters-module__list--bvh6G" },
                 k = ({ links: e, className: l }) =>
                     e.length < 1
                         ? null
@@ -68761,14 +68784,14 @@ git checkout ${e}`;
                 k.displayName ||
                     (k.displayName = "NestedListViewHeaderSectionFilters");
             } catch {}
-            var F = n(52811),
-                b = n(73451),
-                h = n(65607);
+            var F = n(4559),
+                b = n(65029),
+                h = n(87826);
             let f = {
-                    container: "SelectAllCheckbox-module__container--AOigX",
+                    container: "SelectAllCheckbox-module__container--SByDi",
                     checkboxContainer:
-                        "SelectAllCheckbox-module__checkboxContainer--f24fA",
-                    count: "SelectAllCheckbox-module__count--qdOZm",
+                        "SelectAllCheckbox-module__checkboxContainer--nKNGo",
+                    count: "SelectAllCheckbox-module__count--mZWGM",
                 },
                 K = ({ onToggle: e, className: l }) => {
                     let { title: n } = (0, d.M)(),
@@ -68949,22 +68972,22 @@ git checkout ${e}`;
                     (a.displayName = "ListFilters");
             } catch {}
         },
-        50146: (e, l, n) => {
+        43063: (e, l, n) => {
             n.d(l, { c: () => y });
             var a = n(74848),
-                s = n(98386),
+                s = n(29731),
                 i = n(38621),
-                t = n(84217),
+                t = n(63557),
                 r = n(87330),
                 u = n(34164),
                 o = n(96540),
-                d = n(62931),
-                c = n(80837),
-                m = n(89004);
+                d = n(62102),
+                c = n(305),
+                m = n(19983);
             let g = {
-                    container: "Title-module__container--Cvea2",
-                    header: "Title-module__header--Ak2aF",
-                    expandButton: "Title-module__expandButton--Nb66P",
+                    container: "Title-module__container--dQS4K",
+                    header: "Title-module__header--PxCgZ",
+                    expandButton: "Title-module__expandButton--zzl6c",
                 },
                 y = ({
                     title: e,
@@ -69043,10 +69066,10 @@ git checkout ${e}`;
                 y.displayName || (y.displayName = "NestedListViewHeaderTitle");
             } catch {}
         },
-        97782: (e, l, n) => {
+        94273: (e, l, n) => {
             n.d(l, { G: () => u, w: () => r });
             var a = n(74848),
-                s = n(13233),
+                s = n(73189),
                 i = n(96540);
             let t = (0, i.createContext)({
                     anyItemsWithActionBar: !1,
@@ -69074,7 +69097,7 @@ git checkout ${e}`;
                 t.displayName || (t.displayName = "ItemsContext");
             } catch {}
         },
-        62931: (e, l, n) => {
+        62102: (e, l, n) => {
             n.d(l, { J: () => r, N: () => t });
             var a = n(74848),
                 s = n(96540);
@@ -69111,13 +69134,13 @@ git checkout ${e}`;
                 i.displayName || (i.displayName = "PropertiesContext");
             } catch {}
         },
-        98292: (e, l, n) => {
+        28755: (e, l, n) => {
             n.d(l, { W: () => c, c: () => m });
             var a = n(74848),
-                s = n(13233),
-                i = n(8241),
+                s = n(73189),
+                i = n(80293),
                 t = n(96540),
-                r = n(80837);
+                r = n(305);
             let u = "list item",
                 o = "list items",
                 d = (0, t.createContext)({
@@ -69172,11 +69195,11 @@ git checkout ${e}`;
                 d.displayName || (d.displayName = "SelectionContext");
             } catch {}
         },
-        89004: (e, l, n) => {
+        19983: (e, l, n) => {
             n.d(l, { M: () => u, y: () => r });
             var a = n(74848),
                 s = n(96540),
-                i = n(80837);
+                i = n(305);
             let t = (0, s.createContext)(void 0),
                 r = ({ children: e, title: l, titleHeaderTag: n = i.tD }) => {
                     let [r, u] = (0, s.useState)(!1),
@@ -69204,7 +69227,7 @@ git checkout ${e}`;
                 t.displayName || (t.displayName = "TitleContext");
             } catch {}
         },
-        39705: (e, l, n) => {
+        34392: (e, l, n) => {
             n.d(l, { s: () => i });
             var a = n(74848),
                 s = n(75177);
@@ -69228,7 +69251,7 @@ git checkout ${e}`;
                 i.displayName || (i.displayName = "PreviewCardOutlet");
             } catch {}
         },
-        57643: (e, l, n) => {
+        56742: (e, l, n) => {
             n.d(l, { a: () => y });
             var a,
                 s,
@@ -69237,15 +69260,15 @@ git checkout ${e}`;
                 r = n(30391),
                 u = n(96540);
             let o = {
-                completedIcon: "ProgressCircle-module__completedIcon--GVjgl",
-                animatedCircle: "ProgressCircle-module__animatedCircle--fzHFL",
+                completedIcon: "ProgressCircle-module__completedIcon--Z3cDp",
+                animatedCircle: "ProgressCircle-module__animatedCircle--nkBlV",
                 circleProgressShade:
-                    "ProgressCircle-module__circleProgressShade--gGf6V",
-                ringSvg: "ProgressCircle-module__ringSvg--QYG_u",
-                circle: "ProgressCircle-module__circle--bZ9JZ",
-                circleProgress: "ProgressCircle-module__circleProgress--jtWbs",
+                    "ProgressCircle-module__circleProgressShade--pwRiA",
+                ringSvg: "ProgressCircle-module__ringSvg--Ndmzq",
+                circle: "ProgressCircle-module__circle--tw0F_",
+                circleProgress: "ProgressCircle-module__circleProgress--_T6Fx",
             };
-            var d = n(25903),
+            var d = n(14307),
                 c = n(34164);
             function m({ size: e, accent: l }) {
                 return (0, t.jsxs)("svg", {
@@ -69380,7 +69403,7 @@ git checkout ${e}`;
                 y.displayName || (y.displayName = "ProgressCircle");
             } catch {}
         },
-        76575: (e, l, n) => {
+        87118: (e, l, n) => {
             n.d(l, { Q3: () => t, m1: () => r });
             var a = n(74848),
                 s = n(96540);
@@ -69418,7 +69441,7 @@ git checkout ${e}`;
                 t.displayName || (t.displayName = "SubIssueStateProvider");
             } catch {}
         },
-        42101: (e, l, n) => {
+        81070: (e, l, n) => {
             n.d(l, { X: () => t });
             var a = n(74848),
                 s = n(75177),
@@ -69441,4 +69464,4 @@ git checkout ${e}`;
         },
     },
 ]);
-//# sourceMappingURL=ui_packages_issue-viewer_components_IssueViewer_tsx-ui_packages_issue-viewer_contexts_IssueVi-df51bd-12117657f2bf.js.map
+//# sourceMappingURL=packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-51dbb8-6ad693ff41bf.js.map

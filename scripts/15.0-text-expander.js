@@ -1,5 +1,6 @@
 "use strict";
-(globalThis.webpackChunk = globalThis.webpackChunk || []).push([
+(globalThis.webpackChunk_github_ui_github_ui =
+    globalThis.webpackChunk_github_ui_github_ui || []).push([
     ["vendors-node_modules_github_text-expander-element_dist_index_js"],
     {
         81028: () => {
@@ -13,22 +14,17 @@
                         scrollIntoViewOptions: o,
                     } = {}
                 ) {
-                    (this.input = t),
+                    ((this.input = t),
                         (this.list = i),
                         (this.tabInsertsSuggestions = null == n || n),
                         (this.defaultFirstOption = null != s && s),
                         (this.scrollIntoViewOptions =
                             null != o
                                 ? o
-                                : {
-                                      block: "nearest",
-                                      inline: "nearest",
-                                  }),
+                                : { block: "nearest", inline: "nearest" }),
                         (this.isComposing = !1),
                         i.id ||
-                            (i.id = `combobox-${Math.random()
-                                .toString()
-                                .slice(2, 6)}`),
+                            (i.id = `combobox-${Math.random().toString().slice(2, 6)}`),
                         (this.ctrlBindings =
                             !!navigator.userAgent.match(/Macintosh/)),
                         (this.keyboardEventHandler = (t) =>
@@ -54,10 +50,11 @@
                                             i.clearSelection();
                                             break;
                                         case "ArrowDown":
-                                            i.navigate(1), t.preventDefault();
+                                            (i.navigate(1), t.preventDefault());
                                             break;
                                         case "ArrowUp":
-                                            i.navigate(-1), t.preventDefault();
+                                            (i.navigate(-1),
+                                                t.preventDefault());
                                             break;
                                         case "n":
                                             i.ctrlBindings &&
@@ -78,30 +75,31 @@
                             })(t, this)),
                         (this.compositionEventHandler = (t) =>
                             (function (t, e) {
-                                (e.isComposing = "compositionstart" === t.type),
+                                ((e.isComposing =
+                                    "compositionstart" === t.type),
                                     document.getElementById(
                                         e.input.getAttribute("aria-controls") ||
                                             ""
-                                    ) && e.clearSelection();
+                                    ) && e.clearSelection());
                             })(t, this)),
                         (this.inputHandler = this.clearSelection.bind(this)),
                         t.setAttribute("role", "combobox"),
                         t.setAttribute("aria-controls", i.id),
                         t.setAttribute("aria-expanded", "false"),
                         t.setAttribute("aria-autocomplete", "list"),
-                        t.setAttribute("aria-haspopup", "listbox");
+                        t.setAttribute("aria-haspopup", "listbox"));
                 }
                 destroy() {
-                    this.clearSelection(),
+                    (this.clearSelection(),
                         this.stop(),
                         this.input.removeAttribute("role"),
                         this.input.removeAttribute("aria-controls"),
                         this.input.removeAttribute("aria-expanded"),
                         this.input.removeAttribute("aria-autocomplete"),
-                        this.input.removeAttribute("aria-haspopup");
+                        this.input.removeAttribute("aria-haspopup"));
                 }
                 start() {
-                    this.input.setAttribute("aria-expanded", "true"),
+                    (this.input.setAttribute("aria-expanded", "true"),
                         this.input.addEventListener(
                             "compositionstart",
                             this.compositionEventHandler
@@ -116,10 +114,10 @@
                             this.keyboardEventHandler
                         ),
                         this.list.addEventListener("click", t),
-                        this.indicateDefaultOption();
+                        this.indicateDefaultOption());
                 }
                 stop() {
-                    this.clearSelection(),
+                    (this.clearSelection(),
                         this.input.setAttribute("aria-expanded", "false"),
                         this.input.removeEventListener(
                             "compositionstart",
@@ -137,7 +135,7 @@
                             "keydown",
                             this.keyboardEventHandler
                         ),
-                        this.list.removeEventListener("click", t);
+                        this.list.removeEventListener("click", t));
                 }
                 indicateDefaultOption() {
                     var t;
@@ -165,7 +163,7 @@
                         (s === n.length - 1 && 1 === t) ||
                         (0 === s && -1 === t)
                     ) {
-                        this.clearSelection(), this.input.focus();
+                        (this.clearSelection(), this.input.focus());
                         return;
                     }
                     let o = 1 === t ? 0 : n.length - 1;
@@ -176,7 +174,7 @@
                     let l = n[o];
                     if (l)
                         for (let t of n)
-                            t.removeAttribute("data-combobox-option-default"),
+                            (t.removeAttribute("data-combobox-option-default"),
                                 l === t
                                     ? (this.input.setAttribute(
                                           "aria-activedescendant",
@@ -191,7 +189,7 @@
                                       l.scrollIntoView(
                                           this.scrollIntoViewOptions
                                       ))
-                                    : t.removeAttribute("aria-selected");
+                                    : t.removeAttribute("aria-selected"));
                 }
                 clearSelection() {
                     for (let t of (this.input.removeAttribute(
@@ -209,9 +207,7 @@
                     var i, n;
                     "true" !== e.getAttribute("aria-disabled") &&
                         ((i = e),
-                        (n = {
-                            event: t,
-                        }),
+                        (n = { event: t }),
                         i.dispatchEvent(
                             new CustomEvent("combobox-commit", {
                                 bubbles: !0,
@@ -252,10 +248,13 @@
                 #l = document.createElement("div");
                 static for(t) {
                     let e = s.get(t);
-                    return e || ((e = new InputStyleClone(t)), s.set(t, e)), e;
+                    return (
+                        e || ((e = new InputStyleClone(t)), s.set(t, e)),
+                        e
+                    );
                 }
                 constructor(t) {
-                    super(),
+                    (super(),
                         (this.#s = new WeakRef(t)),
                         (this.#o.style.position = "absolute"),
                         (this.#o.style.pointerEvents = "none"),
@@ -285,18 +284,16 @@
                         window.addEventListener("resize", this.#a, {
                             capture: !0,
                         }),
-                        t.addEventListener("input", this.#h, {
-                            capture: !0,
-                        });
+                        t.addEventListener("input", this.#h, { capture: !0 }));
                 }
                 get element() {
                     return this.#l;
                 }
                 forceUpdate() {
-                    this.#e(), this.#r();
+                    (this.#e(), this.#r());
                 }
                 disconnect() {
-                    this.#o?.remove(),
+                    (this.#o?.remove(),
                         this.#t.disconnect(),
                         this.#i.disconnect(),
                         document.removeEventListener("scroll", this.#a, {
@@ -304,7 +301,7 @@
                         }),
                         window.removeEventListener("resize", this.#a, {
                             capture: !0,
-                        });
+                        }));
                     let t = this.#u;
                     t &&
                         (t.removeEventListener("input", this.#h, {
@@ -313,7 +310,7 @@
                         s.delete(t));
                 }
                 get #u() {
-                    returnthis.#s?.deref();
+                    return this.#s?.deref();
                 }
                 #c(t) {
                     let e = this.#u;
@@ -324,28 +321,22 @@
                 #m() {
                     this.#c((t) => {
                         let e = window.getComputedStyle(t);
-                        (this.#l.style.height = e.height),
+                        ((this.#l.style.height = e.height),
                             (this.#l.style.width = e.width),
                             t.clientHeight !== this.#l.clientHeight &&
-                                (this.#l.style.height = `calc(${e.height} + ${
-                                    t.clientHeight - this.#l.clientHeight
-                                }px)`),
+                                (this.#l.style.height = `calc(${e.height} + ${t.clientHeight - this.#l.clientHeight}px)`),
                             t.clientWidth !== this.#l.clientWidth &&
-                                (this.#l.style.width = `calc(${e.width} + ${
-                                    t.clientWidth - this.#l.clientWidth
-                                }px)`);
+                                (this.#l.style.width = `calc(${e.width} + ${t.clientWidth - this.#l.clientWidth}px)`));
                         let i = t.getBoundingClientRect(),
                             n = this.#l.getBoundingClientRect();
-                        (this.#d = this.#d + i.left - n.left),
+                        ((this.#d = this.#d + i.left - n.left),
                             (this.#p = this.#p + i.top - n.top),
-                            (this.#l.style.transform = `translate(${
-                                this.#d
-                            }px, ${this.#p}px)`),
+                            (this.#l.style.transform = `translate(${this.#d}px, ${this.#p}px)`),
                             (this.#l.scrollTop = t.scrollTop),
                             (this.#l.scrollLeft = t.scrollLeft),
                             this.dispatchEvent(
                                 new InputStyleCloneUpdateEvent()
-                            );
+                            ));
                     });
                 }
                 #f = !1;
@@ -353,7 +344,7 @@
                     this.#f ||
                         ((this.#f = !0),
                         requestAnimationFrame(() => {
-                            this.#m(), (this.#f = !1);
+                            (this.#m(), (this.#f = !1));
                         }));
                 }
                 #e() {
@@ -365,7 +356,7 @@
                 }
                 #r() {
                     this.#c((t) => {
-                        (this.#l.textContent = t.value), this.#m();
+                        ((this.#l.textContent = t.value), this.#m());
                     });
                 }
                 #h = () => this.#r();
@@ -416,7 +407,7 @@
                 #b;
                 #g;
                 constructor(t, e = 0, i = e) {
-                    (this.#v = t), (this.#b = e), (this.#g = i);
+                    ((this.#v = t), (this.#b = e), (this.#g = i));
                 }
                 static fromSelection(t) {
                     let { selectionStart: e, selectionEnd: i } = t;
@@ -496,7 +487,7 @@
             let l = new WeakMap();
             let TextExpander = class TextExpander {
                 constructor(t, e) {
-                    (this.expander = t),
+                    ((this.expander = t),
                         (this.input = e),
                         (this.combobox = null),
                         (this.menu = null),
@@ -513,16 +504,16 @@
                         e.addEventListener("paste", this.onpaste),
                         e.addEventListener("input", this.oninput),
                         e.addEventListener("keydown", this.onkeydown),
-                        e.addEventListener("blur", this.onblur);
+                        e.addEventListener("blur", this.onblur));
                 }
                 destroy() {
-                    this.input.removeEventListener("paste", this.onpaste),
+                    (this.input.removeEventListener("paste", this.onpaste),
                         this.input.removeEventListener("input", this.oninput),
                         this.input.removeEventListener(
                             "keydown",
                             this.onkeydown
                         ),
-                        this.input.removeEventListener("blur", this.onblur);
+                        this.input.removeEventListener("blur", this.onblur));
                 }
                 dismissMenu() {
                     this.deactivate() &&
@@ -543,9 +534,7 @@
                         (this.deactivate(),
                         (this.menu = e),
                         e.id ||
-                            (e.id = `text-expander-${Math.floor(
-                                1e5 * Math.random()
-                            ).toString()}`),
+                            (e.id = `text-expander-${Math.floor(1e5 * Math.random()).toString()}`),
                         this.expander.append(e),
                         (this.combobox = new Combobox(this.input, e)),
                         this.expander.dispatchEvent(
@@ -562,23 +551,17 @@
                             this.input,
                             e
                         ).getBoundingClientRect(),
-                        n = {
-                            left: i.left,
-                            top: i.top + i.height,
-                        },
+                        n = { left: i.left, top: i.top + i.height },
                         s = t.getBoundingClientRect(),
-                        o = {
-                            left: n.left - s.left,
-                            top: n.top - s.top,
-                        };
+                        o = { left: n.left - s.left, top: n.top - s.top };
                     if (0 !== o.left || 0 !== o.top) {
                         let e = getComputedStyle(t);
-                        (t.style.left = e.left
+                        ((t.style.left = e.left
                             ? `calc(${e.left} + ${o.left}px)`
                             : `${o.left}px`),
                             (t.style.top = e.top
                                 ? `calc(${e.top} + ${o.top}px)`
-                                : `${o.top}px`);
+                                : `${o.top}px`));
                     }
                 }
                 deactivate() {
@@ -610,12 +593,7 @@
                         s = this.input.value.substring(
                             i.position + i.text.length
                         ),
-                        o = {
-                            item: t,
-                            key: i.key,
-                            value: null,
-                            continue: !1,
-                        };
+                        o = { item: t, key: i.key, value: null, continue: !1 };
                     if (
                         !this.expander.dispatchEvent(
                             new CustomEvent("text-expander-value", {
@@ -634,10 +612,8 @@
                     let r = `${o.value}${l}`;
                     this.input.value = n + r + s;
                     let a = n.length + r.length;
-                    this.deactivate(),
-                        this.input.focus({
-                            preventScroll: !0,
-                        }),
+                    (this.deactivate(),
+                        this.input.focus({ preventScroll: !0 }),
                         (this.input.selectionStart = a),
                         (this.input.selectionEnd = a),
                         o.continue ||
@@ -645,11 +621,9 @@
                         this.expander.dispatchEvent(
                             new CustomEvent("text-expander-committed", {
                                 cancelable: !1,
-                                detail: {
-                                    input: this.input,
-                                },
+                                detail: { input: this.input },
                             })
-                        );
+                        ));
                 }
                 onBlur() {
                     if (this.interactingWithList) {
@@ -672,7 +646,7 @@
                         let e = await this.notifyProviders(t);
                         if (!this.match) return;
                         e ? this.activate(t, e) : this.deactivate();
-                    } else (this.match = null), this.deactivate();
+                    } else ((this.match = null), this.deactivate());
                 }
                 findMatch() {
                     let t = this.input.selectionEnd || 0,
@@ -807,4 +781,4 @@
         },
     },
 ]);
-//# sourceMappingURL=vendors-node_modules_github_text-expander-element_dist_index_js-2e363787e2f5.js.map
+//# sourceMappingURL=vendors-node_modules_github_text-expander-element_dist_index_js-846a274f00e2.js.map

@@ -1,10 +1,11 @@
 "use strict";
-(globalThis.webpackChunk = globalThis.webpackChunk || []).push([
+(globalThis.webpackChunk_github_ui_github_ui =
+    globalThis.webpackChunk_github_ui_github_ui || []).push([
     [
-        "ui_packages_list-view_src_hooks_use-next-header-tag_ts-ui_packages_list-view_src_ListItem_Lis-0a5d95",
+        "packages_list-view_src_hooks_use-next-header-tag_ts-packages_list-view_src_ListItem_ListItem_-055669",
     ],
     {
-        31668: (e, t, r) => {
+        91230: (e, t, r) => {
             r.d(t, { E7: () => D });
             var i = r(74848),
                 a = r(96540);
@@ -67,7 +68,7 @@
                         );
                     return (0, i.jsx)(o.Provider, { value: n, children: t });
                 },
-                d = () => {
+                u = () => {
                     let e = (0, a.useContext)(o);
                     if (!e)
                         throw Error(
@@ -81,8 +82,8 @@
             try {
                 c.displayName || (c.displayName = "ActionBarRefProvider");
             } catch {}
-            var u = r(13233),
-                m = r(8241),
+            var d = r(73189),
+                m = r(80293),
                 h = r(45221),
                 v = r(58748);
             let y = (e, t) => {
@@ -105,50 +106,50 @@
                     );
                 },
                 f = (e, t) => {
-                    let r = p(e, t);
+                    let r = x(e, t);
                     if (void 0 === r) return;
                     let i = r;
                     return (t && (i -= t.offsetLeft), i);
                 },
-                p = (e, t) => {
+                x = (e, t) => {
                     if (!e) return;
                     let r = e.offsetWidth;
                     return (t && (r -= t.offsetWidth), r);
                 },
-                x = (0, a.createContext)({
+                p = (0, a.createContext)({
                     visibleChildEndIndex: 0,
                     justifySpaceBetween: !1,
-                    recalculateItemSize: u.l,
+                    recalculateItemSize: d.l,
                 }),
                 N = ({ children: e, value: { actionKeys: t } }) => {
                     let r = t.length,
                         [l, n] = (0, m.N)(r),
-                        { outerContainerRef: s, itemContainerRef: o } = d(),
-                        [c, u] = (0, a.useState)(),
-                        [N, w] = (0, a.useState)(),
-                        [b, C] = (0, a.useState)(
+                        { outerContainerRef: s, itemContainerRef: o } = u(),
+                        [c, d] = (0, a.useState)(),
+                        [N, b] = (0, a.useState)(),
+                        [w, C] = (0, a.useState)(
                             new Map(t.map((e) => [e, void 0]))
                         ),
                         [A, g] = (0, a.useState)(!1),
-                        j = (0, a.useMemo)(
+                        I = (0, a.useMemo)(
                             () =>
                                 t
                                     .slice(0, l)
                                     .every(
                                         (e) =>
-                                            b.has(e) &&
-                                            "number" == typeof b.get(e)
+                                            w.has(e) &&
+                                            "number" == typeof w.get(e)
                                     ),
-                            [t, b, l]
+                            [t, w, l]
                         ),
-                        I = (0, a.useCallback)(
+                        j = (0, a.useCallback)(
                             (e) => {
                                 let r = t[e];
-                                if (r) return b.get(r);
+                                if (r) return w.get(r);
                             },
-                            [t, b]
+                            [t, w]
                         ),
-                        S = (0, a.useCallback)(
+                        _ = (0, a.useCallback)(
                             (e, t) => {
                                 let r = o.current;
                                 if (!r) return;
@@ -161,35 +162,35 @@
                             },
                             [o]
                         ),
-                        L = (0, a.useCallback)(() => {
-                            if (!j) return;
+                        S = (0, a.useCallback)(() => {
+                            if (!I) return;
                             let e = s.current,
                                 t = o.current,
-                                r = p(e, t);
+                                r = x(e, t);
                             if (void 0 === r) return;
                             let i = f(e, t);
                             void 0 !== i && r <= i && n(Math.max(0, l - 1));
-                        }, [j, s, o, n, l]),
-                        _ = (0, a.useCallback)(() => {
+                        }, [I, s, o, n, l]),
+                        L = (0, a.useCallback)(() => {
                             let e = s.current,
                                 t = o.current,
-                                i = p(e, t);
+                                i = x(e, t);
                             if (void 0 === i) return;
-                            let a = I(l);
+                            let a = j(l);
                             if (void 0 === a) return;
                             let c = f(e, t);
                             void 0 !== c && i > c + a && n(Math.min(r, l + 1));
-                        }, [s, o, I, l, n, r]),
+                        }, [s, o, j, l, n, r]),
                         P = (0, a.useCallback)(() => {
                             let e = s.current,
                                 t = o.current;
                             if (!e || !t) return;
                             let r = e.offsetWidth;
                             r &&
-                                (void 0 === c || r <= c ? L() : r > c && _(),
-                                u(r),
+                                (void 0 === c || r <= c ? S() : r > c && L(),
+                                d(r),
                                 g(r <= (N ?? t.offsetWidth)));
-                        }, [_, L, N, c, s, o]);
+                        }, [L, S, N, c, s, o]);
                     ((0, h.A)(() => {
                         let e = o.current;
                         if (!e) return;
@@ -204,7 +205,7 @@
                     }, [t, o]),
                         (0, h.A)(() => {
                             let e = o.current;
-                            e && w(e.offsetWidth);
+                            e && b(e.offsetWidth);
                         }, [o]),
                         (0, h.A)(() => {
                             P();
@@ -214,42 +215,42 @@
                         () => ({
                             visibleChildEndIndex: l,
                             justifySpaceBetween: A,
-                            recalculateItemSize: S,
+                            recalculateItemSize: _,
                         }),
-                        [l, A, S]
+                        [l, A, _]
                     );
-                    return (0, i.jsx)(x.Provider, { value: E, children: e });
+                    return (0, i.jsx)(p.Provider, { value: E, children: e });
                 },
-                w = () => {
-                    let e = (0, a.useContext)(x);
+                b = () => {
+                    let e = (0, a.useContext)(p);
                     return (
                         e || {
                             justifySpaceBetween: !1,
                             visibleChildEndIndex: 0,
-                            recalculateItemSize: u.l,
+                            recalculateItemSize: d.l,
                         }
                     );
                 };
             try {
-                x.displayName || (x.displayName = "ActionBarResizeContext");
+                p.displayName || (p.displayName = "ActionBarResizeContext");
             } catch {}
             try {
                 N.displayName || (N.displayName = "ActionBarResizeProvider");
             } catch {}
-            var b = r(98386),
+            var w = r(29731),
                 C = r(69676),
                 A = r(82678),
                 g = r(34164),
-                j = r(38621),
-                I = r(14744),
-                S = r.n(I),
-                L = r(10569),
-                _ = r(87330),
-                P = r(15385);
+                I = r(38621),
+                j = r(14744),
+                _ = r.n(j),
+                S = r(5945),
+                L = r(87330),
+                P = r(52446);
             let E = {
-                    IconButton_0: "OverflowMenu-module__IconButton_0--P3118",
+                    IconButton_0: "OverflowMenu-module__IconButton_0--cxtvS",
                 },
-                M = j.KebabHorizontalIcon,
+                M = I.KebabHorizontalIcon,
                 B = "invisible",
                 T = ({
                     anchorProps: {
@@ -259,33 +260,33 @@
                         ...l
                     } = { icon: M, variant: B },
                 }) => {
-                    let { anchorRef: n } = d(),
-                        { actions: o, staticMenuActions: c, label: u } = s(),
-                        { visibleChildEndIndex: m } = w(),
+                    let { anchorRef: n } = u(),
+                        { actions: o, staticMenuActions: c, label: d } = s(),
+                        { visibleChildEndIndex: m } = b(),
                         h = (0, a.useMemo)(
                             () =>
-                                S()(l, {
-                                    "aria-label": e?.trim() || `More ${u}`,
+                                _()(l, {
+                                    "aria-label": e?.trim() || `More ${d}`,
                                     icon: t,
                                     className: E.IconButton_0,
                                     variant: r,
                                 }),
-                            [e, t, u, r, l]
+                            [e, t, d, r, l]
                         ),
                         v = (0, a.useMemo)(() => o?.slice(m), [o, m]),
                         y = v && v.length > 0,
                         f = c && c.length > 0;
                     return y || f
-                        ? (0, i.jsxs)(L.W, {
+                        ? (0, i.jsxs)(S.W, {
                               anchorRef: n,
                               children: [
-                                  (0, i.jsx)(L.W.Anchor, {
-                                      children: (0, i.jsx)(_.K, {
-                                          ...(0, b.G)("overflow-menu-anchor"),
+                                  (0, i.jsx)(S.W.Anchor, {
+                                      children: (0, i.jsx)(L.K, {
+                                          ...(0, w.G)("overflow-menu-anchor"),
                                           ...h,
                                       }),
                                   }),
-                                  (0, i.jsx)(L.W.Overlay, {
+                                  (0, i.jsx)(S.W.Overlay, {
                                       align: "end",
                                       children: (0, i.jsxs)(P.l, {
                                           children: [
@@ -321,52 +322,52 @@
                 T.displayName || (T.displayName = "OverflowMenu");
             } catch {}
             let R = {
-                    Box_0: "VisibleAndOverflowContainer-module__Box_0--cTFgm",
-                    space: "VisibleAndOverflowContainer-module__space--BaowS",
+                    Box_0: "VisibleAndOverflowContainer-module__Box_0--KyT2b",
+                    space: "VisibleAndOverflowContainer-module__space--fVHr3",
                 },
-                V = { Box_0: "VisibleItem-module__Box_0--wJA9C" },
-                k = ({ children: e, actionKey: t }) => {
+                k = { Box_0: "VisibleItem-module__Box_0--BsJkb" },
+                V = ({ children: e, actionKey: t }) => {
                     let r = (0, a.useRef)(null),
-                        { recalculateItemSize: l } = w();
+                        { recalculateItemSize: l } = b();
                     return (
                         (0, h.A)(() => {
                             r.current && l(t, r.current);
                         }, [r, l, t]),
                         (0, i.jsx)("div", {
-                            ...(0, b.G)(`action-bar-item-${t}`),
+                            ...(0, w.G)(`action-bar-item-${t}`),
                             "data-action-bar-item": t,
                             ref: r,
-                            className: V.Box_0,
+                            className: k.Box_0,
                             children: e,
                         })
                     );
                 };
             try {
-                k.displayName || (k.displayName = "VisibleItem");
+                V.displayName || (V.displayName = "VisibleItem");
             } catch {}
-            let O = { Box_1: "VisibleItems-module__Box_1--_dgKR" },
-                z = ({ className: e, style: t }) => {
-                    let { itemContainerRef: r } = d(),
+            let O = { Box_1: "VisibleItems-module__Box_1--LOtDr" },
+                W = ({ className: e, style: t }) => {
+                    let { itemContainerRef: r } = u(),
                         { actions: a, gap: l } = s(),
-                        { visibleChildEndIndex: n } = w(),
+                        { visibleChildEndIndex: n } = b(),
                         o = a?.slice(0, n);
                     return (0, i.jsx)("div", {
-                        ...(0, b.G)("action-bar"),
+                        ...(0, w.G)("action-bar"),
                         ref: r,
                         className: (0, g.$)(e, O.Box_1),
                         style: { gap: l, ...t },
                         children: o?.map(({ key: e, render: t }) =>
-                            (0, i.jsx)(k, { actionKey: e, children: t(!1) }, e)
+                            (0, i.jsx)(V, { actionKey: e, children: t(!1) }, e)
                         ),
                     });
                 };
             try {
-                z.displayName || (z.displayName = "VisibleItems");
+                W.displayName || (W.displayName = "VisibleItems");
             } catch {}
-            let W = ({ overflowMenuToggleProps: e, children: t, ...r }) => {
-                let { outerContainerRef: a } = d(),
+            let H = ({ overflowMenuToggleProps: e, children: t, ...r }) => {
+                let { outerContainerRef: a } = u(),
                     { label: l, variant: n, gap: o } = s(),
-                    { justifySpaceBetween: c } = w();
+                    { justifySpaceBetween: c } = b();
                 return (
                     (0, A.G)(
                         {
@@ -379,13 +380,13 @@
                     ),
                     (0, i.jsxs)("div", {
                         ref: a,
-                        ...(0, b.G)("action-bar-container"),
+                        ...(0, w.G)("action-bar-container"),
                         role: "toolbar" === n ? "toolbar" : void 0,
                         "aria-label": "toolbar" === n ? l : void 0,
                         style: { gap: o },
                         className: (0, g.$)(R.Box_0, c && R.space),
                         children: [
-                            (0, i.jsx)(z, { ...r }),
+                            (0, i.jsx)(W, { ...r }),
                             t,
                             (0, i.jsx)(T, { anchorProps: e }),
                         ],
@@ -393,12 +394,12 @@
                 );
             };
             try {
-                W.displayName ||
-                    (W.displayName = "VisibleAndOverflowContainer");
+                H.displayName ||
+                    (H.displayName = "VisibleAndOverflowContainer");
             } catch {}
-            let H = "normal",
+            let z = "normal",
                 $ = ({ children: e, ...t }) =>
-                    (0, i.jsx)(W, { ...t, children: e }),
+                    (0, i.jsx)(H, { ...t, children: e }),
                 D = ({
                     actions: e = [],
                     staticMenuActions: t,
@@ -406,8 +407,8 @@
                     children: l,
                     label: s,
                     variant: o,
-                    density: d = H,
-                    anchorRef: u,
+                    density: u = z,
+                    anchorRef: d,
                     className: m,
                     style: h,
                 }) => {
@@ -424,35 +425,35 @@
                                           ? "var(--base-size-16)"
                                           : "none" === e
                                             ? 0
-                                            : "var(--base-size-8)")(d),
+                                            : "var(--base-size-8)")(u),
                             }),
-                            [e, t, o, s, d]
+                            [e, t, o, s, u]
                         ),
                         y = (0, a.useMemo)(
                             () => ({ actionKeys: e.map((e) => e.key) }),
                             [e]
                         ),
                         f = t && t.length > 0,
-                        p = e && e.length > 0;
-                    if (!p && !f) return null;
-                    let x = {
+                        x = e && e.length > 0;
+                    if (!x && !f) return null;
+                    let p = {
                         overflowMenuToggleProps: r,
                         className: m,
                         style: h,
                     };
                     return (0, i.jsx)(c, {
-                        value: { anchorRef: u },
+                        value: { anchorRef: d },
                         children: (0, i.jsx)(n, {
                             value: v,
-                            children: p
+                            children: x
                                 ? (0, i.jsx)(N, {
                                       value: y,
                                       children: (0, i.jsx)($, {
-                                          ...x,
+                                          ...p,
                                           children: l,
                                       }),
                                   })
-                                : (0, i.jsx)($, { ...x, children: l }),
+                                : (0, i.jsx)($, { ...p, children: l }),
                         }),
                     });
                 };
@@ -463,11 +464,11 @@
                 D.displayName || (D.displayName = "ActionBar");
             } catch {}
         },
-        77817: (e, t, r) => {
+        50205: (e, t, r) => {
             r.d(t, {
                 Dy: () => a,
                 O1: () => n,
-                QL: () => d,
+                QL: () => u,
                 eX: () => o,
                 n1: () => i,
                 os: () => c,
@@ -485,13 +486,13 @@
                 s = "default",
                 o = !1,
                 c = !1,
-                d = "List view";
+                u = "List view";
         },
-        78413: (e, t, r) => {
+        56825: (e, t, r) => {
             r.d(t, { m: () => n });
             var i = r(96540),
-                a = r(77817),
-                l = r(74304);
+                a = r(50205),
+                l = r(61015);
             function n(e) {
                 let { titleHeaderTag: t, hasMetadataTitle: r } = (0, l.t)();
                 return (0, i.useMemo)(() => {
@@ -501,7 +502,7 @@
                 }, [t, r, e]);
             }
         },
-        8241: (e, t, r) => {
+        80293: (e, t, r) => {
             r.d(t, { N: () => a });
             var i = r(96540);
             function a(
@@ -514,24 +515,24 @@
                 return (t || r(s, c) || (o(c), n(c)), [l, n]);
             }
         },
-        87854: (e, t, r) => {
-            r.d(t, { L: () => d });
+        9214: (e, t, r) => {
+            r.d(t, { L: () => u });
             var i = r(74848),
-                a = r(31668),
-                l = r(98386),
+                a = r(91230),
+                l = r(29731),
                 n = r(34164),
                 s = r(96540),
-                o = r(16946);
+                o = r(18377);
             let c = {
-                    container: "ActionBar-module__container--ZVTfi",
-                    hasActions: "ActionBar-module__hasActions--cU9tJ",
+                    container: "ActionBar-module__container--8I2RB",
+                    hasActions: "ActionBar-module__hasActions--HH0uB",
                 },
-                d = ({
+                u = ({
                     anchorIcon: e,
                     style: t,
                     className: r,
-                    label: d = "list item action bar",
-                    ...u
+                    label: u = "list item action bar",
+                    ...d
                 }) => {
                     let {
                         setAnyItemsWithActionBar: m,
@@ -540,19 +541,19 @@
                     return (
                         (0, s.useEffect)(() => m(!0), [m]),
                         (0, s.useEffect)(() => {
-                            u.actions && h(!0);
-                        }, [u.actions, h]),
+                            d.actions && h(!0);
+                        }, [d.actions, h]),
                         (0, i.jsx)("div", {
                             className: (0, n.$)(
                                 c.container,
-                                u.actions && c.hasActions,
+                                d.actions && c.hasActions,
                                 r
                             ),
                             style: t,
                             ...(0, l.G)("list-view-item-action-bar-container"),
                             children: (0, i.jsx)(a.E7, {
-                                ...u,
-                                label: d,
+                                ...d,
+                                label: u,
                                 variant: "menu",
                                 overflowMenuToggleProps: e
                                     ? { icon: e }
@@ -562,10 +563,10 @@
                     );
                 };
             try {
-                d.displayName || (d.displayName = "ListItemActionBar");
+                u.displayName || (u.displayName = "ListItemActionBar");
             } catch {}
         },
-        510: (e, t, r) => {
+        77177: (e, t, r) => {
             r.d(t, { L: () => s, O: () => n });
             var i = r(74848),
                 a = r(96540);
@@ -591,17 +592,17 @@
                 l.displayName || (l.displayName = "DescriptionContext");
             } catch {}
         },
-        78168: (e, t, r) => {
+        2970: (e, t, r) => {
             r.d(t, { c: () => g });
             var i = r(74848),
-                a = r(13233),
+                a = r(73189),
                 l = r(34164),
                 n = r(96540),
-                s = r(29447),
-                o = r(16946),
-                c = r(89992),
-                d = r(78563),
-                u = r(87854);
+                s = r(75986),
+                o = r(18377),
+                c = r(24347),
+                u = r(35220),
+                d = r(9214);
             let m = (0, n.createContext)({
                     actionsOpen: !1,
                     setActionsOpen: a.l,
@@ -618,30 +619,30 @@
             try {
                 m.displayName || (m.displayName = "ActionsContext");
             } catch {}
-            var v = r(510);
+            var v = r(77177);
             let y = {
-                listItem: "ListItem-module__listItem--kHali",
-                compact: "ListItem-module__compact--z60S6",
-                hasActionBar: "ListItem-module__hasActionBar--av1aD",
-                selected: "ListItem-module__selected--BaCDB",
+                listItem: "ListItem-module__listItem--k4eMk",
+                compact: "ListItem-module__compact--f4FSR",
+                hasActionBar: "ListItem-module__hasActionBar--t14sR",
+                selected: "ListItem-module__selected--WTEJT",
             };
-            var f = r(98386);
-            let p = { container: "MetadataContainer-module__container--lj6YE" };
-            function x({ style: e, className: t, children: r }) {
+            var f = r(29731);
+            let x = { container: "MetadataContainer-module__container--nU0s9" };
+            function p({ style: e, className: t, children: r }) {
                 return (0, i.jsx)("div", {
-                    className: (0, l.$)(p.container, t),
+                    className: (0, l.$)(x.container, t),
                     style: e,
                     ...(0, f.G)("list-view-item-metadata"),
                     children: r,
                 });
             }
             try {
-                x.displayName || (x.displayName = "ListItemMetadataContainer");
+                p.displayName || (p.displayName = "ListItemMetadataContainer");
             } catch {}
-            var N = r(98391),
-                w = r(87766),
-                b = r(65710),
-                C = r(14918);
+            var N = r(49744),
+                b = r(60257),
+                w = r(27603),
+                C = r(74501);
             let A = ({
                     children: e,
                     isActive: t = !1,
@@ -650,67 +651,67 @@
                     secondaryActions: m,
                     style: h,
                     className: f,
-                    metadataContainerStyle: p,
+                    metadataContainerStyle: x,
                     metadataContainerClassName: A,
                     as: g,
-                    ...j
+                    ...I
                 }) => {
-                    let { idPrefix: I } = (0, s.If)(),
-                        { isSelectable: S } = (0, c.v)(),
-                        { variant: L } = (0, d.e)(),
+                    let { idPrefix: j } = (0, s.If)(),
+                        { isSelectable: _ } = (0, c.v)(),
+                        { variant: S } = (0, u.e)(),
                         {
-                            anyItemsWithActionBar: _,
+                            anyItemsWithActionBar: L,
                             hasResizableActionsWithActionBar: P,
                         } = (0, o.Z)(),
                         E = (0, n.useId)(),
-                        { isSelected: M, onSelect: B } = (0, w.r)(),
-                        { status: T } = (0, b.x)(),
+                        { isSelected: M, onSelect: B } = (0, b.r)(),
+                        { status: T } = (0, w.x)(),
                         {
                             title: R,
-                            titleAction: V,
-                            headingRef: k,
+                            titleAction: k,
+                            headingRef: V,
                         } = (0, C.J)(),
                         { description: O } = (0, v.L)(),
-                        { hasNewActivity: z } = (0, N.I)(),
-                        W = (0, n.useRef)(null);
+                        { hasNewActivity: W } = (0, N.I)(),
+                        H = (0, n.useRef)(null);
                     (0, n.useEffect)(() => {
-                        W.current &&
+                        H.current &&
                             t &&
                             document.activeElement?.tagName === "BODY" &&
-                            W.current.focus();
+                            H.current.focus();
                     });
-                    let H = (0, n.useCallback)(
+                    let z = (0, n.useCallback)(
                             (e) => {
                                 switch (e.key) {
                                     case "Enter":
-                                        if (V) {
+                                        if (k) {
                                             let t = document.activeElement,
-                                                r = W.current === t,
+                                                r = H.current === t,
                                                 i =
-                                                    k.current &&
-                                                    (k.current === t ||
-                                                        k.current.contains(t));
-                                            (r || i) && V(e);
+                                                    V.current &&
+                                                    (V.current === t ||
+                                                        V.current.contains(t));
+                                            (r || i) && k(e);
                                         }
                                         break;
                                     case " ":
                                         if (
-                                            !S ||
-                                            W?.current !==
+                                            !_ ||
+                                            H?.current !==
                                                 document.activeElement
                                         )
                                             break;
                                         (e.preventDefault(), B(!M));
                                         break;
                                     case "Escape":
-                                        W?.current?.focus();
+                                        H?.current?.focus();
                                 }
                             },
-                            [V, S, B, M, k]
+                            [k, _, B, M, V]
                         ),
                         $ = (0, n.useCallback)(() => {
                             let e = M ? "Selected" : "",
-                                t = z ? "New activity" : "",
+                                t = W ? "New activity" : "",
                                 r = !!m,
                                 i =
                                     (Array.isArray(a) && a.length > 0) ||
@@ -731,28 +732,28 @@
                                 .filter((e) => e.trim())
                                 .join(". ");
                             return s.endsWith(".") ? s : `${s}.`;
-                        }, [m, a, M, z, R, T, O]);
+                        }, [m, a, M, W, R, T, O]);
                     return (0, i.jsxs)(g || "li", {
-                        ref: W,
-                        id: `${I}-list-view-node-${E}`,
+                        ref: H,
+                        id: `${j}-list-view-node-${E}`,
                         className: (0, l.$)(
                             y.listItem,
                             M && y.selected,
-                            "compact" === L && y.compact,
-                            _ && P && y.hasActionBar,
+                            "compact" === S && y.compact,
+                            L && P && y.hasActionBar,
                             f
                         ),
                         tabIndex: -1,
                         "aria-label": $(),
                         style: h,
-                        onKeyDown: H,
-                        ...j,
+                        onKeyDown: z,
+                        ...I,
                         children: [
                             r,
                             e,
                             Array.isArray(a) && a.length > 0
-                                ? (0, i.jsx)(x, {
-                                      style: p,
+                                ? (0, i.jsx)(p, {
+                                      style: x,
                                       className: A,
                                       children: a.map((e, t) =>
                                           (0, i.jsx)(
@@ -763,12 +764,12 @@
                                       ),
                                   })
                                 : !!(a && !Array.isArray(a)) &&
-                                  (0, i.jsx)(x, {
-                                      style: p,
+                                  (0, i.jsx)(p, {
+                                      style: x,
                                       className: A,
                                       children: a,
                                   }),
-                            m ?? (_ && (0, i.jsx)(u.L, {})),
+                            m ?? (L && (0, i.jsx)(d.L, {})),
                         ],
                     });
                 },
@@ -790,17 +791,17 @@
                             },
                             [s]
                         ));
-                    let d = (0, n.useMemo)(
+                    let u = (0, n.useMemo)(
                         () => ({ isSelected: t, onSelect: r }),
                         [t, r]
                     );
                     return (0, i.jsx)(h, {
                         children: (0, i.jsx)(C.y, {
-                            children: (0, i.jsx)(w.W, {
-                                value: d,
+                            children: (0, i.jsx)(b.W, {
+                                value: u,
                                 children: (0, i.jsx)(N.t, {
                                     children: (0, i.jsx)(v.O, {
-                                        children: (0, i.jsx)(b.u, {
+                                        children: (0, i.jsx)(w.u, {
                                             children: (0, i.jsx)(A, {
                                                 ...l,
                                                 children: e,
@@ -819,7 +820,7 @@
                 g.displayName || (g.displayName = "ListItem");
             } catch {}
         },
-        98391: (e, t, r) => {
+        49744: (e, t, r) => {
             r.d(t, { I: () => s, t: () => n });
             var i = r(74848),
                 a = r(96540);
@@ -845,13 +846,13 @@
                 l.displayName || (l.displayName = "NewActivityContext");
             } catch {}
         },
-        87766: (e, t, r) => {
-            r.d(t, { W: () => c, r: () => d });
+        60257: (e, t, r) => {
+            r.d(t, { W: () => c, r: () => u });
             var i = r(74848),
-                a = r(52811),
-                l = r(13233),
+                a = r(4559),
+                l = r(73189),
                 n = r(96540),
-                s = r(14918);
+                s = r(74501);
             let o = (0, n.createContext)({ isSelected: !1, onSelect: l.l }),
                 c = ({
                     children: e,
@@ -875,12 +876,12 @@
                     return (0, i.jsx)(o.Provider, { value: c, children: e });
                 };
             c.displayName = "ListItemSelectionProvider";
-            let d = () => (0, n.useContext)(o);
+            let u = () => (0, n.useContext)(o);
             try {
                 o.displayName || (o.displayName = "SelectionContext");
             } catch {}
         },
-        65710: (e, t, r) => {
+        27603: (e, t, r) => {
             r.d(t, { u: () => n, x: () => s });
             var i = r(74848),
                 a = r(96540);
@@ -906,7 +907,7 @@
                 l.displayName || (l.displayName = "StatusContext");
             } catch {}
         },
-        14918: (e, t, r) => {
+        74501: (e, t, r) => {
             r.d(t, { J: () => s, y: () => n });
             var i = r(74848),
                 a = r(96540);
@@ -943,7 +944,7 @@
                 l.displayName || (l.displayName = "TitleContext");
             } catch {}
         },
-        29447: (e, t, r) => {
+        75986: (e, t, r) => {
             r.d(t, { If: () => s, JE: () => n });
             var i = r(74848),
                 a = r(96540);
@@ -964,10 +965,10 @@
                 l.displayName || (l.displayName = "IdContext");
             } catch {}
         },
-        16946: (e, t, r) => {
+        18377: (e, t, r) => {
             r.d(t, { Z: () => o, w: () => s });
             var i = r(74848),
-                a = r(13233),
+                a = r(73189),
                 l = r(96540);
             let n = (0, l.createContext)({
                     anyItemsWithActionBar: !1,
@@ -995,17 +996,17 @@
                 n.displayName || (n.displayName = "ItemsContext");
             } catch {}
         },
-        84905: (e, t, r) => {
-            r.d(t, { u: () => I });
+        97174: (e, t, r) => {
+            r.d(t, { u: () => j });
             var i = r(74848),
-                a = r(13233),
-                l = r(98386),
-                n = r(8241),
-                s = r(84217),
+                a = r(73189),
+                l = r(29731),
+                n = r(80293),
+                s = r(63557),
                 o = r(34164),
                 c = r(96540),
-                d = r(77817),
-                u = r(57909),
+                u = r(50205),
+                d = r(44569),
                 m = r(69676),
                 h = r(55966),
                 v = r(82678);
@@ -1053,14 +1054,14 @@
                     r = t?.querySelector("[role=list] li");
                 return r instanceof HTMLElement ? r : void 0;
             }
-            function p(e) {
+            function x(e) {
                 let t = e.closest("[role=list]"),
                     r = t?.querySelectorAll("[role=list] li");
                 if (!r || r.length < 1) return;
                 let i = r[r.length - 1];
                 if (i instanceof HTMLElement) return i;
             }
-            function x(e, t) {
+            function p(e, t) {
                 let r = [
                         ...(0, h.K1)(document.documentElement, {
                             strict: !0,
@@ -1070,35 +1071,35 @@
                     i = r.indexOf(e);
                 return "next" === t ? r[i + 1] : r[i - 1];
             }
-            var N = r(29447),
-                w = r(16946);
-            let b = {
-                ul: "ListView-module__ul--vMLEZ",
-                container: "ListView-module__container--zF6wW",
+            var N = r(75986),
+                b = r(18377);
+            let w = {
+                ul: "ListView-module__ul--A_8jF",
+                container: "ListView-module__container--rxCWy",
             };
-            var C = r(25654),
-                A = r(89992),
-                g = r(74304),
-                j = r(78563);
-            let I = ({
+            var C = r(53687),
+                A = r(24347),
+                g = r(61015),
+                I = r(35220);
+            let j = ({
                     title: e,
                     titleHeaderTag: t,
                     children: r,
                     totalCount: l,
                     selectedCount: s = 0,
-                    variant: o = d.tp,
-                    singularUnits: u,
+                    variant: o = u.tp,
+                    singularUnits: d,
                     pluralUnits: m,
                     onVariantChange: h = a.l,
                     isSelectable: v,
                     hasDragHandle: y,
                     ...f
                 }) => {
-                    let [p, x] = (0, n.N)(o);
+                    let [x, p] = (0, n.N)(o);
                     (0, c.useEffect)(() => {
-                        h?.(p);
-                    }, [h, p]);
-                    let b = (0, c.useMemo)(
+                        h?.(x);
+                    }, [h, x]);
+                    let w = (0, c.useMemo)(
                         () => c.Children.toArray(r).length,
                         [r]
                     );
@@ -1106,20 +1107,20 @@
                         children: (0, i.jsx)(g.y, {
                             title: e,
                             titleHeaderTag: t,
-                            children: (0, i.jsx)(j.H, {
-                                variant: p,
-                                setVariant: x,
+                            children: (0, i.jsx)(I.H, {
+                                variant: x,
+                                setVariant: p,
                                 children: (0, i.jsx)(A.W, {
-                                    countOnPage: b,
+                                    countOnPage: w,
                                     selectedCount: s,
                                     totalCount: l,
-                                    singularUnits: u,
+                                    singularUnits: d,
                                     pluralUnits: m,
                                     isSelectable: v,
                                     hasDragHandle: y,
                                     children: (0, i.jsx)(C.e, {
-                                        children: (0, i.jsx)(w.w, {
-                                            children: (0, i.jsx)(S, {
+                                        children: (0, i.jsx)(b.w, {
+                                            children: (0, i.jsx)(_, {
                                                 ...f,
                                                 children: r,
                                             }),
@@ -1130,21 +1131,21 @@
                         }),
                     });
                 },
-                S = ({
+                _ = ({
                     metadata: e,
                     children: t,
                     className: r,
                     listRef: a,
                     ariaLabelledBy: n,
-                    itemsListClassName: d,
-                    itemsListStyle: w,
+                    itemsListClassName: u,
+                    itemsListStyle: b,
                     strictFocusZone: C,
                     as: A,
-                    role: j,
-                    ...I
+                    role: I,
+                    ...j
                 }) => {
-                    let { idPrefix: S } = (0, N.If)(),
-                        { title: L, titleHeaderTag: _ } = (0, g.t)(),
+                    let { idPrefix: _ } = (0, N.If)(),
+                        { title: S, titleHeaderTag: L } = (0, g.t)(),
                         { containerRef: P } = (function (e = !0) {
                             let t = void 0 === e || e,
                                 r =
@@ -1152,7 +1153,7 @@
                                     m.z0.HomeAndEnd |
                                     m.z0.PageUpDown |
                                     m.z0.Tab,
-                                i = (0, u.zw)() ? r | m.z0.JK : r,
+                                i = (0, d.zw)() ? r | m.z0.JK : r,
                                 { containerRef: a } = (0, v.G)({
                                     strict: t,
                                     bindKeys: i,
@@ -1180,7 +1181,7 @@
                                                         "list-view-node"
                                                     )
                                                 )
-                                                    return x(r, "previous");
+                                                    return p(r, "previous");
                                                 let e =
                                                     r.closest("[role=list] li");
                                                 if (!e) return;
@@ -1215,14 +1216,14 @@
                                                             ? a[s - 1]
                                                             : a[s + 1]
                                                         : void 0
-                                                    : x(r, "next");
+                                                    : p(r, "next");
                                             }
                                             if ("previous" === e)
                                                 return y(r, e) || f(r);
                                             if ("next" === e)
-                                                return y(r, e) || p(r);
+                                                return y(r, e) || x(r);
                                             if ("start" === e) return f(r);
-                                            if ("end" === e) return p(r);
+                                            if ("end" === e) return x(r);
                                         }
                                     },
                                 });
@@ -1231,43 +1232,43 @@
                     (0, c.useEffect)(() => {
                         a && (a.current = P.current);
                     }, [P, a]);
-                    let E = n ?? `${S}-list-view-container-title`;
+                    let E = n ?? `${_}-list-view-container-title`;
                     return (0, i.jsxs)("div", {
-                        id: `${S}-list-view-container`,
-                        className: (0, o.$)(b.container, r),
+                        id: `${_}-list-view-container`,
+                        className: (0, o.$)(w.container, r),
                         children: [
                             !n &&
                                 (0, i.jsx)(s.A, {
                                     className: "sr-only",
-                                    as: _,
+                                    as: L,
                                     id: E,
                                     ...(0, l.G)("list-view-title"),
-                                    children: L,
+                                    children: S,
                                 }),
                             e,
                             (0, i.jsx)(A || "ul", {
-                                className: (0, o.$)(b.ul, d),
-                                style: w,
+                                className: (0, o.$)(w.ul, u),
+                                style: b,
                                 ref: P,
                                 "aria-labelledby": E,
                                 tabIndex: -1,
-                                role: j || "list",
+                                role: I || "list",
                                 "data-listview-component": "items-list",
                                 ...(0, l.G)("list-view-items"),
-                                ...I,
+                                ...j,
                                 children: t,
                             }),
                         ],
                     });
                 };
             try {
-                I.displayName || (I.displayName = "ListView");
+                j.displayName || (j.displayName = "ListView");
             } catch {}
             try {
-                S.displayName || (S.displayName = "ListViewContainer");
+                _.displayName || (_.displayName = "ListViewContainer");
             } catch {}
         },
-        25654: (e, t, r) => {
+        53687: (e, t, r) => {
             r.d(t, { P: () => s, e: () => n });
             var i = r(74848),
                 a = r(96540);
@@ -1289,12 +1290,12 @@
                 l.displayName || (l.displayName = "MultiPageSelectionContext");
             } catch {}
         },
-        89992: (e, t, r) => {
-            r.d(t, { W: () => d, v: () => u });
+        24347: (e, t, r) => {
+            r.d(t, { W: () => u, v: () => d });
             var i = r(74848),
-                a = r(13233),
+                a = r(73189),
                 l = r(96540),
-                n = r(77817);
+                n = r(50205);
             let s = "list item",
                 o = "list items",
                 c = (0, l.createContext)({
@@ -1308,14 +1309,14 @@
                     isSelectable: n.eX,
                     hasDragHandle: n.os,
                 }),
-                d = (
+                u = (
                     {
                         children: e,
                         countOnPage: t = 0,
                         singularUnits: r = s,
                         pluralUnits: a = o,
-                        totalCount: d,
-                        selectedCount: u = 0,
+                        totalCount: u,
+                        selectedCount: d = 0,
                         isSelectable: m = n.eX,
                         hasDragHandle: h = n.os,
                     } = {
@@ -1327,38 +1328,38 @@
                         hasDragHandle: n.os,
                     }
                 ) => {
-                    let [v, y] = (0, l.useState)(u);
-                    (0, l.useEffect)(() => y(u), [u]);
+                    let [v, y] = (0, l.useState)(d);
+                    (0, l.useEffect)(() => y(d), [d]);
                     let f = v > 0 && v >= t,
-                        p = v > 0,
-                        x = (0, l.useMemo)(
+                        x = v > 0,
+                        p = (0, l.useMemo)(
                             () => ({
-                                totalCount: d,
+                                totalCount: u,
                                 countOnPage: t,
                                 selectedCount: v,
                                 setSelectedCount: y,
                                 isSelectAllChecked: f,
-                                anyItemsSelected: p,
+                                anyItemsSelected: x,
                                 singularUnits: r,
                                 pluralUnits: a,
                                 isSelectable: m,
                                 hasDragHandle: h,
                             }),
-                            [d, t, v, y, f, p, r, a, m, h]
+                            [u, t, v, y, f, x, r, a, m, h]
                         );
-                    return (0, i.jsx)(c.Provider, { value: x, children: e });
+                    return (0, i.jsx)(c.Provider, { value: p, children: e });
                 };
-            d.displayName = "ListViewSelectionProvider";
-            let u = () => (0, l.useContext)(c);
+            u.displayName = "ListViewSelectionProvider";
+            let d = () => (0, l.useContext)(c);
             try {
                 c.displayName || (c.displayName = "SelectionContext");
             } catch {}
         },
-        74304: (e, t, r) => {
+        61015: (e, t, r) => {
             r.d(t, { t: () => o, y: () => s });
             var i = r(74848),
                 a = r(96540),
-                l = r(77817);
+                l = r(50205);
             let n = (0, a.createContext)(void 0),
                 s = ({ children: e, title: t, titleHeaderTag: r = l.tD }) => {
                     let [s, o] = (0, a.useState)(!1),
@@ -1386,12 +1387,12 @@
                 n.displayName || (n.displayName = "TitleContext");
             } catch {}
         },
-        78563: (e, t, r) => {
+        35220: (e, t, r) => {
             r.d(t, { H: () => o, e: () => c });
             var i = r(74848),
-                a = r(13233),
+                a = r(73189),
                 l = r(96540),
-                n = r(77817);
+                n = r(50205);
             let s = (0, l.createContext)(void 0),
                 o = ({
                     children: e,
@@ -1419,4 +1420,4 @@
         },
     },
 ]);
-//# sourceMappingURL=ui_packages_list-view_src_hooks_use-next-header-tag_ts-ui_packages_list-view_src_ListItem_Lis-0a5d95-25853a093a09.js.map
+//# sourceMappingURL=packages_list-view_src_hooks_use-next-header-tag_ts-packages_list-view_src_ListItem_ListItem_-055669-4ea17908cff1.js.map

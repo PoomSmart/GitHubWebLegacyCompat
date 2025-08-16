@@ -47,6 +47,11 @@ const FILE_PATTERNS = {
     "react-core": /react-core-[a-f0-9]+\.js$/,
     "remark-vendors":
         /vendors-node_modules_remark-gfm_lib_index_js-node_modules_remark-parse_lib_index_js-node_modu-[a-f0-9]+-[a-f0-9]+\.js$/,
+    "text-expander": /vendors-node_modules_github_text-expander-element_dist_index_js-[a-f0-9]+\.js$/,
+    "emoji-element": /vendors-node_modules_github_emoji-element_dist_index_js-[a-f0-9]+\.js$/,
+    "emotion-is-prop-valid": /vendors-node_modules_@?emotion[_-]is-prop-valid.*-[a-f0-9]+\.js$/,
+    "environment": /ui_packages_environment_.*-[a-f0-9]+\.js$/,
+    "tanstack-queryObserver": /vendors.*tanstack.*query.*observer.*-[a-f0-9]+\.js$/i,
     // "repos-overview": /chunk-lazy-react-partial-repos-overview-[a-f0-9]+\.js$/,
     // "wp-runtime": /wp-runtime-[a-f0-9]+\.js$/,
     // CSS
@@ -58,6 +63,11 @@ const ALTERNATIVE_PATTERNS = {
     "issue-viewer": /issue-viewer.*-[a-f0-9]+\.js$/,
     "list-view": /list-view.*-[a-f0-9]+\.js$/,
     "remark-vendors": /vendors.*remark.*-[a-f0-9]+\.js$/,
+    "text-expander": /text-expander.*-[a-f0-9]+\.js$/,
+    "emoji-element": /emoji-element.*-[a-f0-9]+\.js$/,
+    "emotion-is-prop-valid": /is-prop-valid.*-[a-f0-9]+\.js$/,
+    "environment": /environment.*-[a-f0-9]+\.js$/,
+    "tanstack-queryObserver": /queryObserver.*-[a-f0-9]+\.js$/i,
     // "repos-overview": /chunk.*repos.*overview.*-[a-f0-9]+\.js$/,
     // "wp-runtime": /runtime.*-[a-f0-9]+\.js$/,
 };
@@ -69,6 +79,11 @@ const TARGET_FILES = {
     "list-view": "16.4-list-view.js",
     "react-core": "16.4-a-react-core.js",
     "remark-vendors": "16.4-remark-vendors.js",
+    "text-expander": "15.0-text-expander.js",
+    "emoji-element": "15.0-emoji-element.js",
+    "emotion-is-prop-valid": "15.0-emotion-is-prop-valid.js",
+    "environment": "15.0-environment.js",
+    "tanstack-queryObserver": "15.0-tanstack-queryObserver.js",
     // "repos-overview": "16.4-repos-overview.js",
     "primer-react-css": "15.4-primer-react.css",
 };
@@ -96,7 +111,27 @@ async function fetchPageWithPuppeteer(url) {
         });
 
         // Wait for potential lazy-loaded content
-        await new Promise((resolve) => setTimeout(resolve, 3000));
+        await new Promise((resolve) => setTimeout(resolve, 1500));
+        // Try to trigger lazy loading by scrolling to the bottom
+        try {
+            await page.evaluate(async () => {
+                await new Promise((resolve) => {
+                    let total = 0;
+                    const step = () => {
+                        const scrolled = Math.min(1000, document.body.scrollHeight - window.scrollY);
+                        window.scrollBy(0, scrolled);
+                        total += scrolled;
+                        if (total > 3000 || window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+                            resolve(null);
+                        } else {
+                            requestAnimationFrame(step);
+                        }
+                    };
+                    requestAnimationFrame(step);
+                });
+            });
+            await page.waitForNetworkIdle({ idleTime: 500, timeout: 5000 }).catch(() => {});
+        } catch (_) {}
 
         // Get all script sources that were actually loaded
         const scriptSources = await page.evaluate(() => {
@@ -146,9 +181,13 @@ async function fetchGitHubPage() {
                 name: "main repository page",
                 url: "https://github.com/microsoft/vscode",
             },
+            {
+                name: "issue detail page",
+                url: "https://github.com/microsoft/vscode/issues/1",
+            },
         ];
 
-        for (const { name, url } of pages) {
+    for (const { name, url } of pages) {
             console.log(`  - Fetching from ${name}...`);
 
             try {
