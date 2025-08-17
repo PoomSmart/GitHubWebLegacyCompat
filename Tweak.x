@@ -16,7 +16,7 @@ static BOOL isIOSVersionOrNewer(NSInteger major, NSInteger minor) {
 }
 
 static NSString *injectStyles(NSString *identifier, NSString *styles) {
-    return [NSString stringWithFormat:@"if(document.getElementById('%@')===null){const styleSheet=document.createElement('style');styleSheet.type='text/css';styleSheet.innerText=`%@`;styleSheet.id='no-polyfill-%@';document.head.appendChild(styleSheet);}", identifier, styles, identifier];
+    return [NSString stringWithFormat:@"if(document.getElementById('no-polyfill-%@')===null){const styleSheet=document.createElement('style');styleSheet.type='text/css';styleSheet.innerText=`%@`;styleSheet.id='no-polyfill-%@';document.head.appendChild(styleSheet);}", identifier, styles, identifier];
 }
 
 static void injectScript(WKWebView *webview, NSString *identifier, NSString *script, WKUserScriptInjectionTime injectionTime) {

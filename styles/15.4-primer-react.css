@@ -7312,3 +7312,81 @@ body[data-page-layout-dragging="true"] * {
 .prc-SegmentedControl-LeadingIcon-dAHA8 {
   margin-right: var(--base-size-4, 0.25rem);
 }
+.prc-Blankslate-Blankslate-7GPW- {
+  --blankslate-padding: var(--base-size-20, 1.25rem);
+}
+.prc-Blankslate-Blankslate-7GPW-:where([data-spacious="true"]) {
+  --blankslate-padding: var(--base-size-44, 2.75rem)
+    var(--base-size-28, 1.75rem);
+}
+.prc-Blankslate-Blankslate-7GPW- {
+  --blankslate-heading-text: var(
+    --text-title-shorthand-small,
+    600 1rem/1.5 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji"
+  );
+  --blankslate-description-text: var(
+    --text-body-shorthand-medium,
+    400 0.875rem/1.4285 -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Noto Sans",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji"
+  );
+}
+.prc-Blankslate-Visual-PeTD- {
+  color: var(--fgColor-muted, var(--color-fg-muted));
+  margin-bottom: var(--base-size-8, 0.5rem);
+  max-width: var(--base-size-24, 1.5rem);
+}
+.prc-Blankslate-Action-SK5XS {
+  margin-top: var(--base-size-8, 0.5rem);
+}
+.prc-Blankslate-Action-SK5XS:first-of-type {
+  margin-top: var(--base-size-16, 1rem);
+}
+.prc-Blankslate-Action-SK5XS:last-of-type {
+  margin-bottom: calc(var(--base-size-8, 0.5rem) / 2);
+}
+.prc-Banner-BannerContainer-lbx3d {
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.prc-Banner-BannerActions-XCfHL {
+  margin-block-end: var(--base-size-6, 0.375rem);
+}
+.prc-Banner-BannerActions-XCfHL [data-primary-action="trailing"] {
+  display: none;
+}
+.prc-Banner-BannerActions-XCfHL [data-primary-action="leading"] {
+  display: flex;
+}
+.prc-Banner-BannerContainer-lbx3d {
+  display: grid;
+  grid-template-columns: auto auto;
+}
+:where(.prc-Banner-Banner-IR8eJ):not([data-dismissible])
+  :where(
+    .prc-Banner-BannerActionsContainer-ukGMH[data-primary-action="trailing"]
+  )
+  :where([data-variant="link"]:only-child) {
+  padding-inline: 0 var(--base-size-12, 0.75rem);
+}
+.prc-Banner-BannerActions-XCfHL [data-primary-action="trailing"] {
+  display: flex;
+  min-height: var(--base-size-32, 2rem);
+}
+.prc-Banner-BannerActions-XCfHL [data-primary-action="leading"] {
+  display: none;
+}

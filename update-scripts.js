@@ -51,11 +51,18 @@ const FILE_PATTERNS = {
     "emoji-element": /vendors-node_modules_github_emoji-element_dist_index_js-[a-f0-9]+\.js$/,
     "emotion-is-prop-valid": /vendors-node_modules_@?emotion[_-]is-prop-valid.*-[a-f0-9]+\.js$/,
     "environment": /ui_packages_environment_.*-[a-f0-9]+\.js$/,
-    "tanstack-queryObserver": /vendors.*tanstack.*query.*observer.*-[a-f0-9]+\.js$/i,
+    "tanstack-queryObserver": /vendors-node_modules_tanstack_(react-query|query-core)_build_modern_(useQuery|queryObserver)_js-[a-f0-9]+\.js$/,
+    "tanstack-queryClient": /vendors-node_modules_tanstack_query-core_build_modern_queryClient_js-[a-f0-9]+\.js$/,
     // "repos-overview": /chunk-lazy-react-partial-repos-overview-[a-f0-9]+\.js$/,
     // "wp-runtime": /wp-runtime-[a-f0-9]+\.js$/,
     // CSS
     "primer-react-css": /primer-react\.[a-f0-9]+\.module\.css$/,
+    "primer-css": /primer-[a-f0-9]+\.css$/,
+    "new-task-chat-input-css": /packages_react-core_deferred-registry_ts-packages_agent-sessions_components_NewTaskChatInput_-?[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
+    "issue-viewer-css": /packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
+    "issues-react-css": /issues-react\.[a-f0-9]+\.module\.css$/,
+    "comment-box-markdown-css": /packages_comment-box_api_file-upload_ts-packages_comment-box_api_preview_ts-packages_markdown-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
+    "commenting-markdown-css": /packages_commenting_hooks_use-markdown-body_ts-packages_commenting_utils_blocked-commenting-[a-z0-9-]+\.[a-f0-9]+\.module\.css$/,
 };
 
 // Alternative patterns if primary ones don't match
@@ -67,9 +74,22 @@ const ALTERNATIVE_PATTERNS = {
     "emoji-element": /emoji-element.*-[a-f0-9]+\.js$/,
     "emotion-is-prop-valid": /is-prop-valid.*-[a-f0-9]+\.js$/,
     "environment": /environment.*-[a-f0-9]+\.js$/,
-    "tanstack-queryObserver": /queryObserver.*-[a-f0-9]+\.js$/i,
+    "tanstack-queryObserver": /tanstack.*(react-query|query-core).*_(useQuery|queryObserver)_js-[a-f0-9]+\.js$/i,
+    "tanstack-queryClient": /tanstack.*query-core.*_queryClient_js-[a-f0-9]+\.js$/i,
     // "repos-overview": /chunk.*repos.*overview.*-[a-f0-9]+\.js$/,
     // "wp-runtime": /runtime.*-[a-f0-9]+\.js$/,
+    // New Task Chat Input CSS fallback
+    "new-task-chat-input-css": /NewTaskChatInput_.*\.module\.css$/,
+    // Core Primer CSS fallback
+    "primer-css": /primer.*\.css$/,
+    // Issue Viewer CSS fallback
+    "issue-viewer-css": /issue-viewer.*\.module\.css$/,
+    // Issues React CSS fallback
+    "issues-react-css": /issues-react.*\.module\.css$/,
+    // Comment Box Markdown CSS fallback
+    "comment-box-markdown-css": /comment-box.*markdown.*\.module\.css$/i,
+    // Commenting Markdown CSS fallback
+    "commenting-markdown-css": /commenting.*use-markdown-body.*\.module\.css$/i,
 };
 
 // Target files in scripts directory
@@ -84,9 +104,27 @@ const TARGET_FILES = {
     "emotion-is-prop-valid": "15.0-emotion-is-prop-valid.js",
     "environment": "15.0-environment.js",
     "tanstack-queryObserver": "15.0-tanstack-queryObserver.js",
+    "tanstack-queryClient": "15.0-tanstack-queryClient.js",
     // "repos-overview": "16.4-repos-overview.js",
     "primer-react-css": "15.4-primer-react.css",
+    "primer-css": "15.4-primer.css",
+    "new-task-chat-input-css": "15.4-new-task-chat-input.css",
+    "issue-viewer-css": "15.4-issue-viewer.css",
+    "issues-react-css": "15.4-issues-react.css",
+    "comment-box-markdown-css": "15.4-comment-box-markdown.css",
+    "commenting-markdown-css": "15.4-commenting-markdown.css",
 };
+
+// Keys that represent CSS assets (written to styles/ instead of scripts/)
+const CSS_KEYS = new Set([
+    "primer-react-css",
+    "primer-css",
+    "new-task-chat-input-css",
+    "issue-viewer-css",
+    "issues-react-css",
+    "comment-box-markdown-css",
+    "commenting-markdown-css",
+]);
 
 async function fetchPageWithPuppeteer(url) {
     if (!puppeteer) {
@@ -139,13 +177,16 @@ async function fetchPageWithPuppeteer(url) {
                 ...Array.from(document.querySelectorAll("script[src]")),
                 ...Array.from(document.querySelectorAll('link[rel="stylesheet"][href]')),
             ];
+            const jsCssWithQuery = /(\.js|\.css)([?#].*)?$/i;
             return elements
                 .map((el) => el.src || el.href)
                 .filter((src) =>
                     src &&
                     src.includes("github.githubassets.com/assets/") &&
-                    (src.endsWith(".js") || src.endsWith(".css"))
-                );
+                    jsCssWithQuery.test(src)
+                )
+                // Normalize by stripping query/hash to dedupe with HTML regex extraction later
+                .map((src) => src.replace(/([.#]?[a-z]*)?(\.js|\.css)([?#].*)?$/i, (m, _p, ext) => ext ? src.slice(0, src.toLowerCase().lastIndexOf(ext.toLowerCase())) + ext : src));
         });
 
         // Also get HTML content as backup
@@ -178,12 +219,32 @@ async function fetchGitHubPage() {
                 url: "https://github.com/microsoft/vscode/issues",
             },
             {
+                name: "github home",
+                url: "https://github.com/",
+            },
+            {
                 name: "main repository page",
                 url: "https://github.com/microsoft/vscode",
             },
             {
                 name: "issue detail page",
                 url: "https://github.com/microsoft/vscode/issues/1",
+            },
+            {
+                name: "README blob (markdown viewer)",
+                url: "https://github.com/microsoft/vscode/blob/main/README.md",
+            },
+            {
+                name: "pull request page",
+                url: "https://github.com/microsoft/vscode/pull/1",
+            },
+            {
+                name: "gist homepage",
+                url: "https://gist.github.com/",
+            },
+            {
+                name: "Copilot features",
+                url: "https://github.com/features/copilot",
             },
         ];
 
@@ -815,16 +876,15 @@ async function main() {
         console.log("\n--- Applying Patches ---");
 
         // Step 4: Apply patches to minified files
-        // Helper to extract inner rules of all @layer blocks, removing wrappers
-        function extractLayerContent(css) {
+        // Helpers to extract inner rules of all @layer / @container blocks, removing wrappers
+        function extractBlockContents(css, atKeyword) {
             let result = "";
             let pos = 0;
             while (true) {
-                const idx = css.indexOf("@layer", pos);
+                const idx = css.indexOf(atKeyword, pos);
                 if (idx === -1) break;
-                // Find opening brace of this layer block
-                const openBrace = css.indexOf("{", idx);
-                if (openBrace === -1) break; // malformed
+                const openBrace = css.indexOf('{', idx);
+                if (openBrace === -1) break;
                 let depth = 0;
                 let i = openBrace;
                 for (; i < css.length; i++) {
@@ -835,40 +895,44 @@ async function main() {
                         if (depth === 0) { i++; break; }
                     }
                 }
-                const block = css.substring(openBrace + 1, i - 1); // contents inside layer braces
+                const block = css.substring(openBrace + 1, i - 1);
                 result += block.trim() + "\n";
                 pos = i;
             }
-            return result.trim() + (result.endsWith("\n") ? "" : "\n");
+            return result.trim();
+        }
+        function extractModernOnlyCss(css) {
+            const layers = extractBlockContents(css, "@layer");
+            const containers = extractBlockContents(css, "@container");
+            const parts = [];
+            if (layers) parts.push(layers);
+            if (containers) parts.push(containers);
+            const joined = parts.join("\n").trim();
+            return joined ? joined + "\n" : "";
         }
 
     for (const [key, content] of Object.entries(processedFiles)) {
             const originalLength = content.length;
             let modifiedContent = content;
 
-            if (key === "primer-react-css") {
-                // Extract only rules inside @layer blocks and drop the @layer wrapper for legacy compatibility
-                const extracted = extractLayerContent(content);
+            if (CSS_KEYS.has(key)) {
+                // Extract only modern CSS guarded by @layer/@container and drop wrappers
+                const extracted = extractModernOnlyCss(content);
                 if (extracted && extracted.length > 0) {
-                    console.log(`  Extracted @layer content: ${content.length} → ${extracted.length} chars`);
+                    console.log(`  Extracted modern CSS (@layer/@container): ${content.length} → ${extracted.length} chars`);
                     modifiedContent = extracted;
-                    // Programmatic Prettier formatting (parser: css)
                     if (prettier) {
                         try {
                             const pretty = await prettier.format(modifiedContent, { parser: 'css' });
-                            if (pretty && typeof pretty.then === 'function') {
-                                // Shouldn't happen after await, but guard just in case
-                                modifiedContent = await pretty;
-                            } else {
-                                modifiedContent = pretty;
-                            }
+                            modifiedContent = pretty;
                             console.log("  Applied Prettier CSS formatting (programmatic)");
                         } catch (e) {
                             console.log(`  Prettier CSS formatting failed: ${e.message}`);
                         }
                     }
                 } else {
-                    console.log("  ⚠️  No @layer content extracted; keeping original CSS");
+                    console.log("  ⚠️  No modern CSS blocks found; leaving CSS empty to avoid injecting legacy rules");
+                    modifiedContent = "";
                 }
             } else {
                 // Apply text patches to formatted content (if patch file exists)
@@ -899,7 +963,7 @@ async function main() {
         if (content && typeof content.then === 'function') {
             content = await content; // resolve any stray promise
         }
-        const isCss = key === "primer-react-css";
+    const isCss = CSS_KEYS.has(key);
         const targetDir = isCss ? STYLES_DIR : SCRIPTS_DIR;
         const targetFile = path.join(targetDir, TARGET_FILES[key]);
 

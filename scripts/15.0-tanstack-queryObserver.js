@@ -1,13 +1,10 @@
 "use strict";
-(globalThis.webpackChunk = globalThis.webpackChunk || []).push([
-    [
-        "vendors-node_modules_tanstack_query-core_build_modern_queryObserver_js-node_modules_tanstack_-defd52",
-    ],
+(globalThis.webpackChunk_github_ui_github_ui =
+    globalThis.webpackChunk_github_ui_github_ui || []).push([
+    ["vendors-node_modules_tanstack_react-query_build_modern_useQuery_js"],
     {
         1651: (e, t, r) => {
-            r.d(t, {
-                $: () => c,
-            });
+            r.d(t, { $: () => c });
             var s = r(29658),
                 i = r(26261),
                 n = r(79757),
@@ -16,7 +13,7 @@
                 h = r(24880),
                 c = class extends u.Q {
                     constructor(e, t) {
-                        super(),
+                        (super(),
                             (this.options = t),
                             (this.#e = e),
                             (this.#t = null),
@@ -28,7 +25,7 @@
                                     )
                                 ),
                             this.bindMethods(),
-                            this.setOptions(t);
+                            this.setOptions(t));
                     }
                     #e;
                     #s = void 0;
@@ -74,10 +71,10 @@
                         );
                     }
                     destroy() {
-                        (this.listeners = new Set()),
-                            this.#v(),
+                        ((this.listeners = new Set()),
                             this.#b(),
-                            this.#s.removeObserver(this);
+                            this.#v(),
+                            this.#s.removeObserver(this));
                     }
                     setOptions(e) {
                         let t = this.options,
@@ -96,17 +93,19 @@
                             throw Error(
                                 "Expected enabled to be a boolean or a callback that returns a boolean"
                             );
-                        this.#Q(),
+                        (this.#Q(),
                             this.#s.setOptions(this.options),
                             t._defaulted &&
                                 !(0, h.f8)(this.options, t) &&
-                                this.#e.getQueryCache().notify({
-                                    type: "observerOptionsUpdated",
-                                    query: this.#s,
-                                    observer: this,
-                                });
+                                this.#e
+                                    .getQueryCache()
+                                    .notify({
+                                        type: "observerOptionsUpdated",
+                                        query: this.#s,
+                                        observer: this,
+                                    }));
                         let s = this.hasListeners();
-                        s && d(this.#s, r, this.options, t) && this.#y(),
+                        (s && d(this.#s, r, this.options, t) && this.#y(),
                             this.updateResult(),
                             s &&
                                 (this.#s !== r ||
@@ -116,14 +115,14 @@
                                         this.options.staleTime,
                                         this.#s
                                     ) !== (0, h.d2)(t.staleTime, this.#s)) &&
-                                this.#m();
-                        let i = this.#I();
+                                this.#m());
+                        let i = this.#g();
                         s &&
                             (this.#s !== r ||
                                 (0, h.Eh)(this.options.enabled, this.#s) !==
                                     (0, h.Eh)(t.enabled, this.#s) ||
                                 i !== this.#p) &&
-                            this.#g(i);
+                            this.#I(i);
                     }
                     getOptimisticResult(e) {
                         var t, r;
@@ -150,7 +149,9 @@
                                     configurable: !1,
                                     enumerable: !0,
                                     get: () => (
-                                        this.trackProp(s), t?.(s), e[s]
+                                        this.trackProp(s),
+                                        t?.(s),
+                                        e[s]
                                     ),
                                 });
                             }),
@@ -164,9 +165,7 @@
                         return this.#s;
                     }
                     refetch({ ...e } = {}) {
-                        return this.fetch({
-                            ...e,
-                        });
+                        return this.fetch({ ...e });
                     }
                     fetchOptimistic(e) {
                         let t = this.#e.defaultQueryOptions(e),
@@ -182,10 +181,10 @@
                     #y(e) {
                         this.#Q();
                         let t = this.#s.fetch(this.options, e);
-                        return e?.throwOnError || (t = t.catch(h.lQ)), t;
+                        return (e?.throwOnError || (t = t.catch(h.lQ)), t);
                     }
                     #m() {
-                        this.#v();
+                        this.#b();
                         let e = (0, h.d2)(this.options.staleTime, this.#s);
                         if (h.S$ || this.#n.isStale || !(0, h.gn)(e)) return;
                         let t = (0, h.j3)(this.#n.dataUpdatedAt, e);
@@ -193,15 +192,15 @@
                             this.#n.isStale || this.updateResult();
                         }, t + 1);
                     }
-                    #I() {
+                    #g() {
                         return (
                             ("function" == typeof this.options.refetchInterval
                                 ? this.options.refetchInterval(this.#s)
                                 : this.options.refetchInterval) ?? !1
                         );
                     }
-                    #g(e) {
-                        this.#b(),
+                    #I(e) {
+                        (this.#v(),
                             (this.#p = e),
                             !h.S$ &&
                                 !1 !==
@@ -212,15 +211,15 @@
                                     (this.options.refetchIntervalInBackground ||
                                         s.m.isFocused()) &&
                                         this.#y();
-                                }, this.#p));
+                                }, this.#p)));
                     }
                     #R() {
-                        this.#m(), this.#g(this.#I());
-                    }
-                    #v() {
-                        this.#l && (clearTimeout(this.#l), (this.#l = void 0));
+                        (this.#m(), this.#I(this.#g()));
                     }
                     #b() {
+                        this.#l && (clearTimeout(this.#l), (this.#l = void 0));
+                    }
+                    #v() {
                         this.#d && (clearInterval(this.#d), (this.#d = void 0));
                     }
                     createResult(e, t) {
@@ -232,33 +231,28 @@
                             l = this.#a,
                             f = e !== s ? e.state : this.#i,
                             { state: y } = e,
-                            R = {
-                                ...y,
-                            },
-                            v = !1;
+                            R = { ...y },
+                            b = !1;
                         if (t._optimisticResults) {
                             let r = this.hasListeners(),
                                 u = !r && o(e, t),
                                 a = r && d(e, s, t, i);
-                            (u || a) &&
-                                (R = {
-                                    ...R,
-                                    ...(0, n.k)(y.data, e.options),
-                                }),
+                            ((u || a) &&
+                                (R = { ...R, ...(0, n.k)(y.data, e.options) }),
                                 "isRestoring" === t._optimisticResults &&
-                                    (R.fetchStatus = "idle");
+                                    (R.fetchStatus = "idle"));
                         }
-                        let { error: b, errorUpdatedAt: Q, status: m } = R;
+                        let { error: v, errorUpdatedAt: Q, status: m } = R;
                         if (t.select && void 0 !== R.data)
                             if (u && R.data === c?.data && t.select === this.#h)
                                 r = this.#c;
                             else
                                 try {
-                                    (this.#h = t.select),
+                                    ((this.#h = t.select),
                                         (r = t.select(R.data)),
                                         (r = (0, h.pl)(u?.data, r, t)),
                                         (this.#c = r),
-                                        (this.#t = null);
+                                        (this.#t = null));
                                 } catch (e) {
                                     this.#t = e;
                                 }
@@ -285,36 +279,36 @@
                                 t.select && void 0 !== e)
                             )
                                 try {
-                                    (e = t.select(e)), (this.#t = null);
+                                    ((e = t.select(e)), (this.#t = null));
                                 } catch (e) {
                                     this.#t = e;
                                 }
                             void 0 !== e &&
                                 ((m = "success"),
                                 (r = (0, h.pl)(u?.data, e, t)),
-                                (v = !0));
+                                (b = !0));
                         }
                         this.#t &&
-                            ((b = this.#t),
+                            ((v = this.#t),
                             (r = this.#c),
                             (Q = Date.now()),
                             (m = "error"));
-                        let I = "fetching" === R.fetchStatus,
-                            g = "pending" === m,
+                        let g = "fetching" === R.fetchStatus,
+                            I = "pending" === m,
                             E = "error" === m,
-                            O = g && I,
+                            O = I && g,
                             T = void 0 !== r,
                             S = {
                                 status: m,
                                 fetchStatus: R.fetchStatus,
-                                isPending: g,
+                                isPending: I,
                                 isSuccess: "success" === m,
                                 isError: E,
                                 isInitialLoading: O,
                                 isLoading: O,
                                 data: r,
                                 dataUpdatedAt: R.dataUpdatedAt,
-                                error: b,
+                                error: v,
                                 errorUpdatedAt: Q,
                                 failureCount: R.fetchFailureCount,
                                 failureReason: R.fetchFailureReason,
@@ -325,11 +319,11 @@
                                 isFetchedAfterMount:
                                     R.dataUpdateCount > f.dataUpdateCount ||
                                     R.errorUpdateCount > f.errorUpdateCount,
-                                isFetching: I,
-                                isRefetching: I && !g,
+                                isFetching: g,
+                                isRefetching: g && !I,
                                 isLoadingError: E && !T,
                                 isPaused: "paused" === R.fetchStatus,
-                                isPlaceholderData: v,
+                                isPlaceholderData: b,
                                 isRefetchError: E && T,
                                 isStale: p(e, t),
                                 refetch: this.refetch,
@@ -366,37 +360,28 @@
                     updateResult() {
                         let e = this.#n,
                             t = this.createResult(this.#s, this.options);
-                        (this.#u = this.#s.state),
+                        if (
+                            ((this.#u = this.#s.state),
                             (this.#a = this.options),
                             void 0 !== this.#u.data && (this.#o = this.#s),
-                            (0, h.f8)(t, e) ||
-                                ((this.#n = t),
-                                this.#E({
-                                    listeners: (() => {
-                                        if (!e) return !0;
-                                        let { notifyOnChangeProps: t } =
-                                                this.options,
-                                            r =
-                                                "function" == typeof t
-                                                    ? t()
-                                                    : t;
-                                        if (
-                                            "all" === r ||
-                                            (!r && !this.#f.size)
-                                        )
-                                            return !0;
-                                        let s = new Set(r ?? this.#f);
-                                        return (
-                                            this.options.throwOnError &&
-                                                s.add("error"),
-                                            Object.keys(this.#n).some(
-                                                (t) =>
-                                                    this.#n[t] !== e[t] &&
-                                                    s.has(t)
-                                            )
-                                        );
-                                    })(),
-                                }));
+                            (0, h.f8)(t, e))
+                        )
+                            return;
+                        this.#n = t;
+                        let r = () => {
+                            if (!e) return !0;
+                            let { notifyOnChangeProps: t } = this.options,
+                                r = "function" == typeof t ? t() : t;
+                            if ("all" === r || (!r && !this.#f.size)) return !0;
+                            let s = new Set(r ?? this.#f);
+                            return (
+                                this.options.throwOnError && s.add("error"),
+                                Object.keys(this.#n).some(
+                                    (t) => this.#n[t] !== e[t] && s.has(t)
+                                )
+                            );
+                        };
+                        this.#E({ listeners: r() });
                     }
                     #Q() {
                         let e = this.#e
@@ -404,24 +389,26 @@
                             .build(this.#e, this.options);
                         if (e === this.#s) return;
                         let t = this.#s;
-                        (this.#s = e),
+                        ((this.#s = e),
                             (this.#i = e.state),
                             this.hasListeners() &&
-                                (t?.removeObserver(this), e.addObserver(this));
+                                (t?.removeObserver(this), e.addObserver(this)));
                     }
                     onQueryUpdate() {
-                        this.updateResult(), this.hasListeners() && this.#R();
+                        (this.updateResult(), this.hasListeners() && this.#R());
                     }
                     #E(e) {
                         i.jG.batch(() => {
-                            e.listeners &&
+                            (e.listeners &&
                                 this.listeners.forEach((e) => {
                                     e(this.#n);
                                 }),
-                                this.#e.getQueryCache().notify({
-                                    query: this.#s,
-                                    type: "observerResultsUpdated",
-                                });
+                                this.#e
+                                    .getQueryCache()
+                                    .notify({
+                                        query: this.#s,
+                                        type: "observerResultsUpdated",
+                                    }));
                         });
                     }
                 };
@@ -456,10 +443,7 @@
             }
         },
         96672: (e, t, r) => {
-            r.d(t, {
-                U: () => h,
-                h: () => a,
-            });
+            r.d(t, { U: () => h, h: () => a });
             var s = r(96540),
                 i = r(74848);
             function n() {
@@ -485,11 +469,7 @@
                 };
         },
         68590: (e, t, r) => {
-            r.d(t, {
-                $1: () => a,
-                LJ: () => n,
-                wZ: () => u,
-            });
+            r.d(t, { $1: () => a, LJ: () => n, wZ: () => u });
             var s = r(96540),
                 i = r(54362),
                 n = (e, t) => {
@@ -518,10 +498,7 @@
                     ((n && void 0 === e.data) || (0, i.G)(r, [e.error, s]));
         },
         98378: (e, t, r) => {
-            r.d(t, {
-                d: () => u,
-                w: () => n,
-            });
+            r.d(t, { d: () => u, w: () => n });
             var s = r(96540),
                 i = s.createContext(!1),
                 n = () => s.useContext(i),
@@ -554,9 +531,7 @@
                     });
         },
         15985: (e, t, r) => {
-            r.d(t, {
-                t: () => d,
-            });
+            r.d(t, { t: () => d });
             var s = r(96540),
                 i = r(26261),
                 n = r(24880),
@@ -571,59 +546,67 @@
                     p = (0, c.w)(),
                     f = (0, a.h)(),
                     y = d.defaultQueryOptions(e);
-                d.getDefaultOptions().queries?._experimental_beforeQuery?.(y),
+                (d.getDefaultOptions().queries?._experimental_beforeQuery?.(y),
                     (y._optimisticResults = p ? "isRestoring" : "optimistic"),
                     (0, o.jv)(y),
                     (0, h.LJ)(y, f),
-                    (0, h.wZ)(f);
+                    (0, h.wZ)(f));
                 let R = !d.getQueryCache().get(y.queryHash),
-                    [v] = s.useState(() => new t(d, y)),
-                    b = v.getOptimisticResult(y),
+                    [b] = s.useState(() => new t(d, y)),
+                    v = b.getOptimisticResult(y),
                     Q = !p && !1 !== e.subscribed;
                 if (
                     (s.useSyncExternalStore(
                         s.useCallback(
                             (e) => {
                                 let t = Q
-                                    ? v.subscribe(i.jG.batchCalls(e))
+                                    ? b.subscribe(i.jG.batchCalls(e))
                                     : l.l;
-                                return v.updateResult(), t;
+                                return (b.updateResult(), t);
                             },
-                            [v, Q]
+                            [b, Q]
                         ),
-                        () => v.getCurrentResult(),
-                        () => v.getCurrentResult()
+                        () => b.getCurrentResult(),
+                        () => b.getCurrentResult()
                     ),
                     s.useEffect(() => {
-                        v.setOptions(y);
-                    }, [y, v]),
-                    (0, o.EU)(y, b))
+                        b.setOptions(y);
+                    }, [y, b]),
+                    (0, o.EU)(y, v))
                 )
-                    throw (0, o.iL)(y, v, f);
+                    throw (0, o.iL)(y, b, f);
                 if (
                     (0, h.$1)({
-                        result: b,
+                        result: v,
                         errorResetBoundary: f,
                         throwOnError: y.throwOnError,
                         query: d.getQueryCache().get(y.queryHash),
                         suspense: y.suspense,
                     })
                 )
-                    throw b.error;
+                    throw v.error;
                 if (
                     (d
                         .getDefaultOptions()
-                        .queries?._experimental_afterQuery?.(y, b),
-                    y.experimental_prefetchInRender && !n.S$ && (0, o.nE)(b, p))
+                        .queries?._experimental_afterQuery?.(y, v),
+                    y.experimental_prefetchInRender && !n.S$ && (0, o.nE)(v, p))
                 ) {
                     let e = R
-                        ? (0, o.iL)(y, v, f)
+                        ? (0, o.iL)(y, b, f)
                         : d.getQueryCache().get(y.queryHash)?.promise;
                     e?.catch(l.l).finally(() => {
-                        v.updateResult();
+                        b.updateResult();
                     });
                 }
-                return y.notifyOnChangeProps ? b : v.trackResult(b);
+                return y.notifyOnChangeProps ? v : b.trackResult(v);
+            }
+        },
+        97286: (e, t, r) => {
+            r.d(t, { I: () => n });
+            var s = r(1651),
+                i = r(15985);
+            function n(e, t) {
+                return (0, i.t)(e, s.$, t);
             }
         },
         54362: (e, t, r) => {
@@ -631,11 +614,8 @@
                 return "function" == typeof e ? e(...t) : !!e;
             }
             function i() {}
-            r.d(t, {
-                G: () => s,
-                l: () => i,
-            });
+            r.d(t, { G: () => s, l: () => i });
         },
     },
 ]);
-//# sourceMappingURL=vendors-node_modules_tanstack_query-core_build_modern_queryObserver_js-node_modules_tanstack_-defd52-038063e74b22.js.map
+//# sourceMappingURL=vendors-node_modules_tanstack_react-query_build_modern_useQuery_js-4606409380de.js.map
