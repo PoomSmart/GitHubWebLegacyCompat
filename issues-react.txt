@@ -1,5 +1,5 @@
 # Old
-coreLoader:async function e({pathParams:e,location:l})
+coreLoader:async function e(
 
 # New
-coreLoader:async function e_({pathParams:e,location:l})
+coreLoader:async function e_(

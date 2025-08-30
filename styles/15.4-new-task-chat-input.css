@@ -29,14 +29,6 @@
   grid-template-rows: repeat(3, auto);
   min-height: 2rem;
   position: relative;
-}
-@media screen and (min-width: 544px) {
-  .ListItem-module__listItem--k4eMk {
-    grid-template-areas: "selection status primary metadata actions" "selection status main-content metadata actions";
-    grid-template-rows: repeat(2, auto);
-  }
-}
-.ListItem-module__listItem--k4eMk {
   --core-grid-template-columns: min-content min-content minmax(30%, 1fr)
     minmax(0, max-content);
   --last-grid-template-column: min-content;
@@ -44,20 +36,24 @@
       --last-grid-template-column
     );
 }
+@media screen and (min-width: 544px) {
+  .ListItem-module__listItem--k4eMk {
+    grid-template-areas: "selection status primary metadata actions" "selection status main-content metadata actions";
+    grid-template-rows: repeat(2, auto);
+  }
+}
 .ListItem-module__listItem--k4eMk:where(.ListItem-module__compact--f4FSR) {
   grid-template-areas: "selection status primary main-content actions" "selection status metadata metadata actions";
   grid-template-rows: repeat(2, auto);
   min-height: 1rem;
+  --core-grid-template-columns: min-content min-content minmax(2em, max-content)
+    minmax(0, auto) minmax(min-content, max-content);
 }
 @media screen and (min-width: 544px) {
   .ListItem-module__listItem--k4eMk:where(.ListItem-module__compact--f4FSR) {
     grid-template-areas: "selection status primary main-content metadata actions";
     grid-template-rows: auto;
   }
-}
-.ListItem-module__listItem--k4eMk:where(.ListItem-module__compact--f4FSR) {
-  --core-grid-template-columns: min-content min-content minmax(2em, max-content)
-    minmax(0, auto) minmax(min-content, max-content);
 }
 .ListItem-module__listItem--k4eMk:where(:first-child) {
   border-top-left-radius: inherit;
@@ -278,4 +274,23 @@
   .Metadata-module__metadata--ODMG0:empty {
     display: flex;
   }
+}
+.ChatInput-module__toolbar--Kv3Gl {
+  grid-template-areas: "mode extra actions";
+  grid-template-columns: auto minmax(0, 1fr) max-content;
+}
+.ChatInput-module__toolbarNoModes--KJL2k {
+  grid-template-areas: "extra actions";
+  grid-template-columns: minmax(0, 1fr) max-content;
+}
+.ChatInput-module__modeSelectorMobile--ZPCVa {
+  display: none;
+}
+.ChatInput-module__modeSelectorDesktop--SifXL {
+  display: flex;
+}
+.ChatInput-module__extra--oQVm8 {
+  border-bottom: none;
+  padding-bottom: 0;
+  padding-left: 0;
 }
