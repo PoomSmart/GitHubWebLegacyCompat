@@ -1852,68 +1852,62 @@
                     },
                     J = {
                         kind: "Literal",
-                        name: "includeIssueDependencyEvents",
-                        value: !0,
-                    },
-                    Z = {
-                        kind: "Literal",
                         name: "visibleEventsOnly",
                         value: !0,
                     },
-                    ee = [
+                    Z = [
                         {
                             kind: "Variable",
                             name: "first",
                             variableName: "count",
                         },
-                        J,
                         d,
-                        Z,
+                        J,
                     ],
-                    el = {
+                    ee = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "hasNextPage",
                         storageKey: null,
                     },
-                    en = {
+                    el = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "endCursor",
                         storageKey: null,
                     },
-                    ea = {
+                    en = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "createdAt",
                         storageKey: null,
                     },
-                    es = {
+                    ea = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "viewerCanUpdate",
                         storageKey: null,
                     },
-                    ei = {
+                    es = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "pendingBlock",
                         storageKey: null,
                     },
-                    et = {
+                    ei = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "pendingUnblock",
                         storageKey: null,
                     },
-                    er = [F],
-                    eu = {
+                    et = [F],
+                    er = {
                         kind: "InlineFragment",
                         selections: [
                             {
@@ -1964,7 +1958,7 @@
                                                     k,
                                                     {
                                                         kind: "InlineFragment",
-                                                        selections: er,
+                                                        selections: et,
                                                         type: "User",
                                                         abstractKey: null,
                                                     },
@@ -1976,13 +1970,13 @@
                                                     },
                                                     {
                                                         kind: "InlineFragment",
-                                                        selections: er,
+                                                        selections: et,
                                                         type: "Organization",
                                                         abstractKey: null,
                                                     },
                                                     {
                                                         kind: "InlineFragment",
-                                                        selections: er,
+                                                        selections: et,
                                                         type: "Mannequin",
                                                         abstractKey: null,
                                                     },
@@ -2000,15 +1994,15 @@
                         type: "Reactable",
                         abstractKey: "__isReactable",
                     },
-                    eo = [k, M],
-                    ed = {
+                    eu = [k, M],
+                    eo = {
                         alias: "issueTitleHTML",
                         args: null,
                         kind: "ScalarField",
                         name: "titleHTML",
                         storageKey: null,
                     },
-                    ec = {
+                    ed = {
                         alias: null,
                         args: null,
                         concreteType: "Repository",
@@ -2018,33 +2012,33 @@
                         selections: [c, p, K, j],
                         storageKey: null,
                     },
-                    em = {
+                    ec = {
                         kind: "InlineFragment",
-                        selections: [c, ed, b, g, R, ec],
+                        selections: [c, eo, b, g, R, ed],
                         type: "Issue",
                         abstractKey: null,
                     },
-                    eg = {
+                    em = {
                         alias: "pullTitleHTML",
                         args: null,
                         kind: "ScalarField",
                         name: "titleHTML",
                         storageKey: null,
                     },
-                    ey = {
+                    eg = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "isInMergeQueue",
                         storageKey: null,
                     },
-                    ep = {
+                    ey = {
                         kind: "InlineFragment",
-                        selections: [c, eg, b, g, x, w, ey, ec],
+                        selections: [c, em, b, g, x, w, eg, ed],
                         type: "PullRequest",
                         abstractKey: null,
                     },
-                    ek = {
+                    ep = {
                         alias: null,
                         args: null,
                         concreteType: null,
@@ -2054,14 +2048,14 @@
                         selections: [k, q, P, F, A, D, c],
                         storageKey: null,
                     },
-                    eF = {
+                    ek = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "nameHTML",
                         storageKey: null,
                     },
-                    eb = [
+                    eF = [
                         {
                             alias: null,
                             args: null,
@@ -2069,22 +2063,22 @@
                             kind: "LinkedField",
                             name: "label",
                             plural: !1,
-                            selections: [c, eF, p, T, C],
+                            selections: [c, ek, p, T, C],
                             storageKey: null,
                         },
                         h,
-                        ea,
-                        ek,
+                        en,
+                        ep,
                     ],
-                    eh = {
+                    eb = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "resourcePath",
                         storageKey: null,
                     },
-                    ef = [F, eh],
-                    eK = {
+                    eh = [F, eb],
+                    ef = {
                         alias: null,
                         args: null,
                         concreteType: null,
@@ -2124,25 +2118,25 @@
                                     F,
                                     {
                                         kind: "InlineFragment",
-                                        selections: ef,
+                                        selections: eh,
                                         type: "User",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: ef,
+                                        selections: eh,
                                         type: "Mannequin",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: ef,
+                                        selections: eh,
                                         type: "Organization",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: [F, eh, B],
+                                        selections: [F, eb, B],
                                         type: "Bot",
                                         abstractKey: null,
                                     },
@@ -2153,7 +2147,7 @@
                         ],
                         storageKey: null,
                     },
-                    eS = [
+                    eK = [
                         {
                             alias: null,
                             args: null,
@@ -2165,8 +2159,8 @@
                             storageKey: null,
                         },
                         h,
-                        ea,
-                        ek,
+                        en,
+                        ep,
                         {
                             alias: null,
                             args: null,
@@ -2175,34 +2169,34 @@
                             storageKey: null,
                         },
                     ],
-                    eI = [ea, h, ek],
-                    ev = {
+                    eS = [en, h, ep],
+                    eI = {
                         kind: "InlineFragment",
-                        selections: [em, ep],
+                        selections: [ec, ey],
                         type: "ReferencedSubject",
                         abstractKey: "__isReferencedSubject",
                     },
-                    eL = {
+                    ev = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "abbreviatedOid",
                         storageKey: null,
                     },
-                    eT = [h, ea, ek],
-                    eC = {
+                    eL = [h, en, ep],
+                    eT = {
                         kind: "InlineFragment",
                         selections: [
                             k,
                             {
                                 kind: "InlineFragment",
-                                selections: [ed, b, g, R, ec],
+                                selections: [eo, b, g, R, ed],
                                 type: "Issue",
                                 abstractKey: null,
                             },
                             {
                                 kind: "InlineFragment",
-                                selections: [eg, b, g, x, w, ey, ec],
+                                selections: [em, b, g, x, w, eg, ed],
                                 type: "PullRequest",
                                 abstractKey: null,
                             },
@@ -2210,11 +2204,11 @@
                         type: "ReferencedSubject",
                         abstractKey: "__isReferencedSubject",
                     },
-                    ex = [c, eC],
-                    eR = [
+                    eC = [c, eT],
+                    ex = [
                         h,
-                        ek,
-                        ea,
+                        ep,
+                        en,
                         {
                             alias: null,
                             args: null,
@@ -2222,14 +2216,14 @@
                             kind: "LinkedField",
                             name: "blockingIssue",
                             plural: !1,
-                            selections: ex,
+                            selections: eC,
                             storageKey: null,
                         },
                     ],
-                    eN = [
+                    eR = [
                         h,
-                        ek,
-                        ea,
+                        ep,
+                        en,
                         {
                             alias: null,
                             args: null,
@@ -2237,15 +2231,15 @@
                             kind: "LinkedField",
                             name: "blockedIssue",
                             plural: !1,
-                            selections: ex,
+                            selections: eC,
                             storageKey: null,
                         },
                     ],
-                    ej = [h, c, eC],
-                    e_ = [
+                    eN = [h, c, eT],
+                    ej = [
                         h,
-                        ek,
-                        ea,
+                        ep,
+                        en,
                         {
                             alias: null,
                             args: null,
@@ -2253,14 +2247,14 @@
                             kind: "LinkedField",
                             name: "subIssue",
                             plural: !1,
-                            selections: ej,
+                            selections: eN,
                             storageKey: null,
                         },
                     ],
-                    eE = [
+                    e_ = [
                         h,
-                        ek,
-                        ea,
+                        ep,
+                        en,
                         {
                             alias: null,
                             args: null,
@@ -2268,14 +2262,14 @@
                             kind: "LinkedField",
                             name: "parent",
                             plural: !1,
-                            selections: ej,
+                            selections: eN,
                             storageKey: null,
                         },
                     ],
-                    ew = [
+                    eE = [
                         h,
-                        ek,
-                        ea,
+                        ep,
+                        en,
                         {
                             alias: null,
                             args: null,
@@ -2287,7 +2281,7 @@
                                 k,
                                 {
                                     kind: "InlineFragment",
-                                    selections: [m, b, g, x, w, ey, _],
+                                    selections: [m, b, g, x, w, eg, _],
                                     type: "PullRequest",
                                     abstractKey: null,
                                 },
@@ -2296,18 +2290,18 @@
                             storageKey: null,
                         },
                     ],
-                    eA = {
+                    ew = {
                         kind: "InlineFragment",
                         selections: [
                             {
                                 kind: "InlineFragment",
-                                selections: [ed, b, R, ec],
+                                selections: [eo, b, R, ed],
                                 type: "Issue",
                                 abstractKey: null,
                             },
                             {
                                 kind: "InlineFragment",
-                                selections: [eg, b, x, w, ey, ec],
+                                selections: [em, b, x, w, eg, ed],
                                 type: "PullRequest",
                                 abstractKey: null,
                             },
@@ -2315,15 +2309,15 @@
                         type: "ReferencedSubject",
                         abstractKey: "__isReferencedSubject",
                     },
-                    eP = {
+                    eA = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "isCanonicalOfClosedDuplicate",
                         storageKey: null,
                     },
-                    eB = [ev],
-                    eD = {
+                    eP = [eI],
+                    eB = {
                         alias: null,
                         args: null,
                         concreteType: "ProjectV2",
@@ -2333,26 +2327,26 @@
                         selections: [m, b, c],
                         storageKey: null,
                     },
-                    eM = [p, T, c],
-                    eV = {
+                    eD = [p, T, c],
+                    eM = {
                         alias: null,
                         args: null,
                         concreteType: "IssueType",
                         kind: "LinkedField",
                         name: "issueType",
                         plural: !1,
-                        selections: eM,
+                        selections: eD,
                         storageKey: null,
                     },
-                    eU = [h, ek, ea, eV],
-                    eO = {
+                    eV = [h, ep, en, eM],
+                    eU = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "cursor",
                         storageKey: null,
                     },
-                    eq = {
+                    eO = {
                         alias: null,
                         args: null,
                         concreteType: "IssueTimelineItemsEdge",
@@ -2377,7 +2371,7 @@
                                         kind: "InlineFragment",
                                         selections: [
                                             h,
-                                            ea,
+                                            en,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -2443,9 +2437,9 @@
                                                     "bodyHTML(unfurlReferences:true)",
                                             },
                                             Q,
-                                            es,
-                                            b,
                                             ea,
+                                            b,
+                                            en,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -2525,7 +2519,7 @@
                                                 name: "authorToRepoOwnerSponsorship",
                                                 plural: !1,
                                                 selections: [
-                                                    ea,
+                                                    en,
                                                     {
                                                         alias: null,
                                                         args: null,
@@ -2630,11 +2624,11 @@
                                                         name: "pendingMinimizeReason",
                                                         storageKey: null,
                                                     },
+                                                    es,
                                                     ei,
-                                                    et,
                                                 ],
                                             },
-                                            eu,
+                                            er,
                                         ],
                                         type: "IssueComment",
                                         abstractKey: null,
@@ -2649,7 +2643,7 @@
                                                 kind: "LinkedField",
                                                 name: "source",
                                                 plural: !1,
-                                                selections: eo,
+                                                selections: eu,
                                                 storageKey: null,
                                             },
                                             {
@@ -2713,41 +2707,41 @@
                                                         abstractKey:
                                                             "__isReferencedSubject",
                                                     },
-                                                    em,
-                                                    ep,
+                                                    ec,
+                                                    ey,
                                                     M,
                                                 ],
                                                 storageKey: null,
                                             },
-                                            ek,
+                                            ep,
                                         ],
                                         type: "CrossReferencedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eb,
+                                        selections: eF,
                                         type: "LabeledEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eb,
+                                        selections: eF,
                                         type: "UnlabeledEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: [eK, h, ea, ek],
+                                        selections: [ef, h, en, ep],
                                         type: "AssignedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
                                         selections: [
-                                            eK,
+                                            ef,
                                             h,
-                                            ea,
+                                            en,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -2772,31 +2766,31 @@
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eS,
+                                        selections: eK,
                                         type: "MilestonedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eS,
+                                        selections: eK,
                                         type: "DemilestonedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eI,
+                                        selections: eS,
                                         type: "SubscribedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eI,
+                                        selections: eS,
                                         type: "UnsubscribedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eI,
+                                        selections: eS,
                                         type: "MentionedEvent",
                                         abstractKey: null,
                                     },
@@ -2804,7 +2798,7 @@
                                         kind: "InlineFragment",
                                         selections: [
                                             h,
-                                            ea,
+                                            en,
                                             R,
                                             {
                                                 alias: null,
@@ -2813,7 +2807,7 @@
                                                 kind: "LinkedField",
                                                 name: "duplicateOf",
                                                 plural: !1,
-                                                selections: [k, ev, M],
+                                                selections: [k, eI, M],
                                                 storageKey: null,
                                             },
                                             {
@@ -2846,7 +2840,7 @@
                                                     },
                                                     {
                                                         kind: "InlineFragment",
-                                                        selections: [b, eL, _],
+                                                        selections: [b, ev, _],
                                                         type: "Commit",
                                                         abstractKey: null,
                                                     },
@@ -2854,14 +2848,14 @@
                                                 ],
                                                 storageKey: null,
                                             },
-                                            ek,
+                                            ep,
                                         ],
                                         type: "ClosedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eT,
+                                        selections: eL,
                                         type: "ReopenedEvent",
                                         abstractKey: null,
                                     },
@@ -2869,7 +2863,7 @@
                                         kind: "InlineFragment",
                                         selections: [
                                             h,
-                                            ea,
+                                            en,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -2877,26 +2871,26 @@
                                                 name: "lockReason",
                                                 storageKey: null,
                                             },
-                                            ek,
+                                            ep,
                                         ],
                                         type: "LockedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eT,
+                                        selections: eL,
                                         type: "UnlockedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eT,
+                                        selections: eL,
                                         type: "PinnedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eT,
+                                        selections: eL,
                                         type: "UnpinnedEvent",
                                         abstractKey: null,
                                     },
@@ -2904,8 +2898,8 @@
                                         kind: "InlineFragment",
                                         selections: [
                                             h,
-                                            ea,
-                                            ek,
+                                            en,
+                                            ep,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -2926,25 +2920,25 @@
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eR,
+                                        selections: ex,
                                         type: "BlockedByAddedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eR,
+                                        selections: ex,
                                         type: "BlockedByRemovedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eN,
+                                        selections: eR,
                                         type: "BlockingAddedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eN,
+                                        selections: eR,
                                         type: "BlockingRemovedEvent",
                                         abstractKey: null,
                                     },
@@ -2952,8 +2946,8 @@
                                         kind: "InlineFragment",
                                         selections: [
                                             h,
-                                            ea,
-                                            ek,
+                                            en,
+                                            ep,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -2972,7 +2966,7 @@
                                         kind: "InlineFragment",
                                         selections: [
                                             h,
-                                            ea,
+                                            en,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -2980,7 +2974,7 @@
                                                 name: "blockDuration",
                                                 storageKey: null,
                                             },
-                                            ek,
+                                            ep,
                                             {
                                                 alias: "blockedUser",
                                                 args: null,
@@ -2997,25 +2991,25 @@
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: e_,
+                                        selections: ej,
                                         type: "SubIssueAddedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: e_,
+                                        selections: ej,
                                         type: "SubIssueRemovedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eE,
+                                        selections: e_,
                                         type: "ParentIssueAddedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eE,
+                                        selections: e_,
                                         type: "ParentIssueRemovedEvent",
                                         abstractKey: null,
                                     },
@@ -3038,10 +3032,10 @@
                                                 kind: "LinkedField",
                                                 name: "subject",
                                                 plural: !1,
-                                                selections: eo,
+                                                selections: eu,
                                                 storageKey: null,
                                             },
-                                            ek,
+                                            ep,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -3072,7 +3066,7 @@
                                                         storageKey: null,
                                                     },
                                                     b,
-                                                    eL,
+                                                    ev,
                                                     {
                                                         alias: null,
                                                         args: null,
@@ -3100,14 +3094,14 @@
                                                 ],
                                                 storageKey: null,
                                             },
-                                            ea,
+                                            en,
                                         ],
                                         type: "ReferencedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: ew,
+                                        selections: eE,
                                         type: "ConnectedEvent",
                                         abstractKey: null,
                                     },
@@ -3115,8 +3109,8 @@
                                         kind: "InlineFragment",
                                         selections: [
                                             h,
-                                            ek,
-                                            ea,
+                                            ep,
+                                            en,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -3133,15 +3127,15 @@
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: ew,
+                                        selections: eE,
                                         type: "DisconnectedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
                                         selections: [
-                                            ek,
-                                            ea,
+                                            ep,
+                                            en,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -3153,13 +3147,13 @@
                                                     k,
                                                     {
                                                         kind: "InlineFragment",
-                                                        selections: [c, g, eA],
+                                                        selections: [c, g, ew],
                                                         type: "Issue",
                                                         abstractKey: null,
                                                     },
                                                     {
                                                         kind: "InlineFragment",
-                                                        selections: [g, c, eA],
+                                                        selections: [g, c, ew],
                                                         type: "PullRequest",
                                                         abstractKey: null,
                                                     },
@@ -3167,7 +3161,7 @@
                                                 ],
                                                 storageKey: null,
                                             },
-                                            eP,
+                                            eA,
                                             h,
                                             {
                                                 alias: null,
@@ -3196,8 +3190,8 @@
                                     {
                                         kind: "InlineFragment",
                                         selections: [
-                                            ek,
-                                            ea,
+                                            ep,
+                                            en,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -3209,13 +3203,13 @@
                                                     k,
                                                     {
                                                         kind: "InlineFragment",
-                                                        selections: eB,
+                                                        selections: eP,
                                                         type: "Issue",
                                                         abstractKey: null,
                                                     },
                                                     {
                                                         kind: "InlineFragment",
-                                                        selections: eB,
+                                                        selections: eP,
                                                         type: "PullRequest",
                                                         abstractKey: null,
                                                     },
@@ -3223,7 +3217,7 @@
                                                 ],
                                                 storageKey: null,
                                             },
-                                            eP,
+                                            eA,
                                             h,
                                         ],
                                         type: "UnmarkedAsDuplicateEvent",
@@ -3233,8 +3227,8 @@
                                         kind: "InlineFragment",
                                         selections: [
                                             h,
-                                            ek,
-                                            ea,
+                                            ep,
+                                            en,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -3251,22 +3245,22 @@
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: [h, ea, ek, eD],
+                                        selections: [h, en, ep, eB],
                                         type: "AddedToProjectV2Event",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: [ea, ek, eD],
+                                        selections: [en, ep, eB],
                                         type: "RemovedFromProjectV2Event",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
                                         selections: [
-                                            ea,
-                                            ek,
-                                            eD,
+                                            en,
+                                            ep,
+                                            eB,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -3287,19 +3281,19 @@
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: [ea, ek, h],
+                                        selections: [en, ep, h],
                                         type: "ConvertedFromDraftEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eU,
+                                        selections: eV,
                                         type: "IssueTypeAddedEvent",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eU,
+                                        selections: eV,
                                         type: "IssueTypeRemovedEvent",
                                         abstractKey: null,
                                     },
@@ -3307,9 +3301,9 @@
                                         kind: "InlineFragment",
                                         selections: [
                                             h,
-                                            ek,
-                                            ea,
-                                            eV,
+                                            ep,
+                                            en,
+                                            eM,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -3317,7 +3311,7 @@
                                                 kind: "LinkedField",
                                                 name: "prevIssueType",
                                                 plural: !1,
-                                                selections: eM,
+                                                selections: eD,
                                                 storageKey: null,
                                             },
                                         ],
@@ -3340,12 +3334,12 @@
                                 ],
                                 storageKey: null,
                             },
-                            eO,
+                            eU,
                         ],
                         storageKey: null,
                     },
-                    eH = [J, { kind: "Literal", name: "last", value: 0 }, Z],
-                    e$ = [
+                    eq = [{ kind: "Literal", name: "last", value: 0 }, J],
+                    eH = [
                         v,
                         {
                             kind: "Literal",
@@ -3353,17 +3347,17 @@
                             value: { direction: "ASC", field: "NAME" },
                         },
                     ],
-                    ez = {
+                    e$ = {
                         alias: null,
                         args: null,
                         concreteType: "PageInfo",
                         kind: "LinkedField",
                         name: "pageInfo",
                         plural: !1,
-                        selections: [en, el],
+                        selections: [el, ee],
                         storageKey: null,
                     },
-                    eW = [
+                    ez = [
                         {
                             kind: "Literal",
                             name: "allowSameEnterprise",
@@ -3372,17 +3366,17 @@
                         o,
                         E,
                     ],
-                    eQ = [{ kind: "Literal", name: "name", value: "Status" }],
-                    eG = {
+                    eW = [{ kind: "Literal", name: "name", value: "Status" }],
+                    eQ = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "optionId",
                         storageKey: null,
                     },
-                    eY = {
+                    eG = {
                         alias: null,
-                        args: eW,
+                        args: ez,
                         concreteType: "ProjectV2ItemConnection",
                         kind: "LinkedField",
                         name: "projectItemsNext",
@@ -3423,11 +3417,11 @@
                                                         name: "template",
                                                         storageKey: null,
                                                     },
-                                                    es,
+                                                    ea,
                                                     b,
                                                     {
                                                         alias: null,
-                                                        args: eQ,
+                                                        args: eW,
                                                         concreteType: null,
                                                         kind: "LinkedField",
                                                         name: "field",
@@ -3450,9 +3444,9 @@
                                                                         selections:
                                                                             [
                                                                                 c,
-                                                                                eG,
+                                                                                eQ,
                                                                                 p,
-                                                                                eF,
+                                                                                ek,
                                                                                 T,
                                                                                 {
                                                                                     alias: null,
@@ -3492,7 +3486,7 @@
                                             },
                                             {
                                                 alias: null,
-                                                args: eQ,
+                                                args: eW,
                                                 concreteType: null,
                                                 kind: "LinkedField",
                                                 name: "fieldValueByName",
@@ -3503,9 +3497,9 @@
                                                         kind: "InlineFragment",
                                                         selections: [
                                                             c,
-                                                            eG,
+                                                            eQ,
                                                             p,
-                                                            eF,
+                                                            ek,
                                                             T,
                                                         ],
                                                         type: "ProjectV2ItemFieldSingleSelectValue",
@@ -3520,17 +3514,17 @@
                                         ],
                                         storageKey: null,
                                     },
-                                    eO,
+                                    eU,
                                 ],
                                 storageKey: null,
                             },
-                            ez,
+                            e$,
                         ],
                         storageKey: null,
                     },
-                    eX = {
+                    eY = {
                         alias: null,
-                        args: eW,
+                        args: ez,
                         filters: ["allowedOwner", "allowSameEnterprise"],
                         handle: "connection",
                         key: "ProjectSection_projectItemsNext",
@@ -3701,6 +3695,13 @@
                                                                     null,
                                                             },
                                                         ],
+                                                        storageKey: null,
+                                                    },
+                                                    {
+                                                        alias: null,
+                                                        args: null,
+                                                        kind: "ScalarField",
+                                                        name: "isCopilotAgentEnabled",
                                                         storageKey: null,
                                                     },
                                                     {
@@ -4296,7 +4297,7 @@
                                             },
                                             {
                                                 alias: "frontTimelineItems",
-                                                args: ee,
+                                                args: Z,
                                                 concreteType:
                                                     "IssueTimelineItemsConnection",
                                                 kind: "LinkedField",
@@ -4311,21 +4312,20 @@
                                                         kind: "LinkedField",
                                                         name: "pageInfo",
                                                         plural: !1,
-                                                        selections: [el, en],
+                                                        selections: [ee, el],
                                                         storageKey: null,
                                                     },
                                                     I,
-                                                    eq,
+                                                    eO,
                                                 ],
                                                 storageKey: null,
                                             },
                                             {
                                                 alias: "frontTimelineItems",
-                                                args: ee,
+                                                args: Z,
                                                 filters: [
                                                     "visibleEventsOnly",
                                                     "skip",
-                                                    "includeIssueDependencyEvents",
                                                 ],
                                                 handle: "connection",
                                                 key: "Issue__frontTimelineItems",
@@ -4334,7 +4334,7 @@
                                             },
                                             {
                                                 alias: "backTimelineItems",
-                                                args: eH,
+                                                args: eq,
                                                 concreteType:
                                                     "IssueTimelineItemsConnection",
                                                 kind: "LinkedField",
@@ -4370,18 +4370,15 @@
                                                         storageKey: null,
                                                     },
                                                     I,
-                                                    eq,
+                                                    eO,
                                                 ],
                                                 storageKey:
-                                                    "timelineItems(includeIssueDependencyEvents:true,last:0,visibleEventsOnly:true)",
+                                                    "timelineItems(last:0,visibleEventsOnly:true)",
                                             },
                                             {
                                                 alias: "backTimelineItems",
-                                                args: eH,
-                                                filters: [
-                                                    "visibleEventsOnly",
-                                                    "includeIssueDependencyEvents",
-                                                ],
+                                                args: eq,
+                                                filters: ["visibleEventsOnly"],
                                                 handle: "connection",
                                                 key: "Issue__backTimelineItems",
                                                 kind: "LinkedHandle",
@@ -4392,7 +4389,7 @@
                                                 selections: [
                                                     {
                                                         alias: null,
-                                                        args: e$,
+                                                        args: eH,
                                                         concreteType:
                                                             "LabelConnection",
                                                         kind: "LinkedField",
@@ -4421,7 +4418,7 @@
                                                                                 c,
                                                                                 T,
                                                                                 p,
-                                                                                eF,
+                                                                                ek,
                                                                                 C,
                                                                                 b,
                                                                                 k,
@@ -4429,19 +4426,19 @@
                                                                         storageKey:
                                                                             null,
                                                                     },
-                                                                    eO,
+                                                                    eU,
                                                                 ],
                                                                 storageKey:
                                                                     null,
                                                             },
-                                                            ez,
+                                                            e$,
                                                         ],
                                                         storageKey:
                                                             'labels(first:100,orderBy:{"direction":"ASC","field":"NAME"})',
                                                     },
                                                     {
                                                         alias: null,
-                                                        args: e$,
+                                                        args: eH,
                                                         filters: ["orderBy"],
                                                         handle: "connection",
                                                         key: "MetadataSectionAssignedLabels_labels",
@@ -4458,30 +4455,30 @@
                                             },
                                             {
                                                 kind: "InlineFragment",
-                                                selections: [ea],
+                                                selections: [en],
                                                 type: "Comment",
                                                 abstractKey: "__isComment",
                                             },
-                                            eu,
+                                            er,
                                             {
                                                 kind: "ClientExtension",
-                                                selections: [ei, et],
+                                                selections: [es, ei],
                                             },
                                             {
                                                 kind: "InlineFragment",
                                                 selections: [
                                                     {
                                                         kind: "InlineFragment",
-                                                        selections: [eY, eX],
+                                                        selections: [eG, eY],
                                                         type: "Issue",
                                                         abstractKey: null,
                                                     },
                                                     {
                                                         kind: "InlineFragment",
                                                         selections: [
+                                                            eG,
                                                             eY,
-                                                            eX,
-                                                            es,
+                                                            ea,
                                                         ],
                                                         type: "PullRequest",
                                                         abstractKey: null,
@@ -4535,7 +4532,7 @@
                         ],
                     },
                     params: {
-                        id: "3b9131ccd24a2702f73348656612a152",
+                        id: "cd3be13fdffce79bd087ab8955f46de3",
                         metadata: {},
                         name: "IssueViewerViewQuery",
                         operationKind: "query",
@@ -5472,8 +5469,8 @@
                 s = n(81945),
                 i = n(96540),
                 t = n(46173),
-                r = n(75177),
-                u = n(12004);
+                r = n(12004),
+                u = n(21998);
             let o = {
                     CommentDividerContainer:
                         "CommentDivider-module__CommentDividerContainer--fCCZA",
@@ -5488,11 +5485,11 @@
                     (0, a.jsxs)("div", {
                         className: o.CommentDividerContainer,
                         children: [
-                            (0, a.jsx)(r.A, {
+                            (0, a.jsx)(u.az, {
                                 sx: { pb: e ? 4 : 3 },
                                 className: o.CommentDividerLeftLine,
                             }),
-                            l && (0, a.jsx)(u.A, { size: "small" }),
+                            l && (0, a.jsx)(r.A, { size: "small" }),
                             n &&
                                 !l &&
                                 (0, a.jsx)(s.O, {
@@ -5500,7 +5497,7 @@
                                     width: "100%",
                                     className: o.CommentDividerLoadingSkeleton,
                                 }),
-                            (0, a.jsx)(r.A, {
+                            (0, a.jsx)(u.az, {
                                 sx: { pb: e ? 4 : 3 },
                                 className: o.CommentDividerRightLine,
                             }),
@@ -5755,13 +5752,13 @@
         83855: (e, l, n) => {
             n.d(l, { H: () => t });
             var a = n(74848),
-                s = n(75177);
+                s = n(21998);
             let i = {
                 contentContainer:
                     "ContentWrapper-module__contentContainer--AGolz",
             };
             function t({ children: e, sx: l }) {
-                return (0, a.jsx)(s.A, {
+                return (0, a.jsx)(s.az, {
                     sx: { ...l },
                     className: i.contentContainer,
                     children: e,
@@ -5801,7 +5798,7 @@
             } catch {}
         },
         59907: (e, l, n) => {
-            n.d(l, { cI: () => gc, Hc: () => go, k5: () => gd });
+            n.d(l, { cI: () => gg, Hc: () => gc, k5: () => gm });
             var a,
                 s,
                 i,
@@ -8235,11 +8232,7 @@
                                     let s = ec(O);
                                     if ((w(!0), O?.length > 0)) {
                                         q();
-                                        let l = {
-                                                includeIssueDependencyEvents:
-                                                    !0,
-                                                visibleEventsOnly: !0,
-                                            },
+                                        let l = { visibleEventsOnly: !0 },
                                             n =
                                                 eh.ConnectionHandler.getConnectionID(
                                                     m.id,
@@ -9126,7 +9119,7 @@
                     (a.displayName = "IMAGE_VIDEO_TAG_REGEX");
             } catch {}
             var eU = n(40104),
-                eO = n(75177),
+                eO = n(21998),
                 eq = n(34784),
                 eH = n(62559),
                 e$ = n(69410);
@@ -9374,8 +9367,8 @@
                 e2 = n(23656),
                 e4 = n(21086),
                 e6 = n(89169),
-                e7 = n(21654),
-                e5 = n(72683);
+                e5 = n(21654),
+                e7 = n(72683);
             let e3 = {
                     dateLink: "IssueBodyHeader-module__dateLink--GZfps",
                     RelativeTime: "IssueBodyHeader-module__RelativeTime--LRd7n",
@@ -9791,7 +9784,7 @@
             };
             function lr({ author: e }) {
                 let { login: l, profileUrl: n } =
-                    (0, N.useFragment)(li, e) || e5.t.ghost;
+                    (0, N.useFragment)(li, e) || e7.t.ghost;
                 return (0, F.jsx)(ek.A, {
                     href: n || void 0,
                     "data-hovercard-url": n && (0, eg.dCN)({ owner: l }),
@@ -9861,7 +9854,7 @@
                                 includeSeparator: !0,
                             }),
                             a &&
-                                (0, F.jsx)(e7.A, {
+                                (0, F.jsx)(e5.A, {
                                     className: e3.authorLabel,
                                     children: "Author",
                                 }),
@@ -9871,7 +9864,7 @@
                         avatarUrl: y,
                         login: p,
                         profileUrl: k,
-                    } = r.author ?? e5.t.ghost;
+                    } = r.author ?? e7.t.ghost;
                 return (0, F.jsx)("div", {
                     className: (0, eb.$)(
                         e3.IssueBodyHeaderContainer,
@@ -9885,7 +9878,7 @@
                             e3.activityHeaderWrapper
                         ),
                         children: [
-                            (0, F.jsx)(eO.A, {
+                            (0, F.jsx)(eO.az, {
                                 sx: {
                                     display: a
                                         ? ["flex", "flex", "none", "none"]
@@ -9923,7 +9916,7 @@
                                         }),
                                     }),
                                     (c || m) &&
-                                        (0, F.jsx)(e7.A, {
+                                        (0, F.jsx)(e5.A, {
                                             variant: "secondary",
                                             children: ez.authorLabel(c),
                                         }),
@@ -12522,7 +12515,7 @@
                     y = o.id,
                     p = o.repository.databaseId,
                     [k, b] = (0, eU.Fo)(
-                        e5.t.localStorageKeys.issueNewBody("hyperlist", y),
+                        e7.t.localStorageKeys.issueNewBody("hyperlist", y),
                         void 0
                     ),
                     [h, f] = (0, Q.useState)(m),
@@ -12802,9 +12795,9 @@
                         avatarUrl: Z,
                         login: ee,
                         profileUrl: el,
-                    } = o.author ?? e5.t.ghost,
+                    } = o.author ?? e7.t.ghost,
                     en = (0, Q.useCallback)((e) => e?.node?.bodyHTML, []);
-                return (0, F.jsxs)(eO.A, {
+                return (0, F.jsxs)(eO.az, {
                     sx: { display: "flex", gap: 3 },
                     children: [
                         (0, F.jsx)(ek.A, {
@@ -12820,7 +12813,7 @@
                                 className: eD.A.issueViewerAvatar,
                             }),
                         }),
-                        (0, F.jsxs)(eO.A, {
+                        (0, F.jsxs)(eO.az, {
                             ref: q,
                             sx: {
                                 flexGrow: 1,
@@ -12837,13 +12830,13 @@
                                     className: "sr-only",
                                     children: ez.issueBodyHeader,
                                 }),
-                                (0, F.jsx)(eO.A, {
+                                (0, F.jsx)(eO.az, {
                                     sx: {
                                         display: "flex",
                                         flexDirection: "row",
                                         gap: 2,
                                     },
-                                    children: (0, F.jsx)(eO.A, {
+                                    children: (0, F.jsx)(eO.az, {
                                         sx: {
                                             border: "1px solid",
                                             borderColor: o.viewerDidAuthor
@@ -12865,7 +12858,7 @@
                                                               secondaryKeyIssue:
                                                                   l,
                                                           }),
-                                                          (0, F.jsx)(eO.A, {
+                                                          (0, F.jsx)(eO.az, {
                                                               sx: { m: 2 },
                                                               children: (0,
                                                               F.jsx)(eG, {
@@ -13282,7 +13275,7 @@
                 l2 = n(58115),
                 l4 = n(98828),
                 l6 = n(79634);
-            function l7({ issue: e, open: l, setOpen: n, onCreateSuccess: a }) {
+            function l5({ issue: e, open: l, setOpen: n, onCreateSuccess: a }) {
                 let { alert: s, resetAlert: i, showServerAlert: t } = l_(),
                     r = (0, l6.X)(),
                     u = (0, N.useFragment)(l0, e),
@@ -13333,9 +13326,9 @@
                 });
             }
             try {
-                l7.displayName || (l7.displayName = "SubIssuesCreateDialog");
+                l5.displayName || (l5.displayName = "SubIssuesCreateDialog");
             } catch {}
-            let l5 = {
+            let l7 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -13361,7 +13354,7 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            l5.hash = "5392781363d352b5a0f552def559897f";
+            l7.hash = "5392781363d352b5a0f552def559897f";
             let l3 = (function () {
                 var e = {
                     alias: null,
@@ -15881,7 +15874,7 @@
                 let { fg: t, bg: r, border: u } = (0, nH.Wk)(a),
                     o = (0, F.jsxs)(F.Fragment, {
                         children: [
-                            (0, F.jsx)(e7.A, {
+                            (0, F.jsx)(e5.A, {
                                 className: nz.titleLabel,
                                 ...(0, ep.G)(
                                     "nested-list-view-item-leading-badge-label"
@@ -15977,7 +15970,7 @@
                             ref: s,
                             children:
                                 n ||
-                                (0, F.jsx)(e7.A, {
+                                (0, F.jsx)(e5.A, {
                                     className: nX.label,
                                     ...a,
                                     children: (0, F.jsx)("span", {
@@ -16178,8 +16171,8 @@
                 titleNumber: "SubIssueTitle-module__titleNumber--PdnWi",
                 titleAnchor: "SubIssueTitle-module__titleAnchor--MtUue",
             };
-            var n7 = n(72822);
-            function n5({
+            var n5 = n(72822);
+            function n7({
                 issueKey: e,
                 onClick: l,
                 parentRepoName: n,
@@ -16236,7 +16229,7 @@
                 a && a !== d.owner.login
                     ? (k = `${d.owner.login}/${d.name}`)
                     : n && n !== d.name && (k = d.name);
-                let b = `${(0, n7.us)(c, m)} ${(0, n4.F0)((0, F.jsxs)("span", { className: n6.titleNumber, children: [k, "#", o] }))}`;
+                let b = `${(0, n5.us)(c, m)} ${(0, n4.F0)((0, F.jsxs)("span", { className: n6.titleNumber, children: [k, "#", o] }))}`;
                 return (0, F.jsx)(nO.T, {
                     value: b,
                     href: u,
@@ -16251,7 +16244,7 @@
                 });
             }
             try {
-                n5.displayName || (n5.displayName = "SubIssueTitle");
+                n7.displayName || (n7.displayName = "SubIssueTitle");
             } catch {}
             function n3({
                 parentIssueId: e,
@@ -16316,7 +16309,7 @@
                                   showTrigger: i,
                                   itemId: u.id,
                               },
-                              title: (0, F.jsx)(n5, {
+                              title: (0, F.jsx)(n7, {
                                   issueKey: o,
                                   onClick: s,
                                   parentRepoName: l,
@@ -17028,7 +17021,7 @@
                 insideSidePanel: n,
                 readonly: a = !1,
             }) {
-                let s = (0, N.useFragment)(l5, e);
+                let s = (0, N.useFragment)(l7, e);
                 return (0, F.jsxs)("div", {
                     className: as.Box,
                     children: [
@@ -18237,19 +18230,21 @@
                             },
                         });
                     }, [d, a, l, c, r, i, n]),
-                    p = null !== l.match(/^ *$/);
+                    p = null !== l.match(/^ *$/),
+                    k = () => {
+                        if (p) {
+                            (g(eH.wY.titleCanNotBeEmpty),
+                                o.titleRef.current?.focus());
+                            return;
+                        }
+                        (r(!0), y());
+                    };
                 return (0, F.jsx)("div", {
                     className: aw.HeaderEditorContainer,
                     children: (0, F.jsxs)(lK.tL, {
                         commands: {
-                            "issue-viewer:edit-title-submit": () => {
-                                if (p) {
-                                    (g(eH.wY.titleCanNotBeEmpty),
-                                        o.titleRef.current?.focus());
-                                    return;
-                                }
-                                (r(!0), y());
-                            },
+                            "issue-viewer:edit-title-submit": k,
+                            "github:submit-form": k,
                         },
                         children: [
                             (0, F.jsx)(aE, {
@@ -18764,7 +18759,7 @@
                     className: aJ.menuActionsContainer,
                     children: [
                         k,
-                        (0, F.jsx)(eO.A, {
+                        (0, F.jsx)(eO.az, {
                             sx: {
                                 flexGrow: d
                                     ? ["1", "1", "0", "0"]
@@ -18857,10 +18852,10 @@
                                 children: [
                                     (0, F.jsx)(O.W.Anchor, {
                                         children: (0, F.jsx)(q.K, {
-                                            unsafeDisableTooltip: !0,
                                             variant: "invisible",
                                             icon: V.KebabHorizontalIcon,
                                             "aria-label": aX.l.issueActions,
+                                            tooltipDirection: "n",
                                             ref: i,
                                             className: aJ.kebabMenuButton,
                                         }),
@@ -19025,14 +19020,14 @@
                     if (!a) return null;
                     let { parent: s } = a;
                     return s?.repository && s.repository.owner
-                        ? (0, F.jsx)(a7, {
+                        ? (0, F.jsx)(a5, {
                               parent: s,
                               optionConfig: l,
                               small: n,
                           })
                         : null;
                 },
-                a7 = ({ parent: e, optionConfig: l, small: n = !1 }) => {
+                a5 = ({ parent: e, optionConfig: l, small: n = !1 }) => {
                     let a = e.repository.name,
                         s = e.repository.owner.login,
                         { sourceIcon: i } = nE({
@@ -19073,8 +19068,8 @@
                             l?.navigate &&
                                 (n.preventDefault(), l?.navigate?.(e.url));
                         },
-                        u = (0, n7.us)(e.title, e.titleHTML),
-                        o = (0, F.jsxs)(eO.A, {
+                        u = (0, n5.us)(e.title, e.titleHTML),
+                        o = (0, F.jsxs)(eO.az, {
                             sx: { maxWidth: 500 },
                             className: a4.parentTitleContainer,
                             children: [
@@ -19126,7 +19121,7 @@
                                   (0, F.jsx)("span", {
                                       className: aV.dividerLine,
                                   }),
-                                  (0, F.jsx)(eO.A, {
+                                  (0, F.jsx)(eO.az, {
                                       sx: { maxWidth: "min(500px, 100%)" },
                                       children: (0, F.jsx)(nn.A, {
                                           text: o,
@@ -19141,14 +19136,14 @@
                 a6.displayName || (a6.displayName = "HeaderParentTitle");
             } catch {}
             try {
-                a7.displayName ||
-                    (a7.displayName = "HeaderParentTitleInternal");
+                a5.displayName ||
+                    (a5.displayName = "HeaderParentTitleInternal");
             } catch {}
             try {
                 (i = IconComponent).displayName ||
                     (i.displayName = "IconComponent");
             } catch {}
-            let a5 = {
+            let a7 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -19233,8 +19228,8 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            a5.hash = "1734dea2e72680881d4fd73c708b6b74";
-            var a3 = n(91089);
+            a7.hash = "1734dea2e72680881d4fd73c708b6b74";
+            var a3 = n(49432);
             let a8 = {
                 stateLabel: "HeaderState-module__stateLabel--Na0HJ",
                 duplicateIssueLink:
@@ -19245,7 +19240,7 @@
                         state: n,
                         stateReason: a,
                         duplicateOf: s,
-                    } = (0, N.useFragment)(a5, l),
+                    } = (0, N.useFragment)(a7, l),
                     { stateString: i, stateStatus: t } = nE({
                         state: n,
                         stateReason: a,
@@ -20252,7 +20247,7 @@
                 let { repository: a } = (0, N.useFragment)(sP, e),
                     s = a.owner.login,
                     i = a.name,
-                    t = (0, F.jsxs)(eO.A, {
+                    t = (0, F.jsxs)(eO.az, {
                         sx: { height: n ? void 0 : "32px" },
                         className: sB.repositoryInfoContainer,
                         children: [
@@ -20278,12 +20273,12 @@
                     });
                 return n
                     ? t
-                    : (0, F.jsxs)(eO.A, {
+                    : (0, F.jsxs)(eO.az, {
                           sx: { ...l },
                           className: sB.smallRepositoryPill,
                           children: [
                               t,
-                              (0, F.jsx)(e7.A, {
+                              (0, F.jsx)(e5.A, {
                                   size: "small",
                                   "data-watch-overflow": !0,
                                   className: sB.repositoryLabel,
@@ -20602,7 +20597,7 @@
                         children: [
                             (0, F.jsx)(ap.H, {
                                 sx: t,
-                                children: (0, F.jsx)(eO.A, {
+                                children: (0, F.jsx)(eO.az, {
                                     "data-testid": ag.Y.issueMetadataFixed,
                                     sx: {
                                         height: "100%",
@@ -20652,7 +20647,7 @@
                                     }),
                                 }),
                             }),
-                            (0, F.jsx)(eO.A, {
+                            (0, F.jsx)(eO.az, {
                                 "data-testid": ag.Y.issueMetadataSticky,
                                 sx: {
                                     display: n ? "flex" : "none",
@@ -20680,7 +20675,7 @@
                                                         scrollToTopOnClick:
                                                             l.scrollToTopOnClick,
                                                     }),
-                                                    (0, F.jsxs)(eO.A, {
+                                                    (0, F.jsxs)(eO.az, {
                                                         sx: {
                                                             display:
                                                                 l.useViewportQueries
@@ -20979,7 +20974,7 @@
                                     className: sZ.PageHeader_ContextArea,
                                     children: (0, F.jsx)("div", {
                                         className: sZ.desktopMetadataContainer,
-                                        children: (0, F.jsx)(eO.A, {
+                                        children: (0, F.jsx)(eO.az, {
                                             sx: {
                                                 display: c([
                                                     "flex",
@@ -21178,7 +21173,7 @@
                 abstractKey: null,
             };
             s6.hash = "8fc24bb52effd976666af3d674ce0d7d";
-            let s7 = {
+            let s5 = {
                 argumentDefinitions: [
                     {
                         defaultValue: null,
@@ -21235,8 +21230,8 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            s7.hash = "dedc5f445c2698fbfc52de57413c66a9";
-            var s5 = n(80159),
+            s5.hash = "dedc5f445c2698fbfc52de57413c66a9";
+            var s7 = n(84158),
                 s3 = n(30107),
                 s8 = n(77622),
                 s9 = n(21728),
@@ -22040,66 +22035,73 @@
                         alias: null,
                         args: null,
                         kind: "ScalarField",
-                        name: "isPrivate",
+                        name: "isLocked",
                         storageKey: null,
                     },
                     m = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
-                        name: "visibility",
+                        name: "isPrivate",
                         storageKey: null,
                     },
                     g = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
-                        name: "isArchived",
+                        name: "visibility",
                         storageKey: null,
                     },
                     y = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
-                        name: "isInOrganization",
+                        name: "isArchived",
                         storageKey: null,
                     },
                     p = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
-                        name: "hasIssuesEnabled",
+                        name: "isInOrganization",
                         storageKey: null,
                     },
                     k = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
-                        name: "hasAnyTemplates",
+                        name: "hasIssuesEnabled",
                         storageKey: null,
                     },
                     F = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
-                        name: "slashCommandsEnabled",
+                        name: "hasAnyTemplates",
                         storageKey: null,
                     },
                     b = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
-                        name: "viewerCanPush",
+                        name: "slashCommandsEnabled",
                         storageKey: null,
                     },
                     h = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
-                        name: "isBlankIssuesEnabled",
+                        name: "viewerCanPush",
                         storageKey: null,
                     },
                     f = {
+                        alias: null,
+                        args: null,
+                        kind: "ScalarField",
+                        name: "isBlankIssuesEnabled",
+                        storageKey: null,
+                    },
+                    K = {
                         alias: null,
                         args: [
                             {
@@ -22113,7 +22115,7 @@
                         storageKey:
                             'viewerInteractionLimitReasonHTML(action:"create an issue")',
                     },
-                    K = {
+                    S = {
                         alias: null,
                         args: null,
                         concreteType: "IssueCreationPermissions",
@@ -22166,42 +22168,42 @@
                         ],
                         storageKey: null,
                     },
-                    S = {
+                    I = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "securityPolicyUrl",
                         storageKey: null,
                     },
-                    I = {
+                    v = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "contributingFileUrl",
                         storageKey: null,
                     },
-                    v = {
+                    L = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "codeOfConductFileUrl",
                         storageKey: null,
                     },
-                    L = {
+                    T = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "supportFileUrl",
                         storageKey: null,
                     },
-                    T = {
+                    C = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "shortDescriptionHTML",
                         storageKey: null,
                     },
-                    C = {
+                    x = {
                         alias: null,
                         args: null,
                         concreteType: "RepositoryPlanFeatures",
@@ -22219,7 +22221,7 @@
                         ],
                         storageKey: null,
                     },
-                    x = [
+                    R = [
                         {
                             kind: "InlineDataFragmentSpread",
                             name: "RepositoryPickerRepository",
@@ -22255,17 +22257,18 @@
                                 L,
                                 T,
                                 C,
+                                x,
                             ],
                             args: null,
                             argumentDefinitions: [],
                         },
                     ],
-                    R = {
+                    N = {
                         kind: "Literal",
                         name: "orderBy",
                         value: { direction: "DESC", field: "UPDATED_AT" },
                     },
-                    N = [
+                    j = [
                         s,
                         i,
                         t,
@@ -22310,6 +22313,7 @@
                         L,
                         T,
                         C,
+                        x,
                     ];
                 return {
                     fragment: {
@@ -22325,7 +22329,7 @@
                                 kind: "LinkedField",
                                 name: "repository",
                                 plural: !1,
-                                selections: x,
+                                selections: R,
                                 storageKey: null,
                             },
                             {
@@ -22355,7 +22359,7 @@
                                                         variableName:
                                                             "hasIssuesEnabled",
                                                     },
-                                                    R,
+                                                    N,
                                                     n,
                                                 ],
                                                 concreteType:
@@ -22381,7 +22385,7 @@
                                                                 kind: "LinkedField",
                                                                 name: "node",
                                                                 plural: !1,
-                                                                selections: x,
+                                                                selections: R,
                                                                 storageKey:
                                                                     null,
                                                             },
@@ -22427,7 +22431,7 @@
                                 kind: "LinkedField",
                                 name: "repository",
                                 plural: !1,
-                                selections: N,
+                                selections: j,
                                 storageKey: null,
                             },
                             {
@@ -22451,7 +22455,7 @@
                                                 name: "hasIssuesEnabled",
                                                 value: !0,
                                             },
-                                            R,
+                                            N,
                                         ],
                                         concreteType: "RepositoryConnection",
                                         kind: "LinkedField",
@@ -22474,7 +22478,7 @@
                                                         kind: "LinkedField",
                                                         name: "node",
                                                         plural: !1,
-                                                        selections: N,
+                                                        selections: j,
                                                         storageKey: null,
                                                     },
                                                 ],
@@ -22491,7 +22495,7 @@
                         ],
                     },
                     params: {
-                        id: "39e9847583343f12ec20ba84cb42a0b5",
+                        id: "44337e2a6ee2a91bd3c0c27560f72e20",
                         metadata: {},
                         name: "DevelopmentSectionReposQuery",
                         operationKind: "query",
@@ -25840,12 +25844,12 @@
                 };
             })();
             i6.hash = "d507f64d80526dd7fa065bad1d2ae573";
-            var i7 = n(58615),
-                i5 = n(96379);
+            var i5 = n(58615),
+                i7 = n(96379);
             function i3({ repoId: e, issueDatabaseId: l }) {
                 let n = (0, N.useRelayEnvironment)(),
-                    [a] = (0, i7.M)("vscs_target", void 0),
-                    [s] = (0, i7.M)("vscs_target_url", void 0),
+                    [a] = (0, i5.M)("vscs_target", void 0),
+                    [s] = (0, i5.M)("vscs_target_url", void 0),
                     [i, t] = (0, Q.useState)(""),
                     r = (0, Q.useCallback)(
                         async (i) => {
@@ -25878,7 +25882,7 @@
                                             "codespace[vscs_target_url]",
                                             s
                                         ));
-                                let o = await (0, i5.DI)((0, eg.UzS)(), {
+                                let o = await (0, i7.DI)((0, eg.UzS)(), {
                                         method: "POST",
                                         body: u,
                                     }),
@@ -29734,8 +29738,9 @@ git checkout ${e}`;
                 };
             })();
             tZ.hash = "f90dad947a48313e268c8bb0d3e824f5";
-            var t0 = n(90352);
-            let t1 = (function () {
+            var t0 = n(53419),
+                t1 = n(90352);
+            let t2 = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -30078,8 +30083,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            t1.hash = "d7ae6b6f869509e0cb75ae50298a2db5";
-            let t2 = (function () {
+            t2.hash = "d7ae6b6f869509e0cb75ae50298a2db5";
+            let t4 = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -30198,9 +30203,9 @@ git checkout ${e}`;
                     },
                 };
             })();
-            t2.hash = "5256acc8a89667f2e629c973029c8f67";
-            var t4 = n(30721),
-                t6 = n(30459);
+            t4.hash = "5256acc8a89667f2e629c973029c8f67";
+            var t6 = n(30721),
+                t5 = n(30459);
             let t7 = (function () {
                 var e = [
                         {
@@ -30592,7 +30597,7 @@ git checkout ${e}`;
                 };
             })();
             t7.hash = "8500c41903f52b72cdb6ca44ecb913ec";
-            let t5 = (function () {
+            let t3 = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -30996,8 +31001,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            t5.hash = "7213d1e34ddacd390d75418f447a0d76";
-            let t3 = (function () {
+            t3.hash = "7213d1e34ddacd390d75418f447a0d76";
+            let t8 = (function () {
                 var e = ["blockedBy"],
                     l = {
                         alias: null,
@@ -31039,7 +31044,7 @@ git checkout ${e}`;
                                 path: e,
                             },
                             fragmentPathInResult: ["node"],
-                            operation: t5,
+                            operation: t3,
                             identifierInfo: {
                                 identifierField: "id",
                                 identifierQueryVariableName: "id",
@@ -31150,8 +31155,8 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            t3.hash = "7213d1e34ddacd390d75418f447a0d76";
-            let t8 = (function () {
+            t8.hash = "7213d1e34ddacd390d75418f447a0d76";
+            let t9 = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -31555,8 +31560,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            t8.hash = "b33b34b1259e53059598888f0e50a978";
-            let t9 = (function () {
+            t9.hash = "b33b34b1259e53059598888f0e50a978";
+            let re = (function () {
                 var e = {
                         alias: null,
                         args: null,
@@ -31716,16 +31721,16 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            t9.hash = "e7b61df876bd71053686b197a57ceca3";
-            var re = n(97174),
-                rl = n(2970),
-                rn = n(98994),
-                ra = n(51880),
-                rs = n(65964),
-                ri = n(43617),
-                rt = n(4929),
-                rr = n(95378);
-            let ru = {
+            re.hash = "e7b61df876bd71053686b197a57ceca3";
+            var rl = n(97174),
+                rn = n(2970),
+                ra = n(98994),
+                rs = n(51880),
+                ri = n(65964),
+                rt = n(43617),
+                rr = n(4929),
+                ru = n(95378);
+            let ro = {
                 PaginatedRelationshipsListAllView_AvatarArea:
                     "PaginatedRelationshipsListAllView-module__PaginatedRelationshipsListAllView_AvatarArea--R_CQm",
                 PaginatedRelationshipsListAllView_AvatarLink:
@@ -31735,7 +31740,7 @@ git checkout ${e}`;
                 PaginatedRelationshipsListAllView_ControlWrapper:
                     "PaginatedRelationshipsListAllView-module__PaginatedRelationshipsListAllView_ControlWrapper--ytK3g",
             };
-            function ro({
+            function rd({
                 accessibleTitle: e,
                 isLoadingNext: l,
                 hasNextPage: n,
@@ -31745,10 +31750,10 @@ git checkout ${e}`;
                 let i = [];
                 if (l)
                     for (let e = 0; e < 3; e += 1)
-                        i.push((0, F.jsx)(rk, {}, e));
+                        i.push((0, F.jsx)(rF, {}, e));
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
-                        (0, F.jsxs)(re.u, {
+                        (0, F.jsxs)(rl.u, {
                             title: e,
                             variant: "compact",
                             children: [s, l && i],
@@ -31756,7 +31761,7 @@ git checkout ${e}`;
                         n &&
                             (0, F.jsx)("div", {
                                 className:
-                                    ru.PaginatedRelationshipsListAllView_ControlWrapper,
+                                    ro.PaginatedRelationshipsListAllView_ControlWrapper,
                                 children: (0, F.jsx)($.Q, {
                                     onClick: a,
                                     disabled: l,
@@ -31766,53 +31771,53 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function rd({
+            function rc({
                 issueFragment: e,
                 sourceIssueRepositoryNameWithOwner: l,
             }) {
-                let n = (0, N.useFragment)(t9, e),
+                let n = (0, N.useFragment)(re, e),
                     { sourceIcon: a } = nE({
                         state: n.state,
                         stateReason: n.stateReason,
                     }),
                     s = a("Issue"),
-                    i = rF(l, n.repository.nameWithOwner, n.number);
-                return (0, F.jsxs)(rl.c, {
-                    title: (0, F.jsx)(rm, { issue: n }),
-                    metadata: (0, F.jsx)(rg, { issue: n }),
+                    i = rb(l, n.repository.nameWithOwner, n.number);
+                return (0, F.jsxs)(rn.c, {
+                    title: (0, F.jsx)(rg, { issue: n }),
+                    metadata: (0, F.jsx)(ry, { issue: n }),
                     children: [
-                        (0, F.jsx)(ra.B, {
-                            children: (0, F.jsx)(rs.e, { icon: s }),
+                        (0, F.jsx)(rs.B, {
+                            children: (0, F.jsx)(ri.e, { icon: s }),
                         }),
-                        (0, F.jsx)(ri.Q, {
-                            children: (0, F.jsx)(rn.U, { children: i }),
+                        (0, F.jsx)(rt.Q, {
+                            children: (0, F.jsx)(ra.U, { children: i }),
                         }),
                     ],
                 });
             }
-            function rc() {
+            function rm() {
                 let e = [];
-                for (let l = 0; l < 3; l += 1) e.push((0, F.jsx)(rk, {}, l));
+                for (let l = 0; l < 3; l += 1) e.push((0, F.jsx)(rF, {}, l));
                 return (0, F.jsx)(F.Fragment, {
-                    children: (0, F.jsx)(re.u, {
+                    children: (0, F.jsx)(rl.u, {
                         title: ak.k.relationLoadingList,
                         variant: "compact",
                         children: e,
                     }),
                 });
             }
-            function rm({ issue: e }) {
-                let l = (0, n7.us)(e.title, e.titleHTML);
-                return (0, F.jsx)(rr.ao, {
+            function rg({ issue: e }) {
+                let l = (0, n5.us)(e.title, e.titleHTML);
+                return (0, F.jsx)(ru.ao, {
                     value: l,
                     href: e.url,
                     anchorClassName: "markdown-title",
                 });
             }
-            function rg({ issue: e }) {
+            function ry({ issue: e }) {
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
-                        (0, F.jsx)(rt.V, {
+                        (0, F.jsx)(rr.V, {
                             ...(0, ep.G)(
                                 "__test-relationships-list-all-view-pull-request-metadata"
                             ),
@@ -31821,8 +31826,8 @@ git checkout ${e}`;
                                 closedByPullRequestsReferencesKey: e,
                             }),
                         }),
-                        (0, F.jsx)(rt.V, {
-                            children: (0, F.jsx)(ry, {
+                        (0, F.jsx)(rr.V, {
+                            children: (0, F.jsx)(rp, {
                                 owner: e.repository.owner.login,
                                 repo: e.repository.name,
                                 assignees: e.assignees,
@@ -31831,18 +31836,18 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function ry({ owner: e, repo: l, assignees: n }) {
+            function rp({ owner: e, repo: l, assignees: n }) {
                 let a = n.edges;
-                if (0 === n.totalCount || !a) return (0, F.jsx)(rp, {});
+                if (0 === n.totalCount || !a) return (0, F.jsx)(rk, {});
                 let s = a.map((e) => e?.node).filter((e) => !!e);
                 return (0, F.jsx)(np.A, {
                     alignRight: !0,
-                    className: ru.PaginatedRelationshipsListAllView_AvatarArea,
+                    className: ro.PaginatedRelationshipsListAllView_AvatarArea,
                     children: s.map((n) =>
                         (0, F.jsx)(
                             ek.A,
                             {
-                                href: (0, n7.Fj)(
+                                href: (0, n5.Fj)(
                                     { owner: e, repo: l },
                                     "assignee",
                                     n.login
@@ -31852,7 +31857,7 @@ git checkout ${e}`;
                                 }),
                                 "data-hovercard-fixed-positioning": !0,
                                 className:
-                                    ru.PaginatedRelationshipsListAllView_AvatarLink,
+                                    ro.PaginatedRelationshipsListAllView_AvatarLink,
                                 children: (0, F.jsx)(E.r, {
                                     alt: n.login,
                                     src: n.avatarUrl,
@@ -31863,21 +31868,21 @@ git checkout ${e}`;
                     ),
                 });
             }
-            function rp() {
+            function rk() {
                 return (0, F.jsxs)("div", {
-                    className: ru.PaginatedRelationshipsListAllView_EmptyAvatar,
+                    className: ro.PaginatedRelationshipsListAllView_EmptyAvatar,
                     children: [
                         (0, F.jsx)(V.PersonIcon, { size: 16 }),
                         (0, F.jsx)(V.CircleIcon, { size: 24 }),
                     ],
                 });
             }
-            function rk() {
-                return (0, F.jsx)(rl.c, {
+            function rF() {
+                return (0, F.jsx)(rn.c, {
                     ...(0, ep.G)(
                         "__test-paginated-relationships-list-item-skeleton"
                     ),
-                    title: (0, F.jsx)(rr.ao, {
+                    title: (0, F.jsx)(ru.ao, {
                         value: "",
                         children: (0, F.jsx)(ae.O, {
                             height: "20px",
@@ -31886,13 +31891,13 @@ git checkout ${e}`;
                     }),
                     metadata: (0, F.jsxs)(F.Fragment, {
                         children: [
-                            (0, F.jsx)(rt.V, {
+                            (0, F.jsx)(rr.V, {
                                 children: (0, F.jsx)(ae.O, {
                                     variant: "rounded",
                                     width: "4ch",
                                 }),
                             }),
-                            (0, F.jsx)(rt.V, {
+                            (0, F.jsx)(rr.V, {
                                 children: (0, F.jsx)(ae.O, {
                                     variant: "elliptical",
                                     width: "20px",
@@ -31903,55 +31908,55 @@ git checkout ${e}`;
                     }),
                 });
             }
-            let rF = (e = "", l, n) => `${!e || e === l ? "" : l}#${n}`;
+            let rb = (e = "", l, n) => `${!e || e === l ? "" : l}#${n}`;
             try {
-                ro.displayName ||
-                    (ro.displayName = "RelationshipsListAllViewPaginated");
+                rd.displayName ||
+                    (rd.displayName = "RelationshipsListAllViewPaginated");
             } catch {}
             try {
-                rd.displayName || (rd.displayName = "RelationshipsListItem");
+                rc.displayName || (rc.displayName = "RelationshipsListItem");
             } catch {}
             try {
                 (d = IconComponent).displayName ||
                     (d.displayName = "IconComponent");
             } catch {}
             try {
-                rc.displayName ||
-                    (rc.displayName = "RelationshipsListViewLoadingSkeleton");
-            } catch {}
-            try {
                 rm.displayName ||
-                    (rm.displayName = "RelationshipsListItemTitle");
+                    (rm.displayName = "RelationshipsListViewLoadingSkeleton");
             } catch {}
             try {
                 rg.displayName ||
-                    (rg.displayName = "RelationshipsListItemMetadata");
+                    (rg.displayName = "RelationshipsListItemTitle");
             } catch {}
             try {
                 ry.displayName ||
-                    (ry.displayName = "RelationshipsListItemAvatarMetadata");
+                    (ry.displayName = "RelationshipsListItemMetadata");
             } catch {}
             try {
-                rp.displayName || (rp.displayName = "EmptyAvatar");
+                rp.displayName ||
+                    (rp.displayName = "RelationshipsListItemAvatarMetadata");
             } catch {}
             try {
-                rk.displayName ||
-                    (rk.displayName = "RelationshipListItemSkeleton");
+                rk.displayName || (rk.displayName = "EmptyAvatar");
             } catch {}
-            let rb = "LazyRelationshipsBlockedByListViewFragment__blockedBy";
-            function rh({ itemId: e, pageSize: l = 25, blockedByCount: n }) {
-                let a = (0, F.jsx)(rc, {});
+            try {
+                rF.displayName ||
+                    (rF.displayName = "RelationshipListItemSkeleton");
+            } catch {}
+            let rh = "LazyRelationshipsBlockedByListViewFragment__blockedBy";
+            function rf({ itemId: e, pageSize: l = 25, blockedByCount: n }) {
+                let a = (0, F.jsx)(rm, {});
                 return (0, F.jsx)(Q.Suspense, {
                     fallback: a,
-                    children: (0, F.jsx)(rf, {
+                    children: (0, F.jsx)(rK, {
                         itemId: e,
                         pageSize: l,
                         blockedByCount: n,
                     }),
                 });
             }
-            function rf({ itemId: e, pageSize: l, blockedByCount: n }) {
-                let a = (0, N.useLazyLoadQuery)(t8, {
+            function rK({ itemId: e, pageSize: l, blockedByCount: n }) {
+                let a = (0, N.useLazyLoadQuery)(t9, {
                         id: e,
                         pageSize: l,
                     }).issue,
@@ -31959,7 +31964,7 @@ git checkout ${e}`;
                         data: s,
                         loadNext: i,
                         isLoadingNext: t,
-                    } = (0, N.usePaginationFragment)(t3, a),
+                    } = (0, N.usePaginationFragment)(t8, a),
                     r = (0, Q.useCallback)(() => i(25), [i]),
                     u = (0, F.jsx)(i2.l, {
                         variant: "info",
@@ -31976,7 +31981,7 @@ git checkout ${e}`;
                 if (!d || 0 === d.length) return u;
                 let c = !s.blockedBy?.pageInfo?.hasNextPage,
                     m = d.length < n && c;
-                return (0, F.jsxs)(ro, {
+                return (0, F.jsxs)(rd, {
                     accessibleTitle: ak.k.relationNames.blockedByIssues,
                     isLoadingNext: t,
                     hasNextPage: s.blockedBy?.pageInfo?.hasNextPage,
@@ -31984,7 +31989,7 @@ git checkout ${e}`;
                     children: [
                         d.map((e) =>
                             (0, F.jsx)(
-                                rd,
+                                rc,
                                 {
                                     issueFragment: e,
                                     sourceIssueRepositoryNameWithOwner:
@@ -32016,14 +32021,14 @@ git checkout ${e}`;
                 });
             }
             try {
-                rh.displayName ||
-                    (rh.displayName = "LazyRelationshipsBlockedByListView");
+                rf.displayName ||
+                    (rf.displayName = "LazyRelationshipsBlockedByListView");
             } catch {}
             try {
-                rf.displayName ||
-                    (rf.displayName = "RelationshipsBlockedByListViewInternal");
+                rK.displayName ||
+                    (rK.displayName = "RelationshipsBlockedByListViewInternal");
             } catch {}
-            let rK = (function () {
+            let rS = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -32427,8 +32432,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            rK.hash = "fcb1bdd403819f755a2d0bf0b34ee3f5";
-            let rS = (function () {
+            rS.hash = "fcb1bdd403819f755a2d0bf0b34ee3f5";
+            let rI = (function () {
                 var e = ["blocking"],
                     l = {
                         alias: null,
@@ -32470,7 +32475,7 @@ git checkout ${e}`;
                                 path: e,
                             },
                             fragmentPathInResult: ["node"],
-                            operation: rK,
+                            operation: rS,
                             identifierInfo: {
                                 identifierField: "id",
                                 identifierQueryVariableName: "id",
@@ -32581,8 +32586,8 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            rS.hash = "fcb1bdd403819f755a2d0bf0b34ee3f5";
-            let rI = (function () {
+            rI.hash = "fcb1bdd403819f755a2d0bf0b34ee3f5";
+            let rv = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -32986,21 +32991,21 @@ git checkout ${e}`;
                     },
                 };
             })();
-            rI.hash = "0fec157cf9aecb3dc4e520f9209f5dcd";
-            let rv = "LazyRelationshipsBlockingListViewFragment__blocking";
-            function rL({ itemId: e, pageSize: l = 25, blockingCount: n }) {
-                let a = (0, F.jsx)(rc, {});
+            rv.hash = "0fec157cf9aecb3dc4e520f9209f5dcd";
+            let rL = "LazyRelationshipsBlockingListViewFragment__blocking";
+            function rT({ itemId: e, pageSize: l = 25, blockingCount: n }) {
+                let a = (0, F.jsx)(rm, {});
                 return (0, F.jsx)(Q.Suspense, {
                     fallback: a,
-                    children: (0, F.jsx)(rT, {
+                    children: (0, F.jsx)(rC, {
                         itemId: e,
                         pageSize: l,
                         blockingCount: n,
                     }),
                 });
             }
-            function rT({ itemId: e, pageSize: l, blockingCount: n }) {
-                let a = (0, N.useLazyLoadQuery)(rI, {
+            function rC({ itemId: e, pageSize: l, blockingCount: n }) {
+                let a = (0, N.useLazyLoadQuery)(rv, {
                         id: e,
                         pageSize: l,
                     }).issue,
@@ -33008,7 +33013,7 @@ git checkout ${e}`;
                         data: s,
                         loadNext: i,
                         isLoadingNext: t,
-                    } = (0, N.usePaginationFragment)(rS, a),
+                    } = (0, N.usePaginationFragment)(rI, a),
                     r = (0, Q.useCallback)(() => i(25), [i]),
                     u = (0, F.jsx)(i2.l, {
                         variant: "info",
@@ -33025,7 +33030,7 @@ git checkout ${e}`;
                 if (!d || 0 === d.length) return u;
                 let c = !s.blocking?.pageInfo?.hasNextPage,
                     m = d.length < n && c;
-                return (0, F.jsxs)(ro, {
+                return (0, F.jsxs)(rd, {
                     accessibleTitle: ak.k.relationNames.blockingIssues,
                     isLoadingNext: t,
                     hasNextPage: s.blocking?.pageInfo?.hasNextPage,
@@ -33033,7 +33038,7 @@ git checkout ${e}`;
                     children: [
                         d.map((e) =>
                             (0, F.jsx)(
-                                rd,
+                                rc,
                                 {
                                     issueFragment: e,
                                     sourceIssueRepositoryNameWithOwner:
@@ -33065,14 +33070,14 @@ git checkout ${e}`;
                 });
             }
             try {
-                rL.displayName ||
-                    (rL.displayName = "LazyRelationshipsBlockingListView");
+                rT.displayName ||
+                    (rT.displayName = "LazyRelationshipsBlockingListView");
             } catch {}
             try {
-                rT.displayName ||
-                    (rT.displayName = "RelationshipsBlockingListViewInternal");
+                rC.displayName ||
+                    (rC.displayName = "RelationshipsBlockingListViewInternal");
             } catch {}
-            function rC({
+            function rx({
                 environment: e,
                 input: l,
                 onError: n,
@@ -33094,18 +33099,18 @@ git checkout ${e}`;
                                 ?.invalidateRecord());
                         let n = N.ConnectionHandler.getConnectionID(
                             l.issueId,
-                            rb
+                            rh
                         );
                         e.get(n)?.invalidateRecord();
                         let a = N.ConnectionHandler.getConnectionID(
                             l.blockingIssueId,
-                            rv
+                            rL
                         );
                         e.get(a)?.invalidateRecord();
                     },
                 });
             }
-            let rx = (function () {
+            let rR = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -33495,14 +33500,14 @@ git checkout ${e}`;
                     },
                 };
             })();
-            function rR({
+            function rN({
                 environment: e,
                 input: l,
                 onError: n,
                 onCompleted: a,
             }) {
                 return (0, N.commitMutation)(e, {
-                    mutation: rx,
+                    mutation: rR,
                     variables: { input: l },
                     onError: (e) => n && n(e),
                     onCompleted: (e) => a && a(e),
@@ -33517,23 +33522,23 @@ git checkout ${e}`;
                                 ?.invalidateRecord());
                         let n = N.ConnectionHandler.getConnectionID(
                             l.issueId,
-                            rb
+                            rh
                         );
                         e.get(n)?.invalidateRecord();
                         let a = N.ConnectionHandler.getConnectionID(
                             l.blockingIssueId,
-                            rv
+                            rL
                         );
                         e.get(a)?.invalidateRecord();
                     },
                 });
             }
-            rx.hash = "fb9c648571be9539ea2d490c926f1f2c";
-            let rN = {
+            rR.hash = "fb9c648571be9539ea2d490c926f1f2c";
+            let rj = {
                 DependenciesPicker:
                     "DependenciesPicker-module__DependenciesPicker--WryxL",
             };
-            function rj({
+            function r_({
                 type: e,
                 onClose: l,
                 issueId: n,
@@ -33545,12 +33550,12 @@ git checkout ${e}`;
                 let r = (0, N.useRelayEnvironment)(),
                     [u, o] = (0, Q.useState)("idle"),
                     [d, c] = (0, Q.useState)(null),
-                    { sendAnalyticsEvent: m } = (0, t6.s)(),
+                    { sendAnalyticsEvent: m } = (0, t5.s)(),
                     g = (0, Q.useCallback)(async () => {
                         (o("loading"),
-                            (0, t4.SD)({
+                            (0, t6.SD)({
                                 environment: r,
-                                query: t2,
+                                query: t4,
                                 variables: { id: n },
                             }).subscribe({
                                 next: (e) => {
@@ -33610,7 +33615,7 @@ git checkout ${e}`;
                                 for (let e of s)
                                     u.push(
                                         new Promise((l) => {
-                                            rC({
+                                            rx({
                                                 environment: r,
                                                 input: {
                                                     issueId: n,
@@ -33626,7 +33631,7 @@ git checkout ${e}`;
                                 for (let e of i)
                                     u.push(
                                         new Promise((l) => {
-                                            rR({
+                                            rN({
                                                 environment: r,
                                                 input: {
                                                     issueId: n,
@@ -33661,7 +33666,7 @@ git checkout ${e}`;
                                 for (let e of s)
                                     u.push(
                                         new Promise((l) => {
-                                            rC({
+                                            rx({
                                                 environment: r,
                                                 input: {
                                                     issueId: e,
@@ -33677,7 +33682,7 @@ git checkout ${e}`;
                                 for (let e of i)
                                     u.push(
                                         new Promise((l) => {
-                                            rR({
+                                            rN({
                                                 environment: r,
                                                 input: {
                                                     issueId: e,
@@ -33730,7 +33735,7 @@ git checkout ${e}`;
                             "blockedBy" === e
                                 ? "Mark current issue as blocked by\u2026"
                                 : "Mark current issue as blocking\u2026",
-                        className: rN.DependenciesPicker,
+                        className: rj.DependenciesPicker,
                         notice:
                             "error" === u
                                 ? {
@@ -33742,9 +33747,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                rj.displayName || (rj.displayName = "DependenciesPicker");
+                r_.displayName || (r_.displayName = "DependenciesPicker");
             } catch {}
-            let r_ = {
+            let rE = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -33814,8 +33819,8 @@ git checkout ${e}`;
                 type: "Issue",
                 abstractKey: null,
             };
-            function rE({ issueKey: e, onLinkClick: l }) {
-                let n = (0, N.useFragment)(r_, e),
+            function rw({ issueKey: e, onLinkClick: l }) {
+                let n = (0, N.useFragment)(rE, e),
                     { sourceIcon: a } = nE({
                         state: n.state,
                         stateReason: n.stateReason,
@@ -33849,15 +33854,15 @@ git checkout ${e}`;
                     ],
                 });
             }
-            r_.hash = "f6da064623ce9670654a0201831939bd";
+            rE.hash = "f6da064623ce9670654a0201831939bd";
             try {
-                rE.displayName || (rE.displayName = "DependencyIssue");
+                rw.displayName || (rw.displayName = "DependencyIssue");
             } catch {}
             try {
                 (c = IconComponent).displayName ||
                     (c.displayName = "IconComponent");
             } catch {}
-            let rw = {
+            let rA = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -33939,8 +33944,8 @@ git checkout ${e}`;
                 type: "Issue",
                 abstractKey: null,
             };
-            rw.hash = "f20ffbfddfade48dfc0bd7caef420126";
-            let rA = (function () {
+            rA.hash = "f20ffbfddfade48dfc0bd7caef420126";
+            let rP = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -34255,8 +34260,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            rA.hash = "39934fa58f424655af608f38463aa711";
-            let rP = {
+            rP.hash = "39934fa58f424655af608f38463aa711";
+            let rB = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -34284,18 +34289,18 @@ git checkout ${e}`;
                 type: "Issue",
                 abstractKey: null,
             };
-            rP.hash = "5a7187edce3938a43fece98cebbed5eb";
-            let rB = {
+            rB.hash = "5a7187edce3938a43fece98cebbed5eb";
+            let rD = {
                     summaryContainer:
                         "SubIssuesSummary-module__summaryContainer--_jmHd",
                 },
-                rD = {
+                rM = {
                     expandTriangleIcon:
                         "SubIssuesSummaryToken-module__expandTriangleIcon--xSUo8",
                     SubIssuesSummaryToken:
                         "SubIssuesSummaryToken-module__SubIssuesSummaryToken--JkzLS",
                 };
-            function rM({
+            function rV({
                 progress: { total: e, completed: l, percentCompleted: n },
                 ...a
             }) {
@@ -34311,7 +34316,7 @@ git checkout ${e}`;
                                     icon: V.TriangleRightIcon,
                                     className: (0, eb.$)(
                                         "triangle",
-                                        rD.expandTriangleIcon
+                                        rM.expandTriangleIcon
                                     ),
                                 }),
                         ],
@@ -34321,34 +34326,34 @@ git checkout ${e}`;
                         "&:hover, &:focus": s ? { ".triangle": {} } : {},
                         ...a.sx,
                     },
-                    className: rD.SubIssuesSummaryToken,
+                    className: rM.SubIssuesSummaryToken,
                 });
             }
             try {
-                rM.displayName || (rM.displayName = "SubIssuesSummaryToken");
+                rV.displayName || (rV.displayName = "SubIssuesSummaryToken");
             } catch {}
-            function rV({ issue: e, onSummaryClick: l }) {
-                let n = (0, N.useFragment)(rP, e),
+            function rU({ issue: e, onSummaryClick: l }) {
+                let n = (0, N.useFragment)(rB, e),
                     a = n1(n),
                     s = l && { as: "a", href: n.url, onClick: (e) => l(e, n) };
                 return a.total > 0
                     ? (0, F.jsx)("div", {
-                          className: rB.summaryContainer,
+                          className: rD.summaryContainer,
                           children: (0, F.jsx)(W.A, {
                               "aria-label": `${a.percentCompleted}% completed`,
-                              children: (0, F.jsx)(rM, { ...s, progress: a }),
+                              children: (0, F.jsx)(rV, { ...s, progress: a }),
                           }),
                       })
                     : null;
             }
             try {
-                rV.displayName || (rV.displayName = "SubIssuesSummary");
+                rU.displayName || (rU.displayName = "SubIssuesSummary");
             } catch {}
-            function rU({ issueKey: e, onLinkClick: l }) {
-                let n = (0, N.useFragment)(rw, e);
+            function rO({ issueKey: e, onLinkClick: l }) {
+                let n = (0, N.useFragment)(rA, e);
                 var a = n.id;
                 let s = (0, Q.useMemo)(
-                    () => ({ variables: { issueId: a }, subscription: rA }),
+                    () => ({ variables: { issueId: a }, subscription: rP }),
                     [a]
                 );
                 (0, N.useSubscription)(s);
@@ -34357,7 +34362,7 @@ git checkout ${e}`;
                         stateReason: n.stateReason,
                     }),
                     t = i("Issue"),
-                    r = (0, n7.us)(n.title, n.titleHTML);
+                    r = (0, n5.us)(n.title, n.titleHTML);
                 return (0, F.jsxs)(H.l.LinkItem, {
                     href: n.url,
                     target: "_blank",
@@ -34371,7 +34376,7 @@ git checkout ${e}`;
                             children: (0, F.jsx)(t, {}),
                         }),
                         (0, F.jsx)(H.l.TrailingVisual, {
-                            children: (0, F.jsx)(rV, { issue: n }),
+                            children: (0, F.jsx)(rU, { issue: n }),
                         }),
                         (0, F.jsx)(aD.JR, {
                             html: r,
@@ -34389,13 +34394,13 @@ git checkout ${e}`;
                 });
             }
             try {
-                rU.displayName || (rU.displayName = "ParentIssue");
+                rO.displayName || (rO.displayName = "ParentIssue");
             } catch {}
             try {
                 (m = IconComponent).displayName ||
                     (m.displayName = "IconComponent");
             } catch {}
-            let rO = {
+            let rq = {
                 ActionList_Relationship_Overrides:
                     "RelationshipsSection-module__ActionList_Relationship_Overrides--P_Q2y",
                 ActionList_GroupHeading:
@@ -34407,21 +34412,21 @@ git checkout ${e}`;
                 DependencyErrorBanner:
                     "RelationshipsSection-module__DependencyErrorBanner--AzOUr",
             };
-            var rq = n(34392);
-            let rH = {
+            var rH = n(34392);
+            let r$ = {
                 RelationshipsListAllModal_TitleCounter:
                     "RelationshipsListAllModal-module__RelationshipsListAllModal_TitleCounter--mHg2F",
                 RelationshipsListAllModal_HovercardWrapper:
                     "RelationshipsListAllModal-module__RelationshipsListAllModal_HovercardWrapper--ILfOX",
             };
-            function r$({
+            function rz({
                 dialogTitle: e,
                 countOpenItems: l = -1,
                 onClose: n,
                 returnFocusRef: a,
                 children: s,
             }) {
-                let i = (0, F.jsx)(rz, { title: e, count: l }),
+                let i = (0, F.jsx)(rW, { title: e, count: l }),
                     t = (0, F.jsx)(i2.l, {
                         variant: "critical",
                         children: (0, F.jsx)(i2.l.Title, {
@@ -34438,22 +34443,22 @@ git checkout ${e}`;
                         fallback: t,
                         children: [
                             (0, F.jsx)("div", {
-                                className: `${rH.RelationshipsListAllModal_HovercardWrapper}`,
-                                children: (0, F.jsx)(rq.s, {}),
+                                className: `${r$.RelationshipsListAllModal_HovercardWrapper}`,
+                                children: (0, F.jsx)(rH.s, {}),
                             }),
                             s,
                         ],
                     }),
                 });
             }
-            function rz({ title: e, count: l }) {
+            function rW({ title: e, count: l }) {
                 return (0, F.jsxs)("span", {
                     children: [
                         e,
                         l >= 0 &&
-                            (0, F.jsx)(t0.A, {
+                            (0, F.jsx)(t1.A, {
                                 className:
-                                    rH.RelationshipsListAllModal_TitleCounter,
+                                    r$.RelationshipsListAllModal_TitleCounter,
                                 ...(0, ep.G)(
                                     "__test-relationships-list-all-modal-counter"
                                 ),
@@ -34463,20 +34468,20 @@ git checkout ${e}`;
                 });
             }
             try {
-                r$.displayName ||
-                    (r$.displayName = "RelationshipsListAllModal");
+                rz.displayName ||
+                    (rz.displayName = "RelationshipsListAllModal");
             } catch {}
             try {
-                rz.displayName ||
-                    (rz.displayName = "RelationshipListAllModalTitle");
+                rW.displayName ||
+                    (rW.displayName = "RelationshipListAllModalTitle");
             } catch {}
-            let rW = {
+            let rQ = {
                 RelationshipsViewAllButton_LeadingSpacer:
                     "RelationshipsViewAllButton-module__RelationshipsViewAllButton_LeadingSpacer--c1ZnA",
                 RelationshipsViewAllButton_Label:
                     "RelationshipsViewAllButton-module__RelationshipsViewAllButton_Label--RLzv2",
             };
-            function rQ({ dialogTitle: e, countOpenItems: l, children: n }) {
+            function rG({ dialogTitle: e, countOpenItems: l, children: n }) {
                 let [a, s] = (0, Q.useState)(!1),
                     i = (0, Q.useRef)(null),
                     t = (0, Q.useCallback)(() => s(!1), []);
@@ -34489,12 +34494,12 @@ git checkout ${e}`;
                                 (0, F.jsx)(H.l.LeadingVisual, {
                                     children: (0, F.jsx)("div", {
                                         className:
-                                            rW.RelationshipsViewAllButton_LeadingSpacer,
+                                            rQ.RelationshipsViewAllButton_LeadingSpacer,
                                     }),
                                 }),
                                 (0, F.jsxs)("span", {
                                     className:
-                                        rW.RelationshipsViewAllButton_Label,
+                                        rQ.RelationshipsViewAllButton_Label,
                                     children: [
                                         ak.k.relationViewAll,
                                         " ",
@@ -34504,7 +34509,7 @@ git checkout ${e}`;
                             ],
                         }),
                         a &&
-                            (0, F.jsx)(r$, {
+                            (0, F.jsx)(rz, {
                                 dialogTitle: e,
                                 countOpenItems: l,
                                 onClose: t,
@@ -34514,13 +34519,13 @@ git checkout ${e}`;
                 });
             }
             try {
-                rQ.displayName ||
-                    (rQ.displayName = "RelationshipsViewAllButton");
+                rG.displayName ||
+                    (rG.displayName = "RelationshipsViewAllButton");
             } catch {}
-            function rG(e, l, n) {
+            function rY(e, l, n) {
                 return e > l && (l < 3 || (3 === l && n));
             }
-            function rY() {
+            function rX() {
                 return (0, F.jsx)(io.w, {
                     sectionHeader: (0, F.jsx)(iu.h, {
                         title: ak.k.sectionTitles.relationships,
@@ -34528,7 +34533,7 @@ git checkout ${e}`;
                     emptyText: ak.k.emptySections.relationships,
                 });
             }
-            function rX({ issue: e, onLinkClick: l, insideSidePanel: n }) {
+            function rJ({ issue: e, onLinkClick: l, insideSidePanel: n }) {
                 let a = (0, N.useFragment)(tZ, e),
                     {
                         parent: s,
@@ -34659,7 +34664,7 @@ git checkout ${e}`;
                                       onCompleted: a,
                                   }) {
                                       (0, N.commitMutation)(e, {
-                                          mutation: t1,
+                                          mutation: t2,
                                           variables: { input: l },
                                           onError: (e) => n && n(e),
                                           onCompleted: (e) => a && a(e),
@@ -34690,7 +34695,7 @@ git checkout ${e}`;
                     E = t?.pageInfo?.hasNextPage,
                     w = (0, Q.useMemo)(() => {
                         let e = o.blockedBy || 0;
-                        return rG(
+                        return rY(
                             e,
                             i?.nodes?.length || 0,
                             !i?.pageInfo?.hasNextPage
@@ -34698,20 +34703,21 @@ git checkout ${e}`;
                     }, [o, i]),
                     A = (0, Q.useMemo)(() => {
                         let e = o.blocking || 0;
-                        return rG(
+                        return rY(
                             e,
                             t?.nodes?.length || 0,
                             !t?.pageInfo?.hasNextPage
                         );
                     }, [o, t]),
-                    P = (0, Q.useMemo)(
-                        () => (d ? s || R || j || w || A : s),
-                        [d, s, R, j, w, A]
-                    ),
-                    B = (0, Q.useRef)(null);
+                    P = R || j || w || A,
+                    B = (0, Q.useMemo)(() => (d ? s || P : s), [d, s, P]);
+                (0, Q.useEffect)(() => {
+                    d && P && (0, t0.BI)("issue_viewer.dependencies.shown");
+                }, []);
+                let M = (0, Q.useRef)(null);
                 return (0, F.jsxs)(io.w, {
                     id: "sidebar-relationships-section",
-                    emptyText: P ? void 0 : ak.k.emptySections.relationships,
+                    emptyText: B ? void 0 : ak.k.emptySections.relationships,
                     sectionHeader: (0, F.jsxs)(F.Fragment, {
                         children: [
                             (n || void 0 === n) &&
@@ -34729,7 +34735,7 @@ git checkout ${e}`;
                                     },
                                 }),
                             (0, F.jsx)(id.X, {
-                                ref: B,
+                                ref: M,
                                 buttonProps: { onClick: () => f((e) => !e) },
                                 readonly: !L,
                                 title: ak.k.sectionTitles.relationships,
@@ -34745,21 +34751,21 @@ git checkout ${e}`;
                                 anchorElement: (e) => {
                                     let { ref: l } = e;
                                     return (
-                                        l && (l.current = B.current),
+                                        l && (l.current = M.current),
                                         (0, F.jsx)(F.Fragment, {})
                                     );
                                 },
                             }),
                             d &&
                                 I &&
-                                (0, F.jsx)(rj, {
+                                (0, F.jsx)(r_, {
                                     type: I,
                                     onClose: T,
                                     issueId: u,
                                     organization: r.owner.login,
                                     defaultRepositoryNameWithOwner:
                                         r.nameWithOwner,
-                                    anchorRef: B,
+                                    anchorRef: M,
                                     onError: b,
                                 }),
                             d &&
@@ -34775,7 +34781,7 @@ git checkout ${e}`;
                                             {
                                                 variant: "critical",
                                                 className:
-                                                    rO.DependencyErrorBanner,
+                                                    rq.DependencyErrorBanner,
                                                 "aria-label": e.title,
                                                 children: [
                                                     (0, F.jsx)(i2.l.Title, {
@@ -34794,7 +34800,7 @@ git checkout ${e}`;
                             (0, F.jsx)(O.W, {
                                 open: h,
                                 onOpenChange: (e) => f(e),
-                                anchorRef: B,
+                                anchorRef: M,
                                 children: (0, F.jsx)(O.W.Overlay, {
                                     width: "medium",
                                     children: (0, F.jsx)(H.l, {
@@ -34839,7 +34845,7 @@ git checkout ${e}`;
                             }),
                         (0, F.jsxs)(H.l, {
                             variant: "full",
-                            className: rO.ActionList_Relationship_Overrides,
+                            className: rq.ActionList_Relationship_Overrides,
                             children: [
                                 s &&
                                     (0, F.jsxs)(H.l.Group, {
@@ -34847,12 +34853,12 @@ git checkout ${e}`;
                                             (0, F.jsx)(H.l.GroupHeading, {
                                                 as: "h4",
                                                 className:
-                                                    rO.ActionList_GroupHeading,
+                                                    rq.ActionList_GroupHeading,
                                                 children:
                                                     ak.k.relationNames
                                                         .parentIssue,
                                             }),
-                                            (0, F.jsx)(rU, {
+                                            (0, F.jsx)(rO, {
                                                 onLinkClick: l,
                                                 issueKey: s,
                                             }),
@@ -34865,7 +34871,7 @@ git checkout ${e}`;
                                             s &&
                                                 (0, F.jsx)(H.l.Divider, {
                                                     className:
-                                                        rO.ActionList_Divider,
+                                                        rq.ActionList_Divider,
                                                 }),
                                             (0, F.jsxs)(H.l.Group, {
                                                 children: [
@@ -34874,7 +34880,7 @@ git checkout ${e}`;
                                                         {
                                                             as: "h4",
                                                             className:
-                                                                rO.ActionList_GroupHeading,
+                                                                rq.ActionList_GroupHeading,
                                                             children: [
                                                                 ak.k
                                                                     .relationNames
@@ -34882,10 +34888,10 @@ git checkout ${e}`;
                                                                 o.blockedBy >
                                                                     0 &&
                                                                     (0, F.jsx)(
-                                                                        t0.A,
+                                                                        t1.A,
                                                                         {
                                                                             className:
-                                                                                rO.RelationshipCountLabel,
+                                                                                rq.RelationshipCountLabel,
                                                                             scheme: "secondary",
                                                                             children:
                                                                                 o.blockedBy,
@@ -34899,7 +34905,7 @@ git checkout ${e}`;
                                                             .filter((e) => !!e)
                                                             .map((e) =>
                                                                 (0, F.jsx)(
-                                                                    rE,
+                                                                    rw,
                                                                     {
                                                                         onLinkClick:
                                                                             l,
@@ -34943,7 +34949,7 @@ git checkout ${e}`;
                                                             ],
                                                         }),
                                                     _ &&
-                                                        (0, F.jsx)(rQ, {
+                                                        (0, F.jsx)(rG, {
                                                             dialogTitle:
                                                                 ak.k
                                                                     .relationNames
@@ -34951,7 +34957,7 @@ git checkout ${e}`;
                                                             countOpenItems:
                                                                 o.blockedBy,
                                                             children: (0,
-                                                            F.jsx)(rh, {
+                                                            F.jsx)(rf, {
                                                                 itemId: u,
                                                                 blockedByCount:
                                                                     o.blockedBy,
@@ -34968,7 +34974,7 @@ git checkout ${e}`;
                                             (s || R || w) &&
                                                 (0, F.jsx)(H.l.Divider, {
                                                     className:
-                                                        rO.ActionList_Divider,
+                                                        rq.ActionList_Divider,
                                                 }),
                                             (0, F.jsxs)(H.l.Group, {
                                                 children: [
@@ -34977,7 +34983,7 @@ git checkout ${e}`;
                                                         {
                                                             as: "h4",
                                                             className:
-                                                                rO.ActionList_GroupHeading,
+                                                                rq.ActionList_GroupHeading,
                                                             children: [
                                                                 ak.k
                                                                     .relationNames
@@ -34985,10 +34991,10 @@ git checkout ${e}`;
                                                                 o.blocking >
                                                                     0 &&
                                                                     (0, F.jsx)(
-                                                                        t0.A,
+                                                                        t1.A,
                                                                         {
                                                                             className:
-                                                                                rO.RelationshipCountLabel,
+                                                                                rq.RelationshipCountLabel,
                                                                             scheme: "secondary",
                                                                             children:
                                                                                 o.blocking,
@@ -35002,7 +35008,7 @@ git checkout ${e}`;
                                                             .filter((e) => !!e)
                                                             .map((e) =>
                                                                 (0, F.jsx)(
-                                                                    rE,
+                                                                    rw,
                                                                     {
                                                                         onLinkClick:
                                                                             l,
@@ -35046,7 +35052,7 @@ git checkout ${e}`;
                                                             ],
                                                         }),
                                                     E &&
-                                                        (0, F.jsx)(rQ, {
+                                                        (0, F.jsx)(rG, {
                                                             dialogTitle:
                                                                 ak.k
                                                                     .relationNames
@@ -35054,7 +35060,7 @@ git checkout ${e}`;
                                                             countOpenItems:
                                                                 o.blocking,
                                                             children: (0,
-                                                            F.jsx)(rL, {
+                                                            F.jsx)(rT, {
                                                                 itemId: u,
                                                                 blockingCount:
                                                                     o.blocking,
@@ -35070,22 +35076,22 @@ git checkout ${e}`;
                 });
             }
             try {
-                rY.displayName ||
-                    (rY.displayName = "RelationshipsSectionFallback");
+                rX.displayName ||
+                    (rX.displayName = "RelationshipsSectionFallback");
             } catch {}
             try {
                 (g = function ({ queryRef: e, ...l }) {
                     let n = (0, N.usePreloadedQuery)(tJ, e);
                     return n.repository && n.repository.issue
-                        ? (0, F.jsx)(rX, { issue: n.repository.issue, ...l })
+                        ? (0, F.jsx)(rJ, { issue: n.repository.issue, ...l })
                         : null;
                 }).displayName || (g.displayName = "RelationshipsSection");
             } catch {}
             try {
-                rX.displayName ||
-                    (rX.displayName = "RelationshipsSectionInternal");
+                rJ.displayName ||
+                    (rJ.displayName = "RelationshipsSectionInternal");
             } catch {}
-            let rJ = {
+            let rZ = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -35109,8 +35115,8 @@ git checkout ${e}`;
                 type: "Issue",
                 abstractKey: null,
             };
-            rJ.hash = "960bdbc3185068222a1e993ec20af0e7";
-            let rZ = (function () {
+            rZ.hash = "960bdbc3185068222a1e993ec20af0e7";
+            let r0 = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -35209,15 +35215,15 @@ git checkout ${e}`;
                     },
                 };
             })();
-            rZ.hash = "a8282d39d09432e901a117d06a51d732";
-            let r0 = {
+            r0.hash = "a8282d39d09432e901a117d06a51d732";
+            let r1 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: {
                     refetch: {
                         connection: null,
                         fragmentPathInResult: ["node"],
-                        operation: rZ,
+                        operation: r0,
                         identifierInfo: {
                             identifierField: "id",
                             identifierQueryVariableName: "id",
@@ -35251,15 +35257,15 @@ git checkout ${e}`;
                 type: "Issue",
                 abstractKey: null,
             };
-            r0.hash = "a8282d39d09432e901a117d06a51d732";
-            var r1 = n(40235);
-            let r2 = {
+            r1.hash = "a8282d39d09432e901a117d06a51d732";
+            var r2 = n(40235);
+            let r4 = {
                     SUBSCRIBED:
                         "thread subscription status changed to subscribed",
                     UNSUBSCRIBED:
                         "thread subscription status changed to unsubscribed",
                 },
-                r4 = (function () {
+                r6 = (function () {
                     var e = [
                             {
                                 defaultValue: null,
@@ -35387,14 +35393,14 @@ git checkout ${e}`;
                         },
                     };
                 })();
-            function r6({
+            function r5({
                 environment: e,
                 input: l,
                 onCompleted: n,
                 onError: a,
             }) {
                 return (0, N.commitMutation)(e, {
-                    mutation: r4,
+                    mutation: r6,
                     variables: { input: l },
                     optimisticResponse: {
                         updateSubscription: {
@@ -35414,16 +35420,16 @@ git checkout ${e}`;
                     onError: (e) => a && a(e),
                 });
             }
-            r4.hash = "27627c886a77b2b26e6d72dcc5d7bf40";
+            r6.hash = "27627c886a77b2b26e6d72dcc5d7bf40";
             var r7 = n(87826),
-                r5 = n(19797);
-            let r3 = {
+                r3 = n(19797);
+            let r8 = {
                     radioGroup:
                         "NotificationSettingsDialog-module__radioGroup--PySak",
                     checkboxGroup:
                         "NotificationSettingsDialog-module__checkboxGroup--J3Kdr",
                 },
-                r8 = ({
+                r9 = ({
                     onClose: e,
                     title: l,
                     returnFocusRef: n,
@@ -35467,7 +35473,7 @@ git checkout ${e}`;
                                     if (h) return void k(!0);
                                     (y(!1),
                                         m(!0),
-                                        r6({
+                                        r5({
                                             environment: b,
                                             input: {
                                                 subscribableId: i,
@@ -35498,7 +35504,7 @@ git checkout ${e}`;
                                     children: ak.k.notifications.errorMessage,
                                 }),
                             (0, F.jsx)("div", {
-                                className: g ? (0, eb.$)(r3.radioGroup) : "",
+                                className: g ? (0, eb.$)(r8.radioGroup) : "",
                                 children: (0, F.jsxs)(tb.A, {
                                     name: "notificationSettingsGroup",
                                     children: [
@@ -35602,11 +35608,11 @@ git checkout ${e}`;
                                                 .customOptionLabel &&
                                             (0, F.jsx)("div", {
                                                 className: (0, eb.$)(
-                                                    r3.checkboxGroup
+                                                    r8.checkboxGroup
                                                 ),
-                                                children: (0, F.jsxs)(r5.A, {
+                                                children: (0, F.jsxs)(r3.A, {
                                                     children: [
-                                                        (0, F.jsx)(r5.A.Label, {
+                                                        (0, F.jsx)(r3.A.Label, {
                                                             visuallyHidden: !0,
                                                             children:
                                                                 ak.k
@@ -35727,19 +35733,19 @@ git checkout ${e}`;
                     });
                 };
             try {
-                r8.displayName ||
-                    (r8.displayName = "NotificationSettingsDialog");
+                r9.displayName ||
+                    (r9.displayName = "NotificationSettingsDialog");
             } catch {}
-            let r9 = {
+            let ue = {
                 container: "SubscriptionSection-module__container--uhQPW",
                 button: "SubscriptionSection-module__button--pP4tz",
                 header: "SubscriptionSection-module__header--Q93Cn",
             };
-            function ue({ issue: e, viewer: l }) {
+            function ul({ issue: e, viewer: l }) {
                 let { threadSubscriptionChannel: n, id: a } = (0,
-                N.useFragment)(rJ, e);
+                N.useFragment)(rZ, e);
                 return n
-                    ? (0, F.jsx)(ul, {
+                    ? (0, F.jsx)(un, {
                           issue: e,
                           id: a,
                           threadSubscriptionChannel: n,
@@ -35747,7 +35753,7 @@ git checkout ${e}`;
                       })
                     : null;
             }
-            function ul({
+            function un({
                 id: e,
                 issue: l,
                 threadSubscriptionChannel: n,
@@ -35765,7 +35771,7 @@ git checkout ${e}`;
                             (0, P.i)(l);
                         } else (0, P.i)(ak.k.somethingWentWrong);
                     }, []),
-                    [d, c] = (0, N.useRefetchableFragment)(r0, l),
+                    [d, c] = (0, N.useRefetchableFragment)(r1, l),
                     {
                         viewerThreadSubscriptionFormAction: m,
                         viewerCustomSubscriptionEvents: g,
@@ -35792,7 +35798,7 @@ git checkout ${e}`;
                 }, [p, o]);
                 let h = (0, Q.useCallback)(() => {
                     let l = !p;
-                    r6({
+                    r5({
                         environment: i,
                         input: {
                             subscribableId: e,
@@ -35804,32 +35810,32 @@ git checkout ${e}`;
                         onError: () => o(p, !1),
                     });
                 }, [i, e, p, o]);
-                (0, r1.x)(n, (e) => {
+                (0, r2.x)(n, (e) => {
                     e?.reason &&
-                        (e.reason !== r2.SUBSCRIBED || p
-                            ? e.reason === r2.UNSUBSCRIBED && p && b()
+                        (e.reason !== r4.SUBSCRIBED || p
+                            ? e.reason === r4.UNSUBSCRIBED && p && b()
                             : b());
                 });
                 let f = (0, Q.useRef)(null),
                     K = (0, F.jsxs)("div", {
-                        className: (0, eb.$)(r9.container),
+                        className: (0, eb.$)(ue.container),
                         children: [
                             (0, F.jsx)(eF.A, {
                                 id: e,
                                 as: "h3",
-                                className: (0, eb.$)(r9.header),
+                                className: (0, eb.$)(ue.header),
                                 children: "Notifications",
                             }),
                             (0, F.jsx)("button", {
                                 onClick: () => u(!0),
-                                className: (0, eb.$)(r9.button),
+                                className: (0, eb.$)(ue.button),
                                 ref: f,
                                 children:
                                     ak.k.notifications
                                         .customizeNotificationsSettings,
                             }),
                             r &&
-                                (0, F.jsx)(r8, {
+                                (0, F.jsx)(r9, {
                                     title: ak.k.notifications
                                         .notificationsSettings,
                                     onClose: () => u(!1),
@@ -35875,7 +35881,7 @@ git checkout ${e}`;
                     }),
                 });
             }
-            function un() {
+            function ua() {
                 return (0, F.jsx)(io.w, {
                     sectionHeader: (0, F.jsx)(iu.h, { title: "Notifications" }),
                     children: (0, F.jsxs)("div", {
@@ -35899,17 +35905,17 @@ git checkout ${e}`;
                 });
             }
             try {
-                ue.displayName || (ue.displayName = "SubscriptionSection");
-            } catch {}
-            try {
-                ul.displayName ||
-                    (ul.displayName = "SubscriptionSectionInternal");
+                ul.displayName || (ul.displayName = "SubscriptionSection");
             } catch {}
             try {
                 un.displayName ||
-                    (un.displayName = "SubscriptionSectionFallback");
+                    (un.displayName = "SubscriptionSectionInternal");
             } catch {}
-            function ua({
+            try {
+                ua.displayName ||
+                    (ua.displayName = "SubscriptionSectionFallback");
+            } catch {}
+            function us({
                 issueSidebarSecondaryKey: e,
                 onIssueUpdate: l,
                 onLinkClick: n,
@@ -35920,36 +35926,36 @@ git checkout ${e}`;
                 return i
                     ? (0, F.jsxs)(F.Fragment, {
                           children: [
-                              (0, F.jsx)(rX, {
+                              (0, F.jsx)(rJ, {
                                   issue: i,
                                   onLinkClick: n,
                                   insideSidePanel: a,
                               }),
                               (0, F.jsx)(tj, { issue: i, onIssueUpdate: l }),
                               (0, le.M3)() &&
-                                  (0, F.jsx)(ue, { issue: i, viewer: s }),
+                                  (0, F.jsx)(ul, { issue: i, viewer: s }),
                               (0, F.jsx)(tX, { issue: i }),
                           ],
                       })
-                    : (0, F.jsx)(us, {});
+                    : (0, F.jsx)(ui, {});
             }
-            function us() {
+            function ui() {
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
-                        (0, F.jsx)(rY, {}),
+                        (0, F.jsx)(rX, {}),
                         (0, F.jsx)(tN, {}),
-                        (0, le.M3)() && (0, F.jsx)(un, {}),
+                        (0, le.M3)() && (0, F.jsx)(ua, {}),
                     ],
                 });
             }
             try {
-                ua.displayName || (ua.displayName = "IssueSidebarLazySections");
+                us.displayName || (us.displayName = "IssueSidebarLazySections");
             } catch {}
             try {
-                us.displayName ||
-                    (us.displayName = "IssueSidebarLazySectionsFallback");
+                ui.displayName ||
+                    (ui.displayName = "IssueSidebarLazySectionsFallback");
             } catch {}
-            let ui = (function () {
+            let ut = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -36125,8 +36131,8 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            ui.hash = "3ff5a9b107a5095aec37b5f21f208950";
-            let ut = {
+            ut.hash = "3ff5a9b107a5095aec37b5f21f208950";
+            let ur = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -36143,8 +36149,8 @@ git checkout ${e}`;
                 type: "Issue",
                 abstractKey: null,
             };
-            ut.hash = "37235901f5bd1b8bca0d6f9f465df52e";
-            let ur = (function () {
+            ur.hash = "37235901f5bd1b8bca0d6f9f465df52e";
+            let uu = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -36286,9 +36292,9 @@ git checkout ${e}`;
                     },
                 };
             })();
-            ur.hash = "2fa017a8b26ffc47e692978b43841a97";
-            var uu = n(82899);
-            let uo = (function () {
+            uu.hash = "2fa017a8b26ffc47e692978b43841a97";
+            var uo = n(82899);
+            let ud = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -36552,8 +36558,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            uo.hash = "f53a18efff4ab454ecab28c74f1b54c3";
-            let ud = {
+            ud.hash = "f53a18efff4ab454ecab28c74f1b54c3";
+            let uc = {
                 argumentDefinitions: [{ kind: "RootArgument", name: "first" }],
                 kind: "Fragment",
                 metadata: null,
@@ -36621,8 +36627,8 @@ git checkout ${e}`;
                 type: "Repository",
                 abstractKey: null,
             };
-            ud.hash = "4e191b529e77eaa0c9a9b373313d5e67";
-            let uc = (function () {
+            uc.hash = "4e191b529e77eaa0c9a9b373313d5e67";
+            let um = (function () {
                 var e = [
                     {
                         alias: null,
@@ -36711,10 +36717,10 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            uc.hash = "353cc6edd6233ed44d3a6fc8019e346d";
-            var um = n(38102),
-                ug = n(16567);
-            function uy({
+            um.hash = "353cc6edd6233ed44d3a6fc8019e346d";
+            var ug = n(38102),
+                uy = n(16567);
+            function up({
                 discussionCategories: e,
                 onSelect: l,
                 categoryId: n,
@@ -36728,7 +36734,7 @@ git checkout ${e}`;
                         e.map((e, l) =>
                             e
                                 ? (0, F.jsx)(
-                                      ug.A.Option,
+                                      uy.A.Option,
                                       { value: e.id, children: e.name },
                                       l
                                   )
@@ -36736,7 +36742,7 @@ git checkout ${e}`;
                         ),
                     [e]
                 );
-                return (0, F.jsx)(ug.A, {
+                return (0, F.jsx)(uy.A, {
                     id: n,
                     block: !0,
                     onChange: (e) => {
@@ -36747,9 +36753,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                uy.displayName || (uy.displayName = "DiscussionCategoryPicker");
+                up.displayName || (up.displayName = "DiscussionCategoryPicker");
             } catch {}
-            let up = (function () {
+            let uk = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -36886,8 +36892,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            up.hash = "9c0881a204d862d4b0167b6ded699944";
-            let uk = {
+            uk.hash = "9c0881a204d862d4b0167b6ded699944";
+            let uF = {
                     firstLoader:
                         "ConvertToDiscussionDialog-module__firstLoader--czbUo",
                     container:
@@ -36895,14 +36901,14 @@ git checkout ${e}`;
                     commonLoader:
                         "ConvertToDiscussionDialog-module__commonLoader--GFRDR",
                 },
-                uF = (e) => {
-                    let l = (0, N.useLazyLoadQuery)(uo, {
+                ub = (e) => {
+                    let l = (0, N.useLazyLoadQuery)(ud, {
                         first: i4.t.convertToDiscussionCategoriesFirst,
                         issueId: e.issueId,
                     });
-                    return (0, F.jsx)(ub, { ...e, data: l });
+                    return (0, F.jsx)(uh, { ...e, data: l });
                 },
-                ub = ({ data: e, issueId: l, onClose: n }) => {
+                uh = ({ data: e, issueId: l, onClose: n }) => {
                     let [a, s] = (0, Q.useState)(),
                         [i, t] = (0, Q.useState)(!1),
                         [r, u] = (0, Q.useState)(!1),
@@ -36920,7 +36926,7 @@ git checkout ${e}`;
                                     onCompleted: s,
                                 }) {
                                     (0, N.commitMutation)(e, {
-                                        mutation: up,
+                                        mutation: uk,
                                         variables: {
                                             input: {
                                                 issueId: l,
@@ -36934,7 +36940,7 @@ git checkout ${e}`;
                                     environment: o,
                                     input: { categoryId: a, issueId: l },
                                     onError: (e) => {
-                                        ((0, um.N7)(uf(e.message)),
+                                        ((0, ug.N7)(uK(e.message)),
                                             u(!0),
                                             t(!1));
                                     },
@@ -36951,7 +36957,7 @@ git checkout ${e}`;
                                         }
                                         for (let l of e.convertIssueToDiscussion
                                             ?.errors || [])
-                                            (0, um.N7)(uf(l.message));
+                                            (0, ug.N7)(uK(l.message));
                                         (u(!0), t(!1));
                                     },
                                 }));
@@ -36989,9 +36995,9 @@ git checkout ${e}`;
                                 ],
                             }),
                         children: (0, F.jsxs)(Q.Suspense, {
-                            fallback: (0, F.jsx)(uK, {}),
+                            fallback: (0, F.jsx)(uS, {}),
                             children: [
-                                d && (0, F.jsx)(uS, { issueProperties: d }),
+                                d && (0, F.jsx)(uI, { issueProperties: d }),
                                 (0, F.jsxs)(aN.A, {
                                     children: [
                                         (0, F.jsx)(aN.A.Label, {
@@ -37001,7 +37007,7 @@ git checkout ${e}`;
                                                     .selectCategoryTitle,
                                         }),
                                         c &&
-                                            (0, F.jsx)(uh, {
+                                            (0, F.jsx)(uf, {
                                                 categoryId: g,
                                                 onSelect: s,
                                                 repository: c,
@@ -37012,8 +37018,8 @@ git checkout ${e}`;
                         }),
                     });
                 },
-                uh = ({ repository: e, categoryId: l, onSelect: n }) => {
-                    let a = (0, N.useFragment)(ud, e),
+                uf = ({ repository: e, categoryId: l, onSelect: n }) => {
+                    let a = (0, N.useFragment)(uc, e),
                         s = (0, Q.useMemo)(
                             () =>
                                 a?.discussionCategories?.edges?.map((e) => ({
@@ -37022,44 +37028,44 @@ git checkout ${e}`;
                                 })) || [],
                             [a]
                         );
-                    return (0, F.jsx)(uy, {
+                    return (0, F.jsx)(up, {
                         categoryId: l,
                         discussionCategories: s,
                         onSelect: n,
                     });
                 };
-            function uf(e) {
+            function uK(e) {
                 return Error(ak.k.convertToDiscussion.error(e));
             }
-            let uK = () =>
+            let uS = () =>
                     (0, F.jsxs)(F.Fragment, {
                         children: [
                             (0, F.jsx)("div", {
-                                className: uk.firstLoader,
+                                className: uF.firstLoader,
                                 children: (0, F.jsx)(tW.Q, {
                                     height: "sm",
                                     width: "80%",
                                 }),
                             }),
                             (0, F.jsxs)("div", {
-                                className: uk.container,
+                                className: uF.container,
                                 children: [
                                     (0, F.jsx)("div", {
-                                        className: uk.commonLoader,
+                                        className: uF.commonLoader,
                                         children: (0, F.jsx)(tW.Q, {
                                             height: "sm",
                                             width: "50%",
                                         }),
                                     }),
                                     (0, F.jsx)("div", {
-                                        className: uk.commonLoader,
+                                        className: uF.commonLoader,
                                         children: (0, F.jsx)(tW.Q, {
                                             height: "sm",
                                             width: "90%",
                                         }),
                                     }),
                                     (0, F.jsx)("div", {
-                                        className: uk.commonLoader,
+                                        className: uF.commonLoader,
                                         children: (0, F.jsx)(tW.Q, {
                                             height: "sm",
                                             width: "87%",
@@ -37068,14 +37074,14 @@ git checkout ${e}`;
                                 ],
                             }),
                             (0, F.jsx)("div", {
-                                className: uk.commonLoader,
+                                className: uF.commonLoader,
                                 children: (0, F.jsx)(tW.Q, {
                                     height: "dm",
                                     width: "50%",
                                 }),
                             }),
                             (0, F.jsx)("div", {
-                                className: uk.commonLoader,
+                                className: uF.commonLoader,
                                 children: (0, F.jsx)(tW.Q, {
                                     height: "dm",
                                     width: "100%",
@@ -37083,7 +37089,7 @@ git checkout ${e}`;
                             }),
                         ],
                     }),
-                uS = ({ issueProperties: e }) => {
+                uI = ({ issueProperties: e }) => {
                     let {
                             comments: l,
                             reactions: n,
@@ -37091,7 +37097,7 @@ git checkout ${e}`;
                             assignees: s,
                             projectsV2: i,
                             milestone: t,
-                        } = (0, N.useFragment)(uc, e),
+                        } = (0, N.useFragment)(um, e),
                         r = (0, Q.useMemo)(() => {
                             let e = [
                                 ak.k.convertToDiscussion.affirmations
@@ -37144,14 +37150,14 @@ git checkout ${e}`;
                                 children: [
                                     r.map((e, l) =>
                                         (0, F.jsx)(
-                                            uI,
+                                            uv,
                                             { success: !0, text: e },
                                             l
                                         )
                                     ),
                                     u.map((e, l) =>
                                         (0, F.jsx)(
-                                            uI,
+                                            uv,
                                             { success: !1, text: e },
                                             l
                                         )
@@ -37161,7 +37167,7 @@ git checkout ${e}`;
                         ],
                     });
                 },
-                uI = ({ success: e, text: l }) =>
+                uv = ({ success: e, text: l }) =>
                     (0, F.jsxs)("li", {
                         className: "mb-1",
                         children: [
@@ -37176,28 +37182,28 @@ git checkout ${e}`;
                         ],
                     });
             try {
-                uF.displayName ||
-                    (uF.displayName = "ConvertToDiscussionDialog");
-            } catch {}
-            try {
                 ub.displayName ||
-                    (ub.displayName = "ConvertToDiscussionDialogInternal");
+                    (ub.displayName = "ConvertToDiscussionDialog");
             } catch {}
             try {
-                uh.displayName || (uh.displayName = "CategoryPicker");
+                uh.displayName ||
+                    (uh.displayName = "ConvertToDiscussionDialogInternal");
             } catch {}
             try {
-                uK.displayName || (uK.displayName = "DialogLoadingSkeleton");
+                uf.displayName || (uf.displayName = "CategoryPicker");
             } catch {}
             try {
-                uS.displayName || (uS.displayName = "WhatHappens");
+                uS.displayName || (uS.displayName = "DialogLoadingSkeleton");
             } catch {}
             try {
-                uI.displayName || (uI.displayName = "Result");
+                uI.displayName || (uI.displayName = "WhatHappens");
             } catch {}
-            var uv = n(52927),
-                uL = n(96459);
-            let uT = ({
+            try {
+                uv.displayName || (uv.displayName = "Result");
+            } catch {}
+            var uL = n(31094),
+                uT = n(96459);
+            let uC = ({
                 title: e,
                 body: l,
                 showDuplicateIssueDialog: n,
@@ -37207,7 +37213,7 @@ git checkout ${e}`;
                 repositoryName: t,
                 issue: r,
             }) => {
-                let u = (0, uL.Z)(),
+                let u = (0, uT.Z)(),
                     o = (0, N.useFragment)(su.Qq, r),
                     d = (0, N.useFragment)(su.sC, o),
                     c = (0, N.useFragment)(s8.PT, r),
@@ -37225,7 +37231,7 @@ git checkout ${e}`;
                         [d]
                     ),
                     f = (0, Q.useMemo)(
-                        () => (m.issueType ? (0, uv.iO)(m.issueType) : void 0),
+                        () => (m.issueType ? (0, uL.iO)(m.issueType) : void 0),
                         [m]
                     ),
                     K = (0, Q.useMemo)(
@@ -37273,9 +37279,9 @@ git checkout ${e}`;
                 });
             };
             try {
-                uT.displayName || (uT.displayName = "DuplicateIssueDialog");
+                uC.displayName || (uC.displayName = "DuplicateIssueDialog");
             } catch {}
-            let uC = (function () {
+            let ux = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -37397,8 +37403,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            uC.hash = "e04343a36495fed9a45144b2d8c84a3e";
-            let ux = (function () {
+            ux.hash = "e04343a36495fed9a45144b2d8c84a3e";
+            let uR = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -37520,14 +37526,14 @@ git checkout ${e}`;
                     },
                 };
             })();
-            ux.hash = "34e21dfc29143cca408e732be35ca356";
-            let uR = {
+            uR.hash = "34e21dfc29143cca408e732be35ca356";
+            let uN = {
                     RadioGroup:
                         "IssueConversationLock-module__RadioGroup--ECuD5",
                     dialogContent:
                         "IssueConversationLock-module__dialogContent--foWXK",
                 },
-                uN = (e) => {
+                uj = (e) => {
                     let l = (0, N.useRelayEnvironment)(),
                         { isUnlocked: n = !0, onClose: a, issueId: s } = e,
                         { addToast: i } = (0, M.Y6)(),
@@ -37544,7 +37550,7 @@ git checkout ${e}`;
                                     onCompleted: s,
                                 }) {
                                     (0, N.commitMutation)(e, {
-                                        mutation: uC,
+                                        mutation: ux,
                                         variables: {
                                             input: {
                                                 lockableId: l,
@@ -37562,7 +37568,7 @@ git checkout ${e}`;
                                     },
                                     onError: (e) => {
                                         (u(),
-                                            reportError(uE(e.message)),
+                                            reportError(uw(e.message)),
                                             i({
                                                 type: "error",
                                                 message: e.message,
@@ -37582,7 +37588,7 @@ git checkout ${e}`;
                                     onCompleted: a,
                                 }) {
                                     (0, N.commitMutation)(e, {
-                                        mutation: ux,
+                                        mutation: uR,
                                         variables: { input: { lockableId: l } },
                                         onError: (e) => n && n(e),
                                         onCompleted: (e) => a && a(e),
@@ -37592,7 +37598,7 @@ git checkout ${e}`;
                                     input: { lockableId: s },
                                     onError: (e) => {
                                         (u(),
-                                            reportError(uE(e.message)),
+                                            reportError(uw(e.message)),
                                             i({
                                                 type: "error",
                                                 message: e.message,
@@ -37609,8 +37615,8 @@ git checkout ${e}`;
                     return (0, F.jsx)(lI.l, {
                         title: n ? ak.k.lock.title : ak.k.lock.titleUnlock,
                         renderBody: n
-                            ? () => uj({ handleReasonChange: c })
-                            : u_,
+                            ? () => u_({ handleReasonChange: c })
+                            : uE,
                         onClose: u,
                         footerButtons: [
                             { content: aX.l.cancel, onClick: u },
@@ -37624,9 +37630,9 @@ git checkout ${e}`;
                         ],
                     });
                 },
-                uj = ({ handleReasonChange: e }) =>
+                u_ = ({ handleReasonChange: e }) =>
                     (0, F.jsxs)("div", {
-                        className: uR.dialogContent,
+                        className: uN.dialogContent,
                         children: [
                             (0, F.jsxs)("span", {
                                 children: [
@@ -37644,7 +37650,7 @@ git checkout ${e}`;
                             (0, F.jsxs)(tb.A, {
                                 name: "choiceReason",
                                 onChange: (l, n) => e(l, n),
-                                className: uR.RadioGroup,
+                                className: uN.RadioGroup,
                                 children: [
                                     (0, F.jsx)(tb.A.Label, {
                                         children: "Reason",
@@ -37699,28 +37705,28 @@ git checkout ${e}`;
                             }),
                         ],
                     }),
-                u_ = () =>
+                uE = () =>
                     (0, F.jsx)("div", {
-                        className: uR.dialogContent,
+                        className: uN.dialogContent,
                         children:
                             "Everyone will be able to comment on this issue once more. You can always lock this issue again in the future.",
                     });
-            function uE(e) {
+            function uw(e) {
                 return Error(
                     `Issue lock conversation mutation failed with error:${e}`
                 );
             }
             try {
-                uN.displayName || (uN.displayName = "IssueConversationLock");
+                uj.displayName || (uj.displayName = "IssueConversationLock");
             } catch {}
             try {
-                uj.displayName || (uj.displayName = "LockConversationContent");
+                u_.displayName || (u_.displayName = "LockConversationContent");
             } catch {}
             try {
-                u_.displayName ||
-                    (u_.displayName = "UnlockConversationContent");
+                uE.displayName ||
+                    (uE.displayName = "UnlockConversationContent");
             } catch {}
-            let uw = (function () {
+            let uA = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -37791,12 +37797,12 @@ git checkout ${e}`;
                     },
                 };
             })();
-            uw.hash = "03043bd9975becdb0e86cee81f237bb7";
-            let uA = {
+            uA.hash = "03043bd9975becdb0e86cee81f237bb7";
+            let uP = {
                     confirmationContent:
                         "IssueDeletionConfirmationDialog-module__confirmationContent--iOcR3",
                 },
-                uP = ({
+                uB = ({
                     issueId: e,
                     onSuccessfulDeletion: l,
                     afterDelete: n,
@@ -37813,7 +37819,7 @@ git checkout ${e}`;
                                         onError: a,
                                     }) {
                                         (0, N.commitMutation)(e, {
-                                            mutation: uw,
+                                            mutation: uA,
                                             variables: { input: l },
                                             onCompleted: () => {
                                                 (n?.(), (0, ee.T)());
@@ -37836,7 +37842,7 @@ git checkout ${e}`;
                         confirmButtonType: "danger",
                         onClose: i,
                         children: (0, F.jsx)("div", {
-                            className: uA.confirmationContent,
+                            className: uP.confirmationContent,
                             children: (0, F.jsx)("ul", {
                                 style: { listStyleType: "disc" },
                                 children:
@@ -37858,10 +37864,10 @@ git checkout ${e}`;
                     });
                 };
             try {
-                uP.displayName ||
-                    (uP.displayName = "IssueDeletionConfirmationDialog");
+                uB.displayName ||
+                    (uB.displayName = "IssueDeletionConfirmationDialog");
             } catch {}
-            let uB = (function () {
+            let uD = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -37998,14 +38004,14 @@ git checkout ${e}`;
                     },
                 };
             })();
-            uB.hash = "a43fa3afdf97ee18c302ed5a02198d56";
-            let uD = {
+            uD.hash = "a43fa3afdf97ee18c302ed5a02198d56";
+            let uM = {
                     transferWarningFlash:
                         "IssueTransferDialog-module__transferWarningFlash--z3tha",
                     noResultsContainer:
                         "IssueTransferDialog-module__noResultsContainer--_HI9A",
                 },
-                uM = ({ owner: e, ...l }) => {
+                uV = ({ owner: e, ...l }) => {
                     let n = (0, N.useRelayEnvironment)(),
                         [a, s] = (0, Q.useState)(null);
                     return ((0, Q.useEffect)(() => {
@@ -38022,13 +38028,13 @@ git checkout ${e}`;
                     }, []),
                     null === a)
                         ? null
-                        : (0, F.jsx)(uV, {
+                        : (0, F.jsx)(uU, {
                               ...l,
                               owner: e,
                               topRepositories: a,
                           });
                 },
-                uV = ({
+                uU = ({
                     topRepositories: e,
                     owner: l,
                     repository: n,
@@ -38058,7 +38064,7 @@ git checkout ${e}`;
                                     onCompleted: i,
                                 }) {
                                     (0, N.commitMutation)(e, {
-                                        mutation: uB,
+                                        mutation: uD,
                                         variables: {
                                             input: {
                                                 issueId: l,
@@ -38074,7 +38080,7 @@ git checkout ${e}`;
                                     input: { repositoryId: r.id, issueId: s },
                                     onError: (e) => {
                                         (i(),
-                                            (0, um.N7)(uU(e.message)),
+                                            (0, ug.N7)(uO(e.message)),
                                             y({
                                                 type: "error",
                                                 message: e.message,
@@ -38093,7 +38099,7 @@ git checkout ${e}`;
                                         }
                                         for (let l of e.transferIssue?.errors ||
                                             [])
-                                            (0, um.N7)(uU(l.message));
+                                            (0, ug.N7)(uO(l.message));
                                         y({
                                             type: "error",
                                             message: aC.couldNotStartTransfer,
@@ -38144,7 +38150,7 @@ git checkout ${e}`;
                                     repositoryFilter: K,
                                     customNoResultsTitle:
                                         "No repositories match",
-                                    customNoResultsItem: uO,
+                                    customNoResultsItem: uq,
                                     repoNameOnly: !0,
                                     currentRepoVisibility: a,
                                     issueId: s,
@@ -38154,7 +38160,7 @@ git checkout ${e}`;
                             c &&
                                 (0, F.jsxs)(e$.A, {
                                     "aria-live": "polite",
-                                    className: uD.transferWarningFlash,
+                                    className: uM.transferWarningFlash,
                                     children: [
                                         ak.k.transfer.repoUnavailable,
                                         "\xa0",
@@ -38170,31 +38176,31 @@ git checkout ${e}`;
                         ],
                     });
                 };
-            function uU(e) {
+            function uO(e) {
                 return Error(`Issue transfer mutation failed with error:${e}`);
             }
-            let uO = (0, F.jsx)("div", {
-                className: uD.noResultsContainer,
+            let uq = (0, F.jsx)("div", {
+                className: uM.noResultsContainer,
                 children: (0, F.jsx)(ek.A, {
                     href: "https://docs.github.com/en/issues/tracking-your-work-with-issues/transferring-an-issue-to-another-repository",
                     children: "Some repositories may be excluded.",
                 }),
             });
             try {
-                uM.displayName || (uM.displayName = "IssueTransferDialog");
+                uV.displayName || (uV.displayName = "IssueTransferDialog");
             } catch {}
             try {
-                uV.displayName ||
-                    (uV.displayName = "IssueTransferDialogInternal");
+                uU.displayName ||
+                    (uU.displayName = "IssueTransferDialogInternal");
             } catch {}
-            let uq = {
+            let uH = {
                 DisablePin: "OptionsSection-module__DisablePin--I7DX3",
                 ActionListOverrides:
                     "OptionsSection-module__ActionListOverrides--DkWge",
                 fullWidthTooltip:
                     "OptionsSection-module__fullWidthTooltip--ppBaf",
             };
-            function uH({
+            function u$({
                 issue: e,
                 optionsSectionSecondary: l,
                 optionConfig: n,
@@ -38215,8 +38221,8 @@ git checkout ${e}`;
                         isPinned: K,
                         locked: S,
                         repository: I,
-                    } = (0, N.useFragment)(ui, e),
-                    v = (0, N.useFragment)(ut, l),
+                    } = (0, N.useFragment)(ut, e),
+                    v = (0, N.useFragment)(ur, l),
                     L = v?.isTransferInProgress ?? !1,
                     T = I.viewerCanPinIssues,
                     C = I?.pinnedIssues?.totalCount || 0,
@@ -38226,7 +38232,7 @@ git checkout ${e}`;
                     _ = (0, Q.useCallback)(() => {
                         T &&
                             (K
-                                ? (0, uu.e)({
+                                ? (0, uo.e)({
                                       environment: R,
                                       input: { issueId: g },
                                       onCompleted: () => {},
@@ -38240,7 +38246,7 @@ git checkout ${e}`;
                                       onError: a,
                                   }) {
                                       (0, N.commitMutation)(e, {
-                                          mutation: ur,
+                                          mutation: uu,
                                           variables: { input: l },
                                           onCompleted: () => n?.(),
                                           onError: (e) => a?.(e),
@@ -38270,7 +38276,7 @@ git checkout ${e}`;
                         }),
                         (0, F.jsxs)(H.l, {
                             variant: "full",
-                            className: uq.ActionListOverrides,
+                            className: uH.ActionListOverrides,
                             children: [
                                 b &&
                                     (0, F.jsxs)(H.l.Item, {
@@ -38322,7 +38328,7 @@ git checkout ${e}`;
                                         "aria-disabled": E || void 0,
                                         onSelect: _,
                                         className: (0, eb.$)(
-                                            E && uq.DisablePin
+                                            E && uH.DisablePin
                                         ),
                                         children: [
                                             (0, F.jsx)(H.l.LeadingVisual, {
@@ -38333,13 +38339,13 @@ git checkout ${e}`;
                                                               className: (0,
                                                               eb.$)(
                                                                   E &&
-                                                                      uq.DisablePin
+                                                                      uH.DisablePin
                                                               ),
                                                           }
                                                       )
                                                     : (0, F.jsx)(V.PinIcon, {
                                                           className: (0, eb.$)(
-                                                              E && uq.DisablePin
+                                                              E && uH.DisablePin
                                                           ),
                                                       }),
                                             }),
@@ -38350,7 +38356,7 @@ git checkout ${e}`;
                                                     : K
                                                       ? ak.k.unpinIssueTooltip
                                                       : ak.k.pinIssueTooltip,
-                                                className: uq.fullWidthTooltip,
+                                                className: uH.fullWidthTooltip,
                                                 children: K
                                                     ? aX.l.unpinIssue
                                                     : aX.l.pinIssue,
@@ -38358,7 +38364,7 @@ git checkout ${e}`;
                                             C > 0 &&
                                                 (0, F.jsx)(H.l.TrailingVisual, {
                                                     children: (0, F.jsxs)(
-                                                        t0.A,
+                                                        t1.A,
                                                         {
                                                             children: [
                                                                 C,
@@ -38400,7 +38406,7 @@ git checkout ${e}`;
                             ],
                         }),
                         a &&
-                            (0, F.jsx)(uM, {
+                            (0, F.jsx)(uV, {
                                 owner: I.owner.login,
                                 repository: I.name,
                                 currentRepoVisibility: I.visibility,
@@ -38409,27 +38415,27 @@ git checkout ${e}`;
                                 onClose: () => s(!1),
                             }),
                         i &&
-                            (0, F.jsx)(uF, {
+                            (0, F.jsx)(ub, {
                                 owner: I.owner.login,
                                 repository: I.name,
                                 issueId: g,
                                 onClose: () => t(!1),
                             }),
                         o &&
-                            (0, F.jsx)(uN, {
+                            (0, F.jsx)(uj, {
                                 issueId: g,
                                 isUnlocked: !S,
                                 onClose: () => d(!1),
                             }),
                         r &&
-                            (0, F.jsx)(uP, {
+                            (0, F.jsx)(uB, {
                                 issueId: g,
                                 onSuccessfulDeletion: n.onIssueDelete,
                                 afterDelete: n.navigateBack,
                                 onClose: () => u(!1),
                             }),
                         c &&
-                            (0, F.jsx)(uT, {
+                            (0, F.jsx)(uC, {
                                 issue: e,
                                 showDuplicateIssueDialog: c,
                                 setShowDuplicateIssueDialog: m,
@@ -38443,15 +38449,15 @@ git checkout ${e}`;
                 });
             }
             try {
-                uH.displayName || (uH.displayName = "OptionsSection");
+                u$.displayName || (u$.displayName = "OptionsSection");
             } catch {}
-            function u$({
+            function uz({
                 sidebarKey: e,
                 sidebarSecondaryKey: l,
                 optionConfig: n,
                 viewer: a,
             }) {
-                let s = (0, N.useFragment)(s7, e),
+                let s = (0, N.useFragment)(s5, e),
                     i = (0, N.useFragment)(s6, l),
                     t = (0, _.G7)("issues_sticky_sidebar"),
                     r = (0, Q.useMemo)(
@@ -38482,7 +38488,7 @@ git checkout ${e}`;
                                         onIssueUpdate: n.onIssueUpdate,
                                         insideSidePanel: n.insideSidePanel,
                                     }),
-                                    (0, F.jsx)(s5.E, {
+                                    (0, F.jsx)(s7.E, {
                                         issue: s,
                                         singleKeyShortcutsEnabled:
                                             n.singleKeyShortcutsEnabled || !1,
@@ -38514,8 +38520,8 @@ git checkout ${e}`;
                                         insideSidePanel: n.insideSidePanel,
                                     }),
                                     (0, F.jsx)(Q.Suspense, {
-                                        fallback: (0, F.jsx)(us, {}),
-                                        children: (0, F.jsx)(ua, {
+                                        fallback: (0, F.jsx)(ui, {}),
+                                        children: (0, F.jsx)(us, {
                                             onLinkClick: n.onLinkClick,
                                             onIssueUpdate: n.onIssueUpdate,
                                             insideSidePanel: n.insideSidePanel,
@@ -38523,7 +38529,7 @@ git checkout ${e}`;
                                             viewer: a,
                                         }),
                                     }),
-                                    (0, F.jsx)(uH, {
+                                    (0, F.jsx)(u$, {
                                         issue: s,
                                         optionsSectionSecondary: i,
                                         optionConfig: n,
@@ -38535,21 +38541,21 @@ git checkout ${e}`;
                 return t ? (0, F.jsx)(il, { topOffset: 56, children: r }) : r;
             }
             try {
-                u$.displayName || (u$.displayName = "IssueSidebar");
+                uz.displayName || (uz.displayName = "IssueSidebar");
             } catch {}
-            var uz = n(88657);
-            function uW() {
-                return (0, F.jsxs)(uz.E, {
+            var uW = n(88657);
+            function uQ() {
+                return (0, F.jsxs)(uW.E, {
                     children: [
-                        (0, F.jsx)(uz.E.Visual, {
+                        (0, F.jsx)(uW.E.Visual, {
                             children: (0, F.jsx)(V.AlertIcon, {
                                 size: "medium",
                             }),
                         }),
-                        (0, F.jsx)(uz.E.Heading, {
+                        (0, F.jsx)(uW.E.Heading, {
                             children: "Timeline cannot be loaded",
                         }),
-                        (0, F.jsxs)(uz.E.Description, {
+                        (0, F.jsxs)(uW.E.Description, {
                             children: [
                                 "The timeline is currently unavailable due to a system error. Try reloading the page.",
                                 " ",
@@ -38562,7 +38568,7 @@ git checkout ${e}`;
                                 "if the problem persists.",
                             ],
                         }),
-                        (0, F.jsx)(uz.E.SecondaryAction, {
+                        (0, F.jsx)(uW.E.SecondaryAction, {
                             href: "https://www.githubstatus.com/",
                             children: "GitHub Status",
                         }),
@@ -38570,11 +38576,11 @@ git checkout ${e}`;
                 });
             }
             try {
-                uW.displayName ||
-                    (uW.displayName = "IssueTimelineErrorFallback");
+                uQ.displayName ||
+                    (uQ.displayName = "IssueTimelineErrorFallback");
             } catch {}
-            var uQ = n(2593);
-            let uG = {
+            var uG = n(2593);
+            let uY = {
                 issueViewerContainer:
                     "IssueViewer-module__issueViewerContainer--C18gM",
                 issueViewerMetadataPane:
@@ -38594,9 +38600,9 @@ git checkout ${e}`;
                     "IssueViewer-module__commentsContainer--H8wxg",
                 metadataSidebar: "IssueViewer-module__metadataSidebar--QdJ2b",
             };
-            var uY = n(66827),
-                uX = n(6403);
-            let uJ = {
+            var uX = n(66827),
+                uJ = n(6403);
+            let uZ = {
                 argumentDefinitions: [
                     {
                         defaultValue: !0,
@@ -38649,8 +38655,8 @@ git checkout ${e}`;
                 type: "Repository",
                 abstractKey: null,
             };
-            uJ.hash = "7742c3247121039dc8f0e5218d4a97f7";
-            let uZ = {
+            uZ.hash = "7742c3247121039dc8f0e5218d4a97f7";
+            let u0 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -38665,23 +38671,23 @@ git checkout ${e}`;
                 type: "Repository",
                 abstractKey: null,
             };
-            uZ.hash = "221066fe0c64c313f75897f3e96bb136";
-            let u0 = uX.A;
-            var u1 = n(96747),
-                u2 = n(10871),
-                u4 = n(8521);
-            let u6 = {
+            u0.hash = "221066fe0c64c313f75897f3e96bb136";
+            let u1 = uJ.A;
+            var u2 = n(96747),
+                u4 = n(10871),
+                u6 = n(8521);
+            let u5 = {
                     signedOutBanner:
                         "SignedOutBanner-module__signedOutBanner--ltCMn",
                 },
                 u7 = () =>
                     (0, F.jsxs)(e$.A, {
                         variant: "warning",
-                        className: u6.signedOutBanner,
+                        className: u5.signedOutBanner,
                         children: [
-                            (0, F.jsx)(u2.z, {
+                            (0, F.jsx)(u4.z, {
                                 variant: "primary",
-                                href: (0, u4.H7)(ey.fV.href),
+                                href: (0, u6.H7)(ey.fV.href),
                                 "data-jump-to-bottom-target": !0,
                                 id: "signed-out-banner-sign-up",
                                 children: aX.l.signUp,
@@ -38700,7 +38706,7 @@ git checkout ${e}`;
                                 ],
                             }),
                             (0, F.jsx)(ek.A, {
-                                href: (0, u4.Q_)(ey.fV.href),
+                                href: (0, u6.Q_)(ey.fV.href),
                                 children: aX.l.signIn,
                             }),
                         ],
@@ -38708,7 +38714,7 @@ git checkout ${e}`;
             try {
                 u7.displayName || (u7.displayName = "SignedOutBanner");
             } catch {}
-            let u5 = (function () {
+            let u3 = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -38788,8 +38794,8 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            u5.hash = "69e3b722cb70fcda50cde002214547ca";
-            let u3 = {
+            u3.hash = "69e3b722cb70fcda50cde002214547ca";
+            let u8 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -38806,8 +38812,8 @@ git checkout ${e}`;
                 type: "Issue",
                 abstractKey: null,
             };
-            u3.hash = "4fde3787162ec8f1fd60c73d217127c7";
-            let u8 = {
+            u8.hash = "4fde3787162ec8f1fd60c73d217127c7";
+            let u9 = {
                 copilot: { displayName: "Copilot" },
                 ghost: {
                     login: "ghost",
@@ -38843,8 +38849,8 @@ git checkout ${e}`;
                 closingViaCommitMessageUrl:
                     "https://docs.github.com/articles/closing-issues-via-commit-messages",
             };
-            var u9 = n(98130);
-            async function oe() {
+            var oe = n(98130);
+            async function ol() {
                 return Promise.all(
                     Array.from(
                         document.querySelectorAll(i4.t.commentVideo)
@@ -38869,7 +38875,7 @@ git checkout ${e}`;
                     )
                 );
             }
-            async function ol() {
+            async function on() {
                 return Promise.all(
                     Array.from(
                         document.querySelectorAll(i4.t.commentImage)
@@ -38891,10 +38897,10 @@ git checkout ${e}`;
                     })
                 );
             }
-            async function on() {
-                return Promise.all([oe(), ol()]);
+            async function oa() {
+                return Promise.all([ol(), on()]);
             }
-            let oa = (function () {
+            let os = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -41290,7 +41296,7 @@ git checkout ${e}`;
                         ],
                     },
                     params: {
-                        id: "bfbd30e7c155cc67030315439cee209c",
+                        id: "aea958abceab4e7162266806ace8763d",
                         metadata: {},
                         name: "IssueViewerSubscriptionMetadataSubscription",
                         operationKind: "subscription",
@@ -41298,8 +41304,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            oa.hash = "e789e973774870b1425738048bf55196";
-            let os = (function () {
+            os.hash = "e789e973774870b1425738048bf55196";
+            let oi = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -41324,11 +41330,6 @@ git checkout ${e}`;
                     ],
                     s = [
                         { kind: "Literal", name: "first", value: 10 },
-                        {
-                            kind: "Literal",
-                            name: "includeIssueDependencyEvents",
-                            value: !0,
-                        },
                         {
                             kind: "Variable",
                             name: "skip",
@@ -43575,7 +43576,7 @@ git checkout ${e}`;
                         ],
                     },
                     params: {
-                        id: "2405283bdbc1c315b744f814db74f79a",
+                        id: "5b38a8766a37573c07d53a2480e1b778",
                         metadata: {},
                         name: "IssueViewerSubscriptionTimelineSubscription",
                         operationKind: "subscription",
@@ -43583,10 +43584,10 @@ git checkout ${e}`;
                     },
                 };
             })();
-            os.hash = "71a0563d7052371204888e5587ae3596";
-            let oi = ({ nextPage: e, canonicalUrl: l }) =>
+            oi.hash = "2b937991c8f4388729640bfca74f33ef";
+            let ot = ({ nextPage: e, canonicalUrl: l }) =>
                 (0, F.jsx)("div", {
-                    className: uG.crawlerPagination,
+                    className: uY.crawlerPagination,
                     "data-testid": ag.Y.crawlerPagination,
                     "aria-hidden": !0,
                     children: (0, F.jsx)("a", {
@@ -43597,23 +43598,23 @@ git checkout ${e}`;
                     }),
                 });
             try {
-                oi.displayName || (oi.displayName = "CrawlerPagination");
+                ot.displayName || (ot.displayName = "CrawlerPagination");
             } catch {}
-            let ot = {
+            let or = {
                     Flash: "TimelineTransferringFlash-module__Flash--W75Lj",
                 },
-                or = () =>
+                ou = () =>
                     (0, F.jsx)(e$.A, {
                         "aria-live": "polite",
                         variant: "warning",
-                        className: ot.Flash,
+                        className: or.Flash,
                         children: tD.issueTimelineInTransfer,
                     });
             try {
-                or.displayName ||
-                    (or.displayName = "TimelineTransferringFlash");
+                ou.displayName ||
+                    (ou.displayName = "TimelineTransferringFlash");
             } catch {}
-            let ou = (function () {
+            let oo = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -43700,11 +43701,6 @@ git checkout ${e}`;
                         d,
                         c,
                         m,
-                        {
-                            kind: "Literal",
-                            name: "includeIssueDependencyEvents",
-                            value: !0,
-                        },
                         g,
                         {
                             kind: "Literal",
@@ -45828,7 +45824,7 @@ git checkout ${e}`;
                         ],
                     },
                     params: {
-                        id: "eb608d969b673f03dc29b8720cac2eab",
+                        id: "f8f5efc6a27ce1947e2fd9e7c698a504",
                         metadata: {},
                         name: "useTimelineHighlightQuery",
                         operationKind: "query",
@@ -45836,8 +45832,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            ou.hash = "f635f3b8b9112b3d9f45c26b1e6aeca7";
-            let oo = (function () {
+            oo.hash = "f635f3b8b9112b3d9f45c26b1e6aeca7";
+            let od = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -45924,11 +45920,6 @@ git checkout ${e}`;
                         d,
                         c,
                         m,
-                        {
-                            kind: "Literal",
-                            name: "includeIssueDependencyEvents",
-                            value: !0,
-                        },
                         g,
                         {
                             kind: "Literal",
@@ -48045,7 +48036,7 @@ git checkout ${e}`;
                         ],
                     },
                     params: {
-                        id: "b06874b1b1e6b84f7572111e8329f2dc",
+                        id: "b8d624dcae7e705574d1ecc31c30aed4",
                         metadata: {},
                         name: "NewTimelinePaginationHighlightQuery",
                         operationKind: "query",
@@ -48053,8 +48044,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            oo.hash = "8fc77bdd28ea49141802696f521ab683";
-            let od = (function () {
+            od.hash = "70031daa5215ed68dfa4a035788dbe34";
+            let oc = (function () {
                 var e = ["timelineItems"],
                     l = {
                         alias: null,
@@ -48196,7 +48187,7 @@ git checkout ${e}`;
                                 path: e,
                             },
                             fragmentPathInResult: ["node"],
-                            operation: oo,
+                            operation: od,
                             identifierInfo: {
                                 identifierField: "id",
                                 identifierQueryVariableName: "id",
@@ -48733,12 +48724,12 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            od.hash = "8fc77bdd28ea49141802696f521ab683";
-            let oc = (e, l) =>
+            oc.hash = "70031daa5215ed68dfa4a035788dbe34";
+            let om = (e, l) =>
                     String(e.databaseId) === l.id &&
                     ("issuecomment" !== l.prefix ||
                         "IssueComment" === e.__typename),
-                om = (function () {
+                og = (function () {
                     var e = {
                             defaultValue: null,
                             kind: "LocalArgument",
@@ -48795,11 +48786,6 @@ git checkout ${e}`;
                                 kind: "Variable",
                                 name: "first",
                                 variableName: "count",
-                            },
-                            {
-                                kind: "Literal",
-                                name: "includeIssueDependencyEvents",
-                                value: !0,
                             },
                             i,
                             {
@@ -50893,7 +50879,6 @@ git checkout ${e}`;
                                                     filters: [
                                                         "visibleEventsOnly",
                                                         "skip",
-                                                        "includeIssueDependencyEvents",
                                                     ],
                                                     handle: "connection",
                                                     key: "Issue__frontTimelineItems",
@@ -50910,7 +50895,7 @@ git checkout ${e}`;
                             ],
                         },
                         params: {
-                            id: "dc46df8e8f6013050baee20d5d0ec963",
+                            id: "d10045e56e020c38294f4aa9a73b8f11",
                             metadata: {},
                             name: "NewTimelinePaginationFrontQuery",
                             operationKind: "query",
@@ -50918,8 +50903,8 @@ git checkout ${e}`;
                         },
                     };
                 })();
-            om.hash = "0e8734ee1f77d0e8bc80ac119c599939";
-            let og = (function () {
+            og.hash = "e08e6ca235cebb5e595654053adbad03";
+            let oy = (function () {
                 var e = ["frontTimelineItems"],
                     l = {
                         alias: null,
@@ -51046,7 +51031,7 @@ git checkout ${e}`;
                                 path: e,
                             },
                             fragmentPathInResult: ["node"],
-                            operation: om,
+                            operation: og,
                             identifierInfo: {
                                 identifierField: "id",
                                 identifierQueryVariableName: "id",
@@ -51058,11 +51043,6 @@ git checkout ${e}`;
                         {
                             alias: "frontTimelineItems",
                             args: [
-                                {
-                                    kind: "Literal",
-                                    name: "includeIssueDependencyEvents",
-                                    value: !0,
-                                },
                                 {
                                     kind: "Variable",
                                     name: "skip",
@@ -51578,8 +51558,8 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            og.hash = "0e8734ee1f77d0e8bc80ac119c599939";
-            let oy = (function () {
+            oy.hash = "e08e6ca235cebb5e595654053adbad03";
+            let op = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -51617,11 +51597,6 @@ git checkout ${e}`;
                             kind: "Variable",
                             name: "before",
                             variableName: "cursor",
-                        },
-                        {
-                            kind: "Literal",
-                            name: "includeIssueDependencyEvents",
-                            value: !0,
                         },
                         {
                             kind: "Variable",
@@ -53709,10 +53684,7 @@ git checkout ${e}`;
                                             {
                                                 alias: "backTimelineItems",
                                                 args: s,
-                                                filters: [
-                                                    "visibleEventsOnly",
-                                                    "includeIssueDependencyEvents",
-                                                ],
+                                                filters: ["visibleEventsOnly"],
                                                 handle: "connection",
                                                 key: "Issue__backTimelineItems",
                                                 kind: "LinkedHandle",
@@ -53728,7 +53700,7 @@ git checkout ${e}`;
                         ],
                     },
                     params: {
-                        id: "093089e65fa0019737cb1f3f09643d86",
+                        id: "f56bb04929a86adc21e2f3f17a0547b1",
                         metadata: {},
                         name: "NewTimelinePaginationBackQuery",
                         operationKind: "query",
@@ -53736,8 +53708,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            oy.hash = "4b03656cc2990179832a08bf56ad33b3";
-            let op = (function () {
+            op.hash = "e6e5cdceec67c97db7247ef4886cb73a";
+            let ok = (function () {
                 var e = ["backTimelineItems"],
                     l = {
                         alias: null,
@@ -53859,7 +53831,7 @@ git checkout ${e}`;
                                 path: e,
                             },
                             fragmentPathInResult: ["node"],
-                            operation: oy,
+                            operation: op,
                             identifierInfo: {
                                 identifierField: "id",
                                 identifierQueryVariableName: "id",
@@ -53871,11 +53843,6 @@ git checkout ${e}`;
                         {
                             alias: "backTimelineItems",
                             args: [
-                                {
-                                    kind: "Literal",
-                                    name: "includeIssueDependencyEvents",
-                                    value: !0,
-                                },
                                 {
                                     kind: "Literal",
                                     name: "visibleEventsOnly",
@@ -54379,7 +54346,7 @@ git checkout ${e}`;
                                 },
                             ],
                             storageKey:
-                                "__Issue__backTimelineItems_connection(includeIssueDependencyEvents:true,visibleEventsOnly:true)",
+                                "__Issue__backTimelineItems_connection(visibleEventsOnly:true)",
                         },
                         i,
                     ],
@@ -54387,8 +54354,8 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            op.hash = "4b03656cc2990179832a08bf56ad33b3";
-            let ok = {
+            ok.hash = "e6e5cdceec67c97db7247ef4886cb73a";
+            let oF = {
                     LabeledEvent: new Set(["LabeledEvent", "UnlabeledEvent"]),
                     UnlabeledEvent: new Set(["LabeledEvent", "UnlabeledEvent"]),
                     CrossReferencedEvent: new Set(["CrossReferencedEvent"]),
@@ -54424,45 +54391,45 @@ git checkout ${e}`;
                     BlockingAddedEvent: new Set(["BlockingAddedEvent"]),
                     BlockingRemovedEvent: new Set(["BlockingRemovedEvent"]),
                 },
-                oF = (e) => {
-                    if (e?.__typename && ok[e.__typename])
+                ob = (e) => {
+                    if (e?.__typename && oF[e.__typename])
                         return (e.createdAt && new Date(e.createdAt)) || void 0;
                 },
-                ob = (e) =>
+                oh = (e) =>
                     "CrossReferencedEvent" !== e.__typename ||
                     !e.willCloseTarget,
-                oh = (e, l) => {
+                of = (e, l) => {
                     if (
                         !e ||
                         !l ||
                         !e.actor ||
-                        !ok[e.__typename]?.has(l.__typename) ||
+                        !oF[e.__typename]?.has(l.__typename) ||
                         e.actor?.login !== l.actor?.login ||
-                        !ob(e) ||
-                        !ob(l)
+                        !oh(e) ||
+                        !oh(l)
                     )
                         return !1;
-                    let n = oF(e),
-                        a = oF(l);
+                    let n = ob(e),
+                        a = ob(l);
                     return !(
                         void 0 === n ||
                         void 0 === a ||
                         Math.abs(n.getTime() - a.getTime()) > 6048e5
                     );
                 },
-                of = (e) => {
+                oK = (e) => {
                     let l = 0;
                     for (let n in e) l += e[n].length;
                     return l;
                 },
-                oK = (e) => {
+                oS = (e) => {
                     let l = [],
                         n = 0;
                     for (; n < e.length; ) {
-                        let a = oS(e, n),
-                            s = of(a),
+                        let a = oI(e, n),
+                            s = oK(a),
                             i = e[n];
-                        (a && ov(a),
+                        (a && oL(a),
                             l.push({
                                 item: i ?? null,
                                 rollupGroup: s > 1 ? a : void 0,
@@ -54471,17 +54438,17 @@ git checkout ${e}`;
                     }
                     return l;
                 },
-                oS = (e, l) => {
+                oI = (e, l) => {
                     let n = e[l],
                         a = [n];
                     for (; l + 1 < e.length; ) {
                         let s = e[l + 1];
-                        if (!oh(n, s) || a.length >= 20) break;
+                        if (!of(n, s) || a.length >= 20) break;
                         ((n = s), a.push(n), l++);
                     }
-                    return oI(a);
+                    return ov(a);
                 },
-                oI = (e) => {
+                ov = (e) => {
                     let l = {},
                         n = 0;
                     for (let a of e) {
@@ -54493,14 +54460,14 @@ git checkout ${e}`;
                     }
                     return l;
                 },
-                ov = (e) => {
+                oL = (e) => {
                     for (let l of Object.values(e)) {
                         let e = new Set();
                         for (let n = 0; n < l.length; n++) {
                             let a = l[n];
                             if (!a) continue;
                             let { __typename: s } = a || {},
-                                i = oL(a);
+                                i = oT(a);
                             if (i) {
                                 let a = `${i}-${s}`;
                                 e.has(a) ? l.splice(n--, 1) : e.add(a);
@@ -54508,7 +54475,7 @@ git checkout ${e}`;
                         }
                     }
                 },
-                oL = (e) => {
+                oT = (e) => {
                     switch (e?.__typename) {
                         case "LabeledEvent":
                         case "UnlabeledEvent":
@@ -54522,9 +54489,9 @@ git checkout ${e}`;
                             return;
                     }
                 },
-                oT = { kind: "InlineDataFragment", name: "IssueTimelineItem" };
-            oT.hash = "b5d6fad862b80c12117b2efb0ab611b3";
-            let oC = (function () {
+                oC = { kind: "InlineDataFragment", name: "IssueTimelineItem" };
+            oC.hash = "b5d6fad862b80c12117b2efb0ab611b3";
+            let ox = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -54581,8 +54548,8 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            oC.hash = "cdcaaff97700069cfbbc28c2956b07f0";
-            let ox = {
+            ox.hash = "cdcaaff97700069cfbbc28c2956b07f0";
+            let oR = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -54624,8 +54591,8 @@ git checkout ${e}`;
                 type: "IssueComment",
                 abstractKey: null,
             };
-            ox.hash = "ed1c5fd22a973ac313b7b49b9ffa3105";
-            let oR = (function () {
+            oR.hash = "ed1c5fd22a973ac313b7b49b9ffa3105";
+            let oN = (function () {
                 var e = {
                         alias: null,
                         args: null,
@@ -54719,13 +54686,13 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            oR.hash = "ccd3b10437b5d35f704f99ca1d9a6735";
-            let oN = {
+            oN.hash = "ccd3b10437b5d35f704f99ca1d9a6735";
+            let oj = {
                     CommentBox: "IssueCommentEditor-module__CommentBox--fbuga",
                     EditorMarginContainer:
                         "IssueCommentEditor-module__EditorMarginContainer--vSuW7",
                 },
-                oj = (function () {
+                o_ = (function () {
                     var e = {
                             alias: null,
                             args: null,
@@ -54992,8 +54959,8 @@ git checkout ${e}`;
                         abstractKey: null,
                     };
                 })();
-            oj.hash = "7ae2bcca5bfae7b670d91754387ae67b";
-            let o_ = (function () {
+            o_.hash = "7ae2bcca5bfae7b670d91754387ae67b";
+            let oE = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -55118,7 +55085,7 @@ git checkout ${e}`;
                     },
                 };
             })();
-            function oE(e, l) {
+            function ow(e, l) {
                 for (let n of l) {
                     let l = e.get(n);
                     if (l) {
@@ -55127,8 +55094,8 @@ git checkout ${e}`;
                     }
                 }
             }
-            o_.hash = "df574a3555b46c55b652c9621c8d3581";
-            let ow = (function () {
+            oE.hash = "df574a3555b46c55b652c9621c8d3581";
+            let oA = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -55260,8 +55227,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            ow.hash = "32b76c06b9ed656b474cba5d4a6b96e4";
-            let oA = (function () {
+            oA.hash = "32b76c06b9ed656b474cba5d4a6b96e4";
+            let oP = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -55393,12 +55360,12 @@ git checkout ${e}`;
                     },
                 };
             })();
-            oA.hash = "03ac2faeeddfe3c11f404095d6800e93";
-            var oP = n(38829),
-                oB = n(26156),
-                oD = n(71073);
-            function oM({ id: e }) {
-                let l = (0, oP.f)({ id: e });
+            oP.hash = "03ac2faeeddfe3c11f404095d6800e93";
+            var oB = n(38829),
+                oD = n(26156),
+                oM = n(71073);
+            function oV({ id: e }) {
+                let l = (0, oB.f)({ id: e });
                 return l
                     ? (0, F.jsx)(e4._, {
                           editInformation: l,
@@ -55407,39 +55374,39 @@ git checkout ${e}`;
                     : null;
             }
             try {
-                oM.displayName ||
-                    (oM.displayName = "CommentHeaderLastEditedBy");
+                oV.displayName ||
+                    (oV.displayName = "CommentHeaderLastEditedBy");
             } catch {}
-            function oV({
+            function oU({
                 hideActions: e,
                 lazyFetchEditHistory: l = !1,
                 ...n
             }) {
-                let a = (0, F.jsx)(oM, { id: n.comment.id }),
+                let a = (0, F.jsx)(oV, { id: n.comment.id }),
                     s = l
                         ? (0, F.jsx)(Q.Suspense, {
                               fallback: null,
-                              children: (0, F.jsx)(oU, { id: n.comment.id }),
+                              children: (0, F.jsx)(oO, { id: n.comment.id }),
                           })
                         : (0, F.jsx)(e2.W, { editHistory: n.comment });
-                return (0, F.jsx)(oB.v, {
+                return (0, F.jsx)(oD.v, {
                     lastEditedByMessage: a,
                     editHistoryComponent: s,
                     ...n,
-                    actions: e ? void 0 : (0, F.jsx)(oD.p, { ...n }),
+                    actions: e ? void 0 : (0, F.jsx)(oM.p, { ...n }),
                 });
             }
-            function oU({ id: e }) {
-                let l = (0, oP.f)({ id: e });
+            function oO({ id: e }) {
+                let l = (0, oB.f)({ id: e });
                 return l ? (0, F.jsx)(e2.W, { editHistory: l }) : null;
             }
             try {
-                oV.displayName || (oV.displayName = "CommentHeader");
+                oU.displayName || (oU.displayName = "CommentHeader");
             } catch {}
             try {
-                oU.displayName || (oU.displayName = "CommentHeaderEditHistory");
+                oO.displayName || (oO.displayName = "CommentHeaderEditHistory");
             } catch {}
-            function oO({
+            function oq({
                 anchorBaseUrl: e,
                 comment: l,
                 commentAuthorLogin: n,
@@ -55456,7 +55423,7 @@ git checkout ${e}`;
                 commentAuthorType: g,
                 hasDisabledActions: y = !1,
             }) {
-                let p = (0, N.useFragment)(oj, l),
+                let p = (0, N.useFragment)(o_, l),
                     k = (0, N.useRelayEnvironment)(),
                     b = (0, lf.S)(),
                     { addToast: h } = (0, M.Y6)(),
@@ -55469,7 +55436,7 @@ git checkout ${e}`;
                                 onError: s,
                             }) {
                                 (0, N.commitMutation)(e, {
-                                    mutation: ow,
+                                    mutation: oA,
                                     variables: {
                                         input: { subjectId: l, classifier: n },
                                     },
@@ -55513,7 +55480,7 @@ git checkout ${e}`;
                             onError: a,
                         }) {
                             (0, N.commitMutation)(e, {
-                                mutation: oA,
+                                mutation: oP,
                                 variables: { input: { subjectId: l } },
                                 optimisticResponse: {
                                     unminimizeComment: {
@@ -55569,7 +55536,7 @@ git checkout ${e}`;
                                 onError: s,
                             }) {
                                 (0, N.commitMutation)(e, {
-                                    mutation: o_,
+                                    mutation: oE,
                                     variables: {
                                         input: { id: n },
                                         connections: l,
@@ -55580,8 +55547,8 @@ git checkout ${e}`;
                                             issueComment: { id: n },
                                         },
                                     },
-                                    optimisticUpdater: (e) => oE(e, l),
-                                    updater: (e) => oE(e, l),
+                                    optimisticUpdater: (e) => ow(e, l),
+                                    updater: (e) => ow(e, l),
                                     onCompleted: (e) => {
                                         null === e.deleteIssueComment
                                             ? s?.()
@@ -55602,7 +55569,7 @@ git checkout ${e}`;
                             });
                     }, [b, p.id, d, k, h]),
                     I = e ? `${e}#issuecomment-${p.databaseId}` : p.url;
-                return (0, F.jsx)(oV, {
+                return (0, F.jsx)(oU, {
                     comment: {
                         ...p,
                         referenceText: `#${p.issue.number}`,
@@ -55631,9 +55598,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                oO.displayName || (oO.displayName = "IssueCommentHeader");
+                oq.displayName || (oq.displayName = "IssueCommentHeader");
             } catch {}
-            let oq = (function () {
+            let oH = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -55769,7 +55736,7 @@ git checkout ${e}`;
                     },
                 };
             })();
-            function oH({
+            function o$({
                 environment: e,
                 input: { id: l, body: n, bodyVersion: a },
                 onCompleted: s,
@@ -55778,7 +55745,7 @@ git checkout ${e}`;
             }) {
                 if (n)
                     return (0, N.commitMutation)(e, {
-                        mutation: oq,
+                        mutation: oH,
                         variables: {
                             input: { id: l, body: n, bodyVersion: a },
                         },
@@ -55799,7 +55766,7 @@ git checkout ${e}`;
                         onError: (e) => i && i(e),
                     });
             }
-            function o$({
+            function oz({
                 initialValue: e = "",
                 comment: l,
                 repo: n,
@@ -55814,9 +55781,9 @@ git checkout ${e}`;
                 setManualValidationResult: c,
             }) {
                 let m = (0, Q.useRef)(null),
-                    g = (0, eq.useFragment)(oR, l),
+                    g = (0, eq.useFragment)(oN, l),
                     { body: y, bodyVersion: p } = g,
-                    { repository: k } = (0, eq.useFragment)(ox, n),
+                    { repository: k } = (0, eq.useFragment)(oR, n),
                     b = k.databaseId,
                     h = (0, N.useRelayEnvironment)(),
                     { addToast: f } = (0, M.Y6)(),
@@ -55827,7 +55794,7 @@ git checkout ${e}`;
                         (e) => {
                             let l = ec(K);
                             (l ? (t(!1), r(!0)) : o(!0),
-                                oH({
+                                o$({
                                     environment: h,
                                     input: { id: e, body: K, bodyVersion: I },
                                     onError: (e) => {
@@ -55894,7 +55861,7 @@ git checkout ${e}`;
                     x = (0, _.G7)("issues_lazy_load_comment_box_suggestions");
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
-                        (0, F.jsx)(oO, {
+                        (0, F.jsx)(oq, {
                             comment: g,
                             commentAuthorLogin: g.author.login,
                             avatarUrl: g.author.avatarUrl,
@@ -55905,7 +55872,7 @@ git checkout ${e}`;
                             hideActions: !0,
                         }),
                         (0, F.jsx)("div", {
-                            className: oN.EditorMarginContainer,
+                            className: oj.EditorMarginContainer,
                             children: (0, F.jsx)(T.h, {
                                 disabled: u,
                                 subject: C,
@@ -55927,18 +55894,18 @@ git checkout ${e}`;
                                 markdownSuggestionsFetchMethod: x
                                     ? "lazy"
                                     : "eager",
-                                className: oN.CommentBox,
+                                className: oj.CommentBox,
                                 ...(0, ep.G)(ev.Y.commentBox("comment-editor")),
                             }),
                         }),
                     ],
                 });
             }
-            oq.hash = "f4cdbbb6d54b34b2c63e5485bb3c7366";
+            oH.hash = "f4cdbbb6d54b34b2c63e5485bb3c7366";
             try {
-                o$.displayName || (o$.displayName = "IssueCommentEditor");
+                oz.displayName || (oz.displayName = "IssueCommentEditor");
             } catch {}
-            let oz = (function () {
+            let oW = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -56059,8 +56026,8 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            oz.hash = "4115af1dd0ae4ebb85035229b2bc2eca";
-            let oW = (function () {
+            oW.hash = "4115af1dd0ae4ebb85035229b2bc2eca";
+            let oQ = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -56153,8 +56120,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            oW.hash = "f3c45e1d906dff3d9ed86f63f50ec578";
-            let oQ = {
+            oQ.hash = "f3c45e1d906dff3d9ed86f63f50ec578";
+            let oG = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -56205,8 +56172,8 @@ git checkout ${e}`;
                 type: "IssueComment",
                 abstractKey: null,
             };
-            oQ.hash = "cf59657a98906079d9b4beddaa916b19";
-            let oG = (function () {
+            oG.hash = "cf59657a98906079d9b4beddaa916b19";
+            let oY = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -56301,8 +56268,8 @@ git checkout ${e}`;
                     },
                 };
             })();
-            oG.hash = "f66f505e607780f5a3932be532fa9c15";
-            let oY = {
+            oY.hash = "f66f505e607780f5a3932be532fa9c15";
+            let oX = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -56317,11 +56284,11 @@ git checkout ${e}`;
                 type: "Reactable",
                 abstractKey: "__isReactable",
             };
-            oY.hash = "1f31ee0a210f3cb1c233957b963326e0";
-            var oX = n(19805),
-                oJ = n(80293),
-                oZ = n(12137);
-            let o0 = {
+            oX.hash = "1f31ee0a210f3cb1c233957b963326e0";
+            var oJ = n(19805),
+                oZ = n(80293),
+                o0 = n(12137);
+            let o1 = {
                 IssueCommentLayout:
                     "IssueCommentViewer-module__IssueCommentLayout--dw0jX",
                 IssueCommentContent:
@@ -56329,10 +56296,10 @@ git checkout ${e}`;
                 IssueCommentBody:
                     "IssueCommentViewer-module__IssueCommentBody--xvkt3",
             };
-            function o1({ comment: e, ...l }) {
-                let n = (0, eq.useFragment)(oz, e);
+            function o2({ comment: e, ...l }) {
+                let n = (0, eq.useFragment)(oW, e);
                 return null != n.author
-                    ? (0, F.jsx)(o4, {
+                    ? (0, F.jsx)(o6, {
                           comment: e,
                           ...l,
                           commentAuthorLogin: n.author.login,
@@ -56342,18 +56309,18 @@ git checkout ${e}`;
                           commentAuthorType: n.author.__typename,
                       })
                     : (0, F.jsx)(Q.Suspense, {
-                          fallback: (0, F.jsx)(oZ.i, {}),
-                          children: (0, F.jsx)(o2, { comment: e, ...l }),
+                          fallback: (0, F.jsx)(o0.i, {}),
+                          children: (0, F.jsx)(o4, { comment: e, ...l }),
                       });
             }
-            function o2(e) {
+            function o4(e) {
                 let l = (0, N.useLazyLoadQuery)(
-                    oG,
+                    oY,
                     { ghostLogin: eE.t.ghostUser.login },
                     { fetchPolicy: "store-or-network" }
                 );
                 if (null == l.user) throw Error("Ghost user not found");
-                return (0, F.jsx)(o4, {
+                return (0, F.jsx)(o6, {
                     ...e,
                     commentAuthorLogin: l.user.login,
                     avatarUrl: l.user.avatarUrl,
@@ -56361,7 +56328,7 @@ git checkout ${e}`;
                     createdViaEmail: e.createdViaEmail,
                 });
             }
-            function o4({
+            function o6({
                 anchorBaseUrl: e,
                 comment: l,
                 setIsEditing: n,
@@ -56379,25 +56346,25 @@ git checkout ${e}`;
                 createdViaEmail: y = !1,
                 hasDisabledActions: p = !1,
             }) {
-                let k = (0, eq.useFragment)(oz, l),
-                    b = (0, eq.useFragment)(oY, m),
+                let k = (0, eq.useFragment)(oW, l),
+                    b = (0, eq.useFragment)(oX, m),
                     h = String(k.databaseId) === u,
                     f = !!k.pendingMinimizeReason || k.isHidden,
-                    [K, S] = (0, oJ.N)(f),
+                    [K, S] = (0, oZ.N)(f),
                     I = (0, Q.useRef)(null),
                     v = (0, le.M3)() && !k.issue.locked;
                 return (0, F.jsx)("div", {
                     className: (0, eb.$)(
                         eK.mU.issueComment,
-                        o0.IssueCommentLayout
+                        o1.IssueCommentLayout
                     ),
                     ref: I,
                     children: (0, F.jsxs)("div", {
                         "data-testid": ev.Y.commentViewerOuterBox(k.id),
                         ref: h ? i : null,
-                        className: o0.IssueCommentContent,
+                        className: o1.IssueCommentContent,
                         children: [
-                            (0, F.jsx)(oO, {
+                            (0, F.jsx)(oq, {
                                 anchorBaseUrl: e,
                                 comment: k,
                                 commentAuthorLogin: t,
@@ -56417,14 +56384,14 @@ git checkout ${e}`;
                             }),
                             (!f || !K) &&
                                 (0, F.jsxs)("div", {
-                                    className: o0.IssueCommentBody,
+                                    className: o1.IssueCommentBody,
                                     children: [
-                                        (0, F.jsx)(o6, {
+                                        (0, F.jsx)(o5, {
                                             comment: k,
                                             onLinkClick: a,
                                             createdViaEmail: y,
                                         }),
-                                        (0, F.jsx)(oX.ReactionViewerRelay, {
+                                        (0, F.jsx)(oJ.ReactionViewerRelay, {
                                             subjectId: k.id,
                                             reactionGroups: b,
                                             canReact: v,
@@ -56435,20 +56402,20 @@ git checkout ${e}`;
                     }),
                 });
             }
-            function o6({ comment: e, onLinkClick: l, createdViaEmail: n }) {
+            function o5({ comment: e, onLinkClick: l, createdViaEmail: n }) {
                 let {
                         id: a,
                         bodyVersion: s,
                         bodyHTML: i,
                         viewerCanUpdate: t,
                         body: r,
-                    } = (0, eq.useFragment)(oQ, e),
+                    } = (0, eq.useFragment)(oG, e),
                     u = (0, eq.useRelayEnvironment)(),
                     o = i ?? "",
                     d = (0, Q.useRef)(null),
                     c = (0, Q.useCallback)(
                         (e, l, n) => {
-                            oH({
+                            o$({
                                 environment: u,
                                 input: { id: a, body: e, bodyVersion: s },
                                 onCompleted: l,
@@ -56462,7 +56429,7 @@ git checkout ${e}`;
                     bodyHTML: o,
                     bodyRef: d,
                     id: a,
-                    query: oW,
+                    query: oQ,
                     getHTML: m,
                     children: (0, F.jsx)(lk, {
                         html: o,
@@ -56476,19 +56443,19 @@ git checkout ${e}`;
                 });
             }
             try {
-                o1.displayName || (o1.displayName = "IssueCommentViewer");
-            } catch {}
-            try {
-                o2.displayName ||
-                    (o2.displayName =
-                        "IssueCommentViewerInternalWithoutAuthor");
+                o2.displayName || (o2.displayName = "IssueCommentViewer");
             } catch {}
             try {
                 o4.displayName ||
-                    (o4.displayName = "IssueCommentViewerInternal");
+                    (o4.displayName =
+                        "IssueCommentViewerInternalWithoutAuthor");
             } catch {}
             try {
-                o6.displayName || (o6.displayName = "CommentMarkdownViewer");
+                o6.displayName ||
+                    (o6.displayName = "IssueCommentViewerInternal");
+            } catch {}
+            try {
+                o5.displayName || (o5.displayName = "CommentMarkdownViewer");
             } catch {}
             function o7({
                 anchorBaseUrl: e,
@@ -56508,7 +56475,7 @@ git checkout ${e}`;
                     [y, p] = (0, Q.useState)(!1),
                     [k, b] = (0, Q.useState)(!1),
                     [h, f] = (0, Q.useState)(void 0),
-                    K = (0, N.useFragment)(oC, l),
+                    K = (0, N.useFragment)(ox, l),
                     [S, I] = (0, eU.Fo)(
                         eE.t.localStorageKeys.issueComment(
                             "issuecomment",
@@ -56529,7 +56496,7 @@ git checkout ${e}`;
                 return (0, F.jsx)(F.Fragment, {
                     children:
                         m || y || h
-                            ? (0, F.jsx)(o$, {
+                            ? (0, F.jsx)(oz, {
                                   initialValidationResult: h,
                                   setManualValidationResult: f,
                                   setIsEditing: g,
@@ -56545,7 +56512,7 @@ git checkout ${e}`;
                                   initialValue: S,
                                   onChange: L,
                               })
-                            : (0, F.jsx)(o1, {
+                            : (0, F.jsx)(o2, {
                                   anchorBaseUrl: e,
                                   comment: K,
                                   reactable: K,
@@ -56565,7 +56532,7 @@ git checkout ${e}`;
             try {
                 o7.displayName || (o7.displayName = "IssueComment");
             } catch {}
-            let o5 = {
+            let o3 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -56630,9 +56597,9 @@ git checkout ${e}`;
                 type: "AddedToProjectV2Event",
                 abstractKey: null,
             };
-            o5.hash = "dda7d1ba9e316cc1ddc44c45e28d7f66";
-            let o3 = (e, l) => `${e}#event-${l}`,
-                o8 = {
+            o3.hash = "dda7d1ba9e316cc1ddc44c45e28d7f66";
+            let o8 = (e, l) => `${e}#event-${l}`,
+                o9 = {
                     projectNameWrapper:
                         "AddedToProjectV2Event-module__projectNameWrapper--nTvru",
                     commaSeparator:
@@ -56640,8 +56607,8 @@ git checkout ${e}`;
                     andSeparator:
                         "AddedToProjectV2Event-module__andSeparator--zRcP3",
                 },
-                o9 = { projectLink: "ProjectV2-module__projectLink--jNx3U" };
-            function de({ url: e, title: l }) {
+                de = { projectLink: "ProjectV2-module__projectLink--jNx3U" };
+            function dl({ url: e, title: l }) {
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
                         (0, F.jsx)(z.A, { icon: V.TableIcon }),
@@ -56649,16 +56616,16 @@ git checkout ${e}`;
                         (0, F.jsx)(ek.A, {
                             href: e,
                             inline: !0,
-                            className: o9.projectLink,
+                            className: de.projectLink,
                             children: l,
                         }),
                     ],
                 });
             }
             try {
-                de.displayName || (de.displayName = "ProjectV2");
+                dl.displayName || (dl.displayName = "ProjectV2");
             } catch {}
-            let dl = {
+            let dn = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -56716,13 +56683,13 @@ git checkout ${e}`;
                 type: "RemovedFromProjectV2Event",
                 abstractKey: null,
             };
-            dl.hash = "93b212ec62b6f7cb3f7acfc9102277db";
-            let dn = {
+            dn.hash = "93b212ec62b6f7cb3f7acfc9102277db";
+            let da = {
                     Text: "RemovedFromProjectV2Event-module__Text--iKzZo",
                     Text_1: "RemovedFromProjectV2Event-module__Text_1--v82mO",
                     Text_2: "RemovedFromProjectV2Event-module__Text_2--ISVRT",
                 },
-                da = {
+                ds = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -56737,10 +56704,10 @@ git checkout ${e}`;
                     type: "Actor",
                     abstractKey: "__isActor",
                 };
-            da.hash = "2dc15c7f313b6ec0395f08c1257a4d96";
-            var ds = n(42931),
-                di = n(24021);
-            let dt = {
+            ds.hash = "2dc15c7f313b6ec0395f08c1257a4d96";
+            var di = n(42931),
+                dt = n(24021);
+            let dr = {
                 timelineBodyRowContainer:
                     "row-module__timelineBodyRowContainer--O67ft",
                 timelineBodyContent: "row-module__timelineBodyContent--eiX2y",
@@ -56753,10 +56720,10 @@ git checkout ${e}`;
                 body: "row-module__body--T5IWm",
                 fillRow: "row-module__fillRow--AP4Pe",
             };
-            function dr({ timestamp: e, linkUrl: l }) {
+            function du({ timestamp: e, linkUrl: l }) {
                 return (0, F.jsx)(ek.A, {
                     href: l,
-                    className: dt.timelineAgoLink,
+                    className: dr.timelineAgoLink,
                     children: (0, F.jsxs)(e6.A, {
                         date: e,
                         children: [
@@ -56771,9 +56738,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                dr.displayName || (dr.displayName = "Ago");
+                du.displayName || (du.displayName = "Ago");
             } catch {}
-            let du = {
+            let dd = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -56825,30 +56792,30 @@ git checkout ${e}`;
                 type: "Actor",
                 abstractKey: "__isActor",
             };
-            du.hash = "de12bf60d1c717928803f50b1bf9c2a5";
-            var dd = n(12360),
-                dc = n(20403);
-            function dm() {
-                return (0, F.jsxs)("span", { children: [u8.ghost.login, " "] });
+            dd.hash = "de12bf60d1c717928803f50b1bf9c2a5";
+            var dc = n(12360),
+                dm = n(20403);
+            function dg() {
+                return (0, F.jsxs)("span", { children: [u9.ghost.login, " "] });
             }
             try {
-                dm.displayName || (dm.displayName = "GhostActor");
+                dg.displayName || (dg.displayName = "GhostActor");
             } catch {}
-            function dg({ actor: e, ...l }) {
-                return e
-                    ? (0, F.jsx)(dy, { actor: e, ...l })
-                    : (0, F.jsx)(dm, {});
-            }
             function dy({ actor: e, ...l }) {
+                return e
+                    ? (0, F.jsx)(dp, { actor: e, ...l })
+                    : (0, F.jsx)(dg, {});
+            }
+            function dp({ actor: e, ...l }) {
                 let {
                         login: n,
                         avatarUrl: a,
                         isCopilot: s,
                         profileResourcePath: i,
                         __typename: t,
-                    } = (0, N.useFragment)(du, e),
+                    } = (0, N.useFragment)(dd, e),
                     r = ["User", "Organization"].includes(t);
-                return (0, F.jsx)(dp, {
+                return (0, F.jsx)(dk, {
                     login: n,
                     avatarUrl: a,
                     profileResourcePath: i ?? void 0,
@@ -56857,7 +56824,7 @@ git checkout ${e}`;
                     ...l,
                 });
             }
-            function dp({
+            function dk({
                 login: e,
                 avatarUrl: l,
                 profileResourcePath: n,
@@ -56865,35 +56832,35 @@ git checkout ${e}`;
                 isCopilot: s = !1,
                 isUser: i = !0,
             }) {
-                if (e === u8.ghost.login)
+                if (e === u9.ghost.login)
                     return (0, F.jsxs)("span", {
                         children: [ao.repositoryOwner, " "],
                     });
                 if (!e)
                     return (0, F.jsxs)("span", {
-                        children: [u8.ghost.login, " "],
+                        children: [u9.ghost.login, " "],
                     });
                 let t = i || s,
-                    r = s ? u8.copilot.displayName : e;
+                    r = s ? u9.copilot.displayName : e;
                 return (0, F.jsx)("div", {
-                    className: dt.eventActorContainer,
+                    className: dr.eventActorContainer,
                     children: (0, F.jsxs)(ek.A, {
                         "data-testid": "actor-link",
                         role: "link",
                         href: n,
-                        ...(t ? (0, dc.S)(e, { isCopilot: s }) : {}),
-                        className: dt.eventActorLink,
+                        ...(t ? (0, dm.S)(e, { isCopilot: s }) : {}),
+                        className: dr.eventActorLink,
                         muted: !0,
                         children: [
                             s
-                                ? (0, F.jsx)(dd.C, {
+                                ? (0, F.jsx)(dc.C, {
                                       size: "small",
-                                      className: dt.alignSelfCenter,
+                                      className: dr.alignSelfCenter,
                                   })
                                 : (0, F.jsx)(E.r, {
                                       src: l,
                                       size: 16,
-                                      className: dt.alignSelfCenter,
+                                      className: dr.alignSelfCenter,
                                   }),
                             !a && (0, F.jsx)("span", { children: r }),
                         ],
@@ -56901,33 +56868,33 @@ git checkout ${e}`;
                 });
             }
             try {
-                dg.displayName || (dg.displayName = "EventActor");
+                dy.displayName || (dy.displayName = "EventActor");
             } catch {}
             try {
-                dy.displayName || (dy.displayName = "EventActorInternal");
+                dp.displayName || (dp.displayName = "EventActorInternal");
             } catch {}
             try {
-                dp.displayName || (dp.displayName = "EventActorBase");
+                dk.displayName || (dk.displayName = "EventActorBase");
             } catch {}
-            let dk = {
+            let dF = {
                     Timeline_Item: "TimelineRow-module__Timeline_Item--JB78Z",
                     Octicon: "TimelineRow-module__Octicon--nrVo5",
                 },
-                dF = ({ actor: e, children: l, ...n }) => {
-                    let a = (0, di.H)(l, {
-                        trailing: df,
-                        secondary: dK,
-                        main: dS,
+                db = ({ actor: e, children: l, ...n }) => {
+                    let a = (0, dt.H)(l, {
+                        trailing: dK,
+                        secondary: dS,
+                        main: dI,
                     });
                     return e
-                        ? (0, F.jsx)(db, { actor: e, slots: a, ...n })
-                        : (0, F.jsx)(dh, { actorData: null, slots: a, ...n });
+                        ? (0, F.jsx)(dh, { actor: e, slots: a, ...n })
+                        : (0, F.jsx)(df, { actorData: null, slots: a, ...n });
                 },
-                db = ({ actor: e, ...l }) => {
-                    let n = (0, N.useFragment)(da, e);
-                    return (0, F.jsx)(dh, { ...l, actorData: n });
+                dh = ({ actor: e, ...l }) => {
+                    let n = (0, N.useFragment)(ds, e);
+                    return (0, F.jsx)(df, { ...l, actorData: n });
                 },
-                dh = ({
+                df = ({
                     showActorName: e = !0,
                     showAgoTimestamp: l = !0,
                     highlighted: n,
@@ -56943,16 +56910,16 @@ git checkout ${e}`;
                 }) => {
                     let m = (0, Q.useRef)(null);
                     return (
-                        (0, ds.O)({
+                        (0, di.O)({
                             htmlContainerRef: m,
                             onLinkClick: i,
                             openLinksInNewTab: !1,
                         }),
-                        (0, F.jsxs)(u9.A.Item, {
+                        (0, F.jsxs)(oe.A.Item, {
                             ref: n ? t : null,
-                            className: dk.Timeline_Item,
+                            className: dF.Timeline_Item,
                             children: [
-                                (0, F.jsx)(u9.A.Badge, {
+                                (0, F.jsx)(oe.A.Badge, {
                                     sx: {
                                         backgroundColor: u?.backgroundColor,
                                         ...(n
@@ -56968,32 +56935,32 @@ git checkout ${e}`;
                                         (0, F.jsx)(z.A, {
                                             icon: r,
                                             sx: { color: u?.color },
-                                            className: dk.Octicon,
+                                            className: dF.Octicon,
                                         }),
                                 }),
-                                (0, F.jsxs)(u9.A.Body, {
+                                (0, F.jsxs)(oe.A.Body, {
                                     ref: m,
                                     className: (0, eb.$)(
                                         "TimelineBody",
-                                        dt.body,
-                                        c && dt.fillRow
+                                        dr.body,
+                                        c && dr.fillRow
                                     ),
                                     children: [
                                         (0, F.jsxs)("div", {
                                             className:
-                                                dt.timelineBodyRowContainer,
+                                                dr.timelineBodyRowContainer,
                                             children: [
                                                 (0, F.jsxs)("div", {
                                                     className:
-                                                        dt.timelineBodyContent,
+                                                        dr.timelineBodyContent,
                                                     children: [
-                                                        (0, F.jsx)(dg, {
+                                                        (0, F.jsx)(dy, {
                                                             actor: d || null,
                                                             showAvatarOnly: !e,
                                                         }),
                                                         o[0].main,
                                                         l &&
-                                                            (0, F.jsx)(dr, {
+                                                            (0, F.jsx)(du, {
                                                                 timestamp:
                                                                     new Date(a),
                                                                 linkUrl: s,
@@ -57002,7 +56969,7 @@ git checkout ${e}`;
                                                 }),
                                                 (0, F.jsx)("div", {
                                                     className:
-                                                        dt.timelineBodyTrailingContent,
+                                                        dr.timelineBodyTrailingContent,
                                                     children: o[0].trailing,
                                                 }),
                                             ],
@@ -57016,48 +56983,48 @@ git checkout ${e}`;
                         })
                     );
                 };
-            function df(e) {
+            function dK(e) {
                 return (0, F.jsx)("div", {
                     "data-trailing": !0,
                     children: e.children,
                 });
             }
-            function dK(e) {
+            function dS(e) {
                 return (0, F.jsx)("div", {
                     "data-secondary": !0,
                     children: e.children,
                 });
             }
-            function dS(e) {
+            function dI(e) {
                 return (0, F.jsx)(F.Fragment, { children: e.children });
             }
-            let dI = Object.assign(dF, {
-                Trailing: df,
-                Secondary: dK,
-                Main: dS,
+            let dv = Object.assign(db, {
+                Trailing: dK,
+                Secondary: dS,
+                Main: dI,
             });
             try {
-                dF.displayName || (dF.displayName = "Row");
+                db.displayName || (db.displayName = "Row");
             } catch {}
             try {
-                db.displayName || (db.displayName = "RowInternal");
+                dh.displayName || (dh.displayName = "RowInternal");
             } catch {}
             try {
-                dh.displayName || (dh.displayName = "RowBase");
+                df.displayName || (df.displayName = "RowBase");
             } catch {}
             try {
-                df.displayName || (df.displayName = "Trailing");
+                dK.displayName || (dK.displayName = "Trailing");
             } catch {}
             try {
-                dK.displayName || (dK.displayName = "Secondary");
+                dS.displayName || (dS.displayName = "Secondary");
             } catch {}
             try {
-                dS.displayName || (dS.displayName = "Main");
+                dI.displayName || (dI.displayName = "Main");
             } catch {}
             try {
-                dI.displayName || (dI.displayName = "TimelineRow");
+                dv.displayName || (dv.displayName = "TimelineRow");
             } catch {}
-            function dv({
+            function dL({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -57067,24 +57034,24 @@ git checkout ${e}`;
                     actor: s,
                     createdAt: i,
                     project: t,
-                } = (0, eq.useFragment)(dl, e);
+                } = (0, eq.useFragment)(dn, e);
                 return t
-                    ? (0, F.jsx)(dI, {
+                    ? (0, F.jsx)(dv, {
                           highlighted: !1,
                           actor: s,
                           onLinkClick: n,
                           createdAt: i,
                           deepLinkUrl: l,
                           leadingIcon: V.TableIcon,
-                          children: (0, F.jsx)(dI.Main, {
+                          children: (0, F.jsx)(dv.Main, {
                               children: a
-                                  ? (0, F.jsx)(dC, { rollupGroup: a })
-                                  : (0, F.jsx)(dL, { queryRefs: [e] }),
+                                  ? (0, F.jsx)(dx, { rollupGroup: a })
+                                  : (0, F.jsx)(dT, { queryRefs: [e] }),
                           }),
                       })
                     : (0, F.jsx)(F.Fragment, {});
             }
-            let dL = ({ queryRefs: e }) =>
+            let dT = ({ queryRefs: e }) =>
                     0 === e.length
                         ? null
                         : (0, F.jsxs)(F.Fragment, {
@@ -57094,7 +57061,7 @@ git checkout ${e}`;
                                       (0, F.jsx)(
                                           Q.Fragment,
                                           {
-                                              children: (0, F.jsx)(dT, {
+                                              children: (0, F.jsx)(dC, {
                                                   queryRef: l,
                                                   first: 0 === n,
                                                   last: n === e.length - 1,
@@ -57105,26 +57072,26 @@ git checkout ${e}`;
                                   ),
                               ],
                           }),
-                dT = ({ queryRef: e, first: l, last: n }) => {
-                    let { project: a } = (0, eq.useFragment)(dl, e);
+                dC = ({ queryRef: e, first: l, last: n }) => {
+                    let { project: a } = (0, eq.useFragment)(dn, e);
                     return a?.title && a?.url
                         ? (0, F.jsx)("span", {
-                              className: dn.Text,
+                              className: da.Text,
                               children: (0, F.jsxs)(F.Fragment, {
                                   children: [
                                       !l &&
                                           !n &&
                                           (0, F.jsx)("span", {
-                                              className: dn.Text_1,
+                                              className: da.Text_1,
                                               children: ",",
                                           }),
                                       !l &&
                                           n &&
                                           (0, F.jsx)("span", {
-                                              className: dn.Text_2,
+                                              className: da.Text_2,
                                               children: ao.timeline.and,
                                           }),
-                                      (0, F.jsx)(de, {
+                                      (0, F.jsx)(dl, {
                                           title: a?.title,
                                           url: a?.url,
                                       }),
@@ -57134,32 +57101,32 @@ git checkout ${e}`;
                         : null;
                 };
             try {
-                dv.displayName ||
-                    (dv.displayName = "RemovedFromProjectV2Event");
-            } catch {}
-            try {
                 dL.displayName ||
-                    (dL.displayName = "RemovedFromProjectV2sRendering");
+                    (dL.displayName = "RemovedFromProjectV2Event");
             } catch {}
             try {
                 dT.displayName ||
-                    (dT.displayName = "InternalRemovedFromProjectV2sRendering");
+                    (dT.displayName = "RemovedFromProjectV2sRendering");
             } catch {}
-            function dC({ rollupGroup: e }) {
+            try {
+                dC.displayName ||
+                    (dC.displayName = "InternalRemovedFromProjectV2sRendering");
+            } catch {}
+            function dx({ rollupGroup: e }) {
                 let l = e.AddedToProjectV2Event || [],
                     n = e.RemovedFromProjectV2Event || [];
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
-                        (0, F.jsx)(dR, { queryRefs: l }),
+                        (0, F.jsx)(dN, { queryRefs: l }),
                         l.length > 0 && n.length > 0 && ` ${ao.timeline.and} `,
-                        (0, F.jsx)(dL, { queryRefs: n }),
+                        (0, F.jsx)(dT, { queryRefs: n }),
                     ],
                 });
             }
             try {
-                dC.displayName || (dC.displayName = "RolledupProjectV2Event");
+                dx.displayName || (dx.displayName = "RolledupProjectV2Event");
             } catch {}
-            function dx({
+            function dR({
                 queryRef: e,
                 issueUrl: l,
                 rollupGroup: n,
@@ -57171,24 +57138,24 @@ git checkout ${e}`;
                     createdAt: t,
                     project: r,
                     databaseId: u,
-                } = (0, eq.useFragment)(o5, e);
+                } = (0, eq.useFragment)(o3, e);
                 if (!r) return (0, F.jsx)(F.Fragment, {});
                 let o = String(u) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: o,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, u),
+                    deepLinkUrl: o8(l, u),
                     leadingIcon: V.TableIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: n
-                            ? (0, F.jsx)(dC, { rollupGroup: n })
-                            : (0, F.jsx)(dR, { queryRefs: [e] }),
+                            ? (0, F.jsx)(dx, { rollupGroup: n })
+                            : (0, F.jsx)(dN, { queryRefs: [e] }),
                     }),
                 });
             }
-            let dR = ({ queryRefs: e }) =>
+            let dN = ({ queryRefs: e }) =>
                     0 === e.length
                         ? null
                         : (0, F.jsxs)(F.Fragment, {
@@ -57198,7 +57165,7 @@ git checkout ${e}`;
                                       (0, F.jsx)(
                                           Q.Fragment,
                                           {
-                                              children: (0, F.jsx)(dN, {
+                                              children: (0, F.jsx)(dj, {
                                                   queryRef: l,
                                                   first: 0 === n,
                                                   last: n === e.length - 1,
@@ -57209,26 +57176,26 @@ git checkout ${e}`;
                                   ),
                               ],
                           }),
-                dN = ({ queryRef: e, first: l, last: n }) => {
-                    let { project: a } = (0, eq.useFragment)(o5, e);
+                dj = ({ queryRef: e, first: l, last: n }) => {
+                    let { project: a } = (0, eq.useFragment)(o3, e);
                     return a?.title && a?.url
                         ? (0, F.jsx)("span", {
-                              className: o8.projectNameWrapper,
+                              className: o9.projectNameWrapper,
                               children: (0, F.jsxs)(F.Fragment, {
                                   children: [
                                       !l &&
                                           !n &&
                                           (0, F.jsx)("span", {
-                                              className: o8.commaSeparator,
+                                              className: o9.commaSeparator,
                                               children: ",",
                                           }),
                                       !l &&
                                           n &&
                                           (0, F.jsx)("span", {
-                                              className: o8.andSeparator,
+                                              className: o9.andSeparator,
                                               children: ao.timeline.and,
                                           }),
-                                      (0, F.jsx)(de, {
+                                      (0, F.jsx)(dl, {
                                           title: a?.title,
                                           url: a?.url,
                                       }),
@@ -57238,17 +57205,17 @@ git checkout ${e}`;
                         : null;
                 };
             try {
-                dx.displayName || (dx.displayName = "AddedToProjectV2Event");
-            } catch {}
-            try {
-                dR.displayName ||
-                    (dR.displayName = "AddedToProjectV2sRendering");
+                dR.displayName || (dR.displayName = "AddedToProjectV2Event");
             } catch {}
             try {
                 dN.displayName ||
-                    (dN.displayName = "InternalAddedToProjectV2sRendering");
+                    (dN.displayName = "AddedToProjectV2sRendering");
             } catch {}
-            let dj = (function () {
+            try {
+                dj.displayName ||
+                    (dj.displayName = "InternalAddedToProjectV2sRendering");
+            } catch {}
+            let d_ = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -57320,8 +57287,8 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            dj.hash = "a8f2fa7634a679969efc39b7b8f2d616";
-            let d_ = {
+            d_.hash = "a8f2fa7634a679969efc39b7b8f2d616";
+            let dE = {
                     assigneeEventContainer:
                         "assignees-module__assigneeEventContainer--v2Y7W",
                     assigneeMarginRight:
@@ -57330,7 +57297,7 @@ git checkout ${e}`;
                         "assignees-module__assigneeMarginHorizontal--TqdMb",
                     assigneeLink: "assignees-module__assigneeLink--wLhcw",
                 },
-                dE = (function () {
+                dw = (function () {
                     var e = {
                             alias: null,
                             args: null,
@@ -57399,32 +57366,32 @@ git checkout ${e}`;
                         abstractKey: "__isActor",
                     };
                 })();
-            function dw({ assigneeRef: e }) {
-                let l = (0, eq.useFragment)(dE, e);
+            function dA({ assigneeRef: e }) {
+                let l = (0, eq.useFragment)(dw, e);
                 if (l?.__typename === "%other")
                     return (0, F.jsx)(F.Fragment, {});
-                let n = l?.login || u8.ghost.login,
+                let n = l?.login || u9.ghost.login,
                     a = l?.__typename === "Bot" && l.isCopilot,
                     s =
                         l?.__typename === "User" ||
                         l?.__typename === "Organization" ||
                         a
-                            ? (0, dc.S)(n, { isCopilot: a })
+                            ? (0, dm.S)(n, { isCopilot: a })
                             : {},
-                    i = a ? u8.copilot.displayName : n || u8.ghost.login;
+                    i = a ? u9.copilot.displayName : n || u9.ghost.login;
                 return (0, F.jsx)(ek.A, {
                     ...s,
                     href: l?.resourcePath,
-                    className: d_.assigneeLink,
+                    className: dE.assigneeLink,
                     inline: !0,
                     children: i,
                 });
             }
-            dE.hash = "3e03590069f58500057cf7a3e3fd2df9";
+            dw.hash = "3e03590069f58500057cf7a3e3fd2df9";
             try {
-                dw.displayName || (dw.displayName = "AssignmentEventAssignee");
+                dA.displayName || (dA.displayName = "AssignmentEventAssignee");
             } catch {}
-            let dA = (function () {
+            let dP = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -57496,7 +57463,7 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            function dP({
+            function dB({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -57509,20 +57476,20 @@ git checkout ${e}`;
                         createdAt: r,
                         assignee: u,
                         databaseId: o,
-                    } = (0, eq.useFragment)(dA, e),
+                    } = (0, eq.useFragment)(dP, e),
                     d = String(o) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: d,
                     refAttribute: s,
                     actor: t,
                     createdAt: r,
-                    deepLinkUrl: o3(l, o),
+                    deepLinkUrl: o8(l, o),
                     onLinkClick: n,
                     leadingIcon: V.PersonIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: i
-                            ? (0, F.jsx)(dM, { rollupGroup: i })
-                            : (0, F.jsx)(dB, {
+                            ? (0, F.jsx)(dV, { rollupGroup: i })
+                            : (0, F.jsx)(dD, {
                                   queryRefs: [e],
                                   selfAssigned: t?.login === u?.login,
                                   rollup: !1,
@@ -57530,8 +57497,8 @@ git checkout ${e}`;
                     }),
                 });
             }
-            dA.hash = "ba2c5c9b4cc41d8585bad101a6f58f30";
-            let dB = ({ queryRefs: e, selfAssigned: l, rollup: n }) =>
+            dP.hash = "ba2c5c9b4cc41d8585bad101a6f58f30";
+            let dD = ({ queryRefs: e, selfAssigned: l, rollup: n }) =>
                     0 === e.length
                         ? null
                         : (0, F.jsxs)(F.Fragment, {
@@ -57541,7 +57508,7 @@ git checkout ${e}`;
                                       (0, F.jsx)(
                                           Q.Fragment,
                                           {
-                                              children: (0, F.jsx)(dD, {
+                                              children: (0, F.jsx)(dM, {
                                                   queryRef: l,
                                                   rollup: n,
                                                   first: 0 === a,
@@ -57553,11 +57520,11 @@ git checkout ${e}`;
                                   ),
                               ],
                           }),
-                dD = ({ queryRef: e, rollup: l, first: n, last: a }) => {
-                    let { assignee: s, actor: i } = (0, eq.useFragment)(dA, e);
+                dM = ({ queryRef: e, rollup: l, first: n, last: a }) => {
+                    let { assignee: s, actor: i } = (0, eq.useFragment)(dP, e);
                     return s?.login
                         ? (0, F.jsx)("div", {
-                              className: d_.assigneeEventContainer,
+                              className: dE.assigneeEventContainer,
                               children:
                                   i?.login !== s?.login || l
                                       ? (0, F.jsxs)(F.Fragment, {
@@ -57566,18 +57533,18 @@ git checkout ${e}`;
                                                     !a &&
                                                     (0, F.jsx)("div", {
                                                         className:
-                                                            d_.assigneeMarginRight,
+                                                            dE.assigneeMarginRight,
                                                         children: ",",
                                                     }),
                                                 !n &&
                                                     a &&
                                                     (0, F.jsx)("div", {
                                                         className:
-                                                            d_.assigneeMarginHorizontal,
+                                                            dE.assigneeMarginHorizontal,
                                                         children:
                                                             ao.timeline.and,
                                                     }),
-                                                (0, F.jsx)(dw, {
+                                                (0, F.jsx)(dA, {
                                                     assigneeRef: s,
                                                 }),
                                             ],
@@ -57587,28 +57554,28 @@ git checkout ${e}`;
                         : null;
                 };
             try {
-                dP.displayName || (dP.displayName = "UnassignedEvent");
-            } catch {}
-            try {
-                dB.displayName ||
-                    (dB.displayName = "RemovedAssigneesRendering");
+                dB.displayName || (dB.displayName = "UnassignedEvent");
             } catch {}
             try {
                 dD.displayName ||
-                    (dD.displayName = "InternalRemovedAssigneesRendering");
+                    (dD.displayName = "RemovedAssigneesRendering");
             } catch {}
-            function dM({ rollupGroup: e }) {
+            try {
+                dM.displayName ||
+                    (dM.displayName = "InternalRemovedAssigneesRendering");
+            } catch {}
+            function dV({ rollupGroup: e }) {
                 let l = e.AssignedEvent || [],
                     n = e.UnassignedEvent || [];
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
-                        (0, F.jsx)(dU, {
+                        (0, F.jsx)(dO, {
                             queryRefs: l,
                             selfAssigned: !1,
                             rollup: !0,
                         }),
                         l.length > 0 && n.length > 0 && ` ${ao.timeline.and} `,
-                        (0, F.jsx)(dB, {
+                        (0, F.jsx)(dD, {
                             queryRefs: n,
                             selfAssigned: !1,
                             rollup: !0,
@@ -57617,9 +57584,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                dM.displayName || (dM.displayName = "RolledupAssignedEvent");
+                dV.displayName || (dV.displayName = "RolledupAssignedEvent");
             } catch {}
-            function dV({
+            function dU({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -57632,20 +57599,20 @@ git checkout ${e}`;
                         createdAt: r,
                         assignee: u,
                         databaseId: o,
-                    } = (0, eq.useFragment)(dj, e),
+                    } = (0, eq.useFragment)(d_, e),
                     d = String(o) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: d,
                     refAttribute: s,
                     actor: t,
                     createdAt: r,
-                    deepLinkUrl: o3(l, o),
+                    deepLinkUrl: o8(l, o),
                     onLinkClick: n,
                     leadingIcon: V.PersonIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: i
-                            ? (0, F.jsx)(dM, { rollupGroup: i })
-                            : (0, F.jsx)(dU, {
+                            ? (0, F.jsx)(dV, { rollupGroup: i })
+                            : (0, F.jsx)(dO, {
                                   queryRefs: [e],
                                   selfAssigned: t?.login === u?.login,
                                   rollup: !1,
@@ -57653,7 +57620,7 @@ git checkout ${e}`;
                     }),
                 });
             }
-            let dU = ({ queryRefs: e, selfAssigned: l, rollup: n }) =>
+            let dO = ({ queryRefs: e, selfAssigned: l, rollup: n }) =>
                     0 === e.length
                         ? null
                         : (0, F.jsxs)(F.Fragment, {
@@ -57663,7 +57630,7 @@ git checkout ${e}`;
                                       (0, F.jsx)(
                                           Q.Fragment,
                                           {
-                                              children: (0, F.jsx)(dO, {
+                                              children: (0, F.jsx)(dq, {
                                                   queryRef: l,
                                                   rollup: n,
                                                   first: 0 === a,
@@ -57675,10 +57642,10 @@ git checkout ${e}`;
                                   ),
                               ],
                           }),
-                dO = ({ queryRef: e, rollup: l, first: n, last: a }) => {
-                    let { assignee: s, actor: i } = (0, eq.useFragment)(dj, e);
+                dq = ({ queryRef: e, rollup: l, first: n, last: a }) => {
+                    let { assignee: s, actor: i } = (0, eq.useFragment)(d_, e);
                     return (0, F.jsx)("div", {
-                        className: d_.assigneeEventContainer,
+                        className: dE.assigneeEventContainer,
                         children:
                             i?.login !== s?.login || l
                                 ? (0, F.jsxs)(F.Fragment, {
@@ -57687,33 +57654,33 @@ git checkout ${e}`;
                                               !a &&
                                               (0, F.jsx)("div", {
                                                   className:
-                                                      d_.assigneeMarginRight,
+                                                      dE.assigneeMarginRight,
                                                   children: ",",
                                               }),
                                           !n &&
                                               a &&
                                               (0, F.jsx)("div", {
                                                   className:
-                                                      d_.assigneeMarginHorizontal,
+                                                      dE.assigneeMarginHorizontal,
                                                   children: ao.timeline.and,
                                               }),
-                                          (0, F.jsx)(dw, { assigneeRef: s }),
+                                          (0, F.jsx)(dA, { assigneeRef: s }),
                                       ],
                                   })
                                 : ao.timeline.selfAssignedThis,
                     });
                 };
             try {
-                dV.displayName || (dV.displayName = "AssignedEvent");
+                dU.displayName || (dU.displayName = "AssignedEvent");
             } catch {}
             try {
-                dU.displayName || (dU.displayName = "AddedAssigneesRendering");
+                dO.displayName || (dO.displayName = "AddedAssigneesRendering");
             } catch {}
             try {
-                dO.displayName ||
-                    (dO.displayName = "InternalAddedAssigneesRendering");
+                dq.displayName ||
+                    (dq.displayName = "InternalAddedAssigneesRendering");
             } catch {}
-            let dq = {
+            let dH = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -57769,7 +57736,7 @@ git checkout ${e}`;
                 type: "BlockedByAddedEvent",
                 abstractKey: null,
             };
-            function dH(e, l) {
+            function d$(e, l) {
                 let n;
                 if (0 === l.length) return e;
                 for (let a of (e && (n = new Date(e).valueOf()), l))
@@ -57779,14 +57746,14 @@ git checkout ${e}`;
                     }
                 return n;
             }
-            dq.hash = "9b71c7c5f106935993845ab688a12ef9";
-            let d$ = {
+            dH.hash = "9b71c7c5f106935993845ab688a12ef9";
+            let dz = {
                     issueDependenciesList:
                         "DependencyEvent-module__issueDependenciesList--jkHQC",
                     issueDependencyItem:
                         "DependencyEvent-module__issueDependencyItem--YsJF8",
                 },
-                dz = (function () {
+                dW = (function () {
                     var e = {
                             alias: null,
                             args: null,
@@ -57934,16 +57901,16 @@ git checkout ${e}`;
                         abstractKey: "__isReferencedSubject",
                     };
                 })();
-            dz.hash = "863d75bbc29beaf8626fd20f4653cc17";
-            let dW = {
+            dW.hash = "863d75bbc29beaf8626fd20f4653cc17";
+            let dQ = {
                 issueLinkAnchor: "IssueLink-module__issueLinkAnchor--fsPzL",
                 issueTitleContainer:
                     "IssueLink-module__issueTitleContainer--jwBZJ",
                 repoIssueNumber: "IssueLink-module__repoIssueNumber--c52hS",
                 issueContainer: "IssueLink-module__issueContainer--cuJCD",
             };
-            function dQ({ data: e, targetRepositoryId: l, inline: n = !1 }) {
-                let a = (0, N.useFragment)(dz, e),
+            function dG({ data: e, targetRepositoryId: l, inline: n = !1 }) {
+                let a = (0, N.useFragment)(dW, e),
                     s = "Issue" === a.__typename,
                     i = "PullRequest" === a.__typename,
                     { sourceIcon: t } = nE({
@@ -57991,18 +57958,18 @@ git checkout ${e}`;
                                     ? m
                                     : void 0,
                                 inline: !0,
-                                className: dW.issueLinkAnchor,
+                                className: dQ.issueLinkAnchor,
                                 children: [
                                     (0, F.jsx)(aD.vb, {
                                         as: "bdi",
                                         className: (0, eb.$)(
                                             "markdown-title",
-                                            dW.issueTitleContainer
+                                            dQ.issueTitleContainer
                                         ),
                                         html: g,
                                     }),
                                     (0, F.jsxs)("span", {
-                                        className: dW.repoIssueNumber,
+                                        className: dQ.repoIssueNumber,
                                         children: [" ", c],
                                     }),
                                 ],
@@ -58034,17 +58001,17 @@ git checkout ${e}`;
                 return n
                     ? (0, F.jsx)(F.Fragment, { children: y })
                     : (0, F.jsx)("div", {
-                          className: dW.issueContainer,
+                          className: dQ.issueContainer,
                           children: y,
                       });
             }
             try {
-                dQ.displayName || (dQ.displayName = "IssueLink");
+                dG.displayName || (dG.displayName = "IssueLink");
             } catch {}
             try {
                 (y = InlineLink).displayName || (y.displayName = "InlineLink");
             } catch {}
-            function dG({
+            function dY({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -58058,23 +58025,23 @@ git checkout ${e}`;
                     createdAt: u,
                     blockingIssue: o,
                     databaseId: d,
-                } = (0, eq.useFragment)(dq, e);
+                } = (0, eq.useFragment)(dH, e);
                 if (!o) return null;
                 let c = String(d) === a,
                     m = i?.BlockedByAddedEvent || [],
                     g = 0 === m.length ? [e] : m,
-                    y = dH(e.createdAt, m);
-                return (0, F.jsxs)(dI, {
+                    y = d$(e.createdAt, m);
+                return (0, F.jsxs)(dv, {
                     highlighted: c,
                     refAttribute: s,
                     actor: r,
                     createdAt: u,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: o3(l, d),
+                    deepLinkUrl: o8(l, d),
                     onLinkClick: n,
                     leadingIcon: V.BlockedIcon,
                     children: [
-                        (0, F.jsxs)(dI.Main, {
+                        (0, F.jsxs)(dv.Main, {
                             children: [
                                 (0, F.jsx)("span", {
                                     children:
@@ -58086,19 +58053,19 @@ git checkout ${e}`;
                                 }),
                                 " ",
                                 y
-                                    ? (0, F.jsx)(dr, {
+                                    ? (0, F.jsx)(du, {
                                           timestamp: new Date(y),
-                                          linkUrl: o3(l, d),
+                                          linkUrl: o8(l, d),
                                       })
                                     : null,
                             ],
                         }),
-                        (0, F.jsx)(dI.Secondary, {
+                        (0, F.jsx)(dv.Secondary, {
                             children: (0, F.jsx)("ul", {
-                                className: d$.issueDependenciesList,
+                                className: dz.issueDependenciesList,
                                 children: g.map((e, l) =>
                                     (0, F.jsx)(
-                                        dY,
+                                        dX,
                                         { event: e, targetRepositoryId: t },
                                         `${d}_${l}`
                                     )
@@ -58108,12 +58075,12 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function dY({ event: e, targetRepositoryId: l }) {
-                let { blockingIssue: n } = (0, eq.useFragment)(dq, e);
+            function dX({ event: e, targetRepositoryId: l }) {
+                let { blockingIssue: n } = (0, eq.useFragment)(dH, e);
                 return n
                     ? (0, F.jsx)("li", {
-                          className: d$.issueDependencyItem,
-                          children: (0, F.jsx)(dQ, {
+                          className: dz.issueDependencyItem,
+                          children: (0, F.jsx)(dG, {
                               data: n,
                               targetRepositoryId: l,
                           }),
@@ -58121,12 +58088,12 @@ git checkout ${e}`;
                     : null;
             }
             try {
-                dG.displayName || (dG.displayName = "BlockedByAddedEvent");
+                dY.displayName || (dY.displayName = "BlockedByAddedEvent");
             } catch {}
             try {
-                dY.displayName || (dY.displayName = "BlockedByAddedEventItem");
+                dX.displayName || (dX.displayName = "BlockedByAddedEventItem");
             } catch {}
-            let dX = {
+            let dJ = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -58182,7 +58149,7 @@ git checkout ${e}`;
                 type: "BlockedByRemovedEvent",
                 abstractKey: null,
             };
-            function dJ({
+            function dZ({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -58196,23 +58163,23 @@ git checkout ${e}`;
                     createdAt: u,
                     blockingIssue: o,
                     databaseId: d,
-                } = (0, eq.useFragment)(dX, e);
+                } = (0, eq.useFragment)(dJ, e);
                 if (!o) return null;
                 let c = String(d) === a,
                     m = i?.BlockedByRemovedEvent || [],
                     g = 0 === m.length ? [e] : m,
-                    y = dH(e.createdAt, m);
-                return (0, F.jsxs)(dI, {
+                    y = d$(e.createdAt, m);
+                return (0, F.jsxs)(dv, {
                     highlighted: c,
                     refAttribute: s,
                     actor: r,
                     createdAt: u,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: o3(l, d),
+                    deepLinkUrl: o8(l, d),
                     onLinkClick: n,
                     leadingIcon: V.BlockedIcon,
                     children: [
-                        (0, F.jsxs)(dI.Main, {
+                        (0, F.jsxs)(dv.Main, {
                             children: [
                                 (0, F.jsx)("span", {
                                     children:
@@ -58225,19 +58192,19 @@ git checkout ${e}`;
                                 }),
                                 " ",
                                 y
-                                    ? (0, F.jsx)(dr, {
+                                    ? (0, F.jsx)(du, {
                                           timestamp: new Date(y),
-                                          linkUrl: o3(l, d),
+                                          linkUrl: o8(l, d),
                                       })
                                     : null,
                             ],
                         }),
-                        (0, F.jsx)(dI.Secondary, {
+                        (0, F.jsx)(dv.Secondary, {
                             children: (0, F.jsx)("ul", {
-                                className: d$.issueDependenciesList,
+                                className: dz.issueDependenciesList,
                                 children: g.map((e, l) =>
                                     (0, F.jsx)(
-                                        dZ,
+                                        d0,
                                         { event: e, targetRepositoryId: t },
                                         `${d}_${l}`
                                     )
@@ -58247,27 +58214,27 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function dZ({ event: e, targetRepositoryId: l }) {
-                let { blockingIssue: n } = (0, eq.useFragment)(dX, e);
+            function d0({ event: e, targetRepositoryId: l }) {
+                let { blockingIssue: n } = (0, eq.useFragment)(dJ, e);
                 return n
                     ? (0, F.jsx)("li", {
-                          className: d$.issueDependencyItem,
-                          children: (0, F.jsx)(dQ, {
+                          className: dz.issueDependencyItem,
+                          children: (0, F.jsx)(dG, {
                               data: n,
                               targetRepositoryId: l,
                           }),
                       })
                     : null;
             }
-            dX.hash = "258e5a5ef42c29ff6c0983962ba379c7";
+            dJ.hash = "258e5a5ef42c29ff6c0983962ba379c7";
             try {
-                dJ.displayName || (dJ.displayName = "BlockedByRemovedEvent");
+                dZ.displayName || (dZ.displayName = "BlockedByRemovedEvent");
             } catch {}
             try {
-                dZ.displayName ||
-                    (dZ.displayName = "BlockedByRemovedEventItem");
+                d0.displayName ||
+                    (d0.displayName = "BlockedByRemovedEventItem");
             } catch {}
-            let d0 = {
+            let d1 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -58323,7 +58290,7 @@ git checkout ${e}`;
                 type: "BlockingAddedEvent",
                 abstractKey: null,
             };
-            function d1({
+            function d2({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -58337,23 +58304,23 @@ git checkout ${e}`;
                     createdAt: u,
                     blockedIssue: o,
                     databaseId: d,
-                } = (0, eq.useFragment)(d0, e);
+                } = (0, eq.useFragment)(d1, e);
                 if (!o) return null;
                 let c = String(d) === a,
                     m = i?.BlockingAddedEvent || [],
                     g = 0 === m.length ? [e] : m,
-                    y = dH(e.createdAt, m);
-                return (0, F.jsxs)(dI, {
+                    y = d$(e.createdAt, m);
+                return (0, F.jsxs)(dv, {
                     highlighted: c,
                     refAttribute: s,
                     actor: r,
                     createdAt: u,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: o3(l, d),
+                    deepLinkUrl: o8(l, d),
                     onLinkClick: n,
                     leadingIcon: V.BlockedIcon,
                     children: [
-                        (0, F.jsxs)(dI.Main, {
+                        (0, F.jsxs)(dv.Main, {
                             children: [
                                 (0, F.jsx)("span", {
                                     children:
@@ -58365,19 +58332,19 @@ git checkout ${e}`;
                                 }),
                                 " ",
                                 y
-                                    ? (0, F.jsx)(dr, {
+                                    ? (0, F.jsx)(du, {
                                           timestamp: new Date(y),
-                                          linkUrl: o3(l, d),
+                                          linkUrl: o8(l, d),
                                       })
                                     : null,
                             ],
                         }),
-                        (0, F.jsx)(dI.Secondary, {
+                        (0, F.jsx)(dv.Secondary, {
                             children: (0, F.jsx)("ul", {
-                                className: d$.issueDependenciesList,
+                                className: dz.issueDependenciesList,
                                 children: g.map((e, l) =>
                                     (0, F.jsx)(
-                                        d2,
+                                        d4,
                                         { event: e, targetRepositoryId: t },
                                         `${d}_${l}`
                                     )
@@ -58387,26 +58354,26 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function d2({ event: e, targetRepositoryId: l }) {
-                let { blockedIssue: n } = (0, eq.useFragment)(d0, e);
+            function d4({ event: e, targetRepositoryId: l }) {
+                let { blockedIssue: n } = (0, eq.useFragment)(d1, e);
                 return n
                     ? (0, F.jsx)("li", {
-                          className: d$.issueDependencyItem,
-                          children: (0, F.jsx)(dQ, {
+                          className: dz.issueDependencyItem,
+                          children: (0, F.jsx)(dG, {
                               data: n,
                               targetRepositoryId: l,
                           }),
                       })
                     : null;
             }
-            d0.hash = "c786519e55ce29bd725c36d300448d25";
+            d1.hash = "c786519e55ce29bd725c36d300448d25";
             try {
-                d1.displayName || (d1.displayName = "BlockingAddedEvent");
+                d2.displayName || (d2.displayName = "BlockingAddedEvent");
             } catch {}
             try {
-                d2.displayName || (d2.displayName = "BlockingAddedEventItem");
+                d4.displayName || (d4.displayName = "BlockingAddedEventItem");
             } catch {}
-            let d4 = {
+            let d6 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -58462,7 +58429,7 @@ git checkout ${e}`;
                 type: "BlockingRemovedEvent",
                 abstractKey: null,
             };
-            function d6({
+            function d5({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -58476,23 +58443,23 @@ git checkout ${e}`;
                     createdAt: u,
                     blockedIssue: o,
                     databaseId: d,
-                } = (0, eq.useFragment)(d4, e);
+                } = (0, eq.useFragment)(d6, e);
                 if (!o) return null;
                 let c = String(d) === a,
                     m = i?.BlockingRemovedEvent || [],
                     g = 0 === m.length ? [e] : m,
-                    y = dH(e.createdAt, m);
-                return (0, F.jsxs)(dI, {
+                    y = d$(e.createdAt, m);
+                return (0, F.jsxs)(dv, {
                     highlighted: c,
                     refAttribute: s,
                     actor: r,
                     createdAt: u,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: o3(l, d),
+                    deepLinkUrl: o8(l, d),
                     onLinkClick: n,
                     leadingIcon: V.BlockedIcon,
                     children: [
-                        (0, F.jsxs)(dI.Main, {
+                        (0, F.jsxs)(dv.Main, {
                             children: [
                                 (0, F.jsx)("span", {
                                     children:
@@ -58504,16 +58471,16 @@ git checkout ${e}`;
                                 }),
                                 " ",
                                 y
-                                    ? (0, F.jsx)(dr, {
+                                    ? (0, F.jsx)(du, {
                                           timestamp: new Date(y),
-                                          linkUrl: o3(l, d),
+                                          linkUrl: o8(l, d),
                                       })
                                     : null,
                             ],
                         }),
-                        (0, F.jsx)(dI.Secondary, {
+                        (0, F.jsx)(dv.Secondary, {
                             children: (0, F.jsx)("ul", {
-                                className: d$.issueDependenciesList,
+                                className: dz.issueDependenciesList,
                                 children: g.map((e, l) =>
                                     (0, F.jsx)(
                                         d7,
@@ -58527,25 +58494,25 @@ git checkout ${e}`;
                 });
             }
             function d7({ event: e, targetRepositoryId: l }) {
-                let { blockedIssue: n } = (0, eq.useFragment)(d4, e);
+                let { blockedIssue: n } = (0, eq.useFragment)(d6, e);
                 return n
                     ? (0, F.jsx)("li", {
-                          className: d$.issueDependencyItem,
-                          children: (0, F.jsx)(dQ, {
+                          className: dz.issueDependencyItem,
+                          children: (0, F.jsx)(dG, {
                               data: n,
                               targetRepositoryId: l,
                           }),
                       })
                     : null;
             }
-            d4.hash = "8fc66f0b4dcd2b845d5859474da4ab49";
+            d6.hash = "8fc66f0b4dcd2b845d5859474da4ab49";
             try {
-                d6.displayName || (d6.displayName = "BlockingRemovedEvent");
+                d5.displayName || (d5.displayName = "BlockingRemovedEvent");
             } catch {}
             try {
                 d7.displayName || (d7.displayName = "BlockingRemovedEventItem");
             } catch {}
-            let d5 = (function () {
+            let d3 = (function () {
                 var e = {
                         alias: null,
                         args: null,
@@ -58725,12 +58692,12 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            d5.hash = "c6e77b32911689a07a3fe151bbccf48d";
-            let d3 = {
+            d3.hash = "c6e77b32911689a07a3fe151bbccf48d";
+            let d8 = {
                 stateReasonLink: "ClosedEvent-module__stateReasonLink--YEqx6",
                 closerLink: "ClosedEvent-module__closerLink--GQXSl",
             };
-            function d8({
+            function d9({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -58749,7 +58716,7 @@ git checkout ${e}`;
                         closer: h,
                         closingProjectItemStatus: f,
                         duplicateOf: K,
-                    } = (0, eq.useFragment)(d5, e),
+                    } = (0, eq.useFragment)(d3, e),
                     S = String(b) === s,
                     {
                         getStateQuery: I,
@@ -58793,7 +58760,7 @@ git checkout ${e}`;
                                       href: w,
                                       "data-testid": "closer-link",
                                       inline: !0,
-                                      className: d3.stateReasonLink,
+                                      className: d8.stateReasonLink,
                                       children: h.title,
                                   }),
                               ],
@@ -58803,19 +58770,19 @@ git checkout ${e}`;
                               target: "_blank",
                               "data-hovercard-url": A,
                               "data-testid": "closer-link",
-                              className: d3.closerLink,
+                              className: d8.closerLink,
                               children: R ? `${h.abbreviatedOid}` : `#${j}`,
                           });
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: S,
                     refAttribute: i,
                     actor: y,
                     createdAt: p,
-                    deepLinkUrl: o3(l, b),
+                    deepLinkUrl: o8(l, b),
                     onLinkClick: n,
                     leadingIcon: v,
                     iconColoring: { backgroundColor: L, color: "white" },
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             `${ao.timeline.closedThis} `,
                             k &&
@@ -58827,7 +58794,7 @@ git checkout ${e}`;
                                             "data-testid": "state-reason-link",
                                             href: x,
                                             inline: !0,
-                                            className: d3.stateReasonLink,
+                                            className: d8.stateReasonLink,
                                             children: C,
                                         }),
                                     ],
@@ -58844,7 +58811,7 @@ git checkout ${e}`;
                                 (0, F.jsxs)(F.Fragment, {
                                     children: [
                                         `${ao.timeline.of} `,
-                                        (0, F.jsx)(dQ, {
+                                        (0, F.jsx)(dG, {
                                             inline: !0,
                                             data: K,
                                             targetRepositoryId: r,
@@ -58857,9 +58824,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                d8.displayName || (d8.displayName = "ClosedEvent");
+                d9.displayName || (d9.displayName = "ClosedEvent");
             } catch {}
-            let d9 = {
+            let ce = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -58917,12 +58884,12 @@ git checkout ${e}`;
                 type: "CommentDeletedEvent",
                 abstractKey: null,
             };
-            d9.hash = "60765ec10a7e0eb7ec5c8d4eca344b84";
-            let ce = {
+            ce.hash = "60765ec10a7e0eb7ec5c8d4eca344b84";
+            let cl = {
                 deletedCommentAuthorLink:
                     "CommentDeletedEvent-module__deletedCommentAuthorLink--AXfHQ",
             };
-            function cl({
+            function cn({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -58934,23 +58901,23 @@ git checkout ${e}`;
                         createdAt: t,
                         deletedCommentAuthor: r,
                         databaseId: u,
-                    } = (0, eq.useFragment)(d9, e),
+                    } = (0, eq.useFragment)(ce, e),
                     o = String(u) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: o,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, u),
+                    deepLinkUrl: o8(l, u),
                     onLinkClick: n,
                     leadingIcon: V.TrashIcon,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             `${ao.timeline.deletedACommentFrom} `,
                             (0, F.jsx)(ek.A, {
                                 href: `/${r?.login}`,
                                 inline: !0,
-                                className: ce.deletedCommentAuthorLink,
+                                className: cl.deletedCommentAuthorLink,
                                 children: r?.login,
                             }),
                             " ",
@@ -58959,9 +58926,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                cl.displayName || (cl.displayName = "CommentDeletedEvent");
+                cn.displayName || (cn.displayName = "CommentDeletedEvent");
             } catch {}
-            let cn = {
+            let ca = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -59097,12 +59064,12 @@ git checkout ${e}`;
                 type: "ConnectedEvent",
                 abstractKey: null,
             };
-            cn.hash = "6dbcebd6baa492ec1cc25caab2e70a45";
-            let ca = {
+            ca.hash = "6dbcebd6baa492ec1cc25caab2e70a45";
+            let cs = {
                 linkedPullRequestLink:
                     "ConnectedEvent-module__linkedPullRequestLink--Ir1pv",
             };
-            function cs({
+            function ci({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -59114,7 +59081,7 @@ git checkout ${e}`;
                         createdAt: t,
                         subject: r,
                         databaseId: u,
-                    } = (0, eq.useFragment)(cn, e),
+                    } = (0, eq.useFragment)(ca, e),
                     {
                         title: o,
                         number: d,
@@ -59135,15 +59102,15 @@ git checkout ${e}`;
                                   pullRequestNumber: d,
                               })
                             : null;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: h,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, u),
+                    deepLinkUrl: o8(l, u),
                     onLinkClick: n,
                     leadingIcon: V.CrossReferenceIcon,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             ao.timeline.linkedAClosingPR,
                             (0, F.jsx)(b, { className: "ml-1 mr-1" }),
@@ -59152,7 +59119,7 @@ git checkout ${e}`;
                                 target: "_blank",
                                 "data-hovercard-url": f,
                                 inline: !0,
-                                className: ca.linkedPullRequestLink,
+                                className: cs.linkedPullRequestLink,
                                 children: `${o} #${d}`,
                             }),
                         ],
@@ -59160,13 +59127,13 @@ git checkout ${e}`;
                 });
             }
             try {
-                cs.displayName || (cs.displayName = "ConnectedEvent");
+                ci.displayName || (ci.displayName = "ConnectedEvent");
             } catch {}
             try {
                 (p = PullStateIcon).displayName ||
                     (p.displayName = "PullStateIcon");
             } catch {}
-            let ci = {
+            let ct = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -59206,7 +59173,7 @@ git checkout ${e}`;
                 type: "ConvertedFromDraftEvent",
                 abstractKey: null,
             };
-            function ct({
+            function cr({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -59217,26 +59184,26 @@ git checkout ${e}`;
                         actor: i,
                         createdAt: t,
                         databaseId: r,
-                    } = (0, eq.useFragment)(ci, e),
+                    } = (0, eq.useFragment)(ct, e),
                     u = String(r) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: u,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, r),
+                    deepLinkUrl: o8(l, r),
                     onLinkClick: n,
                     leadingIcon: V.IssueDraftIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: `${ao.timeline.convertedFromDraftIssue} `,
                     }),
                 });
             }
-            ci.hash = "3719925429eadd15091ec256d7d9c8fd";
+            ct.hash = "3719925429eadd15091ec256d7d9c8fd";
             try {
-                ct.displayName || (ct.displayName = "ConvertedFromDraftEvent");
+                cr.displayName || (cr.displayName = "ConvertedFromDraftEvent");
             } catch {}
-            let cr = {
+            let cu = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -59301,12 +59268,12 @@ git checkout ${e}`;
                 type: "ConvertedToDiscussionEvent",
                 abstractKey: null,
             };
-            cr.hash = "57a32d9c56f6a2acde82f09bc62414cb";
-            let cu = {
+            cu.hash = "57a32d9c56f6a2acde82f09bc62414cb";
+            let co = {
                 discussionLink:
                     "ConvertedToDiscussionEvent-module__discussionLink--wYj_L",
             };
-            function co({
+            function cd({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -59318,17 +59285,17 @@ git checkout ${e}`;
                         createdAt: t,
                         discussion: r,
                         databaseId: u,
-                    } = (0, eq.useFragment)(cr, e),
+                    } = (0, eq.useFragment)(cu, e),
                     o = String(u) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: o,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, u),
+                    deepLinkUrl: o8(l, u),
                     onLinkClick: n,
                     leadingIcon: V.CommentDiscussionIcon,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             ao.timeline.convertedToDiscussion,
                             r &&
@@ -59336,7 +59303,7 @@ git checkout ${e}`;
                                     href: `${r.url}`,
                                     "aria-label": `Discussion #${r.number}`,
                                     inline: !0,
-                                    className: cu.discussionLink,
+                                    className: co.discussionLink,
                                     children: ` #${r.number} `,
                                 }),
                         ],
@@ -59344,10 +59311,10 @@ git checkout ${e}`;
                 });
             }
             try {
-                co.displayName ||
-                    (co.displayName = "ConvertedToDiscussionEvent");
+                cd.displayName ||
+                    (cd.displayName = "ConvertedToDiscussionEvent");
             } catch {}
-            let cd = {
+            let cc = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -59453,12 +59420,12 @@ git checkout ${e}`;
                 type: "CrossReferencedEvent",
                 abstractKey: null,
             };
-            cd.hash = "ec7feca796fa98d8893f957d5a9fb2e3";
-            let cc = {
+            cc.hash = "ec7feca796fa98d8893f957d5a9fb2e3";
+            let cm = {
                 crossReferencesList:
                     "CrossReferencedEvent-module__crossReferencesList--bL1RG",
             };
-            function cm({
+            function cg({
                 queryRef: e,
                 issueUrl: l,
                 highlightedEventId: n,
@@ -59474,7 +59441,7 @@ git checkout ${e}`;
                         innerSource: g,
                         databaseId: y,
                         target: p,
-                    } = (0, eq.useFragment)(cd, e),
+                    } = (0, eq.useFragment)(cc, e),
                     k = "Issue" === g.__typename,
                     b = "PullRequest" === g.__typename;
                 if (!k && !b) return (0, F.jsx)(F.Fragment, {});
@@ -59497,8 +59464,8 @@ git checkout ${e}`;
                                 : `${ao.timeline.mentionedThisIn} in ${u} pull requests`),
                     S = String(y) === n,
                     I = 0 === h.length ? [e] : h,
-                    v = dH(e.createdAt, h);
-                return (0, F.jsxs)(dI, {
+                    v = d$(e.createdAt, h);
+                return (0, F.jsxs)(dv, {
                     highlighted: S,
                     refAttribute: s,
                     actor: d,
@@ -59508,27 +59475,27 @@ git checkout ${e}`;
                     onLinkClick: a,
                     leadingIcon: V.LinkExternalIcon,
                     children: [
-                        (0, F.jsxs)(dI.Main, {
+                        (0, F.jsxs)(dv.Main, {
                             children: [
                                 K,
                                 " ",
                                 v
-                                    ? (0, F.jsx)(dr, {
+                                    ? (0, F.jsx)(du, {
                                           timestamp: new Date(v),
-                                          linkUrl: o3(l, y),
+                                          linkUrl: o8(l, y),
                                       })
                                     : null,
                             ],
                         }),
-                        (0, F.jsx)(dI.Secondary, {
+                        (0, F.jsx)(dv.Secondary, {
                             children: (0, F.jsx)("section", {
                                 "aria-label":
                                     ao.crossReferencedEvent.sectionLabel,
                                 children: (0, F.jsx)("ul", {
-                                    className: cc.crossReferencesList,
+                                    className: cm.crossReferencesList,
                                     children: I.map((e, l) =>
                                         (0, F.jsx)(
-                                            cg,
+                                            cy,
                                             {
                                                 event: e,
                                                 targetRepositoryId:
@@ -59543,23 +59510,23 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function cg({ event: e, targetRepositoryId: l }) {
-                let { innerSource: n } = (0, eq.useFragment)(cd, e);
+            function cy({ event: e, targetRepositoryId: l }) {
+                let { innerSource: n } = (0, eq.useFragment)(cc, e);
                 return (0, F.jsx)("li", {
                     style: { listStyle: "none" },
-                    children: (0, F.jsx)(dQ, {
+                    children: (0, F.jsx)(dG, {
                         data: n,
                         targetRepositoryId: l,
                     }),
                 });
             }
             try {
-                cm.displayName || (cm.displayName = "CrossReferencedEvent");
+                cg.displayName || (cg.displayName = "CrossReferencedEvent");
             } catch {}
             try {
-                cg.displayName || (cg.displayName = "CrossReferenceItem");
+                cy.displayName || (cy.displayName = "CrossReferenceItem");
             } catch {}
-            let cy = {
+            let cp = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -59624,12 +59591,12 @@ git checkout ${e}`;
                 type: "DemilestonedEvent",
                 abstractKey: null,
             };
-            cy.hash = "6ddaa1761b9fc007b083bf94d27ea749";
-            let cp = {
+            cp.hash = "6ddaa1761b9fc007b083bf94d27ea749";
+            let ck = {
                     milestoneLink:
                         "DemilestonedEvent-module__milestoneLink--JUC3Q",
                 },
-                ck = {
+                cF = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -59694,7 +59661,7 @@ git checkout ${e}`;
                     type: "MilestonedEvent",
                     abstractKey: null,
                 };
-            function cF({
+            function cb({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -59708,24 +59675,24 @@ git checkout ${e}`;
                         milestoneTitle: u,
                         milestone: o,
                         databaseId: d,
-                    } = (0, eq.useFragment)(ck, e),
+                    } = (0, eq.useFragment)(cF, e),
                     c = String(d) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: c,
                     refAttribute: s,
                     actor: t,
                     createdAt: r,
-                    deepLinkUrl: o3(l, d),
+                    deepLinkUrl: o8(l, d),
                     onLinkClick: n,
                     leadingIcon: V.MilestoneIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: i
-                            ? (0, F.jsx)(cb, { rollupGroup: i })
+                            ? (0, F.jsx)(ch, { rollupGroup: i })
                             : (0, F.jsxs)(F.Fragment, {
                                   children: [
                                       ao.timeline.addedToMilestone,
                                       " ",
-                                      cK(o?.url, u),
+                                      cS(o?.url, u),
                                       ao.timeline.milestone,
                                       " ",
                                   ],
@@ -59733,11 +59700,11 @@ git checkout ${e}`;
                     }),
                 });
             }
-            ck.hash = "81a3a898b155f065ca3d228b91ed14a3";
+            cF.hash = "81a3a898b155f065ca3d228b91ed14a3";
             try {
-                cF.displayName || (cF.displayName = "MilestonedEvent");
+                cb.displayName || (cb.displayName = "MilestonedEvent");
             } catch {}
-            function cb({ rollupGroup: e }) {
+            function ch({ rollupGroup: e }) {
                 let l = (function (e, l) {
                         let n = {},
                             a = {};
@@ -59761,7 +59728,7 @@ git checkout ${e}`;
                         `${n} `,
                         l.map((e, n) =>
                             (0, F.jsx)(
-                                ch,
+                                cf,
                                 {
                                     milestoneEventKey: e,
                                     addDelimiter: n < l.length - 1,
@@ -59772,17 +59739,17 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function ch({ milestoneEventKey: e, addDelimiter: l }) {
-                let n = (0, N.useFragment)(ck, e);
-                return cK(n.milestone?.url, n.milestoneTitle, l);
+            function cf({ milestoneEventKey: e, addDelimiter: l }) {
+                let n = (0, N.useFragment)(cF, e);
+                return cS(n.milestone?.url, n.milestoneTitle, l);
             }
             try {
-                cb.displayName || (cb.displayName = "RolledupMilestonedEvent");
+                ch.displayName || (ch.displayName = "RolledupMilestonedEvent");
             } catch {}
             try {
-                ch.displayName || (ch.displayName = "MilestoneLink");
+                cf.displayName || (cf.displayName = "MilestoneLink");
             } catch {}
-            function cf({
+            function cK({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -59796,23 +59763,23 @@ git checkout ${e}`;
                         milestoneTitle: u,
                         milestone: o,
                         databaseId: d,
-                    } = (0, eq.useFragment)(cy, e),
+                    } = (0, eq.useFragment)(cp, e),
                     c = String(d) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: c,
                     refAttribute: s,
                     actor: t,
                     createdAt: r,
-                    deepLinkUrl: o3(l, d),
+                    deepLinkUrl: o8(l, d),
                     onLinkClick: n,
                     leadingIcon: V.MilestoneIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: i
-                            ? (0, F.jsx)(cb, { rollupGroup: i })
+                            ? (0, F.jsx)(ch, { rollupGroup: i })
                             : (0, F.jsxs)(F.Fragment, {
                                   children: [
                                       ao.timeline.removedFromMilestone,
-                                      cK(o?.url, u),
+                                      cS(o?.url, u),
                                       ao.timeline.milestone,
                                       " ",
                                   ],
@@ -59820,22 +59787,22 @@ git checkout ${e}`;
                     }),
                 });
             }
-            function cK(e, l, n) {
+            function cS(e, l, n) {
                 return void 0 !== e
-                    ? cS(e, l, n)
+                    ? cI(e, l, n)
                     : (0, F.jsx)(sv.m, {
                           text: ao.timeline.milestoneDeleted,
-                          children: cS(e, l, n),
+                          children: cI(e, l, n),
                       });
             }
-            function cS(e, l, n) {
+            function cI(e, l, n) {
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
                         " ",
                         (0, F.jsx)(ek.A, {
                             href: e,
                             inline: !0,
-                            className: cp.milestoneLink,
+                            className: ck.milestoneLink,
                             children: l,
                         }),
                         n && ",",
@@ -59844,9 +59811,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                cf.displayName || (cf.displayName = "DemilestonedEvent");
+                cK.displayName || (cK.displayName = "DemilestonedEvent");
             } catch {}
-            let cI = {
+            let cv = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -59982,12 +59949,12 @@ git checkout ${e}`;
                 type: "DisconnectedEvent",
                 abstractKey: null,
             };
-            cI.hash = "aea0d6e09caea75d847e9bd6ecfc11ce";
-            let cv = {
+            cv.hash = "aea0d6e09caea75d847e9bd6ecfc11ce";
+            let cL = {
                 disconnectedPullRequestLink:
                     "DisconnectedEvent-module__disconnectedPullRequestLink--yJ0aO",
             };
-            function cL({
+            function cT({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -59999,7 +59966,7 @@ git checkout ${e}`;
                         createdAt: t,
                         subject: r,
                         databaseId: u,
-                    } = (0, eq.useFragment)(cI, e),
+                    } = (0, eq.useFragment)(cv, e),
                     {
                         title: o,
                         number: d,
@@ -60020,15 +59987,15 @@ git checkout ${e}`;
                                   pullRequestNumber: d,
                               })
                             : null;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: h,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, u),
+                    deepLinkUrl: o8(l, u),
                     onLinkClick: n,
                     leadingIcon: b,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             ao.timeline.removedLinkedPR,
                             (0, F.jsx)(b, { className: "ml-1 mr-1" }),
@@ -60037,7 +60004,7 @@ git checkout ${e}`;
                                 target: "_blank",
                                 "data-hovercard-url": f,
                                 inline: !0,
-                                className: cv.disconnectedPullRequestLink,
+                                className: cL.disconnectedPullRequestLink,
                                 children: `${o} #${d}`,
                             }),
                         ],
@@ -60045,13 +60012,13 @@ git checkout ${e}`;
                 });
             }
             try {
-                cL.displayName || (cL.displayName = "DisconnectedEvent");
+                cT.displayName || (cT.displayName = "DisconnectedEvent");
             } catch {}
             try {
                 (k = PullStateIcon).displayName ||
                     (k.displayName = "PullStateIcon");
             } catch {}
-            let cT = {
+            let cC = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -60116,12 +60083,12 @@ git checkout ${e}`;
                 type: "IssueTypeAddedEvent",
                 abstractKey: null,
             };
-            cT.hash = "c883158dedd491fa3112db2b1a21dc2c";
-            let cC = {
+            cC.hash = "c883158dedd491fa3112db2b1a21dc2c";
+            let cx = {
                 issueTypeTokenWrapper:
                     "IssueTypeEvent-module__issueTypeTokenWrapper--qTWB6",
             };
-            function cx({
+            function cR({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -60134,22 +60101,22 @@ git checkout ${e}`;
                     createdAt: r,
                     issueType: u,
                     databaseId: o,
-                } = (0, eq.useFragment)(cT, e);
+                } = (0, eq.useFragment)(cC, e);
                 if (!u) return null;
                 let d = String(o) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: d,
                     refAttribute: s,
                     actor: t,
                     createdAt: r,
-                    deepLinkUrl: o3(l, o),
+                    deepLinkUrl: o8(l, o),
                     onLinkClick: n,
                     leadingIcon: V.IssueOpenedIcon,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             `${ao.timeline.issueTypeAdded.leading}`,
                             (0, F.jsx)("div", {
-                                className: cC.issueTypeTokenWrapper,
+                                className: cx.issueTypeTokenWrapper,
                                 children: (0, F.jsx)(aH.n, {
                                     name: u.name,
                                     color: u.color,
@@ -60165,9 +60132,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                cx.displayName || (cx.displayName = "IssueTypeAddedEvent");
+                cR.displayName || (cR.displayName = "IssueTypeAddedEvent");
             } catch {}
-            let cR = (function () {
+            let cN = (function () {
                 var e = [
                     {
                         alias: null,
@@ -60245,7 +60212,7 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            function cN({
+            function cj({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -60259,24 +60226,24 @@ git checkout ${e}`;
                     issueType: u,
                     prevIssueType: o,
                     databaseId: d,
-                } = (0, eq.useFragment)(cR, e);
+                } = (0, eq.useFragment)(cN, e);
                 if (!u) return null;
                 let c = String(d) === a,
                     m = (e) => (e ? u.name : void 0);
                 return o
-                    ? (0, F.jsx)(dI, {
+                    ? (0, F.jsx)(dv, {
                           highlighted: c,
                           refAttribute: s,
                           actor: t,
                           createdAt: r,
-                          deepLinkUrl: o3(l, d),
+                          deepLinkUrl: o8(l, d),
                           onLinkClick: n,
                           leadingIcon: V.IssueOpenedIcon,
-                          children: (0, F.jsxs)(dI.Main, {
+                          children: (0, F.jsxs)(dv.Main, {
                               children: [
                                   `${ao.timeline.issueTypeChanged.leading}`,
                                   (0, F.jsx)("div", {
-                                      className: cC.issueTypeTokenWrapper,
+                                      className: cx.issueTypeTokenWrapper,
                                       children: (0, F.jsx)(aH.n, {
                                           name: o.name,
                                           color: o.color,
@@ -60287,7 +60254,7 @@ git checkout ${e}`;
                                   }),
                                   `${ao.timeline.issueTypeChanged.trailing}`,
                                   (0, F.jsx)("div", {
-                                      className: cC.issueTypeTokenWrapper,
+                                      className: cx.issueTypeTokenWrapper,
                                       children: (0, F.jsx)(aH.n, {
                                           name: u.name,
                                           color: u.color,
@@ -60301,11 +60268,11 @@ git checkout ${e}`;
                       })
                     : null;
             }
-            cR.hash = "ff78cef208baee819e716cf0308f130a";
+            cN.hash = "ff78cef208baee819e716cf0308f130a";
             try {
-                cN.displayName || (cN.displayName = "IssueTypeChangedEvent");
+                cj.displayName || (cj.displayName = "IssueTypeChangedEvent");
             } catch {}
-            let cj = {
+            let c_ = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -60370,7 +60337,7 @@ git checkout ${e}`;
                 type: "IssueTypeRemovedEvent",
                 abstractKey: null,
             };
-            function c_({
+            function cE({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -60383,22 +60350,22 @@ git checkout ${e}`;
                     createdAt: r,
                     issueType: u,
                     databaseId: o,
-                } = (0, eq.useFragment)(cj, e);
+                } = (0, eq.useFragment)(c_, e);
                 if (!u) return null;
                 let d = String(o) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: d,
                     refAttribute: s,
                     actor: t,
                     createdAt: r,
-                    deepLinkUrl: o3(l, o),
+                    deepLinkUrl: o8(l, o),
                     onLinkClick: n,
                     leadingIcon: V.IssueOpenedIcon,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             `${ao.timeline.issueTypeRemoved.leading}`,
                             (0, F.jsx)("div", {
-                                className: cC.issueTypeTokenWrapper,
+                                className: cx.issueTypeTokenWrapper,
                                 children: (0, F.jsx)(aH.n, {
                                     name: u.name,
                                     color: u.color,
@@ -60413,11 +60380,11 @@ git checkout ${e}`;
                     }),
                 });
             }
-            cj.hash = "9fd0747bbf54ad19f163ff39412ad164";
+            c_.hash = "9fd0747bbf54ad19f163ff39412ad164";
             try {
-                c_.displayName || (c_.displayName = "IssueTypeRemovedEvent");
+                cE.displayName || (cE.displayName = "IssueTypeRemovedEvent");
             } catch {}
-            let cE = {
+            let cw = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -60473,8 +60440,8 @@ git checkout ${e}`;
                 type: "LabeledEvent",
                 abstractKey: null,
             };
-            cE.hash = "b7e2ce506173e4d9028a5365bafcd8bd";
-            let cw = {
+            cw.hash = "b7e2ce506173e4d9028a5365bafcd8bd";
+            let cA = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -60519,40 +60486,40 @@ git checkout ${e}`;
                 type: "Label",
                 abstractKey: null,
             };
-            cw.hash = "a842ed2c9f0767be6cd6e10b360be097";
-            var cA = n(2892);
-            let cP = {
+            cA.hash = "a842ed2c9f0767be6cd6e10b360be097";
+            var cP = n(2892);
+            let cB = {
                     labelDescriptionTooltip:
                         "Label-module__labelDescriptionTooltip--DmL8l",
                 },
-                cB = {
+                cD = {
                     labelContainer: "labels-module__labelContainer--gEfYq",
                     labelLink: "labels-module__labelLink--rVvrD",
                 };
-            function cD({ queryRef: e, timelineEventBaseUrl: l }) {
+            function cM({ queryRef: e, timelineEventBaseUrl: l }) {
                 let {
                         nameHTML: n,
                         name: a,
                         color: s,
                         id: i,
                         description: t,
-                    } = (0, eq.useFragment)(cw, e),
+                    } = (0, eq.useFragment)(cA, e),
                     r = (0, Q.useMemo)(
-                        () => `${l}?q=${encodeURIComponent(u8.labelQuery(a))}`,
+                        () => `${l}?q=${encodeURIComponent(u9.labelQuery(a))}`,
                         [l, a]
                     );
                 return (0, F.jsx)(sv.m, {
                     text: t ?? "",
                     sx: { visibility: t ? "visible" : "hidden" },
-                    className: cP.labelDescriptionTooltip,
+                    className: cB.labelDescriptionTooltip,
                     children: (0, F.jsxs)(ek.A, {
                         href: r,
-                        className: cB.labelLink,
+                        className: cD.labelLink,
                         "aria-describedby": `${i}-tooltip`,
                         muted: !0,
                         children: [
                             (0, F.jsx)(
-                                cA.a,
+                                cP.a,
                                 {
                                     text: (0, F.jsx)(aD.JR, { html: n }),
                                     fillColor: `#${s}`,
@@ -60575,9 +60542,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                cD.displayName || (cD.displayName = "Label");
+                cM.displayName || (cM.displayName = "Label");
             } catch {}
-            let cM = {
+            let cV = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -60633,7 +60600,7 @@ git checkout ${e}`;
                 type: "UnlabeledEvent",
                 abstractKey: null,
             };
-            function cV({
+            function cU({
                 queryRef: e,
                 rollupGroup: l,
                 issueUrl: n,
@@ -60646,31 +60613,31 @@ git checkout ${e}`;
                         actor: r,
                         createdAt: u,
                         databaseId: o,
-                    } = (0, eq.useFragment)(cM, e),
+                    } = (0, eq.useFragment)(cV, e),
                     d = String(o) === i;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: d,
                     refAttribute: t,
                     actor: r,
                     createdAt: u,
-                    deepLinkUrl: o3(n, o),
+                    deepLinkUrl: o8(n, o),
                     onLinkClick: a,
                     leadingIcon: V.TagIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: l
-                            ? (0, F.jsx)(cq, {
+                            ? (0, F.jsx)(cH, {
                                   rollupGroup: l,
                                   timelineEventBaseUrl: s,
                               })
-                            : (0, F.jsx)(cU, {
+                            : (0, F.jsx)(cO, {
                                   queryRefs: [e],
                                   timelineEventBaseUrl: s,
                               }),
                     }),
                 });
             }
-            cM.hash = "40e1e1df8c52602ee31a250f328424a0";
-            let cU = ({ queryRefs: e, timelineEventBaseUrl: l }) =>
+            cV.hash = "40e1e1df8c52602ee31a250f328424a0";
+            let cO = ({ queryRefs: e, timelineEventBaseUrl: l }) =>
                     0 === e.length
                         ? null
                         : (0, F.jsxs)(F.Fragment, {
@@ -60681,7 +60648,7 @@ git checkout ${e}`;
                                           Q.Fragment,
                                           {
                                               children: [
-                                                  (0, F.jsx)(cO, {
+                                                  (0, F.jsx)(cq, {
                                                       queryRef: e,
                                                       timelineEventBaseUrl: l,
                                                   }),
@@ -60693,37 +60660,37 @@ git checkout ${e}`;
                                   ),
                               ],
                           }),
-                cO = ({ queryRef: e, timelineEventBaseUrl: l }) => {
-                    let { label: n } = (0, eq.useFragment)(cM, e);
+                cq = ({ queryRef: e, timelineEventBaseUrl: l }) => {
+                    let { label: n } = (0, eq.useFragment)(cV, e);
                     return (0, F.jsx)("div", {
-                        className: cB.labelContainer,
-                        children: (0, F.jsx)(cD, {
+                        className: cD.labelContainer,
+                        children: (0, F.jsx)(cM, {
                             queryRef: n,
                             timelineEventBaseUrl: l,
                         }),
                     });
                 };
             try {
-                cV.displayName || (cV.displayName = "UnlabeledEvent");
+                cU.displayName || (cU.displayName = "UnlabeledEvent");
             } catch {}
             try {
-                cU.displayName || (cU.displayName = "UnlabeledRendering");
+                cO.displayName || (cO.displayName = "UnlabeledRendering");
             } catch {}
             try {
-                cO.displayName ||
-                    (cO.displayName = "InternalAddedUnlabelRendering");
+                cq.displayName ||
+                    (cq.displayName = "InternalAddedUnlabelRendering");
             } catch {}
-            function cq({ rollupGroup: e, timelineEventBaseUrl: l }) {
+            function cH({ rollupGroup: e, timelineEventBaseUrl: l }) {
                 let n = e.LabeledEvent || [],
                     a = e.UnlabeledEvent || [];
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
-                        (0, F.jsx)(c$, {
+                        (0, F.jsx)(cz, {
                             queryRefs: n,
                             timelineEventBaseUrl: l,
                         }),
                         n.length > 0 && a.length > 0 && `${ao.timeline.and} `,
-                        (0, F.jsx)(cU, {
+                        (0, F.jsx)(cO, {
                             queryRefs: a,
                             timelineEventBaseUrl: l,
                         }),
@@ -60731,9 +60698,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                cq.displayName || (cq.displayName = "RolledupLabeledEvent");
+                cH.displayName || (cH.displayName = "RolledupLabeledEvent");
             } catch {}
-            function cH({
+            function c$({
                 queryRef: e,
                 rollupGroup: l,
                 issueUrl: n,
@@ -60746,30 +60713,30 @@ git checkout ${e}`;
                         actor: r,
                         createdAt: u,
                         databaseId: o,
-                    } = (0, eq.useFragment)(cE, e),
+                    } = (0, eq.useFragment)(cw, e),
                     d = String(o) === i;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: d,
                     refAttribute: t,
                     actor: r,
                     createdAt: u,
-                    deepLinkUrl: o3(n, o),
+                    deepLinkUrl: o8(n, o),
                     onLinkClick: a,
                     leadingIcon: V.TagIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: l
-                            ? (0, F.jsx)(cq, {
+                            ? (0, F.jsx)(cH, {
                                   rollupGroup: l,
                                   timelineEventBaseUrl: s,
                               })
-                            : (0, F.jsx)(c$, {
+                            : (0, F.jsx)(cz, {
                                   queryRefs: [e],
                                   timelineEventBaseUrl: s,
                               }),
                     }),
                 });
             }
-            let c$ = ({ queryRefs: e, timelineEventBaseUrl: l }) =>
+            let cz = ({ queryRefs: e, timelineEventBaseUrl: l }) =>
                     0 === e.length
                         ? null
                         : (0, F.jsxs)(F.Fragment, {
@@ -60780,7 +60747,7 @@ git checkout ${e}`;
                                           Q.Fragment,
                                           {
                                               children: [
-                                                  (0, F.jsx)(cz, {
+                                                  (0, F.jsx)(cW, {
                                                       queryRef: e,
                                                       timelineEventBaseUrl: l,
                                                   }),
@@ -60792,43 +60759,43 @@ git checkout ${e}`;
                                   ),
                               ],
                           }),
-                cz = ({ queryRef: e, timelineEventBaseUrl: l }) => {
-                    let { label: n } = (0, eq.useFragment)(cE, e);
+                cW = ({ queryRef: e, timelineEventBaseUrl: l }) => {
+                    let { label: n } = (0, eq.useFragment)(cw, e);
                     return (0, F.jsx)("div", {
-                        className: cB.labelContainer,
-                        children: (0, F.jsx)(cD, {
+                        className: cD.labelContainer,
+                        children: (0, F.jsx)(cM, {
                             queryRef: n,
                             timelineEventBaseUrl: l,
                         }),
                     });
                 };
             try {
-                cH.displayName || (cH.displayName = "LabeledEvent");
+                c$.displayName || (c$.displayName = "LabeledEvent");
             } catch {}
             try {
-                c$.displayName || (c$.displayName = "AddedLabelsRendering");
+                cz.displayName || (cz.displayName = "AddedLabelsRendering");
             } catch {}
             try {
-                cz.displayName ||
-                    (cz.displayName = "InternalAddedLabelRendering");
+                cW.displayName ||
+                    (cW.displayName = "InternalAddedLabelRendering");
             } catch {}
-            let cW = {
+            let cQ = {
                 timelineElement: "LayoutHelpers-module__timelineElement--IsjVR",
                 nonLeadingElement:
                     "LayoutHelpers-module__nonLeadingElement--XSKiQ",
             };
-            function cQ(e, l, n) {
+            function cG(e, l, n) {
                 return (0, F.jsxs)(
                     "div",
                     {
-                        className: `${cW.timelineElement} ${l ? "" : cW.nonLeadingElement}`,
+                        className: `${cQ.timelineElement} ${l ? "" : cQ.nonLeadingElement}`,
                         "data-wrapper-timeline-id": n,
                         children: [l, e],
                     },
                     n
                 );
             }
-            let cG = {
+            let cY = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -60875,7 +60842,7 @@ git checkout ${e}`;
                 type: "LockedEvent",
                 abstractKey: null,
             };
-            function cY({
+            function cX({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -60887,27 +60854,27 @@ git checkout ${e}`;
                         createdAt: t,
                         lockReason: r,
                         databaseId: u,
-                    } = (0, eq.useFragment)(cG, e),
+                    } = (0, eq.useFragment)(cY, e),
                     o = (function (e) {
                         let l = "";
                         if (e) {
                             let n = `${e}`;
-                            if (n in u8.lockedReasonStrings)
-                                l = u8.lockedReasonStrings[n];
+                            if (n in u9.lockedReasonStrings)
+                                l = u9.lockedReasonStrings[n];
                             else throw Error("Invalid lock reason");
                         }
                         return l;
                     })(r),
                     d = String(u) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: d,
                     refAttribute: s,
                     actor: i,
                     onLinkClick: n,
                     createdAt: t,
-                    deepLinkUrl: o3(l, u),
+                    deepLinkUrl: o8(l, u),
                     leadingIcon: V.LockIcon,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             `${ao.timeline.locked} `,
                             r &&
@@ -60919,11 +60886,11 @@ git checkout ${e}`;
                     }),
                 });
             }
-            cG.hash = "5cd622162b89b270c4ae9e3b77be0625";
+            cY.hash = "5cd622162b89b270c4ae9e3b77be0625";
             try {
-                cY.displayName || (cY.displayName = "LockedEvent");
+                cX.displayName || (cX.displayName = "LockedEvent");
             } catch {}
-            let cX = (function () {
+            let cJ = (function () {
                 var e = {
                         args: null,
                         kind: "FragmentSpread",
@@ -61034,8 +61001,8 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            cX.hash = "13ed53472d0988db4292247abe79ac24";
-            let cJ = (function () {
+            cJ.hash = "13ed53472d0988db4292247abe79ac24";
+            let cZ = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -61111,7 +61078,7 @@ git checkout ${e}`;
                     },
                 };
             })();
-            function cZ({
+            function c0({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -61130,7 +61097,7 @@ git checkout ${e}`;
                         viewerCanUndo: g,
                         pendingUndo: y,
                         id: p,
-                    } = (0, eq.useFragment)(cX, e),
+                    } = (0, eq.useFragment)(cJ, e),
                     k = (0, Q.useCallback)(() => {
                         d?.id &&
                             !(function ({
@@ -61141,7 +61108,7 @@ git checkout ${e}`;
                                 onCompleted: i,
                             }) {
                                 (0, N.commitMutation)(e, {
-                                    mutation: cJ,
+                                    mutation: cZ,
                                     variables: {
                                         cannonicalId: l,
                                         duplicateId: n,
@@ -61163,22 +61130,22 @@ git checkout ${e}`;
                     }, [d?.id, r, i, p]),
                     b = String(m) === a;
                 return d
-                    ? (0, F.jsxs)(dI, {
+                    ? (0, F.jsxs)(dv, {
                           highlighted: b,
                           refAttribute: s,
                           actor: u,
                           createdAt: o,
-                          deepLinkUrl: o3(l, m),
+                          deepLinkUrl: o8(l, m),
                           onLinkClick: n,
                           leadingIcon: V.DuplicateIcon,
                           fillRow: g,
                           children: [
-                              (0, F.jsx)(dI.Main, {
+                              (0, F.jsx)(dv.Main, {
                                   children: c
                                       ? (0, F.jsxs)(F.Fragment, {
                                             children: [
                                                 "marked ",
-                                                (0, F.jsx)(dQ, {
+                                                (0, F.jsx)(dG, {
                                                     inline: !0,
                                                     data: d,
                                                     targetRepositoryId: t,
@@ -61193,7 +61160,7 @@ git checkout ${e}`;
                                                 (0, F.jsxs)(F.Fragment, {
                                                     children: [
                                                         "\xa0",
-                                                        (0, F.jsx)(dQ, {
+                                                        (0, F.jsx)(dG, {
                                                             inline: !0,
                                                             data: d,
                                                             targetRepositoryId:
@@ -61206,7 +61173,7 @@ git checkout ${e}`;
                                         }),
                               }),
                               g && !y && d?.number && !c
-                                  ? (0, F.jsx)(dI.Trailing, {
+                                  ? (0, F.jsx)(dv.Trailing, {
                                         children: (0, F.jsx)($.Q, {
                                             onClick: k,
                                             "aria-label":
@@ -61221,11 +61188,11 @@ git checkout ${e}`;
                       })
                     : (0, F.jsx)(F.Fragment, {});
             }
-            cJ.hash = "5fc4fde2e881b6e6aac8dbcb074018f1";
+            cZ.hash = "5fc4fde2e881b6e6aac8dbcb074018f1";
             try {
-                cZ.displayName || (cZ.displayName = "MarkedAsDuplicateEvent");
+                c0.displayName || (c0.displayName = "MarkedAsDuplicateEvent");
             } catch {}
-            let c0 = {
+            let c1 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -61265,7 +61232,7 @@ git checkout ${e}`;
                 type: "MentionedEvent",
                 abstractKey: null,
             };
-            function c1({
+            function c2({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -61276,26 +61243,26 @@ git checkout ${e}`;
                         actor: i,
                         createdAt: t,
                         databaseId: r,
-                    } = (0, eq.useFragment)(c0, e),
+                    } = (0, eq.useFragment)(c1, e),
                     u = String(r) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: u,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, r),
+                    deepLinkUrl: o8(l, r),
                     onLinkClick: n,
                     leadingIcon: V.LinkExternalIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: `${ao.timeline.mentioned} `,
                     }),
                 });
             }
-            c0.hash = "2c24d4c180d9855e7f633b2541aa9d07";
+            c1.hash = "2c24d4c180d9855e7f633b2541aa9d07";
             try {
-                c1.displayName || (c1.displayName = "MentionedEvent");
+                c2.displayName || (c2.displayName = "MentionedEvent");
             } catch {}
-            let c2 = (function () {
+            let c4 = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -61355,14 +61322,14 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            c2.hash = "bcc1b42911a4460e86fdb02dfbf08a31";
-            let c4 = {
+            c4.hash = "bcc1b42911a4460e86fdb02dfbf08a31";
+            let c6 = {
                 parentIssuesList:
                     "ParentIssueAddedEvent-module__parentIssuesList--mKImF",
                 parentIssueItem:
                     "ParentIssueAddedEvent-module__parentIssueItem--geDWe",
             };
-            function c6({
+            function c5({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -61376,7 +61343,7 @@ git checkout ${e}`;
                     createdAt: u,
                     parent: o,
                     databaseId: d,
-                } = (0, eq.useFragment)(c2, e);
+                } = (0, eq.useFragment)(c4, e);
                 if (!o) return null;
                 let c = String(o.databaseId) === a,
                     m =
@@ -61384,31 +61351,31 @@ git checkout ${e}`;
                             ? i.ParentIssueAddedEvent
                             : [],
                     g = 0 === m.length ? [e] : m,
-                    y = dH(e.createdAt, m);
-                return (0, F.jsxs)(dI, {
+                    y = d$(e.createdAt, m);
+                return (0, F.jsxs)(dv, {
                     highlighted: c,
                     refAttribute: s,
                     actor: r,
                     createdAt: u,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: o3(l, d),
+                    deepLinkUrl: o8(l, d),
                     onLinkClick: n,
                     leadingIcon: V.IssueTrackedByIcon,
                     children: [
-                        (0, F.jsxs)(dI.Main, {
+                        (0, F.jsxs)(dv.Main, {
                             children: [
                                 `${ao.timeline.parentIssueAdded[1 === g.length ? "single" : "multiple"]} `,
                                 y
-                                    ? (0, F.jsx)(dr, {
+                                    ? (0, F.jsx)(du, {
                                           timestamp: new Date(y),
-                                          linkUrl: o3(l, d),
+                                          linkUrl: o8(l, d),
                                       })
                                     : null,
                             ],
                         }),
-                        (0, F.jsx)(dI.Secondary, {
+                        (0, F.jsx)(dv.Secondary, {
                             children: (0, F.jsx)("ul", {
-                                className: c4.parentIssuesList,
+                                className: c6.parentIssuesList,
                                 children: g.map((e, l) =>
                                     (0, F.jsx)(
                                         c7,
@@ -61422,11 +61389,11 @@ git checkout ${e}`;
                 });
             }
             function c7({ event: e, targetRepositoryId: l }) {
-                let { parent: n } = (0, eq.useFragment)(c2, e);
+                let { parent: n } = (0, eq.useFragment)(c4, e);
                 return n
                     ? (0, F.jsx)("li", {
-                          className: c4.parentIssueItem,
-                          children: (0, F.jsx)(dQ, {
+                          className: c6.parentIssueItem,
+                          children: (0, F.jsx)(dG, {
                               data: n,
                               targetRepositoryId: l,
                           }),
@@ -61434,12 +61401,12 @@ git checkout ${e}`;
                     : null;
             }
             try {
-                c6.displayName || (c6.displayName = "ParentIssueAddedEvent");
+                c5.displayName || (c5.displayName = "ParentIssueAddedEvent");
             } catch {}
             try {
                 c7.displayName || (c7.displayName = "SubIssueEventItem");
             } catch {}
-            let c5 = (function () {
+            let c3 = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -61499,14 +61466,14 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            c5.hash = "dbb05f97bf8c1aea71d8af4625e9418c";
-            let c3 = {
+            c3.hash = "dbb05f97bf8c1aea71d8af4625e9418c";
+            let c8 = {
                 removedParentIssuesList:
                     "ParentIssueRemovedEvent-module__removedParentIssuesList--r23Sc",
                 removedParentIssueItem:
                     "ParentIssueRemovedEvent-module__removedParentIssueItem--dORNe",
             };
-            function c8({
+            function c9({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -61520,7 +61487,7 @@ git checkout ${e}`;
                     createdAt: u,
                     parent: o,
                     databaseId: d,
-                } = (0, eq.useFragment)(c5, e);
+                } = (0, eq.useFragment)(c3, e);
                 if (!o) return null;
                 let c = String(o.databaseId) === a,
                     m =
@@ -61528,34 +61495,34 @@ git checkout ${e}`;
                             ? i.ParentIssueRemovedEvent
                             : [],
                     g = 0 === m.length ? [e] : m,
-                    y = dH(e.createdAt, m);
-                return (0, F.jsxs)(dI, {
+                    y = d$(e.createdAt, m);
+                return (0, F.jsxs)(dv, {
                     highlighted: c,
                     refAttribute: s,
                     actor: r,
                     createdAt: u,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: o3(l, d),
+                    deepLinkUrl: o8(l, d),
                     onLinkClick: n,
                     leadingIcon: V.IssueTrackedByIcon,
                     children: [
-                        (0, F.jsxs)(dI.Main, {
+                        (0, F.jsxs)(dv.Main, {
                             children: [
                                 `${ao.timeline.parentIssueRemoved[1 === g.length ? "single" : "multiple"]} `,
                                 y
-                                    ? (0, F.jsx)(dr, {
+                                    ? (0, F.jsx)(du, {
                                           timestamp: new Date(y),
-                                          linkUrl: o3(l, d),
+                                          linkUrl: o8(l, d),
                                       })
                                     : null,
                             ],
                         }),
-                        (0, F.jsx)(dI.Secondary, {
+                        (0, F.jsx)(dv.Secondary, {
                             children: (0, F.jsx)("ul", {
-                                className: c3.removedParentIssuesList,
+                                className: c8.removedParentIssuesList,
                                 children: g.map((e, l) =>
                                     (0, F.jsx)(
-                                        c9,
+                                        me,
                                         { event: e, targetRepositoryId: t },
                                         `${o.databaseId}_${l}`
                                     )
@@ -61565,12 +61532,12 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function c9({ event: e, targetRepositoryId: l }) {
-                let { parent: n } = (0, eq.useFragment)(c5, e);
+            function me({ event: e, targetRepositoryId: l }) {
+                let { parent: n } = (0, eq.useFragment)(c3, e);
                 return n
                     ? (0, F.jsx)("li", {
-                          className: c3.removedParentIssueItem,
-                          children: (0, F.jsx)(dQ, {
+                          className: c8.removedParentIssueItem,
+                          children: (0, F.jsx)(dG, {
                               data: n,
                               targetRepositoryId: l,
                           }),
@@ -61578,12 +61545,12 @@ git checkout ${e}`;
                     : null;
             }
             try {
-                c8.displayName || (c8.displayName = "ParentIssueRemovedEvent");
+                c9.displayName || (c9.displayName = "ParentIssueRemovedEvent");
             } catch {}
             try {
-                c9.displayName || (c9.displayName = "SubIssueEventItem");
+                me.displayName || (me.displayName = "SubIssueEventItem");
             } catch {}
-            let me = {
+            let ml = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -61623,7 +61590,7 @@ git checkout ${e}`;
                 type: "PinnedEvent",
                 abstractKey: null,
             };
-            function ml({
+            function mn({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -61634,26 +61601,26 @@ git checkout ${e}`;
                         actor: i,
                         createdAt: t,
                         databaseId: r,
-                    } = (0, eq.useFragment)(me, e),
+                    } = (0, eq.useFragment)(ml, e),
                     u = String(r) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: u,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, r),
+                    deepLinkUrl: o8(l, r),
                     onLinkClick: n,
                     leadingIcon: V.PinIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: `${ao.timeline.pinned} `,
                     }),
                 });
             }
-            me.hash = "6ae9da2153e87abdf88e292cf32021c4";
+            ml.hash = "6ae9da2153e87abdf88e292cf32021c4";
             try {
-                ml.displayName || (ml.displayName = "PinnedEvent");
+                mn.displayName || (mn.displayName = "PinnedEvent");
             } catch {}
-            let mn = {
+            let ma = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -61725,29 +61692,29 @@ git checkout ${e}`;
                 type: "ProjectV2ItemStatusChangedEvent",
                 abstractKey: null,
             };
-            mn.hash = "74055539c00657f2a6fdc0662376e744";
-            let ma = {
+            ma.hash = "74055539c00657f2a6fdc0662376e744";
+            let ms = {
                 projectWrapper:
                     "ProjectV2ItemStatusChangedEvent-module__projectWrapper--uTer2",
             };
-            function ms({ queryRef: e, issueUrl: l, onLinkClick: n }) {
+            function mi({ queryRef: e, issueUrl: l, onLinkClick: n }) {
                 let {
                     actor: a,
                     createdAt: s,
                     project: i,
                     previousStatus: t,
                     status: r,
-                } = (0, eq.useFragment)(mn, e);
+                } = (0, eq.useFragment)(ma, e);
                 if (!i) return (0, F.jsx)(F.Fragment, {});
                 let u = r.length > 0 ? r : "No status";
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: !1,
                     actor: a,
                     onLinkClick: n,
                     createdAt: s,
                     deepLinkUrl: l,
                     leadingIcon: V.TableIcon,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             t && t.length > 0
                                 ? (0, F.jsx)(F.Fragment, {
@@ -61758,8 +61725,8 @@ git checkout ${e}`;
                                   }),
                             `${u} ${ao.timeline.in} `,
                             (0, F.jsx)("span", {
-                                className: ma.projectWrapper,
-                                children: (0, F.jsx)(de, {
+                                className: ms.projectWrapper,
+                                children: (0, F.jsx)(dl, {
                                     title: i?.title,
                                     url: i?.url,
                                 }),
@@ -61769,10 +61736,10 @@ git checkout ${e}`;
                 });
             }
             try {
-                ms.displayName ||
-                    (ms.displayName = "ProjectV2ItemStatusChangedEvent");
+                mi.displayName ||
+                    (mi.displayName = "ProjectV2ItemStatusChangedEvent");
             } catch {}
-            let mi = {
+            let mt = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -61860,9 +61827,9 @@ git checkout ${e}`;
                 type: "ReferencedEvent",
                 abstractKey: null,
             };
-            mi.hash = "0ea02b53f9b2e3cf07a02b3869b9fe85";
-            let mt = { Box: "ReferencedEvent-module__Box--leWmo" },
-                mr = {
+            mt.hash = "0ea02b53f9b2e3cf07a02b3869b9fe85";
+            let mr = { Box: "ReferencedEvent-module__Box--leWmo" },
+                mu = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -61950,9 +61917,9 @@ git checkout ${e}`;
                     type: "Commit",
                     abstractKey: null,
                 };
-            mr.hash = "89d6ea56d087536089c85b4dc325ea33";
-            var mu = n(26076);
-            let mo = {
+            mu.hash = "89d6ea56d087536089c85b4dc325ea33";
+            var mo = n(26076);
+            let md = {
                     referencedCommitContainer:
                         "ReferencedEventInner-module__referencedCommitContainer--Qobk1",
                     commitHeaderRow:
@@ -61972,7 +61939,7 @@ git checkout ${e}`;
                     referencedEventVerificationStatusFailure:
                         "ReferencedEventInner-module__referencedEventVerificationStatusFailure--kwO0x",
                 },
-                md = (function () {
+                mc = (function () {
                     var e = [
                         {
                             alias: null,
@@ -62149,22 +62116,22 @@ git checkout ${e}`;
                         abstractKey: null,
                     };
                 })();
-            md.hash = "7b9e63906504488a948fdb5b1e76d1d7";
-            var mc = n(44185);
-            function mm() {
+            mc.hash = "7b9e63906504488a948fdb5b1e76d1d7";
+            var mm = n(44185);
+            function mg() {
                 return (0, F.jsxs)("span", {
-                    className: mo.referencedEventVerificationStatusFailure,
+                    className: md.referencedEventVerificationStatusFailure,
                     "data-testid":
                         "referenced-event-verification-status-failure",
                     children: [(0, F.jsx)(V.AlertIcon, { size: 16 }), " Error"],
                 });
             }
             try {
-                mm.displayName ||
-                    (mm.displayName =
+                mg.displayName ||
+                    (mg.displayName =
                         "ReferencedEventVerificationStatusFailure");
             } catch {}
-            function mg() {
+            function my() {
                 return (0, F.jsx)(ae.O, {
                     variant: "pill",
                     height: "md",
@@ -62172,11 +62139,11 @@ git checkout ${e}`;
                 });
             }
             try {
-                mg.displayName ||
-                    (mg.displayName =
+                my.displayName ||
+                    (my.displayName =
                         "ReferencedEventVerificationStatusSkeleton");
             } catch {}
-            let my = (function () {
+            let mp = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -62488,17 +62455,17 @@ git checkout ${e}`;
                     },
                 };
             })();
-            function mp({
+            function mk({
                 secondaryTimelineQueryRef: e,
                 eventId: l,
                 viewerLogin: n,
             }) {
                 return e
                     ? (0, F.jsx)(lX.t, {
-                          fallback: (0, F.jsx)(mm, {}),
+                          fallback: (0, F.jsx)(mg, {}),
                           children: (0, F.jsx)(Q.Suspense, {
-                              fallback: (0, F.jsx)(mg, {}),
-                              children: (0, F.jsx)(mk, {
+                              fallback: (0, F.jsx)(my, {}),
+                              children: (0, F.jsx)(mF, {
                                   secondaryTimelineQueryRef: e,
                                   eventId: l,
                                   viewerLogin: n,
@@ -62507,27 +62474,27 @@ git checkout ${e}`;
                       })
                     : null;
             }
-            function mk({
+            function mF({
                 secondaryTimelineQueryRef: e,
                 eventId: l,
                 viewerLogin: n,
             }) {
-                let { nodes: a } = (0, N.usePreloadedQuery)(my, e),
+                let { nodes: a } = (0, N.usePreloadedQuery)(mp, e),
                     s = a?.find((e) => e?.__id === l);
                 return s && s.commit
-                    ? (0, F.jsx)(mF, { commitRef: s.commit, viewerLogin: n })
+                    ? (0, F.jsx)(mb, { commitRef: s.commit, viewerLogin: n })
                     : null;
             }
-            function mF({ commitRef: e, viewerLogin: l }) {
+            function mb({ commitRef: e, viewerLogin: l }) {
                 var n, a;
-                let s = (0, N.useFragment)(md, e);
+                let s = (0, N.useFragment)(mc, e);
                 return s &&
                     s.signature &&
                     s.verificationStatus &&
                     "UNSIGNED" !== s.verificationStatus &&
                     s.abbreviatedOid &&
                     void 0 !== s.hasSignature
-                    ? (0, F.jsx)(mc.h, {
+                    ? (0, F.jsx)(mm.h, {
                           commitOid: s.abbreviatedOid,
                           hasSignature: s.hasSignature,
                           verificationStatus: (function (e) {
@@ -62547,7 +62514,7 @@ git checkout ${e}`;
                               (a = l),
                               {
                                   hasSignature: !0,
-                                  helpUrl: u8.commitBadgeHelpUrl,
+                                  helpUrl: u9.commitBadgeHelpUrl,
                                   isViewer: !!n.signer && a === n.signer.login,
                                   keyExpired: "EXPIRED_KEY" === n.state,
                                   keyId:
@@ -62559,14 +62526,14 @@ git checkout ${e}`;
                                   signerLogin: n.signer?.login ?? "",
                                   signerAvatarUrl: n.signer?.avatarUrl ?? "",
                                   signatureType: n.__typename,
-                                  signatureCertificateSubject: mb(n.subject),
-                                  signatureCertificateIssuer: mb(n.issuer),
+                                  signatureCertificateSubject: mh(n.subject),
+                                  signatureCertificateIssuer: mh(n.issuer),
                                   signatureVerificationReason: n.state,
                               }),
                       })
                     : null;
             }
-            function mb(e) {
+            function mh(e) {
                 return e
                     ? {
                           common_name: e.commonName ?? void 0,
@@ -62576,20 +62543,20 @@ git checkout ${e}`;
                       }
                     : {};
             }
-            my.hash = "7640b37eab10f676f86e5647ea88c014";
-            try {
-                mp.displayName ||
-                    (mp.displayName = "ReferencedEventVerificationStatus");
-            } catch {}
+            mp.hash = "7640b37eab10f676f86e5647ea88c014";
             try {
                 mk.displayName ||
-                    (mk.displayName = "ReferencedEventVerificationStatusQuery");
+                    (mk.displayName = "ReferencedEventVerificationStatus");
             } catch {}
             try {
                 mF.displayName ||
-                    (mF.displayName = "ReferencedEventVerificationStatusInner");
+                    (mF.displayName = "ReferencedEventVerificationStatusQuery");
             } catch {}
-            function mh({
+            try {
+                mb.displayName ||
+                    (mb.displayName = "ReferencedEventVerificationStatusInner");
+            } catch {}
+            function mf({
                 commitKey: e,
                 willCloseSubject: l,
                 viewerLogin: n,
@@ -62597,7 +62564,7 @@ git checkout ${e}`;
                 subjectType: s,
                 secondaryTimelineQueryRef: i,
             }) {
-                let t = (0, N.useFragment)(mr, e),
+                let t = (0, N.useFragment)(mu, e),
                     [r, u] = (0, Q.useState)(!1);
                 if (null === t) return (0, F.jsx)(F.Fragment, {});
                 let o = t.repository.defaultBranch,
@@ -62608,25 +62575,25 @@ git checkout ${e}`;
                         commitish: t.abbreviatedOid,
                     });
                 return (0, F.jsxs)("div", {
-                    className: mo.referencedCommitContainer,
+                    className: md.referencedCommitContainer,
                     children: [
                         (0, F.jsxs)("div", {
-                            className: mo.commitHeaderRow,
+                            className: md.commitHeaderRow,
                             children: [
                                 (0, F.jsxs)("div", {
-                                    className: mo.commitMetadata,
+                                    className: md.commitMetadata,
                                     children: [
                                         (0, F.jsx)(sF.A, {
                                             title: t.message,
-                                            className: mo.commitMessageText,
+                                            className: md.commitMessageText,
                                             children: (0, F.jsx)(ek.A, {
                                                 href: t.url,
                                                 target: "_blank",
                                                 "data-hovercard-url": c,
                                                 muted: !0,
                                                 "aria-label": t.message,
-                                                className: mo.commitHashLink,
-                                                children: (0, F.jsx)(mu.G, {
+                                                className: md.commitHashLink,
+                                                children: (0, F.jsx)(mo.G, {
                                                     verifiedHTML: `<p style="font-family:monospace;font-size:12px">${t.messageHeadlineHTML}</p>`,
                                                 }),
                                             }),
@@ -62639,20 +62606,20 @@ git checkout ${e}`;
                                                     ? "Hide commit message body"
                                                     : "Show commit message body",
                                                 "aria-expanded": r,
-                                                className: mo.toggleButton,
+                                                className: md.toggleButton,
                                                 children: "...",
                                             }),
                                     ],
                                 }),
                                 (0, F.jsxs)("div", {
-                                    className: mo.commitActions,
+                                    className: md.commitActions,
                                     children: [
                                         l &&
                                             (0, F.jsx)(sv.m, {
                                                 text: d,
                                                 type: "label",
                                                 children: (0, F.jsx)(ek.A, {
-                                                    href: u8.closingViaCommitMessageUrl,
+                                                    href: u9.closingViaCommitMessageUrl,
                                                     muted: !0,
                                                     children: (0, F.jsx)(
                                                         V.InfoIcon,
@@ -62660,7 +62627,7 @@ git checkout ${e}`;
                                                     ),
                                                 }),
                                             }),
-                                        (0, F.jsx)(mp, {
+                                        (0, F.jsx)(mk, {
                                             secondaryTimelineQueryRef: i,
                                             eventId: a,
                                             viewerLogin: n,
@@ -62668,7 +62635,7 @@ git checkout ${e}`;
                                         (0, F.jsx)(ek.A, {
                                             href: t.url,
                                             muted: !0,
-                                            className: mo.repoNameLink,
+                                            className: md.repoNameLink,
                                             children: t.abbreviatedOid,
                                         }),
                                     ],
@@ -62676,16 +62643,16 @@ git checkout ${e}`;
                             ],
                         }),
                         r &&
-                            (0, F.jsx)(mu.G, {
+                            (0, F.jsx)(mo.G, {
                                 verifiedHTML: `<p style="font-family:monospace;font-size:12px;white-space:pre-wrap">${t.messageBodyHTML}</p>`,
                             }),
                     ],
                 });
             }
             try {
-                mh.displayName || (mh.displayName = "ReferencedEventInner");
+                mf.displayName || (mf.displayName = "ReferencedEventInner");
             } catch {}
-            function mf({
+            function mK({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -62703,12 +62670,12 @@ git checkout ${e}`;
                     subject: m,
                     willCloseSubject: g,
                     id: y,
-                } = (0, eq.useFragment)(mi, e);
+                } = (0, eq.useFragment)(mt, e);
                 if (null === d) return (0, F.jsx)(F.Fragment, {});
                 let p = String(c) === a,
                     k = i && i.ReferencedEvent ? i.ReferencedEvent : [e],
                     b = k.length;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: p,
                     refAttribute: s,
                     actor: u,
@@ -62717,18 +62684,18 @@ git checkout ${e}`;
                     onLinkClick: n,
                     showAgoTimestamp: !1,
                     leadingIcon: V.GitCommitIcon,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             `${ao.timeline.addedCommitsThatReferences(b)} `,
-                            (0, F.jsx)(dr, {
+                            (0, F.jsx)(du, {
                                 timestamp: new Date(o),
-                                linkUrl: o3(l, c),
+                                linkUrl: o8(l, c),
                             }),
                             (0, F.jsx)("div", {
-                                className: mt.Box,
+                                className: mr.Box,
                                 children: k.map((e, l) =>
                                     (0, F.jsx)(
-                                        mK,
+                                        mS,
                                         {
                                             itemQueryRef: e,
                                             subjectType: m.__typename,
@@ -62745,17 +62712,17 @@ git checkout ${e}`;
                     }),
                 });
             }
-            function mK({ itemQueryRef: e, ...l }) {
-                let { commit: n } = (0, eq.useFragment)(mi, e);
-                return n ? (0, F.jsx)(mh, { commitKey: n, ...l }) : null;
+            function mS({ itemQueryRef: e, ...l }) {
+                let { commit: n } = (0, eq.useFragment)(mt, e);
+                return n ? (0, F.jsx)(mf, { commitKey: n, ...l }) : null;
             }
             try {
-                mf.displayName || (mf.displayName = "ReferencedEvent");
+                mK.displayName || (mK.displayName = "ReferencedEvent");
             } catch {}
             try {
-                mK.displayName || (mK.displayName = "ReferencedItem");
+                mS.displayName || (mS.displayName = "ReferencedItem");
             } catch {}
-            let mS = {
+            let mI = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -62809,13 +62776,13 @@ git checkout ${e}`;
                 type: "RenamedTitleEvent",
                 abstractKey: null,
             };
-            mS.hash = "51c475b1e987f59acbc80c0754983081";
-            let mI = {
+            mI.hash = "51c475b1e987f59acbc80c0754983081";
+            let mv = {
                 defaultColor: "RenamedTitleEvent-module__defaultColor--yf7kG",
                 noUnderline: "RenamedTitleEvent-module__noUnderline--em5Gm",
                 strikeThrough: "RenamedTitleEvent-module__strikeThrough--Gjm9V",
             };
-            function mv({
+            function mL({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -62828,24 +62795,24 @@ git checkout ${e}`;
                         currentTitle: r,
                         previousTitle: u,
                         databaseId: o,
-                    } = (0, eq.useFragment)(mS, e),
+                    } = (0, eq.useFragment)(mI, e),
                     d = String(o) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: d,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, o),
+                    deepLinkUrl: o8(l, o),
                     onLinkClick: n,
                     leadingIcon: V.PencilIcon,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             ao.timeline.renamedTitle,
                             " ",
                             (0, F.jsx)("span", {
-                                className: mI.defaultColor,
+                                className: mv.defaultColor,
                                 children: (0, F.jsxs)("del", {
-                                    className: mI.strikeThrough,
+                                    className: mv.strikeThrough,
                                     children: [
                                         (0, F.jsx)("span", {
                                             className: "sr-only",
@@ -62861,9 +62828,9 @@ git checkout ${e}`;
                             }),
                             " ",
                             (0, F.jsx)("span", {
-                                className: mI.defaultColor,
+                                className: mv.defaultColor,
                                 children: (0, F.jsxs)("ins", {
-                                    className: mI.noUnderline,
+                                    className: mv.noUnderline,
                                     children: [
                                         (0, F.jsx)("span", {
                                             className: "sr-only",
@@ -62883,9 +62850,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                mv.displayName || (mv.displayName = "RenamedTitleEvent");
+                mL.displayName || (mL.displayName = "RenamedTitleEvent");
             } catch {}
-            let mL = {
+            let mT = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -62925,7 +62892,7 @@ git checkout ${e}`;
                 type: "ReopenedEvent",
                 abstractKey: null,
             };
-            function mT({
+            function mC({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -62936,32 +62903,32 @@ git checkout ${e}`;
                         actor: i,
                         createdAt: t,
                         databaseId: r,
-                    } = (0, eq.useFragment)(mL, e),
+                    } = (0, eq.useFragment)(mT, e),
                     u = String(r) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: u,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, r),
+                    deepLinkUrl: o8(l, r),
                     onLinkClick: n,
                     iconColoring: {
                         backgroundColor: "open.fg",
                         color: "white",
                     },
                     leadingIcon: V.IssueReopenedIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: (0, F.jsxs)("span", {
                             children: [ao.timeline.reopenedThis, " "],
                         }),
                     }),
                 });
             }
-            mL.hash = "0ef236ccb5e3252ae1b2405be2bddad5";
+            mT.hash = "0ef236ccb5e3252ae1b2405be2bddad5";
             try {
-                mT.displayName || (mT.displayName = "ReopenedEvent");
+                mC.displayName || (mC.displayName = "ReopenedEvent");
             } catch {}
-            let mC = (function () {
+            let mx = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -63021,12 +62988,12 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            mC.hash = "6a27c73ef025222e54654739072c2d24";
-            let mx = {
+            mx.hash = "6a27c73ef025222e54654739072c2d24";
+            let mR = {
                 Box: "SubIssueAddedEvent-module__Box--N8W4N",
                 Box_1: "SubIssueAddedEvent-module__Box_1--eiyEN",
             };
-            function mR({
+            function mN({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -63040,39 +63007,39 @@ git checkout ${e}`;
                     createdAt: u,
                     subIssue: o,
                     databaseId: d,
-                } = (0, eq.useFragment)(mC, e);
+                } = (0, eq.useFragment)(mx, e);
                 if (!o) return null;
                 let c = String(o.databaseId) === a,
                     m = i && i.SubIssueAddedEvent ? i.SubIssueAddedEvent : [],
                     g = 0 === m.length ? [e] : m,
-                    y = dH(e.createdAt, m);
-                return (0, F.jsxs)(dI, {
+                    y = d$(e.createdAt, m);
+                return (0, F.jsxs)(dv, {
                     highlighted: c,
                     refAttribute: s,
                     actor: r,
                     createdAt: u,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: o3(l, d),
+                    deepLinkUrl: o8(l, d),
                     onLinkClick: n,
                     leadingIcon: V.IssueTracksIcon,
                     children: [
-                        (0, F.jsxs)(dI.Main, {
+                        (0, F.jsxs)(dv.Main, {
                             children: [
                                 `${ao.timeline.subIssueAdded[1 === g.length ? "single" : "multiple"]} `,
                                 y
-                                    ? (0, F.jsx)(dr, {
+                                    ? (0, F.jsx)(du, {
                                           timestamp: new Date(y),
-                                          linkUrl: o3(l, d),
+                                          linkUrl: o8(l, d),
                                       })
                                     : null,
                             ],
                         }),
-                        (0, F.jsx)(dI.Secondary, {
+                        (0, F.jsx)(dv.Secondary, {
                             children: (0, F.jsx)("ul", {
-                                className: mx.Box,
+                                className: mR.Box,
                                 children: g.map((e, l) =>
                                     (0, F.jsx)(
-                                        mN,
+                                        mj,
                                         { event: e, targetRepositoryId: t },
                                         `${o.databaseId}_${l}`
                                     )
@@ -63082,12 +63049,12 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function mN({ event: e, targetRepositoryId: l }) {
-                let { subIssue: n } = (0, eq.useFragment)(mC, e);
+            function mj({ event: e, targetRepositoryId: l }) {
+                let { subIssue: n } = (0, eq.useFragment)(mx, e);
                 return n
                     ? (0, F.jsx)("li", {
-                          className: mx.Box_1,
-                          children: (0, F.jsx)(dQ, {
+                          className: mR.Box_1,
+                          children: (0, F.jsx)(dG, {
                               data: n,
                               targetRepositoryId: l,
                           }),
@@ -63095,12 +63062,12 @@ git checkout ${e}`;
                     : null;
             }
             try {
-                mR.displayName || (mR.displayName = "SubIssueAddedEvent");
+                mN.displayName || (mN.displayName = "SubIssueAddedEvent");
             } catch {}
             try {
-                mN.displayName || (mN.displayName = "SubIssueEventItem");
+                mj.displayName || (mj.displayName = "SubIssueEventItem");
             } catch {}
-            let mj = (function () {
+            let m_ = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -63160,12 +63127,12 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            mj.hash = "0fe9d2b98241be788b327b4a8a55ad18";
-            let m_ = {
+            m_.hash = "0fe9d2b98241be788b327b4a8a55ad18";
+            let mE = {
                 Box: "SubIssueRemovedEvent-module__Box--jlh0k",
                 Box_1: "SubIssueRemovedEvent-module__Box_1--pk1pA",
             };
-            function mE({
+            function mw({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -63179,7 +63146,7 @@ git checkout ${e}`;
                     createdAt: u,
                     subIssue: o,
                     databaseId: d,
-                } = (0, eq.useFragment)(mj, e);
+                } = (0, eq.useFragment)(m_, e);
                 if (!o) return null;
                 let c = String(o.databaseId) === a,
                     m =
@@ -63187,34 +63154,34 @@ git checkout ${e}`;
                             ? i.SubIssueRemovedEvent
                             : [],
                     g = 0 === m.length ? [e] : m,
-                    y = dH(e.createdAt, m);
-                return (0, F.jsxs)(dI, {
+                    y = d$(e.createdAt, m);
+                return (0, F.jsxs)(dv, {
                     highlighted: c,
                     refAttribute: s,
                     actor: r,
                     createdAt: u,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: o3(l, d),
+                    deepLinkUrl: o8(l, d),
                     onLinkClick: n,
                     leadingIcon: V.IssueTracksIcon,
                     children: [
-                        (0, F.jsxs)(dI.Main, {
+                        (0, F.jsxs)(dv.Main, {
                             children: [
                                 `${ao.timeline.subIssueRemoved[1 === g.length ? "single" : "multiple"]} `,
                                 y
-                                    ? (0, F.jsx)(dr, {
+                                    ? (0, F.jsx)(du, {
                                           timestamp: new Date(y),
-                                          linkUrl: o3(l, d),
+                                          linkUrl: o8(l, d),
                                       })
                                     : null,
                             ],
                         }),
-                        (0, F.jsx)(dI.Secondary, {
+                        (0, F.jsx)(dv.Secondary, {
                             children: (0, F.jsx)("ul", {
-                                className: m_.Box,
+                                className: mE.Box,
                                 children: g.map((e, l) =>
                                     (0, F.jsx)(
-                                        mw,
+                                        mA,
                                         { event: e, targetRepositoryId: t },
                                         `${o.databaseId}_${l}`
                                     )
@@ -63224,12 +63191,12 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function mw({ event: e, targetRepositoryId: l }) {
-                let { subIssue: n } = (0, eq.useFragment)(mj, e);
+            function mA({ event: e, targetRepositoryId: l }) {
+                let { subIssue: n } = (0, eq.useFragment)(m_, e);
                 return n
                     ? (0, F.jsx)("li", {
-                          className: m_.Box_1,
-                          children: (0, F.jsx)(dQ, {
+                          className: mE.Box_1,
+                          children: (0, F.jsx)(dG, {
                               data: n,
                               targetRepositoryId: l,
                           }),
@@ -63237,12 +63204,12 @@ git checkout ${e}`;
                     : null;
             }
             try {
-                mE.displayName || (mE.displayName = "SubIssueRemovedEvent");
+                mw.displayName || (mw.displayName = "SubIssueRemovedEvent");
             } catch {}
             try {
-                mw.displayName || (mw.displayName = "SubIssueEventItem");
+                mA.displayName || (mA.displayName = "SubIssueEventItem");
             } catch {}
-            let mA = {
+            let mP = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -63282,7 +63249,7 @@ git checkout ${e}`;
                 type: "SubscribedEvent",
                 abstractKey: null,
             };
-            function mP({
+            function mB({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -63293,9 +63260,9 @@ git checkout ${e}`;
                         actor: i,
                         createdAt: t,
                         databaseId: r,
-                    } = (0, eq.useFragment)(mA, e),
+                    } = (0, eq.useFragment)(mP, e),
                     u = String(r) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: u,
                     refAttribute: s,
                     actor: i,
@@ -63303,46 +63270,47 @@ git checkout ${e}`;
                     deepLinkUrl: l,
                     onLinkClick: n,
                     leadingIcon: V.PinIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: `${ao.timeline.subscribed} `,
                     }),
                 });
             }
-            mA.hash = "f7fb3dd16c23296108550c05bf326cda";
+            mP.hash = "f7fb3dd16c23296108550c05bf326cda";
             try {
-                mP.displayName || (mP.displayName = "SubscribedEvent");
+                mB.displayName || (mB.displayName = "SubscribedEvent");
             } catch {}
-            var mB = n(12004);
-            let mD = { timelineDivider: (e) => `timeline-divider-${e}` },
-                mM = {
+            var mD = n(75177),
+                mM = n(12004);
+            let mV = { timelineDivider: (e) => `timeline-divider-${e}` },
+                mU = {
                     Box: "TimelineDivider-module__Box--rX5hB",
                     Box_1: "TimelineDivider-module__Box_1--nXo59",
                     Box_2: "TimelineDivider-module__Box_2--lsm39",
                 },
-                mV = ({ isLoading: e, isHovered: l, id: n }) =>
-                    (0, F.jsx)(eO.A, {
+                mO = ({ isLoading: e, isHovered: l, id: n }) =>
+                    (0, F.jsx)(mD.A, {
                         sx: { justifyContent: e ? "center" : "space-between" },
-                        "data-testid": n ? mD.timelineDivider(n) : void 0,
-                        className: mM.Box,
+                        "data-testid": n ? mV.timelineDivider(n) : void 0,
+                        className: mU.Box,
                         children: e
-                            ? (0, F.jsx)(mB.A, { size: "small" })
+                            ? (0, F.jsx)(mM.A, { size: "small" })
                             : (0, F.jsxs)(F.Fragment, {
                                   children: [
                                       (0, F.jsx)("div", {
-                                          className: mM.Box_1,
+                                          className: mU.Box_1,
                                       }),
-                                      (0, F.jsx)(eO.A, {
+                                      (0, F.jsx)(mD.A, {
                                           sx: { opacity: +!!l },
-                                          className: mM.Box_2,
+                                          className: mU.Box_2,
                                       }),
                                   ],
                               }),
                     });
             try {
-                mV.displayName || (mV.displayName = "TimelineDivider");
+                mO.displayName || (mO.displayName = "TimelineDivider");
             } catch {}
-            let mU = { Box: "TimelineRowBorder-module__Box--wRiZZ" },
-                mO = {
+            let mq = { Box: "TimelineRowBorder-module__Box--wRiZZ" },
+                mH = {
                     display: "flex",
                     flexDirection: "column",
                     gap: 2,
@@ -63350,7 +63318,7 @@ git checkout ${e}`;
                     backgroundColor: "canvas.default",
                     transition: "0.2s",
                 },
-                mq = (0, Q.forwardRef)((e, l) => {
+                m$ = (0, Q.forwardRef)((e, l) => {
                     let {
                             children: n,
                             addDivider: a,
@@ -63374,7 +63342,7 @@ git checkout ${e}`;
                         ),
                         d = (0, Q.useMemo)(
                             () => ({
-                                ...mO,
+                                ...mH,
                                 border: "1px solid",
                                 borderColor: r?.viewerDidAuthor
                                     ? "accent.muted"
@@ -63387,19 +63355,19 @@ git checkout ${e}`;
                             [r?.viewerDidAuthor, o, u]
                         ),
                         c = (0, Q.useMemo)(
-                            () => ({ pl: "12px", ...mO, ...o, ...u }),
+                            () => ({ pl: "12px", ...mH, ...o, ...u }),
                             [o, u]
                         ),
                         m = {
-                            [u8.timeline.dataTimelineEventId]: s.__id,
+                            [u9.timeline.dataTimelineEventId]: s.__id,
                             "data-highlighted-event": t,
                         };
                     return (0, F.jsxs)("div", {
-                        className: mU.Box,
+                        className: mq.Box,
                         children: [
-                            a && (0, F.jsx)(mV, { id: s.__id }),
+                            a && (0, F.jsx)(mO, { id: s.__id }),
                             (0, Q.createElement)(
-                                eO.A,
+                                mD.A,
                                 {
                                     ...m,
                                     ref: l,
@@ -63412,8 +63380,8 @@ git checkout ${e}`;
                         ],
                     });
                 });
-            mq.displayName = "TimelineRowBorder";
-            let mH = {
+            m$.displayName = "TimelineRowBorder";
+            let mz = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -63478,9 +63446,9 @@ git checkout ${e}`;
                 type: "TransferredEvent",
                 abstractKey: null,
             };
-            mH.hash = "509da787f2e80dcb7a04a4d0b0ce102e";
-            let m$ = { Link: "TransferredEvent-module__Link--czJbK" };
-            function mz({
+            mz.hash = "509da787f2e80dcb7a04a4d0b0ce102e";
+            let mW = { Link: "TransferredEvent-module__Link--czJbK" };
+            function mQ({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -63492,23 +63460,23 @@ git checkout ${e}`;
                         createdAt: t,
                         fromRepository: r,
                         databaseId: u,
-                    } = (0, eq.useFragment)(mH, e),
+                    } = (0, eq.useFragment)(mz, e),
                     o = String(u) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: o,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, u),
+                    deepLinkUrl: o8(l, u),
                     onLinkClick: n,
                     leadingIcon: V.LinkExternalIcon,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             ao.timeline.transferredThis,
                             (0, F.jsx)(ek.A, {
                                 href: `${r?.url}`,
                                 inline: !0,
-                                className: m$.Link,
+                                className: mW.Link,
                                 children: r?.nameWithOwner,
                             }),
                         ],
@@ -63516,9 +63484,9 @@ git checkout ${e}`;
                 });
             }
             try {
-                mz.displayName || (mz.displayName = "TransferredEvent");
+                mQ.displayName || (mQ.displayName = "TransferredEvent");
             } catch {}
-            let mW = {
+            let mG = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -63558,7 +63526,7 @@ git checkout ${e}`;
                 type: "UnlockedEvent",
                 abstractKey: null,
             };
-            function mQ({
+            function mY({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -63569,26 +63537,26 @@ git checkout ${e}`;
                         actor: i,
                         createdAt: t,
                         databaseId: r,
-                    } = (0, eq.useFragment)(mW, e),
+                    } = (0, eq.useFragment)(mG, e),
                     u = String(r) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: u,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, r),
+                    deepLinkUrl: o8(l, r),
                     onLinkClick: n,
                     leadingIcon: V.UnlockIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: `${ao.timeline.unlockedConversation} `,
                     }),
                 });
             }
-            mW.hash = "f3f5b5eea0ff51d2508abc2c64f62822";
+            mG.hash = "f3f5b5eea0ff51d2508abc2c64f62822";
             try {
-                mQ.displayName || (mQ.displayName = "UnlockedEvent");
+                mY.displayName || (mY.displayName = "UnlockedEvent");
             } catch {}
-            let mG = (function () {
+            let mX = (function () {
                 var e = [
                     { args: null, kind: "FragmentSpread", name: "IssueLink" },
                 ];
@@ -63663,7 +63631,7 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            function mY({
+            function mJ({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -63677,23 +63645,23 @@ git checkout ${e}`;
                         canonical: u,
                         databaseId: o,
                         isCanonicalOfClosedDuplicate: d,
-                    } = (0, eq.useFragment)(mG, e),
+                    } = (0, eq.useFragment)(mX, e),
                     c = String(o) === a;
                 return u
-                    ? (0, F.jsx)(dI, {
+                    ? (0, F.jsx)(dv, {
                           highlighted: c,
                           refAttribute: s,
                           actor: t,
                           createdAt: r,
-                          deepLinkUrl: o3(l, o),
+                          deepLinkUrl: o8(l, o),
                           onLinkClick: n,
                           leadingIcon: V.DuplicateIcon,
-                          children: (0, F.jsx)(dI.Main, {
+                          children: (0, F.jsx)(dv.Main, {
                               children: d
                                   ? (0, F.jsxs)(F.Fragment, {
                                         children: [
                                             "unmarked ",
-                                            (0, F.jsx)(dQ, {
+                                            (0, F.jsx)(dG, {
                                                 inline: !0,
                                                 data: u,
                                                 targetRepositoryId: i,
@@ -63710,7 +63678,7 @@ git checkout ${e}`;
                                             (0, F.jsxs)(F.Fragment, {
                                                 children: [
                                                     "\xa0",
-                                                    (0, F.jsx)(dQ, {
+                                                    (0, F.jsx)(dG, {
                                                         data: u,
                                                         targetRepositoryId: i,
                                                     }),
@@ -63723,11 +63691,11 @@ git checkout ${e}`;
                       })
                     : (0, F.jsx)(F.Fragment, {});
             }
-            mG.hash = "f36b743ab5e1a0dcdecb51d9eb11fab9";
+            mX.hash = "f36b743ab5e1a0dcdecb51d9eb11fab9";
             try {
-                mY.displayName || (mY.displayName = "UnmarkedAsDuplicateEvent");
+                mJ.displayName || (mJ.displayName = "UnmarkedAsDuplicateEvent");
             } catch {}
-            let mX = {
+            let mZ = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -63767,7 +63735,7 @@ git checkout ${e}`;
                 type: "UnpinnedEvent",
                 abstractKey: null,
             };
-            function mJ({
+            function m0({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -63778,26 +63746,26 @@ git checkout ${e}`;
                         actor: i,
                         createdAt: t,
                         databaseId: r,
-                    } = (0, eq.useFragment)(mX, e),
+                    } = (0, eq.useFragment)(mZ, e),
                     u = String(r) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: u,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, r),
+                    deepLinkUrl: o8(l, r),
                     onLinkClick: n,
                     leadingIcon: V.PinIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: `${ao.timeline.unpinned} `,
                     }),
                 });
             }
-            mX.hash = "eef8cbf61d406f2f45179aa6e2012d23";
+            mZ.hash = "eef8cbf61d406f2f45179aa6e2012d23";
             try {
-                mJ.displayName || (mJ.displayName = "UnpinnedEvent");
+                m0.displayName || (m0.displayName = "UnpinnedEvent");
             } catch {}
-            let mZ = {
+            let m1 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -63837,7 +63805,7 @@ git checkout ${e}`;
                 type: "UnsubscribedEvent",
                 abstractKey: null,
             };
-            function m0({
+            function m2({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -63848,9 +63816,9 @@ git checkout ${e}`;
                         actor: i,
                         createdAt: t,
                         databaseId: r,
-                    } = (0, eq.useFragment)(mZ, e),
+                    } = (0, eq.useFragment)(m1, e),
                     u = String(r) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: u,
                     refAttribute: s,
                     actor: i,
@@ -63858,16 +63826,16 @@ git checkout ${e}`;
                     createdAt: t,
                     deepLinkUrl: l,
                     leadingIcon: V.PinIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: `${ao.timeline.unsubscribed} `,
                     }),
                 });
             }
-            mZ.hash = "3f8ad3418ba3ce6ed9970c773a6e3816";
+            m1.hash = "3f8ad3418ba3ce6ed9970c773a6e3816";
             try {
-                m0.displayName || (m0.displayName = "UnsubscribedEvent");
+                m2.displayName || (m2.displayName = "UnsubscribedEvent");
             } catch {}
-            let m1 = {
+            let m4 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -63932,9 +63900,9 @@ git checkout ${e}`;
                 type: "UserBlockedEvent",
                 abstractKey: null,
             };
-            m1.hash = "6b9c2c6b2924af46270fda70b956f73d";
-            let m2 = { Link: "UserBlockedEvent-module__Link--erhs1" };
-            function m4({
+            m4.hash = "6b9c2c6b2924af46270fda70b956f73d";
+            let m6 = { Link: "UserBlockedEvent-module__Link--erhs1" };
+            function m5({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -63947,17 +63915,17 @@ git checkout ${e}`;
                         blockedUser: r,
                         blockDuration: u,
                         databaseId: o,
-                    } = (0, eq.useFragment)(m1, e),
+                    } = (0, eq.useFragment)(m4, e),
                     d = String(o) === a;
-                return (0, F.jsx)(dI, {
+                return (0, F.jsx)(dv, {
                     highlighted: d,
                     refAttribute: s,
                     actor: i,
                     createdAt: t,
-                    deepLinkUrl: o3(l, o),
+                    deepLinkUrl: o8(l, o),
                     onLinkClick: n,
                     leadingIcon: V.BlockedIcon,
-                    children: (0, F.jsxs)(dI.Main, {
+                    children: (0, F.jsxs)(dv.Main, {
                         children: [
                             (0, F.jsx)("span", {
                                 children: `${"PERMANENT" !== u ? `${ao.timeline.temporarily} ` : ""} ${ao.timeline.blocked} `,
@@ -63965,7 +63933,7 @@ git checkout ${e}`;
                             (0, F.jsx)(ek.A, {
                                 href: `/${r?.login}`,
                                 inline: !0,
-                                className: m2.Link,
+                                className: m6.Link,
                                 children: r?.login,
                             }),
                         ],
@@ -63973,52 +63941,52 @@ git checkout ${e}`;
                 });
             }
             try {
-                m4.displayName || (m4.displayName = "UserBlockedEvent");
+                m5.displayName || (m5.displayName = "UserBlockedEvent");
             } catch {}
-            let m6 = {
-                    SubscribedEvent: mP,
-                    UnsubscribedEvent: m0,
-                    MentionedEvent: c1,
-                    ClosedEvent: d8,
-                    ReopenedEvent: mT,
-                    RenamedTitleEvent: mv,
-                    LockedEvent: cY,
-                    UnlockedEvent: mQ,
-                    PinnedEvent: ml,
-                    UnpinnedEvent: mJ,
-                    LabeledEvent: cH,
-                    UnlabeledEvent: cV,
-                    UnassignedEvent: dP,
-                    AssignedEvent: dV,
-                    BlockedByAddedEvent: dG,
-                    BlockedByRemovedEvent: dJ,
-                    BlockingAddedEvent: d1,
-                    BlockingRemovedEvent: d6,
-                    CommentDeletedEvent: cl,
-                    UserBlockedEvent: m4,
-                    MilestonedEvent: cF,
-                    DemilestonedEvent: cf,
-                    CrossReferencedEvent: cm,
-                    ReferencedEvent: mf,
-                    ConnectedEvent: cs,
-                    TransferredEvent: mz,
-                    DisconnectedEvent: cL,
-                    MarkedAsDuplicateEvent: cZ,
-                    UnmarkedAsDuplicateEvent: mY,
-                    ConvertedToDiscussionEvent: co,
-                    AddedToProjectV2Event: dx,
-                    RemovedFromProjectV2Event: dv,
-                    ProjectV2ItemStatusChangedEvent: ms,
-                    ConvertedFromDraftEvent: ct,
-                    SubIssueAddedEvent: mR,
-                    SubIssueRemovedEvent: mE,
-                    ParentIssueAddedEvent: c6,
-                    ParentIssueRemovedEvent: c8,
-                    IssueTypeAddedEvent: cx,
-                    IssueTypeRemovedEvent: c_,
-                    IssueTypeChangedEvent: cN,
+            let m7 = {
+                    SubscribedEvent: mB,
+                    UnsubscribedEvent: m2,
+                    MentionedEvent: c2,
+                    ClosedEvent: d9,
+                    ReopenedEvent: mC,
+                    RenamedTitleEvent: mL,
+                    LockedEvent: cX,
+                    UnlockedEvent: mY,
+                    PinnedEvent: mn,
+                    UnpinnedEvent: m0,
+                    LabeledEvent: c$,
+                    UnlabeledEvent: cU,
+                    UnassignedEvent: dB,
+                    AssignedEvent: dU,
+                    BlockedByAddedEvent: dY,
+                    BlockedByRemovedEvent: dZ,
+                    BlockingAddedEvent: d2,
+                    BlockingRemovedEvent: d5,
+                    CommentDeletedEvent: cn,
+                    UserBlockedEvent: m5,
+                    MilestonedEvent: cb,
+                    DemilestonedEvent: cK,
+                    CrossReferencedEvent: cg,
+                    ReferencedEvent: mK,
+                    ConnectedEvent: ci,
+                    TransferredEvent: mQ,
+                    DisconnectedEvent: cT,
+                    MarkedAsDuplicateEvent: c0,
+                    UnmarkedAsDuplicateEvent: mJ,
+                    ConvertedToDiscussionEvent: cd,
+                    AddedToProjectV2Event: dR,
+                    RemovedFromProjectV2Event: dL,
+                    ProjectV2ItemStatusChangedEvent: mi,
+                    ConvertedFromDraftEvent: cr,
+                    SubIssueAddedEvent: mN,
+                    SubIssueRemovedEvent: mw,
+                    ParentIssueAddedEvent: c5,
+                    ParentIssueRemovedEvent: c9,
+                    IssueTypeAddedEvent: cR,
+                    IssueTypeRemovedEvent: cE,
+                    IssueTypeChangedEvent: cj,
                 },
-                m7 = ({
+                m3 = ({
                     item: { item: e, rollupGroup: l },
                     issueId: n,
                     repositoryId: a,
@@ -64036,7 +64004,7 @@ git checkout ${e}`;
                 }) => {
                     let p;
                     if (!e) return null;
-                    let k = u8.timeline.majorEventTypes.includes(e.__typename),
+                    let k = u9.timeline.majorEventTypes.includes(e.__typename),
                         b = null;
                     "IssueComment" === e.__typename &&
                         ((p = {
@@ -64059,7 +64027,7 @@ git checkout ${e}`;
                             refAttribute: g,
                             onLinkClick: m.onLinkClick,
                         })));
-                    let h = m6[e.__typename];
+                    let h = m7[e.__typename];
                     return (
                         h &&
                             (b = (0, Q.createElement)(h, {
@@ -64080,16 +64048,16 @@ git checkout ${e}`;
                                 viewer: r,
                                 secondaryTimelineQueryRef: y,
                             })),
-                        cQ(
+                        cG(
                             (0, F.jsx)(
-                                mq,
+                                m$,
                                 {
                                     ref: g,
                                     item: e,
                                     addDivider: c,
                                     isMajor:
                                         k &&
-                                        u8.timeline.borderedMajorEventTypes.includes(
+                                        u9.timeline.borderedMajorEventTypes.includes(
                                             e.__typename
                                         ),
                                     isHighlighted:
@@ -64100,18 +64068,18 @@ git checkout ${e}`;
                                 e.__id
                             ),
                             "IssueComment" === e.__typename
-                                ? (0, F.jsx)(m5, { item: e, addDivider: c })
+                                ? (0, F.jsx)(m8, { item: e, addDivider: c })
                                 : void 0,
                             e.__id
                         )
                     );
                 },
-                m5 = ({ item: e, addDivider: l }) => {
+                m8 = ({ item: e, addDivider: l }) => {
                     let {
                         avatarUrl: n,
                         login: a,
                         profileUrl: s,
-                    } = e.author ?? u8.ghost;
+                    } = e.author ?? u9.ghost;
                     return (0, F.jsx)(ek.A, {
                         href: s ?? void 0,
                         "data-hovercard-url": s && (0, eg.dCN)({ owner: a }),
@@ -64130,15 +64098,15 @@ git checkout ${e}`;
                     });
                 };
             try {
-                m6.displayName || (m6.displayName = "TIMELINE_ITEMS");
+                m7.displayName || (m7.displayName = "TIMELINE_ITEMS");
             } catch {}
             try {
-                m7.displayName || (m7.displayName = "IssueTimelineItem");
+                m3.displayName || (m3.displayName = "IssueTimelineItem");
             } catch {}
             try {
-                m5.displayName || (m5.displayName = "TimelineItemAvatar");
+                m8.displayName || (m8.displayName = "TimelineItemAvatar");
             } catch {}
-            let m3 = (e) =>
+            let m9 = (e) =>
                 e
                     ? {
                           items: (e.edges || [])
@@ -64149,12 +64117,12 @@ git checkout ${e}`;
                                   ),
                                   []
                               )
-                              .map((e) => (0, N.readInlineData)(oT, e)),
+                              .map((e) => (0, N.readInlineData)(oC, e)),
                       }
                     : { items: [] };
-            var m8 = n(55966);
-            function m9() {
-                return (0, F.jsx)(dI, {
+            var ge = n(55966);
+            function gl() {
+                return (0, F.jsx)(dv, {
                     showActorName: !1,
                     showAgoTimestamp: !1,
                     highlighted: !1,
@@ -64162,7 +64130,7 @@ git checkout ${e}`;
                     createdAt: "",
                     deepLinkUrl: "",
                     leadingIcon: V.AlertIcon,
-                    children: (0, F.jsx)(dI.Main, {
+                    children: (0, F.jsx)(dv.Main, {
                         children: (0, F.jsx)("span", {
                             children: "Could not load event",
                         }),
@@ -64170,27 +64138,27 @@ git checkout ${e}`;
                 });
             }
             try {
-                m9.displayName || (m9.displayName = "FallbackEvent");
+                gl.displayName || (gl.displayName = "FallbackEvent");
             } catch {}
-            let ge = () =>
-                (0, F.jsx)(mq, {
+            let gn = () =>
+                (0, F.jsx)(m$, {
                     addDivider: !0,
                     item: { __id: "failed-timeline-item" },
-                    children: (0, F.jsx)(m9, {}),
+                    children: (0, F.jsx)(gl, {}),
                 });
             try {
-                ge.displayName || (ge.displayName = "FailedLoadTimelineItem");
+                gn.displayName || (gn.displayName = "FailedLoadTimelineItem");
             } catch {}
-            let gl = {
+            let ga = {
                     loadMoreWrapper:
                         "IssueTimeline-module__loadMoreWrapper--RVb8K",
                 },
-                gn = {
+                gs = {
                     directionPickerContainer:
                         "LoadDirectionPicker-module__directionPickerContainer--r5ppb",
                     ActionList: "LoadDirectionPicker-module__ActionList--KMe4j",
                 },
-                ga = ({
+                gi = ({
                     loadFromTopFn: e,
                     loadFromBottomFn: l,
                     isLoading: n,
@@ -64198,7 +64166,7 @@ git checkout ${e}`;
                     type: s,
                 }) =>
                     (0, F.jsx)("div", {
-                        className: gn.directionPickerContainer,
+                        className: gs.directionPickerContainer,
                         children: (0, F.jsxs)(O.W, {
                             children: [
                                 (0, F.jsx)(O.W.Anchor, {
@@ -64214,7 +64182,7 @@ git checkout ${e}`;
                                 }),
                                 (0, F.jsx)(O.W.Overlay, {
                                     children: (0, F.jsxs)(H.l, {
-                                        className: gn.ActionList,
+                                        className: gs.ActionList,
                                         children: [
                                             (0, F.jsx)(H.l.Item, {
                                                 disabled: n,
@@ -64243,9 +64211,9 @@ git checkout ${e}`;
                         }),
                     });
             try {
-                ga.displayName || (ga.displayName = "LoadDirectionPicker");
+                gi.displayName || (gi.displayName = "LoadDirectionPicker");
             } catch {}
-            let gs = {
+            let gt = {
                     buttonChildrenWrapper:
                         "LoadMore-module__buttonChildrenWrapper--m9hqd",
                     LoadMoreContainer:
@@ -64260,7 +64228,7 @@ git checkout ${e}`;
                         "LoadMore-module__remainingItemsHeading--s1c0Z",
                     buttonWrapper: "LoadMore-module__buttonWrapper--jObLK",
                 },
-                gi = ({
+                gr = ({
                     numberOfRemainingItems: e,
                     loadFromTopFn: l,
                     loadFromBottomFn: n,
@@ -64274,9 +64242,9 @@ git checkout ${e}`;
                     isCurrentlyLoadingBackItems: d,
                 }) => {
                     let [c, m] = (0, Q.useState)(!1),
-                        g = e < u8.timeline.maxPreloadCount,
+                        g = e < u9.timeline.maxPreloadCount,
                         [y, p] = (0, Q.useState)(void 0),
-                        [k, b] = (0, i7.M)(
+                        [k, b] = (0, i5.M)(
                             "loadMoreFromTopPreference",
                             void 0 !== l
                         ),
@@ -64285,7 +64253,7 @@ git checkout ${e}`;
                         K = (0, Q.useCallback)(
                             (t = !1, u = !0) => {
                                 if (c) return;
-                                let o = t ? e : u8.timeline.pageSize;
+                                let o = t ? e : u9.timeline.pageSize;
                                 (m(!0), p(void 0), b(u));
                                 let d = () => {
                                     if ((m(!1), t)) return void a?.();
@@ -64310,38 +64278,38 @@ git checkout ${e}`;
                                     "data-testid": `issue-timeline-load-more-${r}`,
                                     "aria-describedby": f,
                                     children: (0, F.jsx)("div", {
-                                        className: gs.buttonChildrenWrapper,
+                                        className: gt.buttonChildrenWrapper,
                                         children: t,
                                     }),
                                 }),
                             [t, f, c, g, K, k, r]
                         );
                     return (0, F.jsxs)("div", {
-                        className: gs.LoadMoreContainer,
+                        className: gt.LoadMoreContainer,
                         children: [
                             u &&
-                                (0, F.jsx)(mV, {
+                                (0, F.jsx)(mO, {
                                     isLoading: c && k,
                                     isHovered: "top" === y,
                                 }),
                             (0, F.jsx)("div", {
                                 "data-testid": `issue-timeline-load-more-container-${r}`,
-                                className: gs.loadMoreContentContainer,
+                                className: gt.loadMoreContentContainer,
                                 children: (0, F.jsxs)("div", {
-                                    className: gs.innerContentWrapper,
+                                    className: gt.innerContentWrapper,
                                     children: [
                                         (0, F.jsxs)("div", {
-                                            className: gs.centeredContent,
+                                            className: gt.centeredContent,
                                             children: [
                                                 (0, F.jsx)("div", {
                                                     className:
-                                                        gs.headingWrapper,
+                                                        gt.headingWrapper,
                                                     children: (0, F.jsxs)(
                                                         "h3",
                                                         {
                                                             id: f,
                                                             className:
-                                                                gs.remainingItemsHeading,
+                                                                gt.remainingItemsHeading,
                                                             children: [
                                                                 (0, F.jsx)(
                                                                     "span",
@@ -64383,13 +64351,13 @@ git checkout ${e}`;
                                                     ),
                                                 }),
                                                 (0, F.jsx)("div", {
-                                                    className: gs.buttonWrapper,
+                                                    className: gt.buttonWrapper,
                                                     children: S(),
                                                 }),
                                             ],
                                         }),
                                         !g &&
-                                            (0, F.jsx)(ga, {
+                                            (0, F.jsx)(gi, {
                                                 loadFromTopFn: () => {
                                                     K(!1, !0);
                                                 },
@@ -64404,7 +64372,7 @@ git checkout ${e}`;
                                 }),
                             }),
                             h &&
-                                (0, F.jsx)(mV, {
+                                (0, F.jsx)(mO, {
                                     isLoading: (c && !k) || d,
                                     isHovered: "bottom" === y,
                                 }),
@@ -64412,9 +64380,9 @@ git checkout ${e}`;
                     });
                 };
             try {
-                gi.displayName || (gi.displayName = "LoadMore");
+                gr.displayName || (gr.displayName = "LoadMore");
             } catch {}
-            function gt({
+            function gu({
                 timelineItems: e,
                 shouldHighlightElement: l,
                 highlight: n,
@@ -64434,18 +64402,18 @@ git checkout ${e}`;
                             let n = e[l - 1];
                             if (!n || "event" !== n.type || !n.item?.__id)
                                 return;
-                            let a = `[${u8.timeline.dataWrapperTimelineEventId}="${n.item.__id}"] + *`,
+                            let a = `[${u9.timeline.dataWrapperTimelineEventId}="${n.item.__id}"] + *`,
                                 s = document.querySelector(a),
                                 i = null;
-                            if (s) i = (0, m8.Z0)(s);
+                            if (s) i = (0, ge.Z0)(s);
                             else {
-                                let e = `[${u8.timeline.dataWrapperTimelineEventId}="${n.item.__id}"]`,
+                                let e = `[${u9.timeline.dataWrapperTimelineEventId}="${n.item.__id}"]`,
                                     l = document.querySelector(e),
                                     a = l?.closest("section"),
                                     s = "IssueComment" !== n.item.__typename;
                                 if (a && s) {
                                     let e = a.nextElementSibling;
-                                    e && (i = (0, m8.Z0)(e));
+                                    e && (i = (0, ge.Z0)(e));
                                 }
                             }
                             i?.focus({ preventScroll: !0 });
@@ -64456,7 +64424,7 @@ git checkout ${e}`;
                         loadSecondaryTimelineQueryRef: p,
                         dispose: k,
                     } = (function () {
-                        let [e, l, n] = (0, N.useQueryLoader)(my);
+                        let [e, l, n] = (0, N.useQueryLoader)(mp);
                         return {
                             secondaryTimelineQueryRef: e,
                             loadSecondaryTimelineQueryRef: l,
@@ -64494,9 +64462,9 @@ git checkout ${e}`;
                         if ("load" === p.type) {
                             let e = `${p.type}-${p.position}`,
                                 l = (0, F.jsx)("div", {
-                                    className: gl.loadMoreWrapper,
+                                    className: ga.loadMoreWrapper,
                                     children: (0, F.jsx)(
-                                        gi,
+                                        gr,
                                         {
                                             type: e,
                                             loadFromTopFn: p.loadFromTop,
@@ -64521,14 +64489,14 @@ git checkout ${e}`;
                             return {
                                 isAddedToGroupedEvents: !1,
                                 timelineItem: p,
-                                render: cQ(l, void 0, e),
+                                render: cG(l, void 0, e),
                             };
                         }
                         if (null == p.item)
                             return {
                                 isAddedToGroupedEvents: !1,
                                 timelineItem: p,
-                                render: (0, F.jsx)(ge, {}, "failed-load-item"),
+                                render: (0, F.jsx)(gn, {}, "failed-load-item"),
                             };
                         let f = (function (e, l) {
                                 if (0 === l) return !0;
@@ -64542,10 +64510,10 @@ git checkout ${e}`;
                                     if (
                                         e &&
                                         l &&
-                                        u8.timeline.majorEventTypes.includes(
+                                        u9.timeline.majorEventTypes.includes(
                                             e
                                         ) ===
-                                            u8.timeline.majorEventTypes.includes(
+                                            u9.timeline.majorEventTypes.includes(
                                                 l
                                             ) &&
                                         "IssueComment" !== e &&
@@ -64555,12 +64523,12 @@ git checkout ${e}`;
                                 }
                                 return !0;
                             })(e || [], k),
-                            K = l && n && oc(p.item, n);
+                            K = l && n && om(p.item, n);
                         return {
                             isAddedToGroupedEvents: !1,
                             timelineItem: p,
                             render: (0, F.jsx)(
-                                m7,
+                                m3,
                                 {
                                     item: p,
                                     issueId: s,
@@ -64619,29 +64587,26 @@ git checkout ${e}`;
                 return (0, F.jsx)(F.Fragment, { children: h });
             }
             try {
-                gt.displayName || (gt.displayName = "VirtualIssueTimelinePage");
+                gu.displayName || (gu.displayName = "VirtualIssueTimelinePage");
             } catch {}
-            let gr = ({ issueId: e, itemCount: l }) => (
+            let go = ({ issueId: e, itemCount: l }) => (
                     ((e, l, n) => {
                         let [a, s] = (0, Q.useState)(l || 0),
                             i = N.ConnectionHandler.getConnectionID(
                                 e,
                                 n ?? "IssueBacksideTimeline_timelineItems",
-                                {
-                                    includeIssueDependencyEvents: !0,
-                                    visibleEventsOnly: !0,
-                                }
+                                { visibleEventsOnly: !0 }
                             ),
                             t = (0, Q.useMemo)(
                                 () => ({
-                                    subscription: oa,
+                                    subscription: os,
                                     variables: { issueId: e },
                                 }),
                                 [e]
                             ),
                             r = (0, Q.useMemo)(
                                 () => ({
-                                    subscription: os,
+                                    subscription: oi,
                                     onNext: (e) => {
                                         if (
                                             !e?.issueUpdated
@@ -64665,7 +64630,7 @@ git checkout ${e}`;
                     })(e, l, "Issue__backTimelineItems"),
                     null
                 ),
-                gu = ({
+                gd = ({
                     issue: e,
                     issueSecondary: l,
                     viewer: n,
@@ -64677,8 +64642,8 @@ git checkout ${e}`;
                     optionConfig: u,
                 }) => {
                     var o, d;
-                    let c = (0, N.useFragment)(u5, e),
-                        m = (0, N.useFragment)(u3, l),
+                    let c = (0, N.useFragment)(u3, e),
+                        m = (0, N.useFragment)(u8, l),
                         g = (0, Q.useMemo)(() => au(a), [a]),
                         [y, p] = (0, Q.useState)(void 0 !== g);
                     ((0, Q.useEffect)(() => {
@@ -64719,19 +64684,19 @@ git checkout ${e}`;
                                 {
                                     data: { frontTimelineItems: p },
                                     loadNext: k,
-                                } = (0, N.usePaginationFragment)(og, e),
+                                } = (0, N.usePaginationFragment)(oy, e),
                                 {
                                     data: { backTimelineItems: F },
                                     loadPrevious: b,
-                                } = (0, N.usePaginationFragment)(op, e),
+                                } = (0, N.usePaginationFragment)(ok, e),
                                 h = p?.totalCount ?? 0,
-                                { items: f } = m3(p),
-                                { items: K } = m3(F),
+                                { items: f } = m9(p),
+                                { items: K } = m9(F),
                                 S = (0, Q.useMemo)(() => au(l), [l]),
                                 I = (0, Q.useMemo)(
                                     () =>
                                         !!S &&
-                                        [...f, ...K].some((e) => oc(e, S)),
+                                        [...f, ...K].some((e) => om(e, S)),
                                     [K, f, S]
                                 ),
                                 v = !!p;
@@ -64771,7 +64736,7 @@ git checkout ${e}`;
                             } = ((e, l, n = !1) => {
                                 let a = l ? `${l.prefix}-${l.id}` : "",
                                     { node: s } = (0, N.useLazyLoadQuery)(
-                                        ou,
+                                        oo,
                                         {
                                             id: e,
                                             focusText: a,
@@ -64790,7 +64755,7 @@ git checkout ${e}`;
                                         hasPrevious: r,
                                         loadNext: u,
                                         loadPrevious: o,
-                                    } = (0, N.usePaginationFragment)(od, s),
+                                    } = (0, N.usePaginationFragment)(oc, s),
                                     d = i?.timelineItems?.beforeFocusCount || 0,
                                     c = i?.timelineItems?.afterFocusCount || 0;
                                 return {
@@ -64808,7 +64773,7 @@ git checkout ${e}`;
                             }, [x]);
                             let j = (0, Q.useMemo)(() => {
                                 if (T) {
-                                    let { items: e } = m3(T);
+                                    let { items: e } = m9(T);
                                     return e;
                                 }
                                 return [];
@@ -64849,7 +64814,7 @@ git checkout ${e}`;
                                 P = (0, Q.useMemo)(() => {
                                     if (0 === f.length && 0 !== h) return null;
                                     if (f.length + A.length + K.length >= h)
-                                        return oK(
+                                        return oS(
                                             [...f, ...A, ...K].reduce(
                                                 ({ keys: e, values: l }, n) => (
                                                     e.has(n.__id) ||
@@ -64860,7 +64825,7 @@ git checkout ${e}`;
                                                 { keys: new Set(), values: [] }
                                             ).values
                                         ).map((e) => ({ type: "event", ...e }));
-                                    let e = oK(f).map((e) => ({
+                                    let e = oS(f).map((e) => ({
                                             type: "event",
                                             ...e,
                                         })),
@@ -64888,7 +64853,7 @@ git checkout ${e}`;
                                                       },
                                                   ],
                                         a = _
-                                            ? oK(A).map((e) => ({
+                                            ? oS(A).map((e) => ({
                                                   type: "event",
                                                   ...e,
                                               }))
@@ -64910,7 +64875,7 @@ git checkout ${e}`;
                                                           g && A.length > 0,
                                                   },
                                               ]),
-                                        ...oK(K).map((e) => ({
+                                        ...oS(K).map((e) => ({
                                             type: "event",
                                             ...e,
                                         })),
@@ -64977,7 +64942,7 @@ git checkout ${e}`;
                                     async (e) => {
                                         e.current &&
                                             a &&
-                                            (await on(),
+                                            (await oa(),
                                             e.current?.scrollIntoView({
                                                 behavior: "instant",
                                                 block: "start",
@@ -65019,7 +64984,7 @@ git checkout ${e}`;
                                         (e) =>
                                             "event" === e.type &&
                                             !!e.item &&
-                                            oc(e.item, g)
+                                            om(e.item, g)
                                     ),
                                 [g, b, y]
                             ),
@@ -65033,7 +64998,7 @@ git checkout ${e}`;
                             `Missing timeline items for issue ${e.id}.  Total item count: ${h}.  Highlighted event: ${a}`
                         );
                     let I = (0, Q.useMemo)(() => {
-                        let e = u8.timeline.virtualPageSize,
+                        let e = u9.timeline.virtualPageSize,
                             l = [];
                         if (0 === b.length) return [];
                         let n = (e) =>
@@ -65059,22 +65024,22 @@ git checkout ${e}`;
                         children: [
                             u.withLiveUpdates &&
                                 !!n &&
-                                (0, F.jsx)(gr, { issueId: e.id, itemCount: h }),
-                            m?.isTransferInProgress && (0, F.jsx)(or, {}),
+                                (0, F.jsx)(go, { issueId: e.id, itemCount: h }),
+                            m?.isTransferInProgress && (0, F.jsx)(ou, {}),
                             (0, F.jsx)("h2", {
                                 className: "sr-only",
                                 children: ao.timeline.header,
                             }),
                             K &&
-                                (0, F.jsx)(oi, {
+                                (0, F.jsx)(ot, {
                                     nextPage: s ? s + 1 : 1,
                                     canonicalUrl: ey.fV.pathname,
                                 }),
-                            (0, F.jsx)(u9.A, {
+                            (0, F.jsx)(oe.A, {
                                 "data-testid": ag.Y.issueTimelineContainer,
                                 children: I.map((e) =>
                                     (0, F.jsx)(
-                                        gt,
+                                        gu,
                                         {
                                             timelineItems: e,
                                             shouldHighlightElement: y,
@@ -65099,19 +65064,19 @@ git checkout ${e}`;
                     });
                 };
             try {
-                gr.displayName ||
-                    (gr.displayName = "IssueTimelineLiveUpdatesLoader");
+                go.displayName ||
+                    (go.displayName = "IssueTimelineLiveUpdatesLoader");
             } catch {}
             try {
-                gu.displayName || (gu.displayName = "IssueTimeline");
+                gd.displayName || (gd.displayName = "IssueTimeline");
             } catch {}
-            let go = b,
-                gd = h.A;
-            function gc({ itemIdentifier: e, optionConfig: l = u1.C }) {
+            let gc = b,
+                gm = h.A;
+            function gg({ itemIdentifier: e, optionConfig: l = u2.C }) {
                 let { repo: n, owner: a, number: s } = e,
                     i = new URLSearchParams(ey.fV.search).get("timeline_page"),
                     [t, r] = (0, N.useQueryLoader)(
-                        gd,
+                        gm,
                         l.preloadedQueries?.issueViewerViewQuery
                     ),
                     u = (0, Q.useRef)(null),
@@ -65157,15 +65122,15 @@ git checkout ${e}`;
                               critical: !0,
                               children: (0, F.jsx)("div", {
                                   className: (0, eb.$)(
-                                      uG.issueViewerContainer,
-                                      uG.mainContainer
+                                      uY.issueViewerContainer,
+                                      uY.mainContainer
                                   ),
                                   ref: u,
                                   children: (0, F.jsx)(Q.Suspense, {
-                                      fallback: (0, F.jsx)(uY.Q, {
+                                      fallback: (0, F.jsx)(uX.Q, {
                                           optionConfig: l,
                                       }),
-                                      children: (0, F.jsx)(gy, {
+                                      children: (0, F.jsx)(gk, {
                                           owner: a,
                                           repo: n,
                                           number: s,
@@ -65180,9 +65145,9 @@ git checkout ${e}`;
                           },
                           `${a}-${n}-${s}`
                       )
-                    : (0, F.jsx)(uY.Q, { optionConfig: l });
+                    : (0, F.jsx)(uX.Q, { optionConfig: l });
             }
-            function gm({
+            function gy({
                 issueViewerViewRef: e,
                 containerRef: l,
                 optionConfig: n,
@@ -65191,11 +65156,11 @@ git checkout ${e}`;
                 timelinePage: i,
             }) {
                 let { repository: t, safeViewer: r } = (0, N.usePreloadedQuery)(
-                    gd,
+                    gm,
                     e
                 );
                 return t?.issue
-                    ? (0, F.jsx)(gg, {
+                    ? (0, F.jsx)(gp, {
                           viewerFragment: r || null,
                           issueFragment: t.issue,
                           containerRef: l,
@@ -65208,7 +65173,7 @@ git checkout ${e}`;
                       })
                     : null;
             }
-            function gg({
+            function gp({
                 viewerFragment: e,
                 issueFragment: l,
                 optionConfig: n,
@@ -65276,7 +65241,7 @@ git checkout ${e}`;
                 (0, lJ.K)(j);
                 let _ = (0, Q.useMemo)(
                         () =>
-                            (0, F.jsx)(u$, {
+                            (0, F.jsx)(uz, {
                                 sidebarKey: u,
                                 sidebarSecondaryKey: i,
                                 viewer: o,
@@ -65287,17 +65252,17 @@ git checkout ${e}`;
                     E = (0, Q.useMemo)(
                         () =>
                             (0, F.jsxs)("div", {
-                                className: uG.issueViewerMetadataPane,
+                                className: uY.issueViewerMetadataPane,
                                 "data-testid": ag.Y.issueViewerMetadataPane,
                                 children: [
                                     (0, F.jsx)(eF.A, {
                                         as: "h2",
-                                        className: uG.metadataHeader,
+                                        className: uY.metadataHeader,
                                         children: ao.metadataHeader,
                                     }),
                                     (0, F.jsx)(eF.A, {
                                         as: "h2",
-                                        className: `${uG.largeScreenMetadataHeader} sr-only`,
+                                        className: `${uY.largeScreenMetadataHeader} sr-only`,
                                         children: ao.metadataHeader,
                                     }),
                                     _,
@@ -65349,15 +65314,15 @@ git checkout ${e}`;
                         }),
                         (0, F.jsx)(ap.H, {
                             sx: n?.innerSx,
-                            children: (0, F.jsxs)(eO.A, {
+                            children: (0, F.jsxs)(eO.az, {
                                 sx: {
                                     flexDirection: n.useViewportQueries
                                         ? ["column", "column", "row", "row"]
                                         : T(["column", "column", "row", "row"]),
                                 },
-                                className: uG.contentAndSidebarWrapper,
+                                className: uY.contentAndSidebarWrapper,
                                 children: [
-                                    (0, F.jsxs)(eO.A, {
+                                    (0, F.jsxs)(eO.az, {
                                         sx: {
                                             width: n.useViewportQueries
                                                 ? [
@@ -65373,7 +65338,7 @@ git checkout ${e}`;
                                                       "auto",
                                                   ]),
                                         },
-                                        className: uG.contentArea,
+                                        className: uY.contentArea,
                                         children: [
                                             (0, F.jsx)("div", {
                                                 "data-testid":
@@ -65395,7 +65360,7 @@ git checkout ${e}`;
                                                 }),
                                             }),
                                             d &&
-                                                (0, F.jsx)(eO.A, {
+                                                (0, F.jsx)(eO.az, {
                                                     sx: {
                                                         ml: T([
                                                             "0px",
@@ -65408,7 +65373,7 @@ git checkout ${e}`;
                                                         ag.Y
                                                             .subIssuesIssueContainer,
                                                     className:
-                                                        uG.subIssuesContainer,
+                                                        uY.subIssuesContainer,
                                                     children: (0, F.jsx)(ai, {
                                                         issueKey: i,
                                                         onSubIssueClick:
@@ -65425,11 +65390,11 @@ git checkout ${e}`;
                                                 className: ac.commentsContainer,
                                                 children: (0, F.jsxs)("div", {
                                                     className:
-                                                        uG.commentsContainer,
+                                                        uY.commentsContainer,
                                                     children: [
                                                         (0, F.jsx)(lX.t, {
                                                             fallback: (0,
-                                                            F.jsx)(uW, {}),
+                                                            F.jsx)(uQ, {}),
                                                             critical: !0,
                                                             children: (0,
                                                             F.jsxs)(
@@ -65438,7 +65403,7 @@ git checkout ${e}`;
                                                                     fallback:
                                                                         (0,
                                                                         F.jsx)(
-                                                                            uQ.p,
+                                                                            uG.p,
                                                                             {
                                                                                 delayedShow:
                                                                                     !0,
@@ -65447,7 +65412,7 @@ git checkout ${e}`;
                                                                     children: [
                                                                         (0,
                                                                         F.jsx)(
-                                                                            gu,
+                                                                            gd,
                                                                             {
                                                                                 issue: u,
                                                                                 issueSecondary:
@@ -65569,7 +65534,7 @@ git checkout ${e}`;
                                             }),
                                         ],
                                     }),
-                                    (0, F.jsx)(eO.A, {
+                                    (0, F.jsx)(eO.az, {
                                         sx: {
                                             width: n.useViewportQueries
                                                 ? [
@@ -65587,7 +65552,7 @@ git checkout ${e}`;
                                         },
                                         "data-testid":
                                             ag.Y.issueViewerMetadataContainer,
-                                        className: uG.metadataSidebar,
+                                        className: uY.metadataSidebar,
                                         children: E,
                                     }),
                                 ],
@@ -65596,7 +65561,7 @@ git checkout ${e}`;
                         i &&
                             D &&
                             M === u.id &&
-                            (0, F.jsx)(l7, {
+                            (0, F.jsx)(l5, {
                                 open: D,
                                 setOpen: V,
                                 issue: i,
@@ -65607,7 +65572,7 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function gy({ owner: e, repo: l, number: n, ...a }) {
+            function gk({ owner: e, repo: l, number: n, ...a }) {
                 let [s, i] = (function ({
                     owner: e,
                     repo: l,
@@ -65618,9 +65583,9 @@ git checkout ${e}`;
                         [i, t] = (0, Q.useState)(null);
                     (0, Q.useEffect)(() => {
                         ey.X3 ||
-                            (0, t4.SD)({
+                            (0, t6.SD)({
                                 environment: s,
-                                query: u0,
+                                query: u1,
                                 variables: {
                                     owner: e,
                                     repo: l,
@@ -65633,9 +65598,9 @@ git checkout ${e}`;
                                 },
                             });
                     }, [s, a, n, e, l]);
-                    let r = (0, N.useFragment)(uJ, i),
+                    let r = (0, N.useFragment)(uZ, i),
                         u = r?.issue,
-                        o = (0, N.useFragment)(go, u),
+                        o = (0, N.useFragment)(gc, u),
                         d = o && o.id;
                     return (
                         (0, Q.useEffect)(() => {
@@ -65646,28 +65611,28 @@ git checkout ${e}`;
                                     l && l.setValue(!0, "isReadByViewer");
                                 });
                         }, [s, a, d]),
-                        [o, (0, N.useFragment)(uZ, r)]
+                        [o, (0, N.useFragment)(u0, r)]
                     );
                 })({ owner: e, repo: l, number: n });
-                return (0, F.jsx)(gm, {
+                return (0, F.jsx)(gy, {
                     secondaryIssueData: s ?? void 0,
                     secondaryRepoData: i ?? void 0,
                     ...a,
                 });
             }
             try {
-                gc.displayName || (gc.displayName = "IssueViewer");
+                gg.displayName || (gg.displayName = "IssueViewer");
             } catch {}
             try {
-                gm.displayName || (gm.displayName = "IssueViewerInternal");
+                gy.displayName || (gy.displayName = "IssueViewerInternal");
             } catch {}
             try {
-                gg.displayName ||
-                    (gg.displayName = "IssueViewerInternalFragment");
+                gp.displayName ||
+                    (gp.displayName = "IssueViewerInternalFragment");
             } catch {}
             try {
-                gy.displayName ||
-                    (gy.displayName = "IsssueViewerWithSecondary");
+                gk.displayName ||
+                    (gk.displayName = "IsssueViewerWithSecondary");
             } catch {}
         },
         66827: (e, l, n) => {
@@ -65697,7 +65662,7 @@ git checkout ${e}`;
                 u.displayName || (u.displayName = "IssueBodyLoading");
             } catch {}
             var o = n(4578),
-                d = n(75177),
+                d = n(21998),
                 c = n(96540),
                 m = n(83855);
             let g = {
@@ -65782,7 +65747,7 @@ git checkout ${e}`;
                                 className: k.headerLoadingWrapper,
                                 children: (0, a.jsx)(y, {}),
                             }),
-                            (0, a.jsxs)(d.A, {
+                            (0, a.jsxs)(d.az, {
                                 sx: {
                                     flexDirection: e.useViewportQueries
                                         ? ["column", "column", "row", "row"]
@@ -65790,7 +65755,7 @@ git checkout ${e}`;
                                 },
                                 className: k.contentAndSidebarWrapper,
                                 children: [
-                                    (0, a.jsxs)(d.A, {
+                                    (0, a.jsxs)(d.az, {
                                         sx: {
                                             width: e.useViewportQueries
                                                 ? [
@@ -65823,7 +65788,7 @@ git checkout ${e}`;
                                             }),
                                         ],
                                     }),
-                                    (0, a.jsx)(d.A, {
+                                    (0, a.jsx)(d.az, {
                                         sx: {
                                             width: e.useViewportQueries
                                                 ? [
@@ -66850,12 +66815,13 @@ git checkout ${e}`;
                                 className: R.BackToRepositorySelectionButton,
                                 children: [
                                     (0, a.jsx)(t.K, {
-                                        unsafeDisableTooltip: !0,
                                         icon: i.ArrowLeftIcon,
                                         variant: "invisible",
+                                        "data-testid":
+                                            "back-to-repo-selection-button",
                                         "aria-label":
                                             "Back to repository selection",
-                                        title: "Back to repository selection",
+                                        tooltipDirection: "n",
                                         onClick: v,
                                     }),
                                     (0, a.jsx)("span", { children: k }),
@@ -67194,7 +67160,7 @@ git checkout ${e}`;
                         ],
                     },
                     params: {
-                        id: "342ed7fee6ebee664150d1f2402cda9a",
+                        id: "74ac1485e4aba9457c658e9890e4c2a0",
                         metadata: {},
                         name: "ClosedByPullRequestsReferencesQuery",
                         operationKind: "query",
@@ -67250,6 +67216,13 @@ git checkout ${e}`;
                                         name: "node",
                                         plural: !1,
                                         selections: [
+                                            {
+                                                alias: null,
+                                                args: null,
+                                                kind: "ScalarField",
+                                                name: "id",
+                                                storageKey: null,
+                                            },
                                             {
                                                 args: null,
                                                 kind: "FragmentSpread",
@@ -67308,24 +67281,24 @@ git checkout ${e}`;
                 type: "Issue",
                 abstractKey: null,
             };
-            t.hash = "6677b0485535910a7fd3d9173953cc99";
+            t.hash = "c00ad6168f42bc8f268666e9ba0d54e6";
             var r = n(38621),
                 u = n(5945),
-                o = n(52446),
-                d = n(75177),
-                c = n(12004),
-                m = n(94977),
+                o = n(3614),
+                d = n(55847),
+                c = n(52446),
+                m = n(12004),
                 g = n(96540),
                 y = n(18312);
             let p = {
                     pullRequestsDropdown:
                         "ClosedByPullRequestsReferences-module__pullRequestsDropdown--K__wO",
-                    pullRequestCountAnchor:
-                        "ClosedByPullRequestsReferences-module__pullRequestCountAnchor--fVT2z",
                     pullRequestCountText:
                         "ClosedByPullRequestsReferences-module__pullRequestCountText--FPNxe",
                     loadingSpinnerContainer:
                         "ClosedByPullRequestsReferences-module__loadingSpinnerContainer--YxWNt",
+                    linkedPullRequestsBtn:
+                        "ClosedByPullRequestsReferences-module__linkedPullRequestsBtn--wgCrX",
                 },
                 k = {
                     argumentDefinitions: [],
@@ -67442,8 +67415,8 @@ git checkout ${e}`;
                         number: s,
                         title: i,
                         repository: { owner: t, name: u },
-                        url: d,
-                        merged: c,
+                        url: o,
+                        merged: d,
                         closed: m,
                         isDraft: g,
                     } = (0, K.useFragment)(k, e),
@@ -67451,14 +67424,14 @@ git checkout ${e}`;
                     { theme: p } = (0, b.DP)();
                 return l
                     ? (0, a.jsxs)(h.A, {
-                          href: d,
+                          href: o,
                           target: "_blank",
                           "data-hovercard-url": (0, F.i9S)({
                               owner: y,
                               repo: u,
                               pullRequestNumber: s,
                           }),
-                          "aria-label": `link to the issue #${i}`,
+                          "aria-label": `link to the pull request #${i}`,
                           className: S.hovercardLink,
                           children: [
                               (0, a.jsx)(r.GitPullRequestIcon, { size: 16 }),
@@ -67469,11 +67442,11 @@ git checkout ${e}`;
                           ],
                       })
                     : (0, a.jsxs)(
-                          o.l.Item,
+                          c.l.Item,
                           {
                               children: [
-                                  (0, a.jsx)(o.l.LeadingVisual, {
-                                      children: c
+                                  (0, a.jsx)(c.l.LeadingVisual, {
+                                      children: d
                                           ? (0, a.jsx)(f.A, {
                                                 icon: r.GitMergeIcon,
                                                 size: 16,
@@ -67506,7 +67479,7 @@ git checkout ${e}`;
                                                 }),
                                   }),
                                   (0, a.jsxs)("a", {
-                                      href: d,
+                                      href: o,
                                       "aria-label": `link to the issue #${i}`,
                                       className: S.pullRequestItemContent,
                                       children: [
@@ -67527,69 +67500,55 @@ git checkout ${e}`;
             } catch {}
             function v({ issueId: e, closedByPullRequestsReferencesKey: l }) {
                 let n = (0, y.useFragment)(s, l),
-                    i = n?.closedByPullRequestsReferences?.totalCount ?? 0,
-                    [t, r] = (0, g.useState)(!1),
-                    d = (0, g.useRef)(null),
-                    c = (0, g.useCallback)(() => r(!t), [t]);
+                    i = n?.closedByPullRequestsReferences?.totalCount ?? 0;
                 return 0 === i
                     ? null
-                    : t
-                      ? 1 === i
-                          ? (0, a.jsx)(g.Suspense, {
-                                fallback: (0, a.jsx)(x, {
-                                    totalCount: i,
-                                    anchorRef: d,
-                                }),
-                                children: (0, a.jsx)(L, {
-                                    issueId: e,
-                                    totalCount: i,
-                                    open: t,
-                                    setOpen: c,
-                                    anchorRef: d,
-                                }),
-                            })
-                          : (0, a.jsxs)(a.Fragment, {
+                    : 1 === i
+                      ? (0, a.jsx)(g.Suspense, {
+                            fallback: (0, a.jsxs)("div", {
                                 children: [
-                                    (0, a.jsx)(x, {
-                                        totalCount: i,
-                                        anchorRef: d,
+                                    (0, a.jsx)(r.GitPullRequestIcon, {
+                                        size: 16,
                                     }),
-                                    (0, a.jsx)(u.W, {
-                                        open: t,
-                                        onOpenChange: r,
-                                        anchorRef: d,
-                                        children: (0, a.jsx)(u.W.Overlay, {
-                                            children: (0, a.jsx)(o.l, {
-                                                className:
-                                                    p.pullRequestsDropdown,
-                                                children: (0, a.jsx)(
-                                                    g.Suspense,
-                                                    {
-                                                        fallback: (0, a.jsx)(
-                                                            R,
-                                                            {}
-                                                        ),
-                                                        children: (0, a.jsx)(
-                                                            L,
-                                                            {
-                                                                issueId: e,
-                                                                totalCount: i,
-                                                                open: t,
-                                                                setOpen: c,
-                                                                anchorRef: d,
-                                                            }
-                                                        ),
-                                                    }
-                                                ),
+                                    (0, a.jsx)("span", {
+                                        className: p.pullRequestCountText,
+                                        children: i.toString(),
+                                    }),
+                                ],
+                            }),
+                            children: (0, a.jsx)(L, {
+                                issueId: e,
+                                totalCount: i,
+                            }),
+                        })
+                      : (0, a.jsxs)(u.W, {
+                            children: [
+                                (0, a.jsx)(u.W.Anchor, {
+                                    children: (0, a.jsx)(o.m, {
+                                        direction: "w",
+                                        text: `${i} linked PRs`,
+                                        type: "description",
+                                        children: (0, a.jsx)(d.Q, {
+                                            variant: "link",
+                                            leadingVisual: r.GitPullRequestIcon,
+                                            className: p.linkedPullRequestsBtn,
+                                            children: i.toString(),
+                                        }),
+                                    }),
+                                }),
+                                (0, a.jsx)(u.W.Overlay, {
+                                    children: (0, a.jsx)(c.l, {
+                                        className: p.pullRequestsDropdown,
+                                        children: (0, a.jsx)(g.Suspense, {
+                                            fallback: (0, a.jsx)(C, {}),
+                                            children: (0, a.jsx)(L, {
+                                                issueId: e,
+                                                totalCount: i,
                                             }),
                                         }),
                                     }),
-                                ],
-                            })
-                      : (0, a.jsx)(x, {
-                            onClick: c,
-                            totalCount: i,
-                            anchorRef: d,
+                                }),
+                            ],
                         });
             }
             function L({ issueId: e, ...l }) {
@@ -67619,67 +67578,22 @@ git checkout ${e}`;
                             ),
                         l > 1 &&
                             (0, a.jsx)(a.Fragment, {
-                                children: s.map((e, l) =>
-                                    (0, a.jsx)(I, { pullRequest: e }, `pr${l}`)
+                                children: s.map((e) =>
+                                    (0, a.jsx)(
+                                        I,
+                                        { pullRequest: e },
+                                        `pr${e.id}`
+                                    )
                                 ),
                             }),
                     ],
                 });
             }
-            let C = ({
-                    anchorRef: e,
-                    onClick: l,
-                    totalCount: n,
-                    tooltipId: s,
-                }) =>
-                    (0, a.jsxs)("div", {
-                        role: n > 1 ? "button" : void 0,
-                        "aria-label": n > 1 ? `${n} linked PRs` : void 0,
-                        ref: e,
-                        tabIndex: 0,
-                        onClick: l,
-                        onMouseEnter: () => {
-                            1 === n && l?.();
-                        },
-                        onFocus: () => {
-                            1 === n && l?.();
-                        },
-                        className: p.pullRequestCountAnchor,
-                        children: [
-                            (0, a.jsx)(r.GitPullRequestIcon, { size: 16 }),
-                            (0, a.jsx)("span", {
-                                "aria-describedby": s,
-                                className: p.pullRequestCountText,
-                                children: n.toString(),
-                            }),
-                        ],
-                    }),
-                x = ({ totalCount: e, onClick: l, anchorRef: n }) => {
-                    let s = (0, g.useId)();
-                    return e > 1
-                        ? (0, a.jsx)(m.A, {
-                              direction: "w",
-                              text: `${e} linked PRs`,
-                              id: s,
-                              children: (0, a.jsx)(C, {
-                                  totalCount: e,
-                                  onClick: l,
-                                  anchorRef: n,
-                                  tooltipId: s,
-                              }),
-                          })
-                        : (0, a.jsx)(C, {
-                              totalCount: e,
-                              onClick: l,
-                              anchorRef: n,
-                          });
-                };
-            function R({ sx: e }) {
-                return (0, a.jsx)(d.A, {
+            function C() {
+                return (0, a.jsx)("div", {
                     "data-testid": "loading-pulls",
-                    sx: { ...e },
                     className: p.loadingSpinnerContainer,
-                    children: (0, a.jsx)(c.A, {}),
+                    children: (0, a.jsx)(m.A, {}),
                 });
             }
             try {
@@ -67695,13 +67609,7 @@ git checkout ${e}`;
                     (T.displayName = "ClosedByPullRequestsReferencesList");
             } catch {}
             try {
-                C.displayName || (C.displayName = "Element");
-            } catch {}
-            try {
-                x.displayName || (x.displayName = "AnchorElement");
-            } catch {}
-            try {
-                R.displayName || (R.displayName = "CenteredLoadingSpinner");
+                C.displayName || (C.displayName = "CenteredLoadingSpinner");
             } catch {}
         },
         94838: (e, l, n) => {
@@ -69569,4 +69477,4 @@ git checkout ${e}`;
         },
     },
 ]);
-//# sourceMappingURL=packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-571762-447463c0eec4.js.map
+//# sourceMappingURL=packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-571762-eff2a13edc84.js.map
