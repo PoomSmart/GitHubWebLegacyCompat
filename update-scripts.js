@@ -47,23 +47,33 @@ const FILE_PATTERNS = {
     "react-core": /react-core-[a-f0-9]+\.js$/,
     "remark-vendors":
         /vendors-node_modules_remark-gfm_lib_index_js-node_modules_remark-parse_lib_index_js-node_modu-[a-f0-9]+-[a-f0-9]+\.js$/,
-    "mdast-vendors": /vendors-node_modules_mdast-util-from-markdown_lib_index_js-node_modules_mdast-util-gfm_lib_in-[a-f0-9]+-[a-f0-9]+\.js$/,
-    "text-expander": /vendors-node_modules_github_text-expander-element_dist_index_js-[a-f0-9]+\.js$/,
-    "emoji-element": /vendors-node_modules_github_emoji-element_dist_index_js-[a-f0-9]+\.js$/,
-    "emotion-is-prop-valid": /vendors-node_modules_@?emotion[_-]is-prop-valid.*-[a-f0-9]+\.js$/,
-    "environment": /ui_packages_environment_.*-[a-f0-9]+\.js$/,
-    "tanstack-queryObserver": /vendors-node_modules_tanstack_(react-query|query-core)_build_modern_(useQuery|queryObserver)_js-[a-f0-9]+\.js$/,
-    "tanstack-queryClient": /vendors-node_modules_tanstack_query-core_build_modern_queryClient_js-[a-f0-9]+\.js$/,
-    // "repos-overview": /chunk-lazy-react-partial-repos-overview-[a-f0-9]+\.js$/,
-    // "wp-runtime": /wp-runtime-[a-f0-9]+\.js$/,
+    "mdast-vendors":
+        /vendors-node_modules_mdast-util-from-markdown_lib_index_js-node_modules_mdast-util-gfm_lib_in-[a-f0-9]+-[a-f0-9]+\.js$/,
+    "text-expander":
+        /vendors-node_modules_github_text-expander-element_dist_index_js-[a-f0-9]+\.js$/,
+    "emoji-element":
+        /vendors-node_modules_github_emoji-element_dist_index_js-[a-f0-9]+\.js$/,
+    "emotion-is-prop-valid":
+        /vendors-node_modules_@?emotion[_-]is-prop-valid.*-[a-f0-9]+\.js$/,
+    environment: /ui_packages_environment_.*-[a-f0-9]+\.js$/,
+    "tanstack-queryObserver":
+        /vendors-node_modules_tanstack_(react-query|query-core)_build_modern_(useQuery|queryObserver)_js-[a-f0-9]+\.js$/,
+    "tanstack-queryClient":
+        /vendors-node_modules_tanstack_query-core_build_modern_queryClient_js-[a-f0-9]+\.js$/,
+    "copilot-markdown":
+        /packages_copilot-markdown_MarkdownRenderer_tsx-[a-f0-9]+\.js$/,
     // CSS
     "primer-react-css": /primer-react\.[a-f0-9]+\.module\.css$/,
     "primer-css": /primer-[a-f0-9]+\.css$/,
-    "new-task-chat-input-css": /packages_react-core_deferred-registry_ts-packages_agent-sessions_components_NewTaskChatInput_-?[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
-    "issue-viewer-css": /packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
+    "new-task-chat-input-css":
+        /packages_react-core_deferred-registry_ts-packages_agent-sessions_components_NewTaskChatInput_-?[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
+    "issue-viewer-css":
+        /packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
     "issues-react-css": /issues-react\.[a-f0-9]+\.module\.css$/,
-    "comment-box-markdown-css": /packages_comment-box_api_file-upload_ts-packages_comment-box_api_preview_ts-packages_markdown-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
-    "commenting-markdown-css": /packages_commenting_hooks_use-markdown-body_ts-packages_commenting_utils_blocked-commenting-[a-z0-9-]+\.[a-f0-9]+\.module\.css$/,
+    "comment-box-markdown-css":
+        /packages_comment-box_api_file-upload_ts-packages_comment-box_api_preview_ts-packages_markdown-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
+    "commenting-markdown-css":
+        /packages_commenting_hooks_use-markdown-body_ts-packages_commenting_utils_blocked-commenting-[a-z0-9-]+\.[a-f0-9]+\.module\.css$/,
 };
 
 // Alternative patterns if primary ones don't match
@@ -71,15 +81,17 @@ const ALTERNATIVE_PATTERNS = {
     "issue-viewer": /issue-viewer.*-[a-f0-9]+\.js$/,
     "list-view": /list-view.*-[a-f0-9]+\.js$/,
     "remark-vendors": /vendors.*remark.*-[a-f0-9]+\.js$/,
-    "mdast-vendors": /vendors.*mdast-util-from-markdown.*mdast-util-gfm.*\.js$/i,
+    "mdast-vendors":
+        /vendors.*mdast-util-from-markdown.*mdast-util-gfm.*\.js$/i,
     "text-expander": /text-expander.*-[a-f0-9]+\.js$/,
     "emoji-element": /emoji-element.*-[a-f0-9]+\.js$/,
     "emotion-is-prop-valid": /is-prop-valid.*-[a-f0-9]+\.js$/,
-    "environment": /environment.*-[a-f0-9]+\.js$/,
-    "tanstack-queryObserver": /tanstack.*(react-query|query-core).*_(useQuery|queryObserver)_js-[a-f0-9]+\.js$/i,
-    "tanstack-queryClient": /tanstack.*query-core.*_queryClient_js-[a-f0-9]+\.js$/i,
-    // "repos-overview": /chunk.*repos.*overview.*-[a-f0-9]+\.js$/,
-    // "wp-runtime": /runtime.*-[a-f0-9]+\.js$/,
+    environment: /environment.*-[a-f0-9]+\.js$/,
+    "tanstack-queryObserver":
+        /tanstack.*(react-query|query-core).*_(useQuery|queryObserver)_js-[a-f0-9]+\.js$/i,
+    "tanstack-queryClient":
+        /tanstack.*query-core.*_queryClient_js-[a-f0-9]+\.js$/i,
+    "copilot-markdown": /copilot-markdown.*MarkdownRenderer.*\.js$/i,
     // New Task Chat Input CSS fallback
     "new-task-chat-input-css": /NewTaskChatInput_.*\.module\.css$/,
     // Core Primer CSS fallback
@@ -105,10 +117,10 @@ const TARGET_FILES = {
     "text-expander": "15.0-text-expander.js",
     "emoji-element": "15.0-emoji-element.js",
     "emotion-is-prop-valid": "15.0-emotion-is-prop-valid.js",
-    "environment": "15.0-environment.js",
+    environment: "15.0-environment.js",
     "tanstack-queryObserver": "15.0-tanstack-queryObserver.js",
     "tanstack-queryClient": "15.0-tanstack-queryClient.js",
-    // "repos-overview": "16.4-repos-overview.js",
+    "copilot-markdown": "16.4-copilot-markdown.js",
     "primer-react-css": "15.4-primer-react.css",
     "primer-css": "15.4-primer.css",
     "new-task-chat-input-css": "15.4-new-task-chat-input.css",
@@ -159,10 +171,17 @@ async function fetchPageWithPuppeteer(url) {
                 await new Promise((resolve) => {
                     let total = 0;
                     const step = () => {
-                        const scrolled = Math.min(1000, document.body.scrollHeight - window.scrollY);
+                        const scrolled = Math.min(
+                            1000,
+                            document.body.scrollHeight - window.scrollY
+                        );
                         window.scrollBy(0, scrolled);
                         total += scrolled;
-                        if (total > 3000 || window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+                        if (
+                            total > 3000 ||
+                            window.scrollY + window.innerHeight >=
+                                document.body.scrollHeight
+                        ) {
                             resolve(null);
                         } else {
                             requestAnimationFrame(step);
@@ -171,25 +190,45 @@ async function fetchPageWithPuppeteer(url) {
                     requestAnimationFrame(step);
                 });
             });
-            await page.waitForNetworkIdle({ idleTime: 500, timeout: 5000 }).catch(() => {});
+            await page
+                .waitForNetworkIdle({ idleTime: 500, timeout: 5000 })
+                .catch(() => {});
         } catch (_) {}
 
         // Get all script sources that were actually loaded
         const scriptSources = await page.evaluate(() => {
             const elements = [
                 ...Array.from(document.querySelectorAll("script[src]")),
-                ...Array.from(document.querySelectorAll('link[rel="stylesheet"][href]')),
+                ...Array.from(
+                    document.querySelectorAll('link[rel="stylesheet"][href]')
+                ),
             ];
             const jsCssWithQuery = /(\.js|\.css)([?#].*)?$/i;
-            return elements
-                .map((el) => el.src || el.href)
-                .filter((src) =>
-                    src &&
-                    src.includes("github.githubassets.com/assets/") &&
-                    jsCssWithQuery.test(src)
-                )
-                // Normalize by stripping query/hash to dedupe with HTML regex extraction later
-                .map((src) => src.replace(/([.#]?[a-z]*)?(\.js|\.css)([?#].*)?$/i, (m, _p, ext) => ext ? src.slice(0, src.toLowerCase().lastIndexOf(ext.toLowerCase())) + ext : src));
+            return (
+                elements
+                    .map((el) => el.src || el.href)
+                    .filter(
+                        (src) =>
+                            src &&
+                            src.includes("github.githubassets.com/assets/") &&
+                            jsCssWithQuery.test(src)
+                    )
+                    // Normalize by stripping query/hash to dedupe with HTML regex extraction later
+                    .map((src) =>
+                        src.replace(
+                            /([.#]?[a-z]*)?(\.js|\.css)([?#].*)?$/i,
+                            (m, _p, ext) =>
+                                ext
+                                    ? src.slice(
+                                          0,
+                                          src
+                                              .toLowerCase()
+                                              .lastIndexOf(ext.toLowerCase())
+                                      ) + ext
+                                    : src
+                        )
+                    )
+            );
         });
 
         // Also get HTML content as backup
@@ -251,7 +290,7 @@ async function fetchGitHubPage() {
             },
         ];
 
-    for (const { name, url } of pages) {
+        for (const { name, url } of pages) {
             console.log(`  - Fetching from ${name}...`);
 
             try {
@@ -314,190 +353,6 @@ async function fetchPageBasic(url, pageName) {
     );
 
     return assets;
-}
-
-async function tryFetchReposOverviewDirectly(discoveredUrls) {
-    try {
-        console.log(
-            "    Attempting to fetch repos-overview chunk directly from webpack runtime info..."
-        );
-
-        // First, try to get wp-runtime content from the live URL
-        const wpRuntimeUrl = discoveredUrls.find((url) =>
-            /wp-runtime-[a-f0-9]+\.js$/.test(url)
-        );
-        if (!wpRuntimeUrl) {
-            console.log("    ❌ No wp-runtime URL found in discovered assets");
-            return null;
-        }
-
-        console.log(`    📥 Fetching wp-runtime from: ${wpRuntimeUrl}`);
-
-        let wpRuntimeContent;
-        if (fetch) {
-            const response = await fetch(wpRuntimeUrl);
-            if (!response.ok) {
-                console.log(
-                    `    ❌ Could not fetch wp-runtime: HTTP ${response.status}`
-                );
-                return null;
-            }
-            wpRuntimeContent = await response.text();
-        } else {
-            try {
-                wpRuntimeContent = execSync(`curl -s "${wpRuntimeUrl}"`, {
-                    encoding: "utf8",
-                });
-                if (
-                    wpRuntimeContent.includes("<html") ||
-                    wpRuntimeContent.includes("<!DOCTYPE")
-                ) {
-                    console.log(
-                        "    ❌ Could not fetch wp-runtime: Got HTML error page"
-                    );
-                    return null;
-                }
-            } catch (error) {
-                console.log(
-                    `    ❌ Could not fetch wp-runtime: ${error.message}`
-                );
-                return null;
-            }
-        }
-
-        // Extract the current repos-overview hash from wp-runtime
-        // Get all matches and try them in reverse order (newest first)
-        const allMatches = [
-            ...wpRuntimeContent.matchAll(
-                /"lazy-react-partial-repos-overview":"([a-f0-9]+)"/g
-            ),
-        ];
-
-        if (allMatches.length === 0) {
-            console.log(
-                "    ❌ Could not extract repos-overview hash from wp-runtime"
-            );
-            return null;
-        }
-
-        console.log(`    📋 Found ${allMatches.length} repos-overview hashes`);
-
-        // Try both hashes starting with the newest
-        for (let i = allMatches.length - 1; i >= 0; i--) {
-            const hash = allMatches[i][1];
-            const expectedFilename = `chunk-lazy-react-partial-repos-overview-${hash}.js`;
-            const directUrl = `https://github.githubassets.com/assets/${expectedFilename}`;
-
-            console.log(
-                `    🔍 Trying direct fetch (${i + 1}/${allMatches.length}): ${expectedFilename}`
-            );
-
-            let content;
-            if (fetch) {
-                const response = await fetch(directUrl);
-                if (!response.ok) {
-                    console.log(
-                        `    ❌ Direct fetch failed: HTTP ${response.status}`
-                    );
-                    continue; // Try next hash
-                }
-                content = await response.text();
-            } else {
-                try {
-                    content = execSync(`curl -s "${directUrl}"`, {
-                        encoding: "utf8",
-                    });
-                    // Basic check if curl succeeded (curl returns HTML error pages on 404)
-                    if (
-                        content.includes("<html") ||
-                        content.includes("<!DOCTYPE")
-                    ) {
-                        console.log(
-                            "    ❌ Direct fetch failed: Got HTML error page"
-                        );
-                        continue; // Try next hash
-                    }
-                } catch (error) {
-                    console.log(`    ❌ Direct fetch failed: ${error.message}`);
-                    continue; // Try next hash
-                }
-            }
-
-            // Validate that this is the correct chunk
-            if (
-                content.includes('["lazy-react-partial-repos-overview"]') ||
-                content.includes("lazy-react-partial-repos-overview") ||
-                content.length > 1000
-            ) {
-                // Basic size check
-                console.log(
-                    `    ✅ Successfully fetched repos-overview chunk with hash: ${hash}`
-                );
-
-                // Save it to temp directory
-                const tempPath = path.join(
-                    TEMP_DIR,
-                    "repos-overview-direct.js"
-                );
-                fs.writeFileSync(tempPath, content);
-
-                return {
-                    url: directUrl,
-                    path: tempPath,
-                    content: content,
-                };
-            } else {
-                console.log(
-                    "    ❌ Direct fetch succeeded but content validation failed"
-                );
-                continue; // Try next hash
-            }
-        }
-
-        console.log("    ❌ All repos-overview hash attempts failed");
-        return null;
-    } catch (error) {
-        console.log(`    ❌ Direct fetch attempt failed: ${error.message}`);
-        return null;
-    }
-}
-
-async function validateWpRuntimeContent(url) {
-    try {
-        console.log(
-            `    Validating wp-runtime content of ${path.basename(url)}...`
-        );
-
-        let content;
-        if (fetch) {
-            const response = await fetch(url);
-            if (!response.ok) return false;
-            content = await response.text();
-        } else {
-            content = execSync(`curl -s "${url}"`, { encoding: "utf8" });
-        }
-
-        // Check if the wp-runtime references the repos-overview chunk
-        const hasReposOverviewReference =
-            content.includes("lazy-react-partial-repos-overview") ||
-            content.includes("repos-overview") ||
-            content.includes("repositories");
-
-        if (hasReposOverviewReference) {
-            console.log(
-                `    ✅ wp-runtime validated - contains repos-overview references`
-            );
-            return true;
-        } else {
-            console.log(
-                `    ❌ wp-runtime validation failed - no repos-overview references found`
-            );
-            return false;
-        }
-    } catch (error) {
-        console.log(`    ❌ wp-runtime validation failed: ${error.message}`);
-        return false;
-    }
 }
 
 function findMatchingAssets(assets) {
@@ -624,19 +479,23 @@ function beautifyCss(css) {
             i++;
             continue;
         }
-        if (ch === '{') {
+        if (ch === "{") {
             result = result.trimEnd();
-            result += ' {\n';
+            result += " {\n";
             indent++;
             result += indentStr.repeat(indent);
-        } else if (ch === '}') {
+        } else if (ch === "}") {
             indent = Math.max(0, indent - 1);
             result = result.trimEnd();
-            result += '\n' + indentStr.repeat(indent) + '}\n' + indentStr.repeat(indent);
-        } else if (ch === ';') {
+            result +=
+                "\n" +
+                indentStr.repeat(indent) +
+                "}\n" +
+                indentStr.repeat(indent);
+        } else if (ch === ";") {
             result = result.trimEnd();
-            result += ';\n' + indentStr.repeat(indent);
-        } else if (ch === '\n' || ch === '\r') {
+            result += ";\n" + indentStr.repeat(indent);
+        } else if (ch === "\n" || ch === "\r") {
             // skip existing newlines (we control them)
         } else {
             result += ch;
@@ -644,25 +503,29 @@ function beautifyCss(css) {
         i++;
     }
     // Collapse multiple blank lines
-    return result
-        .split('\n')
-        .map((l) => l.trimEnd())
-        .filter((_, idx, arr) => !(!_.trim() && arr[idx - 1] === ''))
-        .join('\n')
-        .trim() + '\n';
+    return (
+        result
+            .split("\n")
+            .map((l) => l.trimEnd())
+            .filter((_, idx, arr) => !(!_.trim() && arr[idx - 1] === ""))
+            .join("\n")
+            .trim() + "\n"
+    );
 }
 
 function formatCssFileIfNeeded(filePath) {
     try {
-        let content = fs.readFileSync(filePath, 'utf8');
-        const lines = content.split('\n');
+        let content = fs.readFileSync(filePath, "utf8");
+        const lines = content.split("\n");
         const longest = lines.reduce((m, l) => Math.max(m, l.length), 0);
         // Heuristic: if single (or very few) very long lines (> 400 chars) treat as minified
         if (lines.length < 10 && longest > 400) {
-            console.log(`  Applying manual CSS beautifier to ${path.basename(filePath)}...`);
+            console.log(
+                `  Applying manual CSS beautifier to ${path.basename(filePath)}...`
+            );
             const pretty = beautifyCss(content);
-            fs.writeFileSync(filePath, pretty, 'utf8');
-            console.log('  CSS beautified');
+            fs.writeFileSync(filePath, pretty, "utf8");
+            console.log("  CSS beautified");
         }
     } catch (e) {
         console.warn(`  CSS beautify skipped: ${e.message}`);
@@ -792,7 +655,9 @@ async function main() {
     }
     // Ensure styles directory exists for CSS target file output
     if (!fs.existsSync(STYLES_DIR)) {
-        try { fs.mkdirSync(STYLES_DIR); } catch (_) {}
+        try {
+            fs.mkdirSync(STYLES_DIR);
+        } catch (_) {}
     }
 
     try {
@@ -806,56 +671,7 @@ async function main() {
             );
         }
 
-        // Step 1.5: Handle repos-overview special case and validate content
-        console.log("\n--- Validating content ---");
-
-        // Special handling for repos-overview - try direct fetch if not found
-        if (!matches["repos-overview"] && matches["wp-runtime"]) {
-            console.log(
-                "repos-overview not found in page assets, attempting direct fetch..."
-            );
-            const directResult = await tryFetchReposOverviewDirectly(assets);
-            if (directResult) {
-                matches["repos-overview"] = directResult.url;
-                console.log(
-                    `Found repos-overview via direct fetch: ${directResult.url}`
-                );
-
-                // Remove wp-runtime from matches since we only use it to get repos-overview
-                delete matches["wp-runtime"];
-                console.log(
-                    "Removed wp-runtime from final output (used only for repos-overview discovery)"
-                );
-            } else {
-                // If repos-overview discovery failed, still remove wp-runtime
-                delete matches["wp-runtime"];
-                console.log(
-                    "Removed wp-runtime from final output (repos-overview discovery failed)"
-                );
-            }
-        } else if (matches["wp-runtime"] && !matches["repos-overview"]) {
-            // If we have wp-runtime but no repos-overview, remove wp-runtime
-            delete matches["wp-runtime"];
-            console.log(
-                "Removed wp-runtime from final output (not needed without repos-overview discovery)"
-            );
-        }
-
-        if (matches["wp-runtime"]) {
-            const isValid = await validateWpRuntimeContent(
-                matches["wp-runtime"]
-            );
-            if (!isValid) {
-                console.warn(
-                    "Warning: wp-runtime file does not contain repos-overview references"
-                );
-                console.warn(
-                    "Continuing with download, but the file may not load the repos-overview chunk"
-                );
-            }
-        }
-
-    console.log("\n--- Downloading Files ---");
+        console.log("\n--- Downloading Files ---");
 
         // Step 2: Download matched files
         const downloadedFiles = {};
@@ -866,11 +682,11 @@ async function main() {
             downloadedFiles[key] = downloadPath;
         }
 
-    console.log("\n--- Processing Files (Skipping Formatting) ---");
+        console.log("\n--- Processing Files (Skipping Formatting) ---");
 
         // Step 3: Work directly with downloaded minified files
         const processedFiles = {};
-    for (const [key, downloadPath] of Object.entries(downloadedFiles)) {
+        for (const [key, downloadPath] of Object.entries(downloadedFiles)) {
             console.log(`Processing ${key} (keeping minified format)...`);
             const content = fs.readFileSync(downloadPath, "utf8");
             processedFiles[key] = content;
@@ -886,16 +702,19 @@ async function main() {
             while (true) {
                 const idx = css.indexOf(atKeyword, pos);
                 if (idx === -1) break;
-                const openBrace = css.indexOf('{', idx);
+                const openBrace = css.indexOf("{", idx);
                 if (openBrace === -1) break;
                 let depth = 0;
                 let i = openBrace;
                 for (; i < css.length; i++) {
                     const ch = css[i];
-                    if (ch === '{') depth++;
-                    else if (ch === '}') {
+                    if (ch === "{") depth++;
+                    else if (ch === "}") {
                         depth--;
-                        if (depth === 0) { i++; break; }
+                        if (depth === 0) {
+                            i++;
+                            break;
+                        }
                     }
                 }
                 const block = css.substring(openBrace + 1, i - 1);
@@ -914,7 +733,7 @@ async function main() {
             return joined ? joined + "\n" : "";
         }
 
-    for (const [key, content] of Object.entries(processedFiles)) {
+        for (const [key, content] of Object.entries(processedFiles)) {
             const originalLength = content.length;
             let modifiedContent = content;
 
@@ -922,19 +741,30 @@ async function main() {
                 // Extract only modern CSS guarded by @layer/@container and drop wrappers
                 const extracted = extractModernOnlyCss(content);
                 if (extracted && extracted.length > 0) {
-                    console.log(`  Extracted modern CSS (@layer/@container): ${content.length} → ${extracted.length} chars`);
+                    console.log(
+                        `  Extracted modern CSS (@layer/@container): ${content.length} → ${extracted.length} chars`
+                    );
                     modifiedContent = extracted;
                     if (prettier) {
                         try {
-                            const pretty = await prettier.format(modifiedContent, { parser: 'css' });
+                            const pretty = await prettier.format(
+                                modifiedContent,
+                                { parser: "css" }
+                            );
                             modifiedContent = pretty;
-                            console.log("  Applied Prettier CSS formatting (programmatic)");
+                            console.log(
+                                "  Applied Prettier CSS formatting (programmatic)"
+                            );
                         } catch (e) {
-                            console.log(`  Prettier CSS formatting failed: ${e.message}`);
+                            console.log(
+                                `  Prettier CSS formatting failed: ${e.message}`
+                            );
                         }
                     }
                 } else {
-                    console.log("  ⚠️  No modern CSS blocks found; leaving CSS empty to avoid injecting legacy rules");
+                    console.log(
+                        "  ⚠️  No modern CSS blocks found; leaving CSS empty to avoid injecting legacy rules"
+                    );
                     modifiedContent = "";
                 }
             } else {
@@ -951,28 +781,30 @@ async function main() {
                 }
             }
 
-            if (modifiedContent && typeof modifiedContent.then === 'function') {
+            if (modifiedContent && typeof modifiedContent.then === "function") {
                 modifiedContent = await modifiedContent;
             }
-            console.log(`  Processed ${key}: ${originalLength} → ${modifiedContent.length} chars`);
+            console.log(
+                `  Processed ${key}: ${originalLength} → ${modifiedContent.length} chars`
+            );
             processedFiles[key] = modifiedContent;
         }
 
         console.log("\n--- Updating Script Files ---");
 
         // Step 4: Replace files in scripts directory
-    for (const [key, contentRaw] of Object.entries(processedFiles)) {
-        let content = contentRaw;
-        if (content && typeof content.then === 'function') {
-            content = await content; // resolve any stray promise
-        }
-    const isCss = CSS_KEYS.has(key);
-        const targetDir = isCss ? STYLES_DIR : SCRIPTS_DIR;
-        const targetFile = path.join(targetDir, TARGET_FILES[key]);
+        for (const [key, contentRaw] of Object.entries(processedFiles)) {
+            let content = contentRaw;
+            if (content && typeof content.then === "function") {
+                content = await content; // resolve any stray promise
+            }
+            const isCss = CSS_KEYS.has(key);
+            const targetDir = isCss ? STYLES_DIR : SCRIPTS_DIR;
+            const targetFile = path.join(targetDir, TARGET_FILES[key]);
 
             if (isDryRun) {
                 console.log(
-            `Would update: ${TARGET_FILES[key]} (${content.length} chars) in ${path.relative(__dirname, targetDir)}`
+                    `Would update: ${TARGET_FILES[key]} (${content.length} chars) in ${path.relative(__dirname, targetDir)}`
                 );
                 continue;
             }
@@ -986,10 +818,10 @@ async function main() {
             }
 
             // Write and format the final content
-            if (typeof content !== 'string') {
-                content = String(content || '');
+            if (typeof content !== "string") {
+                content = String(content || "");
             }
-            fs.writeFileSync(targetFile, content, 'utf8');
+            fs.writeFileSync(targetFile, content, "utf8");
 
             // Apply Prettier formatting to the final file
             try {
@@ -1005,7 +837,9 @@ async function main() {
                 if (isCss) {
                     formatCssFileIfNeeded(targetFile);
                 }
-                console.log(`Updated: ${TARGET_FILES[key]} (unformatted or partially formatted)`);
+                console.log(
+                    `Updated: ${TARGET_FILES[key]} (unformatted or partially formatted)`
+                );
             }
         }
         console.log("\n--- Cleanup ---");
