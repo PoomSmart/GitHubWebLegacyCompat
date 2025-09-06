@@ -47,6 +47,7 @@ const FILE_PATTERNS = {
     "react-core": /react-core-[a-f0-9]+\.js$/,
     "remark-vendors":
         /vendors-node_modules_remark-gfm_lib_index_js-node_modules_remark-parse_lib_index_js-node_modu-[a-f0-9]+-[a-f0-9]+\.js$/,
+    "mdast-vendors": /vendors-node_modules_mdast-util-from-markdown_lib_index_js-node_modules_mdast-util-gfm_lib_in-[a-f0-9]+-[a-f0-9]+\.js$/,
     "text-expander": /vendors-node_modules_github_text-expander-element_dist_index_js-[a-f0-9]+\.js$/,
     "emoji-element": /vendors-node_modules_github_emoji-element_dist_index_js-[a-f0-9]+\.js$/,
     "emotion-is-prop-valid": /vendors-node_modules_@?emotion[_-]is-prop-valid.*-[a-f0-9]+\.js$/,
@@ -70,6 +71,7 @@ const ALTERNATIVE_PATTERNS = {
     "issue-viewer": /issue-viewer.*-[a-f0-9]+\.js$/,
     "list-view": /list-view.*-[a-f0-9]+\.js$/,
     "remark-vendors": /vendors.*remark.*-[a-f0-9]+\.js$/,
+    "mdast-vendors": /vendors.*mdast-util-from-markdown.*mdast-util-gfm.*\.js$/i,
     "text-expander": /text-expander.*-[a-f0-9]+\.js$/,
     "emoji-element": /emoji-element.*-[a-f0-9]+\.js$/,
     "emotion-is-prop-valid": /is-prop-valid.*-[a-f0-9]+\.js$/,
@@ -99,6 +101,7 @@ const TARGET_FILES = {
     "list-view": "16.4-list-view.js",
     "react-core": "16.4-a-react-core.js",
     "remark-vendors": "16.4-remark-vendors.js",
+    "mdast-vendors": "16.4-mdast-vendors.js",
     "text-expander": "15.0-text-expander.js",
     "emoji-element": "15.0-emoji-element.js",
     "emotion-is-prop-valid": "15.0-emotion-is-prop-valid.js",
