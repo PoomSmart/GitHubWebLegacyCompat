@@ -1753,6 +1753,9 @@
                         );
                     }
                     async execute(e) {
+                        let t = () => {
+                            this.#a({ type: "continue" });
+                        };
                         this.#s = (0, s.II)({
                             fn: () =>
                                 this.options.mutationFn
@@ -1770,22 +1773,21 @@
                             onPause: () => {
                                 this.#a({ type: "pause" });
                             },
-                            onContinue: () => {
-                                this.#a({ type: "continue" });
-                            },
+                            onContinue: t,
                             retry: this.options.retry ?? 0,
                             retryDelay: this.options.retryDelay,
                             networkMode: this.options.networkMode,
                             canRun: () => this.#n.canRun(this),
                         });
-                        let t = "pending" === this.state.status,
-                            r = !this.#s.canStart();
+                        let r = "pending" === this.state.status,
+                            i = !this.#s.canStart();
                         try {
-                            if (!t) {
+                            if (r) t();
+                            else {
                                 (this.#a({
                                     type: "pending",
                                     variables: e,
-                                    isPaused: r,
+                                    isPaused: i,
                                 }),
                                     await this.#n.config.onMutate?.(e, this));
                                 let t = await this.options.onMutate?.(e);
@@ -1794,37 +1796,37 @@
                                         type: "pending",
                                         context: t,
                                         variables: e,
-                                        isPaused: r,
+                                        isPaused: i,
                                     });
                             }
-                            let i = await this.#s.start();
+                            let n = await this.#s.start();
                             return (
                                 await this.#n.config.onSuccess?.(
-                                    i,
+                                    n,
                                     e,
                                     this.state.context,
                                     this
                                 ),
                                 await this.options.onSuccess?.(
-                                    i,
+                                    n,
                                     e,
                                     this.state.context
                                 ),
                                 await this.#n.config.onSettled?.(
-                                    i,
+                                    n,
                                     null,
                                     this.state.variables,
                                     this.state.context,
                                     this
                                 ),
                                 await this.options.onSettled?.(
-                                    i,
+                                    n,
                                     null,
                                     e,
                                     this.state.context
                                 ),
-                                this.#a({ type: "success", data: i }),
-                                i
+                                this.#a({ type: "success", data: n }),
+                                n
                             );
                         } catch (t) {
                             try {
@@ -2179,21 +2181,30 @@
                                       this.state.errorUpdateCount ===
                                       0;
                     }
-                    isStale() {
+                    isStatic() {
                         return (
-                            !!this.state.isInvalidated ||
-                            (this.getObserversCount() > 0
-                                ? this.observers.some(
-                                      (e) => e.getCurrentResult().isStale
-                                  )
-                                : void 0 === this.state.data)
+                            this.getObserversCount() > 0 &&
+                            this.observers.some(
+                                (e) =>
+                                    "static" ===
+                                    (0, i.d2)(e.options.staleTime, this)
+                            )
                         );
+                    }
+                    isStale() {
+                        return this.getObserversCount() > 0
+                            ? this.observers.some(
+                                  (e) => e.getCurrentResult().isStale
+                              )
+                            : void 0 === this.state.data ||
+                                  this.state.isInvalidated;
                     }
                     isStaleByTime(e = 0) {
                         return (
-                            this.state.isInvalidated ||
                             void 0 === this.state.data ||
-                            !(0, i.j3)(this.state.dataUpdatedAt, e)
+                            ("static" !== e &&
+                                (!!this.state.isInvalidated ||
+                                    !(0, i.j3)(this.state.dataUpdatedAt, e)))
                         );
                     }
                     onFocus() {
@@ -2244,8 +2255,11 @@
                         this.state.isInvalidated ||
                             this.#a({ type: "invalidate" });
                     }
-                    fetch(e, t) {
-                        if ("idle" !== this.state.fetchStatus) {
+                    async fetch(e, t) {
+                        if (
+                            "idle" !== this.state.fetchStatus &&
+                            this.#s?.status() !== "rejected"
+                        ) {
                             if (void 0 !== this.state.data && t?.cancelRefetch)
                                 this.cancel({ silent: !0 });
                             else if (this.#s)
@@ -2269,27 +2283,30 @@
                             },
                             a = () => {
                                 let e = (0, i.ZM)(this.options, t),
-                                    r = {
-                                        client: this.#h,
-                                        queryKey: this.queryKey,
-                                        meta: this.meta,
-                                    };
-                                return (n(r),
-                                (this.#d = !1),
-                                this.options.persister)
+                                    r = (() => {
+                                        let e = {
+                                            client: this.#h,
+                                            queryKey: this.queryKey,
+                                            meta: this.meta,
+                                        };
+                                        return (n(e), e);
+                                    })();
+                                return ((this.#d = !1), this.options.persister)
                                     ? this.options.persister(e, r, this)
                                     : e(r);
                             },
-                            o = {
-                                fetchOptions: t,
-                                options: this.options,
-                                queryKey: this.queryKey,
-                                client: this.#h,
-                                state: this.state,
-                                fetchFn: a,
-                            };
-                        (n(o),
-                            this.options.behavior?.onFetch(o, this),
+                            o = (() => {
+                                let e = {
+                                    fetchOptions: t,
+                                    options: this.options,
+                                    queryKey: this.queryKey,
+                                    client: this.#h,
+                                    state: this.state,
+                                    fetchFn: a,
+                                };
+                                return (n(e), e);
+                            })();
+                        (this.options.behavior?.onFetch(o, this),
                             (this.#u = this.state),
                             ("idle" === this.state.fetchStatus ||
                                 this.state.fetchMeta !==
@@ -2297,46 +2314,19 @@
                                 this.#a({
                                     type: "fetch",
                                     meta: o.fetchOptions?.meta,
-                                }));
-                        let c = (e) => {
-                            (((0, s.wm)(e) && e.silent) ||
-                                this.#a({ type: "error", error: e }),
-                                (0, s.wm)(e) ||
-                                    (this.#l.config.onError?.(e, this),
-                                    this.#l.config.onSettled?.(
-                                        this.state.data,
-                                        e,
-                                        this
-                                    )),
-                                this.scheduleGc());
-                        };
-                        return (
+                                }),
                             (this.#s = (0, s.II)({
                                 initialPromise: t?.initialPromise,
                                 fn: o.fetchFn,
-                                abort: r.abort.bind(r),
-                                onSuccess: (e) => {
-                                    if (void 0 === e)
-                                        return void c(
-                                            Error(
-                                                `${this.queryHash} data is undefined`
-                                            )
-                                        );
-                                    try {
-                                        this.setData(e);
-                                    } catch (e) {
-                                        c(e);
-                                        return;
-                                    }
-                                    (this.#l.config.onSuccess?.(e, this),
-                                        this.#l.config.onSettled?.(
-                                            e,
-                                            this.state.error,
-                                            this
-                                        ),
-                                        this.scheduleGc());
+                                onCancel: (e) => {
+                                    (e instanceof s.cc &&
+                                        e.revert &&
+                                        this.setState({
+                                            ...this.#u,
+                                            fetchStatus: "idle",
+                                        }),
+                                        r.abort());
                                 },
-                                onError: c,
                                 onFail: (e, t) => {
                                     this.#a({
                                         type: "failed",
@@ -2354,9 +2344,44 @@
                                 retryDelay: o.options.retryDelay,
                                 networkMode: o.options.networkMode,
                                 canRun: () => !0,
-                            })),
-                            this.#s.start()
-                        );
+                            })));
+                        try {
+                            let e = await this.#s.start();
+                            if (void 0 === e)
+                                throw Error(
+                                    `${this.queryHash} data is undefined`
+                                );
+                            return (
+                                this.setData(e),
+                                this.#l.config.onSuccess?.(e, this),
+                                this.#l.config.onSettled?.(
+                                    e,
+                                    this.state.error,
+                                    this
+                                ),
+                                e
+                            );
+                        } catch (e) {
+                            if (e instanceof s.cc) {
+                                if (e.silent) return this.#s.promise;
+                                else if (e.revert) {
+                                    if (void 0 === this.state.data) throw e;
+                                    return this.state.data;
+                                }
+                            }
+                            throw (
+                                this.#a({ type: "error", error: e }),
+                                this.#l.config.onError?.(e, this),
+                                this.#l.config.onSettled?.(
+                                    this.state.data,
+                                    e,
+                                    this
+                                ),
+                                e
+                            );
+                        } finally {
+                            this.scheduleGc();
+                        }
                     }
                     #a(e) {
                         let t = (t) => {
@@ -2378,7 +2403,7 @@
                                         fetchMeta: e.meta ?? null,
                                     };
                                 case "success":
-                                    return {
+                                    let r = {
                                         ...t,
                                         data: e.data,
                                         dataUpdateCount: t.dataUpdateCount + 1,
@@ -2393,22 +2418,21 @@
                                             fetchFailureReason: null,
                                         }),
                                     };
+                                    return (
+                                        (this.#u = e.manual ? r : void 0),
+                                        r
+                                    );
                                 case "error":
-                                    let r = e.error;
-                                    if ((0, s.wm)(r) && r.revert && this.#u)
-                                        return {
-                                            ...this.#u,
-                                            fetchStatus: "idle",
-                                        };
+                                    let i = e.error;
                                     return {
                                         ...t,
-                                        error: r,
+                                        error: i,
                                         errorUpdateCount:
                                             t.errorUpdateCount + 1,
                                         errorUpdatedAt: Date.now(),
                                         fetchFailureCount:
                                             t.fetchFailureCount + 1,
-                                        fetchFailureReason: r,
+                                        fetchFailureReason: i,
                                         fetchStatus: "idle",
                                         status: "error",
                                     };
@@ -2496,31 +2520,31 @@
                 let t,
                     r = !1,
                     l = 0,
-                    h = !1,
-                    f = (0, s.T)(),
-                    d = () =>
+                    h = (0, s.T)(),
+                    f = () =>
                         i.m.isFocused() &&
                         ("always" === e.networkMode || n.t.isOnline()) &&
                         e.canRun(),
-                    p = () => c(e.networkMode) && e.canRun(),
-                    y = (r) => {
-                        h || ((h = !0), e.onSuccess?.(r), t?.(), f.resolve(r));
+                    d = () => c(e.networkMode) && e.canRun(),
+                    p = (e) => {
+                        "pending" === h.status && (t?.(), h.resolve(e));
                     },
-                    b = (r) => {
-                        h || ((h = !0), e.onError?.(r), t?.(), f.reject(r));
+                    y = (e) => {
+                        "pending" === h.status && (t?.(), h.reject(e));
                     },
-                    m = () =>
+                    b = () =>
                         new Promise((r) => {
                             ((t = (e) => {
-                                (h || d()) && r(e);
+                                ("pending" !== h.status || f()) && r(e);
                             }),
                                 e.onPause?.());
                         }).then(() => {
-                            ((t = void 0), h || e.onContinue?.());
+                            ((t = void 0),
+                                "pending" === h.status && e.onContinue?.());
                         }),
-                    g = () => {
+                    m = () => {
                         let t;
-                        if (h) return;
+                        if ("pending" !== h.status) return;
                         let i = 0 === l ? e.initialPromise : void 0;
                         try {
                             t = i ?? e.fn();
@@ -2528,9 +2552,9 @@
                             t = Promise.reject(e);
                         }
                         Promise.resolve(t)
-                            .then(y)
+                            .then(p)
                             .catch((t) => {
-                                if (h) return;
+                                if ("pending" !== h.status) return;
                                 let i = e.retry ?? 3 * !a.S$,
                                     n = e.retryDelay ?? o,
                                     s = "function" == typeof n ? n(l, t) : n,
@@ -2538,30 +2562,34 @@
                                         !0 === i ||
                                         ("number" == typeof i && l < i) ||
                                         ("function" == typeof i && i(l, t));
-                                if (r || !c) return void b(t);
+                                if (r || !c) return void y(t);
                                 (l++,
                                     e.onFail?.(l, t),
                                     (0, a.yy)(s)
-                                        .then(() => (d() ? void 0 : m()))
+                                        .then(() => (f() ? void 0 : b()))
                                         .then(() => {
-                                            r ? b(t) : g();
+                                            r ? y(t) : m();
                                         }));
                             });
                     };
                 return {
-                    promise: f,
+                    promise: h,
+                    status: () => h.status,
                     cancel: (t) => {
-                        h || (b(new u(t)), e.abort?.());
+                        if ("pending" === h.status) {
+                            let r = new u(t);
+                            (y(r), e.onCancel?.(r));
+                        }
                     },
-                    continue: () => (t?.(), f),
+                    continue: () => (t?.(), h),
                     cancelRetry: () => {
                         r = !0;
                     },
                     continueRetry: () => {
                         r = !1;
                     },
-                    canStart: p,
-                    start: () => (p() ? g() : m().then(g), f),
+                    canStart: d,
+                    start: () => (d() ? m() : b().then(m), h),
                 };
             }
         },
@@ -2591,7 +2619,9 @@
         },
         94658: (e, t, r) => {
             "use strict";
-            function i() {
+            r.d(t, { T: () => n, b: () => s });
+            var i = r(24880);
+            function n() {
                 let e,
                     t,
                     r = new Promise((r, i) => {
@@ -2612,7 +2642,14 @@
                     r
                 );
             }
-            r.d(t, { T: () => i });
+            function s(e) {
+                let t;
+                if (
+                    (e.then((e) => ((t = e), e), i.lQ)?.catch(i.lQ),
+                    void 0 !== t)
+                )
+                    return { data: t };
+            }
         },
         24880: (e, t, r) => {
             "use strict";
@@ -2622,6 +2659,7 @@
                 EN: () => d,
                 Eh: () => u,
                 F$: () => f,
+                GU: () => j,
                 MK: () => l,
                 S$: () => i,
                 ZM: () => x,
@@ -2711,7 +2749,7 @@
                         !!t &&
                         "object" == typeof e &&
                         "object" == typeof t &&
-                        !Object.keys(t).some((r) => !p(e[r], t[r])))
+                        Object.keys(t).every((r) => p(e[r], t[r])))
                 );
             }
             function y(e, t) {
@@ -2723,17 +2761,18 @@
                         s = r ? t : Object.keys(t),
                         a = s.length,
                         o = r ? [] : {},
-                        c = 0;
-                    for (let n = 0; n < a; n++) {
-                        let a = r ? n : s[n];
-                        ((!r && i.includes(a)) || r) &&
-                        void 0 === e[a] &&
-                        void 0 === t[a]
-                            ? ((o[a] = void 0), c++)
-                            : ((o[a] = y(e[a], t[a])),
-                              o[a] === e[a] && void 0 !== e[a] && c++);
+                        c = new Set(i),
+                        u = 0;
+                    for (let i = 0; i < a; i++) {
+                        let n = r ? i : s[i];
+                        ((!r && c.has(n)) || r) &&
+                        void 0 === e[n] &&
+                        void 0 === t[n]
+                            ? ((o[n] = void 0), u++)
+                            : ((o[n] = y(e[n], t[n])),
+                              o[n] === e[n] && void 0 !== e[n] && u++);
                     }
-                    return n === a && c === n ? e : o;
+                    return n === a && u === n ? e : o;
                 }
                 return t;
             }
@@ -2794,6 +2833,9 @@
                                 Error(`Missing queryFn: '${e.queryHash}'`)
                             );
             }
+            function j(e, t) {
+                return "function" == typeof e ? e(...t) : !!e;
+            }
         },
         34164: (e, t, r) => {
             "use strict";
@@ -2825,4 +2867,4 @@
         },
     },
 ]);
-//# sourceMappingURL=vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-928884-e52246b9a4d2.js.map
+//# sourceMappingURL=vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-928884-470ad3821617.js.map

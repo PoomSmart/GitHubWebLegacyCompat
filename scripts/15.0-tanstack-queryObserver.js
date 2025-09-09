@@ -18,12 +18,6 @@
                             (this.#e = e),
                             (this.#t = null),
                             (this.#r = (0, a.T)()),
-                            this.options.experimental_prefetchInRender ||
-                                this.#r.reject(
-                                    Error(
-                                        "experimental_prefetchInRender feature flag is not enabled"
-                                    )
-                                ),
                             this.bindMethods(),
                             this.setOptions(t));
                     }
@@ -142,21 +136,22 @@
                         return this.#n;
                     }
                     trackResult(e, t) {
-                        let r = {};
-                        return (
-                            Object.keys(e).forEach((s) => {
-                                Object.defineProperty(r, s, {
-                                    configurable: !1,
-                                    enumerable: !0,
-                                    get: () => (
-                                        this.trackProp(s),
-                                        t?.(s),
-                                        e[s]
+                        return new Proxy(e, {
+                            get: (e, r) => (
+                                this.trackProp(r),
+                                t?.(r),
+                                "promise" !== r ||
+                                    this.options
+                                        .experimental_prefetchInRender ||
+                                    "pending" !== this.#r.status ||
+                                    this.#r.reject(
+                                        Error(
+                                            "experimental_prefetchInRender feature flag is not enabled"
+                                        )
                                     ),
-                                });
-                            }),
-                            r
-                        );
+                                Reflect.get(e, r)
+                            ),
+                        });
                     }
                     trackProp(e) {
                         this.#f.add(e);
@@ -243,67 +238,58 @@
                                     (R.fetchStatus = "idle"));
                         }
                         let { error: v, errorUpdatedAt: Q, status: m } = R;
-                        if (t.select && void 0 !== R.data)
-                            if (u && R.data === c?.data && t.select === this.#h)
-                                r = this.#c;
-                            else
-                                try {
-                                    ((this.#h = t.select),
-                                        (r = t.select(R.data)),
-                                        (r = (0, h.pl)(u?.data, r, t)),
-                                        (this.#c = r),
-                                        (this.#t = null));
-                                } catch (e) {
-                                    this.#t = e;
-                                }
-                        else r = R.data;
+                        r = R.data;
+                        let g = !1;
                         if (
                             void 0 !== t.placeholderData &&
                             void 0 === r &&
                             "pending" === m
                         ) {
                             let e;
-                            if (
-                                u?.isPlaceholderData &&
-                                t.placeholderData === l?.placeholderData
-                            )
-                                e = u.data;
-                            else if (
-                                ((e =
-                                    "function" == typeof t.placeholderData
-                                        ? t.placeholderData(
-                                              this.#o?.state.data,
-                                              this.#o
-                                          )
-                                        : t.placeholderData),
-                                t.select && void 0 !== e)
-                            )
+                            (u?.isPlaceholderData &&
+                            t.placeholderData === l?.placeholderData
+                                ? ((e = u.data), (g = !0))
+                                : (e =
+                                      "function" == typeof t.placeholderData
+                                          ? t.placeholderData(
+                                                this.#o?.state.data,
+                                                this.#o
+                                            )
+                                          : t.placeholderData),
+                                void 0 !== e &&
+                                    ((m = "success"),
+                                    (r = (0, h.pl)(u?.data, e, t)),
+                                    (b = !0)));
+                        }
+                        if (t.select && void 0 !== r && !g)
+                            if (u && r === c?.data && t.select === this.#h)
+                                r = this.#c;
+                            else
                                 try {
-                                    ((e = t.select(e)), (this.#t = null));
+                                    ((this.#h = t.select),
+                                        (r = t.select(r)),
+                                        (r = (0, h.pl)(u?.data, r, t)),
+                                        (this.#c = r),
+                                        (this.#t = null));
                                 } catch (e) {
                                     this.#t = e;
                                 }
-                            void 0 !== e &&
-                                ((m = "success"),
-                                (r = (0, h.pl)(u?.data, e, t)),
-                                (b = !0));
-                        }
                         this.#t &&
                             ((v = this.#t),
                             (r = this.#c),
                             (Q = Date.now()),
                             (m = "error"));
-                        let g = "fetching" === R.fetchStatus,
-                            I = "pending" === m,
-                            E = "error" === m,
-                            O = I && g,
-                            T = void 0 !== r,
-                            S = {
+                        let I = "fetching" === R.fetchStatus,
+                            E = "pending" === m,
+                            T = "error" === m,
+                            O = E && I,
+                            S = void 0 !== r,
+                            C = {
                                 status: m,
                                 fetchStatus: R.fetchStatus,
-                                isPending: I,
+                                isPending: E,
                                 isSuccess: "success" === m,
-                                isError: E,
+                                isError: T,
                                 isInitialLoading: O,
                                 isLoading: O,
                                 data: r,
@@ -319,25 +305,26 @@
                                 isFetchedAfterMount:
                                     R.dataUpdateCount > f.dataUpdateCount ||
                                     R.errorUpdateCount > f.errorUpdateCount,
-                                isFetching: g,
-                                isRefetching: g && !I,
-                                isLoadingError: E && !T,
+                                isFetching: I,
+                                isRefetching: I && !E,
+                                isLoadingError: T && !S,
                                 isPaused: "paused" === R.fetchStatus,
                                 isPlaceholderData: b,
-                                isRefetchError: E && T,
+                                isRefetchError: T && S,
                                 isStale: p(e, t),
                                 refetch: this.refetch,
                                 promise: this.#r,
+                                isEnabled: !1 !== (0, h.Eh)(t.enabled, e),
                             };
                         if (this.options.experimental_prefetchInRender) {
                             let t = (e) => {
-                                    "error" === S.status
-                                        ? e.reject(S.error)
-                                        : void 0 !== S.data &&
-                                          e.resolve(S.data);
+                                    "error" === C.status
+                                        ? e.reject(C.error)
+                                        : void 0 !== C.data &&
+                                          e.resolve(C.data);
                                 },
                                 r = () => {
-                                    t((this.#r = S.promise = (0, a.T)()));
+                                    t((this.#r = C.promise = (0, a.T)()));
                                 },
                                 i = this.#r;
                             switch (i.status) {
@@ -345,17 +332,17 @@
                                     e.queryHash === s.queryHash && t(i);
                                     break;
                                 case "fulfilled":
-                                    ("error" === S.status ||
-                                        S.data !== i.value) &&
+                                    ("error" === C.status ||
+                                        C.data !== i.value) &&
                                         r();
                                     break;
                                 case "rejected":
-                                    ("error" !== S.status ||
-                                        S.error !== i.reason) &&
+                                    ("error" !== C.status ||
+                                        C.error !== i.reason) &&
                                         r();
                             }
                         }
-                        return S;
+                        return C;
                     }
                     updateResult() {
                         let e = this.#n,
@@ -422,7 +409,10 @@
                 );
             }
             function l(e, t, r) {
-                if (!1 !== (0, h.Eh)(t.enabled, e)) {
+                if (
+                    !1 !== (0, h.Eh)(t.enabled, e) &&
+                    "static" !== (0, h.d2)(t.staleTime, e)
+                ) {
                     let s = "function" == typeof r ? r(e) : r;
                     return "always" === s || (!1 !== s && p(e, t));
                 }
@@ -441,6 +431,13 @@
                     e.isStaleByTime((0, h.d2)(t.staleTime, e))
                 );
             }
+        },
+        3335: (e, t, r) => {
+            r.d(t, { d: () => u, w: () => n });
+            var s = r(96540),
+                i = s.createContext(!1),
+                n = () => s.useContext(i),
+                u = i.Provider;
         },
         96672: (e, t, r) => {
             r.d(t, { U: () => h, h: () => a });
@@ -471,7 +468,7 @@
         68590: (e, t, r) => {
             r.d(t, { $1: () => a, LJ: () => n, wZ: () => u });
             var s = r(96540),
-                i = r(54362),
+                i = r(24880),
                 n = (e, t) => {
                     (e.suspense ||
                         e.throwOnError ||
@@ -495,14 +492,7 @@
                     !t.isReset() &&
                     !e.isFetching &&
                     s &&
-                    ((n && void 0 === e.data) || (0, i.G)(r, [e.error, s]));
-        },
-        98378: (e, t, r) => {
-            r.d(t, { d: () => u, w: () => n });
-            var s = r(96540),
-                i = s.createContext(!1),
-                n = () => s.useContext(i),
-                u = i.Provider;
+                    ((n && void 0 === e.data) || (0, i.GU)(r, [e.error, s]));
         },
         60791: (e, t, r) => {
             r.d(t, {
@@ -514,14 +504,17 @@
             });
             var s = (e, t) => void 0 === t.state.data,
                 i = (e) => {
-                    let t = e.staleTime;
-                    e.suspense &&
+                    if (e.suspense) {
+                        let t = (e) =>
+                                "static" === e ? e : Math.max(e ?? 1e3, 1e3),
+                            r = e.staleTime;
                         ((e.staleTime =
-                            "function" == typeof t
-                                ? (...e) => Math.max(t(...e), 1e3)
-                                : Math.max(t ?? 1e3, 1e3)),
-                        "number" == typeof e.gcTime &&
-                            (e.gcTime = Math.max(e.gcTime, 1e3)));
+                            "function" == typeof r
+                                ? (...e) => t(r(...e))
+                                : t(r)),
+                            "number" == typeof e.gcTime &&
+                                (e.gcTime = Math.max(e.gcTime, 1e3)));
+                    }
                 },
                 n = (e, t) => e.isLoading && e.isFetching && !t,
                 u = (e, t) => e?.suspense && t.isPending,
@@ -531,74 +524,73 @@
                     });
         },
         15985: (e, t, r) => {
-            r.d(t, { t: () => d });
+            r.d(t, { t: () => l });
             var s = r(96540),
                 i = r(26261),
                 n = r(24880),
                 u = r(97665),
                 a = r(96672),
                 h = r(68590),
-                c = r(98378),
-                o = r(60791),
-                l = r(54362);
-            function d(e, t, r) {
-                let d = (0, u.jE)(r),
-                    p = (0, c.w)(),
-                    f = (0, a.h)(),
-                    y = d.defaultQueryOptions(e);
-                (d.getDefaultOptions().queries?._experimental_beforeQuery?.(y),
-                    (y._optimisticResults = p ? "isRestoring" : "optimistic"),
-                    (0, o.jv)(y),
-                    (0, h.LJ)(y, f),
-                    (0, h.wZ)(f));
-                let R = !d.getQueryCache().get(y.queryHash),
-                    [b] = s.useState(() => new t(d, y)),
-                    v = b.getOptimisticResult(y),
-                    Q = !p && !1 !== e.subscribed;
+                c = r(3335),
+                o = r(60791);
+            function l(e, t, r) {
+                let l = (0, c.w)(),
+                    d = (0, a.h)(),
+                    p = (0, u.jE)(r),
+                    f = p.defaultQueryOptions(e);
+                (p.getDefaultOptions().queries?._experimental_beforeQuery?.(f),
+                    (f._optimisticResults = l ? "isRestoring" : "optimistic"),
+                    (0, o.jv)(f),
+                    (0, h.LJ)(f, d),
+                    (0, h.wZ)(d));
+                let y = !p.getQueryCache().get(f.queryHash),
+                    [R] = s.useState(() => new t(p, f)),
+                    b = R.getOptimisticResult(f),
+                    v = !l && !1 !== e.subscribed;
                 if (
                     (s.useSyncExternalStore(
                         s.useCallback(
                             (e) => {
-                                let t = Q
-                                    ? b.subscribe(i.jG.batchCalls(e))
-                                    : l.l;
-                                return (b.updateResult(), t);
+                                let t = v
+                                    ? R.subscribe(i.jG.batchCalls(e))
+                                    : n.lQ;
+                                return (R.updateResult(), t);
                             },
-                            [b, Q]
+                            [R, v]
                         ),
-                        () => b.getCurrentResult(),
-                        () => b.getCurrentResult()
+                        () => R.getCurrentResult(),
+                        () => R.getCurrentResult()
                     ),
                     s.useEffect(() => {
-                        b.setOptions(y);
-                    }, [y, b]),
-                    (0, o.EU)(y, v))
+                        R.setOptions(f);
+                    }, [f, R]),
+                    (0, o.EU)(f, b))
                 )
-                    throw (0, o.iL)(y, b, f);
+                    throw (0, o.iL)(f, R, d);
                 if (
                     (0, h.$1)({
-                        result: v,
-                        errorResetBoundary: f,
-                        throwOnError: y.throwOnError,
-                        query: d.getQueryCache().get(y.queryHash),
-                        suspense: y.suspense,
+                        result: b,
+                        errorResetBoundary: d,
+                        throwOnError: f.throwOnError,
+                        query: p.getQueryCache().get(f.queryHash),
+                        suspense: f.suspense,
                     })
                 )
-                    throw v.error;
+                    throw b.error;
                 if (
-                    (d
+                    (p
                         .getDefaultOptions()
-                        .queries?._experimental_afterQuery?.(y, v),
-                    y.experimental_prefetchInRender && !n.S$ && (0, o.nE)(v, p))
+                        .queries?._experimental_afterQuery?.(f, b),
+                    f.experimental_prefetchInRender && !n.S$ && (0, o.nE)(b, l))
                 ) {
-                    let e = R
-                        ? (0, o.iL)(y, b, f)
-                        : d.getQueryCache().get(y.queryHash)?.promise;
-                    e?.catch(l.l).finally(() => {
-                        b.updateResult();
+                    let e = y
+                        ? (0, o.iL)(f, R, d)
+                        : p.getQueryCache().get(f.queryHash)?.promise;
+                    e?.catch(n.lQ).finally(() => {
+                        R.updateResult();
                     });
                 }
-                return y.notifyOnChangeProps ? v : b.trackResult(v);
+                return f.notifyOnChangeProps ? b : R.trackResult(b);
             }
         },
         97286: (e, t, r) => {
@@ -609,13 +601,6 @@
                 return (0, i.t)(e, s.$, t);
             }
         },
-        54362: (e, t, r) => {
-            function s(e, t) {
-                return "function" == typeof e ? e(...t) : !!e;
-            }
-            function i() {}
-            r.d(t, { G: () => s, l: () => i });
-        },
     },
 ]);
-//# sourceMappingURL=vendors-node_modules_tanstack_react-query_build_modern_useQuery_js-4606409380de.js.map
+//# sourceMappingURL=vendors-node_modules_tanstack_react-query_build_modern_useQuery_js-f495cdae6158.js.map
