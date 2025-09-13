@@ -28,6 +28,7 @@ The project uses dynamic asset loading for both CSS and JavaScript files. To bui
 
 1. **Update JavaScript assets** (when GitHub updates their bundles):
    ```bash
+   npm install
    node update-scripts.js
    ```
 

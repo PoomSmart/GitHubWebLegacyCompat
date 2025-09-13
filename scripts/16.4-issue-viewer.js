@@ -2,7 +2,8 @@
 (globalThis.webpackChunk_github_ui_github_ui =
     globalThis.webpackChunk_github_ui_github_ui || []).push([
     [
-        "packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-571762",
+        "lazy-react-partial-actions-survey",
+        "packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-0b31b4",
     ],
     {
         1075: (e, l, n) => {
@@ -280,7 +281,7 @@
                         name: "hasNextPage",
                         storageKey: null,
                     },
-                    E = [
+                    w = [
                         {
                             alias: null,
                             args: null,
@@ -320,7 +321,7 @@
                             storageKey: null,
                         },
                     ],
-                    w = {
+                    E = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -819,7 +820,7 @@
                                                 kind: "LinkedField",
                                                 name: "blockedBy",
                                                 plural: !1,
-                                                selections: E,
+                                                selections: w,
                                                 storageKey:
                                                     "blockedBy(first:3,ranked:true)",
                                             },
@@ -830,7 +831,7 @@
                                                 kind: "LinkedField",
                                                 name: "blocking",
                                                 plural: !1,
-                                                selections: E,
+                                                selections: w,
                                                 storageKey:
                                                     "blocking(first:3,ranked:true)",
                                             },
@@ -843,7 +844,7 @@
                                                 name: "issueDependenciesSummary",
                                                 plural: !1,
                                                 selections: [
-                                                    w,
+                                                    E,
                                                     {
                                                         alias: null,
                                                         args: null,
@@ -1127,7 +1128,7 @@
                                                                 kind: "LinkedField",
                                                                 name: "issueDependenciesSummary",
                                                                 plural: !1,
-                                                                selections: [w],
+                                                                selections: [E],
                                                                 storageKey:
                                                                     null,
                                                             },
@@ -1532,7 +1533,7 @@
                         ],
                     },
                     params: {
-                        id: "3173ed6e96ecbc25390dff218f728b8a",
+                        id: "c3c9a7cef257cae7515316888af4f99b",
                         metadata: {},
                         name: "IssueViewerSecondaryViewQuery",
                         operationKind: "query",
@@ -1754,8 +1755,8 @@
                         selections: [p, j, c],
                         storageKey: null,
                     },
-                    E = { kind: "Literal", name: "first", value: 10 },
-                    w = {
+                    w = { kind: "Literal", name: "first", value: 10 },
+                    E = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -2059,7 +2060,7 @@
                     },
                     ey = {
                         kind: "InlineFragment",
-                        selections: [c, em, b, g, x, w, eg, ed],
+                        selections: [c, em, b, g, x, E, eg, ed],
                         type: "PullRequest",
                         abstractKey: null,
                     },
@@ -2221,7 +2222,7 @@
                             },
                             {
                                 kind: "InlineFragment",
-                                selections: [em, b, g, x, w, eg, ed],
+                                selections: [em, b, g, x, E, eg, ed],
                                 type: "PullRequest",
                                 abstractKey: null,
                             },
@@ -2291,7 +2292,7 @@
                             storageKey: null,
                         },
                     ],
-                    eE = [
+                    ew = [
                         h,
                         ep,
                         en,
@@ -2306,7 +2307,7 @@
                                 k,
                                 {
                                     kind: "InlineFragment",
-                                    selections: [m, b, g, x, w, eg, _],
+                                    selections: [m, b, g, x, E, eg, _],
                                     type: "PullRequest",
                                     abstractKey: null,
                                 },
@@ -2315,7 +2316,7 @@
                             storageKey: null,
                         },
                     ],
-                    ew = {
+                    eE = {
                         kind: "InlineFragment",
                         selections: [
                             {
@@ -2326,7 +2327,7 @@
                             },
                             {
                                 kind: "InlineFragment",
-                                selections: [em, b, x, w, eg, ed],
+                                selections: [em, b, x, E, eg, ed],
                                 type: "PullRequest",
                                 abstractKey: null,
                             },
@@ -2686,38 +2687,6 @@
                                                 storageKey: null,
                                             },
                                             h,
-                                            {
-                                                alias: null,
-                                                args: null,
-                                                concreteType: null,
-                                                kind: "LinkedField",
-                                                name: "target",
-                                                plural: !1,
-                                                selections: [
-                                                    k,
-                                                    {
-                                                        kind: "InlineFragment",
-                                                        selections: [
-                                                            {
-                                                                alias: null,
-                                                                args: null,
-                                                                concreteType:
-                                                                    "Repository",
-                                                                kind: "LinkedField",
-                                                                name: "repository",
-                                                                plural: !1,
-                                                                selections: L,
-                                                                storageKey:
-                                                                    null,
-                                                            },
-                                                        ],
-                                                        type: "Issue",
-                                                        abstractKey: null,
-                                                    },
-                                                    M,
-                                                ],
-                                                storageKey: null,
-                                            },
                                             {
                                                 alias: "innerSource",
                                                 args: null,
@@ -3126,7 +3095,7 @@
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eE,
+                                        selections: ew,
                                         type: "ConnectedEvent",
                                         abstractKey: null,
                                     },
@@ -3152,7 +3121,7 @@
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: eE,
+                                        selections: ew,
                                         type: "DisconnectedEvent",
                                         abstractKey: null,
                                     },
@@ -3172,13 +3141,13 @@
                                                     k,
                                                     {
                                                         kind: "InlineFragment",
-                                                        selections: [c, g, ew],
+                                                        selections: [c, g, eE],
                                                         type: "Issue",
                                                         abstractKey: null,
                                                     },
                                                     {
                                                         kind: "InlineFragment",
-                                                        selections: [g, c, ew],
+                                                        selections: [g, c, eE],
                                                         type: "PullRequest",
                                                         abstractKey: null,
                                                     },
@@ -3389,7 +3358,7 @@
                             value: !0,
                         },
                         o,
-                        E,
+                        w,
                     ],
                     eW = [{ kind: "Literal", name: "name", value: "Status" }],
                     eQ = {
@@ -3893,7 +3862,7 @@
                                             {
                                                 alias: "linkedPullRequests",
                                                 args: [
-                                                    E,
+                                                    w,
                                                     {
                                                         kind: "Literal",
                                                         name: "includeClosedPrs",
@@ -3938,7 +3907,7 @@
                                                                     null,
                                                             },
                                                             x,
-                                                            w,
+                                                            E,
                                                             b,
                                                             g,
                                                             c,
@@ -4575,7 +4544,7 @@
                         ],
                     },
                     params: {
-                        id: "9f80aea1d673440a4072797fede7026c",
+                        id: "5df0d69f2f4f6801f2bea2da1e10a0ad",
                         metadata: {},
                         name: "IssueViewerViewQuery",
                         operationKind: "query",
@@ -5840,7 +5809,7 @@
                 u.displayName || (u.displayName = "IssueTimelineLoading");
             } catch {}
         },
-        59907: (e, l, n) => {
+        99825: (e, l, n) => {
             n.d(l, { cI: () => gp, Hc: () => gg, k5: () => gy });
             var a,
                 s,
@@ -6360,8 +6329,8 @@
                 j.displayName || (j.displayName = "LazyContributorFooter");
             } catch {}
             var _ = n(69599),
-                E = n(77430);
-            let w = {
+                w = n(77430);
+            let E = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -6376,7 +6345,7 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            w.hash = "2d5dba4e9b26988ef6d02616663b6de0";
+            E.hash = "2d5dba4e9b26988ef6d02616663b6de0";
             let A = (function () {
                 var e = {
                     alias: null,
@@ -6459,8 +6428,8 @@
                 q = n(87330),
                 H = n(52446),
                 $ = n(55847),
-                z = n(30729),
-                W = n(94977),
+                z = n(94977),
+                W = n(30729),
                 Q = n(96540);
             let G = {
                     couldNotCloseIssue: "Could not close issue",
@@ -6872,7 +6841,7 @@
                 });
             }
             function ea({ actionRef: e, ...l }) {
-                let n = (0, N.useFragment)(w, e);
+                let n = (0, N.useFragment)(E, e);
                 return (0, F.jsx)(es, { actionStateRef: n, ...l });
             }
             function es({
@@ -7165,7 +7134,7 @@
                                     (s?.(), i?.());
                                 },
                                 leadingVisual: () =>
-                                    (0, F.jsx)(z.A, {
+                                    (0, F.jsx)(W.A, {
                                         icon: y,
                                         sx: { color: g },
                                     }),
@@ -7175,7 +7144,7 @@
                             });
                         return t
                             ? h
-                            : (0, F.jsx)(W.A, {
+                            : (0, F.jsx)(z.A, {
                                   text: k,
                                   direction: "w",
                                   "data-testid": b,
@@ -8193,7 +8162,7 @@
                             K = m.repository.isArchived,
                             { addToast: S } = (0, M.Y6)(),
                             x = (0, N.useRelayEnvironment)(),
-                            [R, w] = (0, Q.useState)(!1),
+                            [R, E] = (0, Q.useState)(!1),
                             [A, P] = (0, Q.useState)("OPEN"),
                             { condensed: B } = (function (e) {
                                 let [l, n] = (0, Q.useState)(!1),
@@ -8273,7 +8242,7 @@
                             z = (0, Q.useCallback)(
                                 (e, n = !1) => {
                                     let s = ec(O);
-                                    if ((w(!0), O?.length > 0)) {
+                                    if ((E(!0), O?.length > 0)) {
                                         q();
                                         let l = { visibleEventsOnly: !0 },
                                             n =
@@ -8478,7 +8447,7 @@
                                                 connectionId: n ?? i,
                                             },
                                             onError: () => {
-                                                (w(!1),
+                                                (E(!1),
                                                     $(O),
                                                     S({
                                                         type: "error",
@@ -8487,7 +8456,7 @@
                                                     }));
                                             },
                                             onCompleted: () => {
-                                                (w(!1), a?.());
+                                                (E(!1), a?.());
                                             },
                                             withOptimisticResponse: s,
                                             optimisticInput: g
@@ -8624,7 +8593,7 @@
                                         }),
                                         "aria-label": `@${p.login}'s profile`,
                                         className: eN.avatarLink,
-                                        children: (0, F.jsx)(E.r, {
+                                        children: (0, F.jsx)(w.r, {
                                             size: 40,
                                             src: p.avatarUrl,
                                             alt: p.login,
@@ -8732,8 +8701,8 @@
                 e_.displayName ||
                     (e_.displayName = "CommentDisabledDueToDiscussion");
             } catch {}
-            var eE = n(81156);
-            let ew = {
+            var ew = n(81156);
+            let eE = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -8771,7 +8740,7 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            ew.hash = "68dfdec926facf771bf182864c9ab2e9";
+            eE.hash = "68dfdec926facf771bf182864c9ab2e9";
             let eA = (function () {
                 var e = [
                         {
@@ -9226,7 +9195,7 @@
                                 id: g,
                                 className: eQ.validationErrorFlash,
                                 children: [
-                                    (0, F.jsx)(z.A, { icon: V.AlertIcon }),
+                                    (0, F.jsx)(W.A, { icon: V.AlertIcon }),
                                     o,
                                 ],
                             }),
@@ -9512,15 +9481,15 @@
                     [T, C] = (0, Q.useState)(null),
                     [x, R] = (0, Q.useState)(!1),
                     [j, _] = (0, Q.useState)(!1),
-                    E = (0, N.useFragment)(e8, g),
-                    w = (0, N.useFragment)(e9, k),
+                    w = (0, N.useFragment)(e8, g),
+                    E = (0, N.useFragment)(e9, k),
                     A = (0, Q.useMemo)(() => {
-                        if (!E || !e) return;
+                        if (!w || !e) return;
                         let l = ey.cg?.location.origin;
                         if (!l) return;
-                        let n = `content_url=${encodeURIComponent(e)}&report=${E.login}+(user)`;
+                        let n = `content_url=${encodeURIComponent(e)}&report=${w.login}+(user)`;
                         return `${l}/contact/report-content?${n}`;
-                    }, [E, e]),
+                    }, [w, e]),
                     [P, B] = (0, Q.useState)(!1),
                     D = ((h = !!r), (f = !!y), (K = !!p), !f && (!!K || h)),
                     M = ((S = !!u), (I = !!y), !p && (!!I || S));
@@ -9547,7 +9516,7 @@
                                 onClose: () => R(!1),
                                 organization: { login: d, id: c },
                                 contentId: o,
-                                contentAuthor: { login: E.login, id: E.id },
+                                contentAuthor: { login: w.login, id: w.id },
                                 contentUrl: e,
                             }),
                         j &&
@@ -9558,7 +9527,7 @@
                             (0, F.jsx)(la.o, {
                                 onClose: () => _(!1),
                                 organization: { login: d, id: c },
-                                contentAuthor: { login: E.login, id: E.id },
+                                contentAuthor: { login: w.login, id: w.id },
                                 contentId: o,
                             }),
                         (0, F.jsxs)(O.W, {
@@ -9616,7 +9585,7 @@
                                                         let e = (0, eM.E)(
                                                             l?.current,
                                                             T,
-                                                            w.body
+                                                            E.body
                                                         );
                                                         n?.(e);
                                                     },
@@ -9828,7 +9797,7 @@
             function lr({ author: e }) {
                 let { login: l, profileUrl: n } =
                     (0, N.useFragment)(li, e) || e7.t.ghost;
-                return (0, F.jsx)(ek.A, {
+                return (0, F.jsx)(eO.N_, {
                     href: n || void 0,
                     "data-hovercard-url": n && (0, eg.dCN)({ owner: l }),
                     "data-testid": "issue-body-header-author",
@@ -9939,7 +9908,7 @@
                                     className: k
                                         ? eD.A.avatarLink
                                         : eD.A.avatarWithoutLink,
-                                    children: (0, F.jsx)(E.r, {
+                                    children: (0, F.jsx)(w.r, {
                                         size: 24,
                                         src: y,
                                         alt: `@${p}`,
@@ -10505,7 +10474,7 @@
                             buttons: e ?? [],
                         }),
                     }),
-                lE = ({ title: e, onClose: l, dialogLabelId: n }) =>
+                lw = ({ title: e, onClose: l, dialogLabelId: n }) =>
                     (0, F.jsxs)(lx.A, {
                         className: lN.header,
                         children: [
@@ -10522,7 +10491,7 @@
                             }),
                         ],
                     });
-            function lw({
+            function lE({
                 title: e,
                 children: l,
                 onClose: n,
@@ -10542,7 +10511,7 @@
                     footerButtons: [i],
                     renderBody: lj,
                     renderFooter: l_,
-                    renderHeader: lE,
+                    renderHeader: lw,
                     ...s,
                     children: l,
                 });
@@ -10554,10 +10523,10 @@
                 l_.displayName || (l_.displayName = "SingleConfirmFooter");
             } catch {}
             try {
-                lE.displayName || (lE.displayName = "SingleConfirmHeader");
+                lw.displayName || (lw.displayName = "SingleConfirmHeader");
             } catch {}
             try {
-                lw.displayName || (lw.displayName = "RelationshipsAlertDialog");
+                lE.displayName || (lE.displayName = "RelationshipsAlertDialog");
             } catch {}
             let lA = (function () {
                 var e = [
@@ -11178,7 +11147,7 @@
                     ),
                     R = (0, Q.useCallback)(() => i(), [i]),
                     j = (0, Q.useCallback)(() => {
-                        (b(
+                        b(
                             "analytics.click",
                             "ISSUES_SUB_ISSUES_COPILOT_BUTTON",
                             {
@@ -11186,10 +11155,11 @@
                                 issueNumber: I.number,
                                 repoNWO: I.repository.nameWithOwner,
                             }
-                        ),
-                            h(
-                                `${lv.Jz}/?prompt=Create me a sub-issue for @${I.repository.nameWithOwner}/issues/${I.number} to `
-                            ));
+                        );
+                        let e = new URLSearchParams({
+                            prompt: `Create me a sub-issue for @${I.repository.nameWithOwner}/issues/${I.number} to `,
+                        });
+                        h(`${lv.Jz}?${e.toString()}`);
                     }, [
                         b,
                         I.databaseId,
@@ -11207,7 +11177,7 @@
                     (0, F.jsxs)(F.Fragment, {
                         children: [
                             s &&
-                                (0, F.jsx)(lw, {
+                                (0, F.jsx)(lE, {
                                     title: s.title,
                                     onClose: R,
                                     children: s.body,
@@ -11330,7 +11300,7 @@
                                                                                                             ),
                                                                                                     }
                                                                                                 ),
-                                                                                                "Draft sub-issues with Copilot",
+                                                                                                "Draft sub-issue with Copilot",
                                                                                                 (0,
                                                                                                 F.jsx)(
                                                                                                     H
@@ -12738,7 +12708,7 @@
                         bodyHTML: c,
                         bodyVersion: m,
                     } = (0, eq.useFragment)(eB, o),
-                    g = (0, eq.useFragment)(ew, l),
+                    g = (0, eq.useFragment)(eE, l),
                     y = o.id,
                     p = o.repository.databaseId,
                     [k, b] = (0, eU.Fo)(
@@ -12751,7 +12721,7 @@
                     [L, T] = (0, Q.useState)(!1),
                     [C, x] = (0, Q.useState)(!1),
                     [R, j] = (0, Q.useState)(!1),
-                    [_, w] = (0, Q.useState)(!1),
+                    [_, E] = (0, Q.useState)(!1),
                     [A, P] = (0, Q.useState)(!1),
                     B = (0, N.useRelayEnvironment)(),
                     D = (0, Q.useRef)(null),
@@ -12972,12 +12942,12 @@
                                         )
                                             ? (T(!0), j(!1))
                                             : a?.(!1),
-                                        w(!0));
+                                        E(!0));
                                 },
                                 onCompleted: (e) => {
                                     (x(!1),
                                         e.updateIssue
-                                            ? (w(!1),
+                                            ? (E(!1),
                                               s?.(),
                                               T(!1),
                                               a?.(!1),
@@ -12995,7 +12965,7 @@
                                               }),
                                               T(!0),
                                               j(!1),
-                                              w(!0)));
+                                              E(!0)));
                                 },
                                 withOptimisticResponse: l,
                             }));
@@ -13033,7 +13003,7 @@
                                 el && (0, eg.dCN)({ owner: ee }),
                             "aria-label": `@${ee}'s profile`,
                             className: `${el ? eD.A.avatarLink : eD.A.avatarWithoutLink} ${eD.A.avatarOuter}`,
-                            children: (0, F.jsx)(E.r, {
+                            children: (0, F.jsx)(w.r, {
                                 src: Z,
                                 size: 40,
                                 alt: `@${ee}`,
@@ -13278,7 +13248,62 @@
                         kind: "ScalarField",
                         name: "__typename",
                         storageKey: null,
-                    };
+                    },
+                    i = [
+                        e,
+                        l,
+                        n,
+                        {
+                            alias: null,
+                            args: null,
+                            kind: "ScalarField",
+                            name: "number",
+                            storageKey: null,
+                        },
+                        a,
+                        {
+                            alias: null,
+                            args: null,
+                            kind: "ScalarField",
+                            name: "viewerCanUpdate",
+                            storageKey: null,
+                        },
+                        {
+                            alias: null,
+                            args: null,
+                            kind: "ScalarField",
+                            name: "hasReachedItemsLimit",
+                            storageKey: null,
+                        },
+                        s,
+                    ],
+                    t = [
+                        e,
+                        l,
+                        n,
+                        {
+                            alias: null,
+                            args: null,
+                            kind: "ScalarField",
+                            name: "dueOn",
+                            storageKey: null,
+                        },
+                        {
+                            alias: null,
+                            args: null,
+                            kind: "ScalarField",
+                            name: "progressPercentage",
+                            storageKey: null,
+                        },
+                        a,
+                        {
+                            alias: null,
+                            args: null,
+                            kind: "ScalarField",
+                            name: "closedAt",
+                            storageKey: null,
+                        },
+                    ];
                 return {
                     argumentDefinitions: [],
                     kind: "Fragment",
@@ -13367,37 +13392,15 @@
                                                         {
                                                             kind: "InlineDataFragmentSpread",
                                                             name: "ProjectPickerProject",
-                                                            selections: [
-                                                                e,
-                                                                l,
-                                                                n,
-                                                                {
-                                                                    alias: null,
-                                                                    args: null,
-                                                                    kind: "ScalarField",
-                                                                    name: "number",
-                                                                    storageKey:
-                                                                        null,
-                                                                },
-                                                                a,
-                                                                {
-                                                                    alias: null,
-                                                                    args: null,
-                                                                    kind: "ScalarField",
-                                                                    name: "viewerCanUpdate",
-                                                                    storageKey:
-                                                                        null,
-                                                                },
-                                                                {
-                                                                    alias: null,
-                                                                    args: null,
-                                                                    kind: "ScalarField",
-                                                                    name: "hasReachedItemsLimit",
-                                                                    storageKey:
-                                                                        null,
-                                                                },
-                                                                s,
-                                                            ],
+                                                            selections: i,
+                                                            args: null,
+                                                            argumentDefinitions:
+                                                                [],
+                                                        },
+                                                        {
+                                                            kind: "InlineDataFragmentSpread",
+                                                            name: "ProjectPickerRelay",
+                                                            selections: i,
                                                             args: null,
                                                             argumentDefinitions:
                                                                 [],
@@ -13459,33 +13462,14 @@
                                 {
                                     kind: "InlineDataFragmentSpread",
                                     name: "MilestonePickerMilestone",
-                                    selections: [
-                                        e,
-                                        l,
-                                        n,
-                                        {
-                                            alias: null,
-                                            args: null,
-                                            kind: "ScalarField",
-                                            name: "dueOn",
-                                            storageKey: null,
-                                        },
-                                        {
-                                            alias: null,
-                                            args: null,
-                                            kind: "ScalarField",
-                                            name: "progressPercentage",
-                                            storageKey: null,
-                                        },
-                                        a,
-                                        {
-                                            alias: null,
-                                            args: null,
-                                            kind: "ScalarField",
-                                            name: "closedAt",
-                                            storageKey: null,
-                                        },
-                                    ],
+                                    selections: t,
+                                    args: null,
+                                    argumentDefinitions: [],
+                                },
+                                {
+                                    kind: "InlineDataFragmentSpread",
+                                    name: "ItemPickerMilestoneRelayMilestone",
+                                    selections: t,
                                     args: null,
                                     argumentDefinitions: [],
                                 },
@@ -13497,7 +13481,7 @@
                     abstractKey: null,
                 };
             })();
-            l7.hash = "53dec48225cc11b763d92534b26427b0";
+            l7.hash = "83d1f47cd3e112f4c2ae20d9ec3140fe";
             var l3 = n(59464),
                 l8 = n(58115),
                 l9 = n(98828);
@@ -13542,7 +13526,7 @@
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
                         s &&
-                            (0, F.jsx)(lw, {
+                            (0, F.jsx)(lE, {
                                 title: s.title,
                                 onClose: i,
                                 children: s.body,
@@ -13730,7 +13714,7 @@
                                     children: r,
                                 }),
                                 t &&
-                                    (0, F.jsx)(z.A, {
+                                    (0, F.jsx)(W.A, {
                                         icon: V.TriangleRightIcon,
                                         className: nu.hoverExpandIcon,
                                         "aria-hidden": "true",
@@ -15012,8 +14996,8 @@
             nN.hash = "98b73e2943e6e0438220762134149de5";
             var nj = n(85391);
             let n_ = { NOT_PLANNED: "NOT_PLANNED", DUPLICATE: "DUPLICATE" },
-                nE = { CLOSED: "CLOSED" },
-                nw = {
+                nw = { CLOSED: "CLOSED" },
+                nE = {
                     COMPLETED: "completed",
                     NOT_PLANNED: "not planned",
                     DUPLICATE: "duplicate",
@@ -15126,7 +15110,7 @@
                         if (l) {
                             if (l in nA) e.stateChangeQuery = nA[l];
                             else throw Error(`Invalid state change: ${l}`);
-                            if (l in nw) e.stateReasonString = nw[l];
+                            if (l in nE) e.stateReasonString = nE[l];
                             else throw Error(`Invalid state change: ${l}`);
                         }
                         return e;
@@ -15223,7 +15207,7 @@
                     { sourceIcon: s } = nD({ state: l, stateReason: n }),
                     { issue_dependencies: i } = (0, nM.h)(),
                     t = s("Issue");
-                if (i && l !== nE.CLOSED && a?.blockedBy > 0) {
+                if (i && l !== nw.CLOSED && a?.blockedBy > 0) {
                     let e = (0, F.jsxs)("div", {
                         className: nV.blockedIssueIconWrapper,
                         children: [
@@ -16567,12 +16551,12 @@
                                                   ? (0, F.jsxs)("div", {
                                                         className: nq.Box_2,
                                                         children: [
-                                                            (0, F.jsx)(z.A, {
+                                                            (0, F.jsx)(W.A, {
                                                                 icon: V.PersonIcon,
                                                                 className:
                                                                     nq.Octicon_0,
                                                             }),
-                                                            (0, F.jsx)(z.A, {
+                                                            (0, F.jsx)(W.A, {
                                                                 size: 24,
                                                                 icon: V.CircleIcon,
                                                                 className:
@@ -16619,7 +16603,7 @@
                                                                                   children:
                                                                                       (0,
                                                                                       F.jsx)(
-                                                                                          E.r,
+                                                                                          w.r,
                                                                                           {
                                                                                               alt: e
                                                                                                   .node
@@ -17442,7 +17426,7 @@
                         children: (0, F.jsxs)("div", {
                             className: aS.bannerContent,
                             children: [
-                                (0, F.jsx)(z.A, {
+                                (0, F.jsx)(W.A, {
                                     icon: V.InfoIcon,
                                     size: 16,
                                     className: aI.infoIcon,
@@ -17462,7 +17446,7 @@
                                             children: [
                                                 aK.k.convertToDiscussion
                                                     .goToDiscussion,
-                                                (0, F.jsx)(z.A, {
+                                                (0, F.jsx)(W.A, {
                                                     icon: V.ArrowRightIcon,
                                                     size: 16,
                                                     className: aI.arrowIcon,
@@ -18233,7 +18217,7 @@
                     couldNotUnpinIssue: "Could not unpin issue",
                     couldNotStartTransfer: "Could not initiate issue transfer",
                 },
-                aE = (function () {
+                aw = (function () {
                     var e = [
                             {
                                 defaultValue: null,
@@ -18318,8 +18302,8 @@
                         },
                     };
                 })();
-            aE.hash = "b5d09b83ee3a8c70127f501e0b43b95a";
-            var aw = n(62180),
+            aw.hash = "b5d09b83ee3a8c70127f501e0b43b95a";
+            var aE = n(62180),
                 aA = n(65029),
                 aP = n(24815);
             let aB = {
@@ -18359,7 +18343,7 @@
                                     visuallyHidden: !0,
                                     children: "Title input",
                                 }),
-                                (0, F.jsx)(aw.x, {
+                                (0, F.jsx)(aE.x, {
                                     tone: r,
                                     fullWidth: !0,
                                     children: (0, F.jsx)(aP.A, {
@@ -18420,7 +18404,7 @@
                             let i = { id: l };
                             (null !== n && (i.title = n),
                                 (0, N.commitMutation)(e, {
-                                    mutation: aE,
+                                    mutation: aw,
                                     variables: { input: i },
                                     onError: (e) => a && a(e),
                                     optimisticResponse: {
@@ -19454,7 +19438,7 @@
                 abstractKey: null,
             };
             sl.hash = "1734dea2e72680881d4fd73c708b6b74";
-            var sn = n(49432);
+            var sn = n(21553);
             let sa = {
                 stateLabel: "HeaderState-module__stateLabel--Na0HJ",
                 duplicateIssueLink:
@@ -19685,9 +19669,9 @@
                 abstractKey: null,
             };
             sm.hash = "d58846f98442c160672513c6ce32b5a2";
-            var sg = n(63449),
-                sy = n(44963),
-                sp = n(36365),
+            var sg = n(41313),
+                sy = n(58958),
+                sp = n(47734),
                 sk = n(93829),
                 sF = n(9352),
                 sb = n(41305);
@@ -19708,7 +19692,7 @@
                                         owner: e.login,
                                     }),
                                     children: (0, F.jsx)(
-                                        E.r,
+                                        w.r,
                                         {
                                             alt: e.login,
                                             src: e.avatarUrl,
@@ -19746,7 +19730,7 @@
                         muted: !0,
                         className: sI.milestoneLink,
                         children: [
-                            (0, F.jsx)(z.A, {
+                            (0, F.jsx)(W.A, {
                                 icon: V.MilestoneIcon,
                                 size: 16,
                             }),
@@ -20035,7 +20019,7 @@
                             repo: i.repository.name,
                             pullRequestNumber: i.number,
                         }),
-                        c = (0, F.jsxs)(ek.A, {
+                        c = (0, F.jsxs)(eO.N_, {
                             sx: { overflow: u ? "hidden" : "visible" },
                             href: i.url,
                             "data-hovercard-url": s ? void 0 : d,
@@ -20043,8 +20027,8 @@
                             role: "link",
                             className: sN.pullRequestLink,
                             children: [
-                                !a && (0, F.jsx)(sE, { pullKey: e.pullKey }),
-                                (0, F.jsx)(sw, { ...e }),
+                                !a && (0, F.jsx)(sw, { pullKey: e.pullKey }),
+                                (0, F.jsx)(sE, { ...e }),
                             ],
                         });
                     return !s && u
@@ -20067,7 +20051,7 @@
                             target: "_blank",
                             children: [
                                 (0, F.jsx)(H.l.LeadingVisual, {
-                                    children: (0, F.jsx)(sE, {
+                                    children: (0, F.jsx)(sw, {
                                         pullKey: e.pullKey,
                                     }),
                                 }),
@@ -20080,11 +20064,11 @@
                         n
                     );
                 },
-                sE = ({ pullKey: e, ...l }) => {
+                sw = ({ pullKey: e, ...l }) => {
                     let n = sA((0, N.useFragment)(sx, e));
                     return (0, F.jsx)(n, { ...l });
                 },
-                sw = ({ pullKey: e, issueRepositoryName: l }) => {
+                sE = ({ pullKey: e, issueRepositoryName: l }) => {
                     let n = (0, N.useFragment)(sx, e),
                         a = n.repository?.owner?.login,
                         s = n.repository?.name,
@@ -20113,14 +20097,14 @@
                     return "OPEN" === l && e.isDraft ? nB.DRAFT : nB[l];
                 };
             try {
-                sE.displayName || (sE.displayName = "LinkedPRIcon");
+                sw.displayName || (sw.displayName = "LinkedPRIcon");
             } catch {}
             try {
                 (t = PullStateIcon).displayName ||
                     (t.displayName = "PullStateIcon");
             } catch {}
             try {
-                sw.displayName || (sw.displayName = "LinkedPRName");
+                sE.displayName || (sE.displayName = "LinkedPRName");
             } catch {}
             let sP = {
                     linkedPullRequestsPill:
@@ -20191,10 +20175,10 @@
                                           })
                                         : (0, F.jsxs)(F.Fragment, {
                                               children: [
-                                                  (0, F.jsx)(sE, {
+                                                  (0, F.jsx)(sw, {
                                                       pullKey: u[0],
                                                   }),
-                                                  (0, F.jsx)(sw, {
+                                                  (0, F.jsx)(sE, {
                                                       pullKey: u[0],
                                                       issueRepositoryName: r,
                                                   }),
@@ -20270,15 +20254,15 @@
                           })
                         : (0, F.jsx)(F.Fragment, {
                               children: m
-                                  ? (0, F.jsxs)(O.W, {
+                                  ? (0, F.jsxs)(eO.Wy, {
                                         children: [
-                                            (0, F.jsx)(O.W.Button, {
+                                            (0, F.jsx)(eO.Wy.Button, {
                                                 "aria-label":
                                                     aK.k.linkedPrsLabel,
                                                 className: sP.ActionMenu_Button,
                                                 children: p,
                                             }),
-                                            (0, F.jsx)(O.W.Overlay, {
+                                            (0, F.jsx)(eO.Wy.Overlay, {
                                                 sx: {
                                                     display: n
                                                         ? "none"
@@ -20477,7 +20461,7 @@
                         className: sO.repositoryInfoContainer,
                         children: [
                             !n &&
-                                (0, F.jsx)(z.A, {
+                                (0, F.jsx)(W.A, {
                                     icon: V.RepoIcon,
                                     className: sO.repositoryIcon,
                                 }),
@@ -20772,7 +20756,7 @@
                                     className: sY.trackingInfoContainer,
                                     children: [
                                         !n &&
-                                            (0, F.jsx)(z.A, {
+                                            (0, F.jsx)(W.A, {
                                                 icon: s.icon,
                                                 size: 16,
                                                 sx: { color: s.color },
@@ -20815,7 +20799,7 @@
                     r = (0, nM.u)("issue_dependencies"),
                     u = (0, N.useFragment)(aU, e),
                     o = (0, ap.w)(a?.current ?? null),
-                    d = ["js-notification-shelf-offset-top"];
+                    d = [];
                 return (
                     l.insideSidePanel && d.push("js-second-sticky-header"),
                     (0, F.jsxs)(F.Fragment, {
@@ -20881,7 +20865,9 @@
                                     position: "sticky",
                                     width: "100%",
                                     zIndex: 14,
+                                    top: "var(--base-sticky-header-height, 0)",
                                 },
+                                id: "issue-viewer-sticky-header",
                                 className: (0, eb.$)(d, a7.stickyContainer),
                                 children: (0, F.jsx)(af.H, {
                                     sx: t,
@@ -21458,7 +21444,7 @@
             ie.hash = "dedc5f445c2698fbfc52de57413c66a9";
             var il = n(84158),
                 ia = n(30107),
-                is = n(77622),
+                is = n(42315),
                 ii = n(21728),
                 it = n(65787);
             function ir(e) {
@@ -21466,9 +21452,11 @@
                     n,
                     a = (0, ii.c)(6),
                     { children: s, topOffset: i } = e,
-                    t = `calc(${void 0 === i ? 0 : i}px + var(--base-sticky-header-height, 0px))`;
+                    t = `calc(${(void 0 === i ? 0 : i) + 16}px + var(--base-sticky-header-height, 0px))`;
                 a[0] !== t
-                    ? ((l = { topOffset: t }), (a[0] = t), (a[1] = l))
+                    ? ((l = { topOffset: t, bottomPadding: 24 }),
+                      (a[0] = t),
+                      (a[1] = l))
                     : (l = a[1]);
                 let { styles: r, ref: u } = (function (e) {
                     let l,
@@ -21490,79 +21478,79 @@
                         F,
                         b,
                         h,
-                        f = (0, ii.c)(27),
-                        { topOffset: K } = e,
-                        S = (0, Q.useRef)(null);
+                        f = (0, ii.c)(28),
+                        { topOffset: K, bottomPadding: S } = e,
+                        I = (0, Q.useRef)(null);
                     f[0] === Symbol.for("react.memo_cache_sentinel")
                         ? ((l = {}), (f[0] = l))
                         : (l = f[0]);
-                    let [I, v] = (0, Q.useState)(l),
-                        L = (0, Q.useRef)(null),
-                        T = (0, Q.useRef)("down"),
-                        C = (0, Q.useRef)(!1),
+                    let [v, L] = (0, Q.useState)(l),
+                        T = (0, Q.useRef)(null),
+                        C = (0, Q.useRef)("down"),
                         x = (0, Q.useRef)(!1),
                         R = (0, Q.useRef)(!1),
                         N = (0, Q.useRef)(!1),
                         j = (0, Q.useRef)(!1),
-                        _ = (0, Q.useRef)(null),
+                        _ = (0, Q.useRef)(!1),
+                        w = (0, Q.useRef)(null),
                         E = (0, Q.useRef)(0),
-                        w = (0, Q.useRef)(0),
                         A = (0, Q.useRef)(0),
                         P = (0, Q.useRef)(0),
                         B = (0, Q.useRef)(0),
-                        D = (0, Q.useRef)(null);
+                        D = (0, Q.useRef)(0),
+                        M = (0, Q.useRef)(null);
                     (f[1] === Symbol.for("react.memo_cache_sentinel")
                         ? ((n = () => {
-                              let e = S.current;
+                              let e = I.current;
                               if (!e) return;
                               let l = (0, it.U)(e);
                               l === document.documentElement
-                                  ? ((_.current = window), (E.current = 0))
-                                  : ((_.current = l ?? null),
+                                  ? ((w.current = window), (E.current = 0))
+                                  : ((w.current = l ?? null),
                                     (E.current =
                                         l?.getBoundingClientRect().top ?? 0));
                           }),
-                          (a = [S]),
+                          (a = [I]),
                           (f[1] = n),
                           (f[2] = a))
                         : ((n = f[1]), (a = f[2])),
                         (0, Q.useEffect)(n, a),
                         f[3] !== K
                             ? ((s = () => {
-                                  let e = S.current;
+                                  let e = I.current;
                                   if (!e) return;
                                   let l = Math.max(
                                       Math.min(
-                                          e.offsetTop - B.current,
-                                          w.current - P.current
+                                          e.offsetTop - D.current,
+                                          A.current - B.current
                                       ),
                                       0
                                   );
-                                  if (R.current) {
-                                      ((T.current = "up"),
-                                          v({ position: "sticky", top: K }));
+                                  if (N.current) {
+                                      ((C.current = "up"),
+                                          L({ position: "sticky", top: K }));
                                       return;
                                   }
-                                  if (C.current && x.current)
-                                      return void v({
+                                  if (x.current && R.current)
+                                      return void L({
                                           position: "sticky",
                                           top: K,
                                       });
-                                  if ("up" === T.current)
-                                      C.current
-                                          ? v({ position: "sticky", top: K })
-                                          : v({
+                                  if ("up" === C.current)
+                                      x.current
+                                          ? L({ position: "sticky", top: K })
+                                          : L({
                                                 position: "relative",
                                                 top: `${l}px`,
                                             });
                                   else {
                                       let e = Math.max(E.current, 0);
-                                      x.current
-                                          ? v({
+                                      R.current
+                                          ? L({
                                                 position: "sticky",
-                                                top: `${A.current - e}px`,
+                                                top: `${P.current - e}px`,
                                             })
-                                          : v({
+                                          : L({
                                                 position: "relative",
                                                 top: `${l}px`,
                                             });
@@ -21571,76 +21559,76 @@
                               (f[3] = K),
                               (f[4] = s))
                             : (s = f[4]));
-                    let M = s;
-                    f[5] !== M
+                    let V = s;
+                    f[5] !== V
                         ? ((i = (e) => {
                               let l =
                                   "sticky-sidebar-top-sentinel" === e.target.id;
-                              ((N.current = !0),
+                              ((j.current = !0),
                                   l
-                                      ? ((C.current = e.isIntersecting),
-                                        (A.current = e.boundingClientRect.top))
-                                      : ((x.current = e.isIntersecting),
-                                        (A.current =
+                                      ? ((x.current = e.isIntersecting),
+                                        (P.current = e.boundingClientRect.top))
+                                      : ((R.current = e.isIntersecting),
+                                        (P.current =
                                             e.boundingClientRect.top -
-                                            P.current +
+                                            B.current +
                                             Math.floor(
                                                 e.intersectionRect.height
                                             ))),
-                                  R.current || M());
+                                  N.current || V());
                           }),
-                          (f[5] = M),
+                          (f[5] = V),
                           (f[6] = i))
                         : (i = f[6]);
-                    let V = i;
-                    (f[7] !== M
+                    let U = i;
+                    (f[7] !== V
                         ? ((t = () => {
-                              let e = S.current;
+                              let e = I.current;
                               e &&
                                   e.getBoundingClientRect().top < 0 &&
-                                  ((R.current = !0), M());
+                                  ((N.current = !0), V());
                           }),
-                          (r = [M]),
-                          (f[7] = M),
+                          (r = [V]),
+                          (f[7] = V),
                           (f[8] = t),
                           (f[9] = r))
                         : ((t = f[8]), (r = f[9])),
                         (0, Q.useEffect)(t, r),
                         f[10] === Symbol.for("react.memo_cache_sentinel")
                             ? ((u = () =>
-                                  _.current
-                                      ? _.current instanceof Window
-                                          ? _.current.scrollY
-                                          : _.current.scrollTop
+                                  w.current
+                                      ? w.current instanceof Window
+                                          ? w.current.scrollY
+                                          : w.current.scrollTop
                                       : 0),
                               (f[10] = u))
                             : (u = f[10]));
-                    let U = u;
+                    let O = u;
                     return (
-                        f[11] !== M
+                        f[11] !== V
                             ? ((d = () => {
                                   let e = !1;
-                                  if (!_.current) return;
-                                  let l = _.current,
-                                      n = U(),
+                                  if (!w.current) return;
+                                  let l = w.current,
+                                      n = O(),
                                       a = () => {
-                                          let l = U(),
+                                          let l = O(),
                                               a = Math.abs(l - n);
                                           if (
                                               (a > 600
-                                                  ? ((R.current = !0), M())
-                                                  : (N.current || j.current) &&
-                                                    (R.current = !1),
+                                                  ? ((N.current = !0), V())
+                                                  : (j.current || _.current) &&
+                                                    (N.current = !1),
                                               a < 10)
                                           ) {
                                               e = !1;
                                               return;
                                           }
                                           let s = l > n ? "down" : "up";
-                                          (T.current !== s &&
-                                              ((T.current = s),
-                                              (j.current = !0),
-                                              M()),
+                                          (C.current !== s &&
+                                              ((C.current = s),
+                                              (_.current = !0),
+                                              V()),
                                               (n = l > 0 ? l : 0),
                                               (e = !1));
                                       },
@@ -21654,15 +21642,15 @@
                                       () => l.removeEventListener("scroll", s)
                                   );
                               }),
-                              (o = [M, S, _, U]),
-                              (f[11] = M),
+                              (o = [V, I, w, O]),
+                              (f[11] = V),
                               (f[12] = o),
                               (f[13] = d))
                             : ((o = f[12]), (d = f[13])),
                         (0, Q.useEffect)(d, o),
-                        f[14] !== K || f[15] !== V
+                        f[14] !== K || f[15] !== U
                             ? ((c = () => {
-                                  let e = S.current;
+                                  let e = I.current;
                                   if (!e) return;
                                   let l = e.parentElement;
                                   if (!l) return;
@@ -21682,13 +21670,13 @@
                                       (a.id = "sticky-sidebar-bottom-sentinel"),
                                       e.appendChild(n),
                                       e.appendChild(a),
-                                      (L.current = new IntersectionObserver(
+                                      (T.current = new IntersectionObserver(
                                           (e) => {
-                                              for (let l of e) V(l);
+                                              for (let l of e) U(l);
                                           }
                                       )),
-                                      L.current.observe(n),
-                                      L.current.observe(a));
+                                      T.current.observe(n),
+                                      T.current.observe(a));
                                   let s = document.createElement("div");
                                   return (
                                       (s.style.position = "relative"),
@@ -21696,84 +21684,85 @@
                                       (s.style.width = "0px"),
                                       (s.style.pointerEvents = "none"),
                                       l.insertBefore(s, e),
-                                      (D.current = s),
+                                      (M.current = s),
                                       () => {
-                                          (L.current && L.current.disconnect(),
+                                          (T.current && T.current.disconnect(),
                                               n.parentNode === e &&
                                                   e.removeChild(n),
                                               a.parentNode === e &&
                                                   e.removeChild(a),
-                                              D.current?.parentNode === l &&
-                                                  l.removeChild(D.current));
+                                              M.current?.parentNode === l &&
+                                                  l.removeChild(M.current));
                                       }
                                   );
                               }),
-                              (m = [K, V, S]),
+                              (m = [K, U, I]),
                               (f[14] = K),
-                              (f[15] = V),
+                              (f[15] = U),
                               (f[16] = c),
                               (f[17] = m))
                             : ((c = f[16]), (m = f[17])),
                         (0, Q.useEffect)(c, m),
-                        f[18] === Symbol.for("react.memo_cache_sentinel")
+                        f[18] !== S
                             ? ((g = () => {
-                                  if (!S.current) return;
+                                  if (!I.current) return;
                                   let e = new ResizeObserver((e) => {
                                       for (let l of e)
-                                          P.current = l.contentRect.height;
+                                          B.current = l.contentRect.height + S;
                                   });
                                   return (
-                                      e.observe(S.current),
+                                      e.observe(I.current),
                                       () => e.disconnect()
                                   );
                               }),
-                              (y = [S]),
-                              (f[18] = g),
-                              (f[19] = y))
-                            : ((g = f[18]), (y = f[19])),
+                              (y = [I, S]),
+                              (f[18] = S),
+                              (f[19] = g),
+                              (f[20] = y))
+                            : ((g = f[19]), (y = f[20])),
                         (0, Q.useEffect)(g, y),
-                        f[20] !== M
+                        f[21] !== V
                             ? ((p = () => {
-                                  if (!S.current || !S.current.parentElement)
+                                  if (!I.current || !I.current.parentElement)
                                       return;
                                   let e = new ResizeObserver((e) => {
                                       for (let l of e)
-                                          w.current = l.contentRect.height;
-                                      M();
+                                          A.current = l.contentRect.height;
+                                      V();
                                   });
                                   return (
-                                      e.observe(S.current.parentElement),
+                                      e.observe(I.current.parentElement),
                                       () => e.disconnect()
                                   );
                               }),
-                              (k = [M, S]),
-                              (f[20] = M),
-                              (f[21] = p),
-                              (f[22] = k))
-                            : ((p = f[21]), (k = f[22])),
+                              (k = [V, I]),
+                              (f[21] = V),
+                              (f[22] = p),
+                              (f[23] = k))
+                            : ((p = f[22]), (k = f[23])),
                         (0, Q.useEffect)(p, k),
-                        f[23] === Symbol.for("react.memo_cache_sentinel")
+                        f[24] === Symbol.for("react.memo_cache_sentinel")
                             ? ((F = () => {
-                                  if (!S.current || !S.current.parentElement)
+                                  if (!I.current || !I.current.parentElement)
                                       return;
                                   let e = new ResizeObserver((e) => {
-                                      B.current = D.current?.offsetTop || 0;
+                                      D.current = M.current?.offsetTop || 0;
                                   });
                                   return (
                                       e.observe(document.body),
                                       () => e.disconnect()
                                   );
                               }),
-                              (b = [S]),
-                              (f[23] = F),
-                              (f[24] = b))
-                            : ((F = f[23]), (b = f[24])),
+                              (b = [I]),
+                              (f[24] = F),
+                              (f[25] = b))
+                            : ((F = f[24]), (b = f[25])),
                         (0, Q.useEffect)(F, b),
-                        f[25] !== I
-                            ? ((h = { styles: I, ref: S }),
-                              (f[25] = I),
-                              (f[26] = h))
-                            : (h = f[26]),
+                        f[26] !== v
+                            ? ((h = { styles: v, ref: I }),
+                              (f[26] = v),
+                              (f[27] = h))
+                            : (h = f[27]),
                         h
                     );
                 })(l);
@@ -24544,7 +24533,7 @@
                             children: (0, F.jsx)("span", { children: e.name }),
                             source: e,
                             leadingVisual: () =>
-                                (0, F.jsx)(z.A, {
+                                (0, F.jsx)(W.A, {
                                     icon: V.GitBranchIcon,
                                     size: 16,
                                 }),
@@ -24621,7 +24610,7 @@
             } catch {}
             async function i_(e, l) {
                 let { owner: n, repo: a, query: s } = l,
-                    i = await (0, eh.fetchQuery)(e, iw, {
+                    i = await (0, eh.fetchQuery)(e, iE, {
                         owner: n,
                         name: a,
                         query: s,
@@ -24632,14 +24621,14 @@
                           .map((e) => {
                               var l;
                               return (l = e?.node ?? null)
-                                  ? (0, eh.readInlineData)(iE, l)
+                                  ? (0, eh.readInlineData)(iw, l)
                                   : null;
                           })
                           .filter((e) => !!e) ?? [])
                     : [];
             }
-            let iE = iT,
-                iw = iC;
+            let iw = iT,
+                iE = iC;
             function iA({
                 initialBranch: e,
                 defaultBranchId: l,
@@ -24832,7 +24821,7 @@
                             children: (0, F.jsx)("span", { children: e.name }),
                             source: e,
                             leadingVisual: () =>
-                                (0, F.jsx)(z.A, {
+                                (0, F.jsx)(W.A, {
                                     icon: V.GitBranchIcon,
                                     size: 16,
                                 }),
@@ -25689,9 +25678,12 @@
                 shortcutsEnabled: r,
                 ...u
             }) {
-                let o = (0, Q.useMemo)(() => [...n, ...a], [n, a]),
-                    d = (0, Q.useRef)(null),
-                    c = (0, Q.useMemo)(
+                let o = (0, _.G7)(
+                        "issues_react_select_panel_fullscreen_on_narrow"
+                    ),
+                    d = (0, Q.useMemo)(() => [...n, ...a], [n, a]),
+                    c = (0, Q.useRef)(null),
+                    m = (0, Q.useMemo)(
                         () =>
                             l.filter(
                                 (e) =>
@@ -25701,24 +25693,24 @@
                             ),
                         [l]
                     ),
-                    m = (0, Q.useCallback)(
+                    g = (0, Q.useCallback)(
                         (e) => {
                             i(e);
                         },
                         [i]
                     ),
-                    g = (0, Q.useCallback)((e) => e.id, []),
-                    y = (0, Q.useMemo)(() => {
+                    y = (0, Q.useCallback)((e) => e.id, []),
+                    p = (0, Q.useMemo)(() => {
                         let n = [];
                         return (
-                            o.length > 0 && n.push(iG),
+                            d.length > 0 && n.push(iG),
                             l.length + e.length > 0 &&
-                                e.length + l.length - o.length > 0 &&
+                                e.length + l.length - d.length > 0 &&
                                 n.push(iY),
                             n
                         );
-                    }, [l.length, o.length, e.length]),
-                    p = (0, Q.useCallback)(
+                    }, [l.length, d.length, e.length]),
+                    k = (0, Q.useCallback)(
                         (e) => {
                             var l, s;
                             let i = "PullRequest" === e.__typename,
@@ -25727,7 +25719,7 @@
                                     ? `${e.repository.nameWithOwner}#${e.number}`
                                     : iI.k.noPullRequest,
                                 u = i
-                                    ? (0, F.jsx)(z.A, {
+                                    ? (0, F.jsx)(W.A, {
                                           icon:
                                               ((l = e),
                                               iW.I[
@@ -25752,7 +25744,7 @@
                                               },
                                           },
                                       })
-                                    : (0, F.jsx)(z.A, {
+                                    : (0, F.jsx)(W.A, {
                                           icon: V.GitBranchIcon,
                                           size: 16,
                                       });
@@ -25778,7 +25770,7 @@
                         },
                         [a, n]
                     ),
-                    k = (0, Q.useCallback)(
+                    b = (0, Q.useCallback)(
                         ({ ...e }) =>
                             t
                                 ? t(e)
@@ -25787,37 +25779,37 @@
                                       trailingVisual: V.TriangleDownIcon,
                                       ...e,
                                       "aria-labelledby": "pr-picker-label",
-                                      ref: d,
+                                      ref: c,
                                       children:
-                                          o.length > 0
+                                          d.length > 0
                                               ? iI.k.getNumberOfSelectedPrsLabel(
-                                                    o.length
+                                                    d.length
                                                 )
                                               : iI.k.selectPr,
                                   }),
-                        [t, o.length]
+                        [t, d.length]
                     ),
-                    b = (0, Q.useMemo)(() => [...e, ...c], [e, c]),
-                    h = (0, Q.useMemo)(() => 0 === b.length, [b.length]);
+                    h = (0, Q.useMemo)(() => [...e, ...m], [e, m]),
+                    f = (0, Q.useMemo)(() => 0 === h.length, [h.length]);
                 return (0, F.jsx)("div", {
                     className: iQ.pickerContainer,
                     children: (0, F.jsx)(iL.O, {
                         loading: s,
-                        items: [...e, ...c],
-                        initialSelectedItems: o,
-                        groups: y,
-                        filterItems: m,
-                        getItemKey: g,
-                        convertToItemProps: p,
+                        items: [...e, ...m],
+                        initialSelectedItems: d,
+                        groups: p,
+                        filterItems: g,
+                        getItemKey: y,
+                        convertToItemProps: k,
                         placeholderText: iI.k.searchPr,
                         selectionVariant: "multiple",
-                        selectPanelRef: d,
-                        renderAnchor: k,
+                        selectPanelRef: c,
+                        renderAnchor: b,
                         width: "medium",
                         resultListAriaLabel: "Pull request results",
                         height: "large",
-                        improvedNoMatchAccessibility: h,
-                        noMatchMessage: h
+                        improvedNoMatchAccessibility: f,
+                        noMatchMessage: f
                             ? {
                                   title: "No pull requests or branches were found",
                                   variant: "empty",
@@ -25825,6 +25817,7 @@
                               }
                             : void 0,
                         ...u,
+                        responsiveOnNarrow: o,
                     }),
                 });
             }
@@ -28269,7 +28262,7 @@ git checkout ${e}`;
                     selectedBranchName: i,
                     setSelectedBranchName: t,
                 }) => {
-                    let r = (0, N.useLazyLoadQuery)(tE, { repo: e, owner: l }),
+                    let r = (0, N.useLazyLoadQuery)(tw, { repo: e, owner: l }),
                         u = (0, tr.Er)(r.viewer),
                         o = r.repository ? (0, tr.Jo)(r.repository) : null,
                         [d, c] = (0, Q.useState)(o),
@@ -28305,7 +28298,7 @@ git checkout ${e}`;
                     setSelectedBranchName: t,
                     setBranchSourceName: r,
                 }) => {
-                    let u = (0, N.useLazyLoadQuery)(tw, {
+                    let u = (0, N.useLazyLoadQuery)(tE, {
                             repo: e.name,
                             owner: e.owner.login,
                         }),
@@ -28574,8 +28567,8 @@ git checkout ${e}`;
                 t_.displayName ||
                     (t_.displayName = "NoBranchesOrLinkedPullRequests");
             } catch {}
-            let tE = ic,
-                tw = im;
+            let tw = ic,
+                tE = im;
             function tA() {
                 return (0, F.jsx)(iy.w, {
                     sectionHeader: (0, F.jsx)(ig.h, {
@@ -28971,7 +28964,7 @@ git checkout ${e}`;
                     { login: n, avatarUrl: a } = (0, sF.uX)(l);
                 return (0, F.jsx)(ek.A, {
                     href: `/${n}`,
-                    children: (0, F.jsx)(E.r, {
+                    children: (0, F.jsx)(w.r, {
                         src: a,
                         size: 20,
                         alt: `@${n}`,
@@ -29220,7 +29213,7 @@ git checkout ${e}`;
                     (0, F.jsxs)("div", {
                         className: tH.notFoundContainer,
                         children: [
-                            (0, F.jsx)(z.A, {
+                            (0, F.jsx)(W.A, {
                                 size: "medium",
                                 icon: V.StopIcon,
                                 className: tH.errorIcon,
@@ -29292,7 +29285,7 @@ git checkout ${e}`;
                                             href: `/${e}`,
                                             children: [
                                                 (0, F.jsx)(H.l.LeadingVisual, {
-                                                    children: (0, F.jsx)(E.r, {
+                                                    children: (0, F.jsx)(w.r, {
                                                         src: l,
                                                         size: 20,
                                                         alt: `@${e}`,
@@ -32082,7 +32075,7 @@ git checkout ${e}`;
                                 "data-hovercard-fixed-positioning": !0,
                                 className:
                                     rg.PaginatedRelationshipsListAllView_AvatarLink,
-                                children: (0, F.jsx)(E.r, {
+                                children: (0, F.jsx)(w.r, {
                                     alt: n.login,
                                     src: n.avatarUrl,
                                 }),
@@ -33334,7 +33327,7 @@ git checkout ${e}`;
                     },
                 });
             }
-            let rE = (function () {
+            let rw = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -33724,14 +33717,14 @@ git checkout ${e}`;
                     },
                 };
             })();
-            function rw({
+            function rE({
                 environment: e,
                 input: l,
                 onError: n,
                 onCompleted: a,
             }) {
                 return (0, N.commitMutation)(e, {
-                    mutation: rE,
+                    mutation: rw,
                     variables: { input: l },
                     onError: (e) => n && n(e),
                     onCompleted: (e) => a && a(e),
@@ -33757,7 +33750,7 @@ git checkout ${e}`;
                     },
                 });
             }
-            rE.hash = "fb9c648571be9539ea2d490c926f1f2c";
+            rw.hash = "fb9c648571be9539ea2d490c926f1f2c";
             let rA = {
                 DependenciesPicker:
                     "DependenciesPicker-module__DependenciesPicker--WryxL",
@@ -33855,7 +33848,7 @@ git checkout ${e}`;
                                 for (let e of i)
                                     u.push(
                                         new Promise((l) => {
-                                            rw({
+                                            rE({
                                                 environment: r,
                                                 input: {
                                                     issueId: n,
@@ -33906,7 +33899,7 @@ git checkout ${e}`;
                                 for (let e of i)
                                     u.push(
                                         new Promise((l) => {
-                                            rw({
+                                            rE({
                                                 environment: r,
                                                 input: {
                                                     issueId: e,
@@ -34536,7 +34529,7 @@ git checkout ${e}`;
                         children: [
                             (0, F.jsx)("span", { children: `${l} / ${e}` }),
                             s &&
-                                (0, F.jsx)(z.A, {
+                                (0, F.jsx)(W.A, {
                                     icon: V.TriangleRightIcon,
                                     className: (0, eb.$)(
                                         "triangle",
@@ -34563,7 +34556,7 @@ git checkout ${e}`;
                 return a.total > 0
                     ? (0, F.jsx)("div", {
                           className: rO.summaryContainer,
-                          children: (0, F.jsx)(W.A, {
+                          children: (0, F.jsx)(z.A, {
                               "aria-label": `${a.percentCompleted}% completed`,
                               children: (0, F.jsx)(rH, { ...s, progress: a }),
                           }),
@@ -34916,8 +34909,8 @@ git checkout ${e}`;
                     R = i?.nodes && i.nodes.length > 0,
                     j = t?.nodes && t.nodes.length > 0,
                     _ = i?.pageInfo?.hasNextPage,
-                    E = t?.pageInfo?.hasNextPage,
-                    w = (0, Q.useMemo)(() => {
+                    w = t?.pageInfo?.hasNextPage,
+                    E = (0, Q.useMemo)(() => {
                         let e = o.blockedBy || 0;
                         return r0(
                             e,
@@ -34933,7 +34926,7 @@ git checkout ${e}`;
                             !t?.pageInfo?.hasNextPage
                         );
                     }, [o, t]),
-                    P = R || j || w || A,
+                    P = R || j || E || A,
                     B = (0, Q.useMemo)(() => (d ? s || P : s), [d, s, P]);
                 (0, Q.useEffect)(() => {
                     d && P && (0, t5.BI)("issue_viewer.dependencies.shown");
@@ -34994,7 +34987,7 @@ git checkout ${e}`;
                                 }),
                             d &&
                                 p.length > 0 &&
-                                (0, F.jsx)(lw, {
+                                (0, F.jsx)(lE, {
                                     title: `Failed to save ${p.length} ${p.length > 1 ? "issues" : "issue"}`,
                                     onClose: k,
                                     width: "large",
@@ -35062,7 +35055,7 @@ git checkout ${e}`;
                     }),
                     children: [
                         m &&
-                            (0, F.jsx)(lw, {
+                            (0, F.jsx)(lE, {
                                 title: m.title,
                                 onClose: g,
                                 children: m.body,
@@ -35089,7 +35082,7 @@ git checkout ${e}`;
                                         ],
                                     }),
                                 d &&
-                                    (R || w) &&
+                                    (R || E) &&
                                     (0, F.jsxs)(F.Fragment, {
                                         children: [
                                             s &&
@@ -35139,7 +35132,7 @@ git checkout ${e}`;
                                                                     e.id
                                                                 )
                                                             ),
-                                                    w &&
+                                                    E &&
                                                         (0, F.jsxs)(H.l.Item, {
                                                             disabled: !0,
                                                             "aria-disabled":
@@ -35195,7 +35188,7 @@ git checkout ${e}`;
                                     (j || A) &&
                                     (0, F.jsxs)(F.Fragment, {
                                         children: [
-                                            (s || R || w) &&
+                                            (s || R || E) &&
                                                 (0, F.jsx)(H.l.Divider, {
                                                     className:
                                                         rW.ActionList_Divider,
@@ -35275,7 +35268,7 @@ git checkout ${e}`;
                                                                 ),
                                                             ],
                                                         }),
-                                                    E &&
+                                                    w &&
                                                         (0, F.jsx)(rZ, {
                                                             dialogTitle:
                                                                 aK.k
@@ -37750,13 +37743,13 @@ git checkout ${e}`;
                 };
             })();
             u_.hash = "34e21dfc29143cca408e732be35ca356";
-            let uE = {
+            let uw = {
                     RadioGroup:
                         "IssueConversationLock-module__RadioGroup--ECuD5",
                     dialogContent:
                         "IssueConversationLock-module__dialogContent--foWXK",
                 },
-                uw = (e) => {
+                uE = (e) => {
                     let l = (0, N.useRelayEnvironment)(),
                         { isUnlocked: n = !0, onClose: a, issueId: s } = e,
                         { addToast: i } = (0, M.Y6)(),
@@ -37855,7 +37848,7 @@ git checkout ${e}`;
                 },
                 uA = ({ handleReasonChange: e }) =>
                     (0, F.jsxs)("div", {
-                        className: uE.dialogContent,
+                        className: uw.dialogContent,
                         children: [
                             (0, F.jsxs)("span", {
                                 children: [
@@ -37873,7 +37866,7 @@ git checkout ${e}`;
                             (0, F.jsxs)(tI.A, {
                                 name: "choiceReason",
                                 onChange: (l, n) => e(l, n),
-                                className: uE.RadioGroup,
+                                className: uw.RadioGroup,
                                 children: [
                                     (0, F.jsx)(tI.A.Label, {
                                         children: "Reason",
@@ -37930,7 +37923,7 @@ git checkout ${e}`;
                     }),
                 uP = () =>
                     (0, F.jsx)("div", {
-                        className: uE.dialogContent,
+                        className: uw.dialogContent,
                         children:
                             "Everyone will be able to comment on this issue once more. You can always lock this issue again in the future.",
                     });
@@ -37940,7 +37933,7 @@ git checkout ${e}`;
                 );
             }
             try {
-                uw.displayName || (uw.displayName = "IssueConversationLock");
+                uE.displayName || (uE.displayName = "IssueConversationLock");
             } catch {}
             try {
                 uA.displayName || (uA.displayName = "LockConversationContent");
@@ -38486,8 +38479,8 @@ git checkout ${e}`;
                                       },
                                   }));
                     }, [j, x, R, g, K, T]),
-                    E = !x && !K,
-                    w =
+                    w = !x && !K,
+                    E =
                         !I.isArchived &&
                         I.viewerIssueCreationPermissions.triageable;
                 return (0, F.jsxs)(F.Fragment, {
@@ -38514,7 +38507,7 @@ git checkout ${e}`;
                                             a2.l.transferIssue,
                                         ],
                                     }),
-                                w &&
+                                E &&
                                     (0, F.jsxs)(H.l.Item, {
                                         onSelect: () => m(!0),
                                         children: [
@@ -38548,10 +38541,10 @@ git checkout ${e}`;
                                     }),
                                 T &&
                                     (0, F.jsxs)(H.l.Item, {
-                                        "aria-disabled": E || void 0,
+                                        "aria-disabled": w || void 0,
                                         onSelect: _,
                                         className: (0, eb.$)(
-                                            E && uW.DisablePin
+                                            w && uW.DisablePin
                                         ),
                                         children: [
                                             (0, F.jsx)(H.l.LeadingVisual, {
@@ -38561,20 +38554,20 @@ git checkout ${e}`;
                                                           {
                                                               className: (0,
                                                               eb.$)(
-                                                                  E &&
+                                                                  w &&
                                                                       uW.DisablePin
                                                               ),
                                                           }
                                                       )
                                                     : (0, F.jsx)(V.PinIcon, {
                                                           className: (0, eb.$)(
-                                                              E && uW.DisablePin
+                                                              w && uW.DisablePin
                                                           ),
                                                       }),
                                             }),
-                                            (0, F.jsx)(W.A, {
+                                            (0, F.jsx)(z.A, {
                                                 direction: "s",
-                                                text: E
+                                                text: w
                                                     ? "3/3 issues already pinned. Unpin an issue to pin this one."
                                                     : K
                                                       ? aK.k.unpinIssueTooltip
@@ -38645,7 +38638,7 @@ git checkout ${e}`;
                                 onClose: () => t(!1),
                             }),
                         o &&
-                            (0, F.jsx)(uw, {
+                            (0, F.jsx)(uE, {
                                 issueId: g,
                                 isUnlocked: !S,
                                 onClose: () => d(!1),
@@ -39418,14 +39411,14 @@ git checkout ${e}`;
                         name: "isDraft",
                         storageKey: null,
                     },
-                    E = {
+                    w = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "createdAt",
                         storageKey: null,
                     },
-                    w = {
+                    E = {
                         alias: null,
                         args: null,
                         concreteType: "Repository",
@@ -39462,7 +39455,7 @@ git checkout ${e}`;
                                 kind: "LinkedField",
                                 name: "nodes",
                                 plural: !0,
-                                selections: [w, j, _, F, I, u],
+                                selections: [E, j, _, F, I, u],
                                 storageKey: null,
                             },
                         ],
@@ -40674,7 +40667,7 @@ git checkout ${e}`;
                                                                 storageKey:
                                                                     null,
                                                             },
-                                                            E,
+                                                            w,
                                                             {
                                                                 alias: null,
                                                                 args: null,
@@ -41160,7 +41153,7 @@ git checkout ${e}`;
                                             },
                                             h,
                                             F,
-                                            E,
+                                            w,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -41253,7 +41246,7 @@ git checkout ${e}`;
                                                 name: "authorToRepoOwnerSponsorship",
                                                 plural: !1,
                                                 selections: [
-                                                    E,
+                                                    w,
                                                     {
                                                         alias: null,
                                                         args: null,
@@ -41471,7 +41464,7 @@ git checkout ${e}`;
                                                     es,
                                                     F,
                                                     I,
-                                                    w,
+                                                    E,
                                                     j,
                                                     ei,
                                                     eo,
@@ -41739,14 +41732,13 @@ git checkout ${e}`;
                     },
                     v = [t, m, k],
                     L = [m],
-                    T = [k],
-                    C = {
+                    T = {
                         kind: "InlineFragment",
-                        selections: T,
+                        selections: [k],
                         type: "Node",
                         abstractKey: "__isNode",
                     },
-                    x = {
+                    C = {
                         kind: "InlineFragment",
                         selections: [
                             {
@@ -41819,7 +41811,7 @@ git checkout ${e}`;
                                                         type: "Mannequin",
                                                         abstractKey: null,
                                                     },
-                                                    C,
+                                                    T,
                                                 ],
                                                 storageKey: null,
                                             },
@@ -41833,21 +41825,21 @@ git checkout ${e}`;
                         type: "Reactable",
                         abstractKey: "__isReactable",
                     },
-                    R = {
+                    x = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "stateReason",
                         storageKey: null,
                     },
-                    N = {
+                    R = {
                         alias: "issueTitleHTML",
                         args: null,
                         kind: "ScalarField",
                         name: "titleHTML",
                         storageKey: null,
                     },
-                    j = {
+                    N = {
                         alias: null,
                         args: null,
                         concreteType: null,
@@ -41857,19 +41849,19 @@ git checkout ${e}`;
                         selections: v,
                         storageKey: null,
                     },
-                    _ = {
+                    j = {
                         alias: null,
                         args: null,
                         concreteType: "Repository",
                         kind: "LinkedField",
                         name: "repository",
                         plural: !1,
-                        selections: [k, f, K, j],
+                        selections: [k, f, K, N],
                         storageKey: null,
                     },
-                    E = {
+                    _ = {
                         kind: "InlineFragment",
-                        selections: [k, N, h, I, R, _],
+                        selections: [k, R, h, I, x, j],
                         type: "Issue",
                         abstractKey: null,
                     },
@@ -41880,72 +41872,72 @@ git checkout ${e}`;
                         name: "titleHTML",
                         storageKey: null,
                     },
-                    A = {
+                    E = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "state",
                         storageKey: null,
                     },
-                    P = {
+                    A = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "isDraft",
                         storageKey: null,
                     },
-                    B = {
+                    P = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "isInMergeQueue",
                         storageKey: null,
                     },
-                    D = {
+                    B = {
                         kind: "InlineFragment",
-                        selections: [k, w, h, I, A, P, B, _],
+                        selections: [k, w, h, I, E, A, P, j],
                         type: "PullRequest",
                         abstractKey: null,
                     },
-                    M = {
+                    D = {
                         kind: "InlineFragment",
-                        selections: [E, D],
+                        selections: [_, B],
                         type: "ReferencedSubject",
                         abstractKey: "__isReferencedSubject",
                     },
-                    V = {
+                    M = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "title",
                         storageKey: null,
                     },
-                    U = {
+                    V = {
                         alias: null,
                         args: null,
                         concreteType: "Repository",
                         kind: "LinkedField",
                         name: "repository",
                         plural: !1,
-                        selections: [f, j, k],
+                        selections: [f, N, k],
                         storageKey: null,
                     },
-                    O = {
+                    U = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "abbreviatedOid",
                         storageKey: null,
                     },
-                    q = [o, u, F],
-                    H = {
+                    O = [o, u, F],
+                    q = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "color",
                         storageKey: null,
                     },
-                    $ = [
+                    H = [
                         o,
                         u,
                         F,
@@ -41965,7 +41957,7 @@ git checkout ${e}`;
                                     storageKey: null,
                                 },
                                 f,
-                                H,
+                                q,
                                 k,
                                 {
                                     alias: null,
@@ -41978,15 +41970,15 @@ git checkout ${e}`;
                             storageKey: null,
                         },
                     ],
-                    z = {
+                    $ = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "resourcePath",
                         storageKey: null,
                     },
-                    W = [z],
-                    Q = {
+                    z = [$],
+                    W = {
                         alias: null,
                         args: null,
                         concreteType: null,
@@ -42001,25 +41993,25 @@ git checkout ${e}`;
                                     m,
                                     {
                                         kind: "InlineFragment",
-                                        selections: W,
+                                        selections: z,
                                         type: "User",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: W,
+                                        selections: z,
                                         type: "Mannequin",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: W,
+                                        selections: z,
                                         type: "Organization",
                                         abstractKey: null,
                                     },
                                     {
                                         kind: "InlineFragment",
-                                        selections: [z, y],
+                                        selections: [$, y],
                                         type: "Bot",
                                         abstractKey: null,
                                     },
@@ -42027,11 +42019,11 @@ git checkout ${e}`;
                                 type: "Actor",
                                 abstractKey: "__isActor",
                             },
-                            C,
+                            T,
                         ],
                         storageKey: null,
                     },
-                    G = [
+                    Q = [
                         o,
                         u,
                         F,
@@ -42053,7 +42045,7 @@ git checkout ${e}`;
                             storageKey: null,
                         },
                     ],
-                    Y = [
+                    G = [
                         o,
                         F,
                         u,
@@ -42068,27 +42060,27 @@ git checkout ${e}`;
                                 t,
                                 {
                                     kind: "InlineFragment",
-                                    selections: [V, h, I, A, P, B, U],
+                                    selections: [M, h, I, E, A, P, V],
                                     type: "PullRequest",
                                     abstractKey: null,
                                 },
-                                C,
+                                T,
                             ],
                             storageKey: null,
                         },
                     ],
-                    X = {
+                    Y = {
                         kind: "InlineFragment",
                         selections: [
                             {
                                 kind: "InlineFragment",
-                                selections: [N, h, R, _],
+                                selections: [R, h, x, j],
                                 type: "Issue",
                                 abstractKey: null,
                             },
                             {
                                 kind: "InlineFragment",
-                                selections: [w, h, A, P, B, _],
+                                selections: [w, h, E, A, P, j],
                                 type: "PullRequest",
                                 abstractKey: null,
                             },
@@ -42096,37 +42088,37 @@ git checkout ${e}`;
                         type: "ReferencedSubject",
                         abstractKey: "__isReferencedSubject",
                     },
-                    J = {
+                    X = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "isCanonicalOfClosedDuplicate",
                         storageKey: null,
                     },
-                    Z = [M],
-                    ee = {
+                    J = [D],
+                    Z = {
                         alias: null,
                         args: null,
                         concreteType: "ProjectV2",
                         kind: "LinkedField",
                         name: "project",
                         plural: !1,
-                        selections: [V, h, k],
+                        selections: [M, h, k],
                         storageKey: null,
                     },
-                    el = {
+                    ee = {
                         kind: "InlineFragment",
                         selections: [
                             t,
                             {
                                 kind: "InlineFragment",
-                                selections: [N, h, I, R, _],
+                                selections: [R, h, I, x, j],
                                 type: "Issue",
                                 abstractKey: null,
                             },
                             {
                                 kind: "InlineFragment",
-                                selections: [w, h, I, A, P, B, _],
+                                selections: [w, h, I, E, A, P, j],
                                 type: "PullRequest",
                                 abstractKey: null,
                             },
@@ -42134,8 +42126,8 @@ git checkout ${e}`;
                         type: "ReferencedSubject",
                         abstractKey: "__isReferencedSubject",
                     },
-                    en = [o, k, el],
-                    ea = [
+                    el = [o, k, ee],
+                    en = [
                         o,
                         F,
                         u,
@@ -42146,11 +42138,11 @@ git checkout ${e}`;
                             kind: "LinkedField",
                             name: "subIssue",
                             plural: !1,
-                            selections: en,
+                            selections: el,
                             storageKey: null,
                         },
                     ],
-                    es = [
+                    ea = [
                         o,
                         F,
                         u,
@@ -42161,12 +42153,12 @@ git checkout ${e}`;
                             kind: "LinkedField",
                             name: "parent",
                             plural: !1,
-                            selections: en,
+                            selections: el,
                             storageKey: null,
                         },
                     ],
-                    ei = [k, el],
-                    et = [
+                    es = [k, ee],
+                    ei = [
                         o,
                         F,
                         u,
@@ -42177,11 +42169,11 @@ git checkout ${e}`;
                             kind: "LinkedField",
                             name: "blockingIssue",
                             plural: !1,
-                            selections: ei,
+                            selections: es,
                             storageKey: null,
                         },
                     ],
-                    er = [
+                    et = [
                         o,
                         F,
                         u,
@@ -42192,22 +42184,22 @@ git checkout ${e}`;
                             kind: "LinkedField",
                             name: "blockedIssue",
                             plural: !1,
-                            selections: ei,
+                            selections: es,
                             storageKey: null,
                         },
                     ],
-                    eu = [f, H, k],
-                    eo = {
+                    er = [f, q, k],
+                    eu = {
                         alias: null,
                         args: null,
                         concreteType: "IssueType",
                         kind: "LinkedField",
                         name: "issueType",
                         plural: !1,
-                        selections: eu,
+                        selections: er,
                         storageKey: null,
                     },
-                    ed = [o, F, u, eo];
+                    eo = [o, F, u, eu];
                 return {
                     fragment: {
                         argumentDefinitions: [e, l, n],
@@ -42933,20 +42925,20 @@ git checkout ${e}`;
                                                                                             },
                                                                                         ],
                                                                                 },
-                                                                                x,
+                                                                                C,
                                                                             ],
                                                                         type: "IssueComment",
                                                                         abstractKey:
                                                                             null,
                                                                     },
-                                                                    x,
+                                                                    C,
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
                                                                             [
                                                                                 o,
                                                                                 u,
-                                                                                R,
+                                                                                x,
                                                                                 {
                                                                                     alias: null,
                                                                                     args: null,
@@ -42958,8 +42950,8 @@ git checkout ${e}`;
                                                                                     selections:
                                                                                         [
                                                                                             t,
-                                                                                            M,
-                                                                                            C,
+                                                                                            D,
+                                                                                            T,
                                                                                         ],
                                                                                     storageKey:
                                                                                         null,
@@ -42988,7 +42980,7 @@ git checkout ${e}`;
                                                                                                 selections:
                                                                                                     [
                                                                                                         h,
-                                                                                                        V,
+                                                                                                        M,
                                                                                                     ],
                                                                                                 type: "ProjectV2",
                                                                                                 abstractKey:
@@ -43000,7 +42992,7 @@ git checkout ${e}`;
                                                                                                     [
                                                                                                         h,
                                                                                                         I,
-                                                                                                        U,
+                                                                                                        V,
                                                                                                     ],
                                                                                                 type: "PullRequest",
                                                                                                 abstractKey:
@@ -43011,14 +43003,14 @@ git checkout ${e}`;
                                                                                                 selections:
                                                                                                     [
                                                                                                         h,
-                                                                                                        O,
                                                                                                         U,
+                                                                                                        V,
                                                                                                     ],
                                                                                                 type: "Commit",
                                                                                                 abstractKey:
                                                                                                     null,
                                                                                             },
-                                                                                            C,
+                                                                                            T,
                                                                                         ],
                                                                                     storageKey:
                                                                                         null,
@@ -43032,7 +43024,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            q,
+                                                                            O,
                                                                         type: "ReopenedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43060,7 +43052,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            q,
+                                                                            O,
                                                                         type: "UnlockedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43068,7 +43060,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            q,
+                                                                            O,
                                                                         type: "PinnedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43076,7 +43068,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            q,
+                                                                            O,
                                                                         type: "UnpinnedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43084,7 +43076,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            $,
+                                                                            H,
                                                                         type: "LabeledEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43120,7 +43112,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            $,
+                                                                            H,
                                                                         type: "UnlabeledEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43152,7 +43144,7 @@ git checkout ${e}`;
                                                                                     storageKey:
                                                                                         null,
                                                                                 },
-                                                                                Q,
+                                                                                W,
                                                                             ],
                                                                         type: "UnassignedEvent",
                                                                         abstractKey:
@@ -43165,7 +43157,7 @@ git checkout ${e}`;
                                                                                 o,
                                                                                 u,
                                                                                 F,
-                                                                                Q,
+                                                                                W,
                                                                             ],
                                                                         type: "AssignedEvent",
                                                                         abstractKey:
@@ -43235,7 +43227,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            G,
+                                                                            Q,
                                                                         type: "MilestonedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43243,7 +43235,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            G,
+                                                                            Q,
                                                                         type: "DemilestonedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43270,44 +43262,6 @@ git checkout ${e}`;
                                                                                 },
                                                                                 o,
                                                                                 {
-                                                                                    alias: null,
-                                                                                    args: null,
-                                                                                    concreteType:
-                                                                                        null,
-                                                                                    kind: "LinkedField",
-                                                                                    name: "target",
-                                                                                    plural: !1,
-                                                                                    selections:
-                                                                                        [
-                                                                                            t,
-                                                                                            {
-                                                                                                kind: "InlineFragment",
-                                                                                                selections:
-                                                                                                    [
-                                                                                                        {
-                                                                                                            alias: null,
-                                                                                                            args: null,
-                                                                                                            concreteType:
-                                                                                                                "Repository",
-                                                                                                            kind: "LinkedField",
-                                                                                                            name: "repository",
-                                                                                                            plural: !1,
-                                                                                                            selections:
-                                                                                                                T,
-                                                                                                            storageKey:
-                                                                                                                null,
-                                                                                                        },
-                                                                                                    ],
-                                                                                                type: "Issue",
-                                                                                                abstractKey:
-                                                                                                    null,
-                                                                                            },
-                                                                                            C,
-                                                                                        ],
-                                                                                    storageKey:
-                                                                                        null,
-                                                                                },
-                                                                                {
                                                                                     alias: "innerSource",
                                                                                     args: null,
                                                                                     concreteType:
@@ -43323,9 +43277,9 @@ git checkout ${e}`;
                                                                                                 abstractKey:
                                                                                                     "__isReferencedSubject",
                                                                                             },
-                                                                                            E,
-                                                                                            D,
-                                                                                            C,
+                                                                                            _,
+                                                                                            B,
+                                                                                            T,
                                                                                         ],
                                                                                     storageKey:
                                                                                         null,
@@ -43361,7 +43315,7 @@ git checkout ${e}`;
                                                                                     selections:
                                                                                         [
                                                                                             t,
-                                                                                            C,
+                                                                                            T,
                                                                                         ],
                                                                                     storageKey:
                                                                                         null,
@@ -43402,7 +43356,7 @@ git checkout ${e}`;
                                                                                                     null,
                                                                                             },
                                                                                             h,
-                                                                                            O,
+                                                                                            U,
                                                                                             {
                                                                                                 alias: null,
                                                                                                 args: null,
@@ -43414,7 +43368,7 @@ git checkout ${e}`;
                                                                                                 selections:
                                                                                                     [
                                                                                                         f,
-                                                                                                        j,
+                                                                                                        N,
                                                                                                         {
                                                                                                             alias: null,
                                                                                                             args: null,
@@ -43442,7 +43396,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            Y,
+                                                                            G,
                                                                         type: "ConnectedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43479,7 +43433,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            Y,
+                                                                            G,
                                                                         type: "DisconnectedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43507,7 +43461,7 @@ git checkout ${e}`;
                                                                                                     [
                                                                                                         k,
                                                                                                         I,
-                                                                                                        X,
+                                                                                                        Y,
                                                                                                     ],
                                                                                                 type: "Issue",
                                                                                                 abstractKey:
@@ -43519,18 +43473,18 @@ git checkout ${e}`;
                                                                                                     [
                                                                                                         I,
                                                                                                         k,
-                                                                                                        X,
+                                                                                                        Y,
                                                                                                     ],
                                                                                                 type: "PullRequest",
                                                                                                 abstractKey:
                                                                                                     null,
                                                                                             },
-                                                                                            C,
+                                                                                            T,
                                                                                         ],
                                                                                     storageKey:
                                                                                         null,
                                                                                 },
-                                                                                J,
+                                                                                X,
                                                                                 o,
                                                                                 {
                                                                                     alias: null,
@@ -43580,7 +43534,7 @@ git checkout ${e}`;
                                                                                             {
                                                                                                 kind: "InlineFragment",
                                                                                                 selections:
-                                                                                                    Z,
+                                                                                                    J,
                                                                                                 type: "Issue",
                                                                                                 abstractKey:
                                                                                                     null,
@@ -43588,17 +43542,17 @@ git checkout ${e}`;
                                                                                             {
                                                                                                 kind: "InlineFragment",
                                                                                                 selections:
-                                                                                                    Z,
+                                                                                                    J,
                                                                                                 type: "PullRequest",
                                                                                                 abstractKey:
                                                                                                     null,
                                                                                             },
-                                                                                            C,
+                                                                                            T,
                                                                                         ],
                                                                                     storageKey:
                                                                                         null,
                                                                                 },
-                                                                                J,
+                                                                                X,
                                                                                 o,
                                                                             ],
                                                                         type: "UnmarkedAsDuplicateEvent",
@@ -43641,7 +43595,7 @@ git checkout ${e}`;
                                                                                 o,
                                                                                 u,
                                                                                 F,
-                                                                                ee,
+                                                                                Z,
                                                                             ],
                                                                         type: "AddedToProjectV2Event",
                                                                         abstractKey:
@@ -43653,7 +43607,7 @@ git checkout ${e}`;
                                                                             [
                                                                                 u,
                                                                                 F,
-                                                                                ee,
+                                                                                Z,
                                                                             ],
                                                                         type: "RemovedFromProjectV2Event",
                                                                         abstractKey:
@@ -43665,7 +43619,7 @@ git checkout ${e}`;
                                                                             [
                                                                                 u,
                                                                                 F,
-                                                                                ee,
+                                                                                Z,
                                                                                 {
                                                                                     alias: null,
                                                                                     args: null,
@@ -43702,7 +43656,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            ea,
+                                                                            en,
                                                                         type: "SubIssueAddedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43710,7 +43664,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            ea,
+                                                                            en,
                                                                         type: "SubIssueRemovedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43718,7 +43672,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            es,
+                                                                            ea,
                                                                         type: "ParentIssueAddedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43726,7 +43680,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            es,
+                                                                            ea,
                                                                         type: "ParentIssueRemovedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43734,7 +43688,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            et,
+                                                                            ei,
                                                                         type: "BlockedByAddedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43742,7 +43696,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            et,
+                                                                            ei,
                                                                         type: "BlockedByRemovedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43750,7 +43704,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            er,
+                                                                            et,
                                                                         type: "BlockingAddedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43758,7 +43712,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            er,
+                                                                            et,
                                                                         type: "BlockingRemovedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43766,7 +43720,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            ed,
+                                                                            eo,
                                                                         type: "IssueTypeAddedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43774,7 +43728,7 @@ git checkout ${e}`;
                                                                     {
                                                                         kind: "InlineFragment",
                                                                         selections:
-                                                                            ed,
+                                                                            eo,
                                                                         type: "IssueTypeRemovedEvent",
                                                                         abstractKey:
                                                                             null,
@@ -43786,7 +43740,7 @@ git checkout ${e}`;
                                                                                 o,
                                                                                 F,
                                                                                 u,
-                                                                                eo,
+                                                                                eu,
                                                                                 {
                                                                                     alias: null,
                                                                                     args: null,
@@ -43796,7 +43750,7 @@ git checkout ${e}`;
                                                                                     name: "prevIssueType",
                                                                                     plural: !1,
                                                                                     selections:
-                                                                                        eu,
+                                                                                        er,
                                                                                     storageKey:
                                                                                         null,
                                                                                 },
@@ -43805,7 +43759,7 @@ git checkout ${e}`;
                                                                         abstractKey:
                                                                             null,
                                                                     },
-                                                                    C,
+                                                                    T,
                                                                     r,
                                                                 ],
                                                                 storageKey:
@@ -43844,7 +43798,7 @@ git checkout ${e}`;
                         ],
                     },
                     params: {
-                        id: "5b38a8766a37573c07d53a2480e1b778",
+                        id: "0b1665d8ca4dab83f06452a681fab3e0",
                         metadata: {},
                         name: "IssueViewerSubscriptionTimelineSubscription",
                         operationKind: "subscription",
@@ -44063,7 +44017,7 @@ git checkout ${e}`;
                         name: "stateReason",
                         storageKey: null,
                     },
-                    E = {
+                    w = {
                         alias: null,
                         args: null,
                         concreteType: null,
@@ -44073,19 +44027,19 @@ git checkout ${e}`;
                         selections: f,
                         storageKey: null,
                     },
-                    w = {
+                    E = {
                         alias: null,
                         args: null,
                         concreteType: "Repository",
                         kind: "LinkedField",
                         name: "repository",
                         plural: !1,
-                        selections: [p, I, v, E],
+                        selections: [p, I, v, w],
                         storageKey: null,
                     },
                     A = {
                         kind: "InlineFragment",
-                        selections: [p, j, S, K, _, w],
+                        selections: [p, j, S, K, _, E],
                         type: "Issue",
                         abstractKey: null,
                     },
@@ -44119,7 +44073,7 @@ git checkout ${e}`;
                     },
                     V = {
                         kind: "InlineFragment",
-                        selections: [p, P, S, K, B, D, M, w],
+                        selections: [p, P, S, K, B, D, M, E],
                         type: "PullRequest",
                         abstractKey: null,
                     },
@@ -44314,7 +44268,7 @@ git checkout ${e}`;
                         kind: "LinkedField",
                         name: "repository",
                         plural: !1,
-                        selections: [I, E, p],
+                        selections: [I, w, p],
                         storageKey: null,
                     },
                     en = {
@@ -44331,13 +44285,13 @@ git checkout ${e}`;
                             y,
                             {
                                 kind: "InlineFragment",
-                                selections: [j, S, K, _, w],
+                                selections: [j, S, K, _, E],
                                 type: "Issue",
                                 abstractKey: null,
                             },
                             {
                                 kind: "InlineFragment",
-                                selections: [P, S, K, B, D, M, w],
+                                selections: [P, S, K, B, D, M, E],
                                 type: "PullRequest",
                                 abstractKey: null,
                             },
@@ -44436,13 +44390,13 @@ git checkout ${e}`;
                         selections: [
                             {
                                 kind: "InlineFragment",
-                                selections: [j, S, _, w],
+                                selections: [j, S, _, E],
                                 type: "Issue",
                                 abstractKey: null,
                             },
                             {
                                 kind: "InlineFragment",
-                                selections: [P, S, B, D, M, w],
+                                selections: [P, S, B, D, M, E],
                                 type: "PullRequest",
                                 abstractKey: null,
                             },
@@ -45132,44 +45086,6 @@ git checkout ${e}`;
                                                                                 },
                                                                                 F,
                                                                                 {
-                                                                                    alias: null,
-                                                                                    args: null,
-                                                                                    concreteType:
-                                                                                        null,
-                                                                                    kind: "LinkedField",
-                                                                                    name: "target",
-                                                                                    plural: !1,
-                                                                                    selections:
-                                                                                        [
-                                                                                            y,
-                                                                                            {
-                                                                                                kind: "InlineFragment",
-                                                                                                selections:
-                                                                                                    [
-                                                                                                        {
-                                                                                                            alias: null,
-                                                                                                            args: null,
-                                                                                                            concreteType:
-                                                                                                                "Repository",
-                                                                                                            kind: "LinkedField",
-                                                                                                            name: "repository",
-                                                                                                            plural: !1,
-                                                                                                            selections:
-                                                                                                                x,
-                                                                                                            storageKey:
-                                                                                                                null,
-                                                                                                        },
-                                                                                                    ],
-                                                                                                type: "Issue",
-                                                                                                abstractKey:
-                                                                                                    null,
-                                                                                            },
-                                                                                            R,
-                                                                                        ],
-                                                                                    storageKey:
-                                                                                        null,
-                                                                                },
-                                                                                {
                                                                                     alias: "innerSource",
                                                                                     args: null,
                                                                                     concreteType:
@@ -45669,7 +45585,7 @@ git checkout ${e}`;
                                                                                                 selections:
                                                                                                     [
                                                                                                         I,
-                                                                                                        E,
+                                                                                                        w,
                                                                                                         {
                                                                                                             alias: null,
                                                                                                             args: null,
@@ -46092,7 +46008,7 @@ git checkout ${e}`;
                         ],
                     },
                     params: {
-                        id: "f8f5efc6a27ce1947e2fd9e7c698a504",
+                        id: "beb3d78e57752ea85849459b21a828ec",
                         metadata: {},
                         name: "useTimelineHighlightQuery",
                         operationKind: "query",
@@ -46282,7 +46198,7 @@ git checkout ${e}`;
                         name: "stateReason",
                         storageKey: null,
                     },
-                    E = {
+                    w = {
                         alias: null,
                         args: null,
                         concreteType: null,
@@ -46292,19 +46208,19 @@ git checkout ${e}`;
                         selections: f,
                         storageKey: null,
                     },
-                    w = {
+                    E = {
                         alias: null,
                         args: null,
                         concreteType: "Repository",
                         kind: "LinkedField",
                         name: "repository",
                         plural: !1,
-                        selections: [p, I, v, E],
+                        selections: [p, I, v, w],
                         storageKey: null,
                     },
                     A = {
                         kind: "InlineFragment",
-                        selections: [p, j, S, K, _, w],
+                        selections: [p, j, S, K, _, E],
                         type: "Issue",
                         abstractKey: null,
                     },
@@ -46338,7 +46254,7 @@ git checkout ${e}`;
                     },
                     V = {
                         kind: "InlineFragment",
-                        selections: [p, P, S, K, B, D, M, w],
+                        selections: [p, P, S, K, B, D, M, E],
                         type: "PullRequest",
                         abstractKey: null,
                     },
@@ -46533,7 +46449,7 @@ git checkout ${e}`;
                         kind: "LinkedField",
                         name: "repository",
                         plural: !1,
-                        selections: [I, E, p],
+                        selections: [I, w, p],
                         storageKey: null,
                     },
                     en = {
@@ -46550,13 +46466,13 @@ git checkout ${e}`;
                             y,
                             {
                                 kind: "InlineFragment",
-                                selections: [j, S, K, _, w],
+                                selections: [j, S, K, _, E],
                                 type: "Issue",
                                 abstractKey: null,
                             },
                             {
                                 kind: "InlineFragment",
-                                selections: [P, S, K, B, D, M, w],
+                                selections: [P, S, K, B, D, M, E],
                                 type: "PullRequest",
                                 abstractKey: null,
                             },
@@ -46655,13 +46571,13 @@ git checkout ${e}`;
                         selections: [
                             {
                                 kind: "InlineFragment",
-                                selections: [j, S, _, w],
+                                selections: [j, S, _, E],
                                 type: "Issue",
                                 abstractKey: null,
                             },
                             {
                                 kind: "InlineFragment",
-                                selections: [P, S, B, D, M, w],
+                                selections: [P, S, B, D, M, E],
                                 type: "PullRequest",
                                 abstractKey: null,
                             },
@@ -47344,44 +47260,6 @@ git checkout ${e}`;
                                                                                 },
                                                                                 F,
                                                                                 {
-                                                                                    alias: null,
-                                                                                    args: null,
-                                                                                    concreteType:
-                                                                                        null,
-                                                                                    kind: "LinkedField",
-                                                                                    name: "target",
-                                                                                    plural: !1,
-                                                                                    selections:
-                                                                                        [
-                                                                                            y,
-                                                                                            {
-                                                                                                kind: "InlineFragment",
-                                                                                                selections:
-                                                                                                    [
-                                                                                                        {
-                                                                                                            alias: null,
-                                                                                                            args: null,
-                                                                                                            concreteType:
-                                                                                                                "Repository",
-                                                                                                            kind: "LinkedField",
-                                                                                                            name: "repository",
-                                                                                                            plural: !1,
-                                                                                                            selections:
-                                                                                                                x,
-                                                                                                            storageKey:
-                                                                                                                null,
-                                                                                                        },
-                                                                                                    ],
-                                                                                                type: "Issue",
-                                                                                                abstractKey:
-                                                                                                    null,
-                                                                                            },
-                                                                                            R,
-                                                                                        ],
-                                                                                    storageKey:
-                                                                                        null,
-                                                                                },
-                                                                                {
                                                                                     alias: "innerSource",
                                                                                     args: null,
                                                                                     concreteType:
@@ -47881,7 +47759,7 @@ git checkout ${e}`;
                                                                                                 selections:
                                                                                                     [
                                                                                                         I,
-                                                                                                        E,
+                                                                                                        w,
                                                                                                         {
                                                                                                             alias: null,
                                                                                                             args: null,
@@ -48304,7 +48182,7 @@ git checkout ${e}`;
                         ],
                     },
                     params: {
-                        id: "b8d624dcae7e705574d1ecc31c30aed4",
+                        id: "b647698c2e1fac59c5d3bb9b7f2d9453",
                         metadata: {},
                         name: "NewTimelinePaginationHighlightQuery",
                         operationKind: "query",
@@ -49210,13 +49088,13 @@ git checkout ${e}`;
                             name: "isInMergeQueue",
                             storageKey: null,
                         },
-                        E = {
+                        w = {
                             kind: "InlineFragment",
                             selections: [r, R, p, y, N, j, _, C],
                             type: "PullRequest",
                             abstractKey: null,
                         },
-                        w = {
+                        E = {
                             kind: "TypeDiscriminator",
                             abstractKey: "__isActor",
                         },
@@ -49249,7 +49127,7 @@ git checkout ${e}`;
                             kind: "LinkedField",
                             name: "actor",
                             plural: !1,
-                            selections: [t, w, A, m, P, B, r],
+                            selections: [t, E, A, m, P, B, r],
                             storageKey: null,
                         },
                         M = {
@@ -49394,7 +49272,7 @@ git checkout ${e}`;
                         $ = [c, d, D],
                         z = {
                             kind: "InlineFragment",
-                            selections: [x, E],
+                            selections: [x, w],
                             type: "ReferencedSubject",
                             abstractKey: "__isReferencedSubject",
                         },
@@ -50244,44 +50122,6 @@ git checkout ${e}`;
                                                                                         },
                                                                                         d,
                                                                                         {
-                                                                                            alias: null,
-                                                                                            args: null,
-                                                                                            concreteType:
-                                                                                                null,
-                                                                                            kind: "LinkedField",
-                                                                                            name: "target",
-                                                                                            plural: !1,
-                                                                                            selections:
-                                                                                                [
-                                                                                                    t,
-                                                                                                    {
-                                                                                                        kind: "InlineFragment",
-                                                                                                        selections:
-                                                                                                            [
-                                                                                                                {
-                                                                                                                    alias: null,
-                                                                                                                    args: null,
-                                                                                                                    concreteType:
-                                                                                                                        "Repository",
-                                                                                                                    kind: "LinkedField",
-                                                                                                                    name: "repository",
-                                                                                                                    plural: !1,
-                                                                                                                    selections:
-                                                                                                                        K,
-                                                                                                                    storageKey:
-                                                                                                                        null,
-                                                                                                                },
-                                                                                                            ],
-                                                                                                        type: "Issue",
-                                                                                                        abstractKey:
-                                                                                                            null,
-                                                                                                    },
-                                                                                                    S,
-                                                                                                ],
-                                                                                            storageKey:
-                                                                                                null,
-                                                                                        },
-                                                                                        {
                                                                                             alias: "innerSource",
                                                                                             args: null,
                                                                                             concreteType:
@@ -50298,7 +50138,7 @@ git checkout ${e}`;
                                                                                                             "__isReferencedSubject",
                                                                                                     },
                                                                                                     x,
-                                                                                                    E,
+                                                                                                    w,
                                                                                                     S,
                                                                                                 ],
                                                                                             storageKey:
@@ -50358,7 +50198,7 @@ git checkout ${e}`;
                                                                                                 [
                                                                                                     t,
                                                                                                     m,
-                                                                                                    w,
+                                                                                                    E,
                                                                                                     A,
                                                                                                     P,
                                                                                                     B,
@@ -51163,7 +51003,7 @@ git checkout ${e}`;
                             ],
                         },
                         params: {
-                            id: "d10045e56e020c38294f4aa9a73b8f11",
+                            id: "874614d459263ff4f26f99f9d1c34fc6",
                             metadata: {},
                             name: "NewTimelinePaginationFrontQuery",
                             operationKind: "query",
@@ -52046,20 +51886,20 @@ git checkout ${e}`;
                         name: "profileResourcePath",
                         storageKey: null,
                     },
-                    E = {
+                    w = {
                         kind: "InlineFragment",
                         selections: [k],
                         type: "Bot",
                         abstractKey: null,
                     },
-                    w = {
+                    E = {
                         alias: null,
                         args: null,
                         concreteType: null,
                         kind: "LinkedField",
                         name: "actor",
                         plural: !1,
-                        selections: [n, N, j, u, _, E, a],
+                        selections: [n, N, j, u, _, w, a],
                         storageKey: null,
                     },
                     A = {
@@ -52100,7 +51940,7 @@ git checkout ${e}`;
                         },
                         t,
                         r,
-                        w,
+                        E,
                     ],
                     B = {
                         alias: null,
@@ -52192,7 +52032,7 @@ git checkout ${e}`;
                         },
                         t,
                         r,
-                        w,
+                        E,
                         {
                             alias: null,
                             args: null,
@@ -52201,7 +52041,7 @@ git checkout ${e}`;
                             storageKey: null,
                         },
                     ],
-                    U = [r, t, w],
+                    U = [r, t, E],
                     O = {
                         kind: "InlineFragment",
                         selections: [v, R],
@@ -52232,7 +52072,7 @@ git checkout ${e}`;
                         name: "abbreviatedOid",
                         storageKey: null,
                     },
-                    z = [t, r, w],
+                    z = [t, r, E],
                     W = {
                         kind: "InlineFragment",
                         selections: [
@@ -52256,7 +52096,7 @@ git checkout ${e}`;
                     Q = [a, W],
                     G = [
                         t,
-                        w,
+                        E,
                         r,
                         {
                             alias: null,
@@ -52271,7 +52111,7 @@ git checkout ${e}`;
                     ],
                     Y = [
                         t,
-                        w,
+                        E,
                         r,
                         {
                             alias: null,
@@ -52287,7 +52127,7 @@ git checkout ${e}`;
                     X = [t, a, W],
                     J = [
                         t,
-                        w,
+                        E,
                         r,
                         {
                             alias: null,
@@ -52302,7 +52142,7 @@ git checkout ${e}`;
                     ],
                     Z = [
                         t,
-                        w,
+                        E,
                         r,
                         {
                             alias: null,
@@ -52317,7 +52157,7 @@ git checkout ${e}`;
                     ],
                     ee = [
                         t,
-                        w,
+                        E,
                         r,
                         {
                             alias: null,
@@ -52387,7 +52227,7 @@ git checkout ${e}`;
                         selections: ei,
                         storageKey: null,
                     },
-                    er = [t, w, r, et];
+                    er = [t, E, r, et];
                 return {
                     fragment: {
                         argumentDefinitions: e,
@@ -53052,44 +52892,6 @@ git checkout ${e}`;
                                                                                 },
                                                                                 t,
                                                                                 {
-                                                                                    alias: null,
-                                                                                    args: null,
-                                                                                    concreteType:
-                                                                                        null,
-                                                                                    kind: "LinkedField",
-                                                                                    name: "target",
-                                                                                    plural: !1,
-                                                                                    selections:
-                                                                                        [
-                                                                                            n,
-                                                                                            {
-                                                                                                kind: "InlineFragment",
-                                                                                                selections:
-                                                                                                    [
-                                                                                                        {
-                                                                                                            alias: null,
-                                                                                                            args: null,
-                                                                                                            concreteType:
-                                                                                                                "Repository",
-                                                                                                            kind: "LinkedField",
-                                                                                                            name: "repository",
-                                                                                                            plural: !1,
-                                                                                                            selections:
-                                                                                                                F,
-                                                                                                            storageKey:
-                                                                                                                null,
-                                                                                                        },
-                                                                                                    ],
-                                                                                                type: "Issue",
-                                                                                                abstractKey:
-                                                                                                    null,
-                                                                                            },
-                                                                                            b,
-                                                                                        ],
-                                                                                    storageKey:
-                                                                                        null,
-                                                                                },
-                                                                                {
                                                                                     alias: "innerSource",
                                                                                     args: null,
                                                                                     concreteType:
@@ -53112,7 +52914,7 @@ git checkout ${e}`;
                                                                                     storageKey:
                                                                                         null,
                                                                                 },
-                                                                                w,
+                                                                                E,
                                                                             ],
                                                                         type: "CrossReferencedEvent",
                                                                         abstractKey:
@@ -53141,7 +52943,7 @@ git checkout ${e}`;
                                                                                 M,
                                                                                 t,
                                                                                 r,
-                                                                                w,
+                                                                                E,
                                                                             ],
                                                                         type: "AssignedEvent",
                                                                         abstractKey:
@@ -53169,7 +52971,7 @@ git checkout ${e}`;
                                                                                             N,
                                                                                             j,
                                                                                             _,
-                                                                                            E,
+                                                                                            w,
                                                                                             a,
                                                                                         ],
                                                                                     storageKey:
@@ -53303,7 +53105,7 @@ git checkout ${e}`;
                                                                                     storageKey:
                                                                                         null,
                                                                                 },
-                                                                                w,
+                                                                                E,
                                                                             ],
                                                                         type: "ClosedEvent",
                                                                         abstractKey:
@@ -53331,7 +53133,7 @@ git checkout ${e}`;
                                                                                     storageKey:
                                                                                         null,
                                                                                 },
-                                                                                w,
+                                                                                E,
                                                                             ],
                                                                         type: "LockedEvent",
                                                                         abstractKey:
@@ -53367,7 +53169,7 @@ git checkout ${e}`;
                                                                             [
                                                                                 t,
                                                                                 r,
-                                                                                w,
+                                                                                E,
                                                                                 {
                                                                                     alias: null,
                                                                                     args: null,
@@ -53427,7 +53229,7 @@ git checkout ${e}`;
                                                                             [
                                                                                 t,
                                                                                 r,
-                                                                                w,
+                                                                                E,
                                                                                 {
                                                                                     alias: null,
                                                                                     args: null,
@@ -53460,7 +53262,7 @@ git checkout ${e}`;
                                                                                     storageKey:
                                                                                         null,
                                                                                 },
-                                                                                w,
+                                                                                E,
                                                                                 {
                                                                                     alias: "blockedUser",
                                                                                     args: null,
@@ -53541,7 +53343,7 @@ git checkout ${e}`;
                                                                                     storageKey:
                                                                                         null,
                                                                                 },
-                                                                                w,
+                                                                                E,
                                                                                 {
                                                                                     alias: null,
                                                                                     args: null,
@@ -53627,7 +53429,7 @@ git checkout ${e}`;
                                                                         selections:
                                                                             [
                                                                                 t,
-                                                                                w,
+                                                                                E,
                                                                                 r,
                                                                                 {
                                                                                     alias: null,
@@ -53663,7 +53465,7 @@ git checkout ${e}`;
                                                                         kind: "InlineFragment",
                                                                         selections:
                                                                             [
-                                                                                w,
+                                                                                E,
                                                                                 r,
                                                                                 {
                                                                                     alias: null,
@@ -53739,7 +53541,7 @@ git checkout ${e}`;
                                                                         kind: "InlineFragment",
                                                                         selections:
                                                                             [
-                                                                                w,
+                                                                                E,
                                                                                 r,
                                                                                 {
                                                                                     alias: null,
@@ -53785,7 +53587,7 @@ git checkout ${e}`;
                                                                         selections:
                                                                             [
                                                                                 t,
-                                                                                w,
+                                                                                E,
                                                                                 r,
                                                                                 {
                                                                                     alias: null,
@@ -53815,7 +53617,7 @@ git checkout ${e}`;
                                                                             [
                                                                                 t,
                                                                                 r,
-                                                                                w,
+                                                                                E,
                                                                                 es,
                                                                             ],
                                                                         type: "AddedToProjectV2Event",
@@ -53827,7 +53629,7 @@ git checkout ${e}`;
                                                                         selections:
                                                                             [
                                                                                 r,
-                                                                                w,
+                                                                                E,
                                                                                 es,
                                                                             ],
                                                                         type: "RemovedFromProjectV2Event",
@@ -53839,7 +53641,7 @@ git checkout ${e}`;
                                                                         selections:
                                                                             [
                                                                                 r,
-                                                                                w,
+                                                                                E,
                                                                                 es,
                                                                                 {
                                                                                     alias: null,
@@ -53867,7 +53669,7 @@ git checkout ${e}`;
                                                                         selections:
                                                                             [
                                                                                 r,
-                                                                                w,
+                                                                                E,
                                                                                 t,
                                                                             ],
                                                                         type: "ConvertedFromDraftEvent",
@@ -53895,7 +53697,7 @@ git checkout ${e}`;
                                                                         selections:
                                                                             [
                                                                                 t,
-                                                                                w,
+                                                                                E,
                                                                                 r,
                                                                                 et,
                                                                                 {
@@ -53968,7 +53770,7 @@ git checkout ${e}`;
                         ],
                     },
                     params: {
-                        id: "f56bb04929a86adc21e2f3f17a0547b1",
+                        id: "28d101105c844754fc3593a3e390ae60",
                         metadata: {},
                         name: "NewTimelinePaginationBackQuery",
                         operationKind: "query",
@@ -54860,7 +54662,7 @@ git checkout ${e}`;
                 abstractKey: null,
             };
             o_.hash = "ed1c5fd22a973ac313b7b49b9ffa3105";
-            let oE = (function () {
+            let ow = (function () {
                 var e = {
                         alias: null,
                         args: null,
@@ -54954,8 +54756,8 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            oE.hash = "ccd3b10437b5d35f704f99ca1d9a6735";
-            let ow = {
+            ow.hash = "ccd3b10437b5d35f704f99ca1d9a6735";
+            let oE = {
                     CommentBox: "IssueCommentEditor-module__CommentBox--fbuga",
                     EditorMarginContainer:
                         "IssueCommentEditor-module__EditorMarginContainer--vSuW7",
@@ -56049,7 +55851,7 @@ git checkout ${e}`;
                 setManualValidationResult: c,
             }) {
                 let m = (0, Q.useRef)(null),
-                    g = (0, eq.useFragment)(oE, l),
+                    g = (0, eq.useFragment)(ow, l),
                     { body: y, bodyVersion: p } = g,
                     { repository: k } = (0, eq.useFragment)(o_, n),
                     b = k.databaseId,
@@ -56140,7 +55942,7 @@ git checkout ${e}`;
                             hideActions: !0,
                         }),
                         (0, F.jsx)("div", {
-                            className: ow.EditorMarginContainer,
+                            className: oE.EditorMarginContainer,
                             children: (0, F.jsx)(T.hF, {
                                 disabled: u,
                                 subject: C,
@@ -56162,7 +55964,7 @@ git checkout ${e}`;
                                 markdownSuggestionsFetchMethod: x
                                     ? "lazy"
                                     : "eager",
-                                className: ow.CommentBox,
+                                className: oE.CommentBox,
                                 ...(0, ep.G)(ev.Y.commentBox("comment-editor")),
                             }),
                         }),
@@ -56584,7 +56386,7 @@ git checkout ${e}`;
             function o7(e) {
                 let l = (0, N.useLazyLoadQuery)(
                     oZ,
-                    { ghostLogin: eE.t.ghostUser.login },
+                    { ghostLogin: ew.t.ghostUser.login },
                     { fetchPolicy: "store-or-network" }
                 );
                 if (null == l.user) throw Error("Ghost user not found");
@@ -56745,7 +56547,7 @@ git checkout ${e}`;
                     [h, f] = (0, Q.useState)(void 0),
                     K = (0, N.useFragment)(oj, l),
                     [S, I] = (0, eU.Fo)(
-                        eE.t.localStorageKeys.issueComment(
+                        ew.t.localStorageKeys.issueComment(
                             "issuecomment",
                             K.issue.id,
                             K.id
@@ -56879,7 +56681,7 @@ git checkout ${e}`;
             function ds({ url: e, title: l }) {
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
-                        (0, F.jsx)(z.A, { icon: V.TableIcon }),
+                        (0, F.jsx)(W.A, { icon: V.TableIcon }),
                         " ",
                         (0, F.jsx)(ek.A, {
                             href: e,
@@ -57125,7 +56927,7 @@ git checkout ${e}`;
                                       size: "small",
                                       className: dc.alignSelfCenter,
                                   })
-                                : (0, F.jsx)(E.r, {
+                                : (0, F.jsx)(w.r, {
                                       src: l,
                                       size: 16,
                                       className: dc.alignSelfCenter,
@@ -57200,7 +57002,7 @@ git checkout ${e}`;
                                     },
                                     children:
                                         r &&
-                                        (0, F.jsx)(z.A, {
+                                        (0, F.jsx)(W.A, {
                                             icon: r,
                                             sx: { color: u?.color },
                                             className: df.Octicon,
@@ -57385,7 +57187,7 @@ git checkout ${e}`;
                     n = e.RemovedFromProjectV2Event || [];
                 return (0, F.jsxs)(F.Fragment, {
                     children: [
-                        (0, F.jsx)(dE, { queryRefs: l }),
+                        (0, F.jsx)(dw, { queryRefs: l }),
                         l.length > 0 && n.length > 0 && ` ${ay.timeline.and} `,
                         (0, F.jsx)(dR, { queryRefs: n }),
                     ],
@@ -57419,11 +57221,11 @@ git checkout ${e}`;
                     children: (0, F.jsx)(dC.Main, {
                         children: n
                             ? (0, F.jsx)(dj, { rollupGroup: n })
-                            : (0, F.jsx)(dE, { queryRefs: [e] }),
+                            : (0, F.jsx)(dw, { queryRefs: [e] }),
                     }),
                 });
             }
-            let dE = ({ queryRefs: e }) =>
+            let dw = ({ queryRefs: e }) =>
                     0 === e.length
                         ? null
                         : (0, F.jsxs)(F.Fragment, {
@@ -57433,7 +57235,7 @@ git checkout ${e}`;
                                       (0, F.jsx)(
                                           Q.Fragment,
                                           {
-                                              children: (0, F.jsx)(dw, {
+                                              children: (0, F.jsx)(dE, {
                                                   queryRef: l,
                                                   first: 0 === n,
                                                   last: n === e.length - 1,
@@ -57444,7 +57246,7 @@ git checkout ${e}`;
                                   ),
                               ],
                           }),
-                dw = ({ queryRef: e, first: l, last: n }) => {
+                dE = ({ queryRef: e, first: l, last: n }) => {
                     let { project: a } = (0, eq.useFragment)(de, e);
                     return a?.title && a?.url
                         ? (0, F.jsx)("span", {
@@ -57476,12 +57278,12 @@ git checkout ${e}`;
                 d_.displayName || (d_.displayName = "AddedToProjectV2Event");
             } catch {}
             try {
-                dE.displayName ||
-                    (dE.displayName = "AddedToProjectV2sRendering");
+                dw.displayName ||
+                    (dw.displayName = "AddedToProjectV2sRendering");
             } catch {}
             try {
-                dw.displayName ||
-                    (dw.displayName = "InternalAddedToProjectV2sRendering");
+                dE.displayName ||
+                    (dE.displayName = "InternalAddedToProjectV2sRendering");
             } catch {}
             let dA = (function () {
                 var e = {
@@ -58177,53 +57979,67 @@ git checkout ${e}`;
                 repoIssueNumber: "IssueLink-module__repoIssueNumber--c52hS",
                 issueContainer: "IssueLink-module__issueContainer--cuJCD",
             };
-            function dJ({ data: e, targetRepositoryId: l, inline: n = !1 }) {
-                let a = (0, N.useFragment)(dY, e),
-                    s = "Issue" === a.__typename,
-                    i = "PullRequest" === a.__typename,
-                    { sourceIcon: t } = nD({
-                        state: i ? a.state : void 0,
-                        stateReason: s ? a.stateReason : void 0,
+            function dJ({
+                data: e,
+                targetRepositoryId: l,
+                targetOwnerLogin: n,
+                inline: a = !1,
+            }) {
+                var s;
+                let i = (0, N.useFragment)(dY, e),
+                    t = "Issue" === i.__typename,
+                    r = "PullRequest" === i.__typename,
+                    { sourceIcon: u } = nD({
+                        state: r ? i.state : void 0,
+                        stateReason: t ? i.stateReason : void 0,
                     }),
-                    r = i ? a.isDraft : void 0,
-                    u = i ? a.isInMergeQueue : void 0,
-                    o = t(a.__typename, r, u);
-                if (!s && !i) return (0, F.jsx)(F.Fragment, {});
-                let d =
-                        a.repository && a.number
-                            ? s
+                    o = r ? i.isDraft : void 0,
+                    d = r ? i.isInMergeQueue : void 0,
+                    c = u(i.__typename, o, d);
+                if (!t && !r) return (0, F.jsx)(F.Fragment, {});
+                let m =
+                        i.repository && i.number
+                            ? t
                                 ? (0, eg.Nbg)({
-                                      repo: a.repository.name,
-                                      owner: a.repository.owner.login,
-                                      issueNumber: a.number,
+                                      repo: i.repository.name,
+                                      owner: i.repository.owner.login,
+                                      issueNumber: i.number,
                                   })
                                 : (0, eg.i9S)({
-                                      owner: a.repository.owner.login,
-                                      repo: a.repository.name,
-                                      pullRequestNumber: a.number,
+                                      owner: i.repository.owner.login,
+                                      repo: i.repository.name,
+                                      pullRequestNumber: i.number,
                                   })
                             : null,
-                    c =
-                        a.repository.id === l
-                            ? `#${a.number}`
-                            : `${a.repository.owner.login}/${a.repository.name}#${a.number}`,
-                    m = `${a.id}-private-description`,
-                    g = s ? a.issueTitleHTML : a.pullTitleHTML,
-                    y = (0, F.jsxs)(F.Fragment, {
+                    g =
+                        ((s = {
+                            number: i.number,
+                            ownerLogin: i.repository.owner.login,
+                            repoId: i.repository.id,
+                            repoName: i.repository.name,
+                        }),
+                        s.repoId === l
+                            ? `#${s.number}`
+                            : s.ownerLogin === n
+                              ? `${s.repoName}#${s.number}`
+                              : `${s.ownerLogin}/${s.repoName}#${s.number}`),
+                    y = `${i.id}-private-description`,
+                    p = t ? i.issueTitleHTML : i.pullTitleHTML,
+                    k = (0, F.jsxs)(F.Fragment, {
                         children: [
-                            (0, F.jsx)(z.A, {
-                                icon: o,
+                            (0, F.jsx)(W.A, {
+                                icon: c,
                                 size: 16,
                                 sx: {
-                                    mr: n ? "4px" : "initial",
-                                    mt: n ? "initial" : "2px",
+                                    mr: a ? "4px" : "initial",
+                                    mt: a ? "initial" : "2px",
                                 },
                             }),
                             (0, F.jsxs)(ek.A, {
-                                href: a.url,
-                                "data-hovercard-url": d,
-                                "aria-describedby": a.repository.isPrivate
-                                    ? m
+                                href: i.url,
+                                "data-hovercard-url": m,
+                                "aria-describedby": i.repository.isPrivate
+                                    ? y
                                     : void 0,
                                 inline: !0,
                                 className: dX.issueLinkAnchor,
@@ -58234,29 +58050,29 @@ git checkout ${e}`;
                                             "markdown-title",
                                             dX.issueTitleContainer
                                         ),
-                                        html: g,
+                                        html: p,
                                     }),
                                     (0, F.jsxs)("span", {
                                         className: dX.repoIssueNumber,
-                                        children: [" ", c],
+                                        children: [" ", g],
                                     }),
                                 ],
                             }),
-                            a.repository.isPrivate &&
-                                a.repository.id !== l &&
+                            i.repository.isPrivate &&
+                                i.repository.id !== l &&
                                 (0, F.jsxs)(F.Fragment, {
                                     children: [
-                                        (0, F.jsx)(W.A, {
+                                        (0, F.jsx)(z.A, {
                                             "aria-label":
                                                 ay.crossReferencedEventLockTooltip(
-                                                    `${a.repository.owner.login}/${a.repository.name}`
+                                                    `${i.repository.owner.login}/${i.repository.name}`
                                                 ),
-                                            children: (0, F.jsx)(z.A, {
+                                            children: (0, F.jsx)(W.A, {
                                                 icon: V.LockIcon,
                                             }),
                                         }),
                                         (0, F.jsx)("span", {
-                                            id: m,
+                                            id: y,
                                             className: "sr-only",
                                             children:
                                                 ay.crossReferencedEvent
@@ -58266,11 +58082,11 @@ git checkout ${e}`;
                                 }),
                         ],
                     });
-                return n
-                    ? (0, F.jsx)(F.Fragment, { children: y })
+                return a
+                    ? (0, F.jsx)(F.Fragment, { children: k })
                     : (0, F.jsx)("div", {
                           className: dX.issueContainer,
-                          children: y,
+                          children: k,
                       });
             }
             try {
@@ -58287,25 +58103,26 @@ git checkout ${e}`;
                 refAttribute: s,
                 rollupGroup: i,
                 repositoryId: t,
+                ownerLogin: r,
             }) {
                 let {
-                    actor: r,
-                    createdAt: u,
-                    blockingIssue: o,
-                    databaseId: d,
+                    actor: u,
+                    createdAt: o,
+                    blockingIssue: d,
+                    databaseId: c,
                 } = (0, eq.useFragment)(dW, e);
-                if (!o) return null;
-                let c = String(d) === a,
-                    m = i?.BlockedByAddedEvent || [],
-                    g = 0 === m.length ? [e] : m,
-                    y = dQ(e.createdAt, m);
+                if (!d) return null;
+                let m = String(c) === a,
+                    g = i?.BlockedByAddedEvent || [],
+                    y = 0 === g.length ? [e] : g,
+                    p = dQ(e.createdAt, g);
                 return (0, F.jsxs)(dC, {
-                    highlighted: c,
+                    highlighted: m,
                     refAttribute: s,
-                    actor: r,
-                    createdAt: u,
+                    actor: u,
+                    createdAt: o,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: dl(l, d),
+                    deepLinkUrl: dl(l, c),
                     onLinkClick: n,
                     leadingIcon: V.BlockedIcon,
                     children: [
@@ -58313,17 +58130,17 @@ git checkout ${e}`;
                             children: [
                                 (0, F.jsx)("span", {
                                     children:
-                                        1 === g.length
+                                        1 === y.length
                                             ? ay.timeline.blockedByAdded.single
                                             : ay.timeline.blockedByAdded.multiple(
-                                                  g.length
+                                                  y.length
                                               ),
                                 }),
                                 " ",
-                                y
+                                p
                                     ? (0, F.jsx)(dm, {
-                                          timestamp: new Date(y),
-                                          linkUrl: dl(l, d),
+                                          timestamp: new Date(p),
+                                          linkUrl: dl(l, c),
                                       })
                                     : null,
                             ],
@@ -58331,11 +58148,15 @@ git checkout ${e}`;
                         (0, F.jsx)(dC.Secondary, {
                             children: (0, F.jsx)("ul", {
                                 className: dG.issueDependenciesList,
-                                children: g.map((e, l) =>
+                                children: y.map((e, l) =>
                                     (0, F.jsx)(
                                         d0,
-                                        { event: e, targetRepositoryId: t },
-                                        `${d}_${l}`
+                                        {
+                                            event: e,
+                                            targetRepositoryId: t,
+                                            targetOwnerLogin: r,
+                                        },
+                                        `${c}_${l}`
                                     )
                                 ),
                             }),
@@ -58343,14 +58164,19 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function d0({ event: e, targetRepositoryId: l }) {
-                let { blockingIssue: n } = (0, eq.useFragment)(dW, e);
-                return n
+            function d0({
+                event: e,
+                targetRepositoryId: l,
+                targetOwnerLogin: n,
+            }) {
+                let { blockingIssue: a } = (0, eq.useFragment)(dW, e);
+                return a
                     ? (0, F.jsx)("li", {
                           className: dG.issueDependencyItem,
                           children: (0, F.jsx)(dJ, {
-                              data: n,
+                              data: a,
                               targetRepositoryId: l,
+                              targetOwnerLogin: n,
                           }),
                       })
                     : null;
@@ -58425,25 +58251,26 @@ git checkout ${e}`;
                 refAttribute: s,
                 rollupGroup: i,
                 repositoryId: t,
+                ownerLogin: r,
             }) {
                 let {
-                    actor: r,
-                    createdAt: u,
-                    blockingIssue: o,
-                    databaseId: d,
+                    actor: u,
+                    createdAt: o,
+                    blockingIssue: d,
+                    databaseId: c,
                 } = (0, eq.useFragment)(d1, e);
-                if (!o) return null;
-                let c = String(d) === a,
-                    m = i?.BlockedByRemovedEvent || [],
-                    g = 0 === m.length ? [e] : m,
-                    y = dQ(e.createdAt, m);
+                if (!d) return null;
+                let m = String(c) === a,
+                    g = i?.BlockedByRemovedEvent || [],
+                    y = 0 === g.length ? [e] : g,
+                    p = dQ(e.createdAt, g);
                 return (0, F.jsxs)(dC, {
-                    highlighted: c,
+                    highlighted: m,
                     refAttribute: s,
-                    actor: r,
-                    createdAt: u,
+                    actor: u,
+                    createdAt: o,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: dl(l, d),
+                    deepLinkUrl: dl(l, c),
                     onLinkClick: n,
                     leadingIcon: V.BlockedIcon,
                     children: [
@@ -58451,18 +58278,18 @@ git checkout ${e}`;
                             children: [
                                 (0, F.jsx)("span", {
                                     children:
-                                        1 === g.length
+                                        1 === y.length
                                             ? ay.timeline.blockedByRemoved
                                                   .single
                                             : ay.timeline.blockedByRemoved.multiple(
-                                                  g.length
+                                                  y.length
                                               ),
                                 }),
                                 " ",
-                                y
+                                p
                                     ? (0, F.jsx)(dm, {
-                                          timestamp: new Date(y),
-                                          linkUrl: dl(l, d),
+                                          timestamp: new Date(p),
+                                          linkUrl: dl(l, c),
                                       })
                                     : null,
                             ],
@@ -58470,11 +58297,15 @@ git checkout ${e}`;
                         (0, F.jsx)(dC.Secondary, {
                             children: (0, F.jsx)("ul", {
                                 className: dG.issueDependenciesList,
-                                children: g.map((e, l) =>
+                                children: y.map((e, l) =>
                                     (0, F.jsx)(
                                         d4,
-                                        { event: e, targetRepositoryId: t },
-                                        `${d}_${l}`
+                                        {
+                                            event: e,
+                                            targetRepositoryId: t,
+                                            targetOwnerLogin: r,
+                                        },
+                                        `${c}_${l}`
                                     )
                                 ),
                             }),
@@ -58482,14 +58313,19 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function d4({ event: e, targetRepositoryId: l }) {
-                let { blockingIssue: n } = (0, eq.useFragment)(d1, e);
-                return n
+            function d4({
+                event: e,
+                targetRepositoryId: l,
+                targetOwnerLogin: n,
+            }) {
+                let { blockingIssue: a } = (0, eq.useFragment)(d1, e);
+                return a
                     ? (0, F.jsx)("li", {
                           className: dG.issueDependencyItem,
                           children: (0, F.jsx)(dJ, {
-                              data: n,
+                              data: a,
                               targetRepositoryId: l,
+                              targetOwnerLogin: n,
                           }),
                       })
                     : null;
@@ -58566,25 +58402,26 @@ git checkout ${e}`;
                 refAttribute: s,
                 rollupGroup: i,
                 repositoryId: t,
+                ownerLogin: r,
             }) {
                 let {
-                    actor: r,
-                    createdAt: u,
-                    blockedIssue: o,
-                    databaseId: d,
+                    actor: u,
+                    createdAt: o,
+                    blockedIssue: d,
+                    databaseId: c,
                 } = (0, eq.useFragment)(d6, e);
-                if (!o) return null;
-                let c = String(d) === a,
-                    m = i?.BlockingAddedEvent || [],
-                    g = 0 === m.length ? [e] : m,
-                    y = dQ(e.createdAt, m);
+                if (!d) return null;
+                let m = String(c) === a,
+                    g = i?.BlockingAddedEvent || [],
+                    y = 0 === g.length ? [e] : g,
+                    p = dQ(e.createdAt, g);
                 return (0, F.jsxs)(dC, {
-                    highlighted: c,
+                    highlighted: m,
                     refAttribute: s,
-                    actor: r,
-                    createdAt: u,
+                    actor: u,
+                    createdAt: o,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: dl(l, d),
+                    deepLinkUrl: dl(l, c),
                     onLinkClick: n,
                     leadingIcon: V.BlockedIcon,
                     children: [
@@ -58592,17 +58429,17 @@ git checkout ${e}`;
                             children: [
                                 (0, F.jsx)("span", {
                                     children:
-                                        1 === g.length
+                                        1 === y.length
                                             ? ay.timeline.blockingAdded.single
                                             : ay.timeline.blockingAdded.multiple(
-                                                  g.length
+                                                  y.length
                                               ),
                                 }),
                                 " ",
-                                y
+                                p
                                     ? (0, F.jsx)(dm, {
-                                          timestamp: new Date(y),
-                                          linkUrl: dl(l, d),
+                                          timestamp: new Date(p),
+                                          linkUrl: dl(l, c),
                                       })
                                     : null,
                             ],
@@ -58610,11 +58447,15 @@ git checkout ${e}`;
                         (0, F.jsx)(dC.Secondary, {
                             children: (0, F.jsx)("ul", {
                                 className: dG.issueDependenciesList,
-                                children: g.map((e, l) =>
+                                children: y.map((e, l) =>
                                     (0, F.jsx)(
                                         d7,
-                                        { event: e, targetRepositoryId: t },
-                                        `${d}_${l}`
+                                        {
+                                            event: e,
+                                            targetRepositoryId: t,
+                                            targetOwnerLogin: r,
+                                        },
+                                        `${c}_${l}`
                                     )
                                 ),
                             }),
@@ -58622,14 +58463,19 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function d7({ event: e, targetRepositoryId: l }) {
-                let { blockedIssue: n } = (0, eq.useFragment)(d6, e);
-                return n
+            function d7({
+                event: e,
+                targetRepositoryId: l,
+                targetOwnerLogin: n,
+            }) {
+                let { blockedIssue: a } = (0, eq.useFragment)(d6, e);
+                return a
                     ? (0, F.jsx)("li", {
                           className: dG.issueDependencyItem,
                           children: (0, F.jsx)(dJ, {
-                              data: n,
+                              data: a,
                               targetRepositoryId: l,
+                              targetOwnerLogin: n,
                           }),
                       })
                     : null;
@@ -58705,25 +58551,26 @@ git checkout ${e}`;
                 refAttribute: s,
                 rollupGroup: i,
                 repositoryId: t,
+                ownerLogin: r,
             }) {
                 let {
-                    actor: r,
-                    createdAt: u,
-                    blockedIssue: o,
-                    databaseId: d,
+                    actor: u,
+                    createdAt: o,
+                    blockedIssue: d,
+                    databaseId: c,
                 } = (0, eq.useFragment)(d3, e);
-                if (!o) return null;
-                let c = String(d) === a,
-                    m = i?.BlockingRemovedEvent || [],
-                    g = 0 === m.length ? [e] : m,
-                    y = dQ(e.createdAt, m);
+                if (!d) return null;
+                let m = String(c) === a,
+                    g = i?.BlockingRemovedEvent || [],
+                    y = 0 === g.length ? [e] : g,
+                    p = dQ(e.createdAt, g);
                 return (0, F.jsxs)(dC, {
-                    highlighted: c,
+                    highlighted: m,
                     refAttribute: s,
-                    actor: r,
-                    createdAt: u,
+                    actor: u,
+                    createdAt: o,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: dl(l, d),
+                    deepLinkUrl: dl(l, c),
                     onLinkClick: n,
                     leadingIcon: V.BlockedIcon,
                     children: [
@@ -58731,17 +58578,17 @@ git checkout ${e}`;
                             children: [
                                 (0, F.jsx)("span", {
                                     children:
-                                        1 === g.length
+                                        1 === y.length
                                             ? ay.timeline.blockingRemoved.single
                                             : ay.timeline.blockingRemoved.multiple(
-                                                  g.length
+                                                  y.length
                                               ),
                                 }),
                                 " ",
-                                y
+                                p
                                     ? (0, F.jsx)(dm, {
-                                          timestamp: new Date(y),
-                                          linkUrl: dl(l, d),
+                                          timestamp: new Date(p),
+                                          linkUrl: dl(l, c),
                                       })
                                     : null,
                             ],
@@ -58749,11 +58596,15 @@ git checkout ${e}`;
                         (0, F.jsx)(dC.Secondary, {
                             children: (0, F.jsx)("ul", {
                                 className: dG.issueDependenciesList,
-                                children: g.map((e, l) =>
+                                children: y.map((e, l) =>
                                     (0, F.jsx)(
                                         d9,
-                                        { event: e, targetRepositoryId: t },
-                                        `${d}_${l}`
+                                        {
+                                            event: e,
+                                            targetRepositoryId: t,
+                                            targetOwnerLogin: r,
+                                        },
+                                        `${c}_${l}`
                                     )
                                 ),
                             }),
@@ -58761,14 +58612,19 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function d9({ event: e, targetRepositoryId: l }) {
-                let { blockedIssue: n } = (0, eq.useFragment)(d3, e);
-                return n
+            function d9({
+                event: e,
+                targetRepositoryId: l,
+                targetOwnerLogin: n,
+            }) {
+                let { blockedIssue: a } = (0, eq.useFragment)(d3, e);
+                return a
                     ? (0, F.jsx)("li", {
                           className: dG.issueDependencyItem,
                           children: (0, F.jsx)(dJ, {
-                              data: n,
+                              data: a,
                               targetRepositoryId: l,
+                              targetOwnerLogin: n,
                           }),
                       })
                     : null;
@@ -58974,115 +58830,117 @@ git checkout ${e}`;
                 refAttribute: i,
                 showStateReason: t = !0,
                 repositoryId: r,
+                ownerLogin: u,
             }) {
-                var u, o, d, c, m, g;
+                var o, d, c, m, g, y;
                 let {
-                        actor: y,
-                        createdAt: p,
-                        stateReason: k,
-                        databaseId: b,
-                        closer: h,
-                        closingProjectItemStatus: f,
-                        duplicateOf: K,
+                        actor: p,
+                        createdAt: k,
+                        stateReason: b,
+                        databaseId: h,
+                        closer: f,
+                        closingProjectItemStatus: K,
+                        duplicateOf: S,
                     } = (0, eq.useFragment)(ce, e),
-                    S = String(b) === s,
+                    I = String(h) === s,
                     {
-                        getStateQuery: I,
-                        issueStateTimelineIcon: v,
-                        issueStateColor: L,
-                    } = nD({ state: "CLOSED", stateReason: k }),
-                    { stateChangeQuery: T, stateReasonString: C } = I(),
-                    x = (0, Q.useMemo)(
-                        () => `${a}?q=${k && encodeURIComponent(T)}`,
-                        [T, k, a]
+                        getStateQuery: v,
+                        issueStateTimelineIcon: L,
+                        issueStateColor: T,
+                    } = nD({ state: "CLOSED", stateReason: b }),
+                    { stateChangeQuery: C, stateReasonString: x } = v(),
+                    R = (0, Q.useMemo)(
+                        () => `${a}?q=${b && encodeURIComponent(C)}`,
+                        [C, b, a]
                     ),
-                    R = h?.__typename === "Commit",
-                    N = h?.__typename === "ProjectV2",
-                    j = h && "PullRequest" === h.__typename ? h.number : void 0,
-                    _ = h && "PullRequest" === h.__typename ? h.url : void 0,
-                    E = R ? h.url : void 0,
-                    w = N ? h.url : void 0,
-                    A = h
-                        ? "Commit" === h.__typename
-                            ? ((u = h.repository.owner.login),
-                              (o = h.repository.name),
-                              (d = h.abbreviatedOid),
-                              (0, eg.fQd)({ owner: u, repo: o, commitish: d }))
-                            : "PullRequest" === h.__typename
-                              ? ((c = h.repository.owner.login),
-                                (m = h.repository.name),
-                                (g = h.number),
+                    N = f?.__typename === "Commit",
+                    j = f?.__typename === "ProjectV2",
+                    _ = f && "PullRequest" === f.__typename ? f.number : void 0,
+                    w = f && "PullRequest" === f.__typename ? f.url : void 0,
+                    E = N ? f.url : void 0,
+                    A = j ? f.url : void 0,
+                    P = f
+                        ? "Commit" === f.__typename
+                            ? ((o = f.repository.owner.login),
+                              (d = f.repository.name),
+                              (c = f.abbreviatedOid),
+                              (0, eg.fQd)({ owner: o, repo: d, commitish: c }))
+                            : "PullRequest" === f.__typename
+                              ? ((m = f.repository.owner.login),
+                                (g = f.repository.name),
+                                (y = f.number),
                                 (0, eg.i9S)({
-                                    owner: c,
-                                    repo: m,
-                                    pullRequestNumber: g,
+                                    owner: m,
+                                    repo: g,
+                                    pullRequestNumber: y,
                                 }))
                               : null
                         : null,
-                    P = N
+                    B = j
                         ? (0, F.jsxs)(F.Fragment, {
                               children: [
-                                  (0, F.jsx)(z.A, { icon: V.TableIcon }),
+                                  (0, F.jsx)(W.A, { icon: V.TableIcon }),
                                   " ",
                                   (0, F.jsx)(ek.A, {
-                                      href: w,
+                                      href: A,
                                       "data-testid": "closer-link",
                                       inline: !0,
                                       className: cl.stateReasonLink,
-                                      children: h.title,
+                                      children: f.title,
                                   }),
                               ],
                           })
                         : (0, F.jsx)(ek.A, {
-                              href: R ? E : _,
+                              href: N ? E : w,
                               target: "_blank",
-                              "data-hovercard-url": A,
+                              "data-hovercard-url": P,
                               "data-testid": "closer-link",
                               className: cl.closerLink,
-                              children: R ? `${h.abbreviatedOid}` : `#${j}`,
+                              children: N ? `${f.abbreviatedOid}` : `#${_}`,
                           });
                 return (0, F.jsx)(dC, {
-                    highlighted: S,
+                    highlighted: I,
                     refAttribute: i,
-                    actor: y,
-                    createdAt: p,
-                    deepLinkUrl: dl(l, b),
+                    actor: p,
+                    createdAt: k,
+                    deepLinkUrl: dl(l, h),
                     onLinkClick: n,
-                    leadingIcon: v,
-                    iconColoring: { backgroundColor: L, color: "white" },
+                    leadingIcon: L,
+                    iconColoring: { backgroundColor: T, color: "white" },
                     children: (0, F.jsxs)(dC.Main, {
                         children: [
                             `${ay.timeline.closedThis} `,
-                            k &&
+                            b &&
                                 t &&
                                 (0, F.jsxs)(F.Fragment, {
                                     children: [
-                                        `${ay.timeline.as} ${K ? " a " : ""}`,
+                                        `${ay.timeline.as} ${S ? " a " : ""}`,
                                         (0, F.jsx)(ek.A, {
                                             "data-testid": "state-reason-link",
-                                            href: x,
+                                            href: R,
                                             inline: !0,
                                             className: cl.stateReasonLink,
-                                            children: C,
+                                            children: x,
                                         }),
                                     ],
                                 }),
-                            h &&
+                            f &&
                                 (0, F.jsxs)(F.Fragment, {
                                     children: [
-                                        N ? `by moving to ${f} ` : "",
+                                        j ? `by moving to ${K} ` : "",
                                         `${ay.timeline.in} `,
-                                        P,
+                                        B,
                                     ],
                                 }),
-                            K &&
+                            S &&
                                 (0, F.jsxs)(F.Fragment, {
                                     children: [
                                         `${ay.timeline.of} `,
                                         (0, F.jsx)(dJ, {
                                             inline: !0,
-                                            data: K,
+                                            data: S,
                                             targetRepositoryId: r,
+                                            targetOwnerLogin: u,
                                         }),
                                         " ",
                                     ],
@@ -59610,42 +59468,6 @@ git checkout ${e}`;
                         storageKey: null,
                     },
                     {
-                        alias: null,
-                        args: null,
-                        concreteType: null,
-                        kind: "LinkedField",
-                        name: "target",
-                        plural: !1,
-                        selections: [
-                            {
-                                kind: "InlineFragment",
-                                selections: [
-                                    {
-                                        alias: null,
-                                        args: null,
-                                        concreteType: "Repository",
-                                        kind: "LinkedField",
-                                        name: "repository",
-                                        plural: !1,
-                                        selections: [
-                                            {
-                                                alias: null,
-                                                args: null,
-                                                kind: "ScalarField",
-                                                name: "id",
-                                                storageKey: null,
-                                            },
-                                        ],
-                                        storageKey: null,
-                                    },
-                                ],
-                                type: "Issue",
-                                abstractKey: null,
-                            },
-                        ],
-                        storageKey: null,
-                    },
-                    {
                         alias: "innerSource",
                         args: null,
                         concreteType: null,
@@ -59688,7 +59510,7 @@ git checkout ${e}`;
                 type: "CrossReferencedEvent",
                 abstractKey: null,
             };
-            cy.hash = "ec7feca796fa98d8893f957d5a9fb2e3";
+            cy.hash = "bf18172c8121dbfd81a919c9ada72a5c";
             let cp = {
                 crossReferencesList:
                     "CrossReferencedEvent-module__crossReferencesList--bL1RG",
@@ -59700,44 +59522,45 @@ git checkout ${e}`;
                 onLinkClick: a,
                 refAttribute: s,
                 rollupGroup: i,
+                repositoryId: t,
+                ownerLogin: r,
             }) {
-                var t, r, u, o;
+                var u, o, d, c;
                 let {
-                        actor: d,
-                        referencedAt: c,
-                        willCloseTarget: m,
-                        innerSource: g,
-                        databaseId: y,
-                        target: p,
+                        actor: m,
+                        referencedAt: g,
+                        willCloseTarget: y,
+                        innerSource: p,
+                        databaseId: k,
                     } = (0, eq.useFragment)(cy, e),
-                    k = "Issue" === g.__typename,
-                    b = "PullRequest" === g.__typename;
-                if (!k && !b) return (0, F.jsx)(F.Fragment, {});
-                let h =
+                    b = "Issue" === p.__typename,
+                    h = "PullRequest" === p.__typename;
+                if (!b && !h) return (0, F.jsx)(F.Fragment, {});
+                let f =
                         i && i.CrossReferencedEvent
                             ? i.CrossReferencedEvent
                             : [],
-                    f = h.some((e) => e.source?.__typename !== g.__typename),
-                    K =
-                        ((t = g.__typename),
-                        (r = m),
-                        (u = h?.length),
-                        (o = f),
-                        r
+                    K = f.some((e) => e.source?.__typename !== p.__typename),
+                    S =
+                        ((u = p.__typename),
+                        (o = y),
+                        (d = f?.length),
+                        (c = K),
+                        o
                             ? ay.timeline.linkedAClosingPR
-                            : 0 === u || o
+                            : 0 === d || c
                               ? ay.timeline.mentionedThisIn
-                              : "Issue" === t
-                                ? `${ay.timeline.mentionedThisIn} in ${u} issues`
-                                : `${ay.timeline.mentionedThisIn} in ${u} pull requests`),
-                    S = String(y) === n,
-                    I = 0 === h.length ? [e] : h,
-                    v = dQ(e.createdAt, h);
+                              : "Issue" === u
+                                ? `${ay.timeline.mentionedThisIn} in ${d} issues`
+                                : `${ay.timeline.mentionedThisIn} in ${d} pull requests`),
+                    I = String(k) === n,
+                    v = 0 === f.length ? [e] : f,
+                    L = dQ(e.createdAt, f);
                 return (0, F.jsxs)(dC, {
-                    highlighted: S,
+                    highlighted: I,
                     refAttribute: s,
-                    actor: d,
-                    createdAt: c,
+                    actor: m,
+                    createdAt: g,
                     showAgoTimestamp: !1,
                     deepLinkUrl: l,
                     onLinkClick: a,
@@ -59745,12 +59568,12 @@ git checkout ${e}`;
                     children: [
                         (0, F.jsxs)(dC.Main, {
                             children: [
-                                K,
+                                S,
                                 " ",
-                                v
+                                L
                                     ? (0, F.jsx)(dm, {
-                                          timestamp: new Date(v),
-                                          linkUrl: dl(l, y),
+                                          timestamp: new Date(L),
+                                          linkUrl: dl(l, k),
                                       })
                                     : null,
                             ],
@@ -59761,15 +59584,15 @@ git checkout ${e}`;
                                     ay.crossReferencedEvent.sectionLabel,
                                 children: (0, F.jsx)("ul", {
                                     className: cp.crossReferencesList,
-                                    children: I.map((e, l) =>
+                                    children: v.map((e, l) =>
                                         (0, F.jsx)(
                                             cF,
                                             {
                                                 event: e,
-                                                targetRepositoryId:
-                                                    p.repository?.id,
+                                                targetRepositoryId: t,
+                                                targetOwnerLogin: r,
                                             },
-                                            `${y}_${l}`
+                                            `${k}_${l}`
                                         )
                                     ),
                                 }),
@@ -59778,13 +59601,18 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function cF({ event: e, targetRepositoryId: l }) {
-                let { innerSource: n } = (0, eq.useFragment)(cy, e);
+            function cF({
+                event: e,
+                targetRepositoryId: l,
+                targetOwnerLogin: n,
+            }) {
+                let { innerSource: a } = (0, eq.useFragment)(cy, e);
                 return (0, F.jsx)("li", {
                     style: { listStyle: "none" },
                     children: (0, F.jsx)(dJ, {
-                        data: n,
+                        data: a,
                         targetRepositoryId: l,
+                        targetOwnerLogin: n,
                     }),
                 });
             }
@@ -60402,7 +60230,7 @@ git checkout ${e}`;
             try {
                 c_.displayName || (c_.displayName = "IssueTypeAddedEvent");
             } catch {}
-            let cE = (function () {
+            let cw = (function () {
                 var e = [
                     {
                         alias: null,
@@ -60480,7 +60308,7 @@ git checkout ${e}`;
                     abstractKey: null,
                 };
             })();
-            function cw({
+            function cE({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -60494,7 +60322,7 @@ git checkout ${e}`;
                     issueType: u,
                     prevIssueType: o,
                     databaseId: d,
-                } = (0, eq.useFragment)(cE, e);
+                } = (0, eq.useFragment)(cw, e);
                 if (!u) return null;
                 let c = String(d) === a,
                     m = (e) => (e ? u.name : void 0);
@@ -60536,9 +60364,9 @@ git checkout ${e}`;
                       })
                     : null;
             }
-            cE.hash = "ff78cef208baee819e716cf0308f130a";
+            cw.hash = "ff78cef208baee819e716cf0308f130a";
             try {
-                cw.displayName || (cw.displayName = "IssueTypeChangedEvent");
+                cE.displayName || (cE.displayName = "IssueTypeChangedEvent");
             } catch {}
             let cA = {
                 argumentDefinitions: [],
@@ -61354,20 +61182,21 @@ git checkout ${e}`;
                 refAttribute: s,
                 currentIssueId: i,
                 repositoryId: t,
+                ownerLogin: r,
             }) {
-                let r = (0, N.useRelayEnvironment)(),
+                let u = (0, N.useRelayEnvironment)(),
                     {
-                        actor: u,
-                        createdAt: o,
-                        canonical: d,
-                        isCanonicalOfClosedDuplicate: c,
-                        databaseId: m,
-                        viewerCanUndo: g,
-                        pendingUndo: y,
-                        id: p,
+                        actor: o,
+                        createdAt: d,
+                        canonical: c,
+                        isCanonicalOfClosedDuplicate: m,
+                        databaseId: g,
+                        viewerCanUndo: y,
+                        pendingUndo: p,
+                        id: k,
                     } = (0, eq.useFragment)(c1, e),
-                    k = (0, Q.useCallback)(() => {
-                        d?.id &&
+                    b = (0, Q.useCallback)(() => {
+                        c?.id &&
                             !(function ({
                                 environment: e,
                                 input: { cannonicalId: l, duplicateId: n },
@@ -61391,34 +61220,36 @@ git checkout ${e}`;
                                     },
                                 });
                             })({
-                                environment: r,
-                                input: { duplicateId: i, cannonicalId: d.id },
-                                eventId: p,
+                                environment: u,
+                                input: { duplicateId: i, cannonicalId: c.id },
+                                eventId: k,
                             });
-                    }, [d?.id, r, i, p]),
-                    b = String(m) === a;
-                return d
+                    }, [c?.id, u, i, k]),
+                    h = String(g) === a;
+                return c
                     ? (0, F.jsxs)(dC, {
-                          highlighted: b,
+                          highlighted: h,
                           refAttribute: s,
-                          actor: u,
-                          createdAt: o,
-                          deepLinkUrl: dl(l, m),
+                          actor: o,
+                          createdAt: d,
+                          deepLinkUrl: dl(l, g),
                           onLinkClick: n,
                           leadingIcon: V.DuplicateIcon,
-                          fillRow: g,
+                          fillRow: y,
                           children: [
                               (0, F.jsx)(dC.Main, {
-                                  children: c
+                                  children: m
                                       ? (0, F.jsxs)(F.Fragment, {
                                             children: [
                                                 "marked ",
                                                 (0, F.jsx)(dJ, {
                                                     inline: !0,
-                                                    data: d,
+                                                    data: c,
                                                     targetRepositoryId: t,
+                                                    targetOwnerLogin: r,
                                                 }),
-                                                " as a duplicate of this issue",
+                                                " ",
+                                                "as a duplicate of this issue",
                                                 " ",
                                             ],
                                         })
@@ -61430,9 +61261,10 @@ git checkout ${e}`;
                                                         "\xa0",
                                                         (0, F.jsx)(dJ, {
                                                             inline: !0,
-                                                            data: d,
+                                                            data: c,
                                                             targetRepositoryId:
                                                                 t,
+                                                            targetOwnerLogin: r,
                                                         }),
                                                         " ",
                                                     ],
@@ -61440,13 +61272,13 @@ git checkout ${e}`;
                                             ],
                                         }),
                               }),
-                              g && !y && d?.number && !c
+                              y && !p && c?.number && !m
                                   ? (0, F.jsx)(dC.Trailing, {
                                         children: (0, F.jsx)($.Q, {
-                                            onClick: k,
+                                            onClick: b,
                                             "aria-label":
                                                 ay.undoMarkIssueAsDuplicate(
-                                                    d.number
+                                                    c.number
                                                 ),
                                             children: "Undo",
                                         }),
@@ -61605,38 +61437,39 @@ git checkout ${e}`;
                 refAttribute: s,
                 rollupGroup: i,
                 repositoryId: t,
+                ownerLogin: r,
             }) {
                 let {
-                    actor: r,
-                    createdAt: u,
-                    parent: o,
-                    databaseId: d,
+                    actor: u,
+                    createdAt: o,
+                    parent: d,
+                    databaseId: c,
                 } = (0, eq.useFragment)(c7, e);
-                if (!o) return null;
-                let c = String(o.databaseId) === a,
-                    m =
+                if (!d) return null;
+                let m = String(d.databaseId) === a,
+                    g =
                         i && i.ParentIssueAddedEvent
                             ? i.ParentIssueAddedEvent
                             : [],
-                    g = 0 === m.length ? [e] : m,
-                    y = dQ(e.createdAt, m);
+                    y = 0 === g.length ? [e] : g,
+                    p = dQ(e.createdAt, g);
                 return (0, F.jsxs)(dC, {
-                    highlighted: c,
+                    highlighted: m,
                     refAttribute: s,
-                    actor: r,
-                    createdAt: u,
+                    actor: u,
+                    createdAt: o,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: dl(l, d),
+                    deepLinkUrl: dl(l, c),
                     onLinkClick: n,
                     leadingIcon: V.IssueTrackedByIcon,
                     children: [
                         (0, F.jsxs)(dC.Main, {
                             children: [
-                                `${ay.timeline.parentIssueAdded[1 === g.length ? "single" : "multiple"]} `,
-                                y
+                                `${ay.timeline.parentIssueAdded[1 === y.length ? "single" : "multiple"]} `,
+                                p
                                     ? (0, F.jsx)(dm, {
-                                          timestamp: new Date(y),
-                                          linkUrl: dl(l, d),
+                                          timestamp: new Date(p),
+                                          linkUrl: dl(l, c),
                                       })
                                     : null,
                             ],
@@ -61644,11 +61477,15 @@ git checkout ${e}`;
                         (0, F.jsx)(dC.Secondary, {
                             children: (0, F.jsx)("ul", {
                                 className: c3.parentIssuesList,
-                                children: g.map((e, l) =>
+                                children: y.map((e, l) =>
                                     (0, F.jsx)(
                                         c9,
-                                        { event: e, targetRepositoryId: t },
-                                        `${o.databaseId}_${l}`
+                                        {
+                                            event: e,
+                                            targetRepositoryId: t,
+                                            targetOwnerLogin: r,
+                                        },
+                                        `${d.databaseId}_${l}`
                                     )
                                 ),
                             }),
@@ -61656,14 +61493,19 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function c9({ event: e, targetRepositoryId: l }) {
-                let { parent: n } = (0, eq.useFragment)(c7, e);
-                return n
+            function c9({
+                event: e,
+                targetRepositoryId: l,
+                targetOwnerLogin: n,
+            }) {
+                let { parent: a } = (0, eq.useFragment)(c7, e);
+                return a
                     ? (0, F.jsx)("li", {
                           className: c3.parentIssueItem,
                           children: (0, F.jsx)(dJ, {
-                              data: n,
+                              data: a,
                               targetRepositoryId: l,
+                              targetOwnerLogin: n,
                           }),
                       })
                     : null;
@@ -61749,38 +61591,39 @@ git checkout ${e}`;
                 refAttribute: s,
                 rollupGroup: i,
                 repositoryId: t,
+                ownerLogin: r,
             }) {
                 let {
-                    actor: r,
-                    createdAt: u,
-                    parent: o,
-                    databaseId: d,
+                    actor: u,
+                    createdAt: o,
+                    parent: d,
+                    databaseId: c,
                 } = (0, eq.useFragment)(me, e);
-                if (!o) return null;
-                let c = String(o.databaseId) === a,
-                    m =
+                if (!d) return null;
+                let m = String(d.databaseId) === a,
+                    g =
                         i && i.ParentIssueRemovedEvent
                             ? i.ParentIssueRemovedEvent
                             : [],
-                    g = 0 === m.length ? [e] : m,
-                    y = dQ(e.createdAt, m);
+                    y = 0 === g.length ? [e] : g,
+                    p = dQ(e.createdAt, g);
                 return (0, F.jsxs)(dC, {
-                    highlighted: c,
+                    highlighted: m,
                     refAttribute: s,
-                    actor: r,
-                    createdAt: u,
+                    actor: u,
+                    createdAt: o,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: dl(l, d),
+                    deepLinkUrl: dl(l, c),
                     onLinkClick: n,
                     leadingIcon: V.IssueTrackedByIcon,
                     children: [
                         (0, F.jsxs)(dC.Main, {
                             children: [
-                                `${ay.timeline.parentIssueRemoved[1 === g.length ? "single" : "multiple"]} `,
-                                y
+                                `${ay.timeline.parentIssueRemoved[1 === y.length ? "single" : "multiple"]} `,
+                                p
                                     ? (0, F.jsx)(dm, {
-                                          timestamp: new Date(y),
-                                          linkUrl: dl(l, d),
+                                          timestamp: new Date(p),
+                                          linkUrl: dl(l, c),
                                       })
                                     : null,
                             ],
@@ -61788,11 +61631,15 @@ git checkout ${e}`;
                         (0, F.jsx)(dC.Secondary, {
                             children: (0, F.jsx)("ul", {
                                 className: ml.removedParentIssuesList,
-                                children: g.map((e, l) =>
+                                children: y.map((e, l) =>
                                     (0, F.jsx)(
                                         ma,
-                                        { event: e, targetRepositoryId: t },
-                                        `${o.databaseId}_${l}`
+                                        {
+                                            event: e,
+                                            targetRepositoryId: t,
+                                            targetOwnerLogin: r,
+                                        },
+                                        `${d.databaseId}_${l}`
                                     )
                                 ),
                             }),
@@ -61800,14 +61647,19 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function ma({ event: e, targetRepositoryId: l }) {
-                let { parent: n } = (0, eq.useFragment)(me, e);
-                return n
+            function ma({
+                event: e,
+                targetRepositoryId: l,
+                targetOwnerLogin: n,
+            }) {
+                let { parent: a } = (0, eq.useFragment)(me, e);
+                return a
                     ? (0, F.jsx)("li", {
                           className: ml.removedParentIssueItem,
                           children: (0, F.jsx)(dJ, {
-                              data: n,
+                              data: a,
                               targetRepositoryId: l,
+                              targetOwnerLogin: n,
                           }),
                       })
                     : null;
@@ -63261,7 +63113,7 @@ git checkout ${e}`;
                 Box: "SubIssueAddedEvent-module__Box--N8W4N",
                 Box_1: "SubIssueAddedEvent-module__Box_1--eiyEN",
             };
-            function mE({
+            function mw({
                 queryRef: e,
                 issueUrl: l,
                 onLinkClick: n,
@@ -63269,35 +63121,36 @@ git checkout ${e}`;
                 refAttribute: s,
                 rollupGroup: i,
                 repositoryId: t,
+                ownerLogin: r,
             }) {
                 let {
-                    actor: r,
-                    createdAt: u,
-                    subIssue: o,
-                    databaseId: d,
+                    actor: u,
+                    createdAt: o,
+                    subIssue: d,
+                    databaseId: c,
                 } = (0, eq.useFragment)(mj, e);
-                if (!o) return null;
-                let c = String(o.databaseId) === a,
-                    m = i && i.SubIssueAddedEvent ? i.SubIssueAddedEvent : [],
-                    g = 0 === m.length ? [e] : m,
-                    y = dQ(e.createdAt, m);
+                if (!d) return null;
+                let m = String(d.databaseId) === a,
+                    g = i && i.SubIssueAddedEvent ? i.SubIssueAddedEvent : [],
+                    y = 0 === g.length ? [e] : g,
+                    p = dQ(e.createdAt, g);
                 return (0, F.jsxs)(dC, {
-                    highlighted: c,
+                    highlighted: m,
                     refAttribute: s,
-                    actor: r,
-                    createdAt: u,
+                    actor: u,
+                    createdAt: o,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: dl(l, d),
+                    deepLinkUrl: dl(l, c),
                     onLinkClick: n,
                     leadingIcon: V.IssueTracksIcon,
                     children: [
                         (0, F.jsxs)(dC.Main, {
                             children: [
-                                `${ay.timeline.subIssueAdded[1 === g.length ? "single" : "multiple"]} `,
-                                y
+                                `${ay.timeline.subIssueAdded[1 === y.length ? "single" : "multiple"]} `,
+                                p
                                     ? (0, F.jsx)(dm, {
-                                          timestamp: new Date(y),
-                                          linkUrl: dl(l, d),
+                                          timestamp: new Date(p),
+                                          linkUrl: dl(l, c),
                                       })
                                     : null,
                             ],
@@ -63305,11 +63158,15 @@ git checkout ${e}`;
                         (0, F.jsx)(dC.Secondary, {
                             children: (0, F.jsx)("ul", {
                                 className: m_.Box,
-                                children: g.map((e, l) =>
+                                children: y.map((e, l) =>
                                     (0, F.jsx)(
-                                        mw,
-                                        { event: e, targetRepositoryId: t },
-                                        `${o.databaseId}_${l}`
+                                        mE,
+                                        {
+                                            event: e,
+                                            targetRepositoryId: t,
+                                            targetOwnerLogin: r,
+                                        },
+                                        `${d.databaseId}_${l}`
                                     )
                                 ),
                             }),
@@ -63317,23 +63174,28 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function mw({ event: e, targetRepositoryId: l }) {
-                let { subIssue: n } = (0, eq.useFragment)(mj, e);
-                return n
+            function mE({
+                event: e,
+                targetRepositoryId: l,
+                targetOwnerLogin: n,
+            }) {
+                let { subIssue: a } = (0, eq.useFragment)(mj, e);
+                return a
                     ? (0, F.jsx)("li", {
                           className: m_.Box_1,
                           children: (0, F.jsx)(dJ, {
-                              data: n,
+                              data: a,
                               targetRepositoryId: l,
+                              targetOwnerLogin: n,
                           }),
                       })
                     : null;
             }
             try {
-                mE.displayName || (mE.displayName = "SubIssueAddedEvent");
+                mw.displayName || (mw.displayName = "SubIssueAddedEvent");
             } catch {}
             try {
-                mw.displayName || (mw.displayName = "SubIssueEventItem");
+                mE.displayName || (mE.displayName = "SubIssueEventItem");
             } catch {}
             let mA = (function () {
                 var e = {
@@ -63408,38 +63270,39 @@ git checkout ${e}`;
                 refAttribute: s,
                 rollupGroup: i,
                 repositoryId: t,
+                ownerLogin: r,
             }) {
                 let {
-                    actor: r,
-                    createdAt: u,
-                    subIssue: o,
-                    databaseId: d,
+                    actor: u,
+                    createdAt: o,
+                    subIssue: d,
+                    databaseId: c,
                 } = (0, eq.useFragment)(mA, e);
-                if (!o) return null;
-                let c = String(o.databaseId) === a,
-                    m =
+                if (!d) return null;
+                let m = String(d.databaseId) === a,
+                    g =
                         i && i.SubIssueRemovedEvent
                             ? i.SubIssueRemovedEvent
                             : [],
-                    g = 0 === m.length ? [e] : m,
-                    y = dQ(e.createdAt, m);
+                    y = 0 === g.length ? [e] : g,
+                    p = dQ(e.createdAt, g);
                 return (0, F.jsxs)(dC, {
-                    highlighted: c,
+                    highlighted: m,
                     refAttribute: s,
-                    actor: r,
-                    createdAt: u,
+                    actor: u,
+                    createdAt: o,
                     showAgoTimestamp: !1,
-                    deepLinkUrl: dl(l, d),
+                    deepLinkUrl: dl(l, c),
                     onLinkClick: n,
                     leadingIcon: V.IssueTracksIcon,
                     children: [
                         (0, F.jsxs)(dC.Main, {
                             children: [
-                                `${ay.timeline.subIssueRemoved[1 === g.length ? "single" : "multiple"]} `,
-                                y
+                                `${ay.timeline.subIssueRemoved[1 === y.length ? "single" : "multiple"]} `,
+                                p
                                     ? (0, F.jsx)(dm, {
-                                          timestamp: new Date(y),
-                                          linkUrl: dl(l, d),
+                                          timestamp: new Date(p),
+                                          linkUrl: dl(l, c),
                                       })
                                     : null,
                             ],
@@ -63447,11 +63310,15 @@ git checkout ${e}`;
                         (0, F.jsx)(dC.Secondary, {
                             children: (0, F.jsx)("ul", {
                                 className: mP.Box,
-                                children: g.map((e, l) =>
+                                children: y.map((e, l) =>
                                     (0, F.jsx)(
                                         mD,
-                                        { event: e, targetRepositoryId: t },
-                                        `${o.databaseId}_${l}`
+                                        {
+                                            event: e,
+                                            targetRepositoryId: t,
+                                            targetOwnerLogin: r,
+                                        },
+                                        `${d.databaseId}_${l}`
                                     )
                                 ),
                             }),
@@ -63459,14 +63326,19 @@ git checkout ${e}`;
                     ],
                 });
             }
-            function mD({ event: e, targetRepositoryId: l }) {
-                let { subIssue: n } = (0, eq.useFragment)(mA, e);
-                return n
+            function mD({
+                event: e,
+                targetRepositoryId: l,
+                targetOwnerLogin: n,
+            }) {
+                let { subIssue: a } = (0, eq.useFragment)(mA, e);
+                return a
                     ? (0, F.jsx)("li", {
                           className: mP.Box_1,
                           children: (0, F.jsx)(dJ, {
-                              data: n,
+                              data: a,
                               targetRepositoryId: l,
+                              targetOwnerLogin: n,
                           }),
                       })
                     : null;
@@ -63905,37 +63777,38 @@ git checkout ${e}`;
                 highlightedEventId: a,
                 refAttribute: s,
                 repositoryId: i,
+                ownerLogin: t,
             }) {
                 let {
-                        actor: t,
-                        createdAt: r,
-                        canonical: u,
-                        databaseId: o,
-                        isCanonicalOfClosedDuplicate: d,
+                        actor: r,
+                        createdAt: u,
+                        canonical: o,
+                        databaseId: d,
+                        isCanonicalOfClosedDuplicate: c,
                     } = (0, eq.useFragment)(mZ, e),
-                    c = String(o) === a;
-                return u
+                    m = String(d) === a;
+                return o
                     ? (0, F.jsx)(dC, {
-                          highlighted: c,
+                          highlighted: m,
                           refAttribute: s,
-                          actor: t,
-                          createdAt: r,
-                          deepLinkUrl: dl(l, o),
+                          actor: r,
+                          createdAt: u,
+                          deepLinkUrl: dl(l, d),
                           onLinkClick: n,
                           leadingIcon: V.DuplicateIcon,
                           children: (0, F.jsx)(dC.Main, {
-                              children: d
+                              children: c
                                   ? (0, F.jsxs)(F.Fragment, {
                                         children: [
-                                            "unmarked ",
+                                            "unmarked",
+                                            " ",
                                             (0, F.jsx)(dJ, {
                                                 inline: !0,
-                                                data: u,
+                                                data: o,
                                                 targetRepositoryId: i,
+                                                targetOwnerLogin: t,
                                             }),
-                                            " as a duplicate of this",
-                                            " ",
-                                            "issue",
+                                            " as a duplicate of this issue",
                                             " ",
                                         ],
                                     })
@@ -63946,8 +63819,9 @@ git checkout ${e}`;
                                                 children: [
                                                     "\xa0",
                                                     (0, F.jsx)(dJ, {
-                                                        data: u,
+                                                        data: o,
                                                         targetRepositoryId: i,
+                                                        targetOwnerLogin: t,
                                                     }),
                                                     " ",
                                                 ],
@@ -64245,97 +64119,99 @@ git checkout ${e}`;
                     RemovedFromProjectV2Event: dx,
                     ProjectV2ItemStatusChangedEvent: mu,
                     ConvertedFromDraftEvent: cd,
-                    SubIssueAddedEvent: mE,
+                    SubIssueAddedEvent: mw,
                     SubIssueRemovedEvent: mB,
                     ParentIssueAddedEvent: c8,
                     ParentIssueRemovedEvent: mn,
                     IssueTypeAddedEvent: c_,
                     IssueTypeRemovedEvent: cP,
-                    IssueTypeChangedEvent: cw,
+                    IssueTypeChangedEvent: cE,
                 },
                 m9 = ({
                     item: { item: e, rollupGroup: l },
                     issueId: n,
                     repositoryId: a,
                     repositoryNameWithOwner: s,
-                    issueUrl: i,
-                    isHighlighted: t,
-                    viewer: r,
-                    onCommentChange: u,
-                    onCommentReply: o,
-                    onCommentEditCancel: d,
-                    addDivider: c = !1,
-                    optionConfig: m,
-                    refAttribute: g,
-                    secondaryTimelineQueryRef: y,
+                    ownerLogin: i,
+                    issueUrl: t,
+                    isHighlighted: r,
+                    viewer: u,
+                    onCommentChange: o,
+                    onCommentReply: d,
+                    onCommentEditCancel: c,
+                    addDivider: m = !1,
+                    optionConfig: g,
+                    refAttribute: y,
+                    secondaryTimelineQueryRef: p,
                 }) => {
-                    let p;
+                    let k;
                     if (!e) return null;
-                    let k = on.timeline.majorEventTypes.includes(e.__typename),
-                        b = null;
+                    let b = on.timeline.majorEventTypes.includes(e.__typename),
+                        h = null;
                     "IssueComment" === e.__typename &&
-                        ((p = {
+                        ((k = {
                             first: !1,
                             last: !1,
                             viewerDidAuthor: e.viewerDidAuthor,
                         }),
-                        (b = (0, F.jsx)(o9, {
+                        (h = (0, F.jsx)(o9, {
                             comment: e,
                             commentSubjectAuthorLogin:
                                 e.issue?.author?.login ?? "",
-                            onChange: () => u?.(e.__id),
-                            onEditCancel: () => d?.(e.__id),
-                            onReply: (e) => o?.(e),
-                            onSave: () => d?.(e.__id),
-                            highlightedCommentId: t
+                            onChange: () => o?.(e.__id),
+                            onEditCancel: () => c?.(e.__id),
+                            onReply: (e) => d?.(e),
+                            onSave: () => c?.(e.__id),
+                            highlightedCommentId: r
                                 ? String(e.databaseId)
                                 : void 0,
-                            navigate: m.navigate,
-                            refAttribute: g,
-                            onLinkClick: m.onLinkClick,
+                            navigate: g.navigate,
+                            refAttribute: y,
+                            onLinkClick: g.onLinkClick,
                         })));
-                    let h = m8[e.__typename];
+                    let f = m8[e.__typename];
                     return (
-                        h &&
-                            (b = (0, Q.createElement)(h, {
+                        f &&
+                            (h = (0, Q.createElement)(f, {
                                 queryRef: e,
                                 rollupGroup: l,
                                 key: e.__id,
                                 currentIssueId: n,
-                                issueUrl: i,
+                                issueUrl: t,
                                 repositoryId: a,
                                 repositoryNameWithOwner: s,
-                                highlightedEventId: t
+                                ownerLogin: i,
+                                highlightedEventId: r
                                     ? String(e.databaseId)
                                     : void 0,
                                 timelineEventBaseUrl:
-                                    m.timelineEventBaseUrl || "/issues",
-                                refAttribute: g,
-                                onLinkClick: m.onLinkClick,
-                                viewer: r,
-                                secondaryTimelineQueryRef: y,
+                                    g.timelineEventBaseUrl || "/issues",
+                                refAttribute: y,
+                                onLinkClick: g.onLinkClick,
+                                viewer: u,
+                                secondaryTimelineQueryRef: p,
                             })),
                         cJ(
                             (0, F.jsx)(
                                 mW,
                                 {
-                                    ref: g,
+                                    ref: y,
                                     item: e,
-                                    addDivider: c,
+                                    addDivider: m,
                                     isMajor:
-                                        k &&
+                                        b &&
                                         on.timeline.borderedMajorEventTypes.includes(
                                             e.__typename
                                         ),
                                     isHighlighted:
-                                        "IssueComment" === e.__typename && t,
-                                    commentParams: p,
-                                    children: b,
+                                        "IssueComment" === e.__typename && r,
+                                    commentParams: k,
+                                    children: h,
                                 },
                                 e.__id
                             ),
                             "IssueComment" === e.__typename
-                                ? (0, F.jsx)(ge, { item: e, addDivider: c })
+                                ? (0, F.jsx)(ge, { item: e, addDivider: m })
                                 : void 0,
                             e.__id
                         )
@@ -64353,7 +64229,7 @@ git checkout ${e}`;
                         "aria-label": `@${a}'s profile`,
                         className: `${s ? eD.A.avatarLink : eD.A.avatarWithoutLink} ${eD.A.avatarOuter}`,
                         children: (0, F.jsx)(
-                            E.r,
+                            w.r,
                             {
                                 alt: a,
                                 src: n,
@@ -64790,7 +64666,8 @@ git checkout ${e}`;
                                 }
                                 return !0;
                             })(e || [], k),
-                            K = l && n && op(p.item, n);
+                            K = l && n && op(p.item, n),
+                            S = t.split("/")[0];
                         return {
                             isAddedToGroupedEvents: !1,
                             timelineItem: p,
@@ -64801,6 +64678,7 @@ git checkout ${e}`;
                                     issueId: s,
                                     repositoryId: i,
                                     repositoryNameWithOwner: t,
+                                    ownerLogin: S,
                                     issueUrl: r,
                                     viewer: a,
                                     onCommentChange: u,
@@ -65049,14 +64927,14 @@ git checkout ${e}`;
                                 T && l && (t(!(r && l !== r)), u(l));
                             }, [S, T, l, r]);
                             let _ = j.length > 0,
-                                E = Math.max(
+                                w = Math.max(
                                     _
                                         ? a.highlightStartPosition -
                                               a.frontItems
                                         : h - f.length - K.length,
                                     0
                                 ),
-                                w = Math.max(
+                                E = Math.max(
                                     _
                                         ? h -
                                               (a.highlightStartPosition +
@@ -65097,7 +64975,7 @@ git checkout ${e}`;
                                             ...e,
                                         })),
                                         l =
-                                            0 === E || n
+                                            0 === w || n
                                                 ? []
                                                 : [
                                                       {
@@ -65113,7 +64991,7 @@ git checkout ${e}`;
                                                                   : b(e, l);
                                                           },
                                                           numberOfRemainingItems:
-                                                              E,
+                                                              w,
                                                           isCurrentlyLoading:
                                                               g &&
                                                               0 === A.length,
@@ -65129,7 +65007,7 @@ git checkout ${e}`;
                                         ...e,
                                         ...l,
                                         ...a,
-                                        ...(!_ || 0 === w || n
+                                        ...(!_ || 0 === E || n
                                             ? []
                                             : [
                                                   {
@@ -65137,7 +65015,7 @@ git checkout ${e}`;
                                                       position: "bottom",
                                                       loadFromTop: R,
                                                       loadFromBottom: b,
-                                                      numberOfRemainingItems: w,
+                                                      numberOfRemainingItems: E,
                                                       isCurrentlyLoading:
                                                           g && A.length > 0,
                                                   },
@@ -65147,7 +65025,7 @@ git checkout ${e}`;
                                             ...e,
                                         })),
                                     ];
-                                }, [f, h, A, K, E, n, k, g, _, w, R, b, C]);
+                                }, [f, h, A, K, w, n, k, g, _, E, R, b, C]);
                             (0, Q.useEffect)(() => {
                                 (a.frontItems !== f.length ||
                                     a.backItems !== K.length ||
@@ -65483,14 +65361,14 @@ git checkout ${e}`;
                     }, []),
                     R = (0, Q.useCallback)(
                         (e) => {
-                            (p(eE.t.localStorageKeys.issueComment("", u.id, e)),
+                            (p(ew.t.localStorageKeys.issueComment("", u.id, e)),
                                 n.onCommentEditStart?.(e));
                         },
                         [u.id, n, p]
                     ),
                     N = (0, Q.useCallback)(
                         (e) => {
-                            (k(eE.t.localStorageKeys.issueComment("", u.id, e)),
+                            (k(ew.t.localStorageKeys.issueComment("", u.id, e)),
                                 n.onCommentEditCancel?.(e));
                         },
                         [k, u.id, n]
@@ -65516,7 +65394,7 @@ git checkout ${e}`;
                             }),
                         [u, n, i, o]
                     ),
-                    E = (0, Q.useMemo)(
+                    w = (0, Q.useMemo)(
                         () =>
                             (0, F.jsxs)("div", {
                                 className: uZ.issueViewerMetadataPane,
@@ -65537,7 +65415,7 @@ git checkout ${e}`;
                             }),
                         [_]
                     ),
-                    w = (0, Q.useCallback)(
+                    E = (0, Q.useCallback)(
                         (e) => {
                             (n?.onIssueEditStateChange?.(e), e ? p(h) : k(h));
                         },
@@ -65615,7 +65493,7 @@ git checkout ${e}`;
                                                     issue: u,
                                                     secondaryKey: i,
                                                     onLinkClick: n.onLinkClick,
-                                                    onIssueEditStateChange: w,
+                                                    onIssueEditStateChange: E,
                                                     onIssueUpdate:
                                                         n.onIssueUpdate,
                                                     onCommentReply: x,
@@ -65744,7 +65622,7 @@ git checkout ${e}`;
                                                                                     onChange:
                                                                                         () => {
                                                                                             (p(
-                                                                                                eE.t.localStorageKeys.issueNewComment(
+                                                                                                ew.t.localStorageKeys.issueNewComment(
                                                                                                     "viewer",
                                                                                                     u.id
                                                                                                 )
@@ -65755,7 +65633,7 @@ git checkout ${e}`;
                                                                                         },
                                                                                     onSave: () => {
                                                                                         (k(
-                                                                                            eE.t.localStorageKeys.issueNewComment(
+                                                                                            ew.t.localStorageKeys.issueNewComment(
                                                                                                 "viewer",
                                                                                                 u.id
                                                                                             )
@@ -65767,7 +65645,7 @@ git checkout ${e}`;
                                                                                     onCancel:
                                                                                         () => {
                                                                                             (k(
-                                                                                                eE.t.localStorageKeys.issueNewComment(
+                                                                                                ew.t.localStorageKeys.issueNewComment(
                                                                                                     "viewer",
                                                                                                     u.id
                                                                                                 )
@@ -65820,7 +65698,7 @@ git checkout ${e}`;
                                         "data-testid":
                                             ab.Y.issueViewerMetadataContainer,
                                         className: uZ.metadataSidebar,
-                                        children: E,
+                                        children: w,
                                     }),
                                 ],
                             }),
@@ -66204,7 +66082,7 @@ git checkout ${e}`;
             } catch {}
         },
         62568: (e, l, n) => {
-            n.d(l, { D: () => E });
+            n.d(l, { D: () => w });
             var a = n(74848),
                 s = n(34267),
                 i = n(38621),
@@ -66821,8 +66699,8 @@ git checkout ${e}`;
                 responsiveOnNarrow: N,
             }) {
                 let j = (0, u.useRelayEnvironment)(),
-                    [_, E] = (0, r.useState)({}),
-                    w = (0, r.useCallback)(
+                    [_, w] = (0, r.useState)({}),
+                    E = (0, r.useCallback)(
                         (e) =>
                             new Promise((l, n) => {
                                 (0, g.SD)({
@@ -66846,17 +66724,17 @@ git checkout ${e}`;
                         for (let l of F) {
                             let a = e.get(l);
                             a
-                                ? E((e) => ({ ...e, [l]: a }))
+                                ? w((e) => ({ ...e, [l]: a }))
                                 : _?.[l] || n.push(l);
                         }
                         n.length > 0 && l(n);
                     }
                     async function l(e) {
-                        let { nodes: l = [] } = await w(e);
+                        let { nodes: l = [] } = await E(e);
                         for (let e of l)
                             e &&
                                 "Issue" === e.__typename &&
-                                E((l) => ({ ...l, [e.id]: e }));
+                                w((l) => ({ ...l, [e.id]: e }));
                     }
                 }, [t, e]),
                 Object.entries(_)))
@@ -66971,7 +66849,7 @@ git checkout ${e}`;
             var N = n(16654);
             let j = "repository-picker",
                 _ = "issue-picker";
-            function E({
+            function w({
                 pickerType: e = null,
                 anchorElement: l,
                 onPickerTypeChange: n,
@@ -66988,7 +66866,7 @@ git checkout ${e}`;
                 }, [n, u]),
                 null === u)
                     ? l({ onClick: () => o("Issue") })
-                    : (0, a.jsx)(w, {
+                    : (0, a.jsx)(E, {
                           anchorElement: l,
                           selectedIssueIds: s,
                           hiddenIssueIds: i,
@@ -66997,7 +66875,7 @@ git checkout ${e}`;
                           pickerType: u,
                       });
             }
-            function w({
+            function E({
                 anchorElement: e,
                 onIssueSelection: l,
                 organization: n,
@@ -67101,11 +66979,11 @@ git checkout ${e}`;
                 }
             }
             try {
-                E.displayName || (E.displayName = "RepositoryAndIssuePicker");
+                w.displayName || (w.displayName = "RepositoryAndIssuePicker");
             } catch {}
             try {
-                w.displayName ||
-                    (w.displayName = "RepositoryAndIssuePickerInternal");
+                E.displayName ||
+                    (E.displayName = "RepositoryAndIssuePickerInternal");
             } catch {}
         },
         82082: (e, l, n) => {
@@ -67550,9 +67428,9 @@ git checkout ${e}`;
             };
             t.hash = "c00ad6168f42bc8f268666e9ba0d54e6";
             var r = n(38621),
-                u = n(5945),
-                o = n(3614),
-                d = n(55847),
+                u = n(55847),
+                o = n(5945),
+                d = n(3614),
                 c = n(52446),
                 m = n(12004),
                 g = n(96540),
@@ -67767,7 +67645,8 @@ git checkout ${e}`;
             } catch {}
             function v({ issueId: e, closedByPullRequestsReferencesKey: l }) {
                 let n = (0, y.useFragment)(s, l),
-                    i = n?.closedByPullRequestsReferences?.totalCount ?? 0;
+                    i = n?.closedByPullRequestsReferences?.totalCount ?? 0,
+                    [t, m] = (0, g.useState)(!1);
                 return 0 === i
                     ? null
                     : 1 === i
@@ -67783,27 +67662,39 @@ git checkout ${e}`;
                                     }),
                                 ],
                             }),
-                            children: (0, a.jsx)(L, {
-                                issueId: e,
-                                totalCount: i,
-                            }),
+                            children: t
+                                ? (0, a.jsx)(L, { issueId: e, totalCount: i })
+                                : (0, a.jsx)(u.Q, {
+                                      className: p.linkedPullRequestsBtn,
+                                      variant: "link",
+                                      leadingVisual: r.GitPullRequestIcon,
+                                      onMouseEnter: () => {
+                                          m(!0);
+                                      },
+                                      onFocus: () => {
+                                          m(!0);
+                                      },
+                                      "aria-label": "1 linked PR",
+                                      children: i.toString(),
+                                  }),
                         })
-                      : (0, a.jsxs)(u.W, {
+                      : (0, a.jsxs)(o.W, {
                             children: [
-                                (0, a.jsx)(u.W.Anchor, {
-                                    children: (0, a.jsx)(o.m, {
+                                (0, a.jsx)(o.W.Anchor, {
+                                    children: (0, a.jsx)(d.m, {
                                         direction: "w",
                                         text: `${i} linked PRs`,
                                         type: "description",
-                                        children: (0, a.jsx)(d.Q, {
+                                        children: (0, a.jsx)(u.Q, {
                                             variant: "link",
                                             leadingVisual: r.GitPullRequestIcon,
                                             className: p.linkedPullRequestsBtn,
+                                            "aria-label": `${i} linked PRs`,
                                             children: i.toString(),
                                         }),
                                     }),
                                 }),
-                                (0, a.jsx)(u.W.Overlay, {
+                                (0, a.jsx)(o.W.Overlay, {
                                     children: (0, a.jsx)(c.l, {
                                         className: p.pullRequestsDropdown,
                                         children: (0, a.jsx)(g.Suspense, {
@@ -68172,8 +68063,8 @@ git checkout ${e}`;
                 N = n(96665),
                 j = n(1075);
             let _ = { Dialog: "ControlsDialog-module__Dialog--HWRIK" };
-            var E = n(7151),
-                w = n(29731);
+            var w = n(7151),
+                E = n(29731);
             let A = {
                 metadataContainer:
                     "MetadataContainer-module__metadataContainer--_O_j_",
@@ -68182,11 +68073,11 @@ git checkout ${e}`;
                 let n = (0, d.useRef)(null),
                     { controlsDialogOpen: s } = (0, h.q)();
                 return (
-                    (0, E.G)(n),
+                    (0, w.G)(n),
                     (0, a.jsx)("div", {
                         ref: n,
                         "aria-hidden": !s,
-                        ...(0, w.G)("nested-list-view-item-metadata"),
+                        ...(0, E.G)("nested-list-view-item-metadata"),
                         className: (0, o.$)(A.metadataContainer, l),
                         children: e,
                     })
@@ -68216,7 +68107,7 @@ git checkout ${e}`;
                         onClose: e,
                         footerButtons: [{ content: "Ok", onClick: e }],
                         className: _.Dialog,
-                        children: (0, a.jsx)(E.a, {
+                        children: (0, a.jsx)(w.a, {
                             value: !1,
                             children: (0, a.jsx)("div", {
                                 className: j.A.responsiveContainer,
@@ -68264,13 +68155,13 @@ git checkout ${e}`;
                     return e
                         ? (0, a.jsx)("div", {
                               className: O.container,
-                              ...(0, w.G)("list-view-item-selection"),
+                              ...(0, E.G)("list-view-item-selection"),
                               children: (0, a.jsx)(U.A, {
                                   checked: l,
                                   onChange: () => n(!l),
                                   "aria-label": `Select: ${s}`,
                                   className: O.checkbox,
-                                  ...(0, w.G)("list-view-item-selection-input"),
+                                  ...(0, E.G)("list-view-item-selection-input"),
                               }),
                           })
                         : null;
@@ -68293,7 +68184,7 @@ git checkout ${e}`;
                     dragAndDropProps: j,
                     ..._
                 }) => {
-                    let { idPrefix: w, isReadOnly: A } = (0, m.J)(),
+                    let { idPrefix: E, isReadOnly: A } = (0, m.J)(),
                         { isSelectable: M } = (0, g.c)(),
                         {
                             anyItemsWithActionBar: U,
@@ -68434,7 +68325,7 @@ git checkout ${e}`;
                                         (es(e), e && eo && !K && ey());
                                     },
                                     ref: ee,
-                                    id: `${w}-list-view-node-${H}`,
+                                    id: `${E}-list-view-node-${H}`,
                                     "aria-label": ec(),
                                     ..._,
                                     children: [
@@ -68462,7 +68353,7 @@ git checkout ${e}`;
                                                 C
                                             ),
                                             tabIndex: -1,
-                                            children: (0, a.jsxs)(E.a, {
+                                            children: (0, a.jsxs)(w.a, {
                                                 value: !0,
                                                 children: [
                                                     n,
@@ -69510,9 +69401,9 @@ git checkout ${e}`;
         34392: (e, l, n) => {
             n.d(l, { s: () => i });
             var a = n(74848),
-                s = n(75177);
+                s = n(21998);
             function i() {
-                return (0, a.jsx)(s.A, {
+                return (0, a.jsx)(s.az, {
                     className: "Popover js-hovercard-content",
                     sx: {
                         position: "absolute",
@@ -69744,4 +69635,4 @@ git checkout ${e}`;
         },
     },
 ]);
-//# sourceMappingURL=packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-571762-95c51f8001ed.js.map
+//# sourceMappingURL=packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-0b31b4-6c8d694d01b9.js.map

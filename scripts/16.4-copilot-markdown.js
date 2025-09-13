@@ -4231,14 +4231,14 @@
                     r,
                     R,
                     T,
-                    O,
                     u,
+                    O,
                     b,
                     I,
                     N,
                     h,
-                    P,
                     g,
+                    P,
                     M,
                     D,
                     y = (0, a.c)(50),
@@ -4307,7 +4307,7 @@
                       (y[13] = T))
                     : (T = y[13]),
                     y[14] !== V || y[15] !== q || y[16] !== Y
-                        ? ((O =
+                        ? ((u =
                               V &&
                               (0, s.jsx)(A.K, {
                                   variant: "invisible",
@@ -4318,10 +4318,10 @@
                           (y[14] = V),
                           (y[15] = q),
                           (y[16] = Y),
-                          (y[17] = O))
-                        : (O = y[17]),
+                          (y[17] = u))
+                        : (u = y[17]),
                     y[18] !== K || y[19] !== W || y[20] !== J.length
-                        ? ((u =
+                        ? ((O =
                               (J.length > 0 || W.length > 0) &&
                               (0, s.jsx)(A.K, {
                                   variant: "invisible",
@@ -4338,17 +4338,17 @@
                           (y[18] = K),
                           (y[19] = W),
                           (y[20] = J.length),
-                          (y[21] = u))
-                        : (u = y[21]),
-                    y[22] !== u || y[23] !== R || y[24] !== T || y[25] !== O
+                          (y[21] = O))
+                        : (O = y[21]),
+                    y[22] !== O || y[23] !== R || y[24] !== T || y[25] !== u
                         ? ((b = (0, s.jsxs)("div", {
                               className: l.header,
-                              children: [R, T, O, u],
+                              children: [R, T, u, O],
                           })),
-                          (y[22] = u),
+                          (y[22] = O),
                           (y[23] = R),
                           (y[24] = T),
-                          (y[25] = O),
+                          (y[25] = u),
                           (y[26] = b))
                         : (b = y[26]),
                     y[27] !== K
@@ -4384,7 +4384,7 @@
                         ? ((h = (0, d.$)(Z)), (y[32] = Z), (y[33] = h))
                         : (h = y[33]),
                     y[34] !== B || y[35] !== h
-                        ? ((P = (0, s.jsx)("div", {
+                        ? ((g = (0, s.jsx)("div", {
                               className: l.codeContainer,
                               children: (0, s.jsx)("pre", {
                                   className: l.code,
@@ -4397,25 +4397,25 @@
                           })),
                           (y[34] = B),
                           (y[35] = h),
-                          (y[36] = P))
-                        : (P = y[36]),
+                          (y[36] = g))
+                        : (g = y[36]),
                     y[37] !== U ||
                     y[38] !== b ||
                     y[39] !== N ||
-                    y[40] !== P ||
+                    y[40] !== g ||
                     y[41] !== r
-                        ? ((g = (0, s.jsxs)("figure", {
+                        ? ((P = (0, s.jsxs)("figure", {
                               className: r,
                               "aria-labelledby": U,
-                              children: [b, N, P],
+                              children: [b, N, g],
                           })),
                           (y[37] = U),
                           (y[38] = b),
                           (y[39] = N),
-                          (y[40] = P),
+                          (y[40] = g),
                           (y[41] = r),
-                          (y[42] = g))
-                        : (g = y[42]),
+                          (y[42] = P))
+                        : (P = y[42]),
                     y[43] !== W || y[44] !== _ || y[45] !== J
                         ? ((M =
                               _ &&
@@ -4429,9 +4429,9 @@
                           (y[45] = J),
                           (y[46] = M))
                         : (M = y[46]),
-                    y[47] !== g || y[48] !== M
-                        ? ((D = (0, s.jsxs)(s.Fragment, { children: [g, M] })),
-                          (y[47] = g),
+                    y[47] !== P || y[48] !== M
+                        ? ((D = (0, s.jsxs)(s.Fragment, { children: [P, M] })),
+                          (y[47] = P),
                           (y[48] = M),
                           (y[49] = D))
                         : (D = y[49]),
@@ -4442,11 +4442,11 @@
                 R.displayName || (R.displayName = "CodeBlock");
             } catch {}
             var T = o(47970);
-            let O = "data-codeblock-props",
-                u = (0, r.F)(O),
+            let u = "data-codeblock-props",
+                O = (0, r.F)(u),
                 b = {
                     code: (e, n) => {
-                        let o = (0, r.k)(e, O);
+                        let o = (0, r.k)(e, u);
                         return o
                             ? (0, s.jsx)(R, { ...o, children: e.children })
                             : n;
@@ -4460,7 +4460,7 @@
                     "avatars.githubusercontent.com/",
                     "gist.github.com/assets/",
                 ],
-                P = (e, n) =>
+                g = (e, n) =>
                     (0, T.YR)(e, (e, o, s) => {
                         if (
                             "element" === e.type &&
@@ -4490,7 +4490,7 @@
                             }
                         }
                     }),
-                g = [{ open: /(?:^|\\n)\$\$/, close: /\$\$/ }],
+                P = [{ open: /(?:^|\\n)\$\$/, close: /\$\$/ }],
                 M = [
                     { open: /\$`/, close: /`\$/ },
                     { open: /\$\$(?! )/, close: /(?:^|[^ ])(?=\$\$)\$\$/ },
@@ -4513,7 +4513,7 @@
                 };
             }
             let B = {
-                    displayDelimiters: [...g, { open: /\[\s/, close: /\s\]/ }],
+                    displayDelimiters: [...P, { open: /\[\s/, close: /\s\]/ }],
                     inlineDelimiters: [...M, { open: /\( /, close: / \)/ }],
                 },
                 k = {
@@ -4604,7 +4604,7 @@
                         C,
                         L,
                         R,
-                        O,
+                        u,
                         I,
                         h,
                         K,
@@ -4651,7 +4651,7 @@
                                               ...e.data,
                                               hName: "code",
                                               hProperties: {
-                                                  [u]: JSON.stringify({
+                                                  [O]: JSON.stringify({
                                                       language: e.lang ?? "",
                                                       code: e.value,
                                                       startOffset:
@@ -4673,7 +4673,7 @@
                                               e.children?.length === 1 &&
                                               s?.type === "element" &&
                                               "code" === s.tagName &&
-                                              u in s.properties &&
+                                              O in s.properties &&
                                               o.children.splice(n, 1, s);
                                       }),
                                   reactComponents: b,
@@ -4681,7 +4681,7 @@
                               (c = {
                                   transformMarkdown: (
                                       ({
-                                          displayDelimiters: e = g,
+                                          displayDelimiters: e = P,
                                           inlineDelimiters: n = M,
                                           codeBlockLanguages: o = D,
                                       } = {}) =>
@@ -4883,7 +4883,7 @@
                               (et[8] = p))
                             : (p = et[8]),
                         et[9] === Symbol.for("react.memo_cache_sentinel")
-                            ? ((E = { transformHtml: P }), (et[9] = E))
+                            ? ((E = { transformHtml: g }), (et[9] = E))
                             : (E = et[9]),
                         et[10] !== ef || et[11] !== m || et[12] !== p
                             ? ((A = [l, c, m, p, E, ...ef]),
@@ -4959,7 +4959,7 @@ NOTE: This error may be safely ignored if it occurs due to hot-reloading in loca
                           (et[21] = ei),
                           (et[22] = R))
                         : (R = et[22]);
-                    let eO = R;
+                    let eu = R;
                     (et[23] !== el ||
                     et[24] !== ep ||
                     et[25] !== ex ||
@@ -4979,7 +4979,7 @@ NOTE: This error may be safely ignored if it occurs due to hot-reloading in loca
                           (et[27] = eE),
                           (et[28] = I))
                         : (I = et[28]),
-                        (O = I),
+                        (u = I),
                         et[29] !== ed
                             ? ((h =
                                   ed &&
@@ -4990,17 +4990,17 @@ NOTE: This error may be safely ignored if it occurs due to hot-reloading in loca
                               (et[29] = ed),
                               (et[30] = h))
                             : (h = et[30]));
-                    let eu = eS && G.fadeInContent;
+                    let eO = eS && G.fadeInContent;
                     return (
-                        et[31] !== er || et[32] !== eu
+                        et[31] !== er || et[32] !== eO
                             ? ((K = (0, d.$)(
                                   "markdown-body",
                                   G.container,
                                   er,
-                                  eu
+                                  eO
                               )),
                               (et[31] = er),
-                              (et[32] = eu),
+                              (et[32] = eO),
                               (et[33] = K))
                             : (K = et[33]),
                         et[34] === Symbol.for("react.memo_cache_sentinel")
@@ -5011,17 +5011,17 @@ NOTE: This error may be safely ignored if it occurs due to hot-reloading in loca
                               (et[34] = Y))
                             : (Y = et[34]),
                         et[35] !== eT ||
-                        et[36] !== eO ||
+                        et[36] !== eu ||
                         et[37] !== eR ||
                         et[38] !== eL
                             ? ((Q = (0, s.jsx)(j.o, {
                                   remarkPlugins: eL,
                                   rehypePlugins: eR,
                                   components: eT,
-                                  children: eO,
+                                  children: eu,
                               })),
                               (et[35] = eT),
-                              (et[36] = eO),
+                              (et[36] = eu),
                               (et[37] = eR),
                               (et[38] = eL),
                               (et[39] = Q))
@@ -5039,12 +5039,12 @@ NOTE: This error may be safely ignored if it occurs due to hot-reloading in loca
                               (et[42] = Q),
                               (et[43] = $))
                             : ($ = et[43]),
-                        et[44] !== O || et[45] !== h || et[46] !== $
+                        et[44] !== u || et[45] !== h || et[46] !== $
                             ? ((ea = (0, s.jsxs)(x.F.Provider, {
-                                  value: O,
+                                  value: u,
                                   children: [h, $],
                               })),
-                              (et[44] = O),
+                              (et[44] = u),
                               (et[45] = h),
                               (et[46] = $),
                               (et[47] = ea))
@@ -5393,9 +5393,9 @@ NOTE: This error may be safely ignored if it occurs due to hot-reloading in loca
                 ...L
             }) {
                 let [R, T] = i.useState(!1),
-                    O = (0, a.A)(),
-                    u = f ?? `Copy "${p}" to clipboard`,
-                    b = R ? "Copied!" : u,
+                    u = (0, a.A)(),
+                    O = f ?? `Copy "${p}" to clipboard`,
+                    b = R ? "Copied!" : O,
                     I = {
                         size: n,
                         variant: A,
@@ -5404,7 +5404,7 @@ NOTE: This error may be safely ignored if it occurs due to hot-reloading in loca
                                 (0, m.i)("Copied!"),
                                 (0, x.D)(p),
                                 o?.(),
-                                setTimeout(() => O() && T(!1), 2e3));
+                                setTimeout(() => u() && T(!1), 2e3));
                         },
                         icon: R ? t.CheckIcon : e,
                         className: (0, l.$)(R ? "color-fg-success" : void 0, S),
@@ -5412,10 +5412,10 @@ NOTE: This error may be safely ignored if it occurs due to hot-reloading in loca
                     },
                     N = (0, i.useId)();
                 return C
-                    ? (0, s.jsx)(r.K, { ...I, "aria-label": u, disabled: !0 })
+                    ? (0, s.jsx)(r.K, { ...I, "aria-label": O, disabled: !0 })
                     : (0, s.jsx)(c.m, {
                           text: b,
-                          "aria-label": u,
+                          "aria-label": O,
                           type: "label",
                           id: N,
                           "aria-hidden": !0,
@@ -5431,6 +5431,37 @@ NOTE: This error may be safely ignored if it occurs due to hot-reloading in loca
                 p.displayName || (p.displayName = "CopyToClipboardButton");
             } catch {}
         },
+        77430: (e, n, o) => {
+            o.d(n, { r: () => i });
+            var s = o(74848),
+                a = o(71315),
+                t = o(48125),
+                r = o(96540);
+            let i = (0, r.forwardRef)(function (
+                { src: e, size: n = 20, ...o },
+                i
+            ) {
+                let l = (0, r.useMemo)(() => {
+                    let o = new URL(e, a.fV.origin);
+                    return (
+                        o.searchParams.has("size") ||
+                            o.searchParams.has("s") ||
+                            o.searchParams.set("size", String(2 * Number(n))),
+                        o.toString()
+                    );
+                }, [e, n]);
+                return (0, s.jsx)(t.A, {
+                    ref: i,
+                    src: l,
+                    size: n,
+                    "data-testid": "github-avatar",
+                    ...o,
+                });
+            });
+            try {
+                i.displayName || (i.displayName = "GitHubAvatar");
+            } catch {}
+        },
     },
 ]);
-//# sourceMappingURL=packages_copilot-markdown_MarkdownRenderer_tsx-799c786913aa.js.map
+//# sourceMappingURL=packages_copilot-markdown_MarkdownRenderer_tsx-41b0f93098fa.js.map

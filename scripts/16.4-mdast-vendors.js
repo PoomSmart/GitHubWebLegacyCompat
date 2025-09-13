@@ -2,9 +2,81 @@
 (globalThis.webpackChunk_github_ui_github_ui =
     globalThis.webpackChunk_github_ui_github_ui || []).push([
     [
-        "vendors-node_modules_mdast-util-from-markdown_lib_index_js-node_modules_mdast-util-gfm_lib_in-ede67e",
+        "vendors-node_modules_primer_styled-react_dist_index_js-node_modules_mdast-util-from-markdown_-7ab78a",
     ],
     {
+        21998: (e, t, n) => {
+            n.d(t, {
+                $Q: () => c.A,
+                $c: () => s.A,
+                $n: () => a.Q,
+                BI: () => u.A,
+                DZ: () => d.A,
+                EY: () => v.A,
+                Hx: () => f.A,
+                Iz: () => b.I,
+                JU: () => g.A,
+                K0: () => p.K,
+                MJ: () => h.A,
+                Mx: () => x.M,
+                N_: () => m.A,
+                PA: () => C.A,
+                Wy: () => l.W,
+                az: () => r.A,
+                ks: () => y.A,
+                lF: () => o.l,
+                sx: () => S.A,
+                z9: () => k.z,
+            });
+            var r = n(75177),
+                i = n(23494),
+                o = n(52446),
+                l = n(5945),
+                u = n(72130),
+                a = n(55847),
+                c = n(19797),
+                s = n(90352),
+                f = n(69410),
+                h = n(65029),
+                d = n(63557),
+                p = n(87330),
+                g = n(21654),
+                m = n(81246),
+                k = n(10871),
+                x = n(57271),
+                b = n(53037),
+                v = n(84511),
+                y = n(24815),
+                C = n(1002),
+                S = n(44999),
+                w = n(96540);
+            function E() {
+                return (E = Object.assign
+                    ? Object.assign.bind()
+                    : function (e) {
+                          for (var t = 1; t < arguments.length; t++) {
+                              var n = arguments[t];
+                              for (var r in n)
+                                  ({}).hasOwnProperty.call(n, r) &&
+                                      (e[r] = n[r]);
+                          }
+                          return e;
+                      }).apply(null, arguments);
+            }
+            Object.assign(
+                (0, w.forwardRef)(function (e, t) {
+                    return React.createElement(r.A, E({ as: i.A, ref: t }, e));
+                }),
+                {
+                    Link: (0, w.forwardRef)(function (e, t) {
+                        return React.createElement(
+                            r.A,
+                            E({ as: i.A.Link, ref: t }, e)
+                        );
+                    }),
+                }
+            );
+        },
         96206: (e, t, n) => {
             n.d(t, { s: () => i });
             let r = document.createElement("i");
@@ -875,7 +947,7 @@
                 for (; -1 !== i; ) (r++, (i = n.indexOf(t, i + t.length)));
                 return r;
             }
-            n.d(t, { C: () => Z, H: () => J });
+            n.d(t, { C: () => J, H: () => Z });
             var i = n(97471),
                 o = n(40574),
                 l = n(95459);
@@ -1075,7 +1147,7 @@
             D.peek = function () {
                 return "[";
             };
-            let P = [
+            let A = [
                 "autolink",
                 "destinationLiteral",
                 "destinationRaw",
@@ -1083,7 +1155,7 @@
                 "titleQuote",
                 "titleApostrophe",
             ];
-            function A(e) {
+            function P(e) {
                 this.enter({ type: "delete", children: [] }, e);
             }
             function L(e) {
@@ -1221,7 +1293,7 @@
                     a
                 );
             }
-            function Z() {
+            function J() {
                 return [
                     {
                         transforms: [g],
@@ -1254,7 +1326,7 @@
                     },
                     {
                         canContainEols: ["delete"],
-                        enter: { strikethrough: A },
+                        enter: { strikethrough: P },
                         exit: { strikethrough: L },
                     },
                     {
@@ -1281,7 +1353,7 @@
                     },
                 ];
             }
-            function J(e) {
+            function Z(e) {
                 return {
                     extensions: [
                         {
@@ -1330,7 +1402,7 @@
                                 {
                                     character: "~",
                                     inConstruct: "phrasing",
-                                    notInConstruct: P,
+                                    notInConstruct: A,
                                 },
                             ],
                             handlers: { delete: O },
@@ -2909,7 +2981,7 @@
                     ];
                 return (e.splice(n, e.length - n + 1, ...u), e);
             }
-            function P(e, t, n) {
+            function A(e, t, n) {
                 let r,
                     o = this,
                     l = o.parser.gfmFootnotes || (o.parser.gfmFootnotes = []),
@@ -2966,7 +3038,7 @@
                         : c(t);
                 }
             }
-            function A(e, t, n) {
+            function P(e, t, n) {
                 let r,
                     o,
                     l = this,
@@ -3452,9 +3524,9 @@
             function U(e, t) {
                 return "|" === t ? t : e;
             }
-            let Z =
+            let J =
                     /<(\/?)(iframe|noembed|noframes|plaintext|script|style|title|textarea|xmp)(?=[\t\n\f\r />])/gi,
-                J = RegExp("^" + Z.source, "i");
+                Z = RegExp("^" + J.source, "i");
             function G(e, t) {
                 let n = this.sliceSerialize(e);
                 (this.options.allowDangerousHtml &&
@@ -3522,13 +3594,13 @@
                         document: {
                             91: {
                                 name: "gfmFootnoteDefinition",
-                                tokenize: A,
+                                tokenize: P,
                                 continuation: { tokenize: L },
                                 exit: O,
                             },
                         },
                         text: {
-                            91: { name: "gfmFootnoteCall", tokenize: P },
+                            91: { name: "gfmFootnoteCall", tokenize: A },
                             93: {
                                 name: "gfmPotentialFootnoteCall",
                                 add: "after",
@@ -4021,10 +4093,10 @@
                     {
                         exit: {
                             htmlFlowData(e) {
-                                G.call(this, e, Z);
+                                G.call(this, e, J);
                             },
                             htmlTextData(e) {
-                                G.call(this, e, J);
+                                G.call(this, e, Z);
                             },
                         },
                     },
@@ -5496,8 +5568,8 @@
                           : t(i);
                 };
             }
-            var P = n(9638);
-            let A = {
+            var A = n(9638);
+            let P = {
                     partial: !0,
                     tokenize: function (e, t, n) {
                         return function (t) {
@@ -6158,7 +6230,7 @@
                                 ? r._inactive
                                     ? s(t)
                                     : ((i = o.parser.defined.includes(
-                                          (0, P.B)(
+                                          (0, A.B)(
                                               o.sliceSerialize({
                                                   start: r.end,
                                                   end: o.now(),
@@ -6175,9 +6247,9 @@
                         };
                         function u(t) {
                             return 40 === t
-                                ? e.attempt(Z, c, i ? c : s)(t)
+                                ? e.attempt(J, c, i ? c : s)(t)
                                 : 91 === t
-                                  ? e.attempt(J, c, i ? a : s)(t)
+                                  ? e.attempt(Z, c, i ? a : s)(t)
                                   : i
                                     ? c(t)
                                     : s(t);
@@ -6193,7 +6265,7 @@
                         }
                     },
                 },
-                Z = {
+                J = {
                     tokenize: function (e, t, n) {
                         return function (t) {
                             return (
@@ -6254,7 +6326,7 @@
                         }
                     },
                 },
-                J = {
+                Z = {
                     tokenize: function (e, t, n) {
                         let r = this;
                         return function (t) {
@@ -6270,7 +6342,7 @@
                         };
                         function i(e) {
                             return r.parser.defined.includes(
-                                (0, P.B)(
+                                (0, A.B)(
                                     r
                                         .sliceSerialize(
                                             r.events[r.events.length - 1][1]
@@ -6564,7 +6636,7 @@
                                 );
                             };
                             function u(t) {
-                                return ((r = (0, P.B)(
+                                return ((r = (0, A.B)(
                                     i
                                         .sliceSerialize(
                                             i.events[i.events.length - 1][1]
@@ -6594,7 +6666,7 @@
                                 )(t);
                             }
                             function s(t) {
-                                return e.attempt(A, f, f)(t);
+                                return e.attempt(P, f, f)(t);
                             }
                             function f(t) {
                                 return (0, l.On)(t)
@@ -6930,7 +7002,7 @@
                                         : 63 === t && 3 === r
                                           ? (e.consume(t), L)
                                           : 93 === t && 5 === r
-                                            ? (e.consume(t), A)
+                                            ? (e.consume(t), P)
                                             : (0, l.HP)(t) &&
                                                 (6 === r || 7 === r)
                                               ? (e.exit("htmlFlowData"),
@@ -6960,10 +7032,10 @@
                             }
                             function z(t) {
                                 return 47 === t
-                                    ? (e.consume(t), (o = ""), P)
+                                    ? (e.consume(t), (o = ""), A)
                                     : E(t);
                             }
-                            function P(t) {
+                            function A(t) {
                                 if (62 === t) {
                                     let n = o.toLowerCase();
                                     return M.includes(n)
@@ -6973,10 +7045,10 @@
                                 return (0, l.CW)(t) && o.length < 8
                                     ? (e.consume(t),
                                       (o += String.fromCharCode(t)),
-                                      P)
+                                      A)
                                     : E(t);
                             }
-                            function A(t) {
+                            function P(t) {
                                 return 93 === t ? (e.consume(t), L) : E(t);
                             }
                             function L(t) {
@@ -7154,7 +7226,7 @@
                                         : 45 === t
                                           ? (e.consume(t), d)
                                           : (0, l.HP)(t)
-                                            ? ((u = h), A(t))
+                                            ? ((u = h), P(t))
                                             : (e.consume(t), h);
                                 }
                                 function d(t) {
@@ -7162,7 +7234,7 @@
                                 }
                                 function p(e) {
                                     return 62 === e
-                                        ? P(e)
+                                        ? A(e)
                                         : 45 === e
                                           ? d(e)
                                           : h(e);
@@ -7179,7 +7251,7 @@
                                         : 93 === t
                                           ? (e.consume(t), k)
                                           : (0, l.HP)(t)
-                                            ? ((u = m), A(t))
+                                            ? ((u = m), P(t))
                                             : (e.consume(t), m);
                                 }
                                 function k(t) {
@@ -7187,16 +7259,16 @@
                                 }
                                 function x(t) {
                                     return 62 === t
-                                        ? P(t)
+                                        ? A(t)
                                         : 93 === t
                                           ? (e.consume(t), x)
                                           : m(t);
                                 }
                                 function b(t) {
                                     return null === t || 62 === t
-                                        ? P(t)
+                                        ? A(t)
                                         : (0, l.HP)(t)
-                                          ? ((u = b), A(t))
+                                          ? ((u = b), P(t))
                                           : (e.consume(t), b);
                                 }
                                 function v(t) {
@@ -7205,11 +7277,11 @@
                                         : 63 === t
                                           ? (e.consume(t), y)
                                           : (0, l.HP)(t)
-                                            ? ((u = v), A(t))
+                                            ? ((u = v), P(t))
                                             : (e.consume(t), v);
                                 }
                                 function y(e) {
-                                    return 62 === e ? P(e) : v(e);
+                                    return 62 === e ? A(e) : v(e);
                                 }
                                 function C(t) {
                                     return (0, l.CW)(t)
@@ -7221,10 +7293,10 @@
                                         ? (e.consume(t), S)
                                         : (function t(n) {
                                               return (0, l.HP)(n)
-                                                  ? ((u = t), A(n))
+                                                  ? ((u = t), P(n))
                                                   : (0, l.On)(n)
                                                     ? (e.consume(n), t)
-                                                    : P(n);
+                                                    : A(n);
                                           })(t);
                                 }
                                 function w(t) {
@@ -7236,14 +7308,14 @@
                                 }
                                 function E(t) {
                                     return 47 === t
-                                        ? (e.consume(t), P)
+                                        ? (e.consume(t), A)
                                         : 58 === t || 95 === t || (0, l.CW)(t)
                                           ? (e.consume(t), F)
                                           : (0, l.HP)(t)
-                                            ? ((u = E), A(t))
+                                            ? ((u = E), P(t))
                                             : (0, l.On)(t)
                                               ? (e.consume(t), E)
-                                              : P(t);
+                                              : A(t);
                                 }
                                 function F(t) {
                                     return 45 === t ||
@@ -7256,7 +7328,7 @@
                                               return 61 === n
                                                   ? (e.consume(n), I)
                                                   : (0, l.HP)(n)
-                                                    ? ((u = t), A(n))
+                                                    ? ((u = t), P(n))
                                                     : (0, l.On)(n)
                                                       ? (e.consume(n), t)
                                                       : E(n);
@@ -7272,7 +7344,7 @@
                                         : 34 === t || 39 === t
                                           ? (e.consume(t), (r = t), D)
                                           : (0, l.HP)(t)
-                                            ? ((u = I), A(t))
+                                            ? ((u = I), P(t))
                                             : (0, l.On)(t)
                                               ? (e.consume(t), I)
                                               : (e.consume(t), T);
@@ -7283,7 +7355,7 @@
                                         : null === t
                                           ? n(t)
                                           : (0, l.HP)(t)
-                                            ? ((u = D), A(t))
+                                            ? ((u = D), P(t))
                                             : (e.consume(t), D);
                                 }
                                 function T(t) {
@@ -7303,7 +7375,7 @@
                                         ? E(e)
                                         : n(e);
                                 }
-                                function P(r) {
+                                function A(r) {
                                     return 62 === r
                                         ? (e.consume(r),
                                           e.exit("htmlTextData"),
@@ -7311,7 +7383,7 @@
                                           t)
                                         : n(r);
                                 }
-                                function A(t) {
+                                function P(t) {
                                     return (
                                         e.exit("htmlTextData"),
                                         e.enter("lineEnding"),
@@ -8033,4 +8105,4 @@
         },
     },
 ]);
-//# sourceMappingURL=vendors-node_modules_mdast-util-from-markdown_lib_index_js-node_modules_mdast-util-gfm_lib_in-ede67e-0ee3be4243fa.js.map
+//# sourceMappingURL=vendors-node_modules_primer_styled-react_dist_index_js-node_modules_mdast-util-from-markdown_-7ab78a-35b2c4a2d806.js.map

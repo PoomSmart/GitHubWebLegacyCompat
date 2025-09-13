@@ -1521,7 +1521,6 @@
                 Il: () => a.I,
                 Jt: () => i.Jt,
                 NW: () => p.NW,
-                Ox: () => p.Ox,
                 PQ: () => u.P,
                 Tp: () => l.T,
                 Vg: () => c.V,
@@ -1530,7 +1529,6 @@
                 Zp: () => n.Z,
                 Zz: () => i.Zz,
                 i9: () => p.i9,
-                iF: () => b,
                 pn: () => o.p,
                 qU: () => i.qU,
                 r7: () => d.r,
@@ -1611,27 +1609,6 @@
                 h.A.right,
                 h.A.bottom,
                 h.A.left);
-            var b = function (e) {
-                var t = e.prop,
-                    r = e.cssProperty,
-                    n = e.alias,
-                    s = e.key,
-                    a = e.transformValue,
-                    o = e.scale,
-                    c = e.properties,
-                    u = {};
-                return (
-                    (u[t] = (0, i.oK)({
-                        properties: c,
-                        property: r || t,
-                        scale: s,
-                        defaultScale: o,
-                        transform: a,
-                    })),
-                    n && (u[n] = u[t]),
-                    (0, i.Cp)(u)
-                );
-            };
         },
         29658: (e, t, r) => {
             "use strict";
@@ -2867,4 +2844,4 @@
         },
     },
 ]);
-//# sourceMappingURL=vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-928884-470ad3821617.js.map
+//# sourceMappingURL=vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-928884-904d0195a788.js.map

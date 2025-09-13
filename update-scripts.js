@@ -81,8 +81,7 @@ const ALTERNATIVE_PATTERNS = {
     "issue-viewer": /issue-viewer.*-[a-f0-9]+\.js$/,
     "list-view": /list-view.*-[a-f0-9]+\.js$/,
     "remark-vendors": /vendors.*remark.*-[a-f0-9]+\.js$/,
-    "mdast-vendors":
-        /vendors.*mdast-util-from-markdown.*mdast-util-gfm.*\.js$/i,
+    "mdast-vendors": /vendors.*mdast-util-from-markdown.*\.js$/i,
     "text-expander": /text-expander.*-[a-f0-9]+\.js$/,
     "emoji-element": /emoji-element.*-[a-f0-9]+\.js$/,
     "emotion-is-prop-valid": /is-prop-valid.*-[a-f0-9]+\.js$/,
