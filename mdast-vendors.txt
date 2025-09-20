@@ -1,5 +1,5 @@
 # Old
-/(?<=^|\s|\p{P}|\p{S})([-.\w+]+)@([-\w]+(?:\.[-\w]+)+)/gu,k
+/(?<=^|\s|\p{P}|\p{S})([-.\w+]+)@([-\w]+(?:\.[-\w]+)+)/gu,b
 
 # New
-/(^|[\s\p{P}\p{S}])([-\w.+]+)@([-\w]+(?:\.[-\w]+)+)/gu,(_, prefix, local, domain) => prefix + k(`${local}@${domain}`)
+/(^|[\s\p{P}\p{S}])([-\w.+]+)@([-\w]+(?:\.[-\w]+)+)/gu,(_, prefix, local, domain) => prefix + b(`${local}@${domain}`)

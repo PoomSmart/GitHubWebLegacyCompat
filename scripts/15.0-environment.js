@@ -1,459 +1,83 @@
+"use strict";
 (globalThis.webpackChunk_github_ui_github_ui =
     globalThis.webpackChunk_github_ui_github_ui || []).push([
     ["environment"],
     {
-        48359: () => {
-            if (!("ariaNotify" in Element.prototype)) {
-                let e = `${Date.now()}`;
-                try {
-                    e = crypto.randomUUID();
-                } catch {}
-                let t = Symbol(),
-                    o = `live-region-${e}`;
-                let Message = class Message {
-                    element;
-                    message;
-                    priority = "normal";
-                    constructor({
-                        element: e,
-                        message: t,
-                        priority: o = "normal",
-                    }) {
-                        ((this.element = e),
-                            (this.message = t),
-                            (this.priority = o));
-                    }
-                    #e() {
-                        return (
-                            this.element.isConnected &&
-                            !this.element.closest("[inert]") &&
-                            (this.element.ownerDocument
-                                .querySelector(":modal")
-                                ?.contains(this.element) ??
-                                !0)
-                        );
-                    }
-                    async announce() {
-                        if (!this.#e()) return;
-                        let e =
-                            this.element.closest("dialog") ||
-                            this.element.closest("[role='dialog']") ||
-                            this.element.getRootNode();
-                        (!e || e instanceof Document) && (e = document.body);
-                        let r = e.querySelector(o);
-                        (r || ((r = document.createElement(o)), e.append(r)),
-                            await new Promise((e) => setTimeout(e, 250)),
-                            r.handleMessage(t, this.message));
-                    }
-                };
-                let r = new (class MessageQueue {
-                    #t = [];
-                    #o;
-                    enqueue(e) {
-                        let { priority: t } = e;
-                        if ("high" === t) {
-                            let t = this.#t.findLastIndex(
-                                (e) => "high" === e.priority
-                            );
-                            this.#t.splice(t + 1, 0, e);
-                        } else this.#t.push(e);
-                        this.#o || this.#r();
-                    }
-                    async #r() {
-                        ((this.#o = this.#t.shift()),
-                            this.#o && (await this.#o.announce(), this.#r()));
-                    }
-                })();
-                let LiveRegionCustomElement = class LiveRegionCustomElement extends HTMLElement {
-                    #i = this.attachShadow({ mode: "closed" });
-                    connectedCallback() {
-                        ((this.ariaLive = "polite"),
-                            (this.ariaAtomic = "true"),
-                            (this.style.marginLeft = "-1px"),
-                            (this.style.marginTop = "-1px"),
-                            (this.style.position = "absolute"),
-                            (this.style.width = "1px"),
-                            (this.style.height = "1px"),
-                            (this.style.overflow = "hidden"),
-                            (this.style.clipPath = "rect(0 0 0 0)"),
-                            (this.style.overflowWrap = "normal"));
-                    }
-                    handleMessage(e = null, o = "") {
-                        t === e &&
-                            (this.#i.textContent == o && (o += "\xa0"),
-                            (this.#i.textContent = o));
-                    }
-                };
-                (customElements.define(o, LiveRegionCustomElement),
-                    (Element.prototype.ariaNotify = function (
-                        e,
-                        { priority: t = "normal" } = {}
-                    ) {
-                        r.enqueue(
-                            new Message({
-                                element: this,
-                                message: e,
-                                priority: t,
-                            })
-                        );
-                    }));
-            }
-        },
-        31196: (e) => {
-            !(function () {
-                "use strict";
-                e.exports = {
-                    polyfill: function () {
-                        var e = window,
-                            t = document;
-                        if (
-                            !("scrollBehavior" in t.documentElement.style) ||
-                            !0 === e.__forceSmoothScrollPolyfill__
-                        ) {
-                            var o,
-                                r = e.HTMLElement || e.Element,
-                                i = 468,
-                                l = {
-                                    scroll: e.scroll || e.scrollTo,
-                                    scrollBy: e.scrollBy,
-                                    elementScroll: r.prototype.scroll || c,
-                                    scrollIntoView: r.prototype.scrollIntoView,
-                                },
-                                s =
-                                    e.performance && e.performance.now
-                                        ? e.performance.now.bind(e.performance)
-                                        : Date.now,
-                                n = +((o = e.navigator.userAgent),
-                                !!RegExp("MSIE |Trident/|Edge/").test(o));
-                            ((e.scroll = e.scrollTo =
-                                function () {
-                                    if (void 0 !== arguments[0]) {
-                                        if (!0 === a(arguments[0]))
-                                            return void l.scroll.call(
-                                                e,
-                                                void 0 !== arguments[0].left
-                                                    ? arguments[0].left
-                                                    : "object" !=
-                                                        typeof arguments[0]
-                                                      ? arguments[0]
-                                                      : e.scrollX ||
-                                                        e.pageXOffset,
-                                                void 0 !== arguments[0].top
-                                                    ? arguments[0].top
-                                                    : void 0 !== arguments[1]
-                                                      ? arguments[1]
-                                                      : e.scrollY ||
-                                                        e.pageYOffset
-                                            );
-                                        f.call(
-                                            e,
-                                            t.body,
-                                            void 0 !== arguments[0].left
-                                                ? ~~arguments[0].left
-                                                : e.scrollX || e.pageXOffset,
-                                            void 0 !== arguments[0].top
-                                                ? ~~arguments[0].top
-                                                : e.scrollY || e.pageYOffset
-                                        );
-                                    }
-                                }),
-                                (e.scrollBy = function () {
-                                    if (void 0 !== arguments[0]) {
-                                        if (a(arguments[0]))
-                                            return void l.scrollBy.call(
-                                                e,
-                                                void 0 !== arguments[0].left
-                                                    ? arguments[0].left
-                                                    : "object" !=
-                                                        typeof arguments[0]
-                                                      ? arguments[0]
-                                                      : 0,
-                                                void 0 !== arguments[0].top
-                                                    ? arguments[0].top
-                                                    : void 0 !== arguments[1]
-                                                      ? arguments[1]
-                                                      : 0
-                                            );
-                                        f.call(
-                                            e,
-                                            t.body,
-                                            ~~arguments[0].left +
-                                                (e.scrollX || e.pageXOffset),
-                                            ~~arguments[0].top +
-                                                (e.scrollY || e.pageYOffset)
-                                        );
-                                    }
-                                }),
-                                (r.prototype.scroll = r.prototype.scrollTo =
-                                    function () {
-                                        if (void 0 !== arguments[0]) {
-                                            if (!0 === a(arguments[0])) {
-                                                if (
-                                                    "number" ==
-                                                        typeof arguments[0] &&
-                                                    void 0 === arguments[1]
-                                                )
-                                                    throw SyntaxError(
-                                                        "Value could not be converted"
-                                                    );
-                                                l.elementScroll.call(
-                                                    this,
-                                                    void 0 !== arguments[0].left
-                                                        ? ~~arguments[0].left
-                                                        : "object" !=
-                                                            typeof arguments[0]
-                                                          ? ~~arguments[0]
-                                                          : this.scrollLeft,
-                                                    void 0 !== arguments[0].top
-                                                        ? ~~arguments[0].top
-                                                        : void 0 !==
-                                                            arguments[1]
-                                                          ? ~~arguments[1]
-                                                          : this.scrollTop
-                                                );
-                                                return;
-                                            }
-                                            var e = arguments[0].left,
-                                                t = arguments[0].top;
-                                            f.call(
-                                                this,
-                                                this,
-                                                void 0 === e
-                                                    ? this.scrollLeft
-                                                    : ~~e,
-                                                void 0 === t
-                                                    ? this.scrollTop
-                                                    : ~~t
-                                            );
-                                        }
-                                    }),
-                                (r.prototype.scrollBy = function () {
-                                    if (void 0 !== arguments[0]) {
-                                        if (!0 === a(arguments[0]))
-                                            return void l.elementScroll.call(
-                                                this,
-                                                void 0 !== arguments[0].left
-                                                    ? ~~arguments[0].left +
-                                                          this.scrollLeft
-                                                    : ~~arguments[0] +
-                                                          this.scrollLeft,
-                                                void 0 !== arguments[0].top
-                                                    ? ~~arguments[0].top +
-                                                          this.scrollTop
-                                                    : ~~arguments[1] +
-                                                          this.scrollTop
-                                            );
-                                        this.scroll({
-                                            left:
-                                                ~~arguments[0].left +
-                                                this.scrollLeft,
-                                            top:
-                                                ~~arguments[0].top +
-                                                this.scrollTop,
-                                            behavior: arguments[0].behavior,
-                                        });
-                                    }
-                                }),
-                                (r.prototype.scrollIntoView = function () {
-                                    if (!0 === a(arguments[0]))
-                                        return void l.scrollIntoView.call(
-                                            this,
-                                            void 0 === arguments[0] ||
-                                                arguments[0]
-                                        );
-                                    var o = (function (e) {
-                                            for (
-                                                var o, r, i;
-                                                e !== t.body &&
-                                                !1 ===
-                                                    ((r =
-                                                        u((o = e), "Y") &&
-                                                        h(o, "Y")),
-                                                    (i =
-                                                        u(o, "X") && h(o, "X")),
-                                                    r || i);
-
-                                            )
-                                                e = e.parentNode || e.host;
-                                            return e;
-                                        })(this),
-                                        r = o.getBoundingClientRect(),
-                                        i = this.getBoundingClientRect();
-                                    o !== t.body
-                                        ? (f.call(
-                                              this,
-                                              o,
-                                              o.scrollLeft + i.left - r.left,
-                                              o.scrollTop + i.top - r.top
-                                          ),
-                                          "fixed" !==
-                                              e.getComputedStyle(o).position &&
-                                              e.scrollBy({
-                                                  left: r.left,
-                                                  top: r.top,
-                                                  behavior: "smooth",
-                                              }))
-                                        : e.scrollBy({
-                                              left: i.left,
-                                              top: i.top,
-                                              behavior: "smooth",
-                                          });
-                                }));
-                        }
-                        function c(e, t) {
-                            ((this.scrollLeft = e), (this.scrollTop = t));
-                        }
-                        function a(e) {
-                            if (
-                                null === e ||
-                                "object" != typeof e ||
-                                void 0 === e.behavior ||
-                                "auto" === e.behavior ||
-                                "instant" === e.behavior
-                            )
-                                return !0;
-                            if ("object" == typeof e && "smooth" === e.behavior)
-                                return !1;
-                            throw TypeError(
-                                "behavior member of ScrollOptions " +
-                                    e.behavior +
-                                    " is not a valid value for enumeration ScrollBehavior."
-                            );
-                        }
-                        function u(e, t) {
-                            return "Y" === t
-                                ? e.clientHeight + n < e.scrollHeight
-                                : "X" === t
-                                  ? e.clientWidth + n < e.scrollWidth
-                                  : void 0;
-                        }
-                        function h(t, o) {
-                            var r = e.getComputedStyle(t, null)["overflow" + o];
-                            return "auto" === r || "scroll" === r;
-                        }
-                        function f(o, r, n) {
-                            var a,
-                                u,
-                                h,
-                                f,
-                                d = s();
-                            (o === t.body
-                                ? ((a = e),
-                                  (u = e.scrollX || e.pageXOffset),
-                                  (h = e.scrollY || e.pageYOffset),
-                                  (f = l.scroll))
-                                : ((a = o),
-                                  (u = o.scrollLeft),
-                                  (h = o.scrollTop),
-                                  (f = c)),
-                                (function t(o) {
-                                    var r,
-                                        l,
-                                        n,
-                                        c = (s() - o.startTime) / i;
-                                    ((r =
-                                        0.5 *
-                                        (1 -
-                                            Math.cos(
-                                                Math.PI * (c = c > 1 ? 1 : c)
-                                            ))),
-                                        (l = o.startX + (o.x - o.startX) * r),
-                                        (n = o.startY + (o.y - o.startY) * r),
-                                        o.method.call(o.scrollable, l, n),
-                                        (l !== o.x || n !== o.y) &&
-                                            e.requestAnimationFrame(
-                                                t.bind(e, o)
-                                            ));
-                                })({
-                                    scrollable: a,
-                                    method: f,
-                                    startTime: d,
-                                    startX: u,
-                                    startY: h,
-                                    x: r,
-                                    y: n,
-                                }));
-                        }
-                    },
-                };
-            })();
-        },
-        46471: (e, t, o) => {
-            "use strict";
-            var r = o(38102),
-                i = o(71315);
-            (i.cg?.addEventListener("error", (e) => {
-                e.error && (0, r.N7)(e.error);
+        46471: (e, t, r) => {
+            var n = r(38102),
+                o = r(71315);
+            (o.cg?.addEventListener("error", (e) => {
+                e.error && (0, n.N7)(e.error);
             }),
-                i.cg?.addEventListener("unhandledrejection", async (e) => {
+                o.cg?.addEventListener("unhandledrejection", async (e) => {
                     if (e.promise)
                         try {
                             await e.promise;
                         } catch (e) {
-                            (0, r.N7)(e);
+                            (0, n.N7)(e);
                         }
                 }),
-                i.cg?.location.hash === "#b00m" &&
+                o.cg?.location.hash === "#b00m" &&
                     setTimeout(() => {
                         throw Error("b00m");
                     }),
-                o(31196),
-                o(48359));
-            var l = o(11083);
-            let s = fetch;
-            function n({ input: e, error: t, status: o }) {
+                r(31196),
+                r(48359));
+            var a = r(11083);
+            let i = fetch;
+            function c({ input: e, error: t, status: r }) {
                 if (!t) return;
-                let r = e instanceof Request ? e.url : e.toString();
-                (0, l.i)(
+                let n = e instanceof Request ? e.url : e.toString();
+                (0, a.i)(
                     {
                         incrementKey: "FETCH_ERROR",
                         requestUrl: window.location.href,
-                        referredRequestUrl: r,
-                        incrementTags: { status: String(o) },
+                        referredRequestUrl: n,
+                        incrementTags: { status: String(r) },
                     },
                     !1,
                     1
                 );
             }
-            var c = o(69599),
-                a = o(77065),
-                u = o(51987);
-            let h = window.fetch,
-                f = (e, t) => {
+            var u = r(69599),
+                l = r(77065),
+                s = r(51987);
+            let f = window.fetch,
+                d = (e, t) => {
                     if (e instanceof Request) {
                         let t = {
                             ...Object.fromEntries(e.headers.entries()),
-                            ...(0, u.kt)(),
+                            ...(0, s.kt)(),
                         };
-                        return h(new Request(e, { headers: t }));
+                        return f(new Request(e, { headers: t }));
                     }
                     {
-                        let o = { ...(t?.headers ?? {}), ...(0, u.kt)() };
-                        return h(new Request(e, { ...t, headers: o }));
+                        let r = { ...(t?.headers ?? {}), ...(0, s.kt)() };
+                        return f(new Request(e, { ...t, headers: r }));
                     }
                 };
             document.documentElement.hasAttribute("override-fetch") &&
-                window.fetch !== f &&
-                (window.fetch = f);
-            var d = o(13523),
-                p = o(88057);
-            ((0, a.Bb)(),
+                window.fetch !== d &&
+                (window.fetch = d);
+            var m = r(13523),
+                h = r(88057);
+            ((0, l.Bb)(),
                 "undefined" != typeof document &&
-                    (i.cg &&
-                        (i.cg.fetch = async (e, t) => {
+                    (o.cg &&
+                        (o.cg.fetch = async (e, t) => {
                             try {
-                                let o = await s(e, t);
+                                let r = await i(e, t);
                                 return (
-                                    n({
+                                    c({
                                         input: e,
-                                        error: !o.ok,
-                                        status: o.status,
+                                        error: !r.ok,
+                                        status: r.status,
                                     }),
-                                    o
+                                    r
                                 );
                             } catch (t) {
                                 throw (
-                                    n({
+                                    c({
                                         input: e,
                                         error: !0,
                                         status: "unknown",
@@ -464,7 +88,7 @@
                         }),
                     (() => {
                         if (
-                            (0, c.G7)("remove_child_patch") &&
+                            (0, u.G7)("remove_child_patch") &&
                             "function" == typeof Node &&
                             Node.prototype
                         ) {
@@ -485,14 +109,14 @@
                     })(),
                     (() => {
                         if (
-                            (0, c.G7)("insert_before_patch") &&
+                            (0, u.G7)("insert_before_patch") &&
                             "function" == typeof Node &&
                             Node.prototype
                         ) {
                             let e = Node.prototype.insertBefore;
-                            Node.prototype.insertBefore = function (t, o) {
+                            Node.prototype.insertBefore = function (t, r) {
                                 try {
-                                    return e.apply(this, [t, o]);
+                                    return e.apply(this, [t, r]);
                                 } catch (e) {
                                     if (
                                         e instanceof Error &&
@@ -505,81 +129,779 @@
                             };
                         }
                     })(),
-                    (0, d.pS)(),
-                    (0, p.kt)()));
+                    (0, m.pS)(),
+                    (0, h.kt)()));
         },
-        87057: (e, t, o) => {
-            "use strict";
-            o.d(t, { O: () => s, S: () => l });
-            var r = o(71315);
-            let i =
-                    r.cg?.document?.head?.querySelector('meta[name="release"]')
+        21067: (e, t, r) => {
+            let n;
+            function o() {
+                if (!n)
+                    throw Error(
+                        "Client env was requested before it was loaded. This likely means you are attempting to use client env at the module level in SSR, which is not supported. Please move your client env usage into a function."
+                    );
+                return n;
+            }
+            function a() {
+                return n?.locale ?? "en-US";
+            }
+            function i() {
+                return !!o().login;
+            }
+            function c() {
+                return o().login;
+            }
+            (r.d(t, { JK: () => a, M3: () => i, _$: () => o, cj: () => c }),
+                !(function () {
+                    if ("undefined" != typeof document) {
+                        let e = document.getElementById("client-env");
+                        if (e)
+                            try {
+                                n = JSON.parse(e.textContent || "");
+                            } catch (e) {
+                                console.error("Error parsing client-env", e);
+                            }
+                    }
+                })());
+        },
+        87057: (e, t, r) => {
+            r.d(t, { O: () => i, S: () => a });
+            var n = r(71315);
+            let o =
+                    n.cg?.document?.head?.querySelector('meta[name="release"]')
                         ?.content || "",
-                l = "X-GitHub-Client-Version";
-            function s() {
-                return i;
+                a = "X-GitHub-Client-Version";
+            function i() {
+                return o;
             }
         },
-        51987: (e, t, o) => {
-            "use strict";
-            o.d(t, { jC: () => c, kt: () => s, tV: () => n });
-            var r = o(87057),
-                i = o(69599),
-                l = o(13523);
-            function s(e) {
+        34095: (e, t, r) => {
+            r.d(t, { G: () => o, K: () => a });
+            var n = r(71315);
+            let o =
+                    n.XC?.readyState === "interactive" ||
+                    n.XC?.readyState === "complete"
+                        ? Promise.resolve()
+                        : new Promise((e) => {
+                              n.XC?.addEventListener("DOMContentLoaded", () => {
+                                  e();
+                              });
+                          }),
+                a =
+                    n.XC?.readyState === "complete"
+                        ? Promise.resolve()
+                        : new Promise((e) => {
+                              n.cg?.addEventListener("load", e);
+                          });
+        },
+        38102: (e, t, r) => {
+            r.d(t, { N7: () => v });
+            var n = r(36301),
+                o = r(77065),
+                a = r(24212);
+            function i(e) {
+                return (0, a.q)(e.stack || "").map((e) => ({
+                    filename: e.file || "",
+                    function: String(e.methodName),
+                    lineno: (e.lineNumber || 0).toString(),
+                    colno: (e.column || 0).toString(),
+                }));
+            }
+            function c(e) {
+                let t = document.querySelectorAll(e);
+                if (t.length > 0) return t[t.length - 1];
+            }
+            var u = r(99223),
+                l = r(71315),
+                s = r(94416),
+                f = r(69599),
+                d = r(88057);
+            let m = !1,
+                h = 0,
+                p = Date.now(),
+                y = new Set([
+                    "AbortError",
+                    "AuthSessionExpiredError",
+                    "TypeError",
+                ]),
+                g = new Set([
+                    "Failed to fetch",
+                    "NetworkError when attempting to fetch resource.",
+                    "Unable to perform this operation. Please try again later.",
+                ]);
+            function v(e, t = {}) {
+                if (
+                    !(
+                        e instanceof Error ||
+                        ("object" == typeof e &&
+                            null !== e &&
+                            "name" in e &&
+                            "string" == typeof e.name &&
+                            "message" in e &&
+                            "string" == typeof e.message)
+                    )
+                ) {
+                    if (
+                        (function (e) {
+                            if (
+                                !e ||
+                                "boolean" == typeof e ||
+                                "number" == typeof e
+                            )
+                                return !0;
+                            if ("string" == typeof e) {
+                                if (E.some((t) => e.includes(t))) return !0;
+                            } else if (
+                                "object" == typeof e &&
+                                "string" == typeof e.message &&
+                                "number" == typeof e.code
+                            )
+                                return !0;
+                            return !1;
+                        })(e)
+                    )
+                        return;
+                    let r = Error(),
+                        n = (function (e) {
+                            try {
+                                return JSON.stringify(e);
+                            } catch {
+                                return "Unserializable";
+                            }
+                        })(e);
+                    w(
+                        S(
+                            {
+                                type: "UnknownError",
+                                value: `Unable to report error, due to a thrown non-Error type: ${typeof e}, with value ${n}`,
+                                stacktrace: i(r),
+                                catalogService: document.head?.querySelector(
+                                    'meta[name="current-catalog-service"]'
+                                )?.content,
+                                catalogServiceHash:
+                                    document.head?.querySelector(
+                                        'meta[name="current-catalog-service-hash"]'
+                                    )?.content,
+                            },
+                            t
+                        )
+                    );
+                    return;
+                }
+                (e.name &&
+                    ("AbortError" === e.name ||
+                        (y.has(e.name) && g.has(e.message)) ||
+                        (e.name.startsWith("ApiError") && g.has(e.message)))) ||
+                    w(
+                        S(
+                            {
+                                type: e.name,
+                                value: e.message,
+                                stacktrace: i(e),
+                                catalogService:
+                                    e.catalogService ||
+                                    document.head?.querySelector(
+                                        'meta[name="current-catalog-service"]'
+                                    )?.content,
+                                catalogServiceHash:
+                                    e.catalogServiceHash ||
+                                    document.head?.querySelector(
+                                        'meta[name="current-catalog-service-hash"]'
+                                    )?.content,
+                            },
+                            t
+                        )
+                    );
+            }
+            async function w(e) {
+                if (!(!_ && !m && h < 10 && (0, o.TT)())) return;
+                let t = document.head?.querySelector(
+                    'meta[name="browser-errors-url"]'
+                )?.content;
+                if (t) {
+                    if (
+                        e.error.stacktrace.some(
+                            (e) => b.test(e.filename) || b.test(e.function)
+                        )
+                    ) {
+                        m = !0;
+                        return;
+                    }
+                    h++;
+                    try {
+                        await fetch(t, {
+                            method: "post",
+                            body: JSON.stringify({
+                                context: e,
+                                target:
+                                    document.head?.querySelector(
+                                        'meta[name="ui-target"]'
+                                    )?.content || "full",
+                            }),
+                        });
+                    } catch {}
+                }
+            }
+            function S(e, t = {}) {
+                let r = { ...t };
+                return (
+                    (0, f.G7)("failbot_report_error_react_apps_on_page") &&
+                        !r.reactAppName &&
+                        (r.reactAppName = (function (e) {
+                            let t = (function () {
+                                let e = new Set();
+                                for (let [t, r] of q)
+                                    for (let n of document.querySelectorAll(t))
+                                        if (n instanceof HTMLElement) {
+                                            let t = n.getAttribute(r);
+                                            t && e.add(t);
+                                        }
+                                return Array.from(e);
+                            })();
+                            if (!t || !t.length || !e || !e.length) return;
+                            let r = new Set();
+                            for (let n of e) {
+                                if (!n || !n.filename) continue;
+                                let e = n.filename.split(/[\\/]/).pop();
+                                if (!e || r.has(e)) continue;
+                                r.add(e);
+                                let o = t.find((t) =>
+                                    e.toLowerCase().includes(t.toLowerCase())
+                                );
+                                if (o) return o;
+                            }
+                        })(e.stacktrace)),
+                    Object.assign(
+                        {
+                            error: e,
+                            sanitizedUrl:
+                                `${window.location.protocol}//${window.location.host}${
+                                    (function () {
+                                        let e = c(
+                                            "meta[name=analytics-location]"
+                                        );
+                                        return e
+                                            ? e.content
+                                            : window.location.pathname;
+                                    })() +
+                                    (function () {
+                                        let e = c(
+                                                "meta[name=analytics-location-query-strip]"
+                                            ),
+                                            t = "";
+                                        e || (t = window.location.search);
+                                        let r = c(
+                                            "meta[name=analytics-location-params]"
+                                        );
+                                        for (let e of (r &&
+                                            (t += (t ? "&" : "?") + r.content),
+                                        document.querySelectorAll(
+                                            "meta[name=analytics-param-rename]"
+                                        ))) {
+                                            let r = e.content.split(":", 2);
+                                            t = t.replace(
+                                                RegExp(
+                                                    `(^|[?&])${r[0]}($|=)`,
+                                                    "g"
+                                                ),
+                                                `$1${r[1]}$2`
+                                            );
+                                        }
+                                        return t;
+                                    })()
+                                }` || window.location.href,
+                            readyState: document.readyState,
+                            referrer: (0, s.dR)(),
+                            timeSinceLoad: Math.round(Date.now() - p),
+                            user:
+                                (function () {
+                                    let e = document.head?.querySelector(
+                                        'meta[name="user-login"]'
+                                    )?.content;
+                                    if (e) return e;
+                                    let t = (0, n.y)();
+                                    return `anonymous-${t}`;
+                                })() || void 0,
+                            actorId: document.head?.querySelector(
+                                'meta[name="octolytics-actor-id"]'
+                            )?.content,
+                            bundler: u.v,
+                            ui: !!document.querySelector('meta[name="ui"]'),
+                            release: document.head?.querySelector(
+                                'meta[name="release"]'
+                            )?.content,
+                            pastRequestIds: (0, d.xA)(),
+                        },
+                        r
+                    )
+                );
+            }
+            let b = /(chrome|moz|safari)-extension:\/\//,
+                _ = !1;
+            (l.cg?.addEventListener("pageshow", () => (_ = !1)),
+                l.cg?.addEventListener("pagehide", () => (_ = !0)),
+                "function" == typeof BroadcastChannel &&
+                    new BroadcastChannel(
+                        "shared-worker-error"
+                    ).addEventListener("message", (e) => {
+                        v(e.data.error);
+                    }));
+            let E = [
+                    "Object Not Found Matching Id",
+                    "Not implemented on this platform",
+                    "provider because it's not your default extension",
+                ],
+                q = [
+                    ["react-app", "app-name"],
+                    ["react-partial", "partial-name"],
+                ];
+        },
+        69599: (e, t, r) => {
+            r.d(t, { G7: () => u, XY: () => l, fQ: () => c });
+            var n = r(5225),
+                o = r(21067);
+            function a() {
+                return new Set((0, o._$)().featureFlags);
+            }
+            let i =
+                r(71315).X3 ||
+                (function () {
+                    try {
+                        return process?.env?.STORYBOOK === "true";
+                    } catch {
+                        return !1;
+                    }
+                })()
+                    ? a
+                    : (0, n.A)(a);
+            function c() {
+                return Array.from(i());
+            }
+            function u(e) {
+                return i().has(e);
+            }
+            let l = { isFeatureEnabled: u };
+        },
+        51987: (e, t, r) => {
+            r.d(t, { jC: () => u, kt: () => i, tV: () => c });
+            var n = r(87057),
+                o = r(69599),
+                a = r(13523);
+            function i(e) {
                 let t = {
                     "X-Requested-With": "XMLHttpRequest",
-                    ...(0, l.wE)(e),
+                    ...(0, a.wE)(e),
                 };
                 return (
-                    (0, i.G7)("client_version_header") &&
-                        (t = { ...t, [r.S]: (0, r.O)() }),
+                    (0, o.G7)("client_version_header") &&
+                        (t = { ...t, [n.S]: (0, n.O)() }),
                     t
                 );
             }
-            function n(e, t) {
-                for (let [o, r] of Object.entries(s(t))) e.set(o, r);
+            function c(e, t) {
+                for (let [r, n] of Object.entries(i(t))) e.set(r, n);
             }
-            function c(e) {
+            function u(e) {
                 return { "X-GitHub-App-Type": e };
             }
         },
-        13523: (e, t, o) => {
-            "use strict";
-            o.d(t, {
-                $r: () => s,
-                M1: () => n,
-                li: () => i,
-                pS: () => a,
-                wE: () => c,
+        13523: (e, t, r) => {
+            r.d(t, {
+                $r: () => i,
+                M1: () => c,
+                li: () => o,
+                pS: () => l,
+                wE: () => u,
             });
-            var r = o(71315);
-            let i = "X-Fetch-Nonce",
-                l = new Set();
-            function s(e) {
-                l.add(e);
+            var n = r(71315);
+            let o = "X-Fetch-Nonce",
+                a = new Set();
+            function i(e) {
+                a.add(e);
             }
-            function n() {
-                return l.values().next().value || "";
+            function c() {
+                return a.values().next().value || "";
             }
-            function c(e) {
+            function u(e) {
                 let t = {};
                 return (
                     void 0 !== e && (t["X-Fetch-Nonce-To-Validate"] = e),
                     void 0 === e
-                        ? (t[i] = n())
-                        : l.has(e)
-                          ? (t[i] = e)
-                          : (t[i] = Array.from(l).join(",")),
+                        ? (t[o] = c())
+                        : a.has(e)
+                          ? (t[o] = e)
+                          : (t[o] = Array.from(a).join(",")),
                     t
                 );
             }
-            function a() {
+            function l() {
                 let e =
-                    r.XC?.head?.querySelector('meta[name="fetch-nonce"]')
+                    n.XC?.head?.querySelector('meta[name="fetch-nonce"]')
                         ?.content || "";
-                e && s(e);
+                e && i(e);
             }
+        },
+        88057: (e, t, r) => {
+            r.d(t, { Ex: () => i, kt: () => u, xA: () => c });
+            var n = r(71315);
+            let o = Array(10).fill(null),
+                a = 0;
+            function i(e) {
+                ((o[a] = e), (a = (a + 1) % 10));
+            }
+            function c() {
+                let e = [];
+                for (let t = 0; t < 10; t++) {
+                    let r = o[(a - 1 - t + 10) % 10];
+                    r && e.push(r);
+                }
+                return e;
+            }
+            function u() {
+                let e = n.XC;
+                if (!e) return;
+                let t = e.querySelector('meta[name="request-id"]'),
+                    r = t?.getAttribute("content");
+                r && i(r);
+            }
+        },
+        99223: (e, t, r) => {
+            r.d(t, { k: () => i, v: () => c });
+            var n = r(5225),
+                o = r(71315);
+            let a = (0, n.A)(function () {
+                    return (
+                        o.XC?.head?.querySelector(
+                            'meta[name="runtime-environment"]'
+                        )?.content || ""
+                    );
+                }),
+                i = (0, n.A)(function () {
+                    return "enterprise" === a();
+                }),
+                c = "webpack";
+        },
+        82075: (e, t, r) => {
+            r.d(t, { A: () => i, D: () => c });
+            var n = r(71315),
+                o = r(11083);
+            let a = class NoOpStorage {
+                getItem() {
+                    return null;
+                }
+                setItem() {}
+                removeItem() {}
+                clear() {}
+                key() {
+                    return null;
+                }
+                get length() {
+                    return 0;
+                }
+            };
+            function i(
+                e,
+                t = { throwQuotaErrorsOnSet: !1 },
+                r = n.cg,
+                c = (e) => e,
+                u = (e) => e
+            ) {
+                let l;
+                try {
+                    if (!r) throw Error();
+                    l = r[e] || new a();
+                } catch {
+                    l = new a();
+                }
+                let { throwQuotaErrorsOnSet: s } = t;
+                function f(e) {
+                    t.sendCacheStats && (0, o.i)({ incrementKey: e });
+                }
+                function d(e) {
+                    try {
+                        if ((l.removeItem(e), t.ttl)) {
+                            let t = `${e}:expiry`;
+                            l.removeItem(t);
+                        }
+                    } catch {}
+                }
+                return {
+                    getItem: function (e, t = Date.now()) {
+                        try {
+                            let r = l.getItem(e);
+                            if (!r) return null;
+                            let n = `${e}:expiry`,
+                                o = Number(l.getItem(n));
+                            if (o && t > o)
+                                return (
+                                    d(e),
+                                    d(n),
+                                    f("SAFE_STORAGE_VALUE_EXPIRED"),
+                                    null
+                                );
+                            return (f("SAFE_STORAGE_VALUE_WITHIN_TTL"), c(r));
+                        } catch {
+                            return null;
+                        }
+                    },
+                    setItem: function (e, r, n = Date.now()) {
+                        try {
+                            if ((l.setItem(e, u(r)), t.ttl)) {
+                                let r = `${e}:expiry`,
+                                    o = n + t.ttl;
+                                l.setItem(r, o.toString());
+                            }
+                        } catch (e) {
+                            if (
+                                s &&
+                                e instanceof Error &&
+                                e.message.toLowerCase().includes("quota")
+                            )
+                                throw e;
+                        }
+                    },
+                    removeItem: d,
+                    clear: l.clear,
+                    getKeys: function () {
+                        return Object.keys(l);
+                    },
+                    get length() {
+                        return l.length;
+                    },
+                };
+            }
+            function c(e) {
+                return i(
+                    e,
+                    { throwQuotaErrorsOnSet: !1 },
+                    n.cg,
+                    JSON.parse,
+                    JSON.stringify
+                );
+            }
+        },
+        95800: (e, t, r) => {
+            r.d(t, { Ai: () => a, Gq: () => n, SO: () => o });
+            let {
+                getItem: n,
+                setItem: o,
+                removeItem: a,
+            } = (0, r(82075).A)("sessionStorage");
+        },
+        94416: (e, t, r) => {
+            r.d(t, {
+                BW: () => o,
+                Ff: () => m,
+                HK: () => w,
+                JA: () => A,
+                LM: () => h,
+                Pv: () => _,
+                Vy: () => d,
+                ZW: () => b,
+                dR: () => S,
+                di: () => p,
+                fX: () => E,
+                gc: () => q,
+                k9: () => v,
+                my: () => g,
+                r7: () => C,
+                wG: () => y,
+                xT: () => f,
+            });
+            var n = r(95800);
+            let o = "reload",
+                a = "soft-nav:fail",
+                i = "soft-nav:fail-referrer",
+                c = "soft-nav:referrer",
+                u = "soft-nav:marker",
+                l = "soft-nav:react-app-name",
+                s = "soft-nav:latest-mechanism";
+            function f() {
+                ((0, n.SO)(u, "0"),
+                    (0, n.Ai)(c),
+                    (0, n.Ai)(a),
+                    (0, n.Ai)(i),
+                    (0, n.Ai)(l),
+                    (0, n.Ai)(s));
+            }
+            function d(e) {
+                (0, n.SO)(u, e);
+            }
+            function m() {
+                (0, n.SO)(u, "0");
+            }
+            function h() {
+                let e = (0, n.Gq)(u);
+                return e && "0" !== e;
+            }
+            function p() {
+                return (0, n.Gq)(u);
+            }
+            function y() {
+                return !!g();
+            }
+            function g() {
+                return (0, n.Gq)(a);
+            }
+            function v(e) {
+                ((0, n.SO)(a, e || o), (0, n.SO)(i, window.location.href));
+            }
+            function w() {
+                (0, n.SO)(c, window.location.href);
+            }
+            function S() {
+                return (0, n.Gq)(c) || document.referrer;
+            }
+            function b() {
+                let e = E();
+                e ? (0, n.SO)(l, e) : (0, n.Ai)(l);
+            }
+            function _() {
+                return (0, n.Gq)(l);
+            }
+            function E() {
+                return document.querySelector("projects-v2")
+                    ? "memex"
+                    : document.querySelector(
+                            'react-partial[partial-name="repos-overview"]'
+                        )
+                      ? "repos-overview"
+                      : document
+                            .querySelector("react-app")
+                            ?.getAttribute("app-name");
+            }
+            function q() {
+                return (
+                    !!document
+                        .querySelector("react-app")
+                        ?.getAttribute("app-name") ||
+                    !!document.querySelector("projects-v2")
+                );
+            }
+            function A(e) {
+                (0, n.SO)(s, e);
+            }
+            function C() {
+                return (0, n.Gq)(s);
+            }
+        },
+        71315: (e, t, r) => {
+            r.d(t, {
+                KJ: () => n.KJ,
+                Kn: () => o.Kn,
+                X3: () => n.X3,
+                XC: () => o.XC,
+                cg: () => o.cg,
+                fV: () => o.fV,
+                g5: () => n.g5,
+            });
+            var n = r(6923),
+                o = r(56038);
+        },
+        56038: (e, t, r) => {
+            r.d(t, { Kn: () => i, XC: () => o, cg: () => a, fV: () => c });
+            let n = "undefined" != typeof FORCE_SERVER_ENV && FORCE_SERVER_ENV,
+                o = "undefined" == typeof document || n ? void 0 : document,
+                a = "undefined" == typeof window || n ? void 0 : window,
+                i = "undefined" == typeof history || n ? void 0 : history,
+                c =
+                    "undefined" == typeof location || n
+                        ? {
+                              pathname: "",
+                              origin: "",
+                              search: "",
+                              hash: "",
+                              href: "",
+                          }
+                        : location;
+        },
+        6923: (e, t, r) => {
+            r.d(t, { KJ: () => a, X3: () => o, g5: () => i });
+            var n = r(56038);
+            let o = void 0 === n.XC,
+                a = !o;
+            function i() {
+                return (
+                    !!o ||
+                    !n.XC ||
+                    !!(
+                        n.XC.querySelector('react-app[data-ssr="true"]') ||
+                        n.XC.querySelector(
+                            'react-partial[data-ssr="true"][partial-name="repos-overview"]'
+                        )
+                    )
+                );
+            }
+        },
+        11083: (e, t, r) => {
+            r.d(t, { X: () => h, i: () => s });
+            var n = r(71315),
+                o = r(34095),
+                a = r(99223),
+                i = r(69599),
+                c = r(21067),
+                u = r(70170);
+            let l = [];
+            function s(e, t = !1, r = 0.5) {
+                if (!n.X3 && !0 !== (0, i.G7)("browser_stats_disabled")) {
+                    if (r < 0 || r > 1)
+                        throw RangeError(
+                            "Sampling probability must be between 0 and 1"
+                        );
+                    (void 0 === e.timestamp && (e.timestamp = Date.now()),
+                        (e.loggedIn = (0, c.M3)()),
+                        (e.staff = h()),
+                        (e.bundler = a.v),
+                        Math.random() < r && l.push(e),
+                        t ? m() : d());
+                }
+            }
+            let f = null,
+                d = (0, u.n)(async function () {
+                    (await o.K,
+                        null == f && (f = window.requestIdleCallback(m)));
+                }, 5e3);
+            function m() {
+                if (((f = null), !l.length)) return;
+                let e = n.XC?.head?.querySelector(
+                    'meta[name="browser-stats-url"]'
+                )?.content;
+                if (e) {
+                    for (let o of (function (e) {
+                        let t = [],
+                            r = e.map((e) => JSON.stringify(e));
+                        for (; r.length > 0; )
+                            t.push(
+                                (function (e) {
+                                    let t = e.shift(),
+                                        r = [t],
+                                        n = t.length;
+                                    for (; e.length > 0 && n <= 65536; ) {
+                                        let t = e[0].length;
+                                        if (n + t <= 65536) {
+                                            let o = e.shift();
+                                            (r.push(o), (n += t));
+                                        } else break;
+                                    }
+                                    return r;
+                                })(r)
+                            );
+                        return t;
+                    })(l)) {
+                        var t = e,
+                            r = `{"stats": [${o.join(",")}], "target": "${n.XC?.head?.querySelector('meta[name="ui-target"]')?.content || "full"}"}`;
+                        try {
+                            navigator.sendBeacon && navigator.sendBeacon(t, r);
+                        } catch {}
+                    }
+                    l = [];
+                }
+            }
+            function h() {
+                return !!n.XC?.head?.querySelector('meta[name="user-staff"]')
+                    ?.content;
+            }
+            (n.XC?.addEventListener("pagehide", m),
+                n.XC?.addEventListener("visibilitychange", m));
         },
     },
     (e) => {
@@ -587,12 +909,12 @@
             0,
             [
                 "vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js",
-                "vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_stacktrace-parser_dist_s-1d3d52",
-                "packages_failbot_failbot_ts",
+                "vendors-node_modules_stacktrace-parser_dist_stack-trace-parser_esm_js-node_modules_github_bro-2f4e04",
+                "vendors-node_modules_github_arianotify-polyfill_ariaNotify-polyfill_js-node_modules_github_mi-c8eeba",
             ],
             () => e((e.s = 46471))
         ),
             e.O());
     },
 ]);
-//# sourceMappingURL=environment-0ffe22e0ceb9.js.map
+//# sourceMappingURL=environment-6fe22f3e1272.js.map

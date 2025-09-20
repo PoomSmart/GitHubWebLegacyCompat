@@ -880,13 +880,7 @@
                 l = o({ key: "colorStyles", prop: "colors" });
         },
         38267: (e, t, r) => {
-            r.d(t, {
-                AH: () => ep,
-                Ay: () => eC,
-                Dx: () => ew,
-                NP: () => eS,
-                i7: () => ex,
-            });
+            r.d(t, { AH: () => ep, Ay: () => eC, NP: () => eS, i7: () => ex });
             var n = r(44363),
                 a = r(96540),
                 o = r(2833),
@@ -3151,55 +3145,52 @@
                     let t,
                         r,
                         n,
-                        a,
-                        o,
-                        i = (0, v.c)(9),
-                        { routes: s } = e,
-                        l = (0, d.zy)();
+                        a = (0, v.c)(9),
+                        { routes: o } = e,
+                        i = (0, d.zy)();
+                    a[0] !== i || a[1] !== o
+                        ? ((t = (0, d.ue)(o, i)?.map(N) ?? []),
+                          (a[0] = i),
+                          (a[1] = o),
+                          (a[2] = t))
+                        : (t = a[2]);
+                    let s = t;
+                    a[3] !== o
+                        ? ((r = k(o)), (a[3] = o), (a[4] = r))
+                        : (r = a[4]);
+                    let l = r;
                     return (
-                        i[0] !== l || i[1] !== s
-                            ? ((r = (0, d.ue)(s, l)?.map(N) ?? []),
-                              (i[0] = l),
-                              (i[1] = s),
-                              (i[2] = r))
-                            : (r = i[2]),
-                        (t = r),
-                        i[3] !== s
-                            ? ((a = k(s)), (i[3] = s), (i[4] = a))
-                            : (a = i[4]),
-                        (n = a),
-                        i[5] !== l || i[6] !== t || i[7] !== n
-                            ? ((o = { location: l, matches: t, routes: n }),
-                              (i[5] = l),
-                              (i[6] = t),
-                              (i[7] = n),
-                              (i[8] = o))
-                            : (o = i[8]),
-                        C(o),
+                        a[5] !== i || a[6] !== s || a[7] !== l
+                            ? ((n = { location: i, matches: s, routes: l }),
+                              (a[5] = i),
+                              (a[6] = s),
+                              (a[7] = l),
+                              (a[8] = n))
+                            : (n = a[8]),
+                        C(n),
                         null
                     );
                 }),
                 x = (0, b.memo)(function (e) {
                     let t,
                         r,
-                        n,
-                        a = (0, v.c)(6),
-                        { routes: o } = e,
-                        i = (0, d.zy)(),
-                        s = (0, d.FE)();
+                        n = (0, v.c)(6),
+                        { routes: a } = e,
+                        o = (0, d.zy)(),
+                        i = (0, d.FE)();
+                    n[0] !== a
+                        ? ((t = k(a)), (n[0] = a), (n[1] = t))
+                        : (t = n[1]);
+                    let s = t;
                     return (
-                        a[0] !== o
-                            ? ((r = k(o)), (a[0] = o), (a[1] = r))
-                            : (r = a[1]),
-                        (t = r),
-                        a[2] !== i || a[3] !== s || a[4] !== t
-                            ? ((n = { location: i, matches: s, routes: t }),
-                              (a[2] = i),
-                              (a[3] = s),
-                              (a[4] = t),
-                              (a[5] = n))
-                            : (n = a[5]),
-                        C(n),
+                        n[2] !== o || n[3] !== i || n[4] !== s
+                            ? ((r = { location: o, matches: i, routes: s }),
+                              (n[2] = o),
+                              (n[3] = i),
+                              (n[4] = s),
+                              (n[5] = r))
+                            : (r = n[5]),
+                        C(r),
                         null
                     );
                 });
@@ -5039,26 +5030,23 @@
             let i = (e) => {
                 let t,
                     r,
-                    i,
-                    s = (0, a.c)(5),
-                    { children: l, features: u } = e;
+                    i = (0, a.c)(5),
+                    { children: s, features: l } = e;
+                i[0] !== l
+                    ? ((t = { enabled_features: l }), (i[0] = l), (i[1] = t))
+                    : (t = i[1]);
+                let u = t;
                 return (
-                    s[0] !== u
-                        ? ((r = { enabled_features: u }),
-                          (s[0] = u),
-                          (s[1] = r))
-                        : (r = s[1]),
-                    (t = r),
-                    s[2] !== l || s[3] !== t
-                        ? ((i = (0, n.jsx)(o.z.Provider, {
-                              value: t,
-                              children: l,
+                    i[2] !== s || i[3] !== u
+                        ? ((r = (0, n.jsx)(o.z.Provider, {
+                              value: u,
+                              children: s,
                           })),
-                          (s[2] = l),
-                          (s[3] = t),
-                          (s[4] = i))
-                        : (i = s[4]),
-                    i
+                          (i[2] = s),
+                          (i[3] = u),
+                          (i[4] = r))
+                        : (r = i[4]),
+                    r
                 );
             };
             try {
@@ -5383,22 +5371,21 @@
             function s(e) {
                 let t,
                     r,
-                    s,
-                    l = (0, a.c)(3),
-                    { children: u } = e;
-                if (l[0] === Symbol.for("react.memo_cache_sentinel")) {
-                    for (let e of ((r = {}), (0, o.fQ)()))
-                        e.startsWith("primer_react_") && (r[e] = !0);
-                    l[0] = r;
-                } else r = l[0];
+                    s = (0, a.c)(3),
+                    { children: l } = e;
+                if (s[0] === Symbol.for("react.memo_cache_sentinel")) {
+                    for (let e of ((t = {}), (0, o.fQ)()))
+                        e.startsWith("primer_react_") && (t[e] = !0);
+                    s[0] = t;
+                } else t = s[0];
+                let u = t;
                 return (
-                    (t = r),
-                    l[1] !== u
-                        ? ((s = (0, n.jsx)(i.g, { flags: t, children: u })),
-                          (l[1] = u),
-                          (l[2] = s))
-                        : (s = l[2]),
-                    s
+                    s[1] !== l
+                        ? ((r = (0, n.jsx)(i.g, { flags: u, children: l })),
+                          (s[1] = l),
+                          (s[2] = r))
+                        : (r = s[2]),
+                    r
                 );
             }
             r(96540);
@@ -5800,24 +5787,23 @@
             function i(e) {
                 let t,
                     r,
-                    i,
-                    s = (0, a.c)(5),
-                    { routes: l, children: u } = e;
+                    i = (0, a.c)(5),
+                    { routes: s, children: l } = e;
+                i[0] !== s
+                    ? ((t = { routes: s }), (i[0] = s), (i[1] = t))
+                    : (t = i[1]);
+                let u = t;
                 return (
-                    s[0] !== l
-                        ? ((r = { routes: l }), (s[0] = l), (s[1] = r))
-                        : (r = s[1]),
-                    (t = r),
-                    s[2] !== t || s[3] !== u
-                        ? ((i = (0, n.jsx)(o.k.Provider, {
-                              value: t,
-                              children: u,
+                    i[2] !== u || i[3] !== l
+                        ? ((r = (0, n.jsx)(o.k.Provider, {
+                              value: u,
+                              children: l,
                           })),
-                          (s[2] = t),
-                          (s[3] = u),
-                          (s[4] = i))
-                        : (i = s[4]),
-                    i
+                          (i[2] = u),
+                          (i[3] = l),
+                          (i[4] = r))
+                        : (r = i[4]),
+                    r
                 );
             }
             try {
@@ -11832,4 +11818,4 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
         },
     },
 ]);
-//# sourceMappingURL=react-core-8e9ff63f789d.js.map
+//# sourceMappingURL=react-core-94d6414a4a1c.js.map

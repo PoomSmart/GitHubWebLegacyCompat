@@ -2,106 +2,15 @@
 (globalThis.webpackChunk_github_ui_github_ui =
     globalThis.webpackChunk_github_ui_github_ui || []).push([
     [
-        "vendors-node_modules_primer_styled-react_dist_index_js-node_modules_mdast-util-from-markdown_-7ab78a",
+        "vendors-node_modules_mdast-util-gfm_lib_index_js-node_modules_micromark-extension-gfm_index_js",
     ],
     {
-        21998: (e, t, n) => {
-            n.d(t, {
-                $Q: () => c.A,
-                $c: () => s.A,
-                $n: () => a.Q,
-                BI: () => u.A,
-                DZ: () => d.A,
-                EY: () => v.A,
-                Hx: () => f.A,
-                Iz: () => b.I,
-                JU: () => g.A,
-                K0: () => p.K,
-                MJ: () => h.A,
-                Mx: () => x.M,
-                N_: () => m.A,
-                PA: () => C.A,
-                Wy: () => l.W,
-                az: () => r.A,
-                ks: () => y.A,
-                lF: () => o.l,
-                sx: () => S.A,
-                z9: () => k.z,
-            });
-            var r = n(75177),
-                i = n(23494),
-                o = n(52446),
-                l = n(5945),
-                u = n(72130),
-                a = n(55847),
-                c = n(19797),
-                s = n(90352),
-                f = n(69410),
-                h = n(65029),
-                d = n(63557),
-                p = n(87330),
-                g = n(21654),
-                m = n(81246),
-                k = n(10871),
-                x = n(57271),
-                b = n(53037),
-                v = n(84511),
-                y = n(24815),
-                C = n(1002),
-                S = n(44999),
-                w = n(96540);
-            function E() {
-                return (E = Object.assign
-                    ? Object.assign.bind()
-                    : function (e) {
-                          for (var t = 1; t < arguments.length; t++) {
-                              var n = arguments[t];
-                              for (var r in n)
-                                  ({}).hasOwnProperty.call(n, r) &&
-                                      (e[r] = n[r]);
-                          }
-                          return e;
-                      }).apply(null, arguments);
-            }
-            Object.assign(
-                (0, w.forwardRef)(function (e, t) {
-                    return React.createElement(r.A, E({ as: i.A, ref: t }, e));
-                }),
-                {
-                    Link: (0, w.forwardRef)(function (e, t) {
-                        return React.createElement(
-                            r.A,
-                            E({ as: i.A.Link, ref: t }, e)
-                        );
-                    }),
-                }
-            );
-        },
-        96206: (e, t, n) => {
-            n.d(t, { s: () => i });
-            let r = document.createElement("i");
-            function i(e) {
-                let t = "&" + e + ";";
-                r.innerHTML = t;
-                let n = r.textContent;
-                return (
-                    (59 !== n.charCodeAt(n.length - 1) || "semi" === e) &&
-                    n !== t &&
-                    n
-                );
-            }
-        },
-        97471: (e, t, n) => {
-            function r() {}
-            function i() {}
-            n.d(t, { HB: () => i, ok: () => r });
-        },
         95459: (e, t, n) => {
             n.d(t, { T: () => o });
-            var r = n(76814),
-                i = n(69143);
+            var i = n(76814),
+                r = n(69143);
             function o(e, t, n) {
-                let o = (0, i.C)((n || {}).ignore || []),
+                let o = (0, r.C)((n || {}).ignore || []),
                     l = (function (e) {
                         let t = [];
                         if (!Array.isArray(e))
@@ -109,12 +18,12 @@
                                 "Expected find and replace tuple or list of tuples"
                             );
                         let n = !e[0] || Array.isArray(e[0]) ? e : [e],
-                            r = -1;
-                        for (; ++r < n.length; ) {
-                            var i;
-                            let e = n[r];
+                            i = -1;
+                        for (; ++i < n.length; ) {
+                            var r;
+                            let e = n[i];
                             t.push([
-                                "string" == typeof (i = e[0])
+                                "string" == typeof (r = e[0])
                                     ? RegExp(
                                           (function (e) {
                                               if ("string" != typeof e)
@@ -127,10 +36,10 @@
                                                       "\\$&"
                                                   )
                                                   .replace(/-/g, "\\x2d");
-                                          })(i),
+                                          })(r),
                                           "g"
                                       )
-                                    : i,
+                                    : r,
                                 (function (e) {
                                     return "function" == typeof e
                                         ? e
@@ -142,28 +51,28 @@
                         }
                         return t;
                     })(t),
-                    u = -1;
-                for (; ++u < l.length; ) (0, r.VG)(e, "text", a);
-                function a(e, t) {
+                    a = -1;
+                for (; ++a < l.length; ) (0, i.VG)(e, "text", s);
+                function s(e, t) {
                     let n,
-                        r = -1;
-                    for (; ++r < t.length; ) {
-                        let e = t[r],
-                            i = n ? n.children : void 0;
-                        if (o(e, i ? i.indexOf(e) : void 0, n)) return;
+                        i = -1;
+                    for (; ++i < t.length; ) {
+                        let e = t[i],
+                            r = n ? n.children : void 0;
+                        if (o(e, r ? r.indexOf(e) : void 0, n)) return;
                         n = e;
                     }
                     if (n)
                         return (function (e, t) {
                             let n = t[t.length - 1],
-                                r = l[u][0],
-                                i = l[u][1],
+                                i = l[a][0],
+                                r = l[a][1],
                                 o = 0,
-                                a = n.children.indexOf(e),
-                                c = !1,
-                                s = [];
-                            r.lastIndex = 0;
-                            let f = r.exec(e.value);
+                                s = n.children.indexOf(e),
+                                u = !1,
+                                c = [];
+                            i.lastIndex = 0;
+                            let f = i.exec(e.value);
                             for (; f; ) {
                                 let n = f.index,
                                     l = {
@@ -171,795 +80,67 @@
                                         input: f.input,
                                         stack: [...t, e],
                                     },
-                                    u = i(...f, l);
+                                    a = r(...f, l);
                                 if (
-                                    ("string" == typeof u &&
-                                        (u =
-                                            u.length > 0
-                                                ? { type: "text", value: u }
+                                    ("string" == typeof a &&
+                                        (a =
+                                            a.length > 0
+                                                ? { type: "text", value: a }
                                                 : void 0),
-                                    !1 === u
-                                        ? (r.lastIndex = n + 1)
+                                    !1 === a
+                                        ? (i.lastIndex = n + 1)
                                         : (o !== n &&
-                                              s.push({
+                                              c.push({
                                                   type: "text",
                                                   value: e.value.slice(o, n),
                                               }),
-                                          Array.isArray(u)
-                                              ? s.push(...u)
-                                              : u && s.push(u),
+                                          Array.isArray(a)
+                                              ? c.push(...a)
+                                              : a && c.push(a),
                                           (o = n + f[0].length),
-                                          (c = !0)),
-                                    !r.global)
+                                          (u = !0)),
+                                    !i.global)
                                 )
                                     break;
-                                f = r.exec(e.value);
+                                f = i.exec(e.value);
                             }
                             return (
-                                c
+                                u
                                     ? (o < e.value.length &&
-                                          s.push({
+                                          c.push({
                                               type: "text",
                                               value: e.value.slice(o),
                                           }),
-                                      n.children.splice(a, 1, ...s))
-                                    : (s = [e]),
-                                a + s.length
+                                      n.children.splice(s, 1, ...c))
+                                    : (c = [e]),
+                                s + c.length
                             );
                         })(e, t);
                 }
             }
         },
-        86350: (e, t, n) => {
-            n.d(t, { Y: () => d });
-            var r = n(72534),
-                i = n(43926),
-                o = n(87647),
-                l = n(2611),
-                u = n(43589),
-                a = n(22177),
-                c = n(9638),
-                s = n(96206),
-                f = n(47188);
-            let h = {}.hasOwnProperty;
-            function d(e, t, n) {
-                return (
-                    "string" != typeof t && ((n = t), (t = void 0)),
-                    (function (e) {
-                        let t = {
-                            transforms: [],
-                            canContainEols: [
-                                "emphasis",
-                                "fragment",
-                                "heading",
-                                "paragraph",
-                                "strong",
-                            ],
-                            enter: {
-                                autolink: i(F),
-                                autolinkProtocol: x,
-                                autolinkEmail: x,
-                                atxHeading: i(S),
-                                blockQuote: i(function () {
-                                    return { type: "blockquote", children: [] };
-                                }),
-                                characterEscape: x,
-                                characterReference: x,
-                                codeFenced: i(C),
-                                codeFencedFenceInfo: o,
-                                codeFencedFenceMeta: o,
-                                codeIndented: i(C, o),
-                                codeText: i(function () {
-                                    return { type: "inlineCode", value: "" };
-                                }, o),
-                                codeTextData: x,
-                                data: x,
-                                codeFlowValue: x,
-                                definition: i(function () {
-                                    return {
-                                        type: "definition",
-                                        identifier: "",
-                                        label: null,
-                                        title: null,
-                                        url: "",
-                                    };
-                                }),
-                                definitionDestinationString: o,
-                                definitionLabelString: o,
-                                definitionTitleString: o,
-                                emphasis: i(function () {
-                                    return { type: "emphasis", children: [] };
-                                }),
-                                hardBreakEscape: i(w),
-                                hardBreakTrailing: i(w),
-                                htmlFlow: i(E, o),
-                                htmlFlowData: x,
-                                htmlText: i(E, o),
-                                htmlTextData: x,
-                                image: i(function () {
-                                    return {
-                                        type: "image",
-                                        title: null,
-                                        url: "",
-                                        alt: null,
-                                    };
-                                }),
-                                label: o,
-                                link: i(F),
-                                listItem: i(function (e) {
-                                    return {
-                                        type: "listItem",
-                                        spread: e._spread,
-                                        checked: null,
-                                        children: [],
-                                    };
-                                }),
-                                listItemValue: function (e) {
-                                    this.data.expectingFirstListItemValue &&
-                                        ((this.stack[
-                                            this.stack.length - 2
-                                        ].start = Number.parseInt(
-                                            this.sliceSerialize(e),
-                                            10
-                                        )),
-                                        (this.data.expectingFirstListItemValue =
-                                            void 0));
-                                },
-                                listOrdered: i(I, function () {
-                                    this.data.expectingFirstListItemValue = !0;
-                                }),
-                                listUnordered: i(I),
-                                paragraph: i(function () {
-                                    return { type: "paragraph", children: [] };
-                                }),
-                                reference: function () {
-                                    this.data.referenceType = "collapsed";
-                                },
-                                referenceString: o,
-                                resourceDestinationString: o,
-                                resourceTitleString: o,
-                                setextHeading: i(S),
-                                strong: i(function () {
-                                    return { type: "strong", children: [] };
-                                }),
-                                thematicBreak: i(function () {
-                                    return { type: "thematicBreak" };
-                                }),
-                            },
-                            exit: {
-                                atxHeading: d(),
-                                atxHeadingSequence: function (e) {
-                                    let t = this.stack[this.stack.length - 1];
-                                    t.depth ||
-                                        (t.depth =
-                                            this.sliceSerialize(e).length);
-                                },
-                                autolink: d(),
-                                autolinkEmail: function (e) {
-                                    (b.call(this, e),
-                                        (this.stack[this.stack.length - 1].url =
-                                            "mailto:" +
-                                            this.sliceSerialize(e)));
-                                },
-                                autolinkProtocol: function (e) {
-                                    (b.call(this, e),
-                                        (this.stack[this.stack.length - 1].url =
-                                            this.sliceSerialize(e)));
-                                },
-                                blockQuote: d(),
-                                characterEscapeValue: b,
-                                characterReferenceMarkerHexadecimal: y,
-                                characterReferenceMarkerNumeric: y,
-                                characterReferenceValue: function (e) {
-                                    let t,
-                                        n = this.sliceSerialize(e),
-                                        r = this.data.characterReferenceType;
-                                    r
-                                        ? ((t = (0, u.C)(
-                                              n,
-                                              "characterReferenceMarkerNumeric" ===
-                                                  r
-                                                  ? 10
-                                                  : 16
-                                          )),
-                                          (this.data.characterReferenceType =
-                                              void 0))
-                                        : (t = (0, s.s)(n));
-                                    let i = this.stack[this.stack.length - 1];
-                                    i.value += t;
-                                },
-                                characterReference: function (e) {
-                                    this.stack.pop().position.end = p(e.end);
-                                },
-                                codeFenced: d(function () {
-                                    let e = this.resume();
-                                    ((this.stack[this.stack.length - 1].value =
-                                        e.replace(
-                                            /^(\r?\n|\r)|(\r?\n|\r)$/g,
-                                            ""
-                                        )),
-                                        (this.data.flowCodeInside = void 0));
-                                }),
-                                codeFencedFence: function () {
-                                    this.data.flowCodeInside ||
-                                        (this.buffer(),
-                                        (this.data.flowCodeInside = !0));
-                                },
-                                codeFencedFenceInfo: function () {
-                                    let e = this.resume();
-                                    this.stack[this.stack.length - 1].lang = e;
-                                },
-                                codeFencedFenceMeta: function () {
-                                    let e = this.resume();
-                                    this.stack[this.stack.length - 1].meta = e;
-                                },
-                                codeFlowValue: b,
-                                codeIndented: d(function () {
-                                    let e = this.resume();
-                                    this.stack[this.stack.length - 1].value =
-                                        e.replace(/(\r?\n|\r)$/g, "");
-                                }),
-                                codeText: d(function () {
-                                    let e = this.resume();
-                                    this.stack[this.stack.length - 1].value = e;
-                                }),
-                                codeTextData: b,
-                                data: b,
-                                definition: d(),
-                                definitionDestinationString: function () {
-                                    let e = this.resume();
-                                    this.stack[this.stack.length - 1].url = e;
-                                },
-                                definitionLabelString: function (e) {
-                                    let t = this.resume(),
-                                        n = this.stack[this.stack.length - 1];
-                                    ((n.label = t),
-                                        (n.identifier = (0, c.B)(
-                                            this.sliceSerialize(e)
-                                        ).toLowerCase()));
-                                },
-                                definitionTitleString: function () {
-                                    let e = this.resume();
-                                    this.stack[this.stack.length - 1].title = e;
-                                },
-                                emphasis: d(),
-                                hardBreakEscape: d(v),
-                                hardBreakTrailing: d(v),
-                                htmlFlow: d(function () {
-                                    let e = this.resume();
-                                    this.stack[this.stack.length - 1].value = e;
-                                }),
-                                htmlFlowData: b,
-                                htmlText: d(function () {
-                                    let e = this.resume();
-                                    this.stack[this.stack.length - 1].value = e;
-                                }),
-                                htmlTextData: b,
-                                image: d(function () {
-                                    let e = this.stack[this.stack.length - 1];
-                                    if (this.data.inReference) {
-                                        let t =
-                                            this.data.referenceType ||
-                                            "shortcut";
-                                        ((e.type += "Reference"),
-                                            (e.referenceType = t),
-                                            delete e.url,
-                                            delete e.title);
-                                    } else
-                                        (delete e.identifier, delete e.label);
-                                    this.data.referenceType = void 0;
-                                }),
-                                label: function () {
-                                    let e = this.stack[this.stack.length - 1],
-                                        t = this.resume(),
-                                        n = this.stack[this.stack.length - 1];
-                                    ((this.data.inReference = !0),
-                                        "link" === n.type
-                                            ? (n.children = e.children)
-                                            : (n.alt = t));
-                                },
-                                labelText: function (e) {
-                                    let t = this.sliceSerialize(e),
-                                        n = this.stack[this.stack.length - 2];
-                                    ((n.label = (0, a.s)(t)),
-                                        (n.identifier = (0, c.B)(
-                                            t
-                                        ).toLowerCase()));
-                                },
-                                lineEnding: function (e) {
-                                    let n = this.stack[this.stack.length - 1];
-                                    if (this.data.atHardBreak) {
-                                        ((n.children[
-                                            n.children.length - 1
-                                        ].position.end = p(e.end)),
-                                            (this.data.atHardBreak = void 0));
-                                        return;
-                                    }
-                                    !this.data.setextHeadingSlurpLineEnding &&
-                                        t.canContainEols.includes(n.type) &&
-                                        (x.call(this, e), b.call(this, e));
-                                },
-                                link: d(function () {
-                                    let e = this.stack[this.stack.length - 1];
-                                    if (this.data.inReference) {
-                                        let t =
-                                            this.data.referenceType ||
-                                            "shortcut";
-                                        ((e.type += "Reference"),
-                                            (e.referenceType = t),
-                                            delete e.url,
-                                            delete e.title);
-                                    } else
-                                        (delete e.identifier, delete e.label);
-                                    this.data.referenceType = void 0;
-                                }),
-                                listItem: d(),
-                                listOrdered: d(),
-                                listUnordered: d(),
-                                paragraph: d(),
-                                referenceString: function (e) {
-                                    let t = this.resume(),
-                                        n = this.stack[this.stack.length - 1];
-                                    ((n.label = t),
-                                        (n.identifier = (0, c.B)(
-                                            this.sliceSerialize(e)
-                                        ).toLowerCase()),
-                                        (this.data.referenceType = "full"));
-                                },
-                                resourceDestinationString: function () {
-                                    let e = this.resume();
-                                    this.stack[this.stack.length - 1].url = e;
-                                },
-                                resourceTitleString: function () {
-                                    let e = this.resume();
-                                    this.stack[this.stack.length - 1].title = e;
-                                },
-                                resource: function () {
-                                    this.data.inReference = void 0;
-                                },
-                                setextHeading: d(function () {
-                                    this.data.setextHeadingSlurpLineEnding =
-                                        void 0;
-                                }),
-                                setextHeadingLineSequence: function (e) {
-                                    this.stack[this.stack.length - 1].depth =
-                                        61 ===
-                                        this.sliceSerialize(e).codePointAt(0)
-                                            ? 1
-                                            : 2;
-                                },
-                                setextHeadingText: function () {
-                                    this.data.setextHeadingSlurpLineEnding = !0;
-                                },
-                                strong: d(),
-                                thematicBreak: d(),
-                            },
-                        };
-                        !(function e(t, n) {
-                            let r = -1;
-                            for (; ++r < n.length; ) {
-                                let i = n[r];
-                                Array.isArray(i)
-                                    ? e(t, i)
-                                    : (function (e, t) {
-                                          let n;
-                                          for (n in t)
-                                              if (h.call(t, n))
-                                                  switch (n) {
-                                                      case "canContainEols": {
-                                                          let r = t[n];
-                                                          r && e[n].push(...r);
-                                                          break;
-                                                      }
-                                                      case "transforms": {
-                                                          let r = t[n];
-                                                          r && e[n].push(...r);
-                                                          break;
-                                                      }
-                                                      case "enter":
-                                                      case "exit": {
-                                                          let r = e[n],
-                                                              i = t[n];
-                                                          for (let e in i)
-                                                              i[e] &&
-                                                                  (r[e] =
-                                                                      (function (
-                                                                          e,
-                                                                          t
-                                                                      ) {
-                                                                          return e
-                                                                              ? function (
-                                                                                    ...n
-                                                                                ) {
-                                                                                    let r =
-                                                                                        t.apply(
-                                                                                            this,
-                                                                                            n
-                                                                                        );
-                                                                                    return !1 ===
-                                                                                        r
-                                                                                        ? e.apply(
-                                                                                              this,
-                                                                                              n
-                                                                                          )
-                                                                                        : r;
-                                                                                }
-                                                                              : t;
-                                                                      })(
-                                                                          r[e],
-                                                                          i[e]
-                                                                      ));
-                                                      }
-                                                  }
-                                      })(t, i);
-                            }
-                        })(t, (e || {}).mdastExtensions || []);
-                        let n = {};
-                        return function (e) {
-                            let r = { type: "root", children: [] },
-                                i = {
-                                    stack: [r],
-                                    tokenStack: [],
-                                    config: t,
-                                    enter: l,
-                                    exit: m,
-                                    buffer: o,
-                                    resume: k,
-                                    data: n,
-                                },
-                                u = [],
-                                a = -1;
-                            for (; ++a < e.length; )
-                                ("listOrdered" === e[a][1].type ||
-                                    "listUnordered" === e[a][1].type) &&
-                                    ("enter" === e[a][0]
-                                        ? u.push(a)
-                                        : (a = (function (e, t, n) {
-                                              let r,
-                                                  i,
-                                                  o,
-                                                  l,
-                                                  u = t - 1,
-                                                  a = -1,
-                                                  c = !1;
-                                              for (; ++u <= n; ) {
-                                                  let t = e[u];
-                                                  switch (t[1].type) {
-                                                      case "listUnordered":
-                                                      case "listOrdered":
-                                                      case "blockQuote":
-                                                          ("enter" === t[0]
-                                                              ? a++
-                                                              : a--,
-                                                              (l = void 0));
-                                                          break;
-                                                      case "lineEndingBlank":
-                                                          "enter" === t[0] &&
-                                                              (!r ||
-                                                                  l ||
-                                                                  a ||
-                                                                  o ||
-                                                                  (o = u),
-                                                              (l = void 0));
-                                                          break;
-                                                      case "linePrefix":
-                                                      case "listItemValue":
-                                                      case "listItemMarker":
-                                                      case "listItemPrefix":
-                                                      case "listItemPrefixWhitespace":
-                                                          break;
-                                                      default:
-                                                          l = void 0;
-                                                  }
-                                                  if (
-                                                      (!a &&
-                                                          "enter" === t[0] &&
-                                                          "listItemPrefix" ===
-                                                              t[1].type) ||
-                                                      (-1 === a &&
-                                                          "exit" === t[0] &&
-                                                          ("listUnordered" ===
-                                                              t[1].type ||
-                                                              "listOrdered" ===
-                                                                  t[1].type))
-                                                  ) {
-                                                      if (r) {
-                                                          let l = u;
-                                                          for (
-                                                              i = void 0;
-                                                              l--;
-
-                                                          ) {
-                                                              let t = e[l];
-                                                              if (
-                                                                  "lineEnding" ===
-                                                                      t[1]
-                                                                          .type ||
-                                                                  "lineEndingBlank" ===
-                                                                      t[1].type
-                                                              ) {
-                                                                  if (
-                                                                      "exit" ===
-                                                                      t[0]
-                                                                  )
-                                                                      continue;
-                                                                  (i &&
-                                                                      ((e[
-                                                                          i
-                                                                      ][1].type =
-                                                                          "lineEndingBlank"),
-                                                                      (c = !0)),
-                                                                      (t[1].type =
-                                                                          "lineEnding"),
-                                                                      (i = l));
-                                                              } else if (
-                                                                  "linePrefix" ===
-                                                                      t[1]
-                                                                          .type ||
-                                                                  "blockQuotePrefix" ===
-                                                                      t[1]
-                                                                          .type ||
-                                                                  "blockQuotePrefixWhitespace" ===
-                                                                      t[1]
-                                                                          .type ||
-                                                                  "blockQuoteMarker" ===
-                                                                      t[1]
-                                                                          .type ||
-                                                                  "listItemIndent" ===
-                                                                      t[1].type
-                                                              );
-                                                              else break;
-                                                          }
-                                                          (o &&
-                                                              (!i || o < i) &&
-                                                              (r._spread = !0),
-                                                              (r.end =
-                                                                  Object.assign(
-                                                                      {},
-                                                                      i
-                                                                          ? e[
-                                                                                i
-                                                                            ][1]
-                                                                                .start
-                                                                          : t[1]
-                                                                                .end
-                                                                  )),
-                                                              e.splice(
-                                                                  i || u,
-                                                                  0,
-                                                                  [
-                                                                      "exit",
-                                                                      r,
-                                                                      t[2],
-                                                                  ]
-                                                              ),
-                                                              u++,
-                                                              n++);
-                                                      }
-                                                      if (
-                                                          "listItemPrefix" ===
-                                                          t[1].type
-                                                      ) {
-                                                          let i = {
-                                                              type: "listItem",
-                                                              _spread: !1,
-                                                              start: Object.assign(
-                                                                  {},
-                                                                  t[1].start
-                                                              ),
-                                                              end: void 0,
-                                                          };
-                                                          ((r = i),
-                                                              e.splice(u, 0, [
-                                                                  "enter",
-                                                                  i,
-                                                                  t[2],
-                                                              ]),
-                                                              u++,
-                                                              n++,
-                                                              (o = void 0),
-                                                              (l = !0));
-                                                      }
-                                                  }
-                                              }
-                                              return ((e[t][1]._spread = c), n);
-                                          })(e, u.pop(), a)));
-                            for (a = -1; ++a < e.length; ) {
-                                let n = t[e[a][0]];
-                                h.call(n, e[a][1].type) &&
-                                    n[e[a][1].type].call(
-                                        Object.assign(
-                                            {
-                                                sliceSerialize:
-                                                    e[a][2].sliceSerialize,
-                                            },
-                                            i
-                                        ),
-                                        e[a][1]
-                                    );
-                            }
-                            if (i.tokenStack.length > 0) {
-                                let e = i.tokenStack[i.tokenStack.length - 1];
-                                (e[1] || g).call(i, void 0, e[0]);
-                            }
-                            for (
-                                r.position = {
-                                    start: p(
-                                        e.length > 0
-                                            ? e[0][1].start
-                                            : { line: 1, column: 1, offset: 0 }
-                                    ),
-                                    end: p(
-                                        e.length > 0
-                                            ? e[e.length - 2][1].end
-                                            : { line: 1, column: 1, offset: 0 }
-                                    ),
-                                },
-                                    a = -1;
-                                ++a < t.transforms.length;
-
-                            )
-                                r = t.transforms[a](r) || r;
-                            return r;
-                        };
-                        function i(e, t) {
-                            return function (n) {
-                                (l.call(this, e(n), n), t && t.call(this, n));
-                            };
-                        }
-                        function o() {
-                            this.stack.push({ type: "fragment", children: [] });
-                        }
-                        function l(e, t, n) {
-                            (this.stack[this.stack.length - 1].children.push(e),
-                                this.stack.push(e),
-                                this.tokenStack.push([t, n || void 0]),
-                                (e.position = {
-                                    start: p(t.start),
-                                    end: void 0,
-                                }));
-                        }
-                        function d(e) {
-                            return function (t) {
-                                (e && e.call(this, t), m.call(this, t));
-                            };
-                        }
-                        function m(e, t) {
-                            let n = this.stack.pop(),
-                                r = this.tokenStack.pop();
-                            if (r)
-                                r[0].type !== e.type &&
-                                    (t
-                                        ? t.call(this, e, r[0])
-                                        : (r[1] || g).call(this, e, r[0]));
-                            else
-                                throw Error(
-                                    "Cannot close `" +
-                                        e.type +
-                                        "` (" +
-                                        (0, f.L)({
-                                            start: e.start,
-                                            end: e.end,
-                                        }) +
-                                        "): it\u2019s not open"
-                                );
-                            n.position.end = p(e.end);
-                        }
-                        function k() {
-                            return (0, r.d)(this.stack.pop());
-                        }
-                        function x(e) {
-                            let t = this.stack[this.stack.length - 1].children,
-                                n = t[t.length - 1];
-                            ((n && "text" === n.type) ||
-                                (((n = { type: "text", value: "" }).position = {
-                                    start: p(e.start),
-                                    end: void 0,
-                                }),
-                                t.push(n)),
-                                this.stack.push(n));
-                        }
-                        function b(e) {
-                            let t = this.stack.pop();
-                            ((t.value += this.sliceSerialize(e)),
-                                (t.position.end = p(e.end)));
-                        }
-                        function v() {
-                            this.data.atHardBreak = !0;
-                        }
-                        function y(e) {
-                            this.data.characterReferenceType = e.type;
-                        }
-                        function C() {
-                            return {
-                                type: "code",
-                                lang: null,
-                                meta: null,
-                                value: "",
-                            };
-                        }
-                        function S() {
-                            return { type: "heading", depth: 0, children: [] };
-                        }
-                        function w() {
-                            return { type: "break" };
-                        }
-                        function E() {
-                            return { type: "html", value: "" };
-                        }
-                        function F() {
-                            return {
-                                type: "link",
-                                title: null,
-                                url: "",
-                                children: [],
-                            };
-                        }
-                        function I(e) {
-                            return {
-                                type: "list",
-                                ordered: "listOrdered" === e.type,
-                                start: null,
-                                spread: e._spread,
-                                children: [],
-                            };
-                        }
-                    })(n)(
-                        (0, i._)(
-                            (0, o.q)(n)
-                                .document()
-                                .write((0, l.v)()(e, t, !0))
-                        )
-                    )
-                );
-            }
-            function p(e) {
-                return { line: e.line, column: e.column, offset: e.offset };
-            }
-            function g(e, t) {
-                if (e)
-                    throw Error(
-                        "Cannot close `" +
-                            e.type +
-                            "` (" +
-                            (0, f.L)({ start: e.start, end: e.end }) +
-                            "): a different token (`" +
-                            t.type +
-                            "`, " +
-                            (0, f.L)({ start: t.start, end: t.end }) +
-                            ") is open"
-                    );
-                throw Error(
-                    "Cannot close document, a token (`" +
-                        t.type +
-                        "`, " +
-                        (0, f.L)({ start: t.start, end: t.end }) +
-                        ") is still open"
-                );
-            }
-        },
         54157: (e, t, n) => {
-            function r(e, t) {
+            function i(e, t) {
                 let n = String(e);
                 if ("string" != typeof t) throw TypeError("Expected character");
-                let r = 0,
-                    i = n.indexOf(t);
-                for (; -1 !== i; ) (r++, (i = n.indexOf(t, i + t.length)));
-                return r;
+                let i = 0,
+                    r = n.indexOf(t);
+                for (; -1 !== r; ) (i++, (r = n.indexOf(t, r + t.length)));
+                return i;
             }
-            n.d(t, { C: () => J, H: () => Z });
-            var i = n(97471),
+            n.d(t, { C: () => G, H: () => J });
+            var r = n(97471),
                 o = n(40574),
                 l = n(95459);
-            let u = "phrasing",
-                a = ["autolink", "link", "image", "label"];
-            function c(e) {
+            let a = "phrasing",
+                s = ["autolink", "link", "image", "label"];
+            function u(e) {
                 this.enter(
                     { type: "link", title: null, url: "", children: [] },
                     e
                 );
             }
-            function s(e) {
+            function c(e) {
                 this.config.enter.autolinkProtocol.call(this, e);
             }
             function f(e) {
@@ -968,16 +149,16 @@
             function h(e) {
                 this.config.exit.data.call(this, e);
                 let t = this.stack[this.stack.length - 1];
-                ((0, i.ok)("link" === t.type),
+                ((0, r.ok)("link" === t.type),
                     (t.url = "http://" + this.sliceSerialize(e)));
             }
             function d(e) {
                 this.config.exit.autolinkEmail.call(this, e);
             }
-            function p(e) {
+            function g(e) {
                 this.exit(e);
             }
-            function g(e) {
+            function p(e) {
                 (0, l.T)(
                     e,
                     [
@@ -985,16 +166,16 @@
                         [
                             /(^|[\s\p{P}\p{S}])([-\w.+]+)@([-\w]+(?:\.[-\w]+)+)/gu,
                             (_, prefix, local, domain) =>
-                                prefix + k(`${local}@${domain}`),
+                                prefix + b(`${local}@${domain}`),
                         ],
                     ],
                     { ignore: ["link", "linkReference"] }
                 );
             }
-            function m(e, t, n, i, o) {
+            function m(e, t, n, r, o) {
                 let l = "";
                 if (
-                    !x(o) ||
+                    !k(o) ||
                     (/^w/i.test(t) && ((n = t + n), (t = ""), (l = "http://")),
                     !(function (e) {
                         let t = e.split(".");
@@ -1010,32 +191,32 @@
                     })(n))
                 )
                     return !1;
-                let u = (function (e) {
+                let a = (function (e) {
                     let t = /[!"&'),.:;<>?\]}]+$/.exec(e);
                     if (!t) return [e, void 0];
                     e = e.slice(0, t.index);
                     let n = t[0],
-                        i = n.indexOf(")"),
-                        o = r(e, "("),
-                        l = r(e, ")");
-                    for (; -1 !== i && o > l; )
-                        ((e += n.slice(0, i + 1)),
-                            (i = (n = n.slice(i + 1)).indexOf(")")),
+                        r = n.indexOf(")"),
+                        o = i(e, "("),
+                        l = i(e, ")");
+                    for (; -1 !== r && o > l; )
+                        ((e += n.slice(0, r + 1)),
+                            (r = (n = n.slice(r + 1)).indexOf(")")),
                             l++);
                     return [e, n];
-                })(n + i);
-                if (!u[0]) return !1;
-                let a = {
+                })(n + r);
+                if (!a[0]) return !1;
+                let s = {
                     type: "link",
                     title: null,
-                    url: l + t + u[0],
-                    children: [{ type: "text", value: t + u[0] }],
+                    url: l + t + a[0],
+                    children: [{ type: "text", value: t + a[0] }],
                 };
-                return u[1] ? [a, { type: "text", value: u[1] }] : a;
+                return a[1] ? [s, { type: "text", value: a[1] }] : s;
             }
-            function k(e, t, n, r) {
+            function b(e, t, n, i) {
                 return (
-                    !(!x(r, !0) || /[-\d_]$/.test(n)) && {
+                    !(!k(i, !0) || /[-\d_]$/.test(n)) && {
                         type: "link",
                         title: null,
                         url: "mailto:" + t + "@" + n,
@@ -1043,14 +224,14 @@
                     }
                 );
             }
-            function x(e, t) {
+            function k(e, t) {
                 let n = e.input.charCodeAt(e.index - 1);
                 return (
                     (0 === e.index || (0, o.Ny)(n) || (0, o.es)(n)) &&
                     (!t || 47 !== n)
                 );
             }
-            var b = n(9638);
+            var x = n(9638);
             function v(e) {
                 this.enter(
                     {
@@ -1062,19 +243,19 @@
                     e
                 );
             }
-            function y() {
+            function C() {
                 this.buffer();
             }
-            function C(e) {
+            function y(e) {
                 let t = this.resume(),
                     n = this.stack[this.stack.length - 1];
-                ((0, i.ok)("footnoteDefinition" === n.type),
+                ((0, r.ok)("footnoteDefinition" === n.type),
                     (n.label = t),
-                    (n.identifier = (0, b.B)(
+                    (n.identifier = (0, x.B)(
                         this.sliceSerialize(e)
                     ).toLowerCase()));
             }
-            function S(e) {
+            function D(e) {
                 this.exit(e);
             }
             function w(e) {
@@ -1083,71 +264,71 @@
                     e
                 );
             }
-            function E() {
+            function F() {
                 this.buffer();
             }
-            function F(e) {
+            function E(e) {
                 let t = this.resume(),
                     n = this.stack[this.stack.length - 1];
-                ((0, i.ok)("footnoteReference" === n.type),
+                ((0, r.ok)("footnoteReference" === n.type),
                     (n.label = t),
-                    (n.identifier = (0, b.B)(
+                    (n.identifier = (0, x.B)(
                         this.sliceSerialize(e)
                     ).toLowerCase()));
             }
-            function I(e) {
+            function S(e) {
                 this.exit(e);
             }
-            function D(e, t, n, r) {
-                let i = n.createTracker(r),
-                    o = i.move("[^"),
+            function A(e, t, n, i) {
+                let r = n.createTracker(i),
+                    o = r.move("[^"),
                     l = n.enter("footnoteReference"),
-                    u = n.enter("reference");
+                    a = n.enter("reference");
                 return (
-                    (o += i.move(
+                    (o += r.move(
                         n.safe(n.associationId(e), {
-                            ...i.current(),
+                            ...r.current(),
                             before: o,
                             after: "]",
                         })
                     )),
-                    u(),
+                    a(),
                     l(),
-                    (o += i.move("]"))
+                    (o += r.move("]"))
                 );
             }
-            function T(e, t, n, r) {
-                let i = n.createTracker(r),
-                    o = i.move("[^"),
+            function L(e, t, n, i) {
+                let r = n.createTracker(i),
+                    o = r.move("[^"),
                     l = n.enter("footnoteDefinition"),
-                    u = n.enter("label");
+                    a = n.enter("label");
                 return (
-                    (o += i.move(
+                    (o += r.move(
                         n.safe(n.associationId(e), {
-                            ...i.current(),
+                            ...r.current(),
                             before: o,
                             after: "]",
                         })
                     )),
-                    u(),
-                    (o += i.move(
+                    a(),
+                    (o += r.move(
                         "]:" + (e.children && e.children.length > 0 ? " " : "")
                     )),
-                    i.shift(4),
-                    (o += i.move(
-                        n.indentLines(n.containerFlow(e, i.current()), z)
+                    r.shift(4),
+                    (o += r.move(
+                        n.indentLines(n.containerFlow(e, r.current()), T)
                     )),
                     l(),
                     o
                 );
             }
-            function z(e, t, n) {
+            function T(e, t, n) {
                 return 0 === t ? e : (n ? "" : "    ") + e;
             }
-            D.peek = function () {
+            A.peek = function () {
                 return "[";
             };
-            let A = [
+            let I = [
                 "autolink",
                 "destinationLiteral",
                 "destinationRaw",
@@ -1155,31 +336,31 @@
                 "titleQuote",
                 "titleApostrophe",
             ];
-            function P(e) {
+            function O(e) {
                 this.enter({ type: "delete", children: [] }, e);
             }
-            function L(e) {
+            function z(e) {
                 this.exit(e);
             }
-            function O(e, t, n, r) {
-                let i = n.createTracker(r),
+            function M(e, t, n, i) {
+                let r = n.createTracker(i),
                     o = n.enter("strikethrough"),
-                    l = i.move("~~");
+                    l = r.move("~~");
                 return (
                     (l += n.containerPhrasing(e, {
-                        ...i.current(),
+                        ...r.current(),
                         before: l,
                         after: "~",
                     })),
-                    (l += i.move("~~")),
+                    (l += r.move("~~")),
                     o(),
                     l
                 );
             }
-            function _(e) {
+            function R(e) {
                 return e.length;
             }
-            function H(e) {
+            function _(e) {
                 let t = "string" == typeof e ? e.codePointAt(0) : 0;
                 return 67 === t || 99 === t
                     ? 99
@@ -1187,13 +368,13 @@
                       ? 108
                       : 114 * (82 === t || 114 === t);
             }
-            O.peek = function () {
+            M.peek = function () {
                 return "~";
             };
-            var M = n(56177);
-            function R(e) {
+            var j = n(56177);
+            function N(e) {
                 let t = e._align;
-                ((0, i.ok)(t, "expected `_align` on table"),
+                ((0, r.ok)(t, "expected `_align` on table"),
                     this.enter(
                         {
                             type: "table",
@@ -1206,35 +387,35 @@
                     ),
                     (this.data.inTable = !0));
             }
-            function B(e) {
+            function P(e) {
                 (this.exit(e), (this.data.inTable = void 0));
             }
-            function N(e) {
+            function H(e) {
                 this.enter({ type: "tableRow", children: [] }, e);
             }
-            function V(e) {
+            function B(e) {
                 this.exit(e);
             }
-            function j(e) {
+            function $(e) {
                 this.enter({ type: "tableCell", children: [] }, e);
             }
-            function q(e) {
+            function W(e) {
                 let t = this.resume();
-                this.data.inTable && (t = t.replace(/\\([\\|])/g, W));
+                this.data.inTable && (t = t.replace(/\\([\\|])/g, q));
                 let n = this.stack[this.stack.length - 1];
-                ((0, i.ok)("inlineCode" === n.type),
+                ((0, r.ok)("inlineCode" === n.type),
                     (n.value = t),
                     this.exit(e));
             }
-            function W(e, t) {
+            function q(e, t) {
                 return "|" === t ? t : e;
             }
-            function Q(e) {
+            function V(e) {
                 let t = this.stack[this.stack.length - 2];
-                ((0, i.ok)("listItem" === t.type),
+                ((0, r.ok)("listItem" === t.type),
                     (t.checked = "taskListCheckValueChecked" === e.type));
             }
-            function $(e) {
+            function Q(e) {
                 let t = this.stack[this.stack.length - 2];
                 if (
                     t &&
@@ -1242,20 +423,20 @@
                     "boolean" == typeof t.checked
                 ) {
                     let e = this.stack[this.stack.length - 1];
-                    (0, i.ok)("paragraph" === e.type);
+                    (0, r.ok)("paragraph" === e.type);
                     let n = e.children[0];
                     if (n && "text" === n.type) {
-                        let r,
-                            i = t.children,
+                        let i,
+                            r = t.children,
                             o = -1;
-                        for (; ++o < i.length; ) {
-                            let e = i[o];
+                        for (; ++o < r.length; ) {
+                            let e = r[o];
                             if ("paragraph" === e.type) {
-                                r = e;
+                                i = e;
                                 break;
                             }
                         }
-                        r === e &&
+                        i === e &&
                             ((n.value = n.value.slice(1)),
                             0 === n.value.length
                                 ? e.children.shift()
@@ -1272,39 +453,39 @@
                 }
                 this.exit(e);
             }
-            function U(e, t, n, r) {
-                let i = e.children[0],
+            function U(e, t, n, i) {
+                let r = e.children[0],
                     o =
                         "boolean" == typeof e.checked &&
-                        i &&
-                        "paragraph" === i.type,
+                        r &&
+                        "paragraph" === r.type,
                     l = "[" + (e.checked ? "x" : " ") + "] ",
-                    u = n.createTracker(r);
-                o && u.move(l);
-                let a = M.p.listItem(e, t, n, { ...r, ...u.current() });
+                    a = n.createTracker(i);
+                o && a.move(l);
+                let s = j.p.listItem(e, t, n, { ...i, ...a.current() });
                 return (
                     o &&
-                        (a = a.replace(
+                        (s = s.replace(
                             /^(?:[*+-]|\d+\.)([\r\n]| {1,3})/,
                             function (e) {
                                 return e + l;
                             }
                         )),
-                    a
+                    s
                 );
             }
-            function J() {
+            function G() {
                 return [
                     {
-                        transforms: [g],
+                        transforms: [p],
                         enter: {
-                            literalAutolink: c,
-                            literalAutolinkEmail: s,
-                            literalAutolinkHttp: s,
-                            literalAutolinkWww: s,
+                            literalAutolink: u,
+                            literalAutolinkEmail: c,
+                            literalAutolinkHttp: c,
+                            literalAutolinkWww: c,
                         },
                         exit: {
-                            literalAutolink: p,
+                            literalAutolink: g,
                             literalAutolinkEmail: d,
                             literalAutolinkHttp: f,
                             literalAutolinkWww: h,
@@ -1313,47 +494,47 @@
                     {
                         enter: {
                             gfmFootnoteDefinition: v,
-                            gfmFootnoteDefinitionLabelString: y,
+                            gfmFootnoteDefinitionLabelString: C,
                             gfmFootnoteCall: w,
-                            gfmFootnoteCallString: E,
+                            gfmFootnoteCallString: F,
                         },
                         exit: {
-                            gfmFootnoteDefinition: S,
-                            gfmFootnoteDefinitionLabelString: C,
-                            gfmFootnoteCall: I,
-                            gfmFootnoteCallString: F,
+                            gfmFootnoteDefinition: D,
+                            gfmFootnoteDefinitionLabelString: y,
+                            gfmFootnoteCall: S,
+                            gfmFootnoteCallString: E,
                         },
                     },
                     {
                         canContainEols: ["delete"],
-                        enter: { strikethrough: P },
-                        exit: { strikethrough: L },
+                        enter: { strikethrough: O },
+                        exit: { strikethrough: z },
                     },
                     {
                         enter: {
-                            table: R,
-                            tableData: j,
-                            tableHeader: j,
-                            tableRow: N,
+                            table: N,
+                            tableData: $,
+                            tableHeader: $,
+                            tableRow: H,
                         },
                         exit: {
-                            codeText: q,
-                            table: B,
-                            tableData: V,
-                            tableHeader: V,
-                            tableRow: V,
+                            codeText: W,
+                            table: P,
+                            tableData: B,
+                            tableHeader: B,
+                            tableRow: B,
                         },
                     },
                     {
                         exit: {
-                            taskListCheckValueChecked: Q,
-                            taskListCheckValueUnchecked: Q,
-                            paragraph: $,
+                            taskListCheckValueChecked: V,
+                            taskListCheckValueUnchecked: V,
+                            paragraph: Q,
                         },
                     },
                 ];
             }
-            function Z(e) {
+            function J(e) {
                 return {
                     extensions: [
                         {
@@ -1362,22 +543,22 @@
                                     character: "@",
                                     before: "[+\\-.\\w]",
                                     after: "[\\-.\\w]",
-                                    inConstruct: u,
-                                    notInConstruct: a,
+                                    inConstruct: a,
+                                    notInConstruct: s,
                                 },
                                 {
                                     character: ".",
                                     before: "[Ww]",
                                     after: "[\\-.\\w]",
-                                    inConstruct: u,
-                                    notInConstruct: a,
+                                    inConstruct: a,
+                                    notInConstruct: s,
                                 },
                                 {
                                     character: ":",
                                     before: "[ps]",
                                     after: "\\/",
-                                    inConstruct: u,
-                                    notInConstruct: a,
+                                    inConstruct: a,
+                                    notInConstruct: s,
                                 },
                             ],
                         },
@@ -1393,8 +574,8 @@
                                 },
                             ],
                             handlers: {
-                                footnoteDefinition: T,
-                                footnoteReference: D,
+                                footnoteDefinition: L,
+                                footnoteReference: A,
                             },
                         },
                         {
@@ -1402,16 +583,16 @@
                                 {
                                     character: "~",
                                     inConstruct: "phrasing",
-                                    notInConstruct: A,
+                                    notInConstruct: I,
                                 },
                             ],
-                            handlers: { delete: O },
+                            handlers: { delete: M },
                         },
                         (function (e) {
                             let t = e || {},
                                 n = t.tableCellPadding,
-                                r = t.tablePipeAlign,
-                                i = t.stringLength,
+                                i = t.tablePipeAlign,
+                                r = t.stringLength,
                                 o = n ? " " : "|";
                             return {
                                 unsafe: [
@@ -1442,135 +623,135 @@
                                 ],
                                 handlers: {
                                     inlineCode: function (e, t, n) {
-                                        let r = M.p.inlineCode(e, t, n);
+                                        let i = j.p.inlineCode(e, t, n);
                                         return (
                                             n.stack.includes("tableCell") &&
-                                                (r = r.replace(/\|/g, "\\$&")),
-                                            r
+                                                (i = i.replace(/\|/g, "\\$&")),
+                                            i
                                         );
                                     },
-                                    table: function (e, t, n, r) {
-                                        return u(
+                                    table: function (e, t, n, i) {
+                                        return a(
                                             (function (e, t, n) {
-                                                let r = e.children,
-                                                    i = -1,
+                                                let i = e.children,
+                                                    r = -1,
                                                     o = [],
                                                     l = t.enter("table");
-                                                for (; ++i < r.length; )
-                                                    o[i] = a(r[i], t, n);
+                                                for (; ++r < i.length; )
+                                                    o[r] = s(i[r], t, n);
                                                 return (l(), o);
-                                            })(e, n, r),
+                                            })(e, n, i),
                                             e.align
                                         );
                                     },
                                     tableCell: l,
-                                    tableRow: function (e, t, n, r) {
-                                        let i = u([a(e, n, r)]);
-                                        return i.slice(
+                                    tableRow: function (e, t, n, i) {
+                                        let r = a([s(e, n, i)]);
+                                        return r.slice(
                                             0,
-                                            i.indexOf(`
+                                            r.indexOf(`
 `)
                                         );
                                     },
                                 },
                             };
-                            function l(e, t, n, r) {
-                                let i = n.enter("tableCell"),
+                            function l(e, t, n, i) {
+                                let r = n.enter("tableCell"),
                                     l = n.enter("phrasing"),
-                                    u = n.containerPhrasing(e, {
-                                        ...r,
+                                    a = n.containerPhrasing(e, {
+                                        ...i,
                                         before: o,
                                         after: o,
                                     });
-                                return (l(), i(), u);
+                                return (l(), r(), a);
                             }
-                            function u(e, t) {
+                            function a(e, t) {
                                 return (function (e, t) {
                                     let n = t || {},
-                                        r = (n.align || []).concat(),
-                                        i = n.stringLength || _,
+                                        i = (n.align || []).concat(),
+                                        r = n.stringLength || R,
                                         o = [],
                                         l = [],
-                                        u = [],
                                         a = [],
-                                        c = 0,
-                                        s = -1;
-                                    for (; ++s < e.length; ) {
+                                        s = [],
+                                        u = 0,
+                                        c = -1;
+                                    for (; ++c < e.length; ) {
                                         let t = [],
-                                            r = [],
+                                            i = [],
                                             o = -1;
                                         for (
-                                            e[s].length > c &&
-                                            (c = e[s].length);
-                                            ++o < e[s].length;
+                                            e[c].length > u &&
+                                            (u = e[c].length);
+                                            ++o < e[c].length;
 
                                         ) {
                                             var f;
                                             let l =
-                                                null == (f = e[s][o])
+                                                null == (f = e[c][o])
                                                     ? ""
                                                     : String(f);
                                             if (!1 !== n.alignDelimiters) {
-                                                let e = i(l);
-                                                ((r[o] = e),
-                                                    (void 0 === a[o] ||
-                                                        e > a[o]) &&
-                                                        (a[o] = e));
+                                                let e = r(l);
+                                                ((i[o] = e),
+                                                    (void 0 === s[o] ||
+                                                        e > s[o]) &&
+                                                        (s[o] = e));
                                             }
                                             t.push(l);
                                         }
-                                        ((l[s] = t), (u[s] = r));
+                                        ((l[c] = t), (a[c] = i));
                                     }
                                     let h = -1;
-                                    if ("object" == typeof r && "length" in r)
-                                        for (; ++h < c; ) o[h] = H(r[h]);
+                                    if ("object" == typeof i && "length" in i)
+                                        for (; ++h < u; ) o[h] = _(i[h]);
                                     else {
-                                        let e = H(r);
-                                        for (; ++h < c; ) o[h] = e;
+                                        let e = _(i);
+                                        for (; ++h < u; ) o[h] = e;
                                     }
                                     h = -1;
                                     let d = [],
-                                        p = [];
-                                    for (; ++h < c; ) {
+                                        g = [];
+                                    for (; ++h < u; ) {
                                         let e = o[h],
                                             t = "",
-                                            r = "";
+                                            i = "";
                                         99 === e
-                                            ? ((t = ":"), (r = ":"))
+                                            ? ((t = ":"), (i = ":"))
                                             : 108 === e
                                               ? (t = ":")
-                                              : 114 === e && (r = ":");
-                                        let i =
+                                              : 114 === e && (i = ":");
+                                        let r =
                                                 !1 === n.alignDelimiters
                                                     ? 1
                                                     : Math.max(
                                                           1,
-                                                          a[h] -
+                                                          s[h] -
                                                               t.length -
-                                                              r.length
+                                                              i.length
                                                       ),
-                                            l = t + "-".repeat(i) + r;
+                                            l = t + "-".repeat(r) + i;
                                         (!1 !== n.alignDelimiters &&
-                                            ((i = t.length + i + r.length) >
-                                                a[h] && (a[h] = i),
-                                            (p[h] = i)),
+                                            ((r = t.length + r + i.length) >
+                                                s[h] && (s[h] = r),
+                                            (g[h] = r)),
                                             (d[h] = l));
                                     }
                                     (l.splice(1, 0, d),
-                                        u.splice(1, 0, p),
-                                        (s = -1));
-                                    let g = [];
-                                    for (; ++s < l.length; ) {
-                                        let e = l[s],
-                                            t = u[s];
+                                        a.splice(1, 0, g),
+                                        (c = -1));
+                                    let p = [];
+                                    for (; ++c < l.length; ) {
+                                        let e = l[c],
+                                            t = a[c];
                                         h = -1;
-                                        let r = [];
-                                        for (; ++h < c; ) {
-                                            let i = e[h] || "",
+                                        let i = [];
+                                        for (; ++h < u; ) {
+                                            let r = e[h] || "",
                                                 l = "",
-                                                u = "";
+                                                a = "";
                                             if (!1 !== n.alignDelimiters) {
-                                                let e = a[h] - (t[h] || 0),
+                                                let e = s[h] - (t[h] || 0),
                                                     n = o[h];
                                                 114 === n
                                                     ? (l = " ".repeat(e))
@@ -1579,57 +760,57 @@
                                                           ? ((l = " ".repeat(
                                                                 e / 2 + 0.5
                                                             )),
-                                                            (u = " ".repeat(
+                                                            (a = " ".repeat(
                                                                 e / 2 - 0.5
                                                             )))
-                                                          : (u = l =
+                                                          : (a = l =
                                                                 " ".repeat(
                                                                     e / 2
                                                                 ))
-                                                      : (u = " ".repeat(e));
+                                                      : (a = " ".repeat(e));
                                             }
                                             (!1 === n.delimiterStart ||
                                                 h ||
-                                                r.push("|"),
+                                                i.push("|"),
                                                 !1 !== n.padding &&
                                                     (!1 !== n.alignDelimiters ||
-                                                        "" !== i) &&
+                                                        "" !== r) &&
                                                     (!1 !== n.delimiterStart ||
                                                         h) &&
-                                                    r.push(" "),
+                                                    i.push(" "),
                                                 !1 !== n.alignDelimiters &&
-                                                    r.push(l),
-                                                r.push(i),
+                                                    i.push(l),
+                                                i.push(r),
                                                 !1 !== n.alignDelimiters &&
-                                                    r.push(u),
-                                                !1 !== n.padding && r.push(" "),
+                                                    i.push(a),
+                                                !1 !== n.padding && i.push(" "),
                                                 (!1 !== n.delimiterEnd ||
-                                                    h !== c - 1) &&
-                                                    r.push("|"));
+                                                    h !== u - 1) &&
+                                                    i.push("|"));
                                         }
-                                        g.push(
+                                        p.push(
                                             !1 === n.delimiterEnd
-                                                ? r.join("").replace(/ +$/, "")
-                                                : r.join("")
+                                                ? i.join("").replace(/ +$/, "")
+                                                : i.join("")
                                         );
                                     }
-                                    return g.join(`
+                                    return p.join(`
 `);
                                 })(e, {
                                     align: t,
-                                    alignDelimiters: r,
+                                    alignDelimiters: i,
                                     padding: n,
-                                    stringLength: i,
+                                    stringLength: r,
                                 });
                             }
-                            function a(e, t, n) {
-                                let r = e.children,
-                                    i = -1,
+                            function s(e, t, n) {
+                                let i = e.children,
+                                    r = -1,
                                     o = [],
-                                    u = t.enter("tableRow");
-                                for (; ++i < r.length; )
-                                    o[i] = l(r[i], e, t, n);
-                                return (u(), o);
+                                    a = t.enter("tableRow");
+                                for (; ++r < i.length; )
+                                    o[r] = l(i[r], e, t, n);
+                                return (a(), o);
                             }
                         })(e),
                         {
@@ -1643,28 +824,28 @@
             }
         },
         56177: (e, t, n) => {
-            function r(e, t, n) {
+            function i(e, t, n) {
                 return ">" + (n ? "" : " ") + e;
             }
-            n.d(t, { p: () => F });
-            var i = n(69384);
-            function o(e, t, n, r) {
+            n.d(t, { p: () => E });
+            var r = n(69384);
+            function o(e, t, n, i) {
                 let o = -1;
                 for (; ++o < n.unsafe.length; )
                     if (
                         `
 ` === n.unsafe[o].character &&
-                        (0, i.q)(n.stack, n.unsafe[o])
+                        (0, r.q)(n.stack, n.unsafe[o])
                     )
-                        return /[ \t]/.test(r.before) ? "" : " ";
+                        return /[ \t]/.test(i.before) ? "" : " ";
                 return `\\
 `;
             }
             var l = n(35857);
-            function u(e, t, n) {
+            function a(e, t, n) {
                 return (n ? "" : "    ") + e;
             }
-            function a(e) {
+            function s(e) {
                 let t = e.options.quote || '"';
                 if ('"' !== t && "'" !== t)
                     throw Error(
@@ -1674,33 +855,33 @@
                     );
                 return t;
             }
-            var c = n(23503),
-                s = n(10691);
+            var u = n(23503),
+                c = n(10691);
             function f(e, t, n) {
-                let r = (0, s.S)(e),
-                    i = (0, s.S)(t);
-                return void 0 === r
-                    ? void 0 === i
+                let i = (0, c.S)(e),
+                    r = (0, c.S)(t);
+                return void 0 === i
+                    ? void 0 === r
                         ? "_" === n
                             ? { inside: !0, outside: !0 }
                             : { inside: !1, outside: !1 }
-                        : 1 === i
+                        : 1 === r
                           ? { inside: !0, outside: !0 }
                           : { inside: !1, outside: !0 }
-                    : 1 === r
-                      ? void 0 === i
+                    : 1 === i
+                      ? void 0 === r
                           ? { inside: !1, outside: !1 }
-                          : 1 === i
+                          : 1 === r
                             ? { inside: !0, outside: !0 }
                             : { inside: !1, outside: !1 }
-                      : void 0 === i
+                      : void 0 === r
                         ? { inside: !1, outside: !1 }
-                        : 1 === i
+                        : 1 === r
                           ? { inside: !0, outside: !1 }
                           : { inside: !1, outside: !1 };
             }
-            function h(e, t, n, r) {
-                let i = (function (e) {
+            function h(e, t, n, i) {
+                let r = (function (e) {
                         let t = e.options.emphasis || "*";
                         if ("*" !== t && "_" !== t)
                             throw Error(
@@ -1711,164 +892,164 @@
                         return t;
                     })(n),
                     o = n.enter("emphasis"),
-                    l = n.createTracker(r),
-                    u = l.move(i),
-                    a = l.move(
+                    l = n.createTracker(i),
+                    a = l.move(r),
+                    s = l.move(
                         n.containerPhrasing(e, {
-                            after: i,
-                            before: u,
+                            after: r,
+                            before: a,
                             ...l.current(),
                         })
                     ),
-                    s = a.charCodeAt(0),
-                    h = f(r.before.charCodeAt(r.before.length - 1), s, i);
-                h.inside && (a = (0, c.T)(s) + a.slice(1));
-                let d = a.charCodeAt(a.length - 1),
-                    p = f(r.after.charCodeAt(0), d, i);
-                p.inside && (a = a.slice(0, -1) + (0, c.T)(d));
-                let g = l.move(i);
+                    c = s.charCodeAt(0),
+                    h = f(i.before.charCodeAt(i.before.length - 1), c, r);
+                h.inside && (s = (0, u.T)(c) + s.slice(1));
+                let d = s.charCodeAt(s.length - 1),
+                    g = f(i.after.charCodeAt(0), d, r);
+                g.inside && (s = s.slice(0, -1) + (0, u.T)(d));
+                let p = l.move(r);
                 return (
                     o(),
                     (n.attentionEncodeSurroundingInfo = {
-                        after: p.outside,
+                        after: g.outside,
                         before: h.outside,
                     }),
-                    u + a + g
+                    a + s + p
                 );
             }
             h.peek = function (e, t, n) {
                 return n.options.emphasis || "*";
             };
             var d = n(5594);
-            function p(e) {
+            function g(e) {
                 return e.value || "";
             }
-            function g(e, t, n, r) {
-                let i = a(n),
-                    o = '"' === i ? "Quote" : "Apostrophe",
+            function p(e, t, n, i) {
+                let r = s(n),
+                    o = '"' === r ? "Quote" : "Apostrophe",
                     l = n.enter("image"),
-                    u = n.enter("label"),
-                    c = n.createTracker(r),
-                    s = c.move("![");
+                    a = n.enter("label"),
+                    u = n.createTracker(i),
+                    c = u.move("![");
                 return (
-                    (s += c.move(
-                        n.safe(e.alt, { before: s, after: "]", ...c.current() })
+                    (c += u.move(
+                        n.safe(e.alt, { before: c, after: "]", ...u.current() })
                     )),
-                    (s += c.move("](")),
-                    u(),
+                    (c += u.move("](")),
+                    a(),
                     (!e.url && e.title) || /[\0- \u007F]/.test(e.url)
-                        ? ((u = n.enter("destinationLiteral")),
-                          (s += c.move("<")),
-                          (s += c.move(
+                        ? ((a = n.enter("destinationLiteral")),
+                          (c += u.move("<")),
+                          (c += u.move(
                               n.safe(e.url, {
-                                  before: s,
+                                  before: c,
                                   after: ">",
-                                  ...c.current(),
+                                  ...u.current(),
                               })
                           )),
-                          (s += c.move(">")))
-                        : ((u = n.enter("destinationRaw")),
-                          (s += c.move(
+                          (c += u.move(">")))
+                        : ((a = n.enter("destinationRaw")),
+                          (c += u.move(
                               n.safe(e.url, {
-                                  before: s,
+                                  before: c,
                                   after: e.title ? " " : ")",
-                                  ...c.current(),
+                                  ...u.current(),
                               })
                           ))),
-                    u(),
+                    a(),
                     e.title &&
-                        ((u = n.enter(`title${o}`)),
-                        (s += c.move(" " + i)),
-                        (s += c.move(
+                        ((a = n.enter(`title${o}`)),
+                        (c += u.move(" " + r)),
+                        (c += u.move(
                             n.safe(e.title, {
-                                before: s,
-                                after: i,
-                                ...c.current(),
+                                before: c,
+                                after: r,
+                                ...u.current(),
                             })
                         )),
-                        (s += c.move(i)),
-                        u()),
-                    (s += c.move(")")),
+                        (c += u.move(r)),
+                        a()),
+                    (c += u.move(")")),
                     l(),
-                    s
+                    c
                 );
             }
-            function m(e, t, n, r) {
-                let i = e.referenceType,
+            function m(e, t, n, i) {
+                let r = e.referenceType,
                     o = n.enter("imageReference"),
                     l = n.enter("label"),
-                    u = n.createTracker(r),
-                    a = u.move("!["),
-                    c = n.safe(e.alt, {
-                        before: a,
+                    a = n.createTracker(i),
+                    s = a.move("!["),
+                    u = n.safe(e.alt, {
+                        before: s,
                         after: "]",
-                        ...u.current(),
+                        ...a.current(),
                     });
-                ((a += u.move(c + "][")), l());
-                let s = n.stack;
+                ((s += a.move(u + "][")), l());
+                let c = n.stack;
                 ((n.stack = []), (l = n.enter("reference")));
                 let f = n.safe(n.associationId(e), {
-                    before: a,
+                    before: s,
                     after: "]",
-                    ...u.current(),
+                    ...a.current(),
                 });
                 return (
                     l(),
-                    (n.stack = s),
+                    (n.stack = c),
                     o(),
-                    "full" !== i && c && c === f
-                        ? "shortcut" === i
-                            ? (a = a.slice(0, -1))
-                            : (a += u.move("]"))
-                        : (a += u.move(f + "]")),
-                    a
+                    "full" !== r && u && u === f
+                        ? "shortcut" === r
+                            ? (s = s.slice(0, -1))
+                            : (s += a.move("]"))
+                        : (s += a.move(f + "]")),
+                    s
                 );
             }
-            function k(e, t, n) {
-                let r = e.value || "",
-                    i = "`",
+            function b(e, t, n) {
+                let i = e.value || "",
+                    r = "`",
                     o = -1;
-                for (; RegExp("(^|[^`])" + i + "([^`]|$)").test(r); ) i += "`";
+                for (; RegExp("(^|[^`])" + r + "([^`]|$)").test(i); ) r += "`";
                 for (
-                    /[^ \r\n]/.test(r) &&
-                    ((/^[ \r\n]/.test(r) && /[ \r\n]$/.test(r)) ||
-                        /^`|`$/.test(r)) &&
-                    (r = " " + r + " ");
+                    /[^ \r\n]/.test(i) &&
+                    ((/^[ \r\n]/.test(i) && /[ \r\n]$/.test(i)) ||
+                        /^`|`$/.test(i)) &&
+                    (i = " " + i + " ");
                     ++o < n.unsafe.length;
 
                 ) {
                     let e,
                         t = n.unsafe[o],
-                        i = n.compilePattern(t);
+                        r = n.compilePattern(t);
                     if (t.atBreak)
-                        for (; (e = i.exec(r)); ) {
+                        for (; (e = r.exec(i)); ) {
                             let t = e.index;
-                            (10 === r.charCodeAt(t) &&
-                                13 === r.charCodeAt(t - 1) &&
+                            (10 === i.charCodeAt(t) &&
+                                13 === i.charCodeAt(t - 1) &&
                                 t--,
-                                (r =
-                                    r.slice(0, t) +
+                                (i =
+                                    i.slice(0, t) +
                                     " " +
-                                    r.slice(e.index + 1)));
+                                    i.slice(e.index + 1)));
                         }
                 }
-                return i + r + i;
+                return r + i + r;
             }
-            ((p.peek = function () {
+            ((g.peek = function () {
                 return "<";
             }),
-                (g.peek = function () {
+                (p.peek = function () {
                     return "!";
                 }),
                 (m.peek = function () {
                     return "!";
                 }),
-                (k.peek = function () {
+                (b.peek = function () {
                     return "`";
                 }));
-            var x = n(72534);
-            function b(e, t) {
-                let n = (0, x.d)(e);
+            var k = n(72534);
+            function x(e, t) {
+                let n = (0, k.d)(e);
                 return !!(
                     !t.options.resourceLink &&
                     e.url &&
@@ -1881,111 +1062,111 @@
                     !/[\0- <>\u007F]/.test(e.url)
                 );
             }
-            function v(e, t, n, r) {
-                let i,
+            function v(e, t, n, i) {
+                let r,
                     o,
-                    l = a(n),
-                    u = '"' === l ? "Quote" : "Apostrophe",
-                    c = n.createTracker(r);
-                if (b(e, n)) {
+                    l = s(n),
+                    a = '"' === l ? "Quote" : "Apostrophe",
+                    u = n.createTracker(i);
+                if (x(e, n)) {
                     let t = n.stack;
-                    ((n.stack = []), (i = n.enter("autolink")));
-                    let r = c.move("<");
+                    ((n.stack = []), (r = n.enter("autolink")));
+                    let i = u.move("<");
                     return (
-                        (r += c.move(
+                        (i += u.move(
                             n.containerPhrasing(e, {
-                                before: r,
+                                before: i,
                                 after: ">",
-                                ...c.current(),
+                                ...u.current(),
                             })
                         )),
-                        (r += c.move(">")),
-                        i(),
+                        (i += u.move(">")),
+                        r(),
                         (n.stack = t),
-                        r
+                        i
                     );
                 }
-                ((i = n.enter("link")), (o = n.enter("label")));
-                let s = c.move("[");
+                ((r = n.enter("link")), (o = n.enter("label")));
+                let c = u.move("[");
                 return (
-                    (s += c.move(
+                    (c += u.move(
                         n.containerPhrasing(e, {
-                            before: s,
+                            before: c,
                             after: "](",
-                            ...c.current(),
+                            ...u.current(),
                         })
                     )),
-                    (s += c.move("](")),
+                    (c += u.move("](")),
                     o(),
                     (!e.url && e.title) || /[\0- \u007F]/.test(e.url)
                         ? ((o = n.enter("destinationLiteral")),
-                          (s += c.move("<")),
-                          (s += c.move(
+                          (c += u.move("<")),
+                          (c += u.move(
                               n.safe(e.url, {
-                                  before: s,
+                                  before: c,
                                   after: ">",
-                                  ...c.current(),
+                                  ...u.current(),
                               })
                           )),
-                          (s += c.move(">")))
+                          (c += u.move(">")))
                         : ((o = n.enter("destinationRaw")),
-                          (s += c.move(
+                          (c += u.move(
                               n.safe(e.url, {
-                                  before: s,
+                                  before: c,
                                   after: e.title ? " " : ")",
-                                  ...c.current(),
+                                  ...u.current(),
                               })
                           ))),
                     o(),
                     e.title &&
-                        ((o = n.enter(`title${u}`)),
-                        (s += c.move(" " + l)),
-                        (s += c.move(
+                        ((o = n.enter(`title${a}`)),
+                        (c += u.move(" " + l)),
+                        (c += u.move(
                             n.safe(e.title, {
-                                before: s,
+                                before: c,
                                 after: l,
-                                ...c.current(),
+                                ...u.current(),
                             })
                         )),
-                        (s += c.move(l)),
+                        (c += u.move(l)),
                         o()),
-                    (s += c.move(")")),
-                    i(),
-                    s
+                    (c += u.move(")")),
+                    r(),
+                    c
                 );
             }
-            function y(e, t, n, r) {
-                let i = e.referenceType,
+            function C(e, t, n, i) {
+                let r = e.referenceType,
                     o = n.enter("linkReference"),
                     l = n.enter("label"),
-                    u = n.createTracker(r),
-                    a = u.move("["),
-                    c = n.containerPhrasing(e, {
-                        before: a,
+                    a = n.createTracker(i),
+                    s = a.move("["),
+                    u = n.containerPhrasing(e, {
+                        before: s,
                         after: "]",
-                        ...u.current(),
+                        ...a.current(),
                     });
-                ((a += u.move(c + "][")), l());
-                let s = n.stack;
+                ((s += a.move(u + "][")), l());
+                let c = n.stack;
                 ((n.stack = []), (l = n.enter("reference")));
                 let f = n.safe(n.associationId(e), {
-                    before: a,
+                    before: s,
                     after: "]",
-                    ...u.current(),
+                    ...a.current(),
                 });
                 return (
                     l(),
-                    (n.stack = s),
+                    (n.stack = c),
                     o(),
-                    "full" !== i && c && c === f
-                        ? "shortcut" === i
-                            ? (a = a.slice(0, -1))
-                            : (a += u.move("]"))
-                        : (a += u.move(f + "]")),
-                    a
+                    "full" !== r && u && u === f
+                        ? "shortcut" === r
+                            ? (s = s.slice(0, -1))
+                            : (s += a.move("]"))
+                        : (s += a.move(f + "]")),
+                    s
                 );
             }
-            function C(e) {
+            function y(e) {
                 let t = e.options.bullet || "*";
                 if ("*" !== t && "+" !== t && "-" !== t)
                     throw Error(
@@ -1995,7 +1176,7 @@
                     );
                 return t;
             }
-            function S(e) {
+            function D(e) {
                 let t = e.options.rule || "*";
                 if ("*" !== t && "-" !== t && "_" !== t)
                     throw Error(
@@ -2006,9 +1187,9 @@
                 return t;
             }
             ((v.peek = function (e, t, n) {
-                return b(e, n) ? "<" : "[";
+                return x(e, n) ? "<" : "[";
             }),
-                (y.peek = function () {
+                (C.peek = function () {
                     return "[";
                 }));
             let w = (0, n(69143).C)([
@@ -2029,8 +1210,8 @@
                 "text",
                 "textDirective",
             ]);
-            function E(e, t, n, r) {
-                let i = (function (e) {
+            function F(e, t, n, i) {
+                let r = (function (e) {
                         let t = e.options.strong || "*";
                         if ("*" !== t && "_" !== t)
                             throw Error(
@@ -2041,45 +1222,45 @@
                         return t;
                     })(n),
                     o = n.enter("strong"),
-                    l = n.createTracker(r),
-                    u = l.move(i + i),
-                    a = l.move(
+                    l = n.createTracker(i),
+                    a = l.move(r + r),
+                    s = l.move(
                         n.containerPhrasing(e, {
-                            after: i,
-                            before: u,
+                            after: r,
+                            before: a,
                             ...l.current(),
                         })
                     ),
-                    s = a.charCodeAt(0),
-                    h = f(r.before.charCodeAt(r.before.length - 1), s, i);
-                h.inside && (a = (0, c.T)(s) + a.slice(1));
-                let d = a.charCodeAt(a.length - 1),
-                    p = f(r.after.charCodeAt(0), d, i);
-                p.inside && (a = a.slice(0, -1) + (0, c.T)(d));
-                let g = l.move(i + i);
+                    c = s.charCodeAt(0),
+                    h = f(i.before.charCodeAt(i.before.length - 1), c, r);
+                h.inside && (s = (0, u.T)(c) + s.slice(1));
+                let d = s.charCodeAt(s.length - 1),
+                    g = f(i.after.charCodeAt(0), d, r);
+                g.inside && (s = s.slice(0, -1) + (0, u.T)(d));
+                let p = l.move(r + r);
                 return (
                     o(),
                     (n.attentionEncodeSurroundingInfo = {
-                        after: p.outside,
+                        after: g.outside,
                         before: h.outside,
                     }),
-                    u + a + g
+                    a + s + p
                 );
             }
-            E.peek = function (e, t, n) {
+            F.peek = function (e, t, n) {
                 return n.options.strong || "*";
             };
-            let F = {
-                blockquote: function (e, t, n, i) {
+            let E = {
+                blockquote: function (e, t, n, r) {
                     let o = n.enter("blockquote"),
-                        l = n.createTracker(i);
+                        l = n.createTracker(r);
                     (l.move("> "), l.shift(2));
-                    let u = n.indentLines(n.containerFlow(e, l.current()), r);
-                    return (o(), u);
+                    let a = n.indentLines(n.containerFlow(e, l.current()), i);
+                    return (o(), a);
                 },
                 break: o,
-                code: function (e, t, n, r) {
-                    let i = (function (e) {
+                code: function (e, t, n, i) {
+                    let r = (function (e) {
                             let t = e.options.fence || "`";
                             if ("`" !== t && "~" !== t)
                                 throw Error(
@@ -2090,138 +1271,138 @@
                             return t;
                         })(n),
                         o = e.value || "",
-                        a = "`" === i ? "GraveAccent" : "Tilde";
+                        s = "`" === r ? "GraveAccent" : "Tilde";
                     if ((0, l.m)(e, n)) {
                         let e = n.enter("codeIndented"),
-                            t = n.indentLines(o, u);
+                            t = n.indentLines(o, a);
                         return (e(), t);
                     }
-                    let c = n.createTracker(r),
-                        s = i.repeat(
+                    let u = n.createTracker(i),
+                        c = r.repeat(
                             Math.max(
                                 (function (e, t) {
                                     let n = String(e),
-                                        r = n.indexOf(t),
-                                        i = r,
+                                        i = n.indexOf(t),
+                                        r = i,
                                         o = 0,
                                         l = 0;
                                     if ("string" != typeof t)
                                         throw TypeError("Expected substring");
-                                    for (; -1 !== r; )
-                                        (r === i ? ++o > l && (l = o) : (o = 1),
-                                            (i = r + t.length),
-                                            (r = n.indexOf(t, i)));
+                                    for (; -1 !== i; )
+                                        (i === r ? ++o > l && (l = o) : (o = 1),
+                                            (r = i + t.length),
+                                            (i = n.indexOf(t, r)));
                                     return l;
-                                })(o, i) + 1,
+                                })(o, r) + 1,
                                 3
                             )
                         ),
                         f = n.enter("codeFenced"),
-                        h = c.move(s);
+                        h = u.move(c);
                     if (e.lang) {
-                        let t = n.enter(`codeFencedLang${a}`);
-                        ((h += c.move(
+                        let t = n.enter(`codeFencedLang${s}`);
+                        ((h += u.move(
                             n.safe(e.lang, {
                                 before: h,
                                 after: " ",
                                 encode: ["`"],
-                                ...c.current(),
+                                ...u.current(),
                             })
                         )),
                             t());
                     }
                     if (e.lang && e.meta) {
-                        let t = n.enter(`codeFencedMeta${a}`);
-                        ((h += c.move(" ")),
-                            (h += c.move(
+                        let t = n.enter(`codeFencedMeta${s}`);
+                        ((h += u.move(" ")),
+                            (h += u.move(
                                 n.safe(e.meta, {
                                     before: h,
                                     after: `
 `,
                                     encode: ["`"],
-                                    ...c.current(),
+                                    ...u.current(),
                                 })
                             )),
                             t());
                     }
                     return (
-                        (h += c.move(`
+                        (h += u.move(`
 `)),
                         o &&
-                            (h += c.move(
+                            (h += u.move(
                                 o +
                                     `
 `
                             )),
-                        (h += c.move(s)),
+                        (h += u.move(c)),
                         f(),
                         h
                     );
                 },
-                definition: function (e, t, n, r) {
-                    let i = a(n),
-                        o = '"' === i ? "Quote" : "Apostrophe",
+                definition: function (e, t, n, i) {
+                    let r = s(n),
+                        o = '"' === r ? "Quote" : "Apostrophe",
                         l = n.enter("definition"),
-                        u = n.enter("label"),
-                        c = n.createTracker(r),
-                        s = c.move("[");
+                        a = n.enter("label"),
+                        u = n.createTracker(i),
+                        c = u.move("[");
                     return (
-                        (s += c.move(
+                        (c += u.move(
                             n.safe(n.associationId(e), {
-                                before: s,
+                                before: c,
                                 after: "]",
-                                ...c.current(),
+                                ...u.current(),
                             })
                         )),
-                        (s += c.move("]: ")),
-                        u(),
+                        (c += u.move("]: ")),
+                        a(),
                         !e.url || /[\0- \u007F]/.test(e.url)
-                            ? ((u = n.enter("destinationLiteral")),
-                              (s += c.move("<")),
-                              (s += c.move(
+                            ? ((a = n.enter("destinationLiteral")),
+                              (c += u.move("<")),
+                              (c += u.move(
                                   n.safe(e.url, {
-                                      before: s,
+                                      before: c,
                                       after: ">",
-                                      ...c.current(),
+                                      ...u.current(),
                                   })
                               )),
-                              (s += c.move(">")))
-                            : ((u = n.enter("destinationRaw")),
-                              (s += c.move(
+                              (c += u.move(">")))
+                            : ((a = n.enter("destinationRaw")),
+                              (c += u.move(
                                   n.safe(e.url, {
-                                      before: s,
+                                      before: c,
                                       after: e.title
                                           ? " "
                                           : `
 `,
-                                      ...c.current(),
+                                      ...u.current(),
                                   })
                               ))),
-                        u(),
+                        a(),
                         e.title &&
-                            ((u = n.enter(`title${o}`)),
-                            (s += c.move(" " + i)),
-                            (s += c.move(
+                            ((a = n.enter(`title${o}`)),
+                            (c += u.move(" " + r)),
+                            (c += u.move(
                                 n.safe(e.title, {
-                                    before: s,
-                                    after: i,
-                                    ...c.current(),
+                                    before: c,
+                                    after: r,
+                                    ...u.current(),
                                 })
                             )),
-                            (s += c.move(i)),
-                            u()),
+                            (c += u.move(r)),
+                            a()),
                         l(),
-                        s
+                        c
                     );
                 },
                 emphasis: h,
                 hardBreak: o,
-                heading: function (e, t, n, r) {
-                    let i = Math.max(Math.min(6, e.depth || 1), 1),
-                        o = n.createTracker(r);
+                heading: function (e, t, n, i) {
+                    let r = Math.max(Math.min(6, e.depth || 1), 1),
+                        o = n.createTracker(i);
                     if ((0, d.f)(e, n)) {
                         let t = n.enter("headingSetext"),
-                            r = n.enter("phrasing"),
+                            i = n.enter("phrasing"),
                             l = n.containerPhrasing(e, {
                                 ...o.current(),
                                 before: `
@@ -2230,12 +1411,12 @@
 `,
                             });
                         return (
-                            r(),
+                            i(),
                             t(),
                             l +
                                 `
 ` +
-                                (1 === i ? "=" : "-").repeat(
+                                (1 === r ? "=" : "-").repeat(
                                     l.length -
                                         (Math.max(
                                             l.lastIndexOf("\r"),
@@ -2246,34 +1427,34 @@
                                 )
                         );
                     }
-                    let l = "#".repeat(i),
-                        u = n.enter("headingAtx"),
-                        a = n.enter("phrasing");
+                    let l = "#".repeat(r),
+                        a = n.enter("headingAtx"),
+                        s = n.enter("phrasing");
                     o.move(l + " ");
-                    let s = n.containerPhrasing(e, {
+                    let c = n.containerPhrasing(e, {
                         before: "# ",
                         after: `
 `,
                         ...o.current(),
                     });
                     return (
-                        /^[\t ]/.test(s) &&
-                            (s = (0, c.T)(s.charCodeAt(0)) + s.slice(1)),
-                        (s = s ? l + " " + s : l),
-                        n.options.closeAtx && (s += " " + l),
+                        /^[\t ]/.test(c) &&
+                            (c = (0, u.T)(c.charCodeAt(0)) + c.slice(1)),
+                        (c = c ? l + " " + c : l),
+                        n.options.closeAtx && (c += " " + l),
+                        s(),
                         a(),
-                        u(),
-                        s
+                        c
                     );
                 },
-                html: p,
-                image: g,
+                html: g,
+                image: p,
                 imageReference: m,
-                inlineCode: k,
+                inlineCode: b,
                 link: v,
-                linkReference: y,
-                list: function (e, t, n, r) {
-                    let i = n.enter("list"),
+                linkReference: C,
+                list: function (e, t, n, i) {
+                    let r = n.enter("list"),
                         o = n.bulletCurrent,
                         l = e.ordered
                             ? (function (e) {
@@ -2286,13 +1467,13 @@
                                       );
                                   return t;
                               })(n)
-                            : C(n),
-                        u = e.ordered
+                            : y(n),
+                        a = e.ordered
                             ? "." === l
                                 ? ")"
                                 : "."
                             : (function (e) {
-                                  let t = C(e),
+                                  let t = y(e),
                                       n = e.options.bulletOther;
                                   if (!n) return "*" === t ? "-" : "*";
                                   if ("*" !== n && "+" !== n && "-" !== n)
@@ -2311,7 +1492,7 @@
                                       );
                                   return n;
                               })(n),
-                        a = !!t && !!n.bulletLastUsed && l === n.bulletLastUsed;
+                        s = !!t && !!n.bulletLastUsed && l === n.bulletLastUsed;
                     if (!e.ordered) {
                         let t = e.children ? e.children[0] : void 0;
                         if (
@@ -2325,8 +1506,8 @@
                                 0 !== n.indexStack[n.indexStack.length - 1] ||
                                 0 !== n.indexStack[n.indexStack.length - 2] ||
                                 0 !== n.indexStack[n.indexStack.length - 3] ||
-                                (a = !0),
-                            S(n) === l && t)
+                                (s = !0),
+                            D(n) === l && t)
                         ) {
                             let t = -1;
                             for (; ++t < e.children.length; ) {
@@ -2338,23 +1519,23 @@
                                     n.children[0] &&
                                     "thematicBreak" === n.children[0].type
                                 ) {
-                                    a = !0;
+                                    s = !0;
                                     break;
                                 }
                             }
                         }
                     }
-                    (a && (l = u), (n.bulletCurrent = l));
-                    let c = n.containerFlow(e, r);
+                    (s && (l = a), (n.bulletCurrent = l));
+                    let u = n.containerFlow(e, i);
                     return (
                         (n.bulletLastUsed = l),
                         (n.bulletCurrent = o),
-                        i(),
-                        c
+                        r(),
+                        u
                     );
                 },
-                listItem: function (e, t, n, r) {
-                    let i = (function (e) {
+                listItem: function (e, t, n, i) {
+                    let r = (function (e) {
                             let t = e.options.listItemIndent || "one";
                             if ("tab" !== t && "one" !== t && "mixed" !== t)
                                 throw Error(
@@ -2364,7 +1545,7 @@
                                 );
                             return t;
                         })(n),
-                        o = n.bulletCurrent || C(n);
+                        o = n.bulletCurrent || y(n);
                     t &&
                         "list" === t.type &&
                         t.ordered &&
@@ -2377,16 +1558,16 @@
                                 : t.children.indexOf(e)) +
                             o);
                     let l = o.length + 1;
-                    ("tab" === i ||
-                        ("mixed" === i &&
+                    ("tab" === r ||
+                        ("mixed" === r &&
                             ((t && "list" === t.type && t.spread) ||
                                 e.spread))) &&
                         (l = 4 * Math.ceil(l / 4));
-                    let u = n.createTracker(r);
-                    (u.move(o + " ".repeat(l - o.length)), u.shift(l));
-                    let a = n.enter("listItem"),
-                        c = n.indentLines(
-                            n.containerFlow(e, u.current()),
+                    let a = n.createTracker(i);
+                    (a.move(o + " ".repeat(l - o.length)), a.shift(l));
+                    let s = n.enter("listItem"),
+                        u = n.indentLines(
+                            n.containerFlow(e, a.current()),
                             function (e, t, n) {
                                 return t
                                     ? (n ? "" : " ".repeat(l)) + e
@@ -2394,29 +1575,29 @@
                                           e;
                             }
                         );
-                    return (a(), c);
+                    return (s(), u);
                 },
-                paragraph: function (e, t, n, r) {
-                    let i = n.enter("paragraph"),
+                paragraph: function (e, t, n, i) {
+                    let r = n.enter("paragraph"),
                         o = n.enter("phrasing"),
-                        l = n.containerPhrasing(e, r);
-                    return (o(), i(), l);
+                        l = n.containerPhrasing(e, i);
+                    return (o(), r(), l);
                 },
-                root: function (e, t, n, r) {
+                root: function (e, t, n, i) {
                     return (
                         e.children.some(function (e) {
                             return w(e);
                         })
                             ? n.containerPhrasing
                             : n.containerFlow
-                    ).call(n, e, r);
+                    ).call(n, e, i);
                 },
-                strong: E,
-                text: function (e, t, n, r) {
-                    return n.safe(e.value, r);
+                strong: F,
+                text: function (e, t, n, i) {
+                    return n.safe(e.value, i);
                 },
                 thematicBreak: function (e, t, n) {
-                    let r = (S(n) + (n.options.ruleSpaces ? " " : "")).repeat(
+                    let i = (D(n) + (n.options.ruleSpaces ? " " : "")).repeat(
                         (function (e) {
                             let t = e.options.ruleRepetition || 3;
                             if (t < 3)
@@ -2428,19 +1609,19 @@
                             return t;
                         })(n)
                     );
-                    return n.options.ruleSpaces ? r.slice(0, -1) : r;
+                    return n.options.ruleSpaces ? i.slice(0, -1) : i;
                 },
             };
         },
         23503: (e, t, n) => {
-            n.d(t, { T: () => r });
-            function r(e) {
+            n.d(t, { T: () => i });
+            function i(e) {
                 return "&#x" + e.toString(16).toUpperCase() + ";";
             }
         },
         35857: (e, t, n) => {
-            n.d(t, { m: () => r });
-            function r(e, t) {
+            n.d(t, { m: () => i });
+            function i(e, t) {
                 return !!(
                     !1 === t.options.fences &&
                     e.value &&
@@ -2452,18 +1633,18 @@
         },
         5594: (e, t, n) => {
             n.d(t, { f: () => l });
-            var r = n(47970),
-                i = n(76814),
+            var i = n(47970),
+                r = n(76814),
                 o = n(72534);
             function l(e, t) {
                 let n = !1;
                 return (
-                    (0, r.YR)(e, function (e) {
+                    (0, i.YR)(e, function (e) {
                         if (
                             ("value" in e && /\r?\n|\r/.test(e.value)) ||
                             "break" === e.type
                         )
-                            return ((n = !0), i.dc);
+                            return ((n = !0), r.dc);
                     }),
                     !!(
                         (!e.depth || e.depth < 3) &&
@@ -2474,79 +1655,33 @@
             }
         },
         69384: (e, t, n) => {
-            function r(e, t) {
-                return i(e, t.inConstruct, !0) && !i(e, t.notInConstruct, !1);
+            function i(e, t) {
+                return r(e, t.inConstruct, !0) && !r(e, t.notInConstruct, !1);
             }
-            function i(e, t, n) {
+            function r(e, t, n) {
                 if (("string" == typeof t && (t = [t]), !t || 0 === t.length))
                     return n;
-                let r = -1;
-                for (; ++r < t.length; ) if (e.includes(t[r])) return !0;
+                let i = -1;
+                for (; ++i < t.length; ) if (e.includes(t[i])) return !0;
                 return !1;
             }
-            n.d(t, { q: () => r });
-        },
-        72534: (e, t, n) => {
-            n.d(t, { d: () => i });
-            let r = {};
-            function i(e, t) {
-                let n = t || r;
-                return o(
-                    e,
-                    "boolean" != typeof n.includeImageAlt || n.includeImageAlt,
-                    "boolean" != typeof n.includeHtml || n.includeHtml
-                );
-            }
-            function o(e, t, n) {
-                var r;
-                if ((r = e) && "object" == typeof r) {
-                    if ("value" in e)
-                        return "html" !== e.type || n ? e.value : "";
-                    if (t && "alt" in e && e.alt) return e.alt;
-                    if ("children" in e) return l(e.children, t, n);
-                }
-                return Array.isArray(e) ? l(e, t, n) : "";
-            }
-            function l(e, t, n) {
-                let r = [],
-                    i = -1;
-                for (; ++i < e.length; ) r[i] = o(e[i], t, n);
-                return r.join("");
-            }
-        },
-        9283: (e, t, n) => {
-            n.d(t, { B: () => o });
-            var r = n(40433),
-                i = n(40574);
-            let o = {
-                partial: !0,
-                tokenize: function (e, t, n) {
-                    return function (t) {
-                        return (0, i.On)(t)
-                            ? (0, r.N)(e, o, "linePrefix")(t)
-                            : o(t);
-                    };
-                    function o(e) {
-                        return null === e || (0, i.HP)(e) ? t(e) : n(e);
-                    }
-                },
-            };
+            n.d(t, { q: () => i });
         },
         84600: (e, t, n) => {
             n.d(t, { T: () => X, I: () => ee });
-            var r = n(5389),
-                i = n(40574);
+            var i = n(5389),
+                r = n(40574);
             let o = {
                     tokenize: function (e, t, n) {
-                        let r = 0;
+                        let i = 0;
                         return function t(o) {
-                            return (87 === o || 119 === o) && r < 3
-                                ? (r++, e.consume(o), t)
-                                : 46 === o && 3 === r
-                                  ? (e.consume(o), i)
+                            return (87 === o || 119 === o) && i < 3
+                                ? (i++, e.consume(o), t)
+                                : 46 === o && 3 === i
+                                  ? (e.consume(o), r)
                                   : n(o);
                         };
-                        function i(e) {
+                        function r(e) {
                             return null === e ? n(e) : t(e);
                         }
                     },
@@ -2554,110 +1689,110 @@
                 },
                 l = {
                     tokenize: function (e, t, n) {
-                        let r, o, l;
-                        return u;
-                        function u(t) {
+                        let i, o, l;
+                        return a;
+                        function a(t) {
                             return 46 === t || 95 === t
-                                ? e.check(a, s, c)(t)
+                                ? e.check(s, c, u)(t)
                                 : null === t ||
-                                    (0, i.Ee)(t) ||
-                                    (0, i.Ny)(t) ||
-                                    (45 !== t && (0, i.es)(t))
-                                  ? s(t)
-                                  : ((l = !0), e.consume(t), u);
+                                    (0, r.Ee)(t) ||
+                                    (0, r.Ny)(t) ||
+                                    (45 !== t && (0, r.es)(t))
+                                  ? c(t)
+                                  : ((l = !0), e.consume(t), a);
                         }
-                        function c(t) {
+                        function u(t) {
                             return (
-                                95 === t ? (r = !0) : ((o = r), (r = void 0)),
+                                95 === t ? (i = !0) : ((o = i), (i = void 0)),
                                 e.consume(t),
-                                u
+                                a
                             );
                         }
-                        function s(e) {
-                            return o || r || !l ? n(e) : t(e);
-                        }
-                    },
-                    partial: !0,
-                },
-                u = {
-                    tokenize: function (e, t) {
-                        let n = 0,
-                            r = 0;
-                        return o;
-                        function o(u) {
-                            return 40 === u
-                                ? (n++, e.consume(u), o)
-                                : 41 === u && r < n
-                                  ? l(u)
-                                  : 33 === u ||
-                                      34 === u ||
-                                      38 === u ||
-                                      39 === u ||
-                                      41 === u ||
-                                      42 === u ||
-                                      44 === u ||
-                                      46 === u ||
-                                      58 === u ||
-                                      59 === u ||
-                                      60 === u ||
-                                      63 === u ||
-                                      93 === u ||
-                                      95 === u ||
-                                      126 === u
-                                    ? e.check(a, t, l)(u)
-                                    : null === u || (0, i.Ee)(u) || (0, i.Ny)(u)
-                                      ? t(u)
-                                      : (e.consume(u), o);
-                        }
-                        function l(t) {
-                            return (41 === t && r++, e.consume(t), o);
+                        function c(e) {
+                            return o || i || !l ? n(e) : t(e);
                         }
                     },
                     partial: !0,
                 },
                 a = {
+                    tokenize: function (e, t) {
+                        let n = 0,
+                            i = 0;
+                        return o;
+                        function o(a) {
+                            return 40 === a
+                                ? (n++, e.consume(a), o)
+                                : 41 === a && i < n
+                                  ? l(a)
+                                  : 33 === a ||
+                                      34 === a ||
+                                      38 === a ||
+                                      39 === a ||
+                                      41 === a ||
+                                      42 === a ||
+                                      44 === a ||
+                                      46 === a ||
+                                      58 === a ||
+                                      59 === a ||
+                                      60 === a ||
+                                      63 === a ||
+                                      93 === a ||
+                                      95 === a ||
+                                      126 === a
+                                    ? e.check(s, t, l)(a)
+                                    : null === a || (0, r.Ee)(a) || (0, r.Ny)(a)
+                                      ? t(a)
+                                      : (e.consume(a), o);
+                        }
+                        function l(t) {
+                            return (41 === t && i++, e.consume(t), o);
+                        }
+                    },
+                    partial: !0,
+                },
+                s = {
                     tokenize: function (e, t, n) {
-                        return r;
-                        function r(u) {
-                            return 33 === u ||
-                                34 === u ||
-                                39 === u ||
-                                41 === u ||
-                                42 === u ||
-                                44 === u ||
-                                46 === u ||
-                                58 === u ||
-                                59 === u ||
-                                63 === u ||
-                                95 === u ||
-                                126 === u
-                                ? (e.consume(u), r)
-                                : 38 === u
-                                  ? (e.consume(u), l)
-                                  : 93 === u
-                                    ? (e.consume(u), o)
-                                    : 60 === u ||
-                                        null === u ||
-                                        (0, i.Ee)(u) ||
-                                        (0, i.Ny)(u)
-                                      ? t(u)
-                                      : n(u);
+                        return i;
+                        function i(a) {
+                            return 33 === a ||
+                                34 === a ||
+                                39 === a ||
+                                41 === a ||
+                                42 === a ||
+                                44 === a ||
+                                46 === a ||
+                                58 === a ||
+                                59 === a ||
+                                63 === a ||
+                                95 === a ||
+                                126 === a
+                                ? (e.consume(a), i)
+                                : 38 === a
+                                  ? (e.consume(a), l)
+                                  : 93 === a
+                                    ? (e.consume(a), o)
+                                    : 60 === a ||
+                                        null === a ||
+                                        (0, r.Ee)(a) ||
+                                        (0, r.Ny)(a)
+                                      ? t(a)
+                                      : n(a);
                         }
                         function o(e) {
                             return null === e ||
                                 40 === e ||
                                 91 === e ||
-                                (0, i.Ee)(e) ||
-                                (0, i.Ny)(e)
+                                (0, r.Ee)(e) ||
+                                (0, r.Ny)(e)
                                 ? t(e)
-                                : r(e);
+                                : i(e);
                         }
                         function l(t) {
-                            return (0, i.CW)(t)
+                            return (0, r.CW)(t)
                                 ? (function t(o) {
                                       return 59 === o
-                                          ? (e.consume(o), r)
-                                          : (0, i.CW)(o)
+                                          ? (e.consume(o), i)
+                                          : (0, r.CW)(o)
                                             ? (e.consume(o), t)
                                             : n(o);
                                   })(t)
@@ -2666,35 +1801,35 @@
                     },
                     partial: !0,
                 },
-                c = {
+                u = {
                     tokenize: function (e, t, n) {
                         return function (t) {
-                            return (e.consume(t), r);
+                            return (e.consume(t), i);
                         };
-                        function r(e) {
-                            return (0, i.lV)(e) ? n(e) : t(e);
+                        function i(e) {
+                            return (0, r.lV)(e) ? n(e) : t(e);
                         }
                     },
                     partial: !0,
                 },
-                s = {
+                c = {
                     name: "wwwAutolink",
                     tokenize: function (e, t, n) {
-                        let r = this;
+                        let i = this;
                         return function (t) {
                             return (87 !== t && 119 !== t) ||
-                                !g.call(r, r.previous) ||
-                                b(r.events)
+                                !p.call(i, i.previous) ||
+                                x(i.events)
                                 ? n(t)
                                 : (e.enter("literalAutolink"),
                                   e.enter("literalAutolinkWww"),
                                   e.check(
                                       o,
-                                      e.attempt(l, e.attempt(u, i), n),
+                                      e.attempt(l, e.attempt(a, r), n),
                                       n
                                   )(t));
                         };
-                        function i(n) {
+                        function r(n) {
                             return (
                                 e.exit("literalAutolinkWww"),
                                 e.exit("literalAutolink"),
@@ -2702,54 +1837,54 @@
                             );
                         }
                     },
-                    previous: g,
+                    previous: p,
                 },
                 f = {
                     name: "protocolAutolink",
                     tokenize: function (e, t, n) {
-                        let r = this,
+                        let i = this,
                             o = "",
-                            a = !1;
+                            s = !1;
                         return function (t) {
                             return (72 === t || 104 === t) &&
-                                m.call(r, r.previous) &&
-                                !b(r.events)
+                                m.call(i, i.previous) &&
+                                !x(i.events)
                                 ? (e.enter("literalAutolink"),
                                   e.enter("literalAutolinkHttp"),
                                   (o += String.fromCodePoint(t)),
                                   e.consume(t),
-                                  c)
+                                  u)
                                 : n(t);
                         };
-                        function c(t) {
-                            if ((0, i.CW)(t) && o.length < 5)
+                        function u(t) {
+                            if ((0, r.CW)(t) && o.length < 5)
                                 return (
                                     (o += String.fromCodePoint(t)),
                                     e.consume(t),
-                                    c
+                                    u
                                 );
                             if (58 === t) {
                                 let n = o.toLowerCase();
                                 if ("http" === n || "https" === n)
-                                    return (e.consume(t), s);
+                                    return (e.consume(t), c);
                             }
                             return n(t);
                         }
-                        function s(t) {
+                        function c(t) {
                             return 47 === t
-                                ? (e.consume(t), a)
+                                ? (e.consume(t), s)
                                     ? f
-                                    : ((a = !0), s)
+                                    : ((s = !0), c)
                                 : n(t);
                         }
                         function f(t) {
                             return null === t ||
-                                (0, i.JQ)(t) ||
-                                (0, i.Ee)(t) ||
-                                (0, i.Ny)(t) ||
-                                (0, i.es)(t)
+                                (0, r.JQ)(t) ||
+                                (0, r.Ee)(t) ||
+                                (0, r.Ny)(t) ||
+                                (0, r.es)(t)
                                 ? n(t)
-                                : e.attempt(l, e.attempt(u, h), n)(t);
+                                : e.attempt(l, e.attempt(a, h), n)(t);
                         }
                         function h(n) {
                             return (
@@ -2764,49 +1899,49 @@
                 h = {
                     name: "emailAutolink",
                     tokenize: function (e, t, n) {
-                        let r,
+                        let i,
                             o,
                             l = this;
                         return function (t) {
-                            return !x(t) ||
-                                !k.call(l, l.previous) ||
-                                b(l.events)
+                            return !k(t) ||
+                                !b.call(l, l.previous) ||
+                                x(l.events)
                                 ? n(t)
                                 : (e.enter("literalAutolink"),
                                   e.enter("literalAutolinkEmail"),
-                                  (function t(r) {
-                                      return x(r)
-                                          ? (e.consume(r), t)
-                                          : 64 === r
-                                            ? (e.consume(r), u)
-                                            : n(r);
+                                  (function t(i) {
+                                      return k(i)
+                                          ? (e.consume(i), t)
+                                          : 64 === i
+                                            ? (e.consume(i), a)
+                                            : n(i);
                                   })(t));
                         };
-                        function u(t) {
-                            return 46 === t
-                                ? e.check(c, s, a)(t)
-                                : 45 === t || 95 === t || (0, i.lV)(t)
-                                  ? ((o = !0), e.consume(t), u)
-                                  : s(t);
-                        }
                         function a(t) {
-                            return (e.consume(t), (r = !0), u);
+                            return 46 === t
+                                ? e.check(u, c, s)(t)
+                                : 45 === t || 95 === t || (0, r.lV)(t)
+                                  ? ((o = !0), e.consume(t), a)
+                                  : c(t);
                         }
-                        function s(u) {
-                            return o && r && (0, i.CW)(l.previous)
+                        function s(t) {
+                            return (e.consume(t), (i = !0), a);
+                        }
+                        function c(a) {
+                            return o && i && (0, r.CW)(l.previous)
                                 ? (e.exit("literalAutolinkEmail"),
                                   e.exit("literalAutolink"),
-                                  t(u))
-                                : n(u);
+                                  t(a))
+                                : n(a);
                         }
                     },
-                    previous: k,
+                    previous: b,
                 },
                 d = {},
-                p = 48;
-            for (; p < 123; )
-                ((d[p] = h), 58 == ++p ? (p = 65) : 91 === p && (p = 97));
-            function g(e) {
+                g = 48;
+            for (; g < 123; )
+                ((d[g] = h), 58 == ++g ? (g = 65) : 91 === g && (g = 97));
+            function p(e) {
                 return (
                     null === e ||
                     40 === e ||
@@ -2815,33 +1950,33 @@
                     91 === e ||
                     93 === e ||
                     126 === e ||
-                    (0, i.Ee)(e)
+                    (0, r.Ee)(e)
                 );
             }
             function m(e) {
-                return !(0, i.CW)(e);
-            }
-            function k(e) {
-                return !(47 === e || x(e));
-            }
-            function x(e) {
-                return (
-                    43 === e || 45 === e || 46 === e || 95 === e || (0, i.lV)(e)
-                );
+                return !(0, r.CW)(e);
             }
             function b(e) {
+                return !(47 === e || k(e));
+            }
+            function k(e) {
+                return (
+                    43 === e || 45 === e || 46 === e || 95 === e || (0, r.lV)(e)
+                );
+            }
+            function x(e) {
                 let t = e.length,
                     n = !1;
                 for (; t--; ) {
-                    let r = e[t][1];
+                    let i = e[t][1];
                     if (
-                        ("labelLink" === r.type || "labelImage" === r.type) &&
-                        !r._balanced
+                        ("labelLink" === i.type || "labelImage" === i.type) &&
+                        !i._balanced
                     ) {
                         n = !0;
                         break;
                     }
-                    if (r._gfmAutolinkLiteralWalkedInto) {
+                    if (i._gfmAutolinkLiteralWalkedInto) {
                         n = !1;
                         break;
                     }
@@ -2859,16 +1994,16 @@
                 (d[95] = h),
                 (d[72] = [h, f]),
                 (d[104] = [h, f]),
-                (d[87] = [h, s]),
-                (d[119] = [h, s]));
+                (d[87] = [h, c]),
+                (d[119] = [h, c]));
             var v = n(63215);
-            function y(e) {
+            function C(e) {
                 w.call(this, e, "http://");
             }
-            function C(e) {
+            function y(e) {
                 w.call(this, e, "mailto:");
             }
-            function S(e) {
+            function D(e) {
                 w.call(this, e);
             }
             function w(e, t) {
@@ -2877,19 +2012,19 @@
                     this.raw(this.encode(n)),
                     this.tag("</a>"));
             }
-            var E = n(9283),
-                F = n(40433),
-                I = n(9638);
-            let D = {
+            var F = n(9283),
+                E = n(40433),
+                S = n(9638);
+            let A = {
                 tokenize: function (e, t, n) {
-                    let r = this;
-                    return (0, F.N)(
+                    let i = this;
+                    return (0, E.N)(
                         e,
                         function (e) {
-                            let i = r.events[r.events.length - 1];
-                            return i &&
-                                "gfmFootnoteDefinitionIndent" === i[1].type &&
-                                4 === i[2].sliceSerialize(i[1], !0).length
+                            let r = i.events[i.events.length - 1];
+                            return r &&
+                                "gfmFootnoteDefinitionIndent" === r[1].type &&
+                                4 === r[2].sliceSerialize(r[1], !0).length
                                 ? t(e)
                                 : n(e);
                         },
@@ -2899,15 +2034,15 @@
                 },
                 partial: !0,
             };
-            function T(e, t, n) {
-                let r,
-                    i = this,
-                    o = i.events.length,
-                    l = i.parser.gfmFootnotes || (i.parser.gfmFootnotes = []);
+            function L(e, t, n) {
+                let i,
+                    r = this,
+                    o = r.events.length,
+                    l = r.parser.gfmFootnotes || (r.parser.gfmFootnotes = []);
                 for (; o--; ) {
-                    let e = i.events[o][1];
+                    let e = r.events[o][1];
                     if ("labelImage" === e.type) {
-                        r = e;
+                        i = e;
                         break;
                     }
                     if (
@@ -2920,11 +2055,11 @@
                         break;
                 }
                 return function (o) {
-                    if (!r || !r._balanced) return n(o);
-                    let u = (0, I.B)(
-                        i.sliceSerialize({ start: r.end, end: i.now() })
+                    if (!i || !i._balanced) return n(o);
+                    let a = (0, S.B)(
+                        r.sliceSerialize({ start: i.end, end: r.now() })
                     );
-                    return 94 === u.codePointAt(0) && l.includes(u.slice(1))
+                    return 94 === a.codePointAt(0) && l.includes(a.slice(1))
                         ? (e.enter("gfmFootnoteCallLabelMarker"),
                           e.consume(o),
                           e.exit("gfmFootnoteCallLabelMarker"),
@@ -2932,7 +2067,7 @@
                         : n(o);
                 };
             }
-            function z(e, t) {
+            function T(e, t) {
                 let n = e.length;
                 for (; n--; )
                     if ("labelImage" === e[n][1].type && "enter" === e[n][0]) {
@@ -2941,20 +2076,20 @@
                     }
                 ((e[n + 1][1].type = "data"),
                     (e[n + 3][1].type = "gfmFootnoteCallLabelMarker"));
-                let r = {
+                let i = {
                         type: "gfmFootnoteCall",
                         start: Object.assign({}, e[n + 3][1].start),
                         end: Object.assign({}, e[e.length - 1][1].end),
                     },
-                    i = {
+                    r = {
                         type: "gfmFootnoteCallMarker",
                         start: Object.assign({}, e[n + 3][1].end),
                         end: Object.assign({}, e[n + 3][1].end),
                     };
-                (i.end.column++, i.end.offset++, i.end._bufferIndex++);
+                (r.end.column++, r.end.offset++, r.end._bufferIndex++);
                 let o = {
                         type: "gfmFootnoteCallString",
-                        start: Object.assign({}, i.end),
+                        start: Object.assign({}, r.end),
                         end: Object.assign({}, e[e.length - 1][1].start),
                     },
                     l = {
@@ -2963,39 +2098,39 @@
                         start: Object.assign({}, o.start),
                         end: Object.assign({}, o.end),
                     },
-                    u = [
+                    a = [
                         e[n + 1],
                         e[n + 2],
-                        ["enter", r, t],
+                        ["enter", i, t],
                         e[n + 3],
                         e[n + 4],
-                        ["enter", i, t],
-                        ["exit", i, t],
+                        ["enter", r, t],
+                        ["exit", r, t],
                         ["enter", o, t],
                         ["enter", l, t],
                         ["exit", l, t],
                         ["exit", o, t],
                         e[e.length - 2],
                         e[e.length - 1],
-                        ["exit", r, t],
+                        ["exit", i, t],
                     ];
-                return (e.splice(n, e.length - n + 1, ...u), e);
+                return (e.splice(n, e.length - n + 1, ...a), e);
             }
-            function A(e, t, n) {
-                let r,
+            function I(e, t, n) {
+                let i,
                     o = this,
                     l = o.parser.gfmFootnotes || (o.parser.gfmFootnotes = []),
-                    u = 0;
+                    a = 0;
                 return function (t) {
                     return (
                         e.enter("gfmFootnoteCall"),
                         e.enter("gfmFootnoteCallLabelMarker"),
                         e.consume(t),
                         e.exit("gfmFootnoteCallLabelMarker"),
-                        a
+                        s
                     );
                 };
-                function a(t) {
+                function s(t) {
                     return 94 !== t
                         ? n(t)
                         : (e.enter("gfmFootnoteCallMarker"),
@@ -3003,47 +2138,47 @@
                           e.exit("gfmFootnoteCallMarker"),
                           e.enter("gfmFootnoteCallString"),
                           (e.enter("chunkString").contentType = "string"),
-                          c);
+                          u);
                 }
-                function c(a) {
+                function u(s) {
                     if (
-                        u > 999 ||
-                        (93 === a && !r) ||
-                        null === a ||
-                        91 === a ||
-                        (0, i.Ee)(a)
+                        a > 999 ||
+                        (93 === s && !i) ||
+                        null === s ||
+                        91 === s ||
+                        (0, r.Ee)(s)
                     )
-                        return n(a);
-                    if (93 === a) {
+                        return n(s);
+                    if (93 === s) {
                         e.exit("chunkString");
-                        let r = e.exit("gfmFootnoteCallString");
-                        return l.includes((0, I.B)(o.sliceSerialize(r)))
+                        let i = e.exit("gfmFootnoteCallString");
+                        return l.includes((0, S.B)(o.sliceSerialize(i)))
                             ? (e.enter("gfmFootnoteCallLabelMarker"),
-                              e.consume(a),
+                              e.consume(s),
                               e.exit("gfmFootnoteCallLabelMarker"),
                               e.exit("gfmFootnoteCall"),
                               t)
-                            : n(a);
+                            : n(s);
                     }
                     return (
-                        (0, i.Ee)(a) || (r = !0),
-                        u++,
-                        e.consume(a),
-                        92 === a ? s : c
+                        (0, r.Ee)(s) || (i = !0),
+                        a++,
+                        e.consume(s),
+                        92 === s ? c : u
                     );
                 }
-                function s(t) {
+                function c(t) {
                     return 91 === t || 92 === t || 93 === t
-                        ? (e.consume(t), u++, c)
-                        : c(t);
+                        ? (e.consume(t), a++, u)
+                        : u(t);
                 }
             }
-            function P(e, t, n) {
-                let r,
+            function O(e, t, n) {
+                let i,
                     o,
                     l = this,
-                    u = l.parser.gfmFootnotes || (l.parser.gfmFootnotes = []),
-                    a = 0;
+                    a = l.parser.gfmFootnotes || (l.parser.gfmFootnotes = []),
+                    s = 0;
                 return function (t) {
                     return (
                         (e.enter("gfmFootnoteDefinition")._container = !0),
@@ -3051,33 +2186,33 @@
                         e.enter("gfmFootnoteDefinitionLabelMarker"),
                         e.consume(t),
                         e.exit("gfmFootnoteDefinitionLabelMarker"),
-                        c
+                        u
                     );
                 };
-                function c(t) {
+                function u(t) {
                     return 94 === t
                         ? (e.enter("gfmFootnoteDefinitionMarker"),
                           e.consume(t),
                           e.exit("gfmFootnoteDefinitionMarker"),
                           e.enter("gfmFootnoteDefinitionLabelString"),
                           (e.enter("chunkString").contentType = "string"),
-                          s)
+                          c)
                         : n(t);
                 }
-                function s(t) {
+                function c(t) {
                     if (
-                        a > 999 ||
+                        s > 999 ||
                         (93 === t && !o) ||
                         null === t ||
                         91 === t ||
-                        (0, i.Ee)(t)
+                        (0, r.Ee)(t)
                     )
                         return n(t);
                     if (93 === t) {
                         e.exit("chunkString");
                         let n = e.exit("gfmFootnoteDefinitionLabelString");
                         return (
-                            (r = (0, I.B)(l.sliceSerialize(n))),
+                            (i = (0, S.B)(l.sliceSerialize(n))),
                             e.enter("gfmFootnoteDefinitionLabelMarker"),
                             e.consume(t),
                             e.exit("gfmFootnoteDefinitionLabelMarker"),
@@ -3086,61 +2221,61 @@
                         );
                     }
                     return (
-                        (0, i.Ee)(t) || (o = !0),
-                        a++,
+                        (0, r.Ee)(t) || (o = !0),
+                        s++,
                         e.consume(t),
-                        92 === t ? f : s
+                        92 === t ? f : c
                     );
                 }
                 function f(t) {
                     return 91 === t || 92 === t || 93 === t
-                        ? (e.consume(t), a++, s)
-                        : s(t);
+                        ? (e.consume(t), s++, c)
+                        : c(t);
                 }
                 function h(t) {
                     return 58 === t
                         ? (e.enter("definitionMarker"),
                           e.consume(t),
                           e.exit("definitionMarker"),
-                          u.includes(r) || u.push(r),
-                          (0, F.N)(e, d, "gfmFootnoteDefinitionWhitespace"))
+                          a.includes(i) || a.push(i),
+                          (0, E.N)(e, d, "gfmFootnoteDefinitionWhitespace"))
                         : n(t);
                 }
                 function d(e) {
                     return t(e);
                 }
             }
-            function L(e, t, n) {
-                return e.check(E.B, t, e.attempt(D, t, n));
+            function z(e, t, n) {
+                return e.check(F.B, t, e.attempt(A, t, n));
             }
-            function O(e) {
+            function M(e) {
                 e.exit("gfmFootnoteDefinition");
             }
-            let _ = {}.hasOwnProperty,
-                H = {};
-            function M(e, t) {
+            let R = {}.hasOwnProperty,
+                _ = {};
+            function j(e, t) {
                 return "Back to reference " + (e + 1) + (t > 1 ? "-" + t : "");
             }
-            var R = n(82777),
-                B = n(10691),
-                N = n(45535);
+            var N = n(82777),
+                P = n(10691),
+                H = n(45535);
             let EditMap = class EditMap {
                 constructor() {
                     this.map = [];
                 }
                 add(e, t, n) {
-                    !(function (e, t, n, r) {
-                        let i = 0;
-                        if (0 !== n || 0 !== r.length) {
-                            for (; i < e.map.length; ) {
-                                if (e.map[i][0] === t) {
-                                    ((e.map[i][1] += n),
-                                        e.map[i][2].push(...r));
+                    !(function (e, t, n, i) {
+                        let r = 0;
+                        if (0 !== n || 0 !== i.length) {
+                            for (; r < e.map.length; ) {
+                                if (e.map[r][0] === t) {
+                                    ((e.map[r][1] += n),
+                                        e.map[r][2].push(...i));
                                     return;
                                 }
-                                i += 1;
+                                r += 1;
                             }
-                            e.map.push([t, n, r]);
+                            e.map.push([t, n, i]);
                         }
                     })(this, e, t, n);
                 }
@@ -3162,16 +2297,16 @@
                             ),
                             (e.length = this.map[t][0]));
                     (n.push([...e]), (e.length = 0));
-                    let r = n.pop();
-                    for (; r; ) (e.push(...r), (r = n.pop()));
+                    let i = n.pop();
+                    for (; i; ) (e.push(...i), (i = n.pop()));
                     this.map.length = 0;
                 }
             };
-            function V(e, t, n) {
-                let r,
+            function B(e, t, n) {
+                let i,
                     o = this,
                     l = 0,
-                    u = 0;
+                    a = 0;
                 return function (e) {
                     let t = o.events.length - 1;
                     for (; t > -1; ) {
@@ -3179,25 +2314,25 @@
                         if ("lineEnding" === e || "linePrefix" === e) t--;
                         else break;
                     }
-                    let r = t > -1 ? o.events[t][1].type : null,
-                        i = "tableHead" === r || "tableRow" === r ? b : a;
-                    return i === b && o.parser.lazy[o.now().line] ? n(e) : i(e);
+                    let i = t > -1 ? o.events[t][1].type : null,
+                        r = "tableHead" === i || "tableRow" === i ? x : s;
+                    return r === x && o.parser.lazy[o.now().line] ? n(e) : r(e);
                 };
-                function a(t) {
+                function s(t) {
                     var n;
                     return (
                         e.enter("tableHead"),
                         e.enter("tableRow"),
-                        124 === (n = t) || ((r = !0), (u += 1)),
-                        c(n)
+                        124 === (n = t) || ((i = !0), (a += 1)),
+                        u(n)
                     );
                 }
-                function c(t) {
+                function u(t) {
                     return null === t
                         ? n(t)
-                        : (0, i.HP)(t)
-                          ? u > 1
-                              ? ((u = 0),
+                        : (0, r.HP)(t)
+                          ? a > 1
+                              ? ((a = 0),
                                 (o.interrupt = !0),
                                 e.exit("tableRow"),
                                 e.enter("lineEnding"),
@@ -3205,29 +2340,29 @@
                                 e.exit("lineEnding"),
                                 h)
                               : n(t)
-                          : (0, i.On)(t)
-                            ? (0, F.N)(e, c, "whitespace")(t)
-                            : ((u += 1), r && ((r = !1), (l += 1)), 124 === t)
+                          : (0, r.On)(t)
+                            ? (0, E.N)(e, u, "whitespace")(t)
+                            : ((a += 1), i && ((i = !1), (l += 1)), 124 === t)
                               ? (e.enter("tableCellDivider"),
                                 e.consume(t),
                                 e.exit("tableCellDivider"),
-                                (r = !0),
-                                c)
-                              : (e.enter("data"), s(t));
+                                (i = !0),
+                                u)
+                              : (e.enter("data"), c(t));
                 }
-                function s(t) {
-                    return null === t || 124 === t || (0, i.Ee)(t)
-                        ? (e.exit("data"), c(t))
-                        : (e.consume(t), 92 === t ? f : s);
+                function c(t) {
+                    return null === t || 124 === t || (0, r.Ee)(t)
+                        ? (e.exit("data"), u(t))
+                        : (e.consume(t), 92 === t ? f : c);
                 }
                 function f(t) {
-                    return 92 === t || 124 === t ? (e.consume(t), s) : s(t);
+                    return 92 === t || 124 === t ? (e.consume(t), c) : c(t);
                 }
                 function h(t) {
                     return ((o.interrupt = !1), o.parser.lazy[o.now().line])
                         ? n(t)
-                        : (e.enter("tableDelimiterRow"), (r = !1), (0, i.On)(t))
-                          ? (0, F.N)(
+                        : (e.enter("tableDelimiterRow"), (i = !1), (0, r.On)(t))
+                          ? (0, E.N)(
                                 e,
                                 d,
                                 "linePrefix",
@@ -3241,32 +2376,32 @@
                 }
                 function d(t) {
                     return 45 === t || 58 === t
-                        ? g(t)
+                        ? p(t)
                         : 124 === t
-                          ? ((r = !0),
+                          ? ((i = !0),
                             e.enter("tableCellDivider"),
                             e.consume(t),
                             e.exit("tableCellDivider"),
-                            p)
+                            g)
                           : n(t);
                 }
-                function p(t) {
-                    return (0, i.On)(t)
-                        ? (0, F.N)(e, g, "whitespace")(t)
-                        : g(t);
-                }
                 function g(t) {
+                    return (0, r.On)(t)
+                        ? (0, E.N)(e, p, "whitespace")(t)
+                        : p(t);
+                }
+                function p(t) {
                     return 58 === t
-                        ? ((u += 1),
-                          (r = !0),
+                        ? ((a += 1),
+                          (i = !0),
                           e.enter("tableDelimiterMarker"),
                           e.consume(t),
                           e.exit("tableDelimiterMarker"),
                           m)
                         : 45 === t
-                          ? ((u += 1), m(t))
-                          : null === t || (0, i.HP)(t)
-                            ? x(t)
+                          ? ((a += 1), m(t))
+                          : null === t || (0, r.HP)(t)
+                            ? k(t)
                             : n(t);
                 }
                 function m(t) {
@@ -3276,32 +2411,32 @@
                               return 45 === n
                                   ? (e.consume(n), t)
                                   : 58 === n
-                                    ? ((r = !0),
+                                    ? ((i = !0),
                                       e.exit("tableDelimiterFiller"),
                                       e.enter("tableDelimiterMarker"),
                                       e.consume(n),
                                       e.exit("tableDelimiterMarker"),
-                                      k)
-                                    : (e.exit("tableDelimiterFiller"), k(n));
+                                      b)
+                                    : (e.exit("tableDelimiterFiller"), b(n));
                           })(t))
                         : n(t);
                 }
-                function k(t) {
-                    return (0, i.On)(t)
-                        ? (0, F.N)(e, x, "whitespace")(t)
-                        : x(t);
+                function b(t) {
+                    return (0, r.On)(t)
+                        ? (0, E.N)(e, k, "whitespace")(t)
+                        : k(t);
                 }
-                function x(o) {
+                function k(o) {
                     if (124 === o) return d(o);
-                    if (null === o || (0, i.HP)(o))
-                        return r && l === u
+                    if (null === o || (0, r.HP)(o))
+                        return i && l === a
                             ? (e.exit("tableDelimiterRow"),
                               e.exit("tableHead"),
                               t(o))
                             : n(o);
                     return n(o);
                 }
-                function b(t) {
+                function x(t) {
                     return (e.enter("tableRow"), v(t));
                 }
                 function v(n) {
@@ -3310,102 +2445,102 @@
                           e.consume(n),
                           e.exit("tableCellDivider"),
                           v)
-                        : null === n || (0, i.HP)(n)
+                        : null === n || (0, r.HP)(n)
                           ? (e.exit("tableRow"), t(n))
-                          : (0, i.On)(n)
-                            ? (0, F.N)(e, v, "whitespace")(n)
-                            : (e.enter("data"), y(n));
-                }
-                function y(t) {
-                    return null === t || 124 === t || (0, i.Ee)(t)
-                        ? (e.exit("data"), v(t))
-                        : (e.consume(t), 92 === t ? C : y);
+                          : (0, r.On)(n)
+                            ? (0, E.N)(e, v, "whitespace")(n)
+                            : (e.enter("data"), C(n));
                 }
                 function C(t) {
-                    return 92 === t || 124 === t ? (e.consume(t), y) : y(t);
+                    return null === t || 124 === t || (0, r.Ee)(t)
+                        ? (e.exit("data"), v(t))
+                        : (e.consume(t), 92 === t ? y : C);
+                }
+                function y(t) {
+                    return 92 === t || 124 === t ? (e.consume(t), C) : C(t);
                 }
             }
-            function j(e, t) {
+            function $(e, t) {
                 let n,
-                    r,
                     i,
+                    r,
                     o = -1,
                     l = !0,
-                    u = 0,
-                    a = [0, 0, 0, 0],
-                    c = [0, 0, 0, 0],
-                    s = !1,
+                    a = 0,
+                    s = [0, 0, 0, 0],
+                    u = [0, 0, 0, 0],
+                    c = !1,
                     f = 0,
                     h = new EditMap();
                 for (; ++o < e.length; ) {
                     let d = e[o],
-                        p = d[1];
+                        g = d[1];
                     "enter" === d[0]
-                        ? "tableHead" === p.type
-                            ? ((s = !1),
+                        ? "tableHead" === g.type
+                            ? ((c = !1),
                               0 !== f &&
-                                  (W(h, t, f, n, r), (r = void 0), (f = 0)),
+                                  (q(h, t, f, n, i), (i = void 0), (f = 0)),
                               (n = {
                                   type: "table",
-                                  start: Object.assign({}, p.start),
-                                  end: Object.assign({}, p.end),
+                                  start: Object.assign({}, g.start),
+                                  end: Object.assign({}, g.end),
                               }),
                               h.add(o, 0, [["enter", n, t]]))
-                            : "tableRow" === p.type ||
-                                "tableDelimiterRow" === p.type
+                            : "tableRow" === g.type ||
+                                "tableDelimiterRow" === g.type
                               ? ((l = !0),
-                                (i = void 0),
-                                (a = [0, 0, 0, 0]),
-                                (c = [0, o + 1, 0, 0]),
-                                s &&
-                                    ((s = !1),
-                                    (r = {
+                                (r = void 0),
+                                (s = [0, 0, 0, 0]),
+                                (u = [0, o + 1, 0, 0]),
+                                c &&
+                                    ((c = !1),
+                                    (i = {
                                         type: "tableBody",
-                                        start: Object.assign({}, p.start),
-                                        end: Object.assign({}, p.end),
+                                        start: Object.assign({}, g.start),
+                                        end: Object.assign({}, g.end),
                                     }),
-                                    h.add(o, 0, [["enter", r, t]])),
-                                (u =
-                                    "tableDelimiterRow" === p.type
+                                    h.add(o, 0, [["enter", i, t]])),
+                                (a =
+                                    "tableDelimiterRow" === g.type
                                         ? 2
-                                        : r
+                                        : i
                                           ? 3
                                           : 1))
-                              : u &&
-                                  ("data" === p.type ||
-                                      "tableDelimiterMarker" === p.type ||
-                                      "tableDelimiterFiller" === p.type)
+                              : a &&
+                                  ("data" === g.type ||
+                                      "tableDelimiterMarker" === g.type ||
+                                      "tableDelimiterFiller" === g.type)
                                 ? ((l = !1),
-                                  0 === c[2] &&
-                                      (0 !== a[1] &&
-                                          ((c[0] = c[1]),
-                                          (i = q(h, t, a, u, void 0, i)),
-                                          (a = [0, 0, 0, 0])),
-                                      (c[2] = o)))
-                                : "tableCellDivider" === p.type &&
+                                  0 === u[2] &&
+                                      (0 !== s[1] &&
+                                          ((u[0] = u[1]),
+                                          (r = W(h, t, s, a, void 0, r)),
+                                          (s = [0, 0, 0, 0])),
+                                      (u[2] = o)))
+                                : "tableCellDivider" === g.type &&
                                   (l
                                       ? (l = !1)
-                                      : (0 !== a[1] &&
-                                            ((c[0] = c[1]),
-                                            (i = q(h, t, a, u, void 0, i))),
-                                        (c = [(a = c)[1], o, 0, 0])))
-                        : "tableHead" === p.type
-                          ? ((s = !0), (f = o))
-                          : "tableRow" === p.type ||
-                              "tableDelimiterRow" === p.type
+                                      : (0 !== s[1] &&
+                                            ((u[0] = u[1]),
+                                            (r = W(h, t, s, a, void 0, r))),
+                                        (u = [(s = u)[1], o, 0, 0])))
+                        : "tableHead" === g.type
+                          ? ((c = !0), (f = o))
+                          : "tableRow" === g.type ||
+                              "tableDelimiterRow" === g.type
                             ? ((f = o),
-                              0 !== a[1]
-                                  ? ((c[0] = c[1]), (i = q(h, t, a, u, o, i)))
-                                  : 0 !== c[1] && (i = q(h, t, c, u, o, i)),
-                              (u = 0))
-                            : u &&
-                              ("data" === p.type ||
-                                  "tableDelimiterMarker" === p.type ||
-                                  "tableDelimiterFiller" === p.type) &&
-                              (c[3] = o);
+                              0 !== s[1]
+                                  ? ((u[0] = u[1]), (r = W(h, t, s, a, o, r)))
+                                  : 0 !== u[1] && (r = W(h, t, u, a, o, r)),
+                              (a = 0))
+                            : a &&
+                              ("data" === g.type ||
+                                  "tableDelimiterMarker" === g.type ||
+                                  "tableDelimiterFiller" === g.type) &&
+                              (u[3] = o);
                 }
                 for (
-                    0 !== f && W(h, t, f, n, r), h.consume(t.events), o = -1;
+                    0 !== f && q(h, t, f, n, i), h.consume(t.events), o = -1;
                     ++o < t.events.length;
 
                 ) {
@@ -3414,55 +2549,55 @@
                         "table" === e[1].type &&
                         (e[1]._align = (function (e, t) {
                             let n = !1,
-                                r = [];
+                                i = [];
                             for (; t < e.length; ) {
-                                let i = e[t];
+                                let r = e[t];
                                 if (n) {
-                                    if ("enter" === i[0])
-                                        "tableContent" === i[1].type &&
-                                            r.push(
+                                    if ("enter" === r[0])
+                                        "tableContent" === r[1].type &&
+                                            i.push(
                                                 "tableDelimiterMarker" ===
                                                     e[t + 1][1].type
                                                     ? "left"
                                                     : "none"
                                             );
-                                    else if ("tableContent" === i[1].type) {
+                                    else if ("tableContent" === r[1].type) {
                                         if (
                                             "tableDelimiterMarker" ===
                                             e[t - 1][1].type
                                         ) {
-                                            let e = r.length - 1;
-                                            r[e] =
-                                                "left" === r[e]
+                                            let e = i.length - 1;
+                                            i[e] =
+                                                "left" === i[e]
                                                     ? "center"
                                                     : "right";
                                         }
                                     } else if (
-                                        "tableDelimiterRow" === i[1].type
+                                        "tableDelimiterRow" === r[1].type
                                     )
                                         break;
                                 } else
-                                    "enter" === i[0] &&
-                                        "tableDelimiterRow" === i[1].type &&
+                                    "enter" === r[0] &&
+                                        "tableDelimiterRow" === r[1].type &&
                                         (n = !0);
                                 t += 1;
                             }
-                            return r;
+                            return i;
                         })(t.events, o));
                 }
                 return e;
             }
-            function q(e, t, n, r, i, o) {
+            function W(e, t, n, i, r, o) {
                 0 !== n[0] &&
-                    ((o.end = Object.assign({}, Q(t.events, n[0]))),
+                    ((o.end = Object.assign({}, V(t.events, n[0]))),
                     e.add(n[0], 0, [["exit", o, t]]));
-                let l = Q(t.events, n[1]);
+                let l = V(t.events, n[1]);
                 if (
                     ((o = {
                         type:
-                            1 === r
+                            1 === i
                                 ? "tableHeader"
-                                : 2 === r
+                                : 2 === i
                                   ? "tableDelimiter"
                                   : "tableData",
                         start: Object.assign({}, l),
@@ -3471,51 +2606,51 @@
                     e.add(n[1], 0, [["enter", o, t]]),
                     0 !== n[2])
                 ) {
-                    let i = Q(t.events, n[2]),
-                        o = Q(t.events, n[3]),
+                    let r = V(t.events, n[2]),
+                        o = V(t.events, n[3]),
                         l = {
                             type: "tableContent",
-                            start: Object.assign({}, i),
+                            start: Object.assign({}, r),
                             end: Object.assign({}, o),
                         };
-                    if ((e.add(n[2], 0, [["enter", l, t]]), 2 !== r)) {
-                        let r = t.events[n[2]],
-                            i = t.events[n[3]];
+                    if ((e.add(n[2], 0, [["enter", l, t]]), 2 !== i)) {
+                        let i = t.events[n[2]],
+                            r = t.events[n[3]];
                         if (
-                            ((r[1].end = Object.assign({}, i[1].end)),
-                            (r[1].type = "chunkText"),
-                            (r[1].contentType = "text"),
+                            ((i[1].end = Object.assign({}, r[1].end)),
+                            (i[1].type = "chunkText"),
+                            (i[1].contentType = "text"),
                             n[3] > n[2] + 1)
                         ) {
                             let t = n[2] + 1,
-                                r = n[3] - n[2] - 1;
-                            e.add(t, r, []);
+                                i = n[3] - n[2] - 1;
+                            e.add(t, i, []);
                         }
                     }
                     e.add(n[3] + 1, 0, [["exit", l, t]]);
                 }
                 return (
-                    void 0 !== i &&
-                        ((o.end = Object.assign({}, Q(t.events, i))),
-                        e.add(i, 0, [["exit", o, t]]),
+                    void 0 !== r &&
+                        ((o.end = Object.assign({}, V(t.events, r))),
+                        e.add(r, 0, [["exit", o, t]]),
                         (o = void 0)),
                     o
                 );
             }
-            function W(e, t, n, r, i) {
+            function q(e, t, n, i, r) {
                 let o = [],
-                    l = Q(t.events, n);
-                (i && ((i.end = Object.assign({}, l)), o.push(["exit", i, t])),
-                    (r.end = Object.assign({}, l)),
-                    o.push(["exit", r, t]),
+                    l = V(t.events, n);
+                (r && ((r.end = Object.assign({}, l)), o.push(["exit", r, t])),
+                    (i.end = Object.assign({}, l)),
+                    o.push(["exit", i, t]),
                     e.add(n + 1, 0, o));
             }
-            function Q(e, t) {
+            function V(e, t) {
                 let n = e[t],
-                    r = "enter" === n[0] ? "start" : "end";
-                return n[1][r];
+                    i = "enter" === n[0] ? "start" : "end";
+                return n[1][i];
             }
-            let $ = {
+            let Q = {
                 none: "",
                 left: ' align="left"',
                 right: ' align="right"',
@@ -3524,10 +2659,10 @@
             function U(e, t) {
                 return "|" === t ? t : e;
             }
-            let J =
+            let G =
                     /<(\/?)(iframe|noembed|noframes|plaintext|script|style|title|textarea|xmp)(?=[\t\n\f\r />])/gi,
-                Z = RegExp("^" + J.source, "i");
-            function G(e, t) {
+                J = RegExp("^" + G.source, "i");
+            function Z(e, t) {
                 let n = this.sliceSerialize(e);
                 (this.options.allowDangerousHtml &&
                     (n = n.replace(t, "&lt;$1$2")),
@@ -3536,10 +2671,10 @@
             let Y = {
                 name: "tasklistCheck",
                 tokenize: function (e, t, n) {
-                    let r = this;
+                    let i = this;
                     return function (t) {
-                        return null === r.previous &&
-                            r._gfmTasklistFirstContentOfListItem
+                        return null === i.previous &&
+                            i._gfmTasklistFirstContentOfListItem
                             ? (e.enter("taskListCheck"),
                               e.enter("taskListCheckMarker"),
                               e.consume(t),
@@ -3548,7 +2683,7 @@
                             : n(t);
                     };
                     function o(t) {
-                        return (0, i.Ee)(t)
+                        return (0, r.Ee)(t)
                             ? (e.enter("taskListCheckValueUnchecked"),
                               e.consume(t),
                               e.exit("taskListCheckValueUnchecked"),
@@ -3566,20 +2701,20 @@
                               e.consume(t),
                               e.exit("taskListCheckMarker"),
                               e.exit("taskListCheck"),
-                              u)
+                              a)
                             : n(t);
                     }
-                    function u(r) {
-                        return (0, i.HP)(r)
-                            ? t(r)
-                            : (0, i.On)(r)
-                              ? e.check({ tokenize: K }, t, n)(r)
-                              : n(r);
+                    function a(i) {
+                        return (0, r.HP)(i)
+                            ? t(i)
+                            : (0, r.On)(i)
+                              ? e.check({ tokenize: K }, t, n)(i)
+                              : n(i);
                     }
                 },
             };
             function K(e, t, n) {
-                return (0, F.N)(
+                return (0, E.N)(
                     e,
                     function (e) {
                         return null === e ? n(e) : t(e);
@@ -3588,24 +2723,24 @@
                 );
             }
             function X(e) {
-                return (0, r.y)([
+                return (0, i.y)([
                     { text: d },
                     {
                         document: {
                             91: {
                                 name: "gfmFootnoteDefinition",
-                                tokenize: P,
-                                continuation: { tokenize: L },
-                                exit: O,
+                                tokenize: O,
+                                continuation: { tokenize: z },
+                                exit: M,
                             },
                         },
                         text: {
-                            91: { name: "gfmFootnoteCall", tokenize: A },
+                            91: { name: "gfmFootnoteCall", tokenize: I },
                             93: {
                                 name: "gfmPotentialFootnoteCall",
                                 add: "after",
-                                tokenize: T,
-                                resolveTo: z,
+                                tokenize: L,
+                                resolveTo: T,
                             },
                         },
                     },
@@ -3613,41 +2748,41 @@
                         let t = (e || {}).singleTilde,
                             n = {
                                 name: "strikethrough",
-                                tokenize: function (e, n, r) {
-                                    let i = this.previous,
+                                tokenize: function (e, n, i) {
+                                    let r = this.previous,
                                         o = this.events,
                                         l = 0;
-                                    return function (u) {
-                                        return 126 === i &&
+                                    return function (a) {
+                                        return 126 === r &&
                                             "characterEscape" !==
                                                 o[o.length - 1][1].type
-                                            ? r(u)
+                                            ? i(a)
                                             : (e.enter(
                                                   "strikethroughSequenceTemporary"
                                               ),
-                                              (function o(u) {
-                                                  let a = (0, B.S)(i);
-                                                  if (126 === u)
+                                              (function o(a) {
+                                                  let s = (0, P.S)(r);
+                                                  if (126 === a)
                                                       return l > 1
-                                                          ? r(u)
-                                                          : (e.consume(u),
+                                                          ? i(a)
+                                                          : (e.consume(a),
                                                             l++,
                                                             o);
-                                                  if (l < 2 && !t) return r(u);
-                                                  let c = e.exit(
+                                                  if (l < 2 && !t) return i(a);
+                                                  let u = e.exit(
                                                           "strikethroughSequenceTemporary"
                                                       ),
-                                                      s = (0, B.S)(u);
+                                                      c = (0, P.S)(a);
                                                   return (
-                                                      (c._open =
+                                                      (u._open =
+                                                          !c ||
+                                                          (2 === c && !!s)),
+                                                      (u._close =
                                                           !s ||
-                                                          (2 === s && !!a)),
-                                                      (c._close =
-                                                          !a ||
-                                                          (2 === a && !!s)),
-                                                      n(u)
+                                                          (2 === s && !!c)),
+                                                      n(a)
                                                   );
-                                              })(u));
+                                              })(a));
                                     };
                                 },
                                 resolveAll: function (e, t) {
@@ -3659,27 +2794,27 @@
                                                 e[n][1].type &&
                                             e[n][1]._close
                                         ) {
-                                            let r = n;
-                                            for (; r--; )
+                                            let i = n;
+                                            for (; i--; )
                                                 if (
-                                                    "exit" === e[r][0] &&
+                                                    "exit" === e[i][0] &&
                                                     "strikethroughSequenceTemporary" ===
-                                                        e[r][1].type &&
-                                                    e[r][1]._open &&
+                                                        e[i][1].type &&
+                                                    e[i][1]._open &&
                                                     e[n][1].end.offset -
                                                         e[n][1].start.offset ==
-                                                        e[r][1].end.offset -
-                                                            e[r][1].start.offset
+                                                        e[i][1].end.offset -
+                                                            e[i][1].start.offset
                                                 ) {
                                                     ((e[n][1].type =
                                                         "strikethroughSequence"),
-                                                        (e[r][1].type =
+                                                        (e[i][1].type =
                                                             "strikethroughSequence"));
-                                                    let i = {
+                                                    let r = {
                                                             type: "strikethrough",
                                                             start: Object.assign(
                                                                 {},
-                                                                e[r][1].start
+                                                                e[i][1].start
                                                             ),
                                                             end: Object.assign(
                                                                 {},
@@ -3690,7 +2825,7 @@
                                                             type: "strikethroughText",
                                                             start: Object.assign(
                                                                 {},
-                                                                e[r][1].end
+                                                                e[i][1].end
                                                             ),
                                                             end: Object.assign(
                                                                 {},
@@ -3698,38 +2833,38 @@
                                                             ),
                                                         },
                                                         l = [
-                                                            ["enter", i, t],
+                                                            ["enter", r, t],
                                                             [
                                                                 "enter",
-                                                                e[r][1],
+                                                                e[i][1],
                                                                 t,
                                                             ],
                                                             [
                                                                 "exit",
-                                                                e[r][1],
+                                                                e[i][1],
                                                                 t,
                                                             ],
                                                             ["enter", o, t],
                                                         ],
-                                                        u =
+                                                        a =
                                                             t.parser.constructs
                                                                 .insideSpan
                                                                 .null;
-                                                    (u &&
-                                                        (0, R.m)(
+                                                    (a &&
+                                                        (0, N.m)(
                                                             l,
                                                             l.length,
                                                             0,
-                                                            (0, N.W)(
-                                                                u,
+                                                            (0, H.W)(
+                                                                a,
                                                                 e.slice(
-                                                                    r + 1,
+                                                                    i + 1,
                                                                     n
                                                                 ),
                                                                 t
                                                             )
                                                         ),
-                                                        (0, R.m)(
+                                                        (0, N.m)(
                                                             l,
                                                             l.length,
                                                             0,
@@ -3745,16 +2880,16 @@
                                                                     e[n][1],
                                                                     t,
                                                                 ],
-                                                                ["exit", i, t],
+                                                                ["exit", r, t],
                                                             ]
                                                         ),
-                                                        (0, R.m)(
+                                                        (0, N.m)(
                                                             e,
-                                                            r - 1,
-                                                            n - r + 3,
+                                                            i - 1,
+                                                            n - i + 3,
                                                             l
                                                         ),
-                                                        (n = r + l.length - 2));
+                                                        (n = i + l.length - 2));
                                                     break;
                                                 }
                                         }
@@ -3776,31 +2911,31 @@
                     })(e),
                     {
                         flow: {
-                            null: { name: "table", tokenize: V, resolveAll: j },
+                            null: { name: "table", tokenize: B, resolveAll: $ },
                         },
                     },
                     { text: { 91: Y } },
                 ]);
             }
             function ee(e) {
-                return (0, r.v)([
+                return (0, i.v)([
                     {
                         exit: {
-                            literalAutolinkEmail: C,
-                            literalAutolinkHttp: S,
-                            literalAutolinkWww: y,
+                            literalAutolinkEmail: y,
+                            literalAutolinkHttp: D,
+                            literalAutolinkWww: C,
                         },
                     },
                     (function (e) {
-                        let t = e || H,
+                        let t = e || _,
                             n = t.label || "Footnotes",
-                            r = t.labelTagName || "h2",
-                            i =
+                            i = t.labelTagName || "h2",
+                            r =
                                 null === t.labelAttributes ||
                                 void 0 === t.labelAttributes
                                     ? 'class="sr-only"'
                                     : t.labelAttributes,
-                            o = t.backLabel || M,
+                            o = t.backLabel || j,
                             l =
                                 null === t.clobberPrefix ||
                                 void 0 === t.clobberPrefix
@@ -3827,14 +2962,14 @@
                                             "gfmFootnoteDefinitionStack"
                                         ),
                                         n = this.getData("tightStack"),
-                                        r = t.pop(),
-                                        i = this.resume();
+                                        i = t.pop(),
+                                        r = this.resume();
                                     (e ||
                                         this.setData(
                                             "gfmFootnoteDefinitions",
                                             (e = {})
                                         ),
-                                        _.call(e, r) || (e[r] = i),
+                                        R.call(e, i) || (e[i] = r),
                                         n.pop(),
                                         this.setData("slurpOneLineEnding", !0),
                                         this.setData("lastWasTag"));
@@ -3849,7 +2984,7 @@
                                             (t = [])
                                         ),
                                         t.push(
-                                            (0, I.B)(this.sliceSerialize(e))
+                                            (0, S.B)(this.sliceSerialize(e))
                                         ),
                                         this.resume(),
                                         this.buffer());
@@ -3859,39 +2994,39 @@
                                         n = this.getData(
                                             "gfmFootnoteCallOrder"
                                         ),
-                                        r = this.getData(
+                                        i = this.getData(
                                             "gfmFootnoteCallCounts"
                                         ),
-                                        i = (0, I.B)(this.sliceSerialize(e));
+                                        r = (0, S.B)(this.sliceSerialize(e));
                                     (this.resume(),
                                         n ||
                                             this.setData(
                                                 "gfmFootnoteCallOrder",
                                                 (n = [])
                                             ),
-                                        r ||
+                                        i ||
                                             this.setData(
                                                 "gfmFootnoteCallCounts",
-                                                (r = {})
+                                                (i = {})
                                             ));
-                                    let o = n.indexOf(i),
-                                        u = (0, v.Q)(i.toLowerCase());
+                                    let o = n.indexOf(r),
+                                        a = (0, v.Q)(r.toLowerCase());
                                     -1 === o
-                                        ? (n.push(i),
-                                          (r[i] = 1),
+                                        ? (n.push(r),
+                                          (i[r] = 1),
                                           (t = n.length))
-                                        : (r[i]++, (t = o + 1));
-                                    let a = r[i];
+                                        : (i[r]++, (t = o + 1));
+                                    let s = i[r];
                                     this.tag(
                                         '<sup><a href="#' +
                                             l +
                                             "fn-" +
-                                            u +
+                                            a +
                                             '" id="' +
                                             l +
                                             "fnref-" +
-                                            u +
-                                            (a > 1 ? "-" + a : "") +
+                                            a +
+                                            (s > 1 ? "-" + s : "") +
                                             '" data-footnote-ref="" aria-describedby="footnote-label">' +
                                             String(t) +
                                             "</a></sup>"
@@ -3906,76 +3041,76 @@
                                             this.getData(
                                                 "gfmFootnoteCallCounts"
                                             ) || {},
-                                        u =
+                                        a =
                                             this.getData(
                                                 "gfmFootnoteDefinitions"
                                             ) || {},
-                                        a = -1;
+                                        s = -1;
                                     for (
                                         e.length > 0 &&
                                         (this.lineEndingIfNeeded(),
                                         this.tag(
                                             '<section data-footnotes="" class="footnotes"><' +
-                                                r +
+                                                i +
                                                 ' id="footnote-label"' +
-                                                (i ? " " + i : "") +
+                                                (r ? " " + r : "") +
                                                 ">"
                                         ),
                                         this.raw(this.encode(n)),
-                                        this.tag("</" + r + ">"),
+                                        this.tag("</" + i + ">"),
                                         this.lineEndingIfNeeded(),
                                         this.tag("<ol>"));
-                                        ++a < e.length;
+                                        ++s < e.length;
 
                                     ) {
-                                        let n = e[a],
-                                            r = (0, v.Q)(n.toLowerCase()),
-                                            i = 0,
-                                            c = [];
-                                        for (; ++i <= t[n]; )
-                                            c.push(
+                                        let n = e[s],
+                                            i = (0, v.Q)(n.toLowerCase()),
+                                            r = 0,
+                                            u = [];
+                                        for (; ++r <= t[n]; )
+                                            u.push(
                                                 '<a href="#' +
                                                     l +
                                                     "fnref-" +
-                                                    r +
-                                                    (i > 1 ? "-" + i : "") +
+                                                    i +
+                                                    (r > 1 ? "-" + r : "") +
                                                     '" data-footnote-backref="" aria-label="' +
                                                     this.encode(
                                                         "string" == typeof o
                                                             ? o
-                                                            : o(a, i)
+                                                            : o(s, r)
                                                     ) +
                                                     '" class="data-footnote-backref">\u21A9' +
-                                                    (i > 1
-                                                        ? "<sup>" + i + "</sup>"
+                                                    (r > 1
+                                                        ? "<sup>" + r + "</sup>"
                                                         : "") +
                                                     "</a>"
                                             );
-                                        let s = c.join(" "),
+                                        let c = u.join(" "),
                                             f = !1;
                                         (this.lineEndingIfNeeded(),
                                             this.tag(
                                                 '<li id="' +
                                                     l +
                                                     "fn-" +
-                                                    r +
+                                                    i +
                                                     '">'
                                             ),
                                             this.lineEndingIfNeeded(),
                                             this.tag(
-                                                u[n].replace(
+                                                a[n].replace(
                                                     /<\/p>(?:\r?\n|\r)?$/,
                                                     function (e) {
                                                         return (
                                                             (f = !0),
-                                                            " " + s + e
+                                                            " " + c + e
                                                         );
                                                     }
                                                 )
                                             ),
                                             f ||
                                                 (this.lineEndingIfNeeded(),
-                                                this.tag(s)),
+                                                this.tag(c)),
                                             this.lineEndingIfNeeded(),
                                             this.tag("</li>"));
                                     }
@@ -4013,7 +3148,7 @@
                             },
                             tableData() {
                                 let e =
-                                    $[
+                                    Q[
                                         this.getData("tableAlign")[
                                             this.getData("tableColumn")
                                         ]
@@ -4029,7 +3164,7 @@
                             },
                             tableHeader() {
                                 let e =
-                                    $[
+                                    Q[
                                         this.getData("tableAlign")[
                                             this.getData("tableColumn")
                                         ]
@@ -4082,7 +3217,7 @@
                                     t = this.getData("tableColumn");
                                 for (; t < e.length; )
                                     (this.lineEndingIfNeeded(),
-                                        this.tag("<td" + $[e[t]] + "></td>"),
+                                        this.tag("<td" + Q[e[t]] + "></td>"),
                                         t++);
                                 (this.setData("tableColumn", t),
                                     this.lineEndingIfNeeded(),
@@ -4093,10 +3228,10 @@
                     {
                         exit: {
                             htmlFlowData(e) {
-                                G.call(this, e, J);
+                                Z.call(this, e, G);
                             },
                             htmlTextData(e) {
-                                G.call(this, e, Z);
+                                Z.call(this, e, J);
                             },
                         },
                     },
@@ -4118,3991 +3253,6 @@
                 ]);
             }
         },
-        40433: (e, t, n) => {
-            n.d(t, { N: () => i });
-            var r = n(40574);
-            function i(e, t, n, i) {
-                let o = i ? i - 1 : 1 / 0,
-                    l = 0;
-                return function (i) {
-                    return (0, r.On)(i)
-                        ? (e.enter(n),
-                          (function i(u) {
-                              return (0, r.On)(u) && l++ < o
-                                  ? (e.consume(u), i)
-                                  : (e.exit(n), t(u));
-                          })(i))
-                        : t(i);
-                };
-            }
-        },
-        40574: (e, t, n) => {
-            n.d(t, {
-                BM: () => u,
-                CW: () => r,
-                Ee: () => f,
-                HP: () => s,
-                JQ: () => l,
-                Ny: () => p,
-                On: () => h,
-                cx: () => o,
-                es: () => d,
-                lV: () => i,
-                ok: () => a,
-                ol: () => c,
-            });
-            let r = g(/[A-Za-z]/),
-                i = g(/[\dA-Za-z]/),
-                o = g(/[#-'*+\--9=?A-Z^-~]/);
-            function l(e) {
-                return null !== e && (e < 32 || 127 === e);
-            }
-            let u = g(/\d/),
-                a = g(/[\dA-Fa-f]/),
-                c = g(/[!-/:-@[-`{-~]/);
-            function s(e) {
-                return null !== e && e < -2;
-            }
-            function f(e) {
-                return null !== e && (e < 0 || 32 === e);
-            }
-            function h(e) {
-                return -2 === e || -1 === e || 32 === e;
-            }
-            let d = g(/\p{P}|\p{S}/u),
-                p = g(/\s/);
-            function g(e) {
-                return function (t) {
-                    return (
-                        null !== t && t > -1 && e.test(String.fromCharCode(t))
-                    );
-                };
-            }
-        },
-        82777: (e, t, n) => {
-            function r(e, t, n, r) {
-                let i,
-                    o = e.length,
-                    l = 0;
-                if (
-                    ((t = t < 0 ? (-t > o ? 0 : o + t) : t > o ? o : t),
-                    (n = n > 0 ? n : 0),
-                    r.length < 1e4)
-                )
-                    ((i = Array.from(r)).unshift(t, n), e.splice(...i));
-                else
-                    for (n && e.splice(t, n); l < r.length; )
-                        ((i = r.slice(l, l + 1e4)).unshift(t, 0),
-                            e.splice(...i),
-                            (l += 1e4),
-                            (t += 1e4));
-            }
-            function i(e, t) {
-                return e.length > 0 ? (r(e, e.length, 0, t), e) : t;
-            }
-            n.d(t, { V: () => i, m: () => r });
-        },
-        10691: (e, t, n) => {
-            n.d(t, { S: () => i });
-            var r = n(40574);
-            function i(e) {
-                return null === e || (0, r.Ee)(e) || (0, r.Ny)(e)
-                    ? 1
-                    : (0, r.es)(e)
-                      ? 2
-                      : void 0;
-            }
-        },
-        5389: (e, t, n) => {
-            n.d(t, { v: () => l, y: () => o });
-            var r = n(82777);
-            let i = {}.hasOwnProperty;
-            function o(e) {
-                let t = {},
-                    n = -1;
-                for (; ++n < e.length; )
-                    !(function (e, t) {
-                        let n;
-                        for (n in t) {
-                            let o,
-                                l =
-                                    (i.call(e, n) ? e[n] : void 0) ||
-                                    (e[n] = {}),
-                                u = t[n];
-                            if (u)
-                                for (o in u) {
-                                    i.call(l, o) || (l[o] = []);
-                                    let e = u[o];
-                                    !(function (e, t) {
-                                        let n = -1,
-                                            i = [];
-                                        for (; ++n < t.length; )
-                                            ("after" === t[n].add ? e : i).push(
-                                                t[n]
-                                            );
-                                        (0, r.m)(e, 0, 0, i);
-                                    })(
-                                        l[o],
-                                        Array.isArray(e) ? e : e ? [e] : []
-                                    );
-                                }
-                        }
-                    })(t, e[n]);
-                return t;
-            }
-            function l(e) {
-                let t = {},
-                    n = -1;
-                for (; ++n < e.length; )
-                    !(function (e, t) {
-                        let n;
-                        for (n in t) {
-                            let r,
-                                o =
-                                    (i.call(e, n) ? e[n] : void 0) ||
-                                    (e[n] = {}),
-                                l = t[n];
-                            if (l) for (r in l) o[r] = l[r];
-                        }
-                    })(t, e[n]);
-                return t;
-            }
-        },
-        43589: (e, t, n) => {
-            n.d(t, { C: () => r });
-            function r(e, t) {
-                let n = Number.parseInt(e, t);
-                return n < 9 ||
-                    11 === n ||
-                    (n > 13 && n < 32) ||
-                    (n > 126 && n < 160) ||
-                    (n > 55295 && n < 57344) ||
-                    (n > 64975 && n < 65008) ||
-                    (65535 & n) == 65535 ||
-                    (65535 & n) == 65534 ||
-                    n > 1114111
-                    ? "\uFFFD"
-                    : String.fromCodePoint(n);
-            }
-        },
-        22177: (e, t, n) => {
-            n.d(t, { s: () => l });
-            var r = n(96206),
-                i = n(43589);
-            let o =
-                /\\([!-/:-@[-`{-~])|&(#(?:\d{1,7}|x[\da-f]{1,6})|[\da-z]{1,31});/gi;
-            function l(e) {
-                return e.replace(o, u);
-            }
-            function u(e, t, n) {
-                if (t) return t;
-                if (35 === n.charCodeAt(0)) {
-                    let e = n.charCodeAt(1),
-                        t = 120 === e || 88 === e;
-                    return (0, i.C)(n.slice(t ? 2 : 1), t ? 16 : 10);
-                }
-                return (0, r.s)(n) || e;
-            }
-        },
-        75737: (e, t, n) => {
-            n.d(t, { l: () => i });
-            let r = { '"': "quot", "&": "amp", "<": "lt", ">": "gt" };
-            function i(e) {
-                return e.replace(/["&<>]/g, function (e) {
-                    return "&" + r[e] + ";";
-                });
-            }
-        },
-        9638: (e, t, n) => {
-            n.d(t, { B: () => r });
-            function r(e) {
-                return e
-                    .replace(/[\t\n\r ]+/g, " ")
-                    .replace(/^ | $/g, "")
-                    .toLowerCase()
-                    .toUpperCase();
-            }
-        },
-        45535: (e, t, n) => {
-            n.d(t, { W: () => r });
-            function r(e, t, n) {
-                let r = [],
-                    i = -1;
-                for (; ++i < e.length; ) {
-                    let o = e[i].resolveAll;
-                    o && !r.includes(o) && ((t = o(t, n)), r.push(o));
-                }
-                return t;
-            }
-        },
-        63215: (e, t, n) => {
-            n.d(t, { Q: () => o, e: () => l });
-            var r = n(40574),
-                i = n(75737);
-            function o(e, t) {
-                let n = (0, i.l)(l(e || ""));
-                if (!t) return n;
-                let r = n.indexOf(":"),
-                    o = n.indexOf("?"),
-                    u = n.indexOf("#"),
-                    a = n.indexOf("/");
-                return r < 0 ||
-                    (a > -1 && r > a) ||
-                    (o > -1 && r > o) ||
-                    (u > -1 && r > u) ||
-                    t.test(n.slice(0, r))
-                    ? n
-                    : "";
-            }
-            function l(e) {
-                let t = [],
-                    n = -1,
-                    i = 0,
-                    o = 0;
-                for (; ++n < e.length; ) {
-                    let l = e.charCodeAt(n),
-                        u = "";
-                    if (
-                        37 === l &&
-                        (0, r.lV)(e.charCodeAt(n + 1)) &&
-                        (0, r.lV)(e.charCodeAt(n + 2))
-                    )
-                        o = 2;
-                    else if (l < 128)
-                        /[!#$&-;=?-Z_a-z~]/.test(String.fromCharCode(l)) ||
-                            (u = String.fromCharCode(l));
-                    else if (l > 55295 && l < 57344) {
-                        let t = e.charCodeAt(n + 1);
-                        l < 56320 && t > 56319 && t < 57344
-                            ? ((u = String.fromCharCode(l, t)), (o = 1))
-                            : (u = "\uFFFD");
-                    } else u = String.fromCharCode(l);
-                    (u &&
-                        (t.push(e.slice(i, n), encodeURIComponent(u)),
-                        (i = n + o + 1),
-                        (u = "")),
-                        o && ((n += o), (o = 0)));
-                }
-                return t.join("") + e.slice(i);
-            }
-        },
-        22305: (e, t, n) => {
-            n.d(t, { w: () => o });
-            var r = n(82777);
-            let SpliceBuffer = class SpliceBuffer {
-                constructor(e) {
-                    ((this.left = e ? [...e] : []), (this.right = []));
-                }
-                get(e) {
-                    if (e < 0 || e >= this.left.length + this.right.length)
-                        throw RangeError(
-                            "Cannot access index `" +
-                                e +
-                                "` in a splice buffer of size `" +
-                                (this.left.length + this.right.length) +
-                                "`"
-                        );
-                    return e < this.left.length
-                        ? this.left[e]
-                        : this.right[
-                              this.right.length - e + this.left.length - 1
-                          ];
-                }
-                get length() {
-                    return this.left.length + this.right.length;
-                }
-                shift() {
-                    return (this.setCursor(0), this.right.pop());
-                }
-                slice(e, t) {
-                    let n = null == t ? 1 / 0 : t;
-                    return n < this.left.length
-                        ? this.left.slice(e, n)
-                        : e > this.left.length
-                          ? this.right
-                                .slice(
-                                    this.right.length - n + this.left.length,
-                                    this.right.length - e + this.left.length
-                                )
-                                .reverse()
-                          : this.left
-                                .slice(e)
-                                .concat(
-                                    this.right
-                                        .slice(
-                                            this.right.length -
-                                                n +
-                                                this.left.length
-                                        )
-                                        .reverse()
-                                );
-                }
-                splice(e, t, n) {
-                    this.setCursor(Math.trunc(e));
-                    let r = this.right.splice(
-                        this.right.length - (t || 0),
-                        1 / 0
-                    );
-                    return (n && i(this.left, n), r.reverse());
-                }
-                pop() {
-                    return (this.setCursor(1 / 0), this.left.pop());
-                }
-                push(e) {
-                    (this.setCursor(1 / 0), this.left.push(e));
-                }
-                pushMany(e) {
-                    (this.setCursor(1 / 0), i(this.left, e));
-                }
-                unshift(e) {
-                    (this.setCursor(0), this.right.push(e));
-                }
-                unshiftMany(e) {
-                    (this.setCursor(0), i(this.right, e.reverse()));
-                }
-                setCursor(e) {
-                    if (
-                        e !== this.left.length &&
-                        (!(e > this.left.length) || 0 !== this.right.length) &&
-                        (!(e < 0) || 0 !== this.left.length)
-                    )
-                        if (e < this.left.length) {
-                            let t = this.left.splice(e, 1 / 0);
-                            i(this.right, t.reverse());
-                        } else {
-                            let t = this.right.splice(
-                                this.left.length + this.right.length - e,
-                                1 / 0
-                            );
-                            i(this.left, t.reverse());
-                        }
-                }
-            };
-            function i(e, t) {
-                let n = 0;
-                if (t.length < 1e4) e.push(...t);
-                else
-                    for (; n < t.length; )
-                        (e.push(...t.slice(n, n + 1e4)), (n += 1e4));
-            }
-            function o(e) {
-                let t,
-                    n,
-                    i,
-                    o,
-                    l,
-                    u,
-                    a,
-                    c = {},
-                    s = -1,
-                    f = new SpliceBuffer(e);
-                for (; ++s < f.length; ) {
-                    for (; s in c; ) s = c[s];
-                    if (
-                        ((t = f.get(s)),
-                        s &&
-                            "chunkFlow" === t[1].type &&
-                            "listItemPrefix" === f.get(s - 1)[1].type &&
-                            ((i = 0) < (u = t[1]._tokenizer.events).length &&
-                                "lineEndingBlank" === u[i][1].type &&
-                                (i += 2),
-                            i < u.length && "content" === u[i][1].type))
-                    )
-                        for (; ++i < u.length && "content" !== u[i][1].type; )
-                            "chunkText" === u[i][1].type &&
-                                ((u[i][1]._isInFirstContentOfListItem = !0),
-                                i++);
-                    if ("enter" === t[0])
-                        t[1].contentType &&
-                            (Object.assign(
-                                c,
-                                (function (e, t) {
-                                    let n,
-                                        r,
-                                        i = e.get(t)[1],
-                                        o = e.get(t)[2],
-                                        l = t - 1,
-                                        u = [],
-                                        a =
-                                            i._tokenizer ||
-                                            o.parser[i.contentType](i.start),
-                                        c = a.events,
-                                        s = [],
-                                        f = {},
-                                        h = -1,
-                                        d = i,
-                                        p = 0,
-                                        g = 0,
-                                        m = [0];
-                                    for (; d; ) {
-                                        for (; e.get(++l)[1] !== d; );
-                                        (u.push(l),
-                                            !d._tokenizer &&
-                                                ((n = o.sliceStream(d)),
-                                                d.next || n.push(null),
-                                                r && a.defineSkip(d.start),
-                                                d._isInFirstContentOfListItem &&
-                                                    (a._gfmTasklistFirstContentOfListItem =
-                                                        !0),
-                                                a.write(n),
-                                                d._isInFirstContentOfListItem &&
-                                                    (a._gfmTasklistFirstContentOfListItem =
-                                                        void 0)),
-                                            (r = d),
-                                            (d = d.next));
-                                    }
-                                    for (d = i; ++h < c.length; )
-                                        "exit" === c[h][0] &&
-                                            "enter" === c[h - 1][0] &&
-                                            c[h][1].type === c[h - 1][1].type &&
-                                            c[h][1].start.line !==
-                                                c[h][1].end.line &&
-                                            ((g = h + 1),
-                                            m.push(g),
-                                            (d._tokenizer = void 0),
-                                            (d.previous = void 0),
-                                            (d = d.next));
-                                    for (
-                                        a.events = [],
-                                            d
-                                                ? ((d._tokenizer = void 0),
-                                                  (d.previous = void 0))
-                                                : m.pop(),
-                                            h = m.length;
-                                        h--;
-
-                                    ) {
-                                        let t = c.slice(m[h], m[h + 1]),
-                                            n = u.pop();
-                                        (s.push([n, n + t.length - 1]),
-                                            e.splice(n, 2, t));
-                                    }
-                                    for (s.reverse(), h = -1; ++h < s.length; )
-                                        ((f[p + s[h][0]] = p + s[h][1]),
-                                            (p += s[h][1] - s[h][0] - 1));
-                                    return f;
-                                })(f, s)
-                            ),
-                            (s = c[s]),
-                            (a = !0));
-                    else if (t[1]._container) {
-                        for (i = s, n = void 0; i--; )
-                            if (
-                                "lineEnding" === (o = f.get(i))[1].type ||
-                                "lineEndingBlank" === o[1].type
-                            )
-                                "enter" === o[0] &&
-                                    (n &&
-                                        (f.get(n)[1].type = "lineEndingBlank"),
-                                    (o[1].type = "lineEnding"),
-                                    (n = i));
-                            else break;
-                        n &&
-                            ((t[1].end = { ...f.get(n)[1].start }),
-                            (l = f.slice(n, s)).unshift(t),
-                            f.splice(n, s - n + 1, l));
-                    }
-                }
-                return ((0, r.m)(e, 0, 1 / 0, f.slice(0)), !a);
-            }
-        },
-        87647: (e, t, n) => {
-            n.d(t, { q: () => ef });
-            var r = {};
-            (n.r(r),
-                n.d(r, {
-                    attentionMarkers: () => ec,
-                    contentInitial: () => er,
-                    disable: () => es,
-                    document: () => en,
-                    flow: () => eo,
-                    flowInitial: () => ei,
-                    insideSpan: () => ea,
-                    string: () => el,
-                    text: () => eu,
-                }));
-            var i = n(5389),
-                o = n(40433),
-                l = n(40574);
-            let u = {
-                tokenize: function (e) {
-                    let t,
-                        n = e.attempt(
-                            this.parser.constructs.contentInitial,
-                            function (t) {
-                                return null === t
-                                    ? void e.consume(t)
-                                    : (e.enter("lineEnding"),
-                                      e.consume(t),
-                                      e.exit("lineEnding"),
-                                      (0, o.N)(e, n, "linePrefix"));
-                            },
-                            function (n) {
-                                return (
-                                    e.enter("paragraph"),
-                                    (function n(r) {
-                                        let i = e.enter("chunkText", {
-                                            contentType: "text",
-                                            previous: t,
-                                        });
-                                        return (
-                                            t && (t.next = i),
-                                            (t = i),
-                                            (function t(r) {
-                                                if (null === r) {
-                                                    (e.exit("chunkText"),
-                                                        e.exit("paragraph"),
-                                                        e.consume(r));
-                                                    return;
-                                                }
-                                                return (0, l.HP)(r)
-                                                    ? (e.consume(r),
-                                                      e.exit("chunkText"),
-                                                      n)
-                                                    : (e.consume(r), t);
-                                            })(r)
-                                        );
-                                    })(n)
-                                );
-                            }
-                        );
-                    return n;
-                },
-            };
-            var a = n(82777);
-            let c = {
-                    tokenize: function (e) {
-                        let t,
-                            n,
-                            r,
-                            i = this,
-                            o = [],
-                            u = 0;
-                        return c;
-                        function c(t) {
-                            if (u < o.length) {
-                                let n = o[u];
-                                return (
-                                    (i.containerState = n[1]),
-                                    e.attempt(n[0].continuation, f, h)(t)
-                                );
-                            }
-                            return h(t);
-                        }
-                        function f(e) {
-                            if ((u++, i.containerState._closeFlow)) {
-                                let n;
-                                ((i.containerState._closeFlow = void 0),
-                                    t && v());
-                                let r = i.events.length,
-                                    o = r;
-                                for (; o--; )
-                                    if (
-                                        "exit" === i.events[o][0] &&
-                                        "chunkFlow" === i.events[o][1].type
-                                    ) {
-                                        n = i.events[o][1].end;
-                                        break;
-                                    }
-                                b(u);
-                                let l = r;
-                                for (; l < i.events.length; )
-                                    ((i.events[l][1].end = { ...n }), l++);
-                                return (
-                                    (0, a.m)(
-                                        i.events,
-                                        o + 1,
-                                        0,
-                                        i.events.slice(r)
-                                    ),
-                                    (i.events.length = l),
-                                    h(e)
-                                );
-                            }
-                            return c(e);
-                        }
-                        function h(n) {
-                            if (u === o.length) {
-                                if (!t) return g(n);
-                                if (
-                                    t.currentConstruct &&
-                                    t.currentConstruct.concrete
-                                )
-                                    return k(n);
-                                i.interrupt = !!(
-                                    t.currentConstruct &&
-                                    !t._gfmTableDynamicInterruptHack
-                                );
-                            }
-                            return (
-                                (i.containerState = {}),
-                                e.check(s, d, p)(n)
-                            );
-                        }
-                        function d(e) {
-                            return (t && v(), b(u), g(e));
-                        }
-                        function p(e) {
-                            return (
-                                (i.parser.lazy[i.now().line] = u !== o.length),
-                                (r = i.now().offset),
-                                k(e)
-                            );
-                        }
-                        function g(t) {
-                            return (
-                                (i.containerState = {}),
-                                e.attempt(s, m, k)(t)
-                            );
-                        }
-                        function m(e) {
-                            return (
-                                u++,
-                                o.push([i.currentConstruct, i.containerState]),
-                                g(e)
-                            );
-                        }
-                        function k(r) {
-                            if (null === r) {
-                                (t && v(), b(0), e.consume(r));
-                                return;
-                            }
-                            return (
-                                (t = t || i.parser.flow(i.now())),
-                                e.enter("chunkFlow", {
-                                    _tokenizer: t,
-                                    contentType: "flow",
-                                    previous: n,
-                                }),
-                                (function t(n) {
-                                    if (null === n) {
-                                        (x(e.exit("chunkFlow"), !0),
-                                            b(0),
-                                            e.consume(n));
-                                        return;
-                                    }
-                                    return (0, l.HP)(n)
-                                        ? (e.consume(n),
-                                          x(e.exit("chunkFlow")),
-                                          (u = 0),
-                                          (i.interrupt = void 0),
-                                          c)
-                                        : (e.consume(n), t);
-                                })(r)
-                            );
-                        }
-                        function x(e, o) {
-                            let l = i.sliceStream(e);
-                            if (
-                                (o && l.push(null),
-                                (e.previous = n),
-                                n && (n.next = e),
-                                (n = e),
-                                t.defineSkip(e.start),
-                                t.write(l),
-                                i.parser.lazy[e.start.line])
-                            ) {
-                                let e,
-                                    n,
-                                    o = t.events.length;
-                                for (; o--; )
-                                    if (
-                                        t.events[o][1].start.offset < r &&
-                                        (!t.events[o][1].end ||
-                                            t.events[o][1].end.offset > r)
-                                    )
-                                        return;
-                                let l = i.events.length,
-                                    c = l;
-                                for (; c--; )
-                                    if (
-                                        "exit" === i.events[c][0] &&
-                                        "chunkFlow" === i.events[c][1].type
-                                    ) {
-                                        if (e) {
-                                            n = i.events[c][1].end;
-                                            break;
-                                        }
-                                        e = !0;
-                                    }
-                                for (b(u), o = l; o < i.events.length; )
-                                    ((i.events[o][1].end = { ...n }), o++);
-                                ((0, a.m)(
-                                    i.events,
-                                    c + 1,
-                                    0,
-                                    i.events.slice(l)
-                                ),
-                                    (i.events.length = o));
-                            }
-                        }
-                        function b(t) {
-                            let n = o.length;
-                            for (; n-- > t; ) {
-                                let t = o[n];
-                                ((i.containerState = t[1]),
-                                    t[0].exit.call(i, e));
-                            }
-                            o.length = t;
-                        }
-                        function v() {
-                            (t.write([null]),
-                                (n = void 0),
-                                (t = void 0),
-                                (i.containerState._closeFlow = void 0));
-                        }
-                    },
-                },
-                s = {
-                    tokenize: function (e, t, n) {
-                        return (0, o.N)(
-                            e,
-                            e.attempt(this.parser.constructs.document, t, n),
-                            "linePrefix",
-                            this.parser.constructs.disable.null.includes(
-                                "codeIndented"
-                            )
-                                ? void 0
-                                : 4
-                        );
-                    },
-                };
-            var f = n(9283),
-                h = n(22305);
-            let d = {
-                    resolve: function (e) {
-                        return ((0, h.w)(e), e);
-                    },
-                    tokenize: function (e, t) {
-                        let n;
-                        return function (t) {
-                            return (
-                                e.enter("content"),
-                                (n = e.enter("chunkContent", {
-                                    contentType: "content",
-                                })),
-                                r(t)
-                            );
-                        };
-                        function r(t) {
-                            return null === t
-                                ? i(t)
-                                : (0, l.HP)(t)
-                                  ? e.check(p, o, i)(t)
-                                  : (e.consume(t), r);
-                        }
-                        function i(n) {
-                            return (
-                                e.exit("chunkContent"),
-                                e.exit("content"),
-                                t(n)
-                            );
-                        }
-                        function o(t) {
-                            return (
-                                e.consume(t),
-                                e.exit("chunkContent"),
-                                (n.next = e.enter("chunkContent", {
-                                    contentType: "content",
-                                    previous: n,
-                                })),
-                                (n = n.next),
-                                r
-                            );
-                        }
-                    },
-                },
-                p = {
-                    partial: !0,
-                    tokenize: function (e, t, n) {
-                        let r = this;
-                        return function (t) {
-                            return (
-                                e.exit("chunkContent"),
-                                e.enter("lineEnding"),
-                                e.consume(t),
-                                e.exit("lineEnding"),
-                                (0, o.N)(e, i, "linePrefix")
-                            );
-                        };
-                        function i(i) {
-                            if (null === i || (0, l.HP)(i)) return n(i);
-                            let o = r.events[r.events.length - 1];
-                            return !r.parser.constructs.disable.null.includes(
-                                "codeIndented"
-                            ) &&
-                                o &&
-                                "linePrefix" === o[1].type &&
-                                o[2].sliceSerialize(o[1], !0).length >= 4
-                                ? t(i)
-                                : e.interrupt(
-                                      r.parser.constructs.flow,
-                                      n,
-                                      t
-                                  )(i);
-                        }
-                    },
-                },
-                g = {
-                    tokenize: function (e) {
-                        let t = this,
-                            n = e.attempt(
-                                f.B,
-                                function (r) {
-                                    return null === r
-                                        ? void e.consume(r)
-                                        : (e.enter("lineEndingBlank"),
-                                          e.consume(r),
-                                          e.exit("lineEndingBlank"),
-                                          (t.currentConstruct = void 0),
-                                          n);
-                                },
-                                e.attempt(
-                                    this.parser.constructs.flowInitial,
-                                    r,
-                                    (0, o.N)(
-                                        e,
-                                        e.attempt(
-                                            this.parser.constructs.flow,
-                                            r,
-                                            e.attempt(d, r)
-                                        ),
-                                        "linePrefix"
-                                    )
-                                )
-                            );
-                        return n;
-                        function r(r) {
-                            return null === r
-                                ? void e.consume(r)
-                                : (e.enter("lineEnding"),
-                                  e.consume(r),
-                                  e.exit("lineEnding"),
-                                  (t.currentConstruct = void 0),
-                                  n);
-                        }
-                    },
-                },
-                m = { resolveAll: v() },
-                k = b("string"),
-                x = b("text");
-            function b(e) {
-                return {
-                    resolveAll: v("text" === e ? y : void 0),
-                    tokenize: function (t) {
-                        let n = this,
-                            r = this.parser.constructs[e],
-                            i = t.attempt(r, o, l);
-                        return o;
-                        function o(e) {
-                            return a(e) ? i(e) : l(e);
-                        }
-                        function l(e) {
-                            return null === e
-                                ? void t.consume(e)
-                                : (t.enter("data"), t.consume(e), u);
-                        }
-                        function u(e) {
-                            return a(e)
-                                ? (t.exit("data"), i(e))
-                                : (t.consume(e), u);
-                        }
-                        function a(e) {
-                            if (null === e) return !0;
-                            let t = r[e],
-                                i = -1;
-                            if (t)
-                                for (; ++i < t.length; ) {
-                                    let e = t[i];
-                                    if (
-                                        !e.previous ||
-                                        e.previous.call(n, n.previous)
-                                    )
-                                        return !0;
-                                }
-                            return !1;
-                        }
-                    },
-                };
-            }
-            function v(e) {
-                return function (t, n) {
-                    let r,
-                        i = -1;
-                    for (; ++i <= t.length; )
-                        void 0 === r
-                            ? t[i] && "data" === t[i][1].type && ((r = i), i++)
-                            : (t[i] && "data" === t[i][1].type) ||
-                              (i !== r + 2 &&
-                                  ((t[r][1].end = t[i - 1][1].end),
-                                  t.splice(r + 2, i - r - 2),
-                                  (i = r + 2)),
-                              (r = void 0));
-                    return e ? e(t, n) : t;
-                };
-            }
-            function y(e, t) {
-                let n = 0;
-                for (; ++n <= e.length; )
-                    if (
-                        (n === e.length || "lineEnding" === e[n][1].type) &&
-                        "data" === e[n - 1][1].type
-                    ) {
-                        let r,
-                            i = e[n - 1][1],
-                            o = t.sliceStream(i),
-                            l = o.length,
-                            u = -1,
-                            a = 0;
-                        for (; l--; ) {
-                            let e = o[l];
-                            if ("string" == typeof e) {
-                                for (u = e.length; 32 === e.charCodeAt(u - 1); )
-                                    (a++, u--);
-                                if (u) break;
-                                u = -1;
-                            } else if (-2 === e) ((r = !0), a++);
-                            else if (-1 === e);
-                            else {
-                                l++;
-                                break;
-                            }
-                        }
-                        if (a) {
-                            let o = {
-                                type:
-                                    n === e.length || r || a < 2
-                                        ? "lineSuffix"
-                                        : "hardBreakTrailing",
-                                start: {
-                                    _bufferIndex: l
-                                        ? u
-                                        : i.start._bufferIndex + u,
-                                    _index: i.start._index + l,
-                                    line: i.end.line,
-                                    column: i.end.column - a,
-                                    offset: i.end.offset - a,
-                                },
-                                end: { ...i.end },
-                            };
-                            ((i.end = { ...o.start }),
-                                i.start.offset === i.end.offset
-                                    ? Object.assign(i, o)
-                                    : (e.splice(
-                                          n,
-                                          0,
-                                          ["enter", o, t],
-                                          ["exit", o, t]
-                                      ),
-                                      (n += 2)));
-                        }
-                        n++;
-                    }
-                return e;
-            }
-            let C = {
-                    name: "thematicBreak",
-                    tokenize: function (e, t, n) {
-                        let r,
-                            i = 0;
-                        return function (u) {
-                            var a;
-                            return (
-                                e.enter("thematicBreak"),
-                                (r = a = u),
-                                (function u(a) {
-                                    return a === r
-                                        ? (e.enter("thematicBreakSequence"),
-                                          (function t(n) {
-                                              return n === r
-                                                  ? (e.consume(n), i++, t)
-                                                  : (e.exit(
-                                                        "thematicBreakSequence"
-                                                    ),
-                                                    (0, l.On)(n)
-                                                        ? (0, o.N)(
-                                                              e,
-                                                              u,
-                                                              "whitespace"
-                                                          )(n)
-                                                        : u(n));
-                                          })(a))
-                                        : i >= 3 && (null === a || (0, l.HP)(a))
-                                          ? (e.exit("thematicBreak"), t(a))
-                                          : n(a);
-                                })(a)
-                            );
-                        };
-                    },
-                },
-                S = {
-                    continuation: {
-                        tokenize: function (e, t, n) {
-                            let r = this;
-                            return (
-                                (r.containerState._closeFlow = void 0),
-                                e.check(
-                                    f.B,
-                                    function (n) {
-                                        return (
-                                            (r.containerState.furtherBlankLines =
-                                                r.containerState
-                                                    .furtherBlankLines ||
-                                                r.containerState
-                                                    .initialBlankLine),
-                                            (0, o.N)(
-                                                e,
-                                                t,
-                                                "listItemIndent",
-                                                r.containerState.size + 1
-                                            )(n)
-                                        );
-                                    },
-                                    function (n) {
-                                        return r.containerState
-                                            .furtherBlankLines || !(0, l.On)(n)
-                                            ? ((r.containerState.furtherBlankLines =
-                                                  void 0),
-                                              (r.containerState.initialBlankLine =
-                                                  void 0),
-                                              i(n))
-                                            : ((r.containerState.furtherBlankLines =
-                                                  void 0),
-                                              (r.containerState.initialBlankLine =
-                                                  void 0),
-                                              e.attempt(E, t, i)(n));
-                                    }
-                                )
-                            );
-                            function i(i) {
-                                return (
-                                    (r.containerState._closeFlow = !0),
-                                    (r.interrupt = void 0),
-                                    (0, o.N)(
-                                        e,
-                                        e.attempt(S, t, n),
-                                        "linePrefix",
-                                        r.parser.constructs.disable.null.includes(
-                                            "codeIndented"
-                                        )
-                                            ? void 0
-                                            : 4
-                                    )(i)
-                                );
-                            }
-                        },
-                    },
-                    exit: function (e) {
-                        e.exit(this.containerState.type);
-                    },
-                    name: "list",
-                    tokenize: function (e, t, n) {
-                        let r = this,
-                            i = r.events[r.events.length - 1],
-                            o =
-                                i && "linePrefix" === i[1].type
-                                    ? i[2].sliceSerialize(i[1], !0).length
-                                    : 0,
-                            u = 0;
-                        return function (t) {
-                            let i =
-                                r.containerState.type ||
-                                (42 === t || 43 === t || 45 === t
-                                    ? "listUnordered"
-                                    : "listOrdered");
-                            if (
-                                "listUnordered" === i
-                                    ? !r.containerState.marker ||
-                                      t === r.containerState.marker
-                                    : (0, l.BM)(t)
-                            ) {
-                                if (
-                                    (r.containerState.type ||
-                                        ((r.containerState.type = i),
-                                        e.enter(i, { _container: !0 })),
-                                    "listUnordered" === i)
-                                )
-                                    return (
-                                        e.enter("listItemPrefix"),
-                                        42 === t || 45 === t
-                                            ? e.check(C, n, a)(t)
-                                            : a(t)
-                                    );
-                                if (!r.interrupt || 49 === t)
-                                    return (
-                                        e.enter("listItemPrefix"),
-                                        e.enter("listItemValue"),
-                                        (function t(i) {
-                                            return (0, l.BM)(i) && ++u < 10
-                                                ? (e.consume(i), t)
-                                                : (!r.interrupt || u < 2) &&
-                                                    (r.containerState.marker
-                                                        ? i ===
-                                                          r.containerState
-                                                              .marker
-                                                        : 41 === i || 46 === i)
-                                                  ? (e.exit("listItemValue"),
-                                                    a(i))
-                                                  : n(i);
-                                        })(t)
-                                    );
-                            }
-                            return n(t);
-                        };
-                        function a(t) {
-                            return (
-                                e.enter("listItemMarker"),
-                                e.consume(t),
-                                e.exit("listItemMarker"),
-                                (r.containerState.marker =
-                                    r.containerState.marker || t),
-                                e.check(
-                                    f.B,
-                                    r.interrupt ? n : c,
-                                    e.attempt(w, h, s)
-                                )
-                            );
-                        }
-                        function c(e) {
-                            return (
-                                (r.containerState.initialBlankLine = !0),
-                                o++,
-                                h(e)
-                            );
-                        }
-                        function s(t) {
-                            return (0, l.On)(t)
-                                ? (e.enter("listItemPrefixWhitespace"),
-                                  e.consume(t),
-                                  e.exit("listItemPrefixWhitespace"),
-                                  h)
-                                : n(t);
-                        }
-                        function h(n) {
-                            return (
-                                (r.containerState.size =
-                                    o +
-                                    r.sliceSerialize(
-                                        e.exit("listItemPrefix"),
-                                        !0
-                                    ).length),
-                                t(n)
-                            );
-                        }
-                    },
-                },
-                w = {
-                    partial: !0,
-                    tokenize: function (e, t, n) {
-                        let r = this;
-                        return (0, o.N)(
-                            e,
-                            function (e) {
-                                let i = r.events[r.events.length - 1];
-                                return !(0, l.On)(e) &&
-                                    i &&
-                                    "listItemPrefixWhitespace" === i[1].type
-                                    ? t(e)
-                                    : n(e);
-                            },
-                            "listItemPrefixWhitespace",
-                            r.parser.constructs.disable.null.includes(
-                                "codeIndented"
-                            )
-                                ? void 0
-                                : 5
-                        );
-                    },
-                },
-                E = {
-                    partial: !0,
-                    tokenize: function (e, t, n) {
-                        let r = this;
-                        return (0, o.N)(
-                            e,
-                            function (e) {
-                                let i = r.events[r.events.length - 1];
-                                return i &&
-                                    "listItemIndent" === i[1].type &&
-                                    i[2].sliceSerialize(i[1], !0).length ===
-                                        r.containerState.size
-                                    ? t(e)
-                                    : n(e);
-                            },
-                            "listItemIndent",
-                            r.containerState.size + 1
-                        );
-                    },
-                },
-                F = {
-                    continuation: {
-                        tokenize: function (e, t, n) {
-                            let r = this;
-                            return function (t) {
-                                return (0, l.On)(t)
-                                    ? (0, o.N)(
-                                          e,
-                                          i,
-                                          "linePrefix",
-                                          r.parser.constructs.disable.null.includes(
-                                              "codeIndented"
-                                          )
-                                              ? void 0
-                                              : 4
-                                      )(t)
-                                    : i(t);
-                            };
-                            function i(r) {
-                                return e.attempt(F, t, n)(r);
-                            }
-                        },
-                    },
-                    exit: function (e) {
-                        e.exit("blockQuote");
-                    },
-                    name: "blockQuote",
-                    tokenize: function (e, t, n) {
-                        let r = this;
-                        return function (t) {
-                            if (62 === t) {
-                                let n = r.containerState;
-                                return (
-                                    n.open ||
-                                        (e.enter("blockQuote", {
-                                            _container: !0,
-                                        }),
-                                        (n.open = !0)),
-                                    e.enter("blockQuotePrefix"),
-                                    e.enter("blockQuoteMarker"),
-                                    e.consume(t),
-                                    e.exit("blockQuoteMarker"),
-                                    i
-                                );
-                            }
-                            return n(t);
-                        };
-                        function i(n) {
-                            return (0, l.On)(n)
-                                ? (e.enter("blockQuotePrefixWhitespace"),
-                                  e.consume(n),
-                                  e.exit("blockQuotePrefixWhitespace"),
-                                  e.exit("blockQuotePrefix"),
-                                  t)
-                                : (e.exit("blockQuotePrefix"), t(n));
-                        }
-                    },
-                };
-            function I(e, t, n, r, i, o, u, a, c) {
-                let s = c || 1 / 0,
-                    f = 0;
-                return function (t) {
-                    return 60 === t
-                        ? (e.enter(r),
-                          e.enter(i),
-                          e.enter(o),
-                          e.consume(t),
-                          e.exit(o),
-                          h)
-                        : null === t || 32 === t || 41 === t || (0, l.JQ)(t)
-                          ? n(t)
-                          : (e.enter(r),
-                            e.enter(u),
-                            e.enter(a),
-                            e.enter("chunkString", { contentType: "string" }),
-                            g(t));
-                };
-                function h(n) {
-                    return 62 === n
-                        ? (e.enter(o),
-                          e.consume(n),
-                          e.exit(o),
-                          e.exit(i),
-                          e.exit(r),
-                          t)
-                        : (e.enter(a),
-                          e.enter("chunkString", { contentType: "string" }),
-                          d(n));
-                }
-                function d(t) {
-                    return 62 === t
-                        ? (e.exit("chunkString"), e.exit(a), h(t))
-                        : null === t || 60 === t || (0, l.HP)(t)
-                          ? n(t)
-                          : (e.consume(t), 92 === t ? p : d);
-                }
-                function p(t) {
-                    return 60 === t || 62 === t || 92 === t
-                        ? (e.consume(t), d)
-                        : d(t);
-                }
-                function g(i) {
-                    return !f && (null === i || 41 === i || (0, l.Ee)(i))
-                        ? (e.exit("chunkString"),
-                          e.exit(a),
-                          e.exit(u),
-                          e.exit(r),
-                          t(i))
-                        : f < s && 40 === i
-                          ? (e.consume(i), f++, g)
-                          : 41 === i
-                            ? (e.consume(i), f--, g)
-                            : null === i || 32 === i || 40 === i || (0, l.JQ)(i)
-                              ? n(i)
-                              : (e.consume(i), 92 === i ? m : g);
-                }
-                function m(t) {
-                    return 40 === t || 41 === t || 92 === t
-                        ? (e.consume(t), g)
-                        : g(t);
-                }
-            }
-            function D(e, t, n, r, i, o) {
-                let u,
-                    a = this,
-                    c = 0;
-                return function (t) {
-                    return (
-                        e.enter(r),
-                        e.enter(i),
-                        e.consume(t),
-                        e.exit(i),
-                        e.enter(o),
-                        s
-                    );
-                };
-                function s(h) {
-                    return c > 999 ||
-                        null === h ||
-                        91 === h ||
-                        (93 === h && !u) ||
-                        (94 === h &&
-                            !c &&
-                            "_hiddenFootnoteSupport" in a.parser.constructs)
-                        ? n(h)
-                        : 93 === h
-                          ? (e.exit(o),
-                            e.enter(i),
-                            e.consume(h),
-                            e.exit(i),
-                            e.exit(r),
-                            t)
-                          : (0, l.HP)(h)
-                            ? (e.enter("lineEnding"),
-                              e.consume(h),
-                              e.exit("lineEnding"),
-                              s)
-                            : (e.enter("chunkString", {
-                                  contentType: "string",
-                              }),
-                              f(h));
-                }
-                function f(t) {
-                    return null === t ||
-                        91 === t ||
-                        93 === t ||
-                        (0, l.HP)(t) ||
-                        c++ > 999
-                        ? (e.exit("chunkString"), s(t))
-                        : (e.consume(t),
-                          u || (u = !(0, l.On)(t)),
-                          92 === t ? h : f);
-                }
-                function h(t) {
-                    return 91 === t || 92 === t || 93 === t
-                        ? (e.consume(t), c++, f)
-                        : f(t);
-                }
-            }
-            function T(e, t, n, r, i, u) {
-                let a;
-                return function (t) {
-                    return 34 === t || 39 === t || 40 === t
-                        ? (e.enter(r),
-                          e.enter(i),
-                          e.consume(t),
-                          e.exit(i),
-                          (a = 40 === t ? 41 : t),
-                          c)
-                        : n(t);
-                };
-                function c(n) {
-                    return n === a
-                        ? (e.enter(i), e.consume(n), e.exit(i), e.exit(r), t)
-                        : (e.enter(u), s(n));
-                }
-                function s(t) {
-                    return t === a
-                        ? (e.exit(u), c(a))
-                        : null === t
-                          ? n(t)
-                          : (0, l.HP)(t)
-                            ? (e.enter("lineEnding"),
-                              e.consume(t),
-                              e.exit("lineEnding"),
-                              (0, o.N)(e, s, "linePrefix"))
-                            : (e.enter("chunkString", {
-                                  contentType: "string",
-                              }),
-                              f(t));
-                }
-                function f(t) {
-                    return t === a || null === t || (0, l.HP)(t)
-                        ? (e.exit("chunkString"), s(t))
-                        : (e.consume(t), 92 === t ? h : f);
-                }
-                function h(t) {
-                    return t === a || 92 === t ? (e.consume(t), f) : f(t);
-                }
-            }
-            function z(e, t) {
-                let n;
-                return function r(i) {
-                    return (0, l.HP)(i)
-                        ? (e.enter("lineEnding"),
-                          e.consume(i),
-                          e.exit("lineEnding"),
-                          (n = !0),
-                          r)
-                        : (0, l.On)(i)
-                          ? (0, o.N)(e, r, n ? "linePrefix" : "lineSuffix")(i)
-                          : t(i);
-                };
-            }
-            var A = n(9638);
-            let P = {
-                    partial: !0,
-                    tokenize: function (e, t, n) {
-                        return function (t) {
-                            return (0, l.Ee)(t) ? z(e, r)(t) : n(t);
-                        };
-                        function r(t) {
-                            return T(
-                                e,
-                                i,
-                                n,
-                                "definitionTitle",
-                                "definitionTitleMarker",
-                                "definitionTitleString"
-                            )(t);
-                        }
-                        function i(t) {
-                            return (0, l.On)(t)
-                                ? (0, o.N)(e, u, "whitespace")(t)
-                                : u(t);
-                        }
-                        function u(e) {
-                            return null === e || (0, l.HP)(e) ? t(e) : n(e);
-                        }
-                    },
-                },
-                L = {
-                    name: "codeIndented",
-                    tokenize: function (e, t, n) {
-                        let r = this;
-                        return function (t) {
-                            return (
-                                e.enter("codeIndented"),
-                                (0, o.N)(e, i, "linePrefix", 5)(t)
-                            );
-                        };
-                        function i(t) {
-                            let i = r.events[r.events.length - 1];
-                            return i &&
-                                "linePrefix" === i[1].type &&
-                                i[2].sliceSerialize(i[1], !0).length >= 4
-                                ? (function t(n) {
-                                      return null === n
-                                          ? u(n)
-                                          : (0, l.HP)(n)
-                                            ? e.attempt(O, t, u)(n)
-                                            : (e.enter("codeFlowValue"),
-                                              (function n(r) {
-                                                  return null === r ||
-                                                      (0, l.HP)(r)
-                                                      ? (e.exit(
-                                                            "codeFlowValue"
-                                                        ),
-                                                        t(r))
-                                                      : (e.consume(r), n);
-                                              })(n));
-                                  })(t)
-                                : n(t);
-                        }
-                        function u(n) {
-                            return (e.exit("codeIndented"), t(n));
-                        }
-                    },
-                },
-                O = {
-                    partial: !0,
-                    tokenize: function (e, t, n) {
-                        let r = this;
-                        return i;
-                        function i(t) {
-                            return r.parser.lazy[r.now().line]
-                                ? n(t)
-                                : (0, l.HP)(t)
-                                  ? (e.enter("lineEnding"),
-                                    e.consume(t),
-                                    e.exit("lineEnding"),
-                                    i)
-                                  : (0, o.N)(e, u, "linePrefix", 5)(t);
-                        }
-                        function u(e) {
-                            let o = r.events[r.events.length - 1];
-                            return o &&
-                                "linePrefix" === o[1].type &&
-                                o[2].sliceSerialize(o[1], !0).length >= 4
-                                ? t(e)
-                                : (0, l.HP)(e)
-                                  ? i(e)
-                                  : n(e);
-                        }
-                    },
-                },
-                _ = {
-                    name: "setextUnderline",
-                    resolveTo: function (e, t) {
-                        let n,
-                            r,
-                            i,
-                            o = e.length;
-                        for (; o--; )
-                            if ("enter" === e[o][0]) {
-                                if ("content" === e[o][1].type) {
-                                    n = o;
-                                    break;
-                                }
-                                "paragraph" === e[o][1].type && (r = o);
-                            } else
-                                ("content" === e[o][1].type && e.splice(o, 1),
-                                    i ||
-                                        "definition" !== e[o][1].type ||
-                                        (i = o));
-                        let l = {
-                            type: "setextHeading",
-                            start: { ...e[r][1].start },
-                            end: { ...e[e.length - 1][1].end },
-                        };
-                        return (
-                            (e[r][1].type = "setextHeadingText"),
-                            i
-                                ? (e.splice(r, 0, ["enter", l, t]),
-                                  e.splice(i + 1, 0, ["exit", e[n][1], t]),
-                                  (e[n][1].end = { ...e[i][1].end }))
-                                : (e[n][1] = l),
-                            e.push(["exit", l, t]),
-                            e
-                        );
-                    },
-                    tokenize: function (e, t, n) {
-                        let r,
-                            i = this;
-                        return function (t) {
-                            var a;
-                            let c,
-                                s = i.events.length;
-                            for (; s--; )
-                                if (
-                                    "lineEnding" !== i.events[s][1].type &&
-                                    "linePrefix" !== i.events[s][1].type &&
-                                    "content" !== i.events[s][1].type
-                                ) {
-                                    c = "paragraph" === i.events[s][1].type;
-                                    break;
-                                }
-                            return !i.parser.lazy[i.now().line] &&
-                                (i.interrupt || c)
-                                ? (e.enter("setextHeadingLine"),
-                                  (r = t),
-                                  (a = t),
-                                  e.enter("setextHeadingLineSequence"),
-                                  (function t(n) {
-                                      return n === r
-                                          ? (e.consume(n), t)
-                                          : (e.exit(
-                                                "setextHeadingLineSequence"
-                                            ),
-                                            (0, l.On)(n)
-                                                ? (0, o.N)(
-                                                      e,
-                                                      u,
-                                                      "lineSuffix"
-                                                  )(n)
-                                                : u(n));
-                                  })(a))
-                                : n(t);
-                        };
-                        function u(r) {
-                            return null === r || (0, l.HP)(r)
-                                ? (e.exit("setextHeadingLine"), t(r))
-                                : n(r);
-                        }
-                    },
-                },
-                H = [
-                    "address",
-                    "article",
-                    "aside",
-                    "base",
-                    "basefont",
-                    "blockquote",
-                    "body",
-                    "caption",
-                    "center",
-                    "col",
-                    "colgroup",
-                    "dd",
-                    "details",
-                    "dialog",
-                    "dir",
-                    "div",
-                    "dl",
-                    "dt",
-                    "fieldset",
-                    "figcaption",
-                    "figure",
-                    "footer",
-                    "form",
-                    "frame",
-                    "frameset",
-                    "h1",
-                    "h2",
-                    "h3",
-                    "h4",
-                    "h5",
-                    "h6",
-                    "head",
-                    "header",
-                    "hr",
-                    "html",
-                    "iframe",
-                    "legend",
-                    "li",
-                    "link",
-                    "main",
-                    "menu",
-                    "menuitem",
-                    "nav",
-                    "noframes",
-                    "ol",
-                    "optgroup",
-                    "option",
-                    "p",
-                    "param",
-                    "search",
-                    "section",
-                    "summary",
-                    "table",
-                    "tbody",
-                    "td",
-                    "tfoot",
-                    "th",
-                    "thead",
-                    "title",
-                    "tr",
-                    "track",
-                    "ul",
-                ],
-                M = ["pre", "script", "style", "textarea"],
-                R = {
-                    partial: !0,
-                    tokenize: function (e, t, n) {
-                        return function (r) {
-                            return (
-                                e.enter("lineEnding"),
-                                e.consume(r),
-                                e.exit("lineEnding"),
-                                e.attempt(f.B, t, n)
-                            );
-                        };
-                    },
-                },
-                B = {
-                    partial: !0,
-                    tokenize: function (e, t, n) {
-                        let r = this;
-                        return function (t) {
-                            return (0, l.HP)(t)
-                                ? (e.enter("lineEnding"),
-                                  e.consume(t),
-                                  e.exit("lineEnding"),
-                                  i)
-                                : n(t);
-                        };
-                        function i(e) {
-                            return r.parser.lazy[r.now().line] ? n(e) : t(e);
-                        }
-                    },
-                },
-                N = {
-                    partial: !0,
-                    tokenize: function (e, t, n) {
-                        let r = this;
-                        return function (t) {
-                            return null === t
-                                ? n(t)
-                                : (e.enter("lineEnding"),
-                                  e.consume(t),
-                                  e.exit("lineEnding"),
-                                  i);
-                        };
-                        function i(e) {
-                            return r.parser.lazy[r.now().line] ? n(e) : t(e);
-                        }
-                    },
-                },
-                V = {
-                    concrete: !0,
-                    name: "codeFenced",
-                    tokenize: function (e, t, n) {
-                        let r,
-                            i = this,
-                            u = {
-                                partial: !0,
-                                tokenize: function (e, t, n) {
-                                    let u = 0;
-                                    return function (t) {
-                                        return (
-                                            e.enter("lineEnding"),
-                                            e.consume(t),
-                                            e.exit("lineEnding"),
-                                            a
-                                        );
-                                    };
-                                    function a(t) {
-                                        return (
-                                            e.enter("codeFencedFence"),
-                                            (0, l.On)(t)
-                                                ? (0, o.N)(
-                                                      e,
-                                                      s,
-                                                      "linePrefix",
-                                                      i.parser.constructs.disable.null.includes(
-                                                          "codeIndented"
-                                                      )
-                                                          ? void 0
-                                                          : 4
-                                                  )(t)
-                                                : s(t)
-                                        );
-                                    }
-                                    function s(t) {
-                                        return t === r
-                                            ? (e.enter(
-                                                  "codeFencedFenceSequence"
-                                              ),
-                                              (function t(i) {
-                                                  return i === r
-                                                      ? (u++, e.consume(i), t)
-                                                      : u >= c
-                                                        ? (e.exit(
-                                                              "codeFencedFenceSequence"
-                                                          ),
-                                                          (0, l.On)(i)
-                                                              ? (0, o.N)(
-                                                                    e,
-                                                                    f,
-                                                                    "whitespace"
-                                                                )(i)
-                                                              : f(i))
-                                                        : n(i);
-                                              })(t))
-                                            : n(t);
-                                    }
-                                    function f(r) {
-                                        return null === r || (0, l.HP)(r)
-                                            ? (e.exit("codeFencedFence"), t(r))
-                                            : n(r);
-                                    }
-                                },
-                            },
-                            a = 0,
-                            c = 0;
-                        return function (t) {
-                            var u = t;
-                            let f = i.events[i.events.length - 1];
-                            return (
-                                (a =
-                                    f && "linePrefix" === f[1].type
-                                        ? f[2].sliceSerialize(f[1], !0).length
-                                        : 0),
-                                (r = u),
-                                e.enter("codeFenced"),
-                                e.enter("codeFencedFence"),
-                                e.enter("codeFencedFenceSequence"),
-                                (function t(i) {
-                                    return i === r
-                                        ? (c++, e.consume(i), t)
-                                        : c < 3
-                                          ? n(i)
-                                          : (e.exit("codeFencedFenceSequence"),
-                                            (0, l.On)(i)
-                                                ? (0, o.N)(
-                                                      e,
-                                                      s,
-                                                      "whitespace"
-                                                  )(i)
-                                                : s(i));
-                                })(u)
-                            );
-                        };
-                        function s(u) {
-                            return null === u || (0, l.HP)(u)
-                                ? (e.exit("codeFencedFence"),
-                                  i.interrupt ? t(u) : e.check(N, h, m)(u))
-                                : (e.enter("codeFencedFenceInfo"),
-                                  e.enter("chunkString", {
-                                      contentType: "string",
-                                  }),
-                                  (function t(i) {
-                                      return null === i || (0, l.HP)(i)
-                                          ? (e.exit("chunkString"),
-                                            e.exit("codeFencedFenceInfo"),
-                                            s(i))
-                                          : (0, l.On)(i)
-                                            ? (e.exit("chunkString"),
-                                              e.exit("codeFencedFenceInfo"),
-                                              (0, o.N)(e, f, "whitespace")(i))
-                                            : 96 === i && i === r
-                                              ? n(i)
-                                              : (e.consume(i), t);
-                                  })(u));
-                        }
-                        function f(t) {
-                            return null === t || (0, l.HP)(t)
-                                ? s(t)
-                                : (e.enter("codeFencedFenceMeta"),
-                                  e.enter("chunkString", {
-                                      contentType: "string",
-                                  }),
-                                  (function t(i) {
-                                      return null === i || (0, l.HP)(i)
-                                          ? (e.exit("chunkString"),
-                                            e.exit("codeFencedFenceMeta"),
-                                            s(i))
-                                          : 96 === i && i === r
-                                            ? n(i)
-                                            : (e.consume(i), t);
-                                  })(t));
-                        }
-                        function h(t) {
-                            return e.attempt(u, m, d)(t);
-                        }
-                        function d(t) {
-                            return (
-                                e.enter("lineEnding"),
-                                e.consume(t),
-                                e.exit("lineEnding"),
-                                p
-                            );
-                        }
-                        function p(t) {
-                            return a > 0 && (0, l.On)(t)
-                                ? (0, o.N)(e, g, "linePrefix", a + 1)(t)
-                                : g(t);
-                        }
-                        function g(t) {
-                            return null === t || (0, l.HP)(t)
-                                ? e.check(N, h, m)(t)
-                                : (e.enter("codeFlowValue"),
-                                  (function t(n) {
-                                      return null === n || (0, l.HP)(n)
-                                          ? (e.exit("codeFlowValue"), g(n))
-                                          : (e.consume(n), t);
-                                  })(t));
-                        }
-                        function m(n) {
-                            return (e.exit("codeFenced"), t(n));
-                        }
-                    },
-                };
-            var j = n(96206);
-            let q = {
-                    name: "characterReference",
-                    tokenize: function (e, t, n) {
-                        let r,
-                            i,
-                            o = this,
-                            u = 0;
-                        return function (t) {
-                            return (
-                                e.enter("characterReference"),
-                                e.enter("characterReferenceMarker"),
-                                e.consume(t),
-                                e.exit("characterReferenceMarker"),
-                                a
-                            );
-                        };
-                        function a(t) {
-                            return 35 === t
-                                ? (e.enter("characterReferenceMarkerNumeric"),
-                                  e.consume(t),
-                                  e.exit("characterReferenceMarkerNumeric"),
-                                  c)
-                                : (e.enter("characterReferenceValue"),
-                                  (r = 31),
-                                  (i = l.lV),
-                                  s(t));
-                        }
-                        function c(t) {
-                            return 88 === t || 120 === t
-                                ? (e.enter(
-                                      "characterReferenceMarkerHexadecimal"
-                                  ),
-                                  e.consume(t),
-                                  e.exit("characterReferenceMarkerHexadecimal"),
-                                  e.enter("characterReferenceValue"),
-                                  (r = 6),
-                                  (i = l.ok),
-                                  s)
-                                : (e.enter("characterReferenceValue"),
-                                  (r = 7),
-                                  (i = l.BM),
-                                  s(t));
-                        }
-                        function s(a) {
-                            if (59 === a && u) {
-                                let r = e.exit("characterReferenceValue");
-                                return i !== l.lV ||
-                                    (0, j.s)(o.sliceSerialize(r))
-                                    ? (e.enter("characterReferenceMarker"),
-                                      e.consume(a),
-                                      e.exit("characterReferenceMarker"),
-                                      e.exit("characterReference"),
-                                      t)
-                                    : n(a);
-                            }
-                            return i(a) && u++ < r ? (e.consume(a), s) : n(a);
-                        }
-                    },
-                },
-                W = {
-                    name: "characterEscape",
-                    tokenize: function (e, t, n) {
-                        return function (t) {
-                            return (
-                                e.enter("characterEscape"),
-                                e.enter("escapeMarker"),
-                                e.consume(t),
-                                e.exit("escapeMarker"),
-                                r
-                            );
-                        };
-                        function r(r) {
-                            return (0, l.ol)(r)
-                                ? (e.enter("characterEscapeValue"),
-                                  e.consume(r),
-                                  e.exit("characterEscapeValue"),
-                                  e.exit("characterEscape"),
-                                  t)
-                                : n(r);
-                        }
-                    },
-                },
-                Q = {
-                    name: "lineEnding",
-                    tokenize: function (e, t) {
-                        return function (n) {
-                            return (
-                                e.enter("lineEnding"),
-                                e.consume(n),
-                                e.exit("lineEnding"),
-                                (0, o.N)(e, t, "linePrefix")
-                            );
-                        };
-                    },
-                };
-            var $ = n(45535);
-            let U = {
-                    name: "labelEnd",
-                    resolveAll: function (e) {
-                        let t = -1,
-                            n = [];
-                        for (; ++t < e.length; ) {
-                            let r = e[t][1];
-                            if (
-                                (n.push(e[t]),
-                                "labelImage" === r.type ||
-                                    "labelLink" === r.type ||
-                                    "labelEnd" === r.type)
-                            ) {
-                                let e = "labelImage" === r.type ? 4 : 2;
-                                ((r.type = "data"), (t += e));
-                            }
-                        }
-                        return (
-                            e.length !== n.length &&
-                                (0, a.m)(e, 0, e.length, n),
-                            e
-                        );
-                    },
-                    resolveTo: function (e, t) {
-                        let n,
-                            r,
-                            i,
-                            o,
-                            l = e.length,
-                            u = 0;
-                        for (; l--; )
-                            if (((n = e[l][1]), r)) {
-                                if (
-                                    "link" === n.type ||
-                                    ("labelLink" === n.type && n._inactive)
-                                )
-                                    break;
-                                "enter" === e[l][0] &&
-                                    "labelLink" === n.type &&
-                                    (n._inactive = !0);
-                            } else if (i) {
-                                if (
-                                    "enter" === e[l][0] &&
-                                    ("labelImage" === n.type ||
-                                        "labelLink" === n.type) &&
-                                    !n._balanced &&
-                                    ((r = l), "labelLink" !== n.type)
-                                ) {
-                                    u = 2;
-                                    break;
-                                }
-                            } else "labelEnd" === n.type && (i = l);
-                        let c = {
-                                type:
-                                    "labelLink" === e[r][1].type
-                                        ? "link"
-                                        : "image",
-                                start: { ...e[r][1].start },
-                                end: { ...e[e.length - 1][1].end },
-                            },
-                            s = {
-                                type: "label",
-                                start: { ...e[r][1].start },
-                                end: { ...e[i][1].end },
-                            },
-                            f = {
-                                type: "labelText",
-                                start: { ...e[r + u + 2][1].end },
-                                end: { ...e[i - 2][1].start },
-                            };
-                        return (
-                            (o = [
-                                ["enter", c, t],
-                                ["enter", s, t],
-                            ]),
-                            (o = (0, a.V)(o, e.slice(r + 1, r + u + 3))),
-                            (o = (0, a.V)(o, [["enter", f, t]])),
-                            (o = (0, a.V)(
-                                o,
-                                (0, $.W)(
-                                    t.parser.constructs.insideSpan.null,
-                                    e.slice(r + u + 4, i - 3),
-                                    t
-                                )
-                            )),
-                            (o = (0, a.V)(o, [
-                                ["exit", f, t],
-                                e[i - 2],
-                                e[i - 1],
-                                ["exit", s, t],
-                            ])),
-                            (o = (0, a.V)(o, e.slice(i + 1))),
-                            (o = (0, a.V)(o, [["exit", c, t]])),
-                            (0, a.m)(e, r, e.length, o),
-                            e
-                        );
-                    },
-                    tokenize: function (e, t, n) {
-                        let r,
-                            i,
-                            o = this,
-                            l = o.events.length;
-                        for (; l--; )
-                            if (
-                                ("labelImage" === o.events[l][1].type ||
-                                    "labelLink" === o.events[l][1].type) &&
-                                !o.events[l][1]._balanced
-                            ) {
-                                r = o.events[l][1];
-                                break;
-                            }
-                        return function (t) {
-                            return r
-                                ? r._inactive
-                                    ? s(t)
-                                    : ((i = o.parser.defined.includes(
-                                          (0, A.B)(
-                                              o.sliceSerialize({
-                                                  start: r.end,
-                                                  end: o.now(),
-                                              })
-                                          )
-                                      )),
-                                      e.enter("labelEnd"),
-                                      e.enter("labelMarker"),
-                                      e.consume(t),
-                                      e.exit("labelMarker"),
-                                      e.exit("labelEnd"),
-                                      u)
-                                : n(t);
-                        };
-                        function u(t) {
-                            return 40 === t
-                                ? e.attempt(J, c, i ? c : s)(t)
-                                : 91 === t
-                                  ? e.attempt(Z, c, i ? a : s)(t)
-                                  : i
-                                    ? c(t)
-                                    : s(t);
-                        }
-                        function a(t) {
-                            return e.attempt(G, c, s)(t);
-                        }
-                        function c(e) {
-                            return t(e);
-                        }
-                        function s(e) {
-                            return ((r._balanced = !0), n(e));
-                        }
-                    },
-                },
-                J = {
-                    tokenize: function (e, t, n) {
-                        return function (t) {
-                            return (
-                                e.enter("resource"),
-                                e.enter("resourceMarker"),
-                                e.consume(t),
-                                e.exit("resourceMarker"),
-                                r
-                            );
-                        };
-                        function r(t) {
-                            return (0, l.Ee)(t) ? z(e, i)(t) : i(t);
-                        }
-                        function i(t) {
-                            return 41 === t
-                                ? s(t)
-                                : I(
-                                      e,
-                                      o,
-                                      u,
-                                      "resourceDestination",
-                                      "resourceDestinationLiteral",
-                                      "resourceDestinationLiteralMarker",
-                                      "resourceDestinationRaw",
-                                      "resourceDestinationString",
-                                      32
-                                  )(t);
-                        }
-                        function o(t) {
-                            return (0, l.Ee)(t) ? z(e, a)(t) : s(t);
-                        }
-                        function u(e) {
-                            return n(e);
-                        }
-                        function a(t) {
-                            return 34 === t || 39 === t || 40 === t
-                                ? T(
-                                      e,
-                                      c,
-                                      n,
-                                      "resourceTitle",
-                                      "resourceTitleMarker",
-                                      "resourceTitleString"
-                                  )(t)
-                                : s(t);
-                        }
-                        function c(t) {
-                            return (0, l.Ee)(t) ? z(e, s)(t) : s(t);
-                        }
-                        function s(r) {
-                            return 41 === r
-                                ? (e.enter("resourceMarker"),
-                                  e.consume(r),
-                                  e.exit("resourceMarker"),
-                                  e.exit("resource"),
-                                  t)
-                                : n(r);
-                        }
-                    },
-                },
-                Z = {
-                    tokenize: function (e, t, n) {
-                        let r = this;
-                        return function (t) {
-                            return D.call(
-                                r,
-                                e,
-                                i,
-                                o,
-                                "reference",
-                                "referenceMarker",
-                                "referenceString"
-                            )(t);
-                        };
-                        function i(e) {
-                            return r.parser.defined.includes(
-                                (0, A.B)(
-                                    r
-                                        .sliceSerialize(
-                                            r.events[r.events.length - 1][1]
-                                        )
-                                        .slice(1, -1)
-                                )
-                            )
-                                ? t(e)
-                                : n(e);
-                        }
-                        function o(e) {
-                            return n(e);
-                        }
-                    },
-                },
-                G = {
-                    tokenize: function (e, t, n) {
-                        return function (t) {
-                            return (
-                                e.enter("reference"),
-                                e.enter("referenceMarker"),
-                                e.consume(t),
-                                e.exit("referenceMarker"),
-                                r
-                            );
-                        };
-                        function r(r) {
-                            return 93 === r
-                                ? (e.enter("referenceMarker"),
-                                  e.consume(r),
-                                  e.exit("referenceMarker"),
-                                  e.exit("reference"),
-                                  t)
-                                : n(r);
-                        }
-                    },
-                },
-                Y = {
-                    name: "labelStartImage",
-                    resolveAll: U.resolveAll,
-                    tokenize: function (e, t, n) {
-                        let r = this;
-                        return function (t) {
-                            return (
-                                e.enter("labelImage"),
-                                e.enter("labelImageMarker"),
-                                e.consume(t),
-                                e.exit("labelImageMarker"),
-                                i
-                            );
-                        };
-                        function i(t) {
-                            return 91 === t
-                                ? (e.enter("labelMarker"),
-                                  e.consume(t),
-                                  e.exit("labelMarker"),
-                                  e.exit("labelImage"),
-                                  o)
-                                : n(t);
-                        }
-                        function o(e) {
-                            return 94 === e &&
-                                "_hiddenFootnoteSupport" in r.parser.constructs
-                                ? n(e)
-                                : t(e);
-                        }
-                    },
-                };
-            var K = n(10691);
-            let X = {
-                name: "attention",
-                resolveAll: function (e, t) {
-                    let n,
-                        r,
-                        i,
-                        o,
-                        l,
-                        u,
-                        c,
-                        s,
-                        f = -1;
-                    for (; ++f < e.length; )
-                        if (
-                            "enter" === e[f][0] &&
-                            "attentionSequence" === e[f][1].type &&
-                            e[f][1]._close
-                        ) {
-                            for (n = f; n--; )
-                                if (
-                                    "exit" === e[n][0] &&
-                                    "attentionSequence" === e[n][1].type &&
-                                    e[n][1]._open &&
-                                    t.sliceSerialize(e[n][1]).charCodeAt(0) ===
-                                        t.sliceSerialize(e[f][1]).charCodeAt(0)
-                                ) {
-                                    if (
-                                        (e[n][1]._close || e[f][1]._open) &&
-                                        (e[f][1].end.offset -
-                                            e[f][1].start.offset) %
-                                            3 &&
-                                        !(
-                                            (e[n][1].end.offset -
-                                                e[n][1].start.offset +
-                                                e[f][1].end.offset -
-                                                e[f][1].start.offset) %
-                                            3
-                                        )
-                                    )
-                                        continue;
-                                    u =
-                                        e[n][1].end.offset -
-                                            e[n][1].start.offset >
-                                            1 &&
-                                        e[f][1].end.offset -
-                                            e[f][1].start.offset >
-                                            1
-                                            ? 2
-                                            : 1;
-                                    let h = { ...e[n][1].end },
-                                        d = { ...e[f][1].start };
-                                    (ee(h, -u),
-                                        ee(d, u),
-                                        (o = {
-                                            type:
-                                                u > 1
-                                                    ? "strongSequence"
-                                                    : "emphasisSequence",
-                                            start: h,
-                                            end: { ...e[n][1].end },
-                                        }),
-                                        (l = {
-                                            type:
-                                                u > 1
-                                                    ? "strongSequence"
-                                                    : "emphasisSequence",
-                                            start: { ...e[f][1].start },
-                                            end: d,
-                                        }),
-                                        (i = {
-                                            type:
-                                                u > 1
-                                                    ? "strongText"
-                                                    : "emphasisText",
-                                            start: { ...e[n][1].end },
-                                            end: { ...e[f][1].start },
-                                        }),
-                                        (r = {
-                                            type: u > 1 ? "strong" : "emphasis",
-                                            start: { ...o.start },
-                                            end: { ...l.end },
-                                        }),
-                                        (e[n][1].end = { ...o.start }),
-                                        (e[f][1].start = { ...l.end }),
-                                        (c = []),
-                                        e[n][1].end.offset -
-                                            e[n][1].start.offset &&
-                                            (c = (0, a.V)(c, [
-                                                ["enter", e[n][1], t],
-                                                ["exit", e[n][1], t],
-                                            ])),
-                                        (c = (0, a.V)(c, [
-                                            ["enter", r, t],
-                                            ["enter", o, t],
-                                            ["exit", o, t],
-                                            ["enter", i, t],
-                                        ])),
-                                        (c = (0, a.V)(
-                                            c,
-                                            (0, $.W)(
-                                                t.parser.constructs.insideSpan
-                                                    .null,
-                                                e.slice(n + 1, f),
-                                                t
-                                            )
-                                        )),
-                                        (c = (0, a.V)(c, [
-                                            ["exit", i, t],
-                                            ["enter", l, t],
-                                            ["exit", l, t],
-                                            ["exit", r, t],
-                                        ])),
-                                        e[f][1].end.offset -
-                                        e[f][1].start.offset
-                                            ? ((s = 2),
-                                              (c = (0, a.V)(c, [
-                                                  ["enter", e[f][1], t],
-                                                  ["exit", e[f][1], t],
-                                              ])))
-                                            : (s = 0),
-                                        (0, a.m)(e, n - 1, f - n + 3, c),
-                                        (f = n + c.length - s - 2));
-                                    break;
-                                }
-                        }
-                    for (f = -1; ++f < e.length; )
-                        "attentionSequence" === e[f][1].type &&
-                            (e[f][1].type = "data");
-                    return e;
-                },
-                tokenize: function (e, t) {
-                    let n,
-                        r = this.parser.constructs.attentionMarkers.null,
-                        i = this.previous,
-                        o = (0, K.S)(i);
-                    return function (l) {
-                        return (
-                            (n = l),
-                            e.enter("attentionSequence"),
-                            (function l(u) {
-                                if (u === n) return (e.consume(u), l);
-                                let a = e.exit("attentionSequence"),
-                                    c = (0, K.S)(u),
-                                    s = !c || (2 === c && o) || r.includes(u),
-                                    f = !o || (2 === o && c) || r.includes(i);
-                                return (
-                                    (a._open = !!(42 === n
-                                        ? s
-                                        : s && (o || !f))),
-                                    (a._close = !!(42 === n
-                                        ? f
-                                        : f && (c || !s))),
-                                    t(u)
-                                );
-                            })(l)
-                        );
-                    };
-                },
-            };
-            function ee(e, t) {
-                ((e.column += t), (e.offset += t), (e._bufferIndex += t));
-            }
-            let et = {
-                    name: "labelStartLink",
-                    resolveAll: U.resolveAll,
-                    tokenize: function (e, t, n) {
-                        let r = this;
-                        return function (t) {
-                            return (
-                                e.enter("labelLink"),
-                                e.enter("labelMarker"),
-                                e.consume(t),
-                                e.exit("labelMarker"),
-                                e.exit("labelLink"),
-                                i
-                            );
-                        };
-                        function i(e) {
-                            return 94 === e &&
-                                "_hiddenFootnoteSupport" in r.parser.constructs
-                                ? n(e)
-                                : t(e);
-                        }
-                    },
-                },
-                en = {
-                    42: S,
-                    43: S,
-                    45: S,
-                    48: S,
-                    49: S,
-                    50: S,
-                    51: S,
-                    52: S,
-                    53: S,
-                    54: S,
-                    55: S,
-                    56: S,
-                    57: S,
-                    62: F,
-                },
-                er = {
-                    91: {
-                        name: "definition",
-                        tokenize: function (e, t, n) {
-                            let r,
-                                i = this;
-                            return function (t) {
-                                var r;
-                                return (
-                                    e.enter("definition"),
-                                    (r = t),
-                                    D.call(
-                                        i,
-                                        e,
-                                        u,
-                                        n,
-                                        "definitionLabel",
-                                        "definitionLabelMarker",
-                                        "definitionLabelString"
-                                    )(r)
-                                );
-                            };
-                            function u(t) {
-                                return ((r = (0, A.B)(
-                                    i
-                                        .sliceSerialize(
-                                            i.events[i.events.length - 1][1]
-                                        )
-                                        .slice(1, -1)
-                                )),
-                                58 === t)
-                                    ? (e.enter("definitionMarker"),
-                                      e.consume(t),
-                                      e.exit("definitionMarker"),
-                                      a)
-                                    : n(t);
-                            }
-                            function a(t) {
-                                return (0, l.Ee)(t) ? z(e, c)(t) : c(t);
-                            }
-                            function c(t) {
-                                return I(
-                                    e,
-                                    s,
-                                    n,
-                                    "definitionDestination",
-                                    "definitionDestinationLiteral",
-                                    "definitionDestinationLiteralMarker",
-                                    "definitionDestinationRaw",
-                                    "definitionDestinationString"
-                                )(t);
-                            }
-                            function s(t) {
-                                return e.attempt(P, f, f)(t);
-                            }
-                            function f(t) {
-                                return (0, l.On)(t)
-                                    ? (0, o.N)(e, h, "whitespace")(t)
-                                    : h(t);
-                            }
-                            function h(o) {
-                                return null === o || (0, l.HP)(o)
-                                    ? (e.exit("definition"),
-                                      i.parser.defined.push(r),
-                                      t(o))
-                                    : n(o);
-                            }
-                        },
-                    },
-                },
-                ei = { [-2]: L, [-1]: L, 32: L },
-                eo = {
-                    35: {
-                        name: "headingAtx",
-                        resolve: function (e, t) {
-                            let n,
-                                r,
-                                i = e.length - 2,
-                                o = 3;
-                            return (
-                                "whitespace" === e[3][1].type && (o += 2),
-                                i - 2 > o &&
-                                    "whitespace" === e[i][1].type &&
-                                    (i -= 2),
-                                "atxHeadingSequence" === e[i][1].type &&
-                                    (o === i - 1 ||
-                                        (i - 4 > o &&
-                                            "whitespace" ===
-                                                e[i - 2][1].type)) &&
-                                    (i -= o + 1 === i ? 2 : 4),
-                                i > o &&
-                                    ((n = {
-                                        type: "atxHeadingText",
-                                        start: e[o][1].start,
-                                        end: e[i][1].end,
-                                    }),
-                                    (r = {
-                                        type: "chunkText",
-                                        start: e[o][1].start,
-                                        end: e[i][1].end,
-                                        contentType: "text",
-                                    }),
-                                    (0, a.m)(e, o, i - o + 1, [
-                                        ["enter", n, t],
-                                        ["enter", r, t],
-                                        ["exit", r, t],
-                                        ["exit", n, t],
-                                    ])),
-                                e
-                            );
-                        },
-                        tokenize: function (e, t, n) {
-                            let r = 0;
-                            return function (i) {
-                                var u;
-                                return (
-                                    e.enter("atxHeading"),
-                                    (u = i),
-                                    e.enter("atxHeadingSequence"),
-                                    (function i(u) {
-                                        return 35 === u && r++ < 6
-                                            ? (e.consume(u), i)
-                                            : null === u || (0, l.Ee)(u)
-                                              ? (e.exit("atxHeadingSequence"),
-                                                (function n(r) {
-                                                    return 35 === r
-                                                        ? (e.enter(
-                                                              "atxHeadingSequence"
-                                                          ),
-                                                          (function t(r) {
-                                                              return 35 === r
-                                                                  ? (e.consume(
-                                                                        r
-                                                                    ),
-                                                                    t)
-                                                                  : (e.exit(
-                                                                        "atxHeadingSequence"
-                                                                    ),
-                                                                    n(r));
-                                                          })(r))
-                                                        : null === r ||
-                                                            (0, l.HP)(r)
-                                                          ? (e.exit(
-                                                                "atxHeading"
-                                                            ),
-                                                            t(r))
-                                                          : (0, l.On)(r)
-                                                            ? (0, o.N)(
-                                                                  e,
-                                                                  n,
-                                                                  "whitespace"
-                                                              )(r)
-                                                            : (e.enter(
-                                                                  "atxHeadingText"
-                                                              ),
-                                                              (function t(r) {
-                                                                  return null ===
-                                                                      r ||
-                                                                      35 ===
-                                                                          r ||
-                                                                      (0, l.Ee)(
-                                                                          r
-                                                                      )
-                                                                      ? (e.exit(
-                                                                            "atxHeadingText"
-                                                                        ),
-                                                                        n(r))
-                                                                      : (e.consume(
-                                                                            r
-                                                                        ),
-                                                                        t);
-                                                              })(r));
-                                                })(u))
-                                              : n(u);
-                                    })(u)
-                                );
-                            };
-                        },
-                    },
-                    42: C,
-                    45: [_, C],
-                    60: {
-                        concrete: !0,
-                        name: "htmlFlow",
-                        resolveTo: function (e) {
-                            let t = e.length;
-                            for (
-                                ;
-                                t-- &&
-                                ("enter" !== e[t][0] ||
-                                    "htmlFlow" !== e[t][1].type);
-
-                            );
-                            return (
-                                t > 1 &&
-                                    "linePrefix" === e[t - 2][1].type &&
-                                    ((e[t][1].start = e[t - 2][1].start),
-                                    (e[t + 1][1].start = e[t - 2][1].start),
-                                    e.splice(t - 2, 2)),
-                                e
-                            );
-                        },
-                        tokenize: function (e, t, n) {
-                            let r,
-                                i,
-                                o,
-                                u,
-                                a,
-                                c = this;
-                            return function (t) {
-                                var n;
-                                return (
-                                    (n = t),
-                                    e.enter("htmlFlow"),
-                                    e.enter("htmlFlowData"),
-                                    e.consume(n),
-                                    s
-                                );
-                            };
-                            function s(u) {
-                                return 33 === u
-                                    ? (e.consume(u), f)
-                                    : 47 === u
-                                      ? (e.consume(u), (i = !0), p)
-                                      : 63 === u
-                                        ? (e.consume(u),
-                                          (r = 3),
-                                          c.interrupt ? t : L)
-                                        : (0, l.CW)(u)
-                                          ? (e.consume(u),
-                                            (o = String.fromCharCode(u)),
-                                            g)
-                                          : n(u);
-                            }
-                            function f(i) {
-                                return 45 === i
-                                    ? (e.consume(i), (r = 2), h)
-                                    : 91 === i
-                                      ? (e.consume(i), (r = 5), (u = 0), d)
-                                      : (0, l.CW)(i)
-                                        ? (e.consume(i),
-                                          (r = 4),
-                                          c.interrupt ? t : L)
-                                        : n(i);
-                            }
-                            function h(r) {
-                                return 45 === r
-                                    ? (e.consume(r), c.interrupt ? t : L)
-                                    : n(r);
-                            }
-                            function d(r) {
-                                let i = "CDATA[";
-                                return r === i.charCodeAt(u++)
-                                    ? (e.consume(r), u === i.length)
-                                        ? c.interrupt
-                                            ? t
-                                            : E
-                                        : d
-                                    : n(r);
-                            }
-                            function p(t) {
-                                return (0, l.CW)(t)
-                                    ? (e.consume(t),
-                                      (o = String.fromCharCode(t)),
-                                      g)
-                                    : n(t);
-                            }
-                            function g(u) {
-                                if (
-                                    null === u ||
-                                    47 === u ||
-                                    62 === u ||
-                                    (0, l.Ee)(u)
-                                ) {
-                                    let a = 47 === u,
-                                        s = o.toLowerCase();
-                                    return !a && !i && M.includes(s)
-                                        ? ((r = 1), c.interrupt ? t(u) : E(u))
-                                        : H.includes(o.toLowerCase())
-                                          ? ((r = 6), a)
-                                              ? (e.consume(u), m)
-                                              : c.interrupt
-                                                ? t(u)
-                                                : E(u)
-                                          : ((r = 7),
-                                            c.interrupt &&
-                                            !c.parser.lazy[c.now().line]
-                                                ? n(u)
-                                                : i
-                                                  ? (function t(n) {
-                                                        return (0, l.On)(n)
-                                                            ? (e.consume(n), t)
-                                                            : S(n);
-                                                    })(u)
-                                                  : k(u));
-                                }
-                                return 45 === u || (0, l.lV)(u)
-                                    ? (e.consume(u),
-                                      (o += String.fromCharCode(u)),
-                                      g)
-                                    : n(u);
-                            }
-                            function m(r) {
-                                return 62 === r
-                                    ? (e.consume(r), c.interrupt ? t : E)
-                                    : n(r);
-                            }
-                            function k(t) {
-                                return 47 === t
-                                    ? (e.consume(t), S)
-                                    : 58 === t || 95 === t || (0, l.CW)(t)
-                                      ? (e.consume(t), x)
-                                      : (0, l.On)(t)
-                                        ? (e.consume(t), k)
-                                        : S(t);
-                            }
-                            function x(t) {
-                                return 45 === t ||
-                                    46 === t ||
-                                    58 === t ||
-                                    95 === t ||
-                                    (0, l.lV)(t)
-                                    ? (e.consume(t), x)
-                                    : b(t);
-                            }
-                            function b(t) {
-                                return 61 === t
-                                    ? (e.consume(t), v)
-                                    : (0, l.On)(t)
-                                      ? (e.consume(t), b)
-                                      : k(t);
-                            }
-                            function v(t) {
-                                return null === t ||
-                                    60 === t ||
-                                    61 === t ||
-                                    62 === t ||
-                                    96 === t
-                                    ? n(t)
-                                    : 34 === t || 39 === t
-                                      ? (e.consume(t), (a = t), y)
-                                      : (0, l.On)(t)
-                                        ? (e.consume(t), v)
-                                        : (function t(n) {
-                                              return null === n ||
-                                                  34 === n ||
-                                                  39 === n ||
-                                                  47 === n ||
-                                                  60 === n ||
-                                                  61 === n ||
-                                                  62 === n ||
-                                                  96 === n ||
-                                                  (0, l.Ee)(n)
-                                                  ? b(n)
-                                                  : (e.consume(n), t);
-                                          })(t);
-                            }
-                            function y(t) {
-                                return t === a
-                                    ? (e.consume(t), (a = null), C)
-                                    : null === t || (0, l.HP)(t)
-                                      ? n(t)
-                                      : (e.consume(t), y);
-                            }
-                            function C(e) {
-                                return 47 === e || 62 === e || (0, l.On)(e)
-                                    ? k(e)
-                                    : n(e);
-                            }
-                            function S(t) {
-                                return 62 === t ? (e.consume(t), w) : n(t);
-                            }
-                            function w(t) {
-                                return null === t || (0, l.HP)(t)
-                                    ? E(t)
-                                    : (0, l.On)(t)
-                                      ? (e.consume(t), w)
-                                      : n(t);
-                            }
-                            function E(t) {
-                                return 45 === t && 2 === r
-                                    ? (e.consume(t), T)
-                                    : 60 === t && 1 === r
-                                      ? (e.consume(t), z)
-                                      : 62 === t && 4 === r
-                                        ? (e.consume(t), O)
-                                        : 63 === t && 3 === r
-                                          ? (e.consume(t), L)
-                                          : 93 === t && 5 === r
-                                            ? (e.consume(t), P)
-                                            : (0, l.HP)(t) &&
-                                                (6 === r || 7 === r)
-                                              ? (e.exit("htmlFlowData"),
-                                                e.check(R, _, F)(t))
-                                              : null === t || (0, l.HP)(t)
-                                                ? (e.exit("htmlFlowData"), F(t))
-                                                : (e.consume(t), E);
-                            }
-                            function F(t) {
-                                return e.check(B, I, _)(t);
-                            }
-                            function I(t) {
-                                return (
-                                    e.enter("lineEnding"),
-                                    e.consume(t),
-                                    e.exit("lineEnding"),
-                                    D
-                                );
-                            }
-                            function D(t) {
-                                return null === t || (0, l.HP)(t)
-                                    ? F(t)
-                                    : (e.enter("htmlFlowData"), E(t));
-                            }
-                            function T(t) {
-                                return 45 === t ? (e.consume(t), L) : E(t);
-                            }
-                            function z(t) {
-                                return 47 === t
-                                    ? (e.consume(t), (o = ""), A)
-                                    : E(t);
-                            }
-                            function A(t) {
-                                if (62 === t) {
-                                    let n = o.toLowerCase();
-                                    return M.includes(n)
-                                        ? (e.consume(t), O)
-                                        : E(t);
-                                }
-                                return (0, l.CW)(t) && o.length < 8
-                                    ? (e.consume(t),
-                                      (o += String.fromCharCode(t)),
-                                      A)
-                                    : E(t);
-                            }
-                            function P(t) {
-                                return 93 === t ? (e.consume(t), L) : E(t);
-                            }
-                            function L(t) {
-                                return 62 === t
-                                    ? (e.consume(t), O)
-                                    : 45 === t && 2 === r
-                                      ? (e.consume(t), L)
-                                      : E(t);
-                            }
-                            function O(t) {
-                                return null === t || (0, l.HP)(t)
-                                    ? (e.exit("htmlFlowData"), _(t))
-                                    : (e.consume(t), O);
-                            }
-                            function _(n) {
-                                return (e.exit("htmlFlow"), t(n));
-                            }
-                        },
-                    },
-                    61: _,
-                    95: C,
-                    96: V,
-                    126: V,
-                },
-                el = { 38: q, 92: W },
-                eu = {
-                    [-5]: Q,
-                    [-4]: Q,
-                    [-3]: Q,
-                    33: Y,
-                    38: q,
-                    42: X,
-                    60: [
-                        {
-                            name: "autolink",
-                            tokenize: function (e, t, n) {
-                                let r = 0;
-                                return function (t) {
-                                    return (
-                                        e.enter("autolink"),
-                                        e.enter("autolinkMarker"),
-                                        e.consume(t),
-                                        e.exit("autolinkMarker"),
-                                        e.enter("autolinkProtocol"),
-                                        i
-                                    );
-                                };
-                                function i(t) {
-                                    return (0, l.CW)(t)
-                                        ? (e.consume(t), o)
-                                        : 64 === t
-                                          ? n(t)
-                                          : a(t);
-                                }
-                                function o(t) {
-                                    return 43 === t ||
-                                        45 === t ||
-                                        46 === t ||
-                                        (0, l.lV)(t)
-                                        ? ((r = 1),
-                                          (function t(n) {
-                                              return 58 === n
-                                                  ? (e.consume(n), (r = 0), u)
-                                                  : (43 === n ||
-                                                          45 === n ||
-                                                          46 === n ||
-                                                          (0, l.lV)(n)) &&
-                                                      r++ < 32
-                                                    ? (e.consume(n), t)
-                                                    : ((r = 0), a(n));
-                                          })(t))
-                                        : a(t);
-                                }
-                                function u(r) {
-                                    return 62 === r
-                                        ? (e.exit("autolinkProtocol"),
-                                          e.enter("autolinkMarker"),
-                                          e.consume(r),
-                                          e.exit("autolinkMarker"),
-                                          e.exit("autolink"),
-                                          t)
-                                        : null === r ||
-                                            32 === r ||
-                                            60 === r ||
-                                            (0, l.JQ)(r)
-                                          ? n(r)
-                                          : (e.consume(r), u);
-                                }
-                                function a(t) {
-                                    return 64 === t
-                                        ? (e.consume(t), c)
-                                        : (0, l.cx)(t)
-                                          ? (e.consume(t), a)
-                                          : n(t);
-                                }
-                                function c(i) {
-                                    return (0, l.lV)(i)
-                                        ? (function i(o) {
-                                              return 46 === o
-                                                  ? (e.consume(o), (r = 0), c)
-                                                  : 62 === o
-                                                    ? ((e.exit(
-                                                          "autolinkProtocol"
-                                                      ).type = "autolinkEmail"),
-                                                      e.enter("autolinkMarker"),
-                                                      e.consume(o),
-                                                      e.exit("autolinkMarker"),
-                                                      e.exit("autolink"),
-                                                      t)
-                                                    : (function t(o) {
-                                                          if (
-                                                              (45 === o ||
-                                                                  (0, l.lV)(
-                                                                      o
-                                                                  )) &&
-                                                              r++ < 63
-                                                          ) {
-                                                              let n =
-                                                                  45 === o
-                                                                      ? t
-                                                                      : i;
-                                                              return (
-                                                                  e.consume(o),
-                                                                  n
-                                                              );
-                                                          }
-                                                          return n(o);
-                                                      })(o);
-                                          })(i)
-                                        : n(i);
-                                }
-                            },
-                        },
-                        {
-                            name: "htmlText",
-                            tokenize: function (e, t, n) {
-                                let r,
-                                    i,
-                                    u,
-                                    a = this;
-                                return function (t) {
-                                    return (
-                                        e.enter("htmlText"),
-                                        e.enter("htmlTextData"),
-                                        e.consume(t),
-                                        c
-                                    );
-                                };
-                                function c(t) {
-                                    return 33 === t
-                                        ? (e.consume(t), s)
-                                        : 47 === t
-                                          ? (e.consume(t), C)
-                                          : 63 === t
-                                            ? (e.consume(t), v)
-                                            : (0, l.CW)(t)
-                                              ? (e.consume(t), w)
-                                              : n(t);
-                                }
-                                function s(t) {
-                                    return 45 === t
-                                        ? (e.consume(t), f)
-                                        : 91 === t
-                                          ? (e.consume(t), (i = 0), g)
-                                          : (0, l.CW)(t)
-                                            ? (e.consume(t), b)
-                                            : n(t);
-                                }
-                                function f(t) {
-                                    return 45 === t ? (e.consume(t), p) : n(t);
-                                }
-                                function h(t) {
-                                    return null === t
-                                        ? n(t)
-                                        : 45 === t
-                                          ? (e.consume(t), d)
-                                          : (0, l.HP)(t)
-                                            ? ((u = h), P(t))
-                                            : (e.consume(t), h);
-                                }
-                                function d(t) {
-                                    return 45 === t ? (e.consume(t), p) : h(t);
-                                }
-                                function p(e) {
-                                    return 62 === e
-                                        ? A(e)
-                                        : 45 === e
-                                          ? d(e)
-                                          : h(e);
-                                }
-                                function g(t) {
-                                    let r = "CDATA[";
-                                    return t === r.charCodeAt(i++)
-                                        ? (e.consume(t), i === r.length ? m : g)
-                                        : n(t);
-                                }
-                                function m(t) {
-                                    return null === t
-                                        ? n(t)
-                                        : 93 === t
-                                          ? (e.consume(t), k)
-                                          : (0, l.HP)(t)
-                                            ? ((u = m), P(t))
-                                            : (e.consume(t), m);
-                                }
-                                function k(t) {
-                                    return 93 === t ? (e.consume(t), x) : m(t);
-                                }
-                                function x(t) {
-                                    return 62 === t
-                                        ? A(t)
-                                        : 93 === t
-                                          ? (e.consume(t), x)
-                                          : m(t);
-                                }
-                                function b(t) {
-                                    return null === t || 62 === t
-                                        ? A(t)
-                                        : (0, l.HP)(t)
-                                          ? ((u = b), P(t))
-                                          : (e.consume(t), b);
-                                }
-                                function v(t) {
-                                    return null === t
-                                        ? n(t)
-                                        : 63 === t
-                                          ? (e.consume(t), y)
-                                          : (0, l.HP)(t)
-                                            ? ((u = v), P(t))
-                                            : (e.consume(t), v);
-                                }
-                                function y(e) {
-                                    return 62 === e ? A(e) : v(e);
-                                }
-                                function C(t) {
-                                    return (0, l.CW)(t)
-                                        ? (e.consume(t), S)
-                                        : n(t);
-                                }
-                                function S(t) {
-                                    return 45 === t || (0, l.lV)(t)
-                                        ? (e.consume(t), S)
-                                        : (function t(n) {
-                                              return (0, l.HP)(n)
-                                                  ? ((u = t), P(n))
-                                                  : (0, l.On)(n)
-                                                    ? (e.consume(n), t)
-                                                    : A(n);
-                                          })(t);
-                                }
-                                function w(t) {
-                                    return 45 === t || (0, l.lV)(t)
-                                        ? (e.consume(t), w)
-                                        : 47 === t || 62 === t || (0, l.Ee)(t)
-                                          ? E(t)
-                                          : n(t);
-                                }
-                                function E(t) {
-                                    return 47 === t
-                                        ? (e.consume(t), A)
-                                        : 58 === t || 95 === t || (0, l.CW)(t)
-                                          ? (e.consume(t), F)
-                                          : (0, l.HP)(t)
-                                            ? ((u = E), P(t))
-                                            : (0, l.On)(t)
-                                              ? (e.consume(t), E)
-                                              : A(t);
-                                }
-                                function F(t) {
-                                    return 45 === t ||
-                                        46 === t ||
-                                        58 === t ||
-                                        95 === t ||
-                                        (0, l.lV)(t)
-                                        ? (e.consume(t), F)
-                                        : (function t(n) {
-                                              return 61 === n
-                                                  ? (e.consume(n), I)
-                                                  : (0, l.HP)(n)
-                                                    ? ((u = t), P(n))
-                                                    : (0, l.On)(n)
-                                                      ? (e.consume(n), t)
-                                                      : E(n);
-                                          })(t);
-                                }
-                                function I(t) {
-                                    return null === t ||
-                                        60 === t ||
-                                        61 === t ||
-                                        62 === t ||
-                                        96 === t
-                                        ? n(t)
-                                        : 34 === t || 39 === t
-                                          ? (e.consume(t), (r = t), D)
-                                          : (0, l.HP)(t)
-                                            ? ((u = I), P(t))
-                                            : (0, l.On)(t)
-                                              ? (e.consume(t), I)
-                                              : (e.consume(t), T);
-                                }
-                                function D(t) {
-                                    return t === r
-                                        ? (e.consume(t), (r = void 0), z)
-                                        : null === t
-                                          ? n(t)
-                                          : (0, l.HP)(t)
-                                            ? ((u = D), P(t))
-                                            : (e.consume(t), D);
-                                }
-                                function T(t) {
-                                    return null === t ||
-                                        34 === t ||
-                                        39 === t ||
-                                        60 === t ||
-                                        61 === t ||
-                                        96 === t
-                                        ? n(t)
-                                        : 47 === t || 62 === t || (0, l.Ee)(t)
-                                          ? E(t)
-                                          : (e.consume(t), T);
-                                }
-                                function z(e) {
-                                    return 47 === e || 62 === e || (0, l.Ee)(e)
-                                        ? E(e)
-                                        : n(e);
-                                }
-                                function A(r) {
-                                    return 62 === r
-                                        ? (e.consume(r),
-                                          e.exit("htmlTextData"),
-                                          e.exit("htmlText"),
-                                          t)
-                                        : n(r);
-                                }
-                                function P(t) {
-                                    return (
-                                        e.exit("htmlTextData"),
-                                        e.enter("lineEnding"),
-                                        e.consume(t),
-                                        e.exit("lineEnding"),
-                                        L
-                                    );
-                                }
-                                function L(t) {
-                                    return (0, l.On)(t)
-                                        ? (0, o.N)(
-                                              e,
-                                              O,
-                                              "linePrefix",
-                                              a.parser.constructs.disable.null.includes(
-                                                  "codeIndented"
-                                              )
-                                                  ? void 0
-                                                  : 4
-                                          )(t)
-                                        : O(t);
-                                }
-                                function O(t) {
-                                    return (e.enter("htmlTextData"), u(t));
-                                }
-                            },
-                        },
-                    ],
-                    91: et,
-                    92: [
-                        {
-                            name: "hardBreakEscape",
-                            tokenize: function (e, t, n) {
-                                return function (t) {
-                                    return (
-                                        e.enter("hardBreakEscape"),
-                                        e.consume(t),
-                                        r
-                                    );
-                                };
-                                function r(r) {
-                                    return (0, l.HP)(r)
-                                        ? (e.exit("hardBreakEscape"), t(r))
-                                        : n(r);
-                                }
-                            },
-                        },
-                        W,
-                    ],
-                    93: U,
-                    95: X,
-                    96: {
-                        name: "codeText",
-                        previous: function (e) {
-                            return (
-                                96 !== e ||
-                                "characterEscape" ===
-                                    this.events[this.events.length - 1][1].type
-                            );
-                        },
-                        resolve: function (e) {
-                            let t,
-                                n,
-                                r = e.length - 4,
-                                i = 3;
-                            if (
-                                ("lineEnding" === e[3][1].type ||
-                                    "space" === e[i][1].type) &&
-                                ("lineEnding" === e[r][1].type ||
-                                    "space" === e[r][1].type)
-                            ) {
-                                for (t = i; ++t < r; )
-                                    if ("codeTextData" === e[t][1].type) {
-                                        ((e[i][1].type = "codeTextPadding"),
-                                            (e[r][1].type = "codeTextPadding"),
-                                            (i += 2),
-                                            (r -= 2));
-                                        break;
-                                    }
-                            }
-                            for (t = i - 1, r++; ++t <= r; )
-                                void 0 === n
-                                    ? t !== r &&
-                                      "lineEnding" !== e[t][1].type &&
-                                      (n = t)
-                                    : (t === r ||
-                                          "lineEnding" === e[t][1].type) &&
-                                      ((e[n][1].type = "codeTextData"),
-                                      t !== n + 2 &&
-                                          ((e[n][1].end = e[t - 1][1].end),
-                                          e.splice(n + 2, t - n - 2),
-                                          (r -= t - n - 2),
-                                          (t = n + 2)),
-                                      (n = void 0));
-                            return e;
-                        },
-                        tokenize: function (e, t, n) {
-                            let r,
-                                i,
-                                o = 0;
-                            return function (t) {
-                                return (
-                                    e.enter("codeText"),
-                                    e.enter("codeTextSequence"),
-                                    (function t(n) {
-                                        return 96 === n
-                                            ? (e.consume(n), o++, t)
-                                            : (e.exit("codeTextSequence"),
-                                              u(n));
-                                    })(t)
-                                );
-                            };
-                            function u(c) {
-                                return null === c
-                                    ? n(c)
-                                    : 32 === c
-                                      ? (e.enter("space"),
-                                        e.consume(c),
-                                        e.exit("space"),
-                                        u)
-                                      : 96 === c
-                                        ? ((i = e.enter("codeTextSequence")),
-                                          (r = 0),
-                                          (function n(l) {
-                                              return 96 === l
-                                                  ? (e.consume(l), r++, n)
-                                                  : r === o
-                                                    ? (e.exit(
-                                                          "codeTextSequence"
-                                                      ),
-                                                      e.exit("codeText"),
-                                                      t(l))
-                                                    : ((i.type =
-                                                          "codeTextData"),
-                                                      a(l));
-                                          })(c))
-                                        : (0, l.HP)(c)
-                                          ? (e.enter("lineEnding"),
-                                            e.consume(c),
-                                            e.exit("lineEnding"),
-                                            u)
-                                          : (e.enter("codeTextData"), a(c));
-                            }
-                            function a(t) {
-                                return null === t ||
-                                    32 === t ||
-                                    96 === t ||
-                                    (0, l.HP)(t)
-                                    ? (e.exit("codeTextData"), u(t))
-                                    : (e.consume(t), a);
-                            }
-                        },
-                    },
-                },
-                ea = { null: [X, m] },
-                ec = { null: [42, 95] },
-                es = { null: [] };
-            function ef(e) {
-                let t = {
-                    constructs: (0, i.y)([r, ...((e || {}).extensions || [])]),
-                    content: n(u),
-                    defined: [],
-                    document: n(c),
-                    flow: n(g),
-                    lazy: {},
-                    string: n(k),
-                    text: n(x),
-                };
-                return t;
-                function n(e) {
-                    return function (n) {
-                        return (function (e, t, n) {
-                            let r = {
-                                    _bufferIndex: -1,
-                                    _index: 0,
-                                    line: (n && n.line) || 1,
-                                    column: (n && n.column) || 1,
-                                    offset: (n && n.offset) || 0,
-                                },
-                                i = {},
-                                o = [],
-                                u = [],
-                                c = [],
-                                s = {
-                                    attempt: m(function (e, t) {
-                                        k(e, t.from);
-                                    }),
-                                    check: m(g),
-                                    consume: function (e) {
-                                        ((0, l.HP)(e)
-                                            ? (r.line++,
-                                              (r.column = 1),
-                                              (r.offset += -3 === e ? 2 : 1),
-                                              x())
-                                            : -1 !== e &&
-                                              (r.column++, r.offset++),
-                                            r._bufferIndex < 0
-                                                ? r._index++
-                                                : (r._bufferIndex++,
-                                                  r._bufferIndex ===
-                                                      u[r._index].length &&
-                                                      ((r._bufferIndex = -1),
-                                                      r._index++)),
-                                            (f.previous = e));
-                                    },
-                                    enter: function (e, t) {
-                                        let n = t || {};
-                                        return (
-                                            (n.type = e),
-                                            (n.start = p()),
-                                            f.events.push(["enter", n, f]),
-                                            c.push(n),
-                                            n
-                                        );
-                                    },
-                                    exit: function (e) {
-                                        let t = c.pop();
-                                        return (
-                                            (t.end = p()),
-                                            f.events.push(["exit", t, f]),
-                                            t
-                                        );
-                                    },
-                                    interrupt: m(g, { interrupt: !0 }),
-                                },
-                                f = {
-                                    code: null,
-                                    containerState: {},
-                                    defineSkip: function (e) {
-                                        ((i[e.line] = e.column), x());
-                                    },
-                                    events: [],
-                                    now: p,
-                                    parser: e,
-                                    previous: null,
-                                    sliceSerialize: function (e, t) {
-                                        return (function (e, t) {
-                                            let n,
-                                                r = -1,
-                                                i = [];
-                                            for (; ++r < e.length; ) {
-                                                let o,
-                                                    l = e[r];
-                                                if ("string" == typeof l) o = l;
-                                                else
-                                                    switch (l) {
-                                                        case -5:
-                                                            o = "\r";
-                                                            break;
-                                                        case -4:
-                                                            o = `
-`;
-                                                            break;
-                                                        case -3:
-                                                            o = `\r
-`;
-                                                            break;
-                                                        case -2:
-                                                            o = t ? " " : "	";
-                                                            break;
-                                                        case -1:
-                                                            if (!t && n)
-                                                                continue;
-                                                            o = " ";
-                                                            break;
-                                                        default:
-                                                            o =
-                                                                String.fromCharCode(
-                                                                    l
-                                                                );
-                                                    }
-                                                ((n = -2 === l), i.push(o));
-                                            }
-                                            return i.join("");
-                                        })(d(e), t);
-                                    },
-                                    sliceStream: d,
-                                    write: function (e) {
-                                        return ((u = (0, a.V)(u, e)),
-                                        (function () {
-                                            let e;
-                                            for (; r._index < u.length; ) {
-                                                let n = u[r._index];
-                                                if ("string" == typeof n)
-                                                    for (
-                                                        e = r._index,
-                                                            r._bufferIndex <
-                                                                0 &&
-                                                                (r._bufferIndex = 0);
-                                                        r._index === e &&
-                                                        r._bufferIndex <
-                                                            n.length;
-
-                                                    ) {
-                                                        var t;
-                                                        ((t = n.charCodeAt(
-                                                            r._bufferIndex
-                                                        )),
-                                                            (h = h(t)));
-                                                    }
-                                                else h = h(n);
-                                            }
-                                        })(),
-                                        null !== u[u.length - 1])
-                                            ? []
-                                            : (k(t, 0),
-                                              (f.events = (0, $.W)(
-                                                  o,
-                                                  f.events,
-                                                  f
-                                              )),
-                                              f.events);
-                                    },
-                                },
-                                h = t.tokenize.call(f, s);
-                            return (t.resolveAll && o.push(t), f);
-                            function d(e) {
-                                return (function (e, t) {
-                                    let n,
-                                        r = t.start._index,
-                                        i = t.start._bufferIndex,
-                                        o = t.end._index,
-                                        l = t.end._bufferIndex;
-                                    if (r === o) n = [e[r].slice(i, l)];
-                                    else {
-                                        if (((n = e.slice(r, o)), i > -1)) {
-                                            let e = n[0];
-                                            "string" == typeof e
-                                                ? (n[0] = e.slice(i))
-                                                : n.shift();
-                                        }
-                                        l > 0 && n.push(e[o].slice(0, l));
-                                    }
-                                    return n;
-                                })(u, e);
-                            }
-                            function p() {
-                                let {
-                                    _bufferIndex: e,
-                                    _index: t,
-                                    line: n,
-                                    column: i,
-                                    offset: o,
-                                } = r;
-                                return {
-                                    _bufferIndex: e,
-                                    _index: t,
-                                    line: n,
-                                    column: i,
-                                    offset: o,
-                                };
-                            }
-                            function g(e, t) {
-                                t.restore();
-                            }
-                            function m(e, t) {
-                                return function (n, i, o) {
-                                    var l;
-                                    let u, a, h, d;
-                                    return Array.isArray(n)
-                                        ? g(n)
-                                        : "tokenize" in n
-                                          ? g([n])
-                                          : ((l = n),
-                                            function (e) {
-                                                let t = null !== e && l[e],
-                                                    n = null !== e && l.null;
-                                                return g([
-                                                    ...(Array.isArray(t)
-                                                        ? t
-                                                        : t
-                                                          ? [t]
-                                                          : []),
-                                                    ...(Array.isArray(n)
-                                                        ? n
-                                                        : n
-                                                          ? [n]
-                                                          : []),
-                                                ])(e);
-                                            });
-                                    function g(e) {
-                                        return ((u = e),
-                                        (a = 0),
-                                        0 === e.length)
-                                            ? o
-                                            : m(e[a]);
-                                    }
-                                    function m(e) {
-                                        return function (n) {
-                                            return ((d = (function () {
-                                                let e = p(),
-                                                    t = f.previous,
-                                                    n = f.currentConstruct,
-                                                    i = f.events.length,
-                                                    o = Array.from(c);
-                                                return {
-                                                    from: i,
-                                                    restore: function () {
-                                                        ((r = e),
-                                                            (f.previous = t),
-                                                            (f.currentConstruct =
-                                                                n),
-                                                            (f.events.length =
-                                                                i),
-                                                            (c = o),
-                                                            x());
-                                                    },
-                                                };
-                                            })()),
-                                            (h = e),
-                                            e.partial ||
-                                                (f.currentConstruct = e),
-                                            e.name &&
-                                                f.parser.constructs.disable.null.includes(
-                                                    e.name
-                                                ))
-                                                ? b(n)
-                                                : e.tokenize.call(
-                                                      t
-                                                          ? Object.assign(
-                                                                Object.create(
-                                                                    f
-                                                                ),
-                                                                t
-                                                            )
-                                                          : f,
-                                                      s,
-                                                      k,
-                                                      b
-                                                  )(n);
-                                        };
-                                    }
-                                    function k(t) {
-                                        return (e(h, d), i);
-                                    }
-                                    function b(e) {
-                                        return (d.restore(), ++a < u.length)
-                                            ? m(u[a])
-                                            : o;
-                                    }
-                                };
-                            }
-                            function k(e, t) {
-                                (e.resolveAll && !o.includes(e) && o.push(e),
-                                    e.resolve &&
-                                        (0, a.m)(
-                                            f.events,
-                                            t,
-                                            f.events.length - t,
-                                            e.resolve(f.events.slice(t), f)
-                                        ),
-                                    e.resolveTo &&
-                                        (f.events = e.resolveTo(f.events, f)));
-                            }
-                            function x() {
-                                r.line in i &&
-                                    r.column < 2 &&
-                                    ((r.column = i[r.line]),
-                                    (r.offset += i[r.line] - 1));
-                            }
-                        })(t, e, n);
-                    };
-                }
-            }
-        },
-        43926: (e, t, n) => {
-            n.d(t, { _: () => i });
-            var r = n(22305);
-            function i(e) {
-                for (; !(0, r.w)(e); );
-                return e;
-            }
-        },
-        2611: (e, t, n) => {
-            n.d(t, { v: () => i });
-            let r = /[\0\t\n\r]/g;
-            function i() {
-                let e,
-                    t = 1,
-                    n = "",
-                    i = !0;
-                return function (o, l, u) {
-                    let a,
-                        c,
-                        s,
-                        f,
-                        h,
-                        d = [];
-                    for (
-                        o =
-                            n +
-                            ("string" == typeof o
-                                ? o.toString()
-                                : new TextDecoder(l || void 0).decode(o)),
-                            s = 0,
-                            n = "",
-                            i &&
-                                (65279 === o.charCodeAt(0) && s++,
-                                (i = void 0));
-                        s < o.length;
-
-                    ) {
-                        if (
-                            ((r.lastIndex = s),
-                            (f =
-                                (a = r.exec(o)) && void 0 !== a.index
-                                    ? a.index
-                                    : o.length),
-                            (h = o.charCodeAt(f)),
-                            !a)
-                        ) {
-                            n = o.slice(s);
-                            break;
-                        }
-                        if (10 === h && s === f && e)
-                            (d.push(-3), (e = void 0));
-                        else
-                            switch (
-                                (e && (d.push(-5), (e = void 0)),
-                                s < f && (d.push(o.slice(s, f)), (t += f - s)),
-                                h)
-                            ) {
-                                case 0:
-                                    (d.push(65533), t++);
-                                    break;
-                                case 9:
-                                    for (
-                                        c = 4 * Math.ceil(t / 4), d.push(-2);
-                                        t++ < c;
-
-                                    )
-                                        d.push(-1);
-                                    break;
-                                case 10:
-                                    (d.push(-4), (t = 1));
-                                    break;
-                                default:
-                                    ((e = !0), (t = 1));
-                            }
-                        s = f + 1;
-                    }
-                    return (
-                        u && (e && d.push(-5), n && d.push(n), d.push(null)),
-                        d
-                    );
-                };
-            }
-        },
-        69143: (e, t, n) => {
-            n.d(t, { C: () => r });
-            let r = function (e) {
-                var t, n;
-                if (null == e) return o;
-                if ("function" == typeof e) return i(e);
-                if ("object" == typeof e) {
-                    return Array.isArray(e)
-                        ? (function (e) {
-                              let t = [],
-                                  n = -1;
-                              for (; ++n < e.length; ) t[n] = r(e[n]);
-                              return i(function (...e) {
-                                  let n = -1;
-                                  for (; ++n < t.length; )
-                                      if (t[n].apply(this, e)) return !0;
-                                  return !1;
-                              });
-                          })(e)
-                        : ((t = e),
-                          i(function (e) {
-                              let n;
-                              for (n in t) if (e[n] !== t[n]) return !1;
-                              return !0;
-                          }));
-                }
-                if ("string" == typeof e) {
-                    return (
-                        (n = e),
-                        i(function (e) {
-                            return e && e.type === n;
-                        })
-                    );
-                }
-                throw Error("Expected function, string, or object as test");
-            };
-            function i(e) {
-                return function (t, n, r) {
-                    return !!(
-                        (function (e) {
-                            return (
-                                null !== e &&
-                                "object" == typeof e &&
-                                "type" in e
-                            );
-                        })(t) &&
-                        e.call(
-                            this,
-                            t,
-                            "number" == typeof n ? n : void 0,
-                            r || void 0
-                        )
-                    );
-                };
-            }
-            function o() {
-                return !0;
-            }
-        },
-        47188: (e, t, n) => {
-            function r(e) {
-                return e && "object" == typeof e
-                    ? "position" in e || "type" in e
-                        ? o(e.position)
-                        : "start" in e || "end" in e
-                          ? o(e)
-                          : "line" in e || "column" in e
-                            ? i(e)
-                            : ""
-                    : "";
-            }
-            function i(e) {
-                return l(e && e.line) + ":" + l(e && e.column);
-            }
-            function o(e) {
-                return i(e && e.start) + "-" + i(e && e.end);
-            }
-            function l(e) {
-                return e && "number" == typeof e ? e : 1;
-            }
-            n.d(t, { L: () => r });
-        },
-        76814: (e, t, n) => {
-            n.d(t, { dc: () => o, _Z: () => l, VG: () => u });
-            var r = n(69143);
-            let i = [],
-                o = !1,
-                l = "skip";
-            function u(e, t, n, u) {
-                let a;
-                "function" == typeof t && "function" != typeof n
-                    ? ((u = n), (n = t))
-                    : (a = t);
-                let c = (0, r.C)(a),
-                    s = u ? -1 : 1;
-                (function e(r, a, f) {
-                    let h = r && "object" == typeof r ? r : {};
-                    if ("string" == typeof h.type) {
-                        let e =
-                            "string" == typeof h.tagName
-                                ? h.tagName
-                                : "string" == typeof h.name
-                                  ? h.name
-                                  : void 0;
-                        Object.defineProperty(d, "name", {
-                            value:
-                                "node (" +
-                                r.type +
-                                (e ? "<" + e + ">" : "") +
-                                ")",
-                        });
-                    }
-                    return d;
-                    function d() {
-                        var h;
-                        let d,
-                            p,
-                            g,
-                            m = i;
-                        if (
-                            (!t || c(r, a, f[f.length - 1] || void 0)) &&
-                            (m = Array.isArray((h = n(r, f)))
-                                ? h
-                                : "number" == typeof h
-                                  ? [!0, h]
-                                  : null == h
-                                    ? i
-                                    : [h])[0] === o
-                        )
-                            return m;
-                        if (
-                            "children" in r &&
-                            r.children &&
-                            r.children &&
-                            m[0] !== l
-                        )
-                            for (
-                                p = (u ? r.children.length : -1) + s,
-                                    g = f.concat(r);
-                                p > -1 && p < r.children.length;
-
-                            ) {
-                                if ((d = e(r.children[p], p, g)())[0] === o)
-                                    return d;
-                                p = "number" == typeof d[1] ? d[1] : p + s;
-                            }
-                        return m;
-                    }
-                })(e, void 0, [])();
-            }
-        },
-        47970: (e, t, n) => {
-            n.d(t, { YR: () => i });
-            var r = n(76814);
-            function i(e, t, n, i) {
-                let o, l, u;
-                ("function" == typeof t && "function" != typeof n
-                    ? ((l = void 0), (u = t), (o = n))
-                    : ((l = t), (u = n), (o = i)),
-                    (0, r.VG)(
-                        e,
-                        l,
-                        function (e, t) {
-                            let n = t[t.length - 1],
-                                r = n ? n.children.indexOf(e) : void 0;
-                            return u(e, r, n);
-                        },
-                        o
-                    ));
-            }
-        },
     },
 ]);
-//# sourceMappingURL=vendors-node_modules_primer_styled-react_dist_index_js-node_modules_mdast-util-from-markdown_-7ab78a-35b2c4a2d806.js.map
+//# sourceMappingURL=vendors-node_modules_mdast-util-gfm_lib_index_js-node_modules_micromark-extension-gfm_index_js-7a27fc832e45.js.map

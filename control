@@ -1,6 +1,6 @@
 Package: com.ps.githubweblegacycompat
 Name: GitHubWebLegacyCompat
-Version: 2.3.19
+Version: 2.3.20
 Architecture: iphoneos-arm
 Description: Makes GitHub website more accessible on iOS < 16.4
 Maintainer: PoomSmart
