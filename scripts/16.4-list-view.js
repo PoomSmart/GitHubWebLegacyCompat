@@ -84,8 +84,8 @@
             } catch {}
             var d = r(73189),
                 m = r(80293),
-                h = r(45221),
-                v = r(58748);
+                h = r(50463),
+                v = r(93330);
             let y = (e, t) => {
                     let r =
                             2 *
@@ -106,17 +106,17 @@
                     );
                 },
                 f = (e, t) => {
-                    let r = x(e, t);
+                    let r = p(e, t);
                     if (void 0 === r) return;
                     let i = r;
                     return (t && (i -= t.offsetLeft), i);
                 },
-                x = (e, t) => {
+                p = (e, t) => {
                     if (!e) return;
                     let r = e.offsetWidth;
                     return (t && (r -= t.offsetWidth), r);
                 },
-                p = (0, a.createContext)({
+                x = (0, a.createContext)({
                     visibleChildEndIndex: 0,
                     justifySpaceBetween: !1,
                     recalculateItemSize: d.l,
@@ -130,7 +130,7 @@
                         [w, C] = (0, a.useState)(
                             new Map(t.map((e) => [e, void 0]))
                         ),
-                        [A, g] = (0, a.useState)(!1),
+                        [g, A] = (0, a.useState)(!1),
                         I = (0, a.useMemo)(
                             () =>
                                 t
@@ -166,7 +166,7 @@
                             if (!I) return;
                             let e = s.current,
                                 t = o.current,
-                                r = x(e, t);
+                                r = p(e, t);
                             if (void 0 === r) return;
                             let i = f(e, t);
                             void 0 !== i && r <= i && n(Math.max(0, l - 1));
@@ -174,7 +174,7 @@
                         L = (0, a.useCallback)(() => {
                             let e = s.current,
                                 t = o.current,
-                                i = x(e, t);
+                                i = p(e, t);
                             if (void 0 === i) return;
                             let a = j(l);
                             if (void 0 === a) return;
@@ -189,7 +189,7 @@
                             r &&
                                 (void 0 === c || r <= c ? S() : r > c && L(),
                                 d(r),
-                                g(r <= (N ?? t.offsetWidth)));
+                                A(r <= (N ?? t.offsetWidth)));
                         }, [L, S, N, c, s, o]);
                     ((0, h.A)(() => {
                         let e = o.current;
@@ -214,15 +214,15 @@
                     let E = (0, a.useMemo)(
                         () => ({
                             visibleChildEndIndex: l,
-                            justifySpaceBetween: A,
+                            justifySpaceBetween: g,
                             recalculateItemSize: _,
                         }),
-                        [l, A, _]
+                        [l, g, _]
                     );
-                    return (0, i.jsx)(p.Provider, { value: E, children: e });
+                    return (0, i.jsx)(x.Provider, { value: E, children: e });
                 },
                 b = () => {
-                    let e = (0, a.useContext)(p);
+                    let e = (0, a.useContext)(x);
                     return (
                         e || {
                             justifySpaceBetween: !1,
@@ -232,19 +232,19 @@
                     );
                 };
             try {
-                p.displayName || (p.displayName = "ActionBarResizeContext");
+                x.displayName || (x.displayName = "ActionBarResizeContext");
             } catch {}
             try {
                 N.displayName || (N.displayName = "ActionBarResizeProvider");
             } catch {}
             var w = r(29731),
                 C = r(11683),
-                A = r(82678),
-                g = r(34164),
+                g = r(45800),
+                A = r(34164),
                 I = r(38621),
-                j = r(5945),
-                _ = r(87330),
-                S = r(52446),
+                j = r(1992),
+                _ = r(26108),
+                S = r(5524),
                 L = r(21998);
             let P = {
                     IconButton_0: "OverflowMenu-module__IconButton_0--cxtvS",
@@ -258,39 +258,44 @@
                         variant: r = M,
                         ...l
                     } = { icon: E, variant: M },
+                    open: n,
+                    onOpenChange: o,
                 }) => {
-                    let { anchorRef: n } = u(),
-                        { actions: o, staticMenuActions: c, label: d } = s(),
-                        { visibleChildEndIndex: m } = b(),
-                        h = (0, a.useMemo)(
+                    let { anchorRef: c } = u(),
+                        { actions: d, staticMenuActions: m, label: h } = s(),
+                        { visibleChildEndIndex: v } = b(),
+                        y = (0, a.useMemo)(
                             () =>
                                 (0, L.h1)(l, {
-                                    "aria-label": e?.trim() || `More ${d}`,
+                                    "aria-label": e?.trim() || `More ${h}`,
                                     icon: t,
                                     className: P.IconButton_0,
                                     variant: r,
                                 }),
-                            [e, t, d, r, l]
+                            [e, t, h, r, l]
                         ),
-                        v = (0, a.useMemo)(() => o?.slice(m), [o, m]),
-                        y = v && v.length > 0,
-                        f = c && c.length > 0;
-                    return y || f
+                        f = (0, a.useMemo)(() => d?.slice(v), [d, v]),
+                        p = f && f.length > 0,
+                        x = m && m.length > 0;
+                    return p || x
                         ? (0, i.jsxs)(j.W, {
-                              anchorRef: n,
+                              anchorRef: c,
+                              open: n,
+                              onOpenChange: o,
                               children: [
                                   (0, i.jsx)(j.W.Anchor, {
                                       children: (0, i.jsx)(_.K, {
                                           ...(0, w.G)("overflow-menu-anchor"),
-                                          ...h,
+                                          ...y,
                                       }),
                                   }),
                                   (0, i.jsx)(j.W.Overlay, {
                                       align: "end",
+                                      "data-overflow-menu-overlay": !0,
                                       children: (0, i.jsxs)(S.l, {
                                           children: [
-                                              f &&
-                                                  c.map((e) =>
+                                              x &&
+                                                  m.map((e) =>
                                                       (0, i.jsx)(
                                                           a.Fragment,
                                                           {
@@ -300,7 +305,7 @@
                                                           e.key
                                                       )
                                                   ),
-                                              v?.map((e) =>
+                                              f?.map((e) =>
                                                   (0, i.jsx)(
                                                       a.Fragment,
                                                       {
@@ -353,7 +358,7 @@
                     return (0, i.jsx)("div", {
                         ...(0, w.G)("action-bar"),
                         ref: r,
-                        className: (0, g.$)(e, V.Box_1),
+                        className: (0, A.$)(e, V.Box_1),
                         style: { gap: l, ...t },
                         children: o?.map(({ key: e, render: t }) =>
                             (0, i.jsx)(k, { actionKey: e, children: t(!1) }, e)
@@ -363,31 +368,36 @@
             try {
                 O.displayName || (O.displayName = "VisibleItems");
             } catch {}
-            let W = ({ overflowMenuToggleProps: e, children: t, ...r }) => {
-                let { outerContainerRef: a } = u(),
-                    { label: l, variant: n, gap: o } = s(),
-                    { justifySpaceBetween: c } = b();
+            let W = ({
+                overflowMenuToggleProps: e,
+                overflowMenuProps: t,
+                children: r,
+                ...a
+            }) => {
+                let { outerContainerRef: l } = u(),
+                    { label: n, variant: o, gap: c } = s(),
+                    { justifySpaceBetween: d } = b();
                 return (
-                    (0, A.G)(
+                    (0, g.G)(
                         {
-                            containerRef: a,
+                            containerRef: l,
                             bindKeys: C.z0.ArrowHorizontal | C.z0.HomeAndEnd,
                             focusOutBehavior: "wrap",
-                            disabled: "toolbar" !== n,
+                            disabled: "toolbar" !== o,
                         },
-                        [a]
+                        [l]
                     ),
                     (0, i.jsxs)("div", {
-                        ref: a,
+                        ref: l,
                         ...(0, w.G)("action-bar-container"),
-                        role: "toolbar" === n ? "toolbar" : void 0,
-                        "aria-label": "toolbar" === n ? l : void 0,
-                        style: { gap: o },
-                        className: (0, g.$)(T.Box_0, c && T.space),
+                        role: "toolbar" === o ? "toolbar" : void 0,
+                        "aria-label": "toolbar" === o ? n : void 0,
+                        style: { gap: c },
+                        className: (0, A.$)(T.Box_0, d && T.space),
                         children: [
-                            (0, i.jsx)(O, { ...r }),
-                            t,
-                            (0, i.jsx)(B, { anchorProps: e }),
+                            (0, i.jsx)(O, { ...a }),
+                            r,
+                            (0, i.jsx)(B, { anchorProps: e, ...t }),
                         ],
                     })
                 );
@@ -403,20 +413,21 @@
                     actions: e = [],
                     staticMenuActions: t,
                     overflowMenuToggleProps: r,
-                    children: l,
-                    label: s,
-                    variant: o,
-                    density: u = H,
-                    anchorRef: d,
-                    className: m,
-                    style: h,
+                    overflowMenuProps: l,
+                    children: s,
+                    label: o,
+                    variant: u,
+                    density: d = H,
+                    anchorRef: m,
+                    className: h,
+                    style: v,
                 }) => {
-                    let v = (0, a.useMemo)(
+                    let y = (0, a.useMemo)(
                             () => ({
                                 actions: e,
                                 staticMenuActions: t,
-                                variant: o,
-                                label: s,
+                                variant: u,
+                                label: o,
                                 gap: ((e) =>
                                     "condensed" === e
                                         ? "var(--base-size-4)"
@@ -424,35 +435,36 @@
                                           ? "var(--base-size-16)"
                                           : "none" === e
                                             ? 0
-                                            : "var(--base-size-8)")(u),
+                                            : "var(--base-size-8)")(d),
                             }),
-                            [e, t, o, s, u]
+                            [e, t, u, o, d]
                         ),
-                        y = (0, a.useMemo)(
+                        f = (0, a.useMemo)(
                             () => ({ actionKeys: e.map((e) => e.key) }),
                             [e]
                         ),
-                        f = t && t.length > 0,
+                        p = t && t.length > 0,
                         x = e && e.length > 0;
-                    if (!x && !f) return null;
-                    let p = {
+                    if (!x && !p) return null;
+                    let b = {
                         overflowMenuToggleProps: r,
-                        className: m,
-                        style: h,
+                        overflowMenuProps: l,
+                        className: h,
+                        style: v,
                     };
                     return (0, i.jsx)(c, {
-                        value: { anchorRef: d },
+                        value: { anchorRef: m },
                         children: (0, i.jsx)(n, {
-                            value: v,
+                            value: y,
                             children: x
                                 ? (0, i.jsx)(N, {
-                                      value: y,
+                                      value: f,
                                       children: (0, i.jsx)(z, {
-                                          ...p,
-                                          children: l,
+                                          ...b,
+                                          children: s,
                                       }),
                                   })
-                                : (0, i.jsx)(z, { ...p, children: l }),
+                                : (0, i.jsx)(z, { ...b, children: s }),
                         }),
                     });
                 };
@@ -592,7 +604,7 @@
             } catch {}
         },
         2970: (e, t, r) => {
-            r.d(t, { c: () => g });
+            r.d(t, { c: () => A });
             var i = r(74848),
                 a = r(73189),
                 l = r(34164),
@@ -626,23 +638,23 @@
                 selected: "ListItem-module__selected--WTEJT",
             };
             var f = r(29731);
-            let x = { container: "MetadataContainer-module__container--nU0s9" };
-            function p({ style: e, className: t, children: r }) {
+            let p = { container: "MetadataContainer-module__container--nU0s9" };
+            function x({ style: e, className: t, children: r }) {
                 return (0, i.jsx)("div", {
-                    className: (0, l.$)(x.container, t),
+                    className: (0, l.$)(p.container, t),
                     style: e,
                     ...(0, f.G)("list-view-item-metadata"),
                     children: r,
                 });
             }
             try {
-                p.displayName || (p.displayName = "ListItemMetadataContainer");
+                x.displayName || (x.displayName = "ListItemMetadataContainer");
             } catch {}
             var N = r(49744),
                 b = r(60257),
                 w = r(27603),
                 C = r(74501);
-            let A = ({
+            let g = ({
                     children: e,
                     isActive: t = !1,
                     title: r,
@@ -650,9 +662,9 @@
                     secondaryActions: m,
                     style: h,
                     className: f,
-                    metadataContainerStyle: x,
-                    metadataContainerClassName: A,
-                    as: g,
+                    metadataContainerStyle: p,
+                    metadataContainerClassName: g,
+                    as: A,
                     ...I
                 }) => {
                     let { idPrefix: j } = (0, s.If)(),
@@ -732,7 +744,7 @@
                                 .join(". ");
                             return s.endsWith(".") ? s : `${s}.`;
                         }, [m, a, M, W, R, T, O]);
-                    return (0, i.jsxs)(g || "li", {
+                    return (0, i.jsxs)(A || "li", {
                         ref: H,
                         id: `${j}-list-view-node-${E}`,
                         className: (0, l.$)(
@@ -751,9 +763,9 @@
                             r,
                             e,
                             Array.isArray(a) && a.length > 0
-                                ? (0, i.jsx)(p, {
-                                      style: x,
-                                      className: A,
+                                ? (0, i.jsx)(x, {
+                                      style: p,
+                                      className: g,
                                       children: a.map((e, t) =>
                                           (0, i.jsx)(
                                               n.Fragment,
@@ -763,16 +775,16 @@
                                       ),
                                   })
                                 : !!(a && !Array.isArray(a)) &&
-                                  (0, i.jsx)(p, {
-                                      style: x,
-                                      className: A,
+                                  (0, i.jsx)(x, {
+                                      style: p,
+                                      className: g,
                                       children: a,
                                   }),
                             m ?? (L && (0, i.jsx)(d.L, {})),
                         ],
                     });
                 },
-                g = ({
+                A = ({
                     children: e,
                     isSelected: t = !1,
                     onSelect: r = a.l,
@@ -801,7 +813,7 @@
                                 children: (0, i.jsx)(N.t, {
                                     children: (0, i.jsx)(v.O, {
                                         children: (0, i.jsx)(w.u, {
-                                            children: (0, i.jsx)(A, {
+                                            children: (0, i.jsx)(g, {
                                                 ...l,
                                                 children: e,
                                             }),
@@ -813,10 +825,10 @@
                     });
                 };
             try {
-                A.displayName || (A.displayName = "ListItemBase");
+                g.displayName || (g.displayName = "ListItemBase");
             } catch {}
             try {
-                g.displayName || (g.displayName = "ListItem");
+                A.displayName || (A.displayName = "ListItem");
             } catch {}
         },
         49744: (e, t, r) => {
@@ -1001,14 +1013,14 @@
                 a = r(73189),
                 l = r(29731),
                 n = r(80293),
-                s = r(63557),
+                s = r(81960),
                 o = r(34164),
                 c = r(96540),
                 u = r(50205),
                 d = r(44569),
                 m = r(11683),
                 h = r(55966),
-                v = r(82678);
+                v = r(45800);
             function y(e, t) {
                 let r = e,
                     i = e.closest("[role=list] li");
@@ -1053,14 +1065,14 @@
                     r = t?.querySelector("[role=list] li");
                 return r instanceof HTMLElement ? r : void 0;
             }
-            function x(e) {
+            function p(e) {
                 let t = e.closest("[role=list]"),
                     r = t?.querySelectorAll("[role=list] li");
                 if (!r || r.length < 1) return;
                 let i = r[r.length - 1];
                 if (i instanceof HTMLElement) return i;
             }
-            function p(e, t) {
+            function x(e, t) {
                 let r = [
                         ...(0, h.K1)(document.documentElement, {
                             strict: !0,
@@ -1077,8 +1089,8 @@
                 container: "ListView-module__container--rxCWy",
             };
             var C = r(53687),
-                A = r(24347),
-                g = r(61015),
+                g = r(24347),
+                A = r(61015),
                 I = r(35220);
             let j = ({
                     title: e,
@@ -1094,22 +1106,22 @@
                     hasDragHandle: y,
                     ...f
                 }) => {
-                    let [x, p] = (0, n.N)(o);
+                    let [p, x] = (0, n.N)(o);
                     (0, c.useEffect)(() => {
-                        h?.(x);
-                    }, [h, x]);
+                        h?.(p);
+                    }, [h, p]);
                     let w = (0, c.useMemo)(
                         () => c.Children.toArray(r).length,
                         [r]
                     );
                     return (0, i.jsx)(N.JE, {
-                        children: (0, i.jsx)(g.y, {
+                        children: (0, i.jsx)(A.y, {
                             title: e,
                             titleHeaderTag: t,
                             children: (0, i.jsx)(I.H, {
-                                variant: x,
-                                setVariant: p,
-                                children: (0, i.jsx)(A.W, {
+                                variant: p,
+                                setVariant: x,
+                                children: (0, i.jsx)(g.W, {
                                     countOnPage: w,
                                     selectedCount: s,
                                     totalCount: l,
@@ -1139,12 +1151,12 @@
                     itemsListClassName: u,
                     itemsListStyle: b,
                     strictFocusZone: C,
-                    as: A,
+                    as: g,
                     role: I,
                     ...j
                 }) => {
                     let { idPrefix: _ } = (0, N.If)(),
-                        { title: S, titleHeaderTag: L } = (0, g.t)(),
+                        { title: S, titleHeaderTag: L } = (0, A.t)(),
                         { containerRef: P } = (function (e = !0) {
                             let t = void 0 === e || e,
                                 r =
@@ -1180,7 +1192,7 @@
                                                         "list-view-node"
                                                     )
                                                 )
-                                                    return p(r, "previous");
+                                                    return x(r, "previous");
                                                 let e =
                                                     r.closest("[role=list] li");
                                                 if (!e) return;
@@ -1215,14 +1227,14 @@
                                                             ? a[s - 1]
                                                             : a[s + 1]
                                                         : void 0
-                                                    : p(r, "next");
+                                                    : x(r, "next");
                                             }
                                             if ("previous" === e)
                                                 return y(r, e) || f(r);
                                             if ("next" === e)
-                                                return y(r, e) || x(r);
+                                                return y(r, e) || p(r);
                                             if ("start" === e) return f(r);
-                                            if ("end" === e) return x(r);
+                                            if ("end" === e) return p(r);
                                         }
                                     },
                                 });
@@ -1245,7 +1257,7 @@
                                     children: S,
                                 }),
                             e,
-                            (0, i.jsx)(A || "ul", {
+                            (0, i.jsx)(g || "ul", {
                                 className: (0, o.$)(w.ul, u),
                                 style: b,
                                 ref: P,
@@ -1330,23 +1342,23 @@
                     let [v, y] = (0, l.useState)(d);
                     (0, l.useEffect)(() => y(d), [d]);
                     let f = v > 0 && v >= t,
-                        x = v > 0,
-                        p = (0, l.useMemo)(
+                        p = v > 0,
+                        x = (0, l.useMemo)(
                             () => ({
                                 totalCount: u,
                                 countOnPage: t,
                                 selectedCount: v,
                                 setSelectedCount: y,
                                 isSelectAllChecked: f,
-                                anyItemsSelected: x,
+                                anyItemsSelected: p,
                                 singularUnits: r,
                                 pluralUnits: a,
                                 isSelectable: m,
                                 hasDragHandle: h,
                             }),
-                            [u, t, v, y, f, x, r, a, m, h]
+                            [u, t, v, y, f, p, r, a, m, h]
                         );
-                    return (0, i.jsx)(c.Provider, { value: p, children: e });
+                    return (0, i.jsx)(c.Provider, { value: x, children: e });
                 };
             u.displayName = "ListViewSelectionProvider";
             let d = () => (0, l.useContext)(c);
@@ -1419,4 +1431,4 @@
         },
     },
 ]);
-//# sourceMappingURL=packages_list-view_src_hooks_use-next-header-tag_ts-packages_list-view_src_ListItem_ListItem_-055669-8b5dcb381d06.js.map
+//# sourceMappingURL=packages_list-view_src_hooks_use-next-header-tag_ts-packages_list-view_src_ListItem_ListItem_-055669-3f4a645c6c8d.js.map
