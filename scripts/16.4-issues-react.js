@@ -5,9 +5,11 @@
         "issues-react",
         "lazy-react-partial-actions-survey",
         "lazy-react-partial-copilot-apply-changes-button",
+        "lazy-react-partial-enterprise-team",
         "lazy-react-partial-global-sso-banner",
         "lazy-react-partial-single-sign-on-dropdown-partial",
         "packages_global-sso-banner_GlobalSsoBanner_tsx",
+        "packages_list-view_src_ListItem_Title_tsx-packages_list-view_src_ListItem_TrailingBadge_tsx-p-e2a437",
     ],
     {
         62227: (e, a, l) => {
@@ -29,7 +31,7 @@
             };
         },
         99896: (e, a, l) => {
-            l.d(a, { xC: () => v, B6: () => x, ym: () => j });
+            l.d(a, { xC: () => L, B6: () => x, ym: () => j });
             var n = l(74848),
                 t = l(21728),
                 i = l(38621),
@@ -122,11 +124,11 @@
                       (S[0] = F.icon),
                       (S[1] = a))
                     : (a = S[1]);
-                let L = a,
-                    v = "in_progress" === F.state;
+                let v = a,
+                    L = "in_progress" === F.state;
                 return (
-                    S[2] !== L || S[3] !== v
-                        ? ((l = v
+                    S[2] !== v || S[3] !== L
+                        ? ((l = L
                               ? (0, n.jsx)("div", {
                                     className: k.Box_2,
                                     children: (0, n.jsxs)("svg", {
@@ -154,9 +156,9 @@
                                         ],
                                     }),
                                 })
-                              : (0, n.jsx)(n.Fragment, { children: L })),
-                          (S[2] = L),
-                          (S[3] = v),
+                              : (0, n.jsx)(n.Fragment, { children: v })),
+                          (S[2] = v),
+                          (S[3] = L),
                           (S[4] = l))
                         : (l = S[4]),
                     S[5] !== F.avatarBackgroundColor
@@ -373,12 +375,12 @@
             try {
                 F.displayName || (F.displayName = "HeaderState");
             } catch {}
-            let L = {
+            let v = {
                 Dialog: "CheckStatusDialog-module__Dialog--k1EnR",
                 Dialog_Body: "CheckStatusDialog-module__Dialog_Body--sRD_i",
                 Box: "CheckStatusDialog-module__Box--uYuTX",
             };
-            function v(e) {
+            function L(e) {
                 let a,
                     l,
                     i = (0, t.c)(7),
@@ -405,20 +407,20 @@
                                     width: "xlarge",
                                     renderBody: () =>
                                         (0, n.jsx)(m.l.Body, {
-                                            className: L.Dialog_Body,
+                                            className: v.Dialog_Body,
                                             children: s
                                                 ? (0, n.jsx)(f, {
                                                       checkRuns: s.checkRuns,
                                                   })
                                                 : (0, n.jsx)("div", {
-                                                      className: L.Box,
+                                                      className: v.Box,
                                                       children: (0, n.jsx)(
                                                           c.A,
                                                           { size: "medium" }
                                                       ),
                                                   }),
                                         }),
-                                    className: L.Dialog,
+                                    className: v.Dialog,
                                 })
                               : null),
                           (i[2] = s),
@@ -431,7 +433,7 @@
                 );
             }
             try {
-                v.displayName || (v.displayName = "CheckStatusDialog");
+                L.displayName || (L.displayName = "CheckStatusDialog");
             } catch {}
             let _ = {
                     ChecksStatusBadgeButton:
@@ -561,7 +563,7 @@
                     C = void 0 === g ? "default" : g,
                     S = void 0 === h ? "medium" : h,
                     F = void 0 === b ? "" : b,
-                    [L, x] = (0, u.useState)(!1),
+                    [v, x] = (0, u.useState)(!1),
                     w = (0, u.useRef)(null),
                     N = I[c],
                     j = N?.[C] || I.error[C],
@@ -669,12 +671,12 @@
                           (o[19] = c),
                           (o[20] = l))
                         : (l = o[20]),
-                    o[21] !== m || o[22] !== L
+                    o[21] !== m || o[22] !== v
                         ? ((i =
-                              L &&
-                              (0, n.jsx)(v, {
+                              v &&
+                              (0, n.jsx)(L, {
                                   combinedStatus: m,
-                                  isOpen: L,
+                                  isOpen: v,
                                   onDismiss: () => {
                                       (x(!1),
                                           setTimeout(() => {
@@ -683,7 +685,7 @@
                                   },
                               })),
                           (o[21] = m),
-                          (o[22] = L),
+                          (o[22] = v),
                           (o[23] = i))
                         : (i = o[23]),
                     o[24] !== l || o[25] !== i
@@ -1495,8 +1497,8 @@
                 new: "new",
                 empty: "empty",
             };
-            var L = l(73189),
-                v = l(35619),
+            var v = l(73189),
+                L = l(35619),
                 _ = l(79634),
                 I = l(13017),
                 K = l(43258),
@@ -1553,11 +1555,11 @@
                     blocked: "blocked",
                     blocking: "blocking",
                 }),
-                V = [
+                D = [
                     ...Object.values({ public: "public", private: "private" }),
                     ...M,
                 ],
-                D = Object.values({
+                V = Object.values({
                     open: "open",
                     closed: "closed",
                     draft: "draft",
@@ -1786,7 +1788,7 @@
                 W = {
                     id: F.assignedToMe,
                     name: "Assigned to me",
-                    query: v.Ds.assignedToMe,
+                    query: L.Ds.assignedToMe,
                     icon: "PEOPLE",
                     hidden: !1,
                     ...z,
@@ -1802,7 +1804,7 @@
                 Z = {
                     id: F.pullsAssignedToMe,
                     name: "Assigned to me",
-                    query: v.Ds.pullsAssignedToMe,
+                    query: L.Ds.pullsAssignedToMe,
                     icon: "PEOPLE",
                     hidden: !0,
                     ...z,
@@ -1810,7 +1812,7 @@
                 X = {
                     id: F.mentioned,
                     name: "Mentioned",
-                    query: v.Ds.mentioned,
+                    query: L.Ds.mentioned,
                     icon: "MENTION",
                     hidden: !1,
                     ...z,
@@ -1818,14 +1820,14 @@
                 J = {
                     id: F.created,
                     name: "Created by me",
-                    query: v.Ds.createdByMe,
+                    query: L.Ds.createdByMe,
                     icon: "SMILEY",
                     ...z,
                 },
                 Y = {
                     id: F.recent,
                     name: "Recent activity",
-                    query: v.Ds.recentActivity,
+                    query: L.Ds.recentActivity,
                     icon: "CLOCK",
                     ...z,
                 },
@@ -2069,6 +2071,11 @@
                                                         name: "first",
                                                         value: 25,
                                                     },
+                                                    {
+                                                        kind: "Literal",
+                                                        name: "searchTypes",
+                                                        value: ["ISSUES"],
+                                                    },
                                                 ],
                                                 concreteType:
                                                     "SearchShortcutConnection",
@@ -2104,7 +2111,7 @@
                                                     },
                                                 ],
                                                 storageKey:
-                                                    "shortcuts(first:25)",
+                                                    'shortcuts(first:25,searchTypes:["ISSUES"])',
                                             },
                                             l,
                                         ],
@@ -2134,7 +2141,7 @@
                         ],
                     },
                     params: {
-                        id: "9c69ef5db2b7a6ba9b7a43beb107c0a7",
+                        id: "c06c5627e09922bd28c6d34ff91d0530",
                         metadata: {},
                         name: "createUserViewMutation",
                         operationKind: "mutation",
@@ -2356,18 +2363,18 @@
                 eb = (e, a, l) =>
                     !!e.startsWith(window.location.origin) &&
                     e.indexOf(`/${a}/${l}/issues`) > -1,
-                ef = (e) => e.includes(v.Ds.open),
-                eC = (e) => e.includes(v.Ds.closed),
-                eS = (e) => e.includes(`-${v.Ds.open}`),
-                eF = (e) => e.includes(`-${v.Ds.closed}`),
-                eL = (e) => {
+                ef = (e) => e.includes(L.Ds.open),
+                eC = (e) => e.includes(L.Ds.closed),
+                eS = (e) => e.includes(`-${L.Ds.open}`),
+                eF = (e) => e.includes(`-${L.Ds.closed}`),
+                ev = (e) => {
                     let a;
                     if (
                         !(e = e.trim()) ||
                         ((a = e),
                         [
-                            v.Ds.defaultRepoLevelOpen,
-                            v.Ds.defaultRepoLevelClosed,
+                            L.Ds.defaultRepoLevelOpen,
+                            L.Ds.defaultRepoLevelClosed,
                         ].includes(
                             a
                                 .split(" ")
@@ -2377,21 +2384,21 @@
                         ))
                     )
                         return "";
-                    let l = ef((e = ev(e))),
+                    let l = ef((e = eL(e))),
                         n = eC(e),
                         t = eS(e),
                         i = eF(e);
                     return t && !i
-                        ? e.replaceAll(`-${v.Ds.open}`, `-${v.Ds.closed}`)
+                        ? e.replaceAll(`-${L.Ds.open}`, `-${L.Ds.closed}`)
                         : !n || l || i
                           ? l || i
                               ? e.trim()
                               : (e = e.trim()).length > 0
-                                ? `${e.trim()} ${v.Ds.open}`
-                                : v.Ds.open
-                          : e.replaceAll(v.Ds.closed, v.Ds.open);
+                                ? `${e.trim()} ${L.Ds.open}`
+                                : L.Ds.open
+                          : e.replaceAll(L.Ds.closed, L.Ds.open);
                 },
-                ev = (e) =>
+                eL = (e) =>
                     e.replace(/(^|\s)is:(open|closed)(\s|$)/g, "$1state:$2$3"),
                 e_ = (e, a) =>
                     null === e.match(/(\?|&)page=-?\d+/)
@@ -2491,51 +2498,51 @@
                 },
                 eP = (0, b.createContext)({
                     viewPosition: void 0,
-                    setViewPosition: L.l,
+                    setViewPosition: v.l,
                     isCustomView: (e) => "" === e,
                     isEditing: !1,
-                    setIsEditing: L.l,
+                    setIsEditing: v.l,
                     isQueryLoading: !1,
-                    setIsQueryLoading: L.l,
+                    setIsQueryLoading: v.l,
                     saveViewsConnectionId: void 0,
-                    setSaveViewsConnectionId: L.l,
+                    setSaveViewsConnectionId: v.l,
                     activeSearchQuery: "",
-                    setActiveSearchQuery: L.l,
+                    setActiveSearchQuery: v.l,
                     canEditView: !1,
-                    setCanEditView: L.l,
+                    setCanEditView: v.l,
                     isNewView: !1,
-                    setIsNewView: L.l,
+                    setIsNewView: v.l,
                     executeQuery: void 0,
-                    setExecuteQuery: L.l,
+                    setExecuteQuery: v.l,
                     dirtyViewId: void 0,
-                    setDirtyViewId: L.l,
+                    setDirtyViewId: v.l,
                     currentViewId: F.empty,
-                    setCurrentViewId: L.l,
+                    setCurrentViewId: v.l,
                     currentPage: void 0,
-                    setCurrentPage: L.l,
+                    setCurrentPage: v.l,
                     savedViewsCount: 0,
-                    setSavedViewsCount: L.l,
+                    setSavedViewsCount: v.l,
                 }),
                 eT = (0, b.createContext)({
-                    commitUserViewCreate: L.l,
-                    commitUserViewEdit: L.l,
-                    commitUserViewDuplicate: L.l,
+                    commitUserViewCreate: v.l,
+                    commitUserViewEdit: v.l,
+                    commitUserViewDuplicate: v.l,
                     dirtySearchQuery: "",
                     debouncedDirtySearchQuery: null,
-                    setDirtySearchQuery: L.l,
+                    setDirtySearchQuery: v.l,
                     dirtyTitle: "",
-                    setDirtyTitle: L.l,
+                    setDirtyTitle: v.l,
                     dirtyDescription: "",
-                    setDirtyDescription: L.l,
+                    setDirtyDescription: v.l,
                     dirtyViewIcon: null,
-                    setDirtyViewIcon: L.l,
+                    setDirtyViewIcon: v.l,
                     dirtyViewColor: null,
-                    setDirtyViewColor: L.l,
+                    setDirtyViewColor: v.l,
                     bulkJobId: null,
-                    setBulkJobId: L.l,
-                    clearSavedViewEditState: L.l,
+                    setBulkJobId: v.l,
+                    clearSavedViewEditState: v.l,
                     shouldFocusSearchOnNav: !1,
-                    setShouldFocusSearchOnNav: L.l,
+                    setShouldFocusSearchOnNav: v.l,
                 });
             function eA({ children: e }) {
                 let {
@@ -2544,7 +2551,7 @@
                     { addToast: l } = (0, K.Y6)(),
                     { search: n } = (0, I.zy)(),
                     t = new URLSearchParams(n).get("q"),
-                    i = t && "" !== t ? t : v.Ds.defaultRepoLevelOpen,
+                    i = t && "" !== t ? t : L.Ds.defaultRepoLevelOpen,
                     [s, r] = (0, b.useState)(a),
                     [o, u] = (0, b.useState)(null),
                     [d, c] = (0, b.useState)(i),
@@ -2552,7 +2559,7 @@
                     [p, k] = (0, b.useState)(void 0),
                     [h, f] = (0, b.useState)(null),
                     [C, S] = (0, b.useState)(null),
-                    [L, N] = (0, b.useState)(null),
+                    [v, N] = (0, b.useState)(null),
                     [j, R] = (0, b.useState)(null),
                     [T, A] = (0, b.useState)(void 0),
                     M = (() => {
@@ -2567,7 +2574,7 @@
                               ? l
                               : F.empty;
                     })(),
-                    [V, D] = (0, b.useState)(M),
+                    [D, V] = (0, b.useState)(M),
                     [q, O] = (0, b.useState)(!1),
                     [B, Q] = (0, b.useState)(!1),
                     [H, z] = (0, b.useState)(!1),
@@ -2770,14 +2777,14 @@
                             setExecuteQuery: J,
                             dirtyViewId: T,
                             setDirtyViewId: A,
-                            currentViewId: V,
-                            setCurrentViewId: D,
+                            currentViewId: D,
+                            setCurrentViewId: V,
                             currentPage: G,
                             setCurrentPage: Z,
                             savedViewsCount: ea,
                             setSavedViewsCount: el,
                         }),
-                        [q, B, m, ep, p, d, s, H, X, T, V, G, ea]
+                        [q, B, m, ep, p, d, s, H, X, T, D, G, ea]
                     ),
                     eS = (0, b.useMemo)(
                         () => ({
@@ -2789,7 +2796,7 @@
                             debouncedDirtySearchQuery: en,
                             dirtyDescription: C,
                             setDirtyDescription: S,
-                            dirtyViewIcon: L,
+                            dirtyViewIcon: v,
                             setDirtyViewIcon: N,
                             dirtyTitle: h,
                             setDirtyTitle: f,
@@ -2803,7 +2810,7 @@
                             shouldFocusSearchOnNav: Y,
                             setShouldFocusSearchOnNav: ee,
                         }),
-                        [eb, ef, ek, o, en, C, L, h, j, T, em, eg, ey, Y]
+                        [eb, ef, ek, o, en, C, v, h, j, T, em, eg, ey, Y]
                     );
                 return (0, y.jsx)(eP.Provider, {
                     value: eC,
@@ -2816,7 +2823,7 @@
             function eM() {
                 return (0, b.useContext)(eP);
             }
-            function eV() {
+            function eD() {
                 return (0, b.useContext)(eT);
             }
             try {
@@ -2828,7 +2835,7 @@
             try {
                 eA.displayName || (eA.displayName = "QueryContextProvider");
             } catch {}
-            function eD({ children: e }) {
+            function eV({ children: e }) {
                 return (0, y.jsx)(C, {
                     children: (0, y.jsx)(eA, {
                         children: (0, y.jsxs)(h.e, {
@@ -2856,7 +2863,7 @@
                 });
             }
             try {
-                eD.displayName || (eD.displayName = "App");
+                eV.displayName || (eV.displayName = "App");
             } catch {}
             let eE = (function () {
                 var e = {
@@ -2940,6 +2947,11 @@
                                                         kind: "Literal",
                                                         name: "first",
                                                         value: 25,
+                                                    },
+                                                    {
+                                                        kind: "Literal",
+                                                        name: "searchTypes",
+                                                        value: ["ISSUES"],
                                                     },
                                                 ],
                                                 concreteType:
@@ -3049,7 +3061,7 @@
                                                     },
                                                 ],
                                                 storageKey:
-                                                    "shortcuts(first:25)",
+                                                    'shortcuts(first:25,searchTypes:["ISSUES"])',
                                             },
                                             e,
                                         ],
@@ -3062,7 +3074,7 @@
                         ],
                     },
                     params: {
-                        id: "17e97e226c53190b027f4463ad14930c",
+                        id: "c2a19fab639227d7a392d54afba625c3",
                         metadata: {},
                         name: "SavedViewsQuery",
                         operationKind: "query",
@@ -3486,14 +3498,14 @@
                         name: "createdAt",
                         storageKey: null,
                     },
-                    L = {
+                    v = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "updatedAt",
                         storageKey: null,
                     },
-                    v = {
+                    L = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -3589,8 +3601,8 @@
                             C,
                             S,
                             F,
-                            L,
                             v,
+                            L,
                             _,
                             I,
                             {
@@ -3756,8 +3768,8 @@
                                                                                                         C,
                                                                                                         S,
                                                                                                         F,
-                                                                                                        L,
                                                                                                         v,
+                                                                                                        L,
                                                                                                         _,
                                                                                                         I,
                                                                                                         {
@@ -3822,8 +3834,8 @@
                                                                                                         C,
                                                                                                         S,
                                                                                                         F,
-                                                                                                        L,
                                                                                                         v,
+                                                                                                        L,
                                                                                                         _,
                                                                                                         I,
                                                                                                         N,
@@ -4151,14 +4163,14 @@
                         name: "createdAt",
                         storageKey: null,
                     },
-                    L = {
+                    v = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "updatedAt",
                         storageKey: null,
                     },
-                    v = {
+                    L = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -4254,8 +4266,8 @@
                             C,
                             S,
                             F,
-                            L,
                             v,
+                            L,
                             _,
                             I,
                             {
@@ -4421,8 +4433,8 @@
                                                                                                         C,
                                                                                                         S,
                                                                                                         F,
-                                                                                                        L,
                                                                                                         v,
+                                                                                                        L,
                                                                                                         _,
                                                                                                         I,
                                                                                                         {
@@ -4487,8 +4499,8 @@
                                                                                                         C,
                                                                                                         S,
                                                                                                         F,
-                                                                                                        L,
                                                                                                         v,
+                                                                                                        L,
                                                                                                         _,
                                                                                                         I,
                                                                                                         N,
@@ -4816,14 +4828,14 @@
                         name: "createdAt",
                         storageKey: null,
                     },
-                    L = {
+                    v = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "updatedAt",
                         storageKey: null,
                     },
-                    v = {
+                    L = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -4919,8 +4931,8 @@
                             C,
                             S,
                             F,
-                            L,
                             v,
+                            L,
                             _,
                             I,
                             {
@@ -5086,8 +5098,8 @@
                                                                                                         C,
                                                                                                         S,
                                                                                                         F,
-                                                                                                        L,
                                                                                                         v,
+                                                                                                        L,
                                                                                                         _,
                                                                                                         I,
                                                                                                         {
@@ -5152,8 +5164,8 @@
                                                                                                         C,
                                                                                                         S,
                                                                                                         F,
-                                                                                                        L,
                                                                                                         v,
+                                                                                                        L,
                                                                                                         _,
                                                                                                         I,
                                                                                                         N,
@@ -5408,14 +5420,14 @@
                         name: "stateReason",
                         storageKey: null,
                     },
-                    L = {
+                    v = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "number",
                         storageKey: null,
                     },
-                    v = {
+                    L = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -5586,7 +5598,7 @@
                         ],
                         storageKey: null,
                     },
-                    V = [
+                    D = [
                         {
                             alias: null,
                             args: null,
@@ -5598,18 +5610,18 @@
                             storageKey: null,
                         },
                     ],
-                    D = {
+                    V = {
                         kind: "InlineFragment",
                         selections: [
                             {
                                 kind: "InlineFragment",
-                                selections: V,
+                                selections: D,
                                 type: "Issue",
                                 abstractKey: null,
                             },
                             {
                                 kind: "InlineFragment",
-                                selections: V,
+                                selections: D,
                                 type: "PullRequest",
                                 abstractKey: null,
                             },
@@ -5619,7 +5631,7 @@
                     },
                     E = {
                         kind: "InlineFragment",
-                        selections: [j, R, C, P, T, A, M, F, S, D],
+                        selections: [j, R, C, P, T, A, M, F, S, V],
                         type: "Issue",
                         abstractKey: null,
                     },
@@ -5779,7 +5791,7 @@
                                                             C,
                                                             S,
                                                             F,
-                                                            L,
+                                                            v,
                                                             {
                                                                 alias: null,
                                                                 args: null,
@@ -5814,7 +5826,7 @@
                                                                 name: "repository",
                                                                 plural: !1,
                                                                 selections: [
-                                                                    v,
+                                                                    L,
                                                                     c,
                                                                 ],
                                                                 storageKey:
@@ -5836,7 +5848,7 @@
                                         ],
                                         storageKey: "pinnedIssues(first:3)",
                                     },
-                                    v,
+                                    L,
                                     {
                                         alias: null,
                                         args: null,
@@ -5975,7 +5987,7 @@
                                                                                     selections:
                                                                                         [
                                                                                             c,
-                                                                                            L,
+                                                                                            v,
                                                                                             h,
                                                                                             {
                                                                                                 alias: "titleHtml",
@@ -6036,7 +6048,7 @@
                                                                                                                             null,
                                                                                                                     },
                                                                                                                     O,
-                                                                                                                    D,
+                                                                                                                    V,
                                                                                                                 ],
                                                                                                             type: "PullRequest",
                                                                                                             abstractKey:
@@ -6057,7 +6069,7 @@
                                                                                     selections:
                                                                                         [
                                                                                             c,
-                                                                                            L,
+                                                                                            v,
                                                                                             {
                                                                                                 alias: null,
                                                                                                 args: null,
@@ -6111,7 +6123,7 @@
                                                                                                                     M,
                                                                                                                     q,
                                                                                                                     O,
-                                                                                                                    D,
+                                                                                                                    V,
                                                                                                                 ],
                                                                                                             type: "PullRequest",
                                                                                                             abstractKey:
@@ -7082,14 +7094,14 @@
                             value: { direction: "ASC", field: "NAME" },
                         },
                     ],
-                    L = {
+                    v = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "cursor",
                         storageKey: null,
                     },
-                    v = {
+                    L = {
                         alias: null,
                         args: null,
                         concreteType: "PageInfo",
@@ -7153,11 +7165,11 @@
                                         ],
                                         storageKey: null,
                                     },
-                                    L,
+                                    v,
                                 ],
                                 storageKey: null,
                             },
-                            v,
+                            L,
                         ],
                         storageKey:
                             'labels(first:10,orderBy:{"direction":"ASC","field":"NAME"})',
@@ -7564,11 +7576,11 @@
                                                         ],
                                                         storageKey: null,
                                                     },
-                                                    L,
+                                                    v,
                                                 ],
                                                 storageKey: null,
                                             },
-                                            v,
+                                            L,
                                         ],
                                         storageKey: null,
                                     },
@@ -7950,14 +7962,14 @@
                         name: "login",
                         storageKey: null,
                     },
-                    L = {
+                    v = {
                         alias: null,
                         args: [{ kind: "Literal", name: "size", value: 64 }],
                         kind: "ScalarField",
                         name: "avatarUrl",
                         storageKey: "avatarUrl(size:64)",
                     },
-                    v = { kind: "Literal", name: "first", value: 20 },
+                    L = { kind: "Literal", name: "first", value: 20 },
                     _ = {
                         alias: null,
                         args: null,
@@ -8052,7 +8064,7 @@
                     T = {
                         alias: null,
                         args: [
-                            v,
+                            L,
                             {
                                 kind: "Literal",
                                 name: "orderBy",
@@ -8097,7 +8109,7 @@
                         name: "profileResourcePath",
                         storageKey: null,
                     },
-                    V = {
+                    D = {
                         kind: "InlineFragment",
                         selections: [
                             {
@@ -8111,7 +8123,7 @@
                         type: "Bot",
                         abstractKey: null,
                     },
-                    D = {
+                    V = {
                         alias: null,
                         args: [A],
                         concreteType: "UserConnection",
@@ -8138,7 +8150,7 @@
                                             b,
                                             {
                                                 kind: "InlineFragment",
-                                                selections: [S, F, C, M, L, V],
+                                                selections: [S, F, C, M, v, D],
                                                 type: "Actor",
                                                 abstractKey: "__isActor",
                                             },
@@ -8458,7 +8470,7 @@
                                             S,
                                             f,
                                             F,
-                                            L,
+                                            v,
                                             {
                                                 alias: null,
                                                 args: null,
@@ -8479,7 +8491,7 @@
                                                             {
                                                                 alias: null,
                                                                 args: [
-                                                                    v,
+                                                                    L,
                                                                     {
                                                                         kind: "Variable",
                                                                         name: "numbers",
@@ -8736,7 +8748,7 @@
                                                     },
                                                     _,
                                                     T,
-                                                    D,
+                                                    V,
                                                     O,
                                                     B,
                                                 ],
@@ -8894,10 +8906,10 @@
                                                         storageKey: null,
                                                     },
                                                     T,
-                                                    D,
+                                                    V,
                                                     {
                                                         alias: null,
-                                                        args: [v],
+                                                        args: [L],
                                                         concreteType:
                                                             "ProjectV2Connection",
                                                         kind: "LinkedField",
@@ -8987,8 +8999,8 @@
                                                             F,
                                                             C,
                                                             M,
-                                                            L,
-                                                            V,
+                                                            v,
+                                                            D,
                                                         ],
                                                         storageKey: null,
                                                     },
@@ -9005,7 +9017,7 @@
                                             {
                                                 alias: null,
                                                 args: [
-                                                    v,
+                                                    L,
                                                     {
                                                         kind: "Variable",
                                                         name: "names",
@@ -11268,7 +11280,7 @@
                     (n.displayName = "IssueCreateInitialValuesContextProvider");
             } catch {}
             var ab = l(58335),
-                af = l(56924),
+                af = l(99726),
                 aC = l(3872);
             let aS = {
                 createPane: "IssueCreatePage-module__createPane--Q_PoE",
@@ -11284,7 +11296,7 @@
                     "IssueCreatePage-module__IssueCreatePageContainer--flXup",
             };
             var aF = l(94007);
-            let aL = ({
+            let av = ({
                 templateName: e,
                 nameWithOwner: a,
                 issueFormRef: l,
@@ -11322,9 +11334,9 @@
                 });
             };
             try {
-                aL.displayName || (aL.displayName = "DifferentTemplateLink");
+                av.displayName || (av.displayName = "DifferentTemplateLink");
             } catch {}
-            var av = l(94252),
+            var aL = l(94252),
                 a_ = l(93997),
                 aI = l(35669);
             let aK = ({
@@ -11434,7 +11446,7 @@
                                                 }),
                                                 o.hasAnyTemplates &&
                                                     !C &&
-                                                    (0, y.jsx)(aL, {
+                                                    (0, y.jsx)(av, {
                                                         nameWithOwner:
                                                             c.nameWithOwner,
                                                         templateName: h?.name,
@@ -11485,7 +11497,7 @@
                             navigate: s,
                             setDisplayMode: r,
                         }),
-                        h = (0, av.K)({
+                        h = (0, aL.K)({
                             issueFormRef: a,
                             handleTemplateChange: k,
                             navigate: s,
@@ -11509,7 +11521,7 @@
                         (0, y.jsx)(af.e, {
                             issueFormRef: a,
                             onCreateSuccess: h,
-                            onCreateError: L.l,
+                            onCreateError: v.l,
                             onCancel: f,
                             selectedTemplate: e,
                             repository: l,
@@ -11531,9 +11543,9 @@
                 ax.displayName || (ax.displayName = "IssueCreatePageInternal");
             } catch {}
             var aw = l(53580),
-                aN = l(12495),
-                aj = l(22020),
-                aR = l(59459);
+                aN = l(90913),
+                aj = l(62973),
+                aR = l(84172);
             let aP = ({ urlParameterQueryData: e }) => {
                     let a = (0, er.usePreloadedQuery)(eZ, e)?.repository;
                     return a
@@ -11700,7 +11712,7 @@
                     abstractKey: "__isSearchable",
                 };
             aM.hash = "8ffa7642e54448af5beab6dd8d9e3bcf";
-            let aV = {
+            let aD = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -11715,9 +11727,9 @@
                 type: "Shortcutable",
                 abstractKey: "__isShortcutable",
             };
-            aV.hash = "a93246eb19a6ce78ccda6b3c1177859f";
-            var aD = l(16070),
-                aE = l(5378),
+            aD.hash = "a93246eb19a6ce78ccda6b3c1177859f";
+            var aV = l(16070),
+                aE = l(35573),
                 aq = l(96747),
                 aO = l(263);
             let aB = {
@@ -12472,13 +12484,13 @@
                     if (e !== F.repository) {
                         if (e && e !== F.empty)
                             l = a5[e] ? `/${a5[e]}` : `/${e}`;
-                        else if (a === v.Ds.assignedToMe)
+                        else if (a === L.Ds.assignedToMe)
                             return `/issues/${a5.assigned}`;
-                        else if (a === v.Ds.mentioned)
+                        else if (a === L.Ds.mentioned)
                             return `/issues/${a5.mentioned}`;
-                        else if (a === v.Ds.createdByMe)
+                        else if (a === L.Ds.createdByMe)
                             return `/issues/${a5.createdByMe}`;
-                        else if (a === v.Ds.recentActivity)
+                        else if (a === L.Ds.recentActivity)
                             return `/issues/${a5.recentActivity}`;
                     }
                     if (
@@ -12747,10 +12759,10 @@
                 };
             var lS = l(48738),
                 lF = l(79272);
-            function lL(e) {
+            function lv(e) {
                 return null != e;
             }
-            var lv = l(50467);
+            var lL = l(50467);
             let l_ = class CopilotUserFilterProvider extends lS.Qh {
                 async getSuggestions(e, a, l, n) {
                     return (
@@ -12789,7 +12801,7 @@
                 }
                 constructor(e, a, l) {
                     (super(e, a, l),
-                        (0, lv._)(this, "copilotQueryParamKey", void 0));
+                        (0, lL._)(this, "copilotQueryParamKey", void 0));
                 }
             };
             let AssigneeFilterProviderWithCopilotSupport = class AssigneeFilterProviderWithCopilotSupport extends l_ {
@@ -13022,8 +13034,8 @@
                     );
                 }
             };
-            let lV = (e, a) => (e ? [a] : []),
-                lD = {
+            let lD = (e, a) => (e ? [a] : []),
+                lV = {
                     gap8: "SearchBar-module__gap8--tZi0W",
                     filterContainer: "SearchBar-module__filterContainer--XzLet",
                     validation: "SearchBar-module__validation--m94_M",
@@ -13129,7 +13141,7 @@
             let lU = ({ editing: e, children: a }) =>
                 e
                     ? (0, y.jsx)(lu.A, {
-                          className: lD.FormControl,
+                          className: lV.FormControl,
                           children: a,
                       })
                     : (0, y.jsx)(y.Fragment, { children: a });
@@ -13157,14 +13169,14 @@
                         scopingRepository: S,
                         query: F,
                     } = (0, er.useFragment)(a0, e),
-                    L = (0, er.useFragment)(a3, a),
+                    v = (0, er.useFragment)(a3, a),
                     {
-                        author: v,
+                        author: L,
                         assignee: K,
                         mentioned: x,
                         label: w,
                     } = (0, I.g)(),
-                    N = `${en.defaultQuery} ${en.query({ author: v, assignee: K, mentioned: x, label: w, createdByApp: eh(m) })}`,
+                    N = `${en.defaultQuery} ${en.query({ author: L, assignee: K, mentioned: x, label: w, createdByApp: eh(m) })}`,
                     j = F;
                 ek(m)
                     ? (j = N)
@@ -13175,7 +13187,7 @@
                         setDirtySearchQuery: T,
                         setShouldFocusSearchOnNav: A,
                         shouldFocusSearchOnNav: E,
-                    } = eV(),
+                    } = eD(),
                     q = (0, b.useCallback)(
                         (e) => {
                             (i(e), T(null));
@@ -13199,7 +13211,7 @@
                             { issue_dependencies: o } = (0, lh.h)(),
                             [u, d] = (0, b.useState)([]),
                             c = s ? `${i.owner}/${i.name}` : void 0,
-                            m = s ? M : V,
+                            m = s ? M : D,
                             g = (0, b.useMemo)(() => {
                                 let e = {
                                         showAtMe: !!n,
@@ -13210,7 +13222,7 @@
                                     l = { filterTypes: { valueless: !1 } },
                                     i = { filterTypes: { hasValue: !0 } };
                                 return [
-                                    ...lV(
+                                    ...lD(
                                         !s,
                                         new lS.pH({
                                             ...l,
@@ -13218,11 +13230,11 @@
                                         })
                                     ),
                                     ...u,
-                                    ...lV(!s, new lS.E({ ...l })),
+                                    ...lD(!s, new lS.E({ ...l })),
                                     new lS.I4(m, l, o),
                                     new lS.PT("mixed", l),
                                     new lS.aF(i),
-                                    ...lV(a || !s, new lF.B(i, !0, t, c)),
+                                    ...lD(a || !s, new lF.B(i, !0, t, c)),
                                     new lS.FG(i),
                                     new lS.Qq(i),
                                     new AssigneeFilterProviderWithCopilotSupport(
@@ -13239,8 +13251,8 @@
                                     ),
                                     new lS.Pd(e, l),
                                     new lS.$q(a4._i.parentIssue, i),
-                                    ...lV(o ?? !1, new lS.tQ()),
-                                    ...lV(o ?? !1, new lS.rL()),
+                                    ...lD(o ?? !1, new lS.tQ()),
+                                    ...lD(o ?? !1, new lS.rL()),
                                     new SubIssueFilterProvider(),
                                     new lS.pv(l),
                                     new lS._O(l),
@@ -13311,8 +13323,8 @@
                             "priority" in e && (e.priority = a4.$D);
                         return g;
                     })({
-                        isOrgScope: !!L?.isInOrganization,
-                        isIssueFieldsEnabled: !!L?.viewerCanSeeIssueFields,
+                        isOrgScope: !!v?.isInOrganization,
+                        isIssueFieldsEnabled: !!v?.viewerCanSeeIssueFields,
                     }),
                     $ = (0, b.useCallback)(
                         (e, a) => {
@@ -13322,7 +13334,7 @@
                             (e.config.groupAndKeywordSupport ||
                                 (n = ((e) => {
                                     let a = eR(e, "is", M);
-                                    return eR(a, "state", D);
+                                    return eR(a, "state", V);
                                 })(l)),
                                 O("search.execute", "FILTER_BAR_INPUT", {
                                     new_query: n,
@@ -13352,8 +13364,8 @@
                         [T]
                     ),
                     z = (0, b.useCallback)((e) => d(e), [d]);
-                ((0, lo._N)([ls.focusSearch], Q, { [lo.AR.metaKey]: !0 }),
-                    (0, lo._N)([ls.focusSearch], Q, { [lo.AR.ctrlKey]: !0 }));
+                ((0, lo._)([ls.focusSearch], Q, { [lo.A.metaKey]: !0 }),
+                    (0, lo._)([ls.focusSearch], Q, { [lo.A.ctrlKey]: !0 }));
                 let W = r && s(C);
                 ((0, b.useEffect)(() => {
                     if (!t.current || !W) return;
@@ -13404,12 +13416,12 @@
                                     children: ld.query,
                                 }),
                             (0, y.jsx)("div", {
-                                className: `${lD.gap8} px-0 ${W ? "d-flex" : "d-block"} flex-row flex-justify-between`,
+                                className: `${lV.gap8} px-0 ${W ? "d-flex" : "d-block"} flex-row flex-justify-between`,
                                 children: (0, y.jsxs)("div", {
-                                    className: `${lD.filterContainer} ${lD.gap8} d-flex flex-row flex-1 flexWrap min-width-0`,
+                                    className: `${lV.filterContainer} ${lV.gap8} d-flex flex-row flex-1 flexWrap min-width-0`,
                                     children: [
                                         (0, y.jsx)("div", {
-                                            className: `${lD.filter} d-flex flex-1 flex-column`,
+                                            className: `${lV.filter} d-flex flex-1 flex-column`,
                                             children: (0, y.jsx)(a4.dJ, {
                                                 id: C ?? "search",
                                                 context: Y
@@ -13443,11 +13455,11 @@
                                         p &&
                                             !em(m) &&
                                             (0, y.jsx)(lQ, {
-                                                currentRepository: L,
+                                                currentRepository: v,
                                             }),
                                         u.length > 0 &&
                                             (0, y.jsx)("div", {
-                                                className: `${lD.validation} mt-1`,
+                                                className: `${lV.validation} mt-1`,
                                                 children: (0, y.jsx)(a4.Xl, {
                                                     messages: u,
                                                     id: "repository-validation-message",
@@ -13764,7 +13776,7 @@
                             a
                         );
                     })(i),
-                    r = i.has("sort") ? "" : v.ZM;
+                    r = i.has("sort") ? "" : L.ZM;
                 for (let [e, a] of ((t = n),
                 (function (e, a) {
                     let l = new Map();
@@ -13791,17 +13803,17 @@
             function l9(e) {
                 let a = (function (e) {
                     let a = [],
-                        l = e.indexOf(v.A);
+                        l = e.indexOf(L.A);
                     if (-1 === l) return a;
                     for (; l < e.length; ) {
-                        for (let n in v.FR) {
-                            let t = v.FR[n];
+                        for (let n in L.FR) {
+                            let t = L.FR[n];
                             if (e.startsWith(t, l)) {
                                 (a.push({ token: t, pos: l }), (l += t.length));
                                 break;
                             }
                         }
-                        if (-1 === (l = e.indexOf(v.A, l + 1))) break;
+                        if (-1 === (l = e.indexOf(L.A, l + 1))) break;
                     }
                     return a;
                 })(e);
@@ -13810,7 +13822,7 @@
                     let l = new Date(),
                         n = [];
                     for (let t of a) {
-                        let a = t.token === v.FR.today ? l.getTime() : void 0;
+                        let a = t.token === L.FR.today ? l.getTime() : void 0;
                         if (!a) continue;
                         let i = (function (e, a, l) {
                             let n = a.token.length,
@@ -13824,7 +13836,7 @@
                                 let r = e.substring(
                                     a.pos + a.token.length + t.length
                                 );
-                                var i = v.EU.exec(r),
+                                var i = L.EU.exec(r),
                                     s = n;
                                 if (!i) return null;
                                 let o = parseInt(i[1], 10),
@@ -13834,19 +13846,19 @@
                                     let t = new Date(e.getTime()),
                                         i = "-" === n ? -1 : 1;
                                     switch (l) {
-                                        case v.Ad.day:
+                                        case L.Ad.day:
                                             t.setDate(e.getDate() + i * a);
                                             break;
-                                        case v.Ad.week:
+                                        case L.Ad.week:
                                             t.setDate(e.getDate() + i * a * 7);
                                             break;
-                                        case v.Ad.month:
+                                        case L.Ad.month:
                                             (t.setMonth(e.getMonth() + i * a),
                                                 1 === t.getDate() &&
                                                     1 !== e.getDate() &&
                                                     t.setDate(t.getDate() - 1));
                                             break;
-                                        case v.Ad.year:
+                                        case L.Ad.year:
                                             t.setFullYear(
                                                 e.getFullYear() + i * a
                                             );
@@ -14084,7 +14096,7 @@
                         name: "hasNextPage",
                         storageKey: null,
                     },
-                    L = {
+                    v = {
                         alias: null,
                         args: f,
                         concreteType: "LabelConnection",
@@ -14146,7 +14158,7 @@
                         ],
                         storageKey: null,
                     },
-                    v = {
+                    L = {
                         alias: null,
                         args: f,
                         filters: ["orderBy"],
@@ -14276,8 +14288,8 @@
                     T = {
                         kind: "InlineFragment",
                         selections: [
-                            L,
                             v,
+                            L,
                             _,
                             I,
                             K,
@@ -14310,14 +14322,14 @@
                         name: "isDraft",
                         storageKey: null,
                     },
-                    V = {
+                    D = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "isInMergeQueue",
                         storageKey: null,
                     },
-                    D = {
+                    V = {
                         alias: "pullRequestState",
                         args: null,
                         kind: "ScalarField",
@@ -14550,8 +14562,8 @@
                                                                                                             kind: "InlineFragment",
                                                                                                             selections:
                                                                                                                 [
-                                                                                                                    L,
                                                                                                                     v,
+                                                                                                                    L,
                                                                                                                     _,
                                                                                                                     I,
                                                                                                                     K,
@@ -14559,8 +14571,8 @@
                                                                                                                     N,
                                                                                                                     A,
                                                                                                                     M,
-                                                                                                                    V,
                                                                                                                     D,
+                                                                                                                    V,
                                                                                                                     P,
                                                                                                                 ],
                                                                                                             type: "PullRequest",
@@ -14655,15 +14667,15 @@
                                                                                                             kind: "InlineFragment",
                                                                                                             selections:
                                                                                                                 [
-                                                                                                                    L,
                                                                                                                     v,
+                                                                                                                    L,
                                                                                                                     _,
                                                                                                                     I,
                                                                                                                     K,
                                                                                                                     x,
                                                                                                                     N,
                                                                                                                     M,
-                                                                                                                    D,
+                                                                                                                    V,
                                                                                                                     P,
                                                                                                                     {
                                                                                                                         condition:
@@ -14674,7 +14686,7 @@
                                                                                                                         selections:
                                                                                                                             [
                                                                                                                                 A,
-                                                                                                                                V,
+                                                                                                                                D,
                                                                                                                             ],
                                                                                                                     },
                                                                                                                 ],
@@ -15313,11 +15325,11 @@
             nC.hash = "9c625883c1ab2a710b78eb3d2e69cda8";
             var nS = l(29731),
                 nF = l(54070);
-            function nL({ metadataRef: e, issueId: a, href: l }) {
+            function nv({ metadataRef: e, issueId: a, href: l }) {
                 return e
                     ? (0, y.jsx)(b.Suspense, {
                           fallback: null,
-                          children: (0, y.jsx)(nv, {
+                          children: (0, y.jsx)(nL, {
                               issueId: a,
                               metadataRef: e,
                               href: l,
@@ -15325,7 +15337,7 @@
                       })
                     : null;
             }
-            function nv({ metadataRef: e, issueId: a, href: l }) {
+            function nL({ metadataRef: e, issueId: a, href: l }) {
                 let { nodes: n } = (0, er.usePreloadedQuery)(ib, e),
                     t = n?.find((e) => e?.id === a);
                 return t ? (0, y.jsx)(n_, { blockedByKey: t, href: l }) : null;
@@ -15350,11 +15362,11 @@
                       });
             }
             try {
-                nL.displayName || (nL.displayName = "IssueItemBlockedBy");
+                nv.displayName || (nv.displayName = "IssueItemBlockedBy");
             } catch {}
             try {
-                nv.displayName ||
-                    (nv.displayName = "IssueItemBlockedByFetched");
+                nL.displayName ||
+                    (nL.displayName = "IssueItemBlockedByFetched");
             } catch {}
             try {
                 n_.displayName ||
@@ -15951,8 +15963,8 @@
             nT.hash = "42bd9fa660c90cbfea3449aa2b1d2c2c";
             var nA = l(12360),
                 nM = l(20403),
-                nV = l(34164);
-            let nD = {
+                nD = l(34164);
+            let nV = {
                     AssigneeAvatar: "Assignee-module__AssigneeAvatar--HCh3l",
                 },
                 nE = {
@@ -15979,7 +15991,7 @@
                     "aria-label": `${s} is assigned`,
                     href: a(i ? "@copilot" : n),
                     ...r,
-                    className: (0, nV.$)(
+                    className: (0, nD.$)(
                         l,
                         "pc-AvatarItem",
                         nE.assigneeIconLink
@@ -15988,7 +16000,7 @@
                         ? (0, y.jsx)(nA.C, { size: "small" }, n)
                         : (0, y.jsx)(
                               e1.r,
-                              { alt: s, src: t, className: nD.AssigneeAvatar },
+                              { alt: s, src: t, className: nV.AssigneeAvatar },
                               n
                           ),
                 });
@@ -18415,18 +18427,18 @@
             try {
                 tF.displayName || (tF.displayName = "PullRequestRow");
             } catch {}
-            function tL({ id: e, dataKey: a, metadataRef: l }) {
+            function tv({ id: e, dataKey: a, metadataRef: l }) {
                 let n = (0, er.useFragment)(ti, a);
                 return "PullRequest" === n.__typename
                     ? void 0 === n.isInMergeQueue
                         ? (0, y.jsx)(t_, { id: e, data: n, metadataRef: l })
-                        : (0, y.jsx)(tv, {
+                        : (0, y.jsx)(tL, {
                               data: n,
                               isInMergeQueue: n.isInMergeQueue,
                           })
-                    : (0, y.jsx)(tv, { data: n, isInMergeQueue: !1 });
+                    : (0, y.jsx)(tL, { data: n, isInMergeQueue: !1 });
             }
-            function tv({ data: e, isInMergeQueue: a }) {
+            function tL({ data: e, isInMergeQueue: a }) {
                 let {
                     icon: l,
                     color: n,
@@ -18462,7 +18474,7 @@
             function t_({ data: e, metadataRef: a, id: l }) {
                 return "PullRequest" === e.__typename && a
                     ? (0, y.jsx)(b.Suspense, {
-                          fallback: (0, y.jsx)(tv, {
+                          fallback: (0, y.jsx)(tL, {
                               data: e,
                               isInMergeQueue: !1,
                           }),
@@ -18472,7 +18484,7 @@
                               metadataRef: a,
                           }),
                       })
-                    : (0, y.jsx)(tv, { data: e, isInMergeQueue: !1 });
+                    : (0, y.jsx)(tL, { data: e, isInMergeQueue: !1 });
             }
             function tI({ id: e, data: a, metadataRef: l }) {
                 let { nodes: n } = (0, er.usePreloadedQuery)(ib, l),
@@ -18482,18 +18494,18 @@
             function tK({ data: e, secondaryDataKey: a }) {
                 let l = (0, er.useFragment)(to, a),
                     n = (0, er.useFragment)(tt, l);
-                return (0, y.jsx)(tv, {
+                return (0, y.jsx)(tL, {
                     data: e,
                     isInMergeQueue: !!n?.isInMergeQueue,
                 });
             }
             try {
-                tL.displayName ||
-                    (tL.displayName = "IssuePullRequestStateIcon");
+                tv.displayName ||
+                    (tv.displayName = "IssuePullRequestStateIcon");
             } catch {}
             try {
-                tv.displayName ||
-                    (tv.displayName = "IssuePullRequestStateIconInternal");
+                tL.displayName ||
+                    (tL.displayName = "IssuePullRequestStateIconInternal");
             } catch {}
             try {
                 t_.displayName ||
@@ -18706,11 +18718,11 @@
                     "IssueItemSubIssuesSummary-module__progressCircle--B_9jW",
                 token: "IssueItemSubIssuesSummary-module__token--lQcLp",
             };
-            function tV({ metadataRef: e, issueId: a, link: l }) {
+            function tD({ metadataRef: e, issueId: a, link: l }) {
                 return e
                     ? (0, y.jsx)(b.Suspense, {
                           fallback: null,
-                          children: (0, y.jsx)(tD, {
+                          children: (0, y.jsx)(tV, {
                               issueId: a,
                               metadataRef: e,
                               link: l,
@@ -18718,7 +18730,7 @@
                       })
                     : null;
             }
-            function tD({ metadataRef: e, issueId: a, link: l }) {
+            function tV({ metadataRef: e, issueId: a, link: l }) {
                 let { nodes: n } = (0, er.usePreloadedQuery)(ib, e),
                     t = n?.find((e) => e?.id === a);
                 return t ? (0, y.jsx)(tE, { summaryKey: t, link: l }) : null;
@@ -18758,11 +18770,11 @@
                       });
             }
             try {
-                tV.displayName ||
-                    (tV.displayName = "IssueItemSubIssuesSummary");
+                tD.displayName ||
+                    (tD.displayName = "IssueItemSubIssuesSummary");
             } catch {}
             try {
-                tD.displayName || (tD.displayName = "SubIssuesSummaryFetched");
+                tV.displayName || (tV.displayName = "SubIssuesSummaryFetched");
             } catch {}
             try {
                 tE.displayName || (tE.displayName = "SubIssuesSummaryInternal");
@@ -18843,7 +18855,7 @@
                     className: tQ.LabelTooltip,
                     children: (0, y.jsxs)(ae.N_, {
                         href: l(r),
-                        className: (0, nV.$)({ "sr-only": a }),
+                        className: (0, nD.$)({ "sr-only": a }),
                         "aria-describedby": `${s}-tooltip`,
                         sx: { visibility: a ? "hidden" : null },
                         children: [
@@ -18920,7 +18932,7 @@
                     ];
                 if ("Issue" === g.__typename) {
                     let e = (0, y.jsx)(
-                        tV,
+                        tD,
                         {
                             metadataRef: a,
                             issueId: g.id,
@@ -18959,7 +18971,7 @@
                         let e = (0, y.jsx)("a", {
                             "data-hovercard-url": C,
                             "data-testid": "issue-pr-title-link",
-                            className: (0, nV.$)(p && tq.ListItemTitle_1),
+                            className: (0, nD.$)(p && tq.ListItemTitle_1),
                             target: t,
                             ref: l,
                             href: n,
@@ -18973,9 +18985,9 @@
                           onClick: h,
                           leadingBadge: r,
                           trailingBadges: f,
-                          headingClassName: (0, nV.$)(d, tq.ListItemTitle_0),
+                          headingClassName: (0, nD.$)(d, tq.ListItemTitle_0),
                           anchorRef: l,
-                          anchorClassName: (0, nV.$)(p && tq.ListItemTitle_1),
+                          anchorClassName: (0, nD.$)(p && tq.ListItemTitle_1),
                           href: n,
                           target: t,
                           linkProps: {
@@ -18988,7 +19000,7 @@
                           onClick: h,
                           leadingBadge: r,
                           trailingBadges: f,
-                          headingClassName: (0, nV.$)(d, tq.ListItemTitle_0),
+                          headingClassName: (0, nD.$)(d, tq.ListItemTitle_0),
                       });
             }
             try {
@@ -19182,8 +19194,8 @@
                 showCommentZeroCount: r,
                 showAssignees: o,
                 showRepository: u = !0,
-                onSelect: d = L.l,
-                onClick: c = L.l,
+                onSelect: d = v.l,
+                onClick: c = v.l,
                 getMetadataHref: m,
                 reactionEmojiToDisplay: g,
                 sortingItemSelected: p,
@@ -19195,7 +19207,7 @@
                     C = f && (0, ng.us)(f.title, f.titleHTML),
                     { pull_request_single_subscription: S } = (0, lh.h)(),
                     F = (0, er.useFragment)(tl, !S && k ? f : null),
-                    v = (0, er.useFragment)(
+                    L = (0, er.useFragment)(
                         t1,
                         S ? null : F?.headCommit?.commit
                     ),
@@ -19212,7 +19224,7 @@
                     I = (0, y.jsx)(ir, {
                         repositoryOwner: f.repository.owner.login,
                         repositoryName: f.repository.name,
-                        statusCheckRollup: v?.statusCheckRollup || void 0,
+                        statusCheckRollup: L?.statusCheckRollup || void 0,
                         dataKey: f,
                         showRepository: u,
                         sortingItemSelected: p,
@@ -19244,7 +19256,7 @@
                         children: [
                             (0, y.jsx)(n1, { metadataRef: a, issueId: f.id }),
                             (0, y.jsx)(nk.B, {
-                                children: (0, y.jsx)(tL, {
+                                children: (0, y.jsx)(tv, {
                                     id: f.id,
                                     dataKey: f,
                                     metadataRef: a,
@@ -19674,13 +19686,13 @@
                             updatedAt: S,
                             stateReason: F,
                         } = m,
-                        L = k?.__typename,
-                        v = k?.login || n6.t.ghostUserLogin,
-                        _ = "Bot" === L ? `app/${v}` : v,
+                        v = k?.__typename,
+                        L = k?.login || n6.t.ghostUserLogin,
+                        _ = "Bot" === v ? `app/${L}` : L,
                         I = k?.isCopilot,
-                        K = I ? n6.t.copilotDisplayName : v,
+                        K = I ? n6.t.copilotDisplayName : L,
                         x = k?.resourcePath || "",
-                        w = (0, nM.S)(v, { isCopilot: I }),
+                        w = (0, nM.S)(L, { isCopilot: I }),
                         N = C ? new Date(C) : void 0,
                         j = S ? new Date(S) : void 0,
                         R = f ? new Date(f) : void 0;
@@ -19921,9 +19933,9 @@
                 showCommentZeroCount: i,
                 showAssignees: s = !0,
                 showRepository: r = !0,
-                onSelect: o = L.l,
-                onFocus: u = L.l,
-                onClick: d = L.l,
+                onSelect: o = v.l,
+                onFocus: u = v.l,
+                onClick: d = v.l,
                 getMetadataHref: c,
                 getAdditiveMetadataHref: m,
                 reactionEmojiToDisplay: g,
@@ -19936,9 +19948,9 @@
                 role: S,
             }) => {
                 let F = (0, er.useFragment)(nm, e),
-                    v = F && (0, ng.us)(F.title, F.titleHtml),
+                    L = F && (0, ng.us)(F.title, F.titleHtml),
                     _ = (0, y.jsx)(tH, {
-                        value: v,
+                        value: L,
                         dataKey: F,
                         metadataRef: a,
                         repositoryOwner: b,
@@ -19986,7 +19998,7 @@
                             (0, y.jsx)(n1, { metadataRef: a, issueId: F.id }),
                             (0, y.jsx)(nk.B, {
                                 className: nf.leadingContent,
-                                children: (0, y.jsx)(tL, { dataKey: F }),
+                                children: (0, y.jsx)(tv, { dataKey: F }),
                             }),
                             (0, y.jsx)(nh.Q, {
                                 children: (0, y.jsxs)(ny.U, {
@@ -19996,7 +20008,7 @@
                                             getIssueTypeHref: (e) =>
                                                 c("type", e),
                                         }),
-                                        (0, y.jsx)(nL, {
+                                        (0, y.jsx)(nv, {
                                             metadataRef: a,
                                             issueId: F.id,
                                             href: x,
@@ -20778,7 +20790,7 @@
                                       })
                                     : r(S);
                             }, [o, k.number, C, f, r, S]),
-                            L = (0, b.useCallback)(
+                            v = (0, b.useCallback)(
                                 (e) => {
                                     (u({ type: h.__typename }),
                                         e.ctrlKey ||
@@ -20789,7 +20801,7 @@
                                 },
                                 [h.__typename, F, u]
                             ),
-                            v = (0, b.useCallback)(() => {
+                            L = (0, b.useCallback)(() => {
                                 s?.(!a);
                             }, [s, a]);
                         return (0, y.jsx)(nc.tL, {
@@ -20797,7 +20809,7 @@
                                 "list-view-items-issues-prs:open-focused-item":
                                     F,
                                 "list-view-items-issues-prs:toggle-focused-item-selection":
-                                    v,
+                                    L,
                             },
                             className: ik.row,
                             children: (0, y.jsx)(iy, {
@@ -20816,7 +20828,7 @@
                                 getMetadataHref: t,
                                 getAdditiveMetadataHref: i,
                                 onSelect: s,
-                                onClick: L,
+                                onClick: v,
                                 href: S,
                                 ref: p,
                                 ...g,
@@ -20848,8 +20860,8 @@
             try {
                 iF.displayName || (iF.displayName = "NoResults");
             } catch {}
-            var iL = l(75202),
-                iv = l(79866),
+            var iv = l(75202),
+                iL = l(79866),
                 i_ = l(1992);
             let iI = {
                     sortingMenuButton:
@@ -20896,7 +20908,7 @@
                     h = (0, b.useCallback)(
                         (e) => {
                             let a = iR(e),
-                                t = iv.qG[a || ""];
+                                t = iL.qG[a || ""];
                             a &&
                                 t &&
                                 (n(e), l({ reaction: a, reactionEmoji: t }));
@@ -20930,8 +20942,8 @@
                     (n(e), h(e));
                 }, [l, n, u, h]);
                 let F = Object.entries(lX.sortDropdownOptionDisplayValues),
-                    L = Object.entries(lX.sortDropdownReactionLabels),
-                    v = iM(m) || "relevance" === m,
+                    v = Object.entries(lX.sortDropdownReactionLabels),
+                    L = iM(m) || "relevance" === m,
                     _ = (0, y.jsxs)(y.Fragment, {
                         children: [
                             (0, y.jsx)(
@@ -20946,7 +20958,7 @@
                                 "reactions"
                             ),
                             (0, y.jsx)(lJ.l.Divider, {}),
-                            L.map(([e, a]) =>
+                            v.map(([e, a]) =>
                                 (0, y.jsxs)(
                                     lJ.l.Item,
                                     {
@@ -20955,7 +20967,7 @@
                                         role: "menuitemradio",
                                         children: [
                                             (0, y.jsx)(lJ.l.LeadingVisual, {
-                                                children: iv.qG[iR(e) || ""],
+                                                children: iL.qG[iR(e) || ""],
                                             }),
                                             a,
                                         ],
@@ -21016,7 +21028,7 @@
                                     (0, y.jsxs)(
                                         lJ.l.Item,
                                         {
-                                            disabled: v,
+                                            disabled: L,
                                             selected: "asc" === d && null !== m,
                                             onSelect: () => S("asc"),
                                             children: [
@@ -21034,7 +21046,7 @@
                                     (0, y.jsxs)(
                                         lJ.l.Item,
                                         {
-                                            disabled: v,
+                                            disabled: L,
                                             selected:
                                                 "desc" === d && null !== m,
                                             onSelect: () => S("desc"),
@@ -21055,7 +21067,7 @@
                         ],
                     });
                 return s
-                    ? (0, y.jsx)(iL.t, {
+                    ? (0, y.jsx)(iv.t, {
                           fallback: null,
                           children: (0, y.jsx)(lJ.l, {
                               selectionVariant: "single",
@@ -21071,7 +21083,7 @@
                                   className: iI.sortingMenuButton,
                                   leadingVisual: ix[d || "desc"],
                                   children: [
-                                      iV(m ?? "")
+                                      iD(m ?? "")
                                           ? (0, y.jsx)("span", {
                                                 className: "sr-only",
                                                 children: "Sort by ",
@@ -21092,7 +21104,7 @@
                                                       ])
                                               : lX.sort,
                                       }),
-                                      iV(m ?? "")
+                                      iD(m ?? "")
                                           ? (0, y.jsx)("span", {
                                                 className: "sr-only",
                                                 children:
@@ -21119,7 +21131,7 @@
             function iR(e) {
                 var a;
                 let l = iw[e]?.replace(" ", "_").toUpperCase();
-                return ((a = l), Object.keys(iv.qG).includes(a)) ? l : void 0;
+                return ((a = l), Object.keys(iL.qG).includes(a)) ? l : void 0;
             }
             function iP(e) {
                 let a = e.split("-")?.[1];
@@ -21134,7 +21146,7 @@
                             e
                                 .split(/-asc|-desc/)?.[0]
                                 ?.split("reactions-")?.[1] || "reactions"),
-                    iV(a) ? a : null
+                    iD(a) ? a : null
                 );
             }
             function iA(e, a) {
@@ -21149,7 +21161,7 @@
             function iM(e) {
                 return !!e && lX.sortDropdownReactionLabels.hasOwnProperty(e);
             }
-            function iV(e) {
+            function iD(e) {
                 return !!e && Object.keys(iw).includes(e);
             }
             try {
@@ -21158,7 +21170,7 @@
             try {
                 iN.displayName || (iN.displayName = "SortingDropdown");
             } catch {}
-            var iD = l(14025),
+            var iV = l(14025),
                 iE = l(39111),
                 iq = l(40104),
                 iO = l(44699),
@@ -22925,6 +22937,7 @@
                             ? ((u = (0, y.jsx)(aj.CH, {
                                   issuesToActOn: a,
                                   readonly: !1,
+                                  canCreateLabel: !1,
                                   shortcutEnabled: n,
                                   connectionIds: g,
                                   anchorElement: o,
@@ -23371,9 +23384,9 @@
                             disabled: C,
                             onCompleted: S,
                             onError: F,
-                            nested: L,
+                            nested: v,
                         } = e,
-                        v = (0, er.useRelayEnvironment)(),
+                        L = (0, er.useRelayEnvironment)(),
                         [_, I] = (0, b.useState)(!1);
                     h[0] === Symbol.for("react.memo_cache_sentinel")
                         ? ((a = (e) => {
@@ -23393,7 +23406,7 @@
                           (h[2] = n),
                           (h[3] = t))
                         : ((l = h[1]), (n = h[2]), (t = h[3])),
-                        (0, lo._N)(l, n, t),
+                        (0, lo._)(l, n, t),
                         h[4] === Symbol.for("react.memo_cache_sentinel")
                             ? ((i = ["Escape"]),
                               (s = () => K(!1)),
@@ -23402,8 +23415,8 @@
                               (h[5] = s),
                               (h[6] = r))
                             : ((i = h[4]), (s = h[5]), (r = h[6])),
-                        (0, lo._N)(i, s, r),
-                        h[7] !== f || h[8] !== S || h[9] !== F || h[10] !== v
+                        (0, lo._)(i, s, r),
+                        h[7] !== f || h[8] !== S || h[9] !== F || h[10] !== L
                             ? ((o = (e) => {
                                   !(function ({
                                       environment: e,
@@ -23427,7 +23440,7 @@
                                           onError: (e) => s && s(e),
                                       });
                                   })({
-                                      environment: v,
+                                      environment: L,
                                       optimisticUpdateIds: f,
                                       input: { ids: [...f], ...e },
                                       onCompleted: (e) => {
@@ -23442,7 +23455,7 @@
                               (h[7] = f),
                               (h[8] = S),
                               (h[9] = F),
-                              (h[10] = v),
+                              (h[10] = L),
                               (h[11] = o))
                             : (o = h[11]));
                     let x = o;
@@ -23471,7 +23484,7 @@
                               (h[15] = d))
                             : (d = h[15]));
                     let w = d;
-                    if (void 0 !== L && L) {
+                    if (void 0 !== v && v) {
                         let e, a;
                         return (
                             h[16] === Symbol.for("react.memo_cache_sentinel")
@@ -23559,11 +23572,15 @@
             var sc = l(63350),
                 sm = l(53687);
             function sg(e, a, { container: l = document.body } = {}) {
-                (!e &&
-                    Array.from(
-                        l.querySelectorAll('[role="dialog"], dialog[open]')
-                    ).find((e) => e.contains(document.activeElement))) ||
-                    a(e);
+                if (!e && l.querySelector("[data-overflow-menu-overlay]"))
+                    for (let e of Array.from(
+                        l.querySelectorAll('[role="dialog"]')
+                    )) {
+                        let { width: a, height: l } = e.getBoundingClientRect();
+                        if (e.hasAttribute("data-visibility-visible") || a || l)
+                            return;
+                    }
+                a(e);
             }
             function sp() {
                 let e = (0, b.useCallback)(
@@ -23626,7 +23643,7 @@
                         [e]
                     );
                 return (0, y.jsx)(sc.X, {
-                    onToggleSelectAll: L.l,
+                    onToggleSelectAll: v.l,
                     actionsLabel: U.bulkActions,
                     actions: a,
                     density: "normal",
@@ -23643,7 +23660,7 @@
                 let { scoped_repository: s, current_user_settings: r } = (0,
                     _.X)(),
                     { addToast: o, addPersistedToast: u } = (0, K.Y6)(),
-                    { setBulkJobId: d, bulkJobId: c } = eV(),
+                    { setBulkJobId: d, bulkJobId: c } = eD(),
                     m = Array.from(e.values())
                         .filter((e) => null != e)
                         .filter((e) => "Issue" === e.__typename),
@@ -23674,8 +23691,8 @@
                         },
                         [o]
                     ),
-                    [F, L] = (0, b.useState)(!1),
-                    v = (0, b.useMemo)(
+                    [F, v] = (0, b.useState)(!1),
+                    L = (0, b.useMemo)(
                         () => ({
                             onCompleted: C,
                             onError: S,
@@ -23701,7 +23718,7 @@
                                               new Map()
                                           )
                                   )
-                                : (l(new Map()), F && (L(!1), I(0), f?.(!1)));
+                                : (l(new Map()), F && (v(!1), I(0), f?.(!1)));
                         },
                         [a, l, f, I, F]
                     ),
@@ -23726,7 +23743,7 @@
                                 {
                                     key: "mark-as",
                                     render: (e) =>
-                                        (0, y.jsx)(sd, { ...v, nested: e }),
+                                        (0, y.jsx)(sd, { ...L, nested: e }),
                                 },
                                 {
                                     key: "apply-labels",
@@ -23736,7 +23753,7 @@
                                             repo: s.name,
                                             nested: a,
                                             issueIds: e,
-                                            ...v,
+                                            ...L,
                                         }),
                                 },
                                 {
@@ -23746,7 +23763,7 @@
                                             nested: l,
                                             issueIds: e,
                                             issueNumbers: a,
-                                            ...v,
+                                            ...L,
                                             owner: s?.owner,
                                             repo: s?.name,
                                         }),
@@ -23759,7 +23776,7 @@
                                             issueIds: m.map((e) => e.id),
                                             owner: s?.owner,
                                             repo: s?.name,
-                                            ...v,
+                                            ...L,
                                         }),
                                 },
                                 {
@@ -23770,7 +23787,7 @@
                                             repo: s.name,
                                             nested: e,
                                             issueIds: m.map((e) => e.id),
-                                            ...v,
+                                            ...L,
                                         }),
                                 },
                             ];
@@ -23788,13 +23805,13 @@
                                                 repo: s.name,
                                                 nested: a,
                                                 issueIds: e,
-                                                ...v,
+                                                ...L,
                                             }),
                                         }),
                                 }),
                             l
                         );
-                    }, [w, v, s?.owner, s?.name, i, m, N]);
+                    }, [w, L, s?.owner, s?.name, i, m, N]);
                 return (0, y.jsx)(b.Suspense, {
                     fallback: (0, y.jsx)(sp, {}),
                     children: (0, y.jsx)(sc.X, {
@@ -23826,7 +23843,7 @@
             function sf({ repo: e, applySectionFilter: a, nested: l }) {
                 let { name: n, owner: t } = e,
                     { activeSearchQuery: i, currentViewId: s } = eM(),
-                    { debouncedDirtySearchQuery: r } = eV(),
+                    { debouncedDirtySearchQuery: r } = eD(),
                     { current_user_settings: o } = (0, _.X)(),
                     u = r ?? i,
                     d = (0, b.useMemo)(() => ex(u, "assignee").slice(-1), [u]),
@@ -23919,10 +23936,10 @@
                 authorFilterButton:
                     "ListAuthorFilter-module__authorFilterButton--ktiSA",
             };
-            function sL({ repo: e, applySectionFilter: a, nested: l }) {
+            function sv({ repo: e, applySectionFilter: a, nested: l }) {
                 let { name: n, owner: t } = e,
                     { activeSearchQuery: i, currentViewId: s } = eM(),
-                    { debouncedDirtySearchQuery: r } = eV(),
+                    { debouncedDirtySearchQuery: r } = eD(),
                     { current_user_settings: o } = (0, _.X)(),
                     u = (0, k.G7)("issues_react_include_bots_in_pickers"),
                     d = r ?? i,
@@ -23944,7 +23961,7 @@
                         owner: t,
                         onSelectionChange: m,
                         shortcutEnabled: o?.use_single_key_shortcut || !1,
-                        anchorElement: l ? sv : s_,
+                        anchorElement: l ? sL : s_,
                         showNoMatchItem: !0,
                     };
                 return (0, y.jsx)(aw._g, {
@@ -23955,7 +23972,7 @@
                     includeAssignableBots: !1,
                 });
             }
-            function sv(e) {
+            function sL(e) {
                 return (0, y.jsxs)(lJ.l.Item, {
                     ...e,
                     "aria-label": U.filters.authorLabel,
@@ -23981,10 +23998,10 @@
                 });
             }
             try {
-                sL.displayName || (sL.displayName = "ListAuthorFilter");
+                sv.displayName || (sv.displayName = "ListAuthorFilter");
             } catch {}
             try {
-                sv.displayName || (sv.displayName = "NestedAuthorsAnchor");
+                sL.displayName || (sL.displayName = "NestedAuthorsAnchor");
             } catch {}
             try {
                 s_.displayName || (s_.displayName = "AuthorsAnchor");
@@ -23996,7 +24013,7 @@
             function sK({ repo: e, applySectionFilter: a, nested: l }) {
                 let { name: n, owner: t } = e,
                     { activeSearchQuery: i, currentViewId: s } = eM(),
-                    { debouncedDirtySearchQuery: r } = eV(),
+                    { debouncedDirtySearchQuery: r } = eD(),
                     { current_user_settings: o } = (0, _.X)(),
                     u = r ?? i,
                     d = (0, b.useMemo)(() => sN(u), [u]),
@@ -24090,7 +24107,7 @@
                 };
             function sP({ nested: e, repo: a, applySectionFilter: l }) {
                 let { activeSearchQuery: n, currentViewId: t } = eM(),
-                    { debouncedDirtySearchQuery: i } = eV(),
+                    { debouncedDirtySearchQuery: i } = eD(),
                     { current_user_settings: s } = (0, _.X)(),
                     r = i ?? n,
                     o = (0, b.useMemo)(
@@ -24148,6 +24165,7 @@
                     noLabelOption: o,
                     labels: [],
                     labelNames: d,
+                    canCreateLabel: !1,
                 });
             }
             function sT(e) {
@@ -24192,9 +24210,9 @@
                     milestoneFilterButton:
                         "ListMilestoneFilter-module__milestoneFilterButton--0NXiL",
                 },
-                sV = ({ nested: e, repo: a, applySectionFilter: l }) => {
+                sD = ({ nested: e, repo: a, applySectionFilter: l }) => {
                     let { activeSearchQuery: n, currentViewId: t } = eM(),
-                        { debouncedDirtySearchQuery: i } = eV(),
+                        { debouncedDirtySearchQuery: i } = eD(),
                         { current_user_settings: s } = (0, _.X)(),
                         [r, o] = (0, b.useState)(null),
                         u = i ?? n,
@@ -24232,7 +24250,7 @@
                     return (0, y.jsx)(sl.De, {
                         repo: a.name,
                         activeMilestone: r,
-                        anchorElement: e ? sD : sE,
+                        anchorElement: e ? sV : sE,
                         shortcutEnabled: s?.use_single_key_shortcut || !1,
                         owner: a.owner,
                         onSelectionChanged: m,
@@ -24241,7 +24259,7 @@
                         canCreateMilestone: !1,
                     });
                 };
-            function sD(e) {
+            function sV(e) {
                 return (0, y.jsxs)(lJ.l.Item, {
                     ...e,
                     "aria-label": U.filters.milestonesLabel,
@@ -24267,14 +24285,14 @@
                 });
             }
             try {
-                sV.displayName || (sV.displayName = "ListMilestoneFilter");
+                sD.displayName || (sD.displayName = "ListMilestoneFilter");
             } catch {}
             try {
                 (s = NoMilestoneItem).displayName ||
                     (s.displayName = "NoMilestoneItem");
             } catch {}
             try {
-                sD.displayName || (sD.displayName = "NestedMilestonesAnchor");
+                sV.displayName || (sV.displayName = "NestedMilestonesAnchor");
             } catch {}
             try {
                 sE.displayName || (sE.displayName = "MilestonesAnchor");
@@ -24285,7 +24303,7 @@
             };
             function sO({ repo: e, applySectionFilter: a, nested: l }) {
                 let { activeSearchQuery: n, currentViewId: t } = eM(),
-                    { debouncedDirtySearchQuery: i } = eV(),
+                    { debouncedDirtySearchQuery: i } = eD(),
                     s = i ?? n,
                     r = (0, b.useMemo)(() => ex(s, "project"), [s]),
                     o = (0, b.useCallback)(
@@ -24506,7 +24524,7 @@
                 },
                 sH = ({ isClosedTabActive: e, isOpenTabActive: a }) =>
                     (0, y.jsxs)("div", {
-                        className: `${(0, nV.$)(sU.tabsContainer, sU.loading)}`,
+                        className: `${(0, nD.$)(sU.tabsContainer, sU.loading)}`,
                         children: [
                             (0, y.jsx)(
                                 lG.L,
@@ -24547,7 +24565,7 @@
             function sW({ applySectionFilter: e, scopedRepository: a }) {
                 let { activeSearchQuery: l } = eM(),
                     n = A.fV.pathname,
-                    t = (0, b.useMemo)(() => eL(l), [l]),
+                    t = (0, b.useMemo)(() => ev(l), [l]),
                     i = t ? `?q=${encodeURIComponent(t)}` : "",
                     s = `${n}${i}`,
                     r = (0, b.useMemo)(
@@ -24555,19 +24573,19 @@
                             ((e, a) => {
                                 if (!(e = e.trim())) return "";
                                 if (
-                                    ((e = ev(e)),
-                                    void 0 === a && (a = eL(e)),
+                                    ((e = eL(e)),
+                                    void 0 === a && (a = ev(e)),
                                     !a)
                                 )
-                                    return v.Ds.defaultRepoLevelClosed;
+                                    return L.Ds.defaultRepoLevelClosed;
                                 let l = ef(a);
                                 return eF(a)
                                     ? a.replaceAll(
-                                          `-${v.Ds.closed}`,
-                                          `-${v.Ds.open}`
+                                          `-${L.Ds.closed}`,
+                                          `-${L.Ds.open}`
                                       )
                                     : l
-                                      ? a.replaceAll(v.Ds.open, v.Ds.closed)
+                                      ? a.replaceAll(L.Ds.open, L.Ds.closed)
                                       : "";
                             })(l),
                         [l]
@@ -24579,7 +24597,7 @@
                             if (!l || !e || (u ? a.metaKey : a.ctrlKey)) return;
                             a.preventDefault();
                             let i = a.currentTarget.href;
-                            e(n ? t || v.Ds.defaultRepoLevelOpen : r, i);
+                            e(n ? t || L.Ds.defaultRepoLevelOpen : r, i);
                         },
                         [l, e, r, u, t]
                     ),
@@ -24603,7 +24621,7 @@
                 return (0, y.jsx)("div", {
                     ...(0, nS.G)("list-view-section-filters"),
                     children: (0, y.jsxs)("ul", {
-                        className: `list-style-none ${(0, nV.$)(sU.tabsContainer)}`,
+                        className: `list-style-none ${(0, nD.$)(sU.tabsContainer)}`,
                         children: [
                             (0, y.jsx)(
                                 "li",
@@ -24666,7 +24684,7 @@
                 ...o
             }) {
                 let { scoped_repository: u } = (0, _.X)(),
-                    { dirtySearchQuery: d, setDirtySearchQuery: c } = eV(),
+                    { dirtySearchQuery: d, setDirtySearchQuery: c } = eD(),
                     {
                         activeSearchQuery: m,
                         isQueryLoading: g,
@@ -24682,8 +24700,8 @@
                     ),
                     [C, S] = (0, b.useState)(!1),
                     { setSelectedCount: F } = (0, iB.v)(),
-                    { setMultiPageSelectionAllowed: L } = (0, sm.P)(),
-                    v = (0, b.useCallback)(
+                    { setMultiPageSelectionAllowed: v } = (0, sm.P)(),
+                    L = (0, b.useCallback)(
                         (e) => {
                             e
                                 ? (l(
@@ -24702,9 +24720,9 @@
                                               new Map()
                                           )
                                   ))
-                                : (l(new Map()), C && (S(!1), F(0), L?.(!1)));
+                                : (l(new Map()), C && (S(!1), F(0), v?.(!1)));
                         },
-                        [a, F, l, C, L, s]
+                        [a, F, l, C, v, s]
                     ),
                     I = (0, b.useCallback)(
                         (e) => la({ viewId: p, query: e }),
@@ -24742,7 +24760,7 @@
                             {
                                 key: "authors",
                                 render: (e) =>
-                                    (0, y.jsx)(sL, {
+                                    (0, y.jsx)(sv, {
                                         nested: e,
                                         repo: u,
                                         applySectionFilter: f,
@@ -24769,7 +24787,7 @@
                             {
                                 key: "milestones",
                                 render: (e) =>
-                                    (0, y.jsx)(sV, {
+                                    (0, y.jsx)(sD, {
                                         nested: e,
                                         repo: u,
                                         applySectionFilter: f,
@@ -24811,7 +24829,7 @@
                             applySectionFilter: f,
                             scopedRepository: u,
                         }),
-                    onToggleSelectAll: v,
+                    onToggleSelectAll: L,
                     density: "condensed",
                     assistiveAnnouncement: g ? U.loadingQueryResults : void 0,
                     actionsLabel: "Actions",
@@ -24835,7 +24853,7 @@
             let sJ = ({ itemsLabel: e }) => {
                 let { activeSearchQuery: a } = eM(),
                     { currentUser: l } = (0, e6.J)(),
-                    n = (0, b.useMemo)(() => (0, iD.ws)(a), [a]),
+                    n = (0, b.useMemo)(() => (0, iV.ws)(a), [a]),
                     t = (0, lh.u)("issues_react_bypass_es_limits");
                 return (0, y.jsx)("div", {
                     className: "p-2",
@@ -24906,7 +24924,7 @@
                         );
                     })(),
                     { issues_react_bypass_es_limits: F } = (0, lh.h)(),
-                    [v, I] = (0, lp.useQueryLoader)(ib),
+                    [L, I] = (0, lp.useQueryLoader)(ib),
                     { data: K, refetch: x } = sY({ key: e }),
                     w = null === K.search || void 0 === K.search,
                     N = K.search?.ok ? null : K.search?.errors;
@@ -24927,11 +24945,11 @@
                         K.search,
                     T = null != R,
                     M = !w && j && T,
-                    [V, D] = (0, b.useState)(!1),
+                    [D, V] = (0, b.useState)(!1),
                     q = (0, b.useMemo)(() => {
                         let e = K.id && "RootQueryObject" !== K.id;
-                        return !V && w && e;
-                    }, [V, w, K]);
+                        return !D && w && e;
+                    }, [D, w, K]);
                 ((0, b.useEffect)(() => {
                     (0, nr.i)(U.numberOfResults(P || 0), { assertive: !0 });
                 }, [P]),
@@ -24941,7 +24959,7 @@
                                 {},
                                 {
                                     fetchPolicy: "network-only",
-                                    onComplete: () => D(!0),
+                                    onComplete: () => V(!0),
                                 }
                             ).dispose;
                     }, [d, x, w, q]));
@@ -24959,7 +24977,7 @@
                         [R]
                     ),
                     B = (0, b.useRef)(null),
-                    $ = (0, b.useMemo)(() => (0, iD.ws)(d), [d]),
+                    $ = (0, b.useMemo)(() => (0, iV.ws)(d), [d]),
                     Q = E.maxIssuesListItems(F || !1, $, !!u),
                     H = (0, b.useMemo)(
                         () =>
@@ -24988,10 +25006,10 @@
                         initialSortingItem: J,
                         initialReactionEmojiToDisplay: Y,
                     } = (0, b.useMemo)(() => {
-                        let e = (0, iD.mA)(a || d).get("sort"),
+                        let e = (0, iV.mA)(a || d).get("sort"),
                             l = ij(e?.[0] || ""),
                             n = iR(l),
-                            t = iv.qG[n || ""];
+                            t = iL.qG[n || ""];
                         return {
                             initialSortingItem: l || "created",
                             initialReactionEmojiToDisplay: t
@@ -25116,7 +25134,7 @@
                                 .filter(Boolean),
                         [O, eh]
                     ),
-                    ef = null !== v;
+                    ef = null !== L;
                 (0, b.useEffect)(() => {
                     A.X3 || I({ nodes: eb, includeReactions: !!Y });
                 }, [Y, I, eb, ef]);
@@ -25143,7 +25161,7 @@
                                               iS,
                                               {
                                                   issueKey: e,
-                                                  metadataRef: v,
+                                                  metadataRef: L,
                                                   ...a,
                                                   "data-testid":
                                                       nn.issueRowItem(
@@ -25162,7 +25180,7 @@
                                               tF,
                                               {
                                                   pullRequestKey: e,
-                                                  metadataRef: v,
+                                                  metadataRef: L,
                                                   onNavigate: k,
                                                   ...a,
                                                   "data-testid":
@@ -25192,7 +25210,7 @@
                             e && e instanceof HTMLElement && e.focus();
                         }
                     },
-                    eL = (0, y.jsxs)(y.Fragment, {
+                    ev = (0, y.jsxs)(y.Fragment, {
                         children: [
                             (0, y.jsx)(nc.ak, {
                                 commands: {
@@ -25203,15 +25221,15 @@
                             (0, y.jsx)("div", {
                                 "data-testid": "list-load-progress-bar",
                                 ref: B,
-                                className: (0, nV.$)(
+                                className: (0, nD.$)(
                                     "turbo-progress-bar",
                                     sU.progressBar
                                 ),
                             }),
                             (0, y.jsx)(nc.tL, {
                                 commands: {
-                                    "issues-react:focus-next-issue": L.l,
-                                    "issues-react:focus-previous-issue": L.l,
+                                    "issues-react:focus-next-issue": v.l,
+                                    "issues-react:focus-previous-issue": v.l,
                                 },
                                 className: sU.listScopedCommand,
                                 children: (0, y.jsxs)(no.u, {
@@ -25246,7 +25264,7 @@
                         (0, y.jsx)("div", {
                             "data-hpc": !0,
                             className: sU.listContainer,
-                            children: eL,
+                            children: ev,
                         }),
                         c && H > 1
                             ? (0, y.jsx)(iO.A, {
@@ -25529,6 +25547,11 @@
                                                         name: "first",
                                                         value: 25,
                                                     },
+                                                    {
+                                                        kind: "Literal",
+                                                        name: "searchTypes",
+                                                        value: ["ISSUES"],
+                                                    },
                                                 ],
                                                 concreteType:
                                                     "SearchShortcutConnection",
@@ -25637,7 +25660,7 @@
                                                     },
                                                 ],
                                                 storageKey:
-                                                    "shortcuts(first:25)",
+                                                    'shortcuts(first:25,searchTypes:["ISSUES"])',
                                             },
                                             l,
                                         ],
@@ -25670,7 +25693,7 @@
                         ],
                     },
                     params: {
-                        id: "04e470162ffcd70b1897b4670789bad9",
+                        id: "2939ea7192de2c6284da481de6737322",
                         metadata: {},
                         name: "removeUserViewMutation",
                         operationKind: "mutation",
@@ -25719,8 +25742,8 @@
                         dirtySearchQuery: C,
                         dirtyViewIcon: S,
                         dirtyViewColor: F,
-                        clearSavedViewEditState: v,
-                    } = eV(),
+                        clearSavedViewEditState: L,
+                    } = eD(),
                     { sendAnalyticsEvent: _ } = (0, lr.s)(),
                     { author: K, assignee: x, mentioned: w } = (0, I.g)(),
                     N = `${en.defaultQuery} ${en.query({ author: K, assignee: x, mentioned: w, createdByApp: eh(u) })}`,
@@ -25728,11 +25751,11 @@
                     R = s ? `repo:${s.owner.login}/${s.name} ${j}` : `${j}`,
                     P = (0, b.useCallback)(() => {
                         let e = {
-                            viewName: lL(k) ? k : n,
-                            viewDescription: lL(h) ? h : t,
-                            viewIcon: lL(S) ? S : i,
-                            viewColor: lL(F) ? F : l,
-                            viewQuery: lL(C) ? C : R,
+                            viewName: lv(k) ? k : n,
+                            viewDescription: lv(h) ? h : t,
+                            viewIcon: lv(S) ? S : i,
+                            viewColor: lv(F) ? F : l,
+                            viewQuery: lv(C) ? C : R,
                         };
                         "" !== e.viewName.trim() &&
                             (_("search.save", "FILTER_BAR_SAVE_BUTTON", {
@@ -25757,14 +25780,14 @@
                                 relayEnvironment: o,
                             }),
                             m(!1),
-                            v());
-                    }, [k, _, F, S, C, h, l, i, R, t, n, a, o, f, m, v, c]),
+                            L());
+                    }, [k, _, F, S, C, h, l, i, R, t, n, a, o, f, m, L, c]),
                     T = (0, b.useCallback)(() => {
                         void 0 !== g &&
                             s4({
                                 environment: o,
                                 input: { shortcutId: g },
-                                onError: () => L.l,
+                                onError: () => v.l,
                                 onCompleted: () => {
                                     d({ viewId: W.id, canEditView: !0 });
                                 },
@@ -25774,9 +25797,9 @@
                         (c(!1),
                             p && T(),
                             m(!1),
-                            v(),
+                            L(),
                             d({ viewId: a, canEditView: !0 }));
-                    }, [c, p, m, v, d, a, T]);
+                    }, [c, p, m, L, d, a, T]);
                 return (0, y.jsxs)("div", {
                     className: `${s5.gap8} d-flex flex-row`,
                     children: [
@@ -25878,12 +25901,12 @@
                         commitUserViewDuplicate: p,
                         commitUserViewEdit: k,
                         dirtySearchQuery: h,
-                    } = eV(),
+                    } = eD(),
                     f = a !== F.repository && (d || !u),
                     C = u(a) && d,
                     S = null !== h && n?.trim() !== h?.trim(),
-                    L = c >= E.viewsPageSize,
-                    v = (0, b.useCallback)(() => {
+                    v = c >= E.viewsPageSize,
+                    L = (0, b.useCallback)(() => {
                         p({
                             viewName: l,
                             viewIcon: s,
@@ -25928,9 +25951,9 @@
                         {
                             icon: (0, y.jsx)(T.DuplicateIcon, {}),
                             text: "Save changes to new view",
-                            onSelect: v,
-                            enabled: f && !L,
-                            showDescription: !!(f && L),
+                            onSelect: L,
+                            enabled: f && !v,
+                            showDescription: !!(f && v),
                             description: U.views.maxViewsReached,
                         },
                     ];
@@ -26205,7 +26228,7 @@
                         setDirtyViewIcon: r,
                         dirtyViewColor: o,
                         setDirtyViewColor: u,
-                    } = eV(),
+                    } = eD(),
                     d = (0, b.useCallback)((e) => {
                         m(e);
                     }, []),
@@ -26232,10 +26255,10 @@
                     C = o || (n ? E.defaultViewColor : i),
                     S = O(f),
                     F = R[C],
-                    L = P[C];
+                    v = P[C];
                 return e || !l
                     ? (0, y.jsx)(ae.az, {
-                          sx: { backgroundColor: F, color: L },
+                          sx: { backgroundColor: F, color: v },
                           className: rm.iconDisplayContainer,
                           children: (0, y.jsx)(nP.A, { icon: O(t) }),
                       })
@@ -26253,7 +26276,7 @@
                                       variant: "invisible",
                                       onClick: () => d(!c),
                                       id: "edit-view-icon-button",
-                                      sx: { backgroundColor: F, color: L },
+                                      sx: { backgroundColor: F, color: v },
                                   }),
                               }),
                           focusZoneSettings: { disabled: !0 },
@@ -26334,11 +26357,11 @@
                                                       "&:focus:not([aria-disabled])":
                                                           {
                                                               backgroundColor: a
-                                                                  ? L
+                                                                  ? v
                                                                   : "transparent",
                                                           },
                                                       backgroundColor: a
-                                                          ? L
+                                                          ? v
                                                           : "transparent",
                                                   },
                                                   onClick: () => p(e),
@@ -26439,15 +26462,15 @@
                             canEditView: u,
                             savedViewsCount: d,
                         } = eM(),
-                        { commitUserViewDuplicate: c } = eV(),
+                        { commitUserViewDuplicate: c } = eD(),
                         m = (0, er.useRelayEnvironment)(),
                         g = d >= E.viewsPageSize,
                         p = (0, b.useRef)(null),
                         [k, h] = (0, b.useState)(!1),
                         f = (0, ry.M)(k),
                         { addToast: C } = (0, K.Y6)(),
-                        { navigateToSavedView: S, navigateToView: L } = lC(),
-                        v = (0, rk.S)(),
+                        { navigateToSavedView: S, navigateToView: v } = lC(),
+                        L = (0, rk.S)(),
                         _ = (0, b.useCallback)(() => {
                             o(!0);
                         }, [o]),
@@ -26479,7 +26502,7 @@
                             if (a) {
                                 if (
                                     (h(!0),
-                                    !(await v({
+                                    !(await L({
                                         title: U.views.deleteTitle,
                                         content: U.views.deleteContent(l),
                                         confirmButtonContent:
@@ -26497,12 +26520,12 @@
                                             message: U.views.deleteError,
                                         }),
                                     onCompleted: () => {
-                                        L({ viewId: W.id, canEditView: !0 });
+                                        v({ viewId: W.id, canEditView: !0 });
                                     },
                                 }),
                                     h(!1));
                             }
-                        }, [C, v, L, m, a, l]),
+                        }, [C, L, v, m, a, l]),
                         w = a !== F.repository && (u || !r),
                         N = r(a) && u;
                     return N || w
@@ -26635,7 +26658,7 @@
                         dirtyDescription: c,
                         setDirtyDescription: m,
                         shouldFocusSearchOnNav: g,
-                    } = eV(),
+                    } = eD(),
                     [p, k] = (0, b.useState)(void 0),
                     h = (0, b.useRef)(null);
                 return (
@@ -26689,7 +26712,7 @@
                                                               ),
                                                                   d(a));
                                                           },
-                                                          value: lL(u) ? u : s,
+                                                          value: lv(u) ? u : s,
                                                           placeholder:
                                                               rr.k
                                                                   .viewTitlePlaceholder,
@@ -26719,7 +26742,7 @@
                                                   onChange: (e) => {
                                                       m(e.target.value);
                                                   },
-                                                  value: lL(c) ? c : r,
+                                                  value: lv(c) ? c : r,
                                                   placeholder:
                                                       rr.k
                                                           .viewDescriptionPlaceholder,
@@ -26742,7 +26765,7 @@
                                                   }),
                                               (0, y.jsx)(e8.A, {
                                                   as: "h1",
-                                                  className: (0, nV.$)(
+                                                  className: (0, nD.$)(
                                                       t ? "sr-only" : "",
                                                       ru.Heading
                                                   ),
@@ -26792,7 +26815,7 @@
                                           n =
                                               e &&
                                               e.length > 0 &&
-                                              e !== v.Ds.defaultRepoLevelOpen
+                                              e !== L.Ds.defaultRepoLevelOpen
                                                   ? `?${E.searchUrlParameterName}=${encodeURIComponent(e)}`
                                                   : "";
                                       if (l) {
@@ -26814,12 +26837,12 @@
                     A.XC &&
                         C !== A.XC.title &&
                         (l ? (0, rn.D)(A.XC.title) : (0, rn.D)(C)));
-                let L = (0, e7.Z)(),
+                let v = (0, e7.Z)(),
                     K = (0, b.useCallback)(
                         (e) => {
-                            L(e, { reloadDocument: !0 });
+                            v(e, { reloadDocument: !0 });
                         },
-                        [L]
+                        [v]
                     );
                 return (0, y.jsx)("div", {
                     "data-testid": nn.listHeader,
@@ -26916,7 +26939,7 @@
                         "HeaderLoading-module__headingContainer--ikpDV",
                     Heading: "HeaderLoading-module__Heading--nFwuX",
                 },
-                rL = () =>
+                rv = () =>
                     (0, y.jsxs)("div", {
                         "data-testid": nn.headerLoading,
                         className: rF.HeaderLoadingContainer,
@@ -26933,9 +26956,9 @@
                         ],
                     });
             try {
-                rL.displayName || (rL.displayName = "HeaderLoading");
+                rv.displayName || (rv.displayName = "HeaderLoading");
             } catch {}
-            var rv = l(50558),
+            var rL = l(50558),
                 r_ = l(86645),
                 rI = l(48779);
             function rK(e) {
@@ -26977,7 +27000,7 @@
                             return e > a ? e + l : a;
                         })(),
                         { disableFocusTrap: i } = (0, r_.V)();
-                    return (0, y.jsx)(rv.w, {
+                    return (0, y.jsx)(rL.w, {
                         open: !0,
                         defaultCloseElement: "overlay",
                         onClose: e,
@@ -27081,7 +27104,7 @@
                         },
                         [d, e.length, t, u.length, m]
                     );
-                ((0, lo._N)([ls.up, ls.down], p), (0, lo._N)(a, g));
+                ((0, lo._)([ls.up, ls.down], p), (0, lo._)(a, g));
             };
             var rT = l(54589);
             let rA = { wrapper: "CallToActionItem-module__wrapper--tW9wL" };
@@ -27097,23 +27120,23 @@
             try {
                 rM.displayName || (rM.displayName = "CallToActionItem");
             } catch {}
-            let rV = {
+            let rD = {
                 AppTitleContainer: "AppTitle-module__AppTitleContainer--Lpwx3",
                 Heading: "AppTitle-module__Heading--K9xgc",
             };
-            function rD() {
+            function rV() {
                 return (0, y.jsx)("div", {
-                    className: rV.AppTitleContainer,
+                    className: rD.AppTitleContainer,
                     children: (0, y.jsx)(e8.A, {
                         id: "sidebar-title",
                         as: "h2",
-                        className: rV.Heading,
+                        className: rD.Heading,
                         children: (0, y.jsx)("span", { children: U.appHeader }),
                     }),
                 });
             }
             try {
-                rD.displayName || (rD.displayName = "AppTitle");
+                rV.displayName || (rV.displayName = "AppTitle");
             } catch {}
             let rE = {
                 navItem: "SavedViewItem-module__navItem--_X9cB",
@@ -27146,8 +27169,8 @@
                         dirtySearchQuery: h,
                         dirtyTitle: f,
                         clearSavedViewEditState: C,
-                    } = eV(),
-                    { closeNavigation: v } = S(),
+                    } = eD(),
+                    { closeNavigation: L } = S(),
                     { navigateToUrl: _ } = lC(),
                     K = (0, er.useRelayEnvironment)(),
                     x = (0, e7.Z)(),
@@ -27162,8 +27185,8 @@
                             s4({
                                 environment: K,
                                 input: { shortcutId: p },
-                                onError: L.l,
-                                onCompleted: L.l,
+                                onError: v.l,
+                                onCompleted: v.l,
                             });
                     }, [p, K]),
                     T = (0, b.useCallback)(async () => {
@@ -27182,8 +27205,8 @@
                                 return;
                             P();
                         }
-                        (g(!1), d(!1), x(j), C(), r(i), o(!0), v());
-                    }, [e, u, f, h, k, g, d, x, j, C, r, i, o, v, R, w, P]),
+                        (g(!1), d(!1), x(j), C(), r(i), o(!0), L());
+                    }, [e, u, f, h, k, g, d, x, j, C, r, i, o, L, R, w, P]),
                     A = (0, b.useCallback)(
                         (e) => {
                             (T(), e.preventDefault(), e.stopPropagation());
@@ -27227,7 +27250,14 @@
                 selections: [
                     {
                         alias: null,
-                        args: [{ kind: "Literal", name: "first", value: 25 }],
+                        args: [
+                            { kind: "Literal", name: "first", value: 25 },
+                            {
+                                kind: "Literal",
+                                name: "searchTypes",
+                                value: ["ISSUES"],
+                            },
+                        ],
                         concreteType: "SearchShortcutConnection",
                         kind: "LinkedField",
                         name: "shortcuts",
@@ -27278,13 +27308,14 @@
                                 storageKey: null,
                             },
                         ],
-                        storageKey: "shortcuts(first:25)",
+                        storageKey:
+                            'shortcuts(first:25,searchTypes:["ISSUES"])',
                     },
                 ],
                 type: "UserDashboard",
                 abstractKey: null,
             };
-            rO.hash = "9a49a46a5715f6ebf02954f58883658b";
+            rO.hash = "54b562703acca0689408ea22e5656e42";
             let rB = { disabled: "CreateSavedView-module__disabled--HLIuj" };
             function r$({ disabled: e }) {
                 let {
@@ -27292,7 +27323,7 @@
                         dirtyDescription: l,
                         dirtySearchQuery: n,
                         dirtyTitle: t,
-                    } = eV(),
+                    } = eD(),
                     { dirtyViewId: i, setDirtyViewId: s, isNewView: r } = eM(),
                     o = (0, er.useRelayEnvironment)(),
                     u = (0, rk.S)(),
@@ -27306,8 +27337,8 @@
                             s4({
                                 environment: o,
                                 input: { shortcutId: i },
-                                onError: L.l,
-                                onCompleted: L.l,
+                                onError: v.l,
+                                onCompleted: v.l,
                             });
                     }, [i, o]),
                     k = (0, b.useCallback)(async () => {
@@ -27643,7 +27674,7 @@
                         (0, y.jsx)("div", {
                             className: "sr-only",
                             "aria-hidden": "true",
-                            children: (0, y.jsx)(rD, {}),
+                            children: (0, y.jsx)(rV, {}),
                         }),
                         (0, y.jsx)(rR.c, {
                             "aria-label": U.defaultViews,
@@ -27745,7 +27776,7 @@
                         (0, y.jsx)("div", {
                             className: "sr-only",
                             "aria-hidden": "true",
-                            children: (0, y.jsx)(rD, {}),
+                            children: (0, y.jsx)(rV, {}),
                         }),
                         (0, y.jsx)(rR.c, {
                             "aria-label": U.defaultViews,
@@ -27875,13 +27906,13 @@
                     i = (0, er.usePreloadedQuery)(eO, e),
                     s = (0, er.usePreloadedQuery)(eq, a),
                     r = (0, er.useFragment)(aM, i),
-                    o = (0, er.useFragment)(aV, s.node);
+                    o = (0, er.useFragment)(aD, s.node);
                 if (!s.node || !o || !l) return null;
                 let u = (0, k.G7)("global_sso_banner");
                 return (0, y.jsxs)(as, {
                     category: "Issues Dashboard",
                     children: [
-                        u && (0, y.jsx)(aD.Y0, {}),
+                        u && (0, y.jsx)(aV.Y0, {}),
                         (0, y.jsx)(a$, {
                             leftPaneWidth: "small",
                             leftPane: {
@@ -27895,7 +27926,7 @@
                                 className: r5.searchListContainer,
                                 children: [
                                     (0, y.jsx)(b.Suspense, {
-                                        fallback: (0, y.jsx)(rL, {}),
+                                        fallback: (0, y.jsx)(rv, {}),
                                         children: (0, y.jsx)(rC, {
                                             setSafeDocumentTitle: !!t?.number,
                                             currentViewKey: o,
@@ -28199,7 +28230,7 @@
                         children: [
                             o &&
                                 (0, y.jsx)(b.Suspense, {
-                                    fallback: (0, y.jsx)(rL, {}),
+                                    fallback: (0, y.jsx)(rv, {}),
                                     children: (0, y.jsx)(rC, {
                                         setSafeDocumentTitle: !!c?.number,
                                         currentViewKey: o,
@@ -28316,7 +28347,7 @@
                 return (0, y.jsxs)(as, {
                     category: "Issues Dashboard",
                     children: [
-                        r && (0, y.jsx)(aD.Y0, {}),
+                        r && (0, y.jsx)(aV.Y0, {}),
                         (0, y.jsx)(a$, {
                             leftPaneWidth: "small",
                             leftPane: {
@@ -28436,7 +28467,7 @@
                 return (0, y.jsxs)(as, {
                     category: "Issues Dashboard",
                     children: [
-                        r && (0, y.jsx)(aD.Y0, {}),
+                        r && (0, y.jsx)(aV.Y0, {}),
                         (0, y.jsx)(a$, {
                             leftPaneWidth: "small",
                             leftPane: {
@@ -29073,12 +29104,12 @@
                     f = (0, er.useRelayEnvironment)(),
                     C = (0, b.useRef)(0),
                     [S, F] = (0, b.useState)(void 0),
-                    L = (0, b.useRef)(null),
                     v = (0, b.useRef)(null),
+                    L = (0, b.useRef)(null),
                     _ = (0, b.useRef)(!1);
                 (o[0] === Symbol.for("react.memo_cache_sentinel")
                     ? ((a = () => () => {
-                          L.current && clearTimeout(L.current);
+                          v.current && clearTimeout(v.current);
                       }),
                       (l = []),
                       (o[0] = a),
@@ -29185,8 +29216,8 @@
                                               ));
                                           break;
                                       }
-                                      (L.current && clearTimeout(L.current),
-                                          (L.current = setTimeout(() => {
+                                      (v.current && clearTimeout(v.current),
+                                          (v.current = setTimeout(() => {
                                               F(Date.now());
                                           }, 6e4)),
                                           d &&
@@ -29207,15 +29238,15 @@
                                               message: `Bulk update completed ${t > 0 ? "with errors" : "successfully"}`,
                                           }),
                                           n.jobId &&
-                                              n.jobId !== v.current &&
+                                              n.jobId !== L.current &&
                                               (_.current = !1),
-                                          n.jobId === v.current ||
+                                          n.jobId === L.current ||
                                               _.current ||
                                               ((0, nr.i)(
                                                   `Bulk update completed ${t > 0 ? "with errors" : "successfully"}`
                                               ),
                                               (_.current = !0),
-                                              (v.current = n.jobId)),
+                                              (L.current = n.jobId)),
                                           I(),
                                           t > 0)
                                       ) {
@@ -29756,7 +29787,7 @@
                         ? l
                             ? (0, y.jsx)(b.Suspense, {
                                   fallback: r,
-                                  children: (0, y.jsx)(oL, {
+                                  children: (0, y.jsx)(ov, {
                                       queryRef: l,
                                       data: t,
                                       dismissForThisRepo: i,
@@ -29766,7 +29797,7 @@
                             : r
                         : null;
                 },
-                oL = ({
+                ov = ({
                     data: e,
                     queryRef: a,
                     dismissForAllRepos: l,
@@ -29790,10 +29821,10 @@
                     (oF.displayName = "FirstTimeContributionBanner");
             } catch {}
             try {
-                oL.displayName ||
-                    (oL.displayName = "FirstTimeContributionBannerInternal");
+                ov.displayName ||
+                    (ov.displayName = "FirstTimeContributionBannerInternal");
             } catch {}
-            let ov = (function () {
+            let oL = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -29876,7 +29907,7 @@
                     abstractKey: null,
                 };
             })();
-            ov.hash = "6f99e78aa98c45e24d83e282f516fea3";
+            oL.hash = "6f99e78aa98c45e24d83e282f516fea3";
             var o_ = l(87670),
                 oI = l(4578);
             let oK = {
@@ -30358,7 +30389,7 @@
                                 children: [
                                     (0, y.jsxs)(e9.A, {
                                         "aria-label": `View ${a.title}`,
-                                        className: (0, nV.$)(
+                                        className: (0, nD.$)(
                                             "css-truncate",
                                             oj.Link
                                         ),
@@ -30529,7 +30560,7 @@
                 area: "PinnedIssues-module__area--JvxU0",
             };
             function oA({ repository: e }) {
-                let a = (0, er.useFragment)(ov, e),
+                let a = (0, er.useFragment)(oL, e),
                     l = (0, b.useCallback)(
                         (e) =>
                             (e?.nodes || [])
@@ -30674,23 +30705,23 @@
                     middlePaneGrid:
                         "IssueIndexPage-module__middlePaneGrid--rg2zq",
                 },
-                oV = ({ queries: { pageQuery: e } }) => {
+                oD = ({ queries: { pageQuery: e } }) => {
                     let { queryRef: a, loadQuery: l } = aa(e, eQ),
                         { setCurrentViewId: n } = eM();
                     return ((0, b.useEffect)(() => {
                         n(F.repository);
                     }, [e, n]),
                     a)
-                        ? (0, y.jsx)(oD, { pageQueryRef: a, loadQuery: l })
+                        ? (0, y.jsx)(oV, { pageQueryRef: a, loadQuery: l })
                         : null;
                 };
-            function oD({ pageQueryRef: e, loadQuery: a }) {
+            function oV({ pageQueryRef: e, loadQuery: a }) {
                 let l = (0, er.useLazyLoadQuery)(
                         eq,
                         { id: F.repository },
                         { fetchPolicy: "store-only" }
                     ),
-                    { bulkJobId: n, setBulkJobId: t } = eV(),
+                    { bulkJobId: n, setBulkJobId: t } = eD(),
                     i = (0, er.usePreloadedQuery)(eQ, e);
                 return i.repository
                     ? (0, y.jsx)(as, {
@@ -30734,10 +30765,10 @@
                     : null;
             }
             try {
-                oV.displayName || (oV.displayName = "IssueIndexPage");
+                oD.displayName || (oD.displayName = "IssueIndexPage");
             } catch {}
             try {
-                oD.displayName || (oD.displayName = "IssueIndexPageContent");
+                oV.displayName || (oV.displayName = "IssueIndexPageContent");
             } catch {}
             var oE = l(80443);
             let oq = {
@@ -30814,13 +30845,13 @@
                             `${c.scoped_repository?.owner}-${c.scoped_repository?.name}-deletedRecordId`,
                             ""
                         ),
-                        L = (0, b.useCallback)(
+                        v = (0, b.useCallback)(
                             (e) => {
                                 F(e);
                             },
                             [F]
                         ),
-                        v = (0, b.useCallback)(
+                        L = (0, b.useCallback)(
                             (e, a) =>
                                 !!n &&
                                 a.owner === n.owner &&
@@ -30859,7 +30890,7 @@
                         (0, y.jsxs)(y.Fragment, {
                             children: [
                                 (0, y.jsx)("div", {
-                                    className: (0, nV.$)(
+                                    className: (0, nD.$)(
                                         "primary-viewer",
                                         oB.IssueDetailContainer
                                     ),
@@ -30881,7 +30912,7 @@
                                                     showIssueCreateButton: !0,
                                                     onLinkClick: o,
                                                     navigateBack: k,
-                                                    onIssueDelete: L,
+                                                    onIssueDelete: v,
                                                     navigate: h,
                                                     preloadedQueries: a,
                                                     timelineEventBaseUrl: ((
@@ -30922,8 +30953,8 @@
                                                     singleKeyShortcutsEnabled:
                                                         m,
                                                     onSubIssueClick: f,
-                                                    onParentIssueActivate: v,
-                                                    onIssueDelete: L,
+                                                    onParentIssueActivate: L,
+                                                    onIssueDelete: v,
                                                     navigateBack: C,
                                                     additionalHeaderActions: (0,
                                                     y.jsx)(aQ.K, {
@@ -30949,7 +30980,7 @@
             let oQ = ({ queries: { ...e } }) => {
                 let { scoped_repository: a } = (0, _.X)(),
                     { currentViewId: l, setCurrentViewId: n } = eM(),
-                    { bulkJobId: t, setBulkJobId: i } = eV(),
+                    { bulkJobId: t, setBulkJobId: i } = eD(),
                     s = l || (a ? F.repository : F.assignedToMe);
                 a && !l && n(s);
                 let r = (0, er.useLazyLoadQuery)(
@@ -31393,8 +31424,8 @@
                     C,
                     S,
                     F,
-                    L,
                     v,
+                    L,
                     _,
                     I,
                     K,
@@ -31408,17 +31439,17 @@
                         formSubmitLabel: T,
                         onSubmit: A,
                         submissionErrors: M,
-                        initialValues: V,
-                        onToggleMilestoneState: D,
+                        initialValues: D,
+                        onToggleMilestoneState: V,
                         toggleStateLabel: E,
                     } = e,
                     q = void 0 === T ? oX.createMilestone : T,
-                    [O, B] = (0, b.useState)(V?.title || ""),
-                    [$, Q] = (0, b.useState)(V?.description || "");
-                w[0] !== V
+                    [O, B] = (0, b.useState)(D?.title || ""),
+                    [$, Q] = (0, b.useState)(D?.description || "");
+                w[0] !== D
                     ? ((a = () => {
-                          if (V?.dueOn) {
-                              let e = new Date(V.dueOn);
+                          if (D?.dueOn) {
+                              let e = new Date(D.dueOn);
                               return new Date(
                                   e.getUTCFullYear(),
                                   e.getUTCMonth(),
@@ -31427,7 +31458,7 @@
                           }
                           return null;
                       }),
-                      (w[0] = V),
+                      (w[0] = D),
                       (w[1] = a))
                     : (a = w[1]);
                 let [U, H] = (0, b.useState)(a),
@@ -31636,30 +31667,30 @@
                           (w[43] = C),
                           (w[44] = S))
                         : (S = w[44]));
-                let el = `${oJ.buttonRow} ${D ? "flex-justify-between" : "flex-justify-end"}`;
+                let el = `${oJ.buttonRow} ${V ? "flex-justify-between" : "flex-justify-end"}`;
                 return (
-                    w[45] !== D || w[46] !== E
+                    w[45] !== V || w[46] !== E
                         ? ((F =
-                              D &&
+                              V &&
                               E &&
                               (0, y.jsx)(lO.Q, {
-                                  onClick: (e) => D?.(e, W),
+                                  onClick: (e) => V?.(e, W),
                                   children: E,
                               })),
-                          (w[45] = D),
+                          (w[45] = V),
                           (w[46] = E),
                           (w[47] = F))
                         : (F = w[47]),
                     w[48] !== j
-                        ? ((L = (0, y.jsx)(lO.Q, {
+                        ? ((v = (0, y.jsx)(lO.Q, {
                               onClick: j,
                               children: oX.cancel,
                           })),
                           (w[48] = j),
-                          (w[49] = L))
-                        : (L = w[49]),
+                          (w[49] = v))
+                        : (v = w[49]),
                     w[50] !== q || w[51] !== z
-                        ? ((v = (0, y.jsx)(lO.Q, {
+                        ? ((L = (0, y.jsx)(lO.Q, {
                               type: "submit",
                               variant: "primary",
                               loading: z,
@@ -31667,15 +31698,15 @@
                           })),
                           (w[50] = q),
                           (w[51] = z),
-                          (w[52] = v))
-                        : (v = w[52]),
-                    w[53] !== L || w[54] !== v
+                          (w[52] = L))
+                        : (L = w[52]),
+                    w[53] !== v || w[54] !== L
                         ? ((_ = (0, y.jsxs)("div", {
                               className: oJ.buttonGroup,
-                              children: [L, v],
+                              children: [v, L],
                           })),
-                          (w[53] = L),
-                          (w[54] = v),
+                          (w[53] = v),
+                          (w[54] = L),
                           (w[55] = _))
                         : (_ = w[55]),
                     w[56] !== el || w[57] !== F || w[58] !== _
@@ -32342,7 +32373,7 @@
                         ? ((s = (0, y.jsx)("div", {
                               className: o1.middlePaneWrapper,
                               "data-testid": "milestone-edit",
-                              children: (0, y.jsx)(iL.t, {
+                              children: (0, y.jsx)(iv.t, {
                                   fallback: i,
                                   children: (0, y.jsx)(oY, {
                                       repository: g,
@@ -32801,7 +32832,7 @@
                               className: o1.middlePaneWrapper,
                               "data-hpc": !0,
                               "data-testid": "milestone-create",
-                              children: (0, y.jsx)(iL.t, {
+                              children: (0, y.jsx)(iv.t, {
                                   fallback: t,
                                   children: (0, y.jsx)(oY, {
                                       repository: c,
@@ -33122,10 +33153,10 @@
                 let e = () => Math.floor(256 * Math.random());
                 return `#${[e(), e(), e()].map((e) => e.toString(16).padStart(2, "0")).join("")}`;
             }
-            function uL(e) {
+            function uv(e) {
                 return /^#([0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})$/.test(e);
             }
-            let uv = (0, b.forwardRef)((e, a) => {
+            let uL = (0, b.forwardRef)((e, a) => {
                 let l,
                     n,
                     t,
@@ -33144,7 +33175,7 @@
                     f,
                     C = (0, iQ.c)(37),
                     { color: S, onChangeCallback: F } = e,
-                    [L, v] = (0, b.useState)(S),
+                    [v, L] = (0, b.useState)(S),
                     [_, I] = (0, b.useState)(S),
                     [K, x] = (0, b.useState)(!1),
                     w = ((e = 1, a) => {
@@ -33209,7 +33240,7 @@
                     })(1, _);
                 C[0] !== F
                     ? ((l = (e) => {
-                          (v(e), uL(e) && I(e), F?.(e));
+                          (L(e), uv(e) && I(e), F?.(e));
                       }),
                       (C[0] = F),
                       (C[1] = l))
@@ -33287,19 +33318,19 @@
                           (C[18] = c),
                           (C[19] = m))
                         : ((c = C[18]), (m = C[19])));
-                let M = uL(L) ? "success" : "error";
+                let M = uv(v) ? "success" : "error";
                 return (
-                    C[20] !== L || C[21] !== R || C[22] !== a || C[23] !== M
+                    C[20] !== v || C[21] !== R || C[22] !== a || C[23] !== M
                         ? ((g = (0, y.jsx)(ro.A, {
                               ...d,
-                              value: L,
+                              value: v,
                               onChange: R,
                               onFocus: c,
                               onBlur: m,
                               validationStatus: M,
                               ref: a,
                           })),
-                          (C[20] = L),
+                          (C[20] = v),
                           (C[21] = R),
                           (C[22] = a),
                           (C[23] = M),
@@ -33363,7 +33394,7 @@
                     f
                 );
             });
-            uv.displayName = "LabelColorPicker";
+            uL.displayName = "LabelColorPicker";
             let u_ = { container: "LabelPreview-module__container--NXD8W" };
             function uI(e) {
                 let a,
@@ -33459,8 +33490,8 @@
                     C,
                     S,
                     F,
-                    L,
                     v,
+                    L,
                     _,
                     I,
                     K,
@@ -33474,17 +33505,17 @@
                         submissionErrors: T,
                         submitButtonText: A,
                         namePlaceholder: M,
-                        descriptionPlaceholder: V,
-                        initialValues: D,
+                        descriptionPlaceholder: D,
+                        initialValues: V,
                     } = e,
                     E = void 0 === P ? uy.newLabel : P,
                     q = void 0 === T ? "" : T,
                     O = void 0 === A ? uy.createButtonText : A,
-                    [B, $] = (0, b.useState)(D?.name ?? ""),
-                    [Q, U] = (0, b.useState)(D?.description ?? "");
-                N[0] !== D
-                    ? ((a = () => (D?.color ? `#${D.color}` : uF())),
-                      (N[0] = D),
+                    [B, $] = (0, b.useState)(V?.name ?? ""),
+                    [Q, U] = (0, b.useState)(V?.description ?? "");
+                N[0] !== V
+                    ? ((a = () => (V?.color ? `#${V.color}` : uF())),
+                      (N[0] = V),
                       (N[1] = a))
                     : (a = N[1]);
                 let [H, z] = (0, b.useState)(a),
@@ -33509,7 +33540,7 @@
                                       en.current?.focus());
                                   return;
                               }
-                              if (!uL(W)) {
+                              if (!uv(W)) {
                                   (ea(uy.invalidColor),
                                       X(!1),
                                       et.current?.focus());
@@ -33536,7 +33567,7 @@
                 let ei = l;
                 N[9] === Symbol.for("react.memo_cache_sentinel")
                     ? ((n = (e) => {
-                          (G(e), uL(e) && (z(e), ea(null)));
+                          (G(e), uv(e) && (z(e), ea(null)));
                       }),
                       (N[9] = n))
                     : (n = N[9]);
@@ -33646,7 +33677,7 @@
                     N[34] === Symbol.for("react.memo_cache_sentinel")
                         ? ((h = (e) => U(e.target.value)), (N[34] = h))
                         : (h = N[34]),
-                    N[35] !== Q || N[36] !== V
+                    N[35] !== Q || N[36] !== D
                         ? ((f = (0, y.jsxs)(lu.A, {
                               className: uK.dialogFormInput,
                               id: "label-form-description",
@@ -33657,16 +33688,16 @@
                                       onChange: h,
                                       rows: 3,
                                       className: uK.dialogFormInput,
-                                      placeholder: V,
+                                      placeholder: D,
                                   }),
                               ],
                           })),
                           (N[35] = Q),
-                          (N[36] = V),
+                          (N[36] = D),
                           (N[37] = f))
                         : (f = N[37]),
                     N[38] !== H
-                        ? ((C = (0, y.jsx)(uv, {
+                        ? ((C = (0, y.jsx)(uL, {
                               color: H,
                               onChangeCallback: es,
                               ref: et,
@@ -33692,31 +33723,31 @@
                           (N[42] = F))
                         : (F = N[42]),
                     N[43] !== C || N[44] !== F
-                        ? ((L = (0, y.jsxs)(lu.A, {
+                        ? ((v = (0, y.jsxs)(lu.A, {
                               className: uK.dialogFormInput,
                               id: "label-form-color",
                               children: [C, S, F],
                           })),
                           (N[43] = C),
                           (N[44] = F),
-                          (N[45] = L))
-                        : (L = N[45]),
+                          (N[45] = v))
+                        : (v = N[45]),
                     N[46] !== r ||
                     N[47] !== u ||
                     N[48] !== p ||
                     N[49] !== f ||
-                    N[50] !== L
-                        ? ((v = (0, y.jsxs)(rj.l.Body, {
+                    N[50] !== v
+                        ? ((L = (0, y.jsxs)(rj.l.Body, {
                               className: uK.dialogFormBody,
-                              children: [r, u, p, f, L],
+                              children: [r, u, p, f, v],
                           })),
                           (N[46] = r),
                           (N[47] = u),
                           (N[48] = p),
                           (N[49] = f),
-                          (N[50] = L),
-                          (N[51] = v))
-                        : (v = N[51]),
+                          (N[50] = v),
+                          (N[51] = L))
+                        : (L = N[51]),
                     N[52] !== Z
                         ? ((_ = (0, y.jsx)(nc.cQ, {
                               commandId: "repository-label:cancel-save-label",
@@ -33747,16 +33778,16 @@
                           (N[58] = I),
                           (N[59] = K))
                         : (K = N[59]),
-                    N[60] !== E || N[61] !== j || N[62] !== v || N[63] !== K
+                    N[60] !== E || N[61] !== j || N[62] !== L || N[63] !== K
                         ? ((x = (0, y.jsxs)(rj.l, {
                               title: E,
                               onClose: j,
                               className: uK.dialogForm,
-                              children: [v, K],
+                              children: [L, K],
                           })),
                           (N[60] = E),
                           (N[61] = j),
-                          (N[62] = v),
+                          (N[62] = L),
                           (N[63] = K),
                           (N[64] = x))
                         : (x = N[64]),
@@ -34636,7 +34667,7 @@
                 };
             })();
             uM.hash = "877381f6a4d0225be11b63a26d9ca9c5";
-            let uV = (e) => {
+            let uD = (e) => {
                 let a,
                     l,
                     n,
@@ -34699,9 +34730,9 @@
                 );
             };
             try {
-                uV.displayName || (uV.displayName = "EmptyState");
+                uD.displayName || (uD.displayName = "EmptyState");
             } catch {}
-            let uD = (function () {
+            let uV = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -34815,7 +34846,7 @@
                     },
                 };
             })();
-            uD.hash = "5b29bf068c8fc22535058a3f1eba0c50";
+            uV.hash = "5b29bf068c8fc22535058a3f1eba0c50";
             let uE = {
                 argumentDefinitions: [],
                 kind: "Fragment",
@@ -34869,7 +34900,7 @@
                               ? ((l = (0, y.jsx)(u$, {})), (t[1] = l))
                               : (l = t[1]),
                           t[2] !== r || t[3] !== s || t[4] !== o || t[5] !== i
-                              ? ((n = (0, y.jsx)(iL.t, {
+                              ? ((n = (0, y.jsx)(iv.t, {
                                     fallback: a,
                                     children: (0, y.jsx)(b.Suspense, {
                                         fallback: l,
@@ -34923,7 +34954,7 @@
                             labelId: s,
                             repositoryNameWithOwner: r,
                         } = e,
-                        { nodes: o } = (0, er.usePreloadedQuery)(uD, t);
+                        { nodes: o } = (0, er.usePreloadedQuery)(uV, t);
                     n[0] !== s || n[1] !== o
                         ? ((a = o?.find((e) => e?.id === s)),
                           (n[0] = s),
@@ -34982,7 +35013,7 @@
                         C = h > 0,
                         S = !f && uK.empty;
                     (d[4] !== S
-                        ? ((n = (0, nV.$)(uK.countContainer, S)),
+                        ? ((n = (0, nD.$)(uK.countContainer, S)),
                           (d[4] = S),
                           (d[5] = n))
                         : (n = d[5]),
@@ -35026,7 +35057,7 @@
                     let F = !C && uK.empty;
                     return (
                         d[13] !== F
-                            ? ((s = (0, nV.$)(uK.countContainer, F)),
+                            ? ((s = (0, nD.$)(uK.countContainer, F)),
                               (d[13] = F),
                               (d[14] = s))
                             : (s = d[14]),
@@ -35391,7 +35422,7 @@
                     C,
                     S = (0, iQ.c)(57),
                     {
-                        label: L,
+                        label: v,
                         isActionsAvailable: _,
                         viewerCanPush: I,
                         secondaryQueryRef: K,
@@ -35401,12 +35432,12 @@
                     [N, j] = (0, b.useState)(!1),
                     [R, P] = (0, b.useState)(!1),
                     [T, A] = (0, b.useState)(!1),
-                    [M, V] = (0, b.useState)(""),
-                    D = (0, b.useRef)(null);
+                    [M, D] = (0, b.useState)(""),
+                    V = (0, b.useRef)(null);
                 S[0] === Symbol.for("react.memo_cache_sentinel")
                     ? ((a = uW), (S[0] = a))
                     : (a = S[0]);
-                let E = (0, er.useFragment)(a, L),
+                let E = (0, er.useFragment)(a, v),
                     q = (0, er.useRelayEnvironment)();
                 S[1] !== E.id || S[2] !== q || S[3] !== x
                     ? ((l = async () => {
@@ -35459,7 +35490,7 @@
                 let O = l;
                 S[5] !== E.id || S[6] !== q
                     ? ((n = async (e, a) => {
-                          (V(""),
+                          (D(""),
                               (function ({
                                   environment: e,
                                   input: a,
@@ -35501,14 +35532,14 @@
                                   },
                                   onCompleted: (e) => {
                                       if (!e.updateLabel?.label) {
-                                          (V(uy.editLabelError), a(!1));
+                                          (D(uy.editLabelError), a(!1));
                                           return;
                                       }
                                       (a(!1), A(!1));
                                   },
                                   onError: (e) => {
                                       (e.cause && Array.isArray(e.cause)
-                                          ? V(
+                                          ? D(
                                                 ((e) => {
                                                     let a = e
                                                         .map((e) => e?.message)
@@ -35525,7 +35556,7 @@
                                                     );
                                                 })(e.cause)
                                             )
-                                          : V(uy.editLabelError),
+                                          : D(uy.editLabelError),
                                           a(!1));
                                   },
                               }));
@@ -35538,9 +35569,9 @@
                 if (
                     (S[8] !== N
                         ? ((t = () => {
-                              N && D?.current && D.current.focus();
+                              N && V?.current && V.current.focus();
                           }),
-                          (i = [D, N]),
+                          (i = [V, N]),
                           (S[8] = N),
                           (S[9] = t),
                           (S[10] = i))
@@ -35548,7 +35579,7 @@
                     (0, b.useEffect)(t, i),
                     S[11] !== E.name)
                 ) {
-                    let e = eN(v.Ds.open, [E.name], "label");
+                    let e = eN(L.Ds.open, [E.name], "label");
                     ((s = la({ viewId: F.repository, query: e })),
                         (S[11] = E.name),
                         (S[12] = s));
@@ -35626,7 +35657,7 @@
                         : (o = S[16]));
                 let U = !_ && uK.noActionBar;
                 S[17] !== U
-                    ? ((u = (0, nV.$)(uK.labelRowDescription, U)),
+                    ? ((u = (0, nD.$)(uK.labelRowDescription, U)),
                       (S[17] = U),
                       (S[18] = u))
                     : (u = S[18]);
@@ -35720,7 +35751,7 @@
                                       children: [
                                           N &&
                                               (0, y.jsx)(sX.l, {
-                                                  ref: D,
+                                                  ref: V,
                                                   className: "mb-3",
                                                   title: "Error",
                                                   description: (0, y.jsx)(
@@ -35759,7 +35790,7 @@
                               T &&
                               (0, y.jsx)(ux, {
                                   onDialogClose: () => {
-                                      (V(""), A(!1));
+                                      (D(""), A(!1));
                                   },
                                   formTitle: uy.editLabel,
                                   descriptionPlaceholder:
@@ -35832,44 +35863,44 @@
                     C,
                     S,
                     F = (0, iQ.c)(50),
-                    [L] = (0, e7.o)(),
-                    v = (0, e7.Z)();
-                if (F[0] !== L) {
-                    let l = L.get("sort");
+                    [v] = (0, e7.o)(),
+                    L = (0, e7.Z)();
+                if (F[0] !== v) {
+                    let l = v.get("sort");
                     if (((a = "name"), (e = "asc"), l)) {
                         let [n, t] = l.split("-");
                         (uj.includes(n) && (a = n),
                             ("asc" === t || "desc" === t) && (e = t));
                     }
-                    ((F[0] = L), (F[1] = e), (F[2] = a));
+                    ((F[0] = v), (F[1] = e), (F[2] = a));
                 } else ((e = F[1]), (a = F[2]));
-                F[3] !== v || F[4] !== a || F[5] !== L
+                F[3] !== L || F[4] !== a || F[5] !== v
                     ? ((l = (e) => {
                           if (e === a) return;
-                          let l = new URLSearchParams(L);
+                          let l = new URLSearchParams(v);
                           (l.set(
                               "sort",
                               `${e}-${"count" === e ? "desc" : "asc"}`
                           ),
-                              v(`${A.cg?.location.pathname}?${l.toString()}`));
+                              L(`${A.cg?.location.pathname}?${l.toString()}`));
                       }),
-                      (F[3] = v),
+                      (F[3] = L),
                       (F[4] = a),
-                      (F[5] = L),
+                      (F[5] = v),
                       (F[6] = l))
                     : (l = F[6]);
                 let _ = l;
-                F[7] !== e || F[8] !== v || F[9] !== a || F[10] !== L
+                F[7] !== e || F[8] !== L || F[9] !== a || F[10] !== v
                     ? ((n = (l) => {
                           if (l === e) return;
-                          let n = new URLSearchParams(L);
+                          let n = new URLSearchParams(v);
                           (n.set("sort", `${a}-${l}`),
-                              v(`${A.cg?.location.pathname}?${n.toString()}`));
+                              L(`${A.cg?.location.pathname}?${n.toString()}`));
                       }),
                       (F[7] = e),
-                      (F[8] = v),
+                      (F[8] = L),
                       (F[9] = a),
-                      (F[10] = L),
+                      (F[10] = v),
                       (F[11] = n))
                     : (n = F[11]);
                 let I = n,
@@ -36075,7 +36106,7 @@
                       (g[3] = l))
                     : (l = g[3]);
                 let F = l,
-                    L = p.isWritable && p.viewerCanPush;
+                    v = p.isWritable && p.viewerCanPush;
                 if (0 === h.length || f.get("q")) {
                     let e;
                     (g[4] === Symbol.for("react.memo_cache_sentinel")
@@ -36090,19 +36121,19 @@
                         : (e = g[5]),
                         (n = e));
                 }
-                let v = n;
-                g[6] !== v || g[7] !== F
+                let L = n;
+                g[6] !== L || g[7] !== F
                     ? ((t = (0, y.jsx)(sc.X, {
                           title: F,
-                          actions: v,
+                          actions: L,
                           actionsLabel: "Label actions",
                       })),
-                      (g[6] = v),
+                      (g[6] = L),
                       (g[7] = F),
                       (g[8] = t))
                     : (t = g[8]);
                 let _ = t,
-                    [I, K] = (0, er.useQueryLoader)(uD);
+                    [I, K] = (0, er.useQueryLoader)(uV);
                 (g[9] !== K || g[10] !== h
                     ? ((i = () => {
                           A.X3 || K({ nodes: h.map(u3) });
@@ -36124,7 +36155,7 @@
                     g[14] !== p.id ||
                     g[15] !== p.nameWithOwner ||
                     g[16] !== p.viewerCanPush ||
-                    g[17] !== L ||
+                    g[17] !== v ||
                     g[18] !== I ||
                     g[19] !== h
                         ? ((o =
@@ -36134,7 +36165,7 @@
                                       uY,
                                       {
                                           label: e,
-                                          isActionsAvailable: L,
+                                          isActionsAvailable: v,
                                           viewerCanPush: p.viewerCanPush,
                                           secondaryQueryRef: I,
                                           repositoryId: p.id,
@@ -36147,7 +36178,7 @@
                           (g[14] = p.id),
                           (g[15] = p.nameWithOwner),
                           (g[16] = p.viewerCanPush),
-                          (g[17] = L),
+                          (g[17] = v),
                           (g[18] = I),
                           (g[19] = h),
                           (g[20] = o))
@@ -36158,7 +36189,7 @@
                     g[24] !== k
                         ? ((u =
                               0 === h.length &&
-                              (0, y.jsx)(uV, {
+                              (0, y.jsx)(uD, {
                                   noLabelsCreated: 0 === C,
                                   viewerCanPush: p.viewerCanPush,
                                   onCreateLabel: k,
@@ -36428,7 +36459,7 @@
                         ? ((r = () => h(!0)), (g[8] = r))
                         : (r = g[8]),
                     g[9] !== f
-                        ? ((o = (0, y.jsx)(iL.t, {
+                        ? ((o = (0, y.jsx)(iv.t, {
                               fallback: s,
                               children: (0, y.jsx)(u2, {
                                   repositoryRef: f,
@@ -37640,7 +37671,7 @@
                 abstractKey: null,
             };
             dk.hash = "db345f0e64434fb83335b93532e33afd";
-            var dh = l(22424);
+            var dh = l(77141);
             let db = (function () {
                 var e = {
                     alias: null,
@@ -38214,7 +38245,7 @@
                 type: "Milestone",
                 abstractKey: null,
             };
-            function dL(e) {
+            function dv(e) {
                 let a,
                     l,
                     n,
@@ -38260,9 +38291,9 @@
             }
             dF.hash = "5bc05bbe94a56bd64216010d45ac7f03";
             try {
-                dL.displayName || (dL.displayName = "MilestoneRowTitle");
+                dv.displayName || (dv.displayName = "MilestoneRowTitle");
             } catch {}
-            function dv(e) {
+            function dL(e) {
                 let a,
                     l,
                     n,
@@ -38277,7 +38308,7 @@
                     : (a = o[0]);
                 let c = (0, er.useFragment)(a, u);
                 o[1] !== c
-                    ? ((l = (0, y.jsx)(dL, { milestone: c })),
+                    ? ((l = (0, y.jsx)(dv, { milestone: c })),
                       (o[1] = c),
                       (o[2] = l))
                     : (l = o[2]);
@@ -38349,7 +38380,7 @@
                 );
             }
             try {
-                dv.displayName || (dv.displayName = "MilestoneRow");
+                dL.displayName || (dL.displayName = "MilestoneRow");
             } catch {}
             function d_() {
                 let e,
@@ -38374,15 +38405,15 @@
                     C,
                     S,
                     F,
-                    L = (0, iQ.c)(60),
-                    [v] = (0, e7.o)(),
-                    _ = v.get("sort"),
-                    I = v.get("direction"),
+                    v = (0, iQ.c)(60),
+                    [L] = (0, e7.o)(),
+                    _ = L.get("sort"),
+                    I = L.get("direction"),
                     K = (0, e7.Z)();
-                L[0] !== K || L[1] !== v
+                v[0] !== K || v[1] !== L
                     ? ((e = (e, a) => {
                           if (A.cg) {
-                              let l = new URLSearchParams(v);
+                              let l = new URLSearchParams(L);
                               (e ? l.set("sort", e) : l.delete("sort"),
                                   a
                                       ? l.set("direction", a)
@@ -38392,188 +38423,188 @@
                                   ));
                           }
                       }),
-                      (L[0] = K),
-                      (L[1] = v),
-                      (L[2] = e))
-                    : (e = L[2]);
+                      (v[0] = K),
+                      (v[1] = L),
+                      (v[2] = e))
+                    : (e = v[2]);
                 let x = e;
-                (L[3] === Symbol.for("react.memo_cache_sentinel")
+                (v[3] === Symbol.for("react.memo_cache_sentinel")
                     ? ((a = (0, y.jsx)(i_.W.Button, {
                           variant: "invisible",
                           leadingVisual: T.SortDescIcon,
                           children: "Sort",
                       })),
-                      (L[3] = a))
-                    : (a = L[3]),
-                    L[4] === Symbol.for("react.memo_cache_sentinel")
+                      (v[3] = a))
+                    : (a = v[3]),
+                    v[4] === Symbol.for("react.memo_cache_sentinel")
                         ? ((l = (0, y.jsx)(lJ.l.GroupHeading, {
                               children: "Sort by",
                           })),
-                          (L[4] = l))
-                        : (l = L[4]),
-                    L[5] !== x
+                          (v[4] = l))
+                        : (l = v[4]),
+                    v[5] !== x
                         ? ((n = () => x(void 0, void 0)),
-                          (L[5] = x),
-                          (L[6] = n))
-                        : (n = L[6]));
+                          (v[5] = x),
+                          (v[6] = n))
+                        : (n = v[6]));
                 let w = !_;
-                (L[7] !== n || L[8] !== w
+                (v[7] !== n || v[8] !== w
                     ? ((t = (0, y.jsx)(lJ.l.Item, {
                           onSelect: n,
                           selected: w,
                           role: "menuitemradio",
                           children: "Recently updated",
                       })),
-                      (L[7] = n),
-                      (L[8] = w),
-                      (L[9] = t))
-                    : (t = L[9]),
-                    L[10] !== x
+                      (v[7] = n),
+                      (v[8] = w),
+                      (v[9] = t))
+                    : (t = v[9]),
+                    v[10] !== x
                         ? ((i = () => x("due_date", "desc")),
-                          (L[10] = x),
-                          (L[11] = i))
-                        : (i = L[11]));
+                          (v[10] = x),
+                          (v[11] = i))
+                        : (i = v[11]));
                 let N = "due_date" === _ && "desc" === I;
-                (L[12] !== i || L[13] !== N
+                (v[12] !== i || v[13] !== N
                     ? ((s = (0, y.jsx)(lJ.l.Item, {
                           onSelect: i,
                           selected: N,
                           role: "menuitemradio",
                           children: "Furthest due date",
                       })),
-                      (L[12] = i),
-                      (L[13] = N),
-                      (L[14] = s))
-                    : (s = L[14]),
-                    L[15] !== x
+                      (v[12] = i),
+                      (v[13] = N),
+                      (v[14] = s))
+                    : (s = v[14]),
+                    v[15] !== x
                         ? ((r = () => x("due_date", "asc")),
-                          (L[15] = x),
-                          (L[16] = r))
-                        : (r = L[16]));
+                          (v[15] = x),
+                          (v[16] = r))
+                        : (r = v[16]));
                 let j = "due_date" === _ && "asc" === I;
-                (L[17] !== j || L[18] !== r
+                (v[17] !== j || v[18] !== r
                     ? ((o = (0, y.jsx)(lJ.l.Item, {
                           onSelect: r,
                           selected: j,
                           role: "menuitemradio",
                           children: "Closest due date",
                       })),
-                      (L[17] = j),
-                      (L[18] = r),
-                      (L[19] = o))
-                    : (o = L[19]),
-                    L[20] !== x
+                      (v[17] = j),
+                      (v[18] = r),
+                      (v[19] = o))
+                    : (o = v[19]),
+                    v[20] !== x
                         ? ((u = () => x("completeness", "asc")),
-                          (L[20] = x),
-                          (L[21] = u))
-                        : (u = L[21]));
+                          (v[20] = x),
+                          (v[21] = u))
+                        : (u = v[21]));
                 let R = "completeness" === _ && "asc" === I;
-                (L[22] !== u || L[23] !== R
+                (v[22] !== u || v[23] !== R
                     ? ((d = (0, y.jsx)(lJ.l.Item, {
                           onSelect: u,
                           selected: R,
                           role: "menuitemradio",
                           children: "Least complete",
                       })),
-                      (L[22] = u),
-                      (L[23] = R),
-                      (L[24] = d))
-                    : (d = L[24]),
-                    L[25] !== x
+                      (v[22] = u),
+                      (v[23] = R),
+                      (v[24] = d))
+                    : (d = v[24]),
+                    v[25] !== x
                         ? ((c = () => x("completeness", "desc")),
-                          (L[25] = x),
-                          (L[26] = c))
-                        : (c = L[26]));
+                          (v[25] = x),
+                          (v[26] = c))
+                        : (c = v[26]));
                 let P = "completeness" === _ && "desc" === I;
-                (L[27] !== c || L[28] !== P
+                (v[27] !== c || v[28] !== P
                     ? ((m = (0, y.jsx)(lJ.l.Item, {
                           onSelect: c,
                           selected: P,
                           role: "menuitemradio",
                           children: "Most complete",
                       })),
-                      (L[27] = c),
-                      (L[28] = P),
-                      (L[29] = m))
-                    : (m = L[29]),
-                    L[30] !== x
+                      (v[27] = c),
+                      (v[28] = P),
+                      (v[29] = m))
+                    : (m = v[29]),
+                    v[30] !== x
                         ? ((g = () => x("title", "asc")),
-                          (L[30] = x),
-                          (L[31] = g))
-                        : (g = L[31]));
+                          (v[30] = x),
+                          (v[31] = g))
+                        : (g = v[31]));
                 let M = "title" === _ && "asc" === I;
-                (L[32] !== g || L[33] !== M
+                (v[32] !== g || v[33] !== M
                     ? ((p = (0, y.jsx)(lJ.l.Item, {
                           onSelect: g,
                           selected: M,
                           role: "menuitemradio",
                           children: "Alphabetical",
                       })),
-                      (L[32] = g),
-                      (L[33] = M),
-                      (L[34] = p))
-                    : (p = L[34]),
-                    L[35] !== x
+                      (v[32] = g),
+                      (v[33] = M),
+                      (v[34] = p))
+                    : (p = v[34]),
+                    v[35] !== x
                         ? ((k = () => x("title", "desc")),
-                          (L[35] = x),
-                          (L[36] = k))
-                        : (k = L[36]));
-                let V = "title" === _ && "desc" === I;
-                (L[37] !== k || L[38] !== V
+                          (v[35] = x),
+                          (v[36] = k))
+                        : (k = v[36]));
+                let D = "title" === _ && "desc" === I;
+                (v[37] !== k || v[38] !== D
                     ? ((h = (0, y.jsx)(lJ.l.Item, {
                           onSelect: k,
-                          selected: V,
+                          selected: D,
                           role: "menuitemradio",
                           children: "Reverse alphabetical",
                       })),
-                      (L[37] = k),
-                      (L[38] = V),
-                      (L[39] = h))
-                    : (h = L[39]),
-                    L[40] !== x
+                      (v[37] = k),
+                      (v[38] = D),
+                      (v[39] = h))
+                    : (h = v[39]),
+                    v[40] !== x
                         ? ((b = () => x("count", "desc")),
-                          (L[40] = x),
-                          (L[41] = b))
-                        : (b = L[41]));
-                let D = "count" === _ && "desc" === I;
-                (L[42] !== b || L[43] !== D
+                          (v[40] = x),
+                          (v[41] = b))
+                        : (b = v[41]));
+                let V = "count" === _ && "desc" === I;
+                (v[42] !== b || v[43] !== V
                     ? ((f = (0, y.jsx)(lJ.l.Item, {
                           onSelect: b,
-                          selected: D,
+                          selected: V,
                           role: "menuitemradio",
                           children: "Most issues",
                       })),
-                      (L[42] = b),
-                      (L[43] = D),
-                      (L[44] = f))
-                    : (f = L[44]),
-                    L[45] !== x
+                      (v[42] = b),
+                      (v[43] = V),
+                      (v[44] = f))
+                    : (f = v[44]),
+                    v[45] !== x
                         ? ((C = () => x("count", "asc")),
-                          (L[45] = x),
-                          (L[46] = C))
-                        : (C = L[46]));
+                          (v[45] = x),
+                          (v[46] = C))
+                        : (C = v[46]));
                 let E = "count" === _ && "asc" === I;
                 return (
-                    L[47] !== C || L[48] !== E
+                    v[47] !== C || v[48] !== E
                         ? ((S = (0, y.jsx)(lJ.l.Item, {
                               onSelect: C,
                               selected: E,
                               role: "menuitemradio",
                               children: "Fewest issues",
                           })),
-                          (L[47] = C),
-                          (L[48] = E),
-                          (L[49] = S))
-                        : (S = L[49]),
-                    L[50] !== o ||
-                    L[51] !== d ||
-                    L[52] !== m ||
-                    L[53] !== p ||
-                    L[54] !== h ||
-                    L[55] !== f ||
-                    L[56] !== S ||
-                    L[57] !== t ||
-                    L[58] !== s
+                          (v[47] = C),
+                          (v[48] = E),
+                          (v[49] = S))
+                        : (S = v[49]),
+                    v[50] !== o ||
+                    v[51] !== d ||
+                    v[52] !== m ||
+                    v[53] !== p ||
+                    v[54] !== h ||
+                    v[55] !== f ||
+                    v[56] !== S ||
+                    v[57] !== t ||
+                    v[58] !== s
                         ? ((F = (0, y.jsxs)(i_.W, {
                               children: [
                                   a,
@@ -38598,17 +38629,17 @@
                                   }),
                               ],
                           })),
-                          (L[50] = o),
-                          (L[51] = d),
-                          (L[52] = m),
-                          (L[53] = p),
-                          (L[54] = h),
-                          (L[55] = f),
-                          (L[56] = S),
-                          (L[57] = t),
-                          (L[58] = s),
-                          (L[59] = F))
-                        : (F = L[59]),
+                          (v[50] = o),
+                          (v[51] = d),
+                          (v[52] = m),
+                          (v[53] = p),
+                          (v[54] = h),
+                          (v[55] = f),
+                          (v[56] = S),
+                          (v[57] = t),
+                          (v[58] = s),
+                          (v[59] = F))
+                        : (F = v[59]),
                     F
                 );
             }
@@ -38727,12 +38758,12 @@
                       (c[8] = f),
                       (c[9] = i))
                     : (i = c[9]);
-                let L = i,
-                    v = A.KJ && "closed" !== C;
-                (c[10] !== L
-                    ? ((s = (e) => L(e, !0)), (c[10] = L), (c[11] = s))
+                let v = i,
+                    L = A.KJ && "closed" !== C;
+                (c[10] !== v
+                    ? ((s = (e) => v(e, !0)), (c[10] = v), (c[11] = s))
                     : (s = c[11]),
-                    c[12] !== p || c[13] !== v || c[14] !== s
+                    c[12] !== p || c[13] !== L || c[14] !== s
                         ? ((r = (0, y.jsx)(
                               "li",
                               {
@@ -38740,7 +38771,7 @@
                                       lG.L,
                                       {
                                           title: "Open",
-                                          isSelected: v,
+                                          isSelected: L,
                                           count: p,
                                           href: h,
                                           onClick: s,
@@ -38752,14 +38783,14 @@
                               "section-filter-0"
                           )),
                           (c[12] = p),
-                          (c[13] = v),
+                          (c[13] = L),
                           (c[14] = s),
                           (c[15] = r))
                         : (r = c[15]));
                 let _ = A.KJ && "closed" === C;
                 return (
-                    c[16] !== L
-                        ? ((o = (e) => L(e, !1)), (c[16] = L), (c[17] = o))
+                    c[16] !== v
+                        ? ((o = (e) => v(e, !1)), (c[16] = v), (c[17] = o))
                         : (o = c[17]),
                     c[18] !== k || c[19] !== o || c[20] !== _
                         ? ((u = (0, y.jsx)(
@@ -38788,7 +38819,7 @@
                     c[22] !== u || c[23] !== r
                         ? ((d = (0, y.jsx)("div", {
                               children: (0, y.jsxs)("ul", {
-                                  className: `list-style-none ${(0, nV.$)(o0.tabsContainer)}`,
+                                  className: `list-style-none ${(0, nD.$)(o0.tabsContainer)}`,
                                   children: [r, u],
                               }),
                           })),
@@ -38902,7 +38933,7 @@
                                     if (t.length > 0)
                                         return t.map((a) =>
                                             (0, y.jsx)(
-                                                dv,
+                                                dL,
                                                 {
                                                     milestone: a,
                                                     repositoryNameWithOwner:
@@ -39047,7 +39078,7 @@
                               leftPaneWidth: "small",
                               middlePane: (0, y.jsx)("div", {
                                   className: o0.middlePaneWrapper,
-                                  children: (0, y.jsxs)(iL.t, {
+                                  children: (0, y.jsxs)(iv.t, {
                                       fallback: l,
                                       children: [
                                           (0, y.jsx)(dj, { repositoryRef: s }),
@@ -39154,7 +39185,7 @@
                 abstractKey: null,
             };
             dM.hash = "7d31d10aafeaa69d827d858e9b244865";
-            let dV = (function () {
+            let dD = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -39312,14 +39343,14 @@
                             value: { direction: "ASC", field: "NAME" },
                         },
                     ],
-                    L = {
+                    v = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "cursor",
                         storageKey: null,
                     },
-                    v = {
+                    L = {
                         alias: null,
                         args: null,
                         concreteType: "PageInfo",
@@ -39383,11 +39414,11 @@
                                         ],
                                         storageKey: null,
                                     },
-                                    L,
+                                    v,
                                 ],
                                 storageKey: null,
                             },
-                            v,
+                            L,
                         ],
                         storageKey:
                             'labels(first:10,orderBy:{"direction":"ASC","field":"NAME"})',
@@ -39794,11 +39825,11 @@
                                                         ],
                                                         storageKey: null,
                                                     },
-                                                    L,
+                                                    v,
                                                 ],
                                                 storageKey: null,
                                             },
-                                            v,
+                                            L,
                                         ],
                                         storageKey: null,
                                     },
@@ -39858,8 +39889,8 @@
                     },
                 };
             })();
-            dV.hash = "0a0e1c3003c63955a36ca0169f77ff91";
-            let dD = (function () {
+            dD.hash = "0a0e1c3003c63955a36ca0169f77ff91";
+            let dV = (function () {
                 var e = {
                         kind: "Variable",
                         name: "number",
@@ -39952,7 +39983,7 @@
                     abstractKey: null,
                 };
             })();
-            dD.hash = "ed58f7c20d8325fa9641338233943cdb";
+            dV.hash = "ed58f7c20d8325fa9641338233943cdb";
             let dE = {
                 argumentDefinitions: [
                     {
@@ -40294,7 +40325,7 @@
                           (d[11] = k.login),
                           (d[12] = i))
                         : (i = d[12]));
-                let F = b !== L.l;
+                let F = b !== v.l;
                 return (
                     d[13] !== m || d[14] !== i || d[15] !== F
                         ? ((s = {
@@ -40420,17 +40451,17 @@
                     ? ((a = dz), (f[0] = a))
                     : (a = f[0]);
                 let S = (0, er.useFragment)(a, C),
-                    [F, L] = (0, b.useState)(!1),
-                    v = S.descriptionHTML && S.descriptionHTML.length > 600;
-                f[1] !== v || f[2] !== F
+                    [F, v] = (0, b.useState)(!1),
+                    L = S.descriptionHTML && S.descriptionHTML.length > 600;
+                f[1] !== L || f[2] !== F
                     ? ((l = () =>
-                          v ? (F ? o0.expanded : o0.collapsed) : null),
-                      (f[1] = v),
+                          L ? (F ? o0.expanded : o0.collapsed) : null),
+                      (f[1] = L),
                       (f[2] = F),
                       (f[3] = l))
                     : (l = f[3]);
                 let _ = l,
-                    I = `${o0.milestoneDetailsWrapper} ${F && v ? o0.expanded : ""}`,
+                    I = `${o0.milestoneDetailsWrapper} ${F && L ? o0.expanded : ""}`,
                     K = S.closed ? "closed" : "open",
                     x = S.closed ? oX.milestoneClosed : oX.milestoneOpen;
                 (f[4] !== K || f[5] !== x
@@ -40540,7 +40571,7 @@
                         : (p = f[33]),
                     f[34] !== S.description ||
                     f[35] !== S.descriptionHTML ||
-                    f[36] !== v ||
+                    f[36] !== L ||
                     f[37] !== F ||
                     f[38] !== _
                         ? ((k =
@@ -40550,7 +40581,7 @@
                                         id: "milestone-description",
                                         children: [
                                             (0, y.jsx)(dW.G, {
-                                                className: (0, nV.$)(
+                                                className: (0, nD.$)(
                                                     o0.mdViewer,
                                                     _()
                                                 ),
@@ -40558,9 +40589,9 @@
                                                 verifiedHTML: S.descriptionHTML,
                                                 onChange: dX,
                                             }),
-                                            v &&
+                                            L &&
                                                 (0, y.jsx)("div", {
-                                                    className: (0, nV.$)(
+                                                    className: (0, nD.$)(
                                                         o0.showMoreButtonContainer,
                                                         F
                                                             ? o0.expanded
@@ -40571,7 +40602,7 @@
                                                         variant: "invisible",
                                                         className: o0.button,
                                                         onClick: () => {
-                                                            L(!F);
+                                                            v(!F);
                                                         },
                                                         "aria-expanded": F,
                                                         "aria-controls":
@@ -40589,7 +40620,7 @@
                                   : null),
                           (f[34] = S.description),
                           (f[35] = S.descriptionHTML),
-                          (f[36] = v),
+                          (f[36] = L),
                           (f[37] = F),
                           (f[38] = _),
                           (f[39] = k))
@@ -40827,14 +40858,14 @@
                         name: "updatedAt",
                         storageKey: null,
                     },
-                    L = {
+                    v = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
                         name: "closed",
                         storageKey: null,
                     },
-                    v = {
+                    L = {
                         alias: null,
                         args: null,
                         kind: "ScalarField",
@@ -40890,8 +40921,8 @@
                             C,
                             S,
                             F,
-                            L,
                             v,
+                            L,
                             I,
                             {
                                 alias: null,
@@ -41071,8 +41102,8 @@
                                                                                                         C,
                                                                                                         S,
                                                                                                         F,
-                                                                                                        L,
                                                                                                         v,
+                                                                                                        L,
                                                                                                         I,
                                                                                                         {
                                                                                                             alias: null,
@@ -41113,7 +41144,7 @@
                                                                             [
                                                                                 d,
                                                                                 m,
-                                                                                L,
+                                                                                v,
                                                                                 {
                                                                                     alias: null,
                                                                                     args: null,
@@ -41153,7 +41184,7 @@
                                                                                                         C,
                                                                                                         S,
                                                                                                         F,
-                                                                                                        v,
+                                                                                                        L,
                                                                                                         I,
                                                                                                         x,
                                                                                                         w,
@@ -41786,7 +41817,7 @@
                 return (
                     r[6] === Symbol.for("react.memo_cache_sentinel")
                         ? ((s = (0, y.jsx)(sc.X, {
-                              onToggleSelectAll: L.l,
+                              onToggleSelectAll: v.l,
                               actionsLabel: oX.bulkActions,
                               actions: u,
                               density: "normal",
@@ -41895,8 +41926,8 @@
                         },
                         [a, l, g, m, n]
                     ),
-                    L = i && t,
-                    [v, _] = (0, b.useState)(void 0),
+                    v = i && t,
+                    [L, _] = (0, b.useState)(void 0),
                     I = (0, b.useMemo)(
                         () => ({
                             owner: i?.owner ?? "",
@@ -41905,11 +41936,11 @@
                         [i?.name, i?.owner]
                     ),
                     x = (0, b.useMemo)(
-                        () => ({ open: v, onOpenChange: (e) => sg(e, _) }),
-                        [v]
+                        () => ({ open: L, onOpenChange: (e) => sg(e, _) }),
+                        [L]
                     ),
                     w = (0, b.useMemo)(() => {
-                        if (!L) return;
+                        if (!v) return;
                         let e = h.map((e) => e.id),
                             a = h.map((e) => e.number),
                             l = [
@@ -41984,7 +42015,7 @@
                                 }),
                             l
                         );
-                    }, [S, i?.owner, i?.name, h, L, I, u]);
+                    }, [S, i?.owner, i?.name, h, v, I, u]);
                 return (0, y.jsx)(b.Suspense, {
                     fallback: (0, y.jsx)(d3, {}),
                     children: (0, y.jsx)(sc.X, {
@@ -42173,7 +42204,7 @@
                                   isActive: !1,
                                   isSelected: e && r.has(e.id),
                                   onSelect: (a) => e && o(e.id, e, a),
-                                  onSelectRow: L.l,
+                                  onSelectRow: v.l,
                                   getMetadataHref: u,
                                   getAdditiveMetadataHref: d,
                                   reactionEmojiToDisplay: {
@@ -42435,12 +42466,12 @@
                       (m[8] = F),
                       (m[9] = s))
                     : (s = m[9]);
-                let L = s,
-                    v = A.KJ && "1" !== C;
-                (m[10] !== L
-                    ? ((r = (e) => L(e, !0)), (m[10] = L), (m[11] = r))
+                let v = s,
+                    L = A.KJ && "1" !== C;
+                (m[10] !== v
+                    ? ((r = (e) => v(e, !0)), (m[10] = v), (m[11] = r))
                     : (r = m[11]),
-                    m[12] !== k || m[13] !== v || m[14] !== r
+                    m[12] !== k || m[13] !== L || m[14] !== r
                         ? ((o = (0, y.jsx)(
                               "li",
                               {
@@ -42448,7 +42479,7 @@
                                       lG.L,
                                       {
                                           title: "Open",
-                                          isSelected: v,
+                                          isSelected: L,
                                           count: k,
                                           href: t,
                                           onClick: r,
@@ -42459,14 +42490,14 @@
                               "section-filter-0"
                           )),
                           (m[12] = k),
-                          (m[13] = v),
+                          (m[13] = L),
                           (m[14] = r),
                           (m[15] = o))
                         : (o = m[15]));
                 let _ = A.KJ && "1" === C;
                 return (
-                    m[16] !== L
-                        ? ((u = (e) => L(e, !1)), (m[16] = L), (m[17] = u))
+                    m[16] !== v
+                        ? ((u = (e) => v(e, !1)), (m[16] = v), (m[17] = u))
                         : (u = m[17]),
                     m[18] !== h || m[19] !== u || m[20] !== _
                         ? ((d = (0, y.jsx)(
@@ -42494,7 +42525,7 @@
                     m[22] !== d || m[23] !== o
                         ? ((c = (0, y.jsx)("div", {
                               children: (0, y.jsxs)("ul", {
-                                  className: `list-style-none ${(0, nV.$)(o0.tabsContainer)}`,
+                                  className: `list-style-none ${(0, nD.$)(o0.tabsContainer)}`,
                                   children: [o, d],
                               }),
                           })),
@@ -42627,12 +42658,12 @@
                     ),
                     [f, C] = (0, w.M)(du.localStorageKeyBulkUpdateIssues, null),
                     [S, F] = (0, b.useState)(!1),
-                    v =
+                    L =
                         r &&
                         r.viewerCanPush &&
                         !(r.isDisabled || r.isLocked || r.is_archived) &&
                         g.length < 100,
-                    _ = (0, b.useMemo)(() => v && !S, [S, v]),
+                    _ = (0, b.useMemo)(() => L && !S, [S, L]),
                     x = (e) => {
                         F(
                             Array.from(e.values()).some(
@@ -42676,8 +42707,8 @@
                         []
                     ),
                     [T, M] = (0, b.useState)(g),
-                    V = `${A.fV.origin}/${e.owner.login}/${e.name}`,
-                    D = `${V}/issues/?q=is%3Aissue%20state%3Aopen%20no%3Amilestone`,
+                    D = `${A.fV.origin}/${e.owner.login}/${e.name}`,
+                    V = `${D}/issues/?q=is%3Aissue%20state%3Aopen%20no%3Amilestone`,
                     E = `/${e.owner.login}/${e.name}/milestone/${s.number}`,
                     q = A.fV.pathname,
                     [O] = (0, I.ok)(),
@@ -42856,10 +42887,10 @@
                                     issueKey: l,
                                     getMetadataHref: () => "",
                                     getAdditiveMetadataHref: () => "",
-                                    onSelectRow: L.l,
+                                    onSelectRow: v.l,
                                     isActive: !1,
                                     sortingItemSelected: "",
-                                    onNavigate: L.l,
+                                    onNavigate: v.l,
                                 })),
                             "PullRequest" === l.__typename)
                                 ? (0, y.jsx)(tF, {
@@ -42867,10 +42898,10 @@
                                       pullRequestKey: l,
                                       includeGitDataFromMainQuery: !1,
                                       getMetadataHref: () => "",
-                                      onSelectRow: L.l,
+                                      onSelectRow: v.l,
                                       isActive: !1,
                                       sortingItemSelected: "",
-                                      onNavigate: L.l,
+                                      onNavigate: v.l,
                                   })
                                 : (0, y.jsx)(
                                       o_.BS.Item,
@@ -42915,7 +42946,7 @@
                                     0 === G.length &&
                                         (0, y.jsx)(d0, {
                                             selected: $ ? "closed" : "open",
-                                            descriptionUrl: D,
+                                            descriptionUrl: V,
                                         }),
                                 ],
                             }),
@@ -42935,7 +42966,7 @@
                 let a,
                     l = (0, iQ.c)(2),
                     { pageQueryRef: n } = e,
-                    t = (0, lp.usePreloadedQuery)(dV, n);
+                    t = (0, lp.usePreloadedQuery)(dD, n);
                 return t.repository
                     ? (l[0] !== t.repository
                           ? ((a = (0, y.jsx)(cd, { repository: t.repository })),
@@ -42960,7 +42991,7 @@
                     m = (0, iQ.c)(25),
                     { repository: g, optionConfig: p } = e;
                 m[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((a = dD), (m[0] = a))
+                    ? ((a = dV), (m[0] = a))
                     : (a = m[0]);
                 let k = (0, er.useFragment)(a, g),
                     [h, f] = (0, w.M)(du.localStorageKeyBulkUpdateIssues, null);
@@ -43014,7 +43045,7 @@
                 let C = p?.singleKeyShortcutsEnabled;
                 return (
                     m[12] !== k || m[13] !== C
-                        ? ((o = (0, y.jsx)(iL.t, {
+                        ? ((o = (0, y.jsx)(iv.t, {
                               fallback: r,
                               children: (0, y.jsx)(cr, {
                                   repositoryRef: k,
@@ -43041,7 +43072,7 @@
                               leftPaneWidth: "small",
                               middlePane: (0, y.jsx)("div", {
                                   className: o0.middlePaneWrapper,
-                                  children: (0, y.jsxs)(iL.t, {
+                                  children: (0, y.jsxs)(iv.t, {
                                       fallback: t,
                                       children: [i, u],
                                   }),
@@ -43071,7 +43102,7 @@
                         l,
                         n = (0, iQ.c)(3),
                         { queryRef: t } = e,
-                        [i] = (0, lp.useQueryLoader)(dV, t);
+                        [i] = (0, lp.useQueryLoader)(dD, t);
                     return i
                         ? (n[0] === Symbol.for("react.memo_cache_sentinel")
                               ? ((a = (0, y.jsx)("div", {
@@ -43321,7 +43352,7 @@
                         if (Object.keys(a.pathParams).length > 0) {
                             let l = a.searchParams.get("q"),
                                 n = eN(
-                                    v.Ds.open,
+                                    L.Ds.open,
                                     [a.pathParams.label],
                                     "label"
                                 );
@@ -43379,7 +43410,7 @@
                     "/issues/assigned": (e, a) => {
                         let l = a.searchParams.get("q");
                         return (
-                            (e.query = l ? l9(l) : v.Ds.assignedToMe),
+                            (e.query = l ? l9(l) : L.Ds.assignedToMe),
                             eI(a.searchParams, e),
                             e
                         );
@@ -43387,14 +43418,14 @@
                     "/issues/mentioned": (e, a) => {
                         let l = a.searchParams.get("q");
                         return (
-                            (e.query = l ? l9(l) : v.Ds.mentioned),
+                            (e.query = l ? l9(l) : L.Ds.mentioned),
                             eI(a.searchParams, e),
                             e
                         );
                     },
                     "/issues/recent": (e, a) => (
                         (e.query = l9(
-                            a.searchParams.get("q") || v.Ds.recentActivity
+                            a.searchParams.get("q") || L.Ds.recentActivity
                         )),
                         eI(a.searchParams, e),
                         e
@@ -43402,7 +43433,7 @@
                     "/issues/created": (e, a) => {
                         let l = a.searchParams.get("q");
                         return (
-                            (e.query = l ? l9(l) : v.Ds.createdByMe),
+                            (e.query = l ? l9(l) : L.Ds.createdByMe),
                             eI(a.searchParams, e),
                             e
                         );
@@ -43468,7 +43499,7 @@
                         relayEnvironment: e,
                     };
                 return {
-                    App: eD,
+                    App: eV,
                     routes: [
                         (0, p.X)({
                             ...l,
@@ -43585,7 +43616,7 @@
                             path: "/:owner/:repo/issues",
                             resourceName: "IssueRepoIndex",
                             title: "Repo Issues",
-                            Component: oV,
+                            Component: oD,
                             transformVariables: cy["/:owner/:repo/issues"],
                             queryConfigs: {
                                 pageQuery: { concreteRequest: eQ },
@@ -43628,7 +43659,7 @@
                             path: "/:owner/:repo/issues/created_by/:author",
                             resourceName: "IssueRepoIndex",
                             title: "Repo Issues",
-                            Component: oV,
+                            Component: oD,
                             transformVariables:
                                 cy["/:owner/:repo/issues/created_by/:author"],
                             queryConfigs: {
@@ -43640,7 +43671,7 @@
                             path: "/:owner/:repo/issues/created_by/app/:author",
                             resourceName: "IssueRepoIndex",
                             title: "Repo Issues",
-                            Component: oV,
+                            Component: oD,
                             transformVariables:
                                 cy[
                                     "/:owner/:repo/issues/created_by/app/:author"
@@ -43654,7 +43685,7 @@
                             path: "/:owner/:repo/issues/assigned/:assignee",
                             resourceName: "IssueRepoIndex",
                             title: "Repo Issues",
-                            Component: oV,
+                            Component: oD,
                             transformVariables:
                                 cy["/:owner/:repo/issues/assigned/:assignee"],
                             queryConfigs: {
@@ -43735,7 +43766,7 @@
                             path: "/:owner/:repo/issues/mentioned/:mentioned",
                             resourceName: "IssueRepoIndex",
                             title: "Repo Issues",
-                            Component: oV,
+                            Component: oD,
                             transformVariables:
                                 cy["/:owner/:repo/issues/mentioned/:mentioned"],
                             queryConfigs: {
@@ -43749,7 +43780,7 @@
                                 cy["/:owner/:repo/labels/:label"],
                             resourceName: "IssueLabelIndex",
                             title: "Label Issues",
-                            Component: oV,
+                            Component: oD,
                             queryConfigs: {
                                 pageQuery: { concreteRequest: eQ },
                             },
@@ -44594,6 +44625,42 @@
                 return n && !t;
             }
         },
+        74547: (e, a, l) => {
+            l.d(a, { t: () => n });
+            let n = {
+                addOrRemoveReaction: "Add or remove reactions",
+                reactionsUnavailable: "Reactions are currently unavailable",
+                copilotDisplayName: "Copilot",
+            };
+        },
+        79866: (e, a, l) => {
+            l.d(a, { JQ: () => i, Js: () => t, fj: () => s, qG: () => n });
+            let n = {
+                CONFUSED: "\u{1F615}",
+                EYES: "\u{1F440}",
+                HEART: "\u2764\uFE0F",
+                HOORAY: "\u{1F389}",
+                LAUGH: "\u{1F604}",
+                THUMBS_DOWN: "\u{1F44E}",
+                THUMBS_UP: "\u{1F44D}",
+                ROCKET: "\u{1F680}",
+            };
+            function t(e, a) {
+                if (0 === e.length || 0 === a) return "";
+                let l = e.slice(0);
+                if (1 === l.length) return l[0];
+                if (2 === l.length) return l.join(" and ");
+                a > e.length && l.push(`${a - e.length} more`);
+                let n = l.pop();
+                return (l.push(`${l.pop()} and ${n}`), l.join(", "));
+            }
+            function i(e, a) {
+                return `${a ? "Unreact" : "React"} with ${n[e]}`;
+            }
+            function s(e, a) {
+                return `${n[e]} ${a} reaction${1 === a ? "" : "s"}`;
+            }
+        },
         48779: (e, a, l) => {
             l.d(a, { Jd: () => s, MG: () => i, zG: () => r });
             let n = 0,
@@ -44616,6 +44683,100 @@
                       ),
                 t))
                     a(e);
+            }
+        },
+        40235: (e, a, l) => {
+            l.d(a, { x: () => g });
+            var n,
+                t = l(96540),
+                i = l(70263),
+                s = l(11418),
+                r = l(73056),
+                o = l(74848),
+                u = l(10204);
+            let d = (0, t.createContext)(null),
+                c = null;
+            function m(e, a) {
+                let l = u.KK.parse(e);
+                if (!l)
+                    throw Error(
+                        `Invalid channel name. Did you forget to sign it with \`signChannel("${e}")\`?`
+                    );
+                return (
+                    c || (c = new u.m0()),
+                    c.add({ topic: l, subscriber: a }),
+                    {
+                        unsubscribe: () => {
+                            c?.delete({ topic: l, subscriber: a });
+                        },
+                    }
+                );
+            }
+            try {
+                d.displayName || (d.displayName = "AliveTestContext");
+            } catch {}
+            try {
+                (n = function ({ children: e, initialMessages: a }) {
+                    return (
+                        (0, t.useEffect)(() => {
+                            let e = [];
+                            if (a)
+                                for (let [l, n] of a) {
+                                    let a = window.setTimeout(() => {
+                                        var e = l,
+                                            a = n;
+                                        if (null === c)
+                                            throw Error(
+                                                'Test helper `dispatchAliveTestMessage` called outside `AliveTestProvider`. Please wrap your component under test in `AliveTestProvider` from "@github-ui/use-alive/test-utils".'
+                                            );
+                                        for (let l of Array.from(
+                                            c.subscribers(e)
+                                        ))
+                                            l(a);
+                                    }, 0);
+                                    e.push(a);
+                                }
+                            return () => {
+                                for (let a of ((c = null), e))
+                                    window.clearTimeout(a);
+                            };
+                        }),
+                        (0, o.jsx)(d.Provider, { value: m, children: e })
+                    );
+                }).displayName || (n.displayName = "AliveTestProvider");
+            } catch {}
+            function g(e, a) {
+                let l = (0, i.A)(),
+                    n = (0, t.useContext)(d);
+                (0, t.useEffect)(() => {
+                    let t = () => {},
+                        i = !1;
+                    return (
+                        (async function () {
+                            if (e) {
+                                if ("function" == typeof n) {
+                                    let l = await n(e, a);
+                                    l && (t = l.unsubscribe);
+                                    return;
+                                }
+                                try {
+                                    let n = await (0, s.H)();
+                                    if (i) return;
+                                    let o = (0, r.$)(n, e, a);
+                                    o?.unsubscribe &&
+                                        (l()
+                                            ? (t = o.unsubscribe)
+                                            : o.unsubscribe());
+                                } catch (e) {
+                                    console.error(e);
+                                }
+                            }
+                        })(),
+                        () => {
+                            ((i = !0), t());
+                        }
+                    );
+                }, [e, a, l, n]);
             }
         },
         39111: (e, a, l) => {
@@ -44663,7 +44824,7 @@
                 s = l(26108),
                 r = l(96540),
                 o = l(34164),
-                u = l(11196),
+                u = l(21998),
                 d = l(4559),
                 c = l(40260);
             let m = { tooltip: "CopyToClipboardButton-module__tooltip--HDUYz" };
@@ -44681,8 +44842,8 @@
             }) {
                 let [C, S] = r.useState(!1),
                     F = (0, t.A)(),
-                    L = k ?? `Copy "${g}" to clipboard`,
-                    v = C ? "Copied!" : L,
+                    v = k ?? `Copy "${g}" to clipboard`,
+                    L = C ? "Copied!" : v,
                     _ = {
                         size: a,
                         variant: y,
@@ -44699,10 +44860,10 @@
                     },
                     I = (0, r.useId)();
                 return b
-                    ? (0, n.jsx)(s.K, { ..._, "aria-label": L, disabled: !0 })
-                    : (0, n.jsx)(u.m, {
-                          text: v,
-                          "aria-label": L,
+                    ? (0, n.jsx)(s.K, { ..._, "aria-label": v, disabled: !0 })
+                    : (0, n.jsx)(u.m_, {
+                          text: L,
+                          "aria-label": v,
                           type: "label",
                           id: I,
                           "aria-hidden": !0,
@@ -44719,7 +44880,7 @@
             } catch {}
         },
         16070: (e, a, l) => {
-            l.d(a, { Y0: () => V, $I: () => A, kR: () => D });
+            l.d(a, { Y0: () => D, $I: () => A, kR: () => V });
             var n = l(74848),
                 t = l(21728),
                 i = l(96540),
@@ -44853,14 +45014,14 @@
             } catch {}
             var S = l(1992),
                 F = l(5524),
-                L = l(46251);
-            let v = [
+                v = l(46251);
+            let L = [
                     { id: "one-day", text: "One day", days: 1 },
                     { id: "one-week", text: "One week", days: 7 },
                     { id: "one-month", text: "One month", days: 30 },
                     { id: "one-year", text: "One year", days: 365 },
                 ],
-                _ = () => v.findIndex((e) => 30 === e.days);
+                _ = () => L.findIndex((e) => 30 === e.days);
             function I(e) {
                 let a,
                     l,
@@ -44869,7 +45030,7 @@
                     o,
                     u = (0, t.c)(11),
                     { selectedDurationIndex: d, onDurationChange: c } = e,
-                    m = v[d];
+                    m = L[d];
                 u[0] === Symbol.for("react.memo_cache_sentinel")
                     ? ((a = (0, n.jsx)("span", {
                           id: "dismissal-duration-label",
@@ -44889,7 +45050,7 @@
                           (u[2] = l))
                         : (l = u[2]),
                     u[3] !== c || u[4] !== d
-                        ? ((i = v.map((e, a) =>
+                        ? ((i = L.map((e, a) =>
                               (0, n.jsx)(
                                   F.l.Item,
                                   {
@@ -44919,7 +45080,7 @@
                           (u[7] = s))
                         : (s = u[7]),
                     u[8] !== l || u[9] !== s
-                        ? ((o = (0, n.jsxs)(L.B, {
+                        ? ((o = (0, n.jsxs)(v.B, {
                               align: "center",
                               direction: "horizontal",
                               className: y.durationSelector,
@@ -44951,10 +45112,10 @@
                     g,
                     p = (0, t.c)(23),
                     { isOpen: y, onClose: k, onConfirm: C, ssoOrgs: S } = e,
-                    [F, L] = i.useState(_);
+                    [F, v] = i.useState(_);
                 (p[0] !== y
                     ? ((a = () => {
-                          y && L(_());
+                          y && v(_());
                       }),
                       (l = [y]),
                       (p[0] = y),
@@ -44964,7 +45125,7 @@
                     i.useEffect(a, l),
                     p[3] !== C || p[4] !== F
                         ? ((s = () => {
-                              let e = v[F];
+                              let e = L[F];
                               C(e?.days ?? 30);
                           }),
                           (p[3] = C),
@@ -45005,7 +45166,7 @@
                       p[15] !== F
                           ? ((c = (0, n.jsx)(I, {
                                 selectedDurationIndex: F,
-                                onDurationChange: L,
+                                onDurationChange: v,
                             })),
                             (p[15] = F),
                             (p[16] = c))
@@ -45205,16 +45366,16 @@
                     C,
                     S,
                     F,
-                    L,
                     v,
+                    L,
                     _,
                     I,
                     x,
                     w = (0, t.c)(35),
                     { ssoOrgs: j } = e,
                     T = (0, o.zy)(),
-                    [A, V] = i.useState("visible"),
-                    [D, E] = i.useState(!1),
+                    [A, D] = i.useState("visible"),
+                    [V, E] = i.useState(!1),
                     q = i.useRef(!1),
                     { sendClickAnalyticsEvent: O } = (0, g.S)();
                 w[0] === Symbol.for("react.memo_cache_sentinel")
@@ -45247,7 +45408,7 @@
                     return null;
                 w[5] !== j
                     ? ((p = (e) => {
-                          V("hidden");
+                          D("hidden");
                           let a = j.map((e) => e.id);
                           ((0, d.G7)("global_sso_banner_dismiss_dialog") &&
                               (a = [...new Set([...P(), ...a])].sort()),
@@ -45357,7 +45518,7 @@
                           (w[19] = F))
                         : (F = w[19]),
                     w[20] !== Q || w[21] !== S || w[22] !== F
-                        ? ((L = (0, n.jsx)(s.l, {
+                        ? ((v = (0, n.jsx)(s.l, {
                               title: "Single-sign on",
                               className: y.banner,
                               hideTitle: !0,
@@ -45370,15 +45531,15 @@
                           (w[20] = Q),
                           (w[21] = S),
                           (w[22] = F),
-                          (w[23] = L))
-                        : (L = w[23]),
-                    w[24] !== L || w[25] !== z
-                        ? ((v = (0, n.jsx)(k, { hidden: z, children: L })),
-                          (w[24] = L),
+                          (w[23] = v))
+                        : (v = w[23]),
+                    w[24] !== v || w[25] !== z
+                        ? ((L = (0, n.jsx)(k, { hidden: z, children: v })),
+                          (w[24] = v),
                           (w[25] = z),
-                          (w[26] = v))
-                        : (v = w[26]));
-                let W = B && D;
+                          (w[26] = L))
+                        : (L = w[26]));
+                let W = B && V;
                 return (
                     w[27] === Symbol.for("react.memo_cache_sentinel")
                         ? ((_ = () => E(!1)), (w[27] = _))
@@ -45395,9 +45556,9 @@
                           (w[30] = W),
                           (w[31] = I))
                         : (I = w[31]),
-                    w[32] !== v || w[33] !== I
-                        ? ((x = (0, n.jsxs)(n.Fragment, { children: [v, I] })),
-                          (w[32] = v),
+                    w[32] !== L || w[33] !== I
+                        ? ((x = (0, n.jsxs)(n.Fragment, { children: [L, I] })),
+                          (w[32] = L),
                           (w[33] = I),
                           (w[34] = x))
                         : (x = w[34]),
@@ -45407,7 +45568,7 @@
             function M(e) {
                 return (0, n.jsx)("strong", { children: e.name }, e.login);
             }
-            function V() {
+            function D() {
                 let e,
                     a = (0, t.c)(2),
                     { ssoOrgs: l, suppressBanner: s } = (function () {
@@ -45447,12 +45608,12 @@
                           : (e = a[1]),
                       e);
             }
-            let D = N.z4;
+            let V = N.z4;
             try {
                 A.displayName || (A.displayName = "GlobalSsoBanner");
             } catch {}
             try {
-                V.displayName || (V.displayName = "ContextualGlobalSsoBanner");
+                D.displayName || (D.displayName = "ContextualGlobalSsoBanner");
             } catch {}
         },
         79272: (e, a, l) => {
@@ -45837,7 +45998,7 @@
                             (await this.processSuggestions(
                                 e,
                                 a,
-                                (0, n._)(this, C, L).bind(this),
+                                (0, n._)(this, C, v).bind(this),
                                 t
                             )) || [],
                         r = [];
@@ -46023,7 +46184,7 @@
                         (this.relayEnvironment = l),
                         (this.repositoryScope = s),
                         (this.projectScope = r),
-                        (this.requestVariables = (0, n._)(this, S, v).call(
+                        (this.requestVariables = (0, n._)(this, S, L).call(
                             this
                         )),
                         (this.requestDisposable = (0, n._)(this, F, _).call(
@@ -46032,7 +46193,7 @@
                         (this.legacy = a));
                 }
             };
-            function L(e, a) {
+            function v(e, a) {
                 let { name: l } = e,
                     n = 3;
                 return (
@@ -46048,7 +46209,7 @@
                     }
                 );
             }
-            function v() {
+            function L() {
                 if (this.repositoryScope) {
                     let e = this.repositoryScope.split("/");
                     return { owner: e[0] || "", name: e[1] || "" };
@@ -46354,7 +46515,7 @@
             } catch {}
         },
         95378: (e, a, l) => {
-            l.d(a, { kx: () => L, ao: () => F });
+            l.d(a, { kx: () => v, ao: () => F });
             var n,
                 t,
                 i = l(74848),
@@ -46509,7 +46670,7 @@
                     (0, i.jsx)(S, {
                         header:
                             g.href || g.onClick
-                                ? (0, i.jsx)(v, {
+                                ? (0, i.jsx)(L, {
                                       anchorRef: y,
                                       ...g,
                                       children: (0, i.jsx)("span", {
@@ -46529,7 +46690,7 @@
                     })
                 );
             }
-            function L({
+            function v({
                 children: e,
                 html: a,
                 containerStyle: l,
@@ -46558,7 +46719,7 @@
                     })
                 );
             }
-            function v({
+            function L({
                 anchorStyle: e,
                 anchorClassName: a,
                 anchorRef: l,
@@ -46607,7 +46768,7 @@
                 F.displayName || (F.displayName = "ListItemTitle");
             } catch {}
             try {
-                L.displayName || (L.displayName = "ListItemSafeHTMLTitle");
+                v.displayName || (v.displayName = "ListItemSafeHTMLTitle");
             } catch {}
             try {
                 (t = function ({
@@ -46641,7 +46802,7 @@
                 }).displayName || (t.displayName = "ListItemUnsafeHTMLTitle");
             } catch {}
             try {
-                v.displayName || (v.displayName = "HeadingLink");
+                L.displayName || (L.displayName = "HeadingLink");
             } catch {}
         },
         42299: (e, a, l) => {
@@ -46776,9 +46937,9 @@
                 count: "SelectAllCheckbox-module__count--OFClN",
             };
             var F = l(24347),
-                L = l(61015);
-            let v = ({ onToggle: e, style: a, className: l }) => {
-                let { title: n } = (0, L.t)(),
+                v = l(61015);
+            let L = ({ onToggle: e, style: a, className: l }) => {
+                let { title: n } = (0, v.t)(),
                     {
                         isSelectable: u,
                         selectedCount: d,
@@ -46790,7 +46951,7 @@
                         pluralUnits: k,
                     } = (0, F.v)(),
                     { multiPageSelectionAllowed: h } = (0, C.P)(),
-                    v = (0, o.useId)(),
+                    L = (0, o.useId)(),
                     _ = (0, o.useRef)(null),
                     I = (0, o.useRef)(null),
                     K = (0, o.useMemo)(
@@ -46814,12 +46975,12 @@
                     !u)
                 )
                     return null;
-                let P = `${v}-list-view-select-all`;
+                let P = `${L}-list-view-select-all`;
                 return (0, t.jsxs)("div", {
                     style: a,
                     className: (0, r.$)(S.container, l),
                     ...(0, s.G)("list-view-select-all-container"),
-                    id: `${v}-list-view-select-all-container`,
+                    id: `${L}-list-view-select-all-container`,
                     children: [
                         (0, t.jsx)("div", {
                             className: S.formControlContainer,
@@ -46875,7 +47036,7 @@
                 });
             };
             try {
-                v.displayName || (v.displayName = "ListViewSelectAllCheckbox");
+                L.displayName || (L.displayName = "ListViewSelectAllCheckbox");
             } catch {}
             let _ = ({ sectionFilters: e }) =>
                     e
@@ -46901,7 +47062,7 @@
                 }) => {
                     let { idPrefix: I } = (0, p.If)(),
                         { anyItemsSelected: x } = (0, F.v)(),
-                        { setHasMetadataTitle: w } = (0, L.t)(),
+                        { setHasMetadataTitle: w } = (0, v.t)(),
                         N = (0, d.m)("list-view-metadata"),
                         j = (0, o.useRef)(null);
                     return (
@@ -46921,7 +47082,7 @@
                             style: c,
                             ...(0, s.G)("list-view-metadata"),
                             children: [
-                                (0, t.jsx)(v, {
+                                (0, t.jsx)(L, {
                                     onToggle: (e) => {
                                         b && b(e);
                                     },
@@ -47084,6 +47245,199 @@
                 t.displayName || (t.displayName = "PercentageCircle");
             } catch {}
         },
+        78809: (e, a, l) => {
+            l.d(a, { P: () => f });
+            var n = l(74848),
+                t = l(11683),
+                i = l(45800),
+                s = l(31604),
+                r = l(5524),
+                o = l(96540),
+                u = l(11196),
+                d = l(21373),
+                c = l(34164),
+                m = l(79866);
+            let g = {
+                reactionToggleButton:
+                    "ReactionButton-module__reactionToggleButton--axnvQ",
+                reactionToggleButtonReacted:
+                    "ReactionButton-module__reactionToggleButtonReacted--TgLue",
+            };
+            function p({ reactionGroup: e, disabled: a, onReact: l }) {
+                let { content: t, viewerHasReacted: i } = e.reaction,
+                    { reactors: s, totalCount: r } = e,
+                    p = (0, o.useId)();
+                if (0 === r) return null;
+                let y = s.flatMap((e) =>
+                        "Other" !== e.typeName ? [e.login] : []
+                    ),
+                    k = (0, m.JQ)(t, i),
+                    h = (0, m.fj)(t, r);
+                return (0, n.jsx)(u.m, {
+                    text: (0, m.Js)(y, r),
+                    type: "description",
+                    direction: "ne",
+                    children: (0, n.jsxs)(d.Q, {
+                        size: "small",
+                        "aria-label": h,
+                        role: "switch",
+                        "aria-checked": i,
+                        leadingVisual: () =>
+                            (0, n.jsx)(n.Fragment, { children: m.qG[t] }),
+                        onClick: () => l(t, i),
+                        disabled: a,
+                        className: (0, c.$)(
+                            g.reactionToggleButton,
+                            i && g.reactionToggleButtonReacted
+                        ),
+                        "aria-describedby": p,
+                        children: [
+                            (0, n.jsx)("span", {
+                                className: "sr-only",
+                                id: p,
+                                children: k,
+                            }),
+                            r,
+                        ],
+                    }),
+                });
+            }
+            try {
+                p.displayName || (p.displayName = "ReactionButton");
+            } catch {}
+            var y = l(21998);
+            let k = {
+                ReactionsMenuOption:
+                    "ReactionsMenuItem-module__ReactionsMenuOption--uvJoP",
+            };
+            function h({ onReact: e, reaction: a }) {
+                let { content: l, viewerHasReacted: t } = a;
+                return (0, n.jsx)(
+                    y.lF.Item,
+                    {
+                        sx: {
+                            "&:hover": { backgroundColor: "accent.emphasis" },
+                            backgroundColor: t
+                                ? "accent.subtle"
+                                : "transparent",
+                        },
+                        role: "menuitemcheckbox",
+                        "aria-checked": t,
+                        onSelect: () => e(l, t),
+                        className: k.ReactionsMenuOption,
+                        children: m.qG[l],
+                    },
+                    l
+                );
+            }
+            try {
+                h.displayName || (h.displayName = "ReactionsMenuItem");
+            } catch {}
+            var b = l(97911);
+            function f({ reactionGroups: e, canReact: a = !0, onReact: l }) {
+                let [u, d] = (0, o.useState)(!1),
+                    c = e.length > 0,
+                    { containerRef: m } = (0, i.G)({
+                        bindKeys: t.z0.HomeAndEnd | t.z0.ArrowHorizontal,
+                        focusOutBehavior: "wrap",
+                    });
+                return (0, n.jsxs)("div", {
+                    role: "toolbar",
+                    "aria-label": "Reactions",
+                    ref: m,
+                    className: "d-flex gap-1 flex-wrap",
+                    children: [
+                        a &&
+                            (0, n.jsx)(s.T, {
+                                open: u,
+                                onOpen: () => d(c),
+                                onClose: () => d(!1),
+                                anchorRef: m,
+                                focusZoneSettings: {
+                                    bindKeys: t.z0.ArrowAll | t.z0.HomeAndEnd,
+                                    focusOutBehavior: "wrap",
+                                },
+                                renderAnchor: (e) =>
+                                    (0, n.jsx)(b.N, {
+                                        renderAnchorProps: e,
+                                        reactionsAvailable: c,
+                                    }),
+                                children: (0, n.jsx)(r.l, {
+                                    className: "d-flex flex-row p-1 gap-1",
+                                    role: "menu",
+                                    "aria-orientation": "horizontal",
+                                    children: (e || []).map((e, a) =>
+                                        (0, n.jsx)(
+                                            h,
+                                            {
+                                                reaction: e.reaction,
+                                                onReact: (e, a) => {
+                                                    (l(e, a), d(!1));
+                                                },
+                                            },
+                                            a
+                                        )
+                                    ),
+                                }),
+                            }),
+                        (e || []).map((e, a) =>
+                            (0, n.jsx)(
+                                p,
+                                {
+                                    reactionGroup: e,
+                                    onReact: (e, a) => l(e, a),
+                                },
+                                a
+                            )
+                        ),
+                    ],
+                });
+            }
+            try {
+                f.displayName || (f.displayName = "ReactionViewerBase");
+            } catch {}
+        },
+        97911: (e, a, l) => {
+            l.d(a, { N: () => u });
+            var n = l(74848),
+                t = l(38621),
+                i = l(26108),
+                s = l(74079),
+                r = l(74547);
+            let o = {
+                ReactionViewerAnchorButton:
+                    "ReactionViewerAnchor-module__ReactionViewerAnchorButton--kb52r",
+            };
+            function u({ renderAnchorProps: e, reactionsAvailable: a }) {
+                let l = (0, n.jsx)(d, {
+                    renderAnchorProps: e,
+                    reactionsAvailable: a,
+                });
+                return a
+                    ? l
+                    : (0, n.jsx)(s.A, {
+                          "aria-label": r.t.reactionsUnavailable,
+                          children: l,
+                      });
+            }
+            let d = ({ renderAnchorProps: e, reactionsAvailable: a }) =>
+                (0, n.jsx)(i.K, {
+                    unsafeDisableTooltip: !0,
+                    size: "small",
+                    icon: t.SmileyIcon,
+                    ...e,
+                    "aria-label": r.t.addOrRemoveReaction,
+                    inactive: !a,
+                    "aria-labelledby": void 0,
+                    className: o.ReactionViewerAnchorButton,
+                });
+            try {
+                u.displayName || (u.displayName = "ReactionViewerAnchor");
+            } catch {}
+            try {
+                d.displayName || (d.displayName = "BaseIcon");
+            } catch {}
+        },
         25111: (e, a, l) => {
             l.d(a, { X: () => k });
             var n,
@@ -47163,10 +47517,10 @@
                 },
                 F = {}
             ) {
-                let L = a || n?.displayName;
-                if (void 0 === L) throw Error("invalid internal resourceName");
-                let v = {
-                    root: o(L, l, n),
+                let v = a || n?.displayName;
+                if (void 0 === v) throw Error("invalid internal resourceName");
+                let L = {
+                    root: o(v, l, n),
                     getPreloadProps: (e) => ({
                         queries: (function (e, a, l, n) {
                             let t = {};
@@ -47263,7 +47617,7 @@
                         }));
                     let d = (0, p.loadEntryPoint)(
                         { getEnvironment: () => h },
-                        v,
+                        L,
                         { pathParams: e, searchParams: a }
                     );
                     return {
@@ -47363,9 +47717,9 @@
                     "aria-label": C,
                     "aria-labelledby": S,
                     defaultCloseElement: F = "button",
-                    externalFocusTrapDisabled: L = !1,
+                    externalFocusTrapDisabled: v = !1,
                 }) => {
-                    let v = (0, t.useMemo)(
+                    let L = (0, t.useMemo)(
                             () =>
                                 Array.isArray(f)
                                     ? f
@@ -47375,11 +47729,11 @@
                             [f]
                         ),
                         _ = (0, t.useRef)(null),
-                        [I, K] = (0, t.useState)(null === _.current || !p || L),
+                        [I, K] = (0, t.useState)(null === _.current || !p || v),
                         { initialFocusRef: x } = (0, i.r)({
                             initialFocusRef: a,
                             containerRef: _,
-                            disabled: L || I,
+                            disabled: v || I,
                         }),
                         w = window.matchMedia(
                             "(prefers-reduced-motion: reduce)"
@@ -47401,7 +47755,7 @@
                             (a.id === d.wg || a.id === d.uN) &&
                                 (K(!0), window.setTimeout(() => a.focus()));
                         }, []),
-                        V = (0, t.useCallback)(
+                        D = (0, t.useCallback)(
                             (e) => {
                                 let a = e.target;
                                 if (
@@ -47440,14 +47794,14 @@
                                     }
                                 );
                         }, []));
-                    let D = (0, t.useCallback)(() => {
+                    let V = (0, t.useCallback)(() => {
                         I && K(!p);
                     }, [I, p]);
                     return N
                         ? (0, n.jsxs)(s.Ay, {
                               initialFocusRef: x,
                               returnFocusRef: l,
-                              onKeyDown: V,
+                              onKeyDown: D,
                               onEscape: k,
                               onClickOutside: () => {},
                               ref: _,
@@ -47459,7 +47813,7 @@
                                   "--transition-duration": "200ms",
                                   "--top-offset": `${b}px`,
                               },
-                              onFocus: D,
+                              onFocus: V,
                               className: m.Overlay,
                               children: [
                                   (0, n.jsx)(
@@ -47474,7 +47828,7 @@
                                       }
                                   ),
                                   (0, n.jsxs)(o.az, {
-                                      sx: { width: v },
+                                      sx: { width: L },
                                       className: (0, g.$)(
                                           m.sidePanel,
                                           (R || w) && m.openSidePanel,
@@ -47565,7 +47919,7 @@
                 )
                     return null;
                 let F = Math.max(0, l.length - s),
-                    L =
+                    v =
                         1 === l.length || F > 0
                             ? (0, n.jsx)("b", {
                                   children: l.slice(0, s).join(", "),
@@ -47647,7 +48001,7 @@
                                                                           {
                                                                               children:
                                                                                   [
-                                                                                      L,
+                                                                                      v,
                                                                                       " ",
                                                                                   ],
                                                                           }
@@ -47839,6 +48193,233 @@
                 m.displayName || (m.displayName = "Toasts");
             } catch {}
         },
+        37351: (e, a, l) => {
+            l.d(a, { _: () => n });
+            function n(e, a) {
+                if (e !== a)
+                    throw TypeError(
+                        "Private static access of wrong provenance"
+                    );
+            }
+        },
+        44953: (e, a, l) => {
+            l.d(a, { _: () => n });
+            function n(e, a) {
+                if (void 0 === e)
+                    throw TypeError(
+                        "attempted to " +
+                            a +
+                            " private static field before its declaration"
+                    );
+            }
+        },
+        81075: (e, a, l) => {
+            l.d(a, { _: () => s });
+            var n = l(50894),
+                t = l(37351),
+                i = l(44953);
+            function s(e, a, l) {
+                return ((0, t._)(e, a), (0, i._)(l, "get"), (0, n._)(e, l));
+            }
+        },
+        75735: (e, a, l) => {
+            l.d(a, { _: () => s });
+            var n = l(5570),
+                t = l(37351),
+                i = l(44953);
+            function s(e, a, l, s) {
+                return (
+                    (0, t._)(e, a),
+                    (0, i._)(l, "set"),
+                    (0, n._)(e, l, s),
+                    s
+                );
+            }
+        },
+        84929: (e, a, l) => {
+            l.d(a, { H: () => t });
+            var n = l(2940);
+            function t(e, a) {
+                let l,
+                    t,
+                    g = a?.additionalDigits ?? 2,
+                    p = (function (e) {
+                        let a,
+                            l = {},
+                            n = e.split(i.dateTimeDelimiter);
+                        if (n.length > 2) return l;
+                        if (
+                            (/:/.test(n[0])
+                                ? (a = n[0])
+                                : ((l.date = n[0]),
+                                  (a = n[1]),
+                                  i.timeZoneDelimiter.test(l.date) &&
+                                      ((l.date = e.split(
+                                          i.timeZoneDelimiter
+                                      )[0]),
+                                      (a = e.substr(l.date.length, e.length)))),
+                            a)
+                        ) {
+                            let e = i.timezone.exec(a);
+                            e
+                                ? ((l.time = a.replace(e[1], "")),
+                                  (l.timezone = e[1]))
+                                : (l.time = a);
+                        }
+                        return l;
+                    })(e);
+                if (p.date) {
+                    let e = (function (e, a) {
+                        let l = RegExp(
+                                "^(?:(\\d{4}|[+-]\\d{" +
+                                    (4 + a) +
+                                    "})|(\\d{2}|[+-]\\d{" +
+                                    (2 + a) +
+                                    "})$)"
+                            ),
+                            n = e.match(l);
+                        if (!n) return { year: NaN, restDateString: "" };
+                        let t = n[1] ? parseInt(n[1]) : null,
+                            i = n[2] ? parseInt(n[2]) : null;
+                        return {
+                            year: null === i ? t : 100 * i,
+                            restDateString: e.slice((n[1] || n[2]).length),
+                        };
+                    })(p.date, g);
+                    l = (function (e, a) {
+                        var l, n, t, i, r, o, d;
+                        if (null === a) return new Date(NaN);
+                        let g = e.match(s);
+                        if (!g) return new Date(NaN);
+                        let p = !!g[4],
+                            y = u(g[1]),
+                            k = u(g[2]) - 1,
+                            h = u(g[3]),
+                            b = u(g[4]),
+                            f = u(g[5]) - 1;
+                        if (p) {
+                            return ((l = b),
+                            (n = f),
+                            l >= 1 && l <= 53 && n >= 0 && n <= 6)
+                                ? (function (e, a, l) {
+                                      let n = new Date(0);
+                                      n.setUTCFullYear(e, 0, 4);
+                                      let t = n.getUTCDay() || 7;
+                                      return (
+                                          n.setUTCDate(
+                                              n.getUTCDate() +
+                                                  ((a - 1) * 7 + l + 1 - t)
+                                          ),
+                                          n
+                                      );
+                                  })(a, b, f)
+                                : new Date(NaN);
+                        }
+                        {
+                            let e = new Date(0);
+                            return ((t = a),
+                            (i = k),
+                            (r = h),
+                            i >= 0 &&
+                                i <= 11 &&
+                                r >= 1 &&
+                                r <= (c[i] || (m(t) ? 29 : 28)) &&
+                                ((o = a),
+                                (d = y) >= 1 && d <= (m(o) ? 366 : 365)))
+                                ? (e.setUTCFullYear(a, k, Math.max(y, h)), e)
+                                : new Date(NaN);
+                        }
+                    })(e.restDateString, e.year);
+                }
+                if (!l || isNaN(l.getTime())) return new Date(NaN);
+                let y = l.getTime(),
+                    k = 0;
+                if (
+                    p.time &&
+                    isNaN(
+                        (k = (function (e) {
+                            var a, l, t;
+                            let i = e.match(r);
+                            if (!i) return NaN;
+                            let s = d(i[1]),
+                                o = d(i[2]),
+                                u = d(i[3]);
+                            return ((a = s),
+                            (l = o),
+                            (t = u),
+                            24 === a
+                                ? 0 === l && 0 === t
+                                : t >= 0 &&
+                                  t < 60 &&
+                                  l >= 0 &&
+                                  l < 60 &&
+                                  a >= 0 &&
+                                  a < 25)
+                                ? s * n.s0 + o * n.Cg + 1e3 * u
+                                : NaN;
+                        })(p.time))
+                    )
+                )
+                    return new Date(NaN);
+                if (p.timezone) {
+                    if (
+                        isNaN(
+                            (t = (function (e) {
+                                var a;
+                                if ("Z" === e) return 0;
+                                let l = e.match(o);
+                                if (!l) return 0;
+                                let t = "+" === l[1] ? -1 : 1,
+                                    i = parseInt(l[2]),
+                                    s = (l[3] && parseInt(l[3])) || 0;
+                                return (a = s) >= 0 && a <= 59
+                                    ? t * (i * n.s0 + s * n.Cg)
+                                    : NaN;
+                            })(p.timezone))
+                        )
+                    )
+                        return new Date(NaN);
+                } else {
+                    let e = new Date(y + k),
+                        a = new Date(0);
+                    return (
+                        a.setFullYear(
+                            e.getUTCFullYear(),
+                            e.getUTCMonth(),
+                            e.getUTCDate()
+                        ),
+                        a.setHours(
+                            e.getUTCHours(),
+                            e.getUTCMinutes(),
+                            e.getUTCSeconds(),
+                            e.getUTCMilliseconds()
+                        ),
+                        a
+                    );
+                }
+                return new Date(y + k + t);
+            }
+            let i = {
+                    dateTimeDelimiter: /[T ]/,
+                    timeZoneDelimiter: /[Z ]/i,
+                    timezone: /([Z+-].*)$/,
+                },
+                s =
+                    /^-?(?:(\d{3})|(\d{2})(?:-?(\d{2}))?|W(\d{2})(?:-?(\d{1}))?|)$/,
+                r =
+                    /^(\d{2}(?:[.,]\d*)?)(?::?(\d{2}(?:[.,]\d*)?))?(?::?(\d{2}(?:[.,]\d*)?))?$/,
+                o = /^([+-])(\d{2})(?::?(\d{2}))?$/;
+            function u(e) {
+                return e ? parseInt(e) : 1;
+            }
+            function d(e) {
+                return (e && parseFloat(e.replace(",", "."))) || 0;
+            }
+            let c = [31, null, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+            function m(e) {
+                return e % 400 == 0 || (e % 4 == 0 && e % 100 != 0);
+            }
+        },
     },
     (e) => {
         (e.O(
@@ -47852,56 +48433,56 @@
                 "vendors-node_modules_stacktrace-parser_dist_stack-trace-parser_esm_js-node_modules_github_bro-2f4e04",
                 "vendors-node_modules_emotion_is-prop-valid_dist_emotion-is-prop-valid_esm_js-node_modules_emo-1fff13",
                 "vendors-node_modules_tanstack_query-core_build_modern_mutation_js-node_modules_tanstack_query-9bf7e4",
-                "vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_github_hydro-analytics-c-2a6094",
-                "vendors-node_modules_tanstack_query-core_build_modern_queryClient_js-node_modules_tanstack_re-d87a32",
+                "vendors-node_modules_github_mini-throttle_dist_index_js-node_modules_github_hydro-analytics-c-c228f9",
+                "vendors-node_modules_swc_helpers_esm__class_private_method_get_js-node_modules_swc_helpers_es-d6b1a6",
                 "vendors-node_modules_primer_behaviors_dist_esm_index_mjs",
-                "vendors-node_modules_github_relative-time-element_dist_index_js",
                 "vendors-node_modules_dompurify_dist_purify_es_mjs",
                 "vendors-node_modules_tanstack_query-core_build_modern_queryObserver_js-node_modules_tanstack_-defd52",
                 "vendors-node_modules_date-fns_format_mjs",
                 "vendors-node_modules_date-fns_addWeeks_mjs-node_modules_date-fns_addYears_mjs-node_modules_da-827f4f",
+                "vendors-node_modules_github_relative-time-element_dist_index_js",
                 "vendors-node_modules_focus-visible_dist_focus-visible_js-node_modules_lodash-es__isIterateeCa-89abd9",
                 "vendors-node_modules_lodash-es__Stack_js-node_modules_lodash-es__Uint8Array_js-node_modules_l-4faaa6",
                 "vendors-node_modules_github_hotkey_dist_index_js-node_modules_date-fns_getDaysInMonth_mjs-nod-70c11b",
-                "vendors-node_modules_dnd-kit_modifiers_dist_modifiers_esm_js-node_modules_dnd-kit_sortable_di-72228e",
-                "vendors-node_modules_swc_helpers_esm__define_property_js-node_modules_lodash-es__getAllKeys_j-86c8c2",
+                "vendors-node_modules_github_hydro-analytics-client_dist_analytics-client_js-node_modules_gith-c7919d",
+                "vendors-node_modules_dnd-kit_modifiers_dist_modifiers_esm_js-node_modules_dnd-kit_sortable_di-5ada6e",
                 "vendors-node_modules_braintree_browser-detection_dist_browser-detection_js-node_modules_githu-bb80ec",
-                "vendors-node_modules_lit-labs_react_index_js-node_modules_primer_styled-react_dist_index_js-n-bd78aa",
+                "vendors-node_modules_primer_styled-react_dist_index_js-node_modules_lodash-es_cloneDeep_js",
                 "vendors-node_modules_tanstack_react-virtual_dist_esm_index_js",
                 "vendors-node_modules_react-relay_index_js",
-                "vendors-node_modules_devlop_lib_default_js-node_modules_mdast-util-from-markdown_lib_index_js-cf17bf",
-                "vendors-node_modules_mdast-util-gfm_lib_index_js-node_modules_micromark-extension-gfm_index_js",
+                "vendors-node_modules_comma-separated-tokens_index_js-node_modules_mdast-util-from-markdown_li-6db53e",
+                "vendors-node_modules_hastscript_lib_index_js-node_modules_mdast-util-gfm_lib_index_js-node_mo-2895d2",
                 "vendors-node_modules_tanstack_react-query_build_modern_useQuery_js-node_modules_diff_lib_index_mjs",
                 "vendors-node_modules_codemirror_language_dist_index_js",
                 "vendors-node_modules_codemirror_commands_dist_index_js",
                 "vendors-node_modules_github_mini-throttle_dist_decorators_js-node_modules_accname_dist_access-a25db5",
-                "vendors-node_modules_github_g-emoji-element_dist_index_js-node_modules_github_paste-markdown_-822ce0",
+                "vendors-node_modules_github_g-emoji-element_dist_index_js-node_modules_github_paste-markdown_-663472",
                 "vendors-node_modules_github_catalyst_lib_index_js-node_modules_tanstack_react-query_build_mod-d1dec4",
-                "vendors-node_modules_github_quote-selection_dist_index_js-node_modules_react-relay_hooks_js-n-b61e95",
+                "vendors-node_modules_github_quote-selection_dist_index_js-node_modules_react-relay_hooks_js-n-634d07",
                 "packages_paths_index_ts",
                 "packages_ui-commands_ui-commands_ts",
                 "packages_date-picker_components_DatePicker_tsx",
                 "packages_drag-and-drop_drag-and-drop_ts-packages_hydro-analytics_hydro-analytics_ts",
                 "packages_list-view_src_hooks_use-next-header-tag_ts-packages_list-view_src_ListItem_ListItem_-055669",
-                "packages_filter_utils_index_ts-packages_fuzzy-score_fuzzy-score_ts-packages_use-analytics_use-efa20b",
-                "packages_ref-selector_RefSelector_tsx",
-                "packages_filter_Filter_tsx",
-                "packages_filter_providers_index_ts",
                 "packages_copilot-chat_utils_copilot-local-storage_ts",
+                "packages_filter_utils_index_ts-packages_fuzzy-score_fuzzy-score_ts-packages_use-analytics_use-efa20b",
+                "packages_filter_Filter_tsx",
+                "packages_ref-selector_RefSelector_tsx",
+                "packages_filter_providers_index_ts",
                 "packages_copilot-chat_components_tracing_TraceProvider_tsx",
                 "packages_copilot-chat_utils_CopilotChatContext_tsx-packages_safe-html_VerifiedHTML_tsx",
                 "packages_item-picker_components_RepositoryPicker_tsx",
-                "packages_history_history_ts-packages_relay-environment_relay-environment_ts-packages_soft-nav-319348",
-                "packages_use-client-value_use-client-value_ts-packages_issue-create_dialog_CreateIssueDialogE-b1118b",
+                "packages_history_history_ts-packages_relay-environment_relay-environment_ts-packages_soft-nav-c373e9",
+                "packages_use-client-value_use-client-value_ts-packages_issue-create_dialog_CreateIssueDialogE-7c0c7a",
                 "packages_commenting_constants_values_ts-packages_document-metadata_document-metadata_ts-packa-c2a275",
                 "packages_query-builder-element_query-builder-element_ts",
                 "packages_app-uuid_app-uuid_ts-packages_signed-commit-badge_index_ts",
                 "packages_markdown-viewer_NewMarkdownViewer_tsx",
-                "packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-d82ffd",
+                "packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-f7ccde",
             ],
             () => e((e.s = 91938))
         ),
             e.O());
     },
 ]);
-//# sourceMappingURL=issues-react-de33bd76e0df.js.map
+//# sourceMappingURL=issues-react-5d5cbea30176.js.map

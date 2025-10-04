@@ -1,5 +1,5 @@
 # Old
-i=i.replace(/(?<!\.)\.+$/,"")
+s=s.replace(/(?<!\.)\.+$/,"")
 
 # New
-i=i.endsWith("...")?i:i.replace(/\.+$/,"")
+s=s.endsWith("...")?s:s.replace(/\.+$/,"")
