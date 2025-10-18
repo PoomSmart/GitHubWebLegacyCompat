@@ -91,13 +91,11 @@
                             this.#s.setOptions(this.options),
                             t._defaulted &&
                                 !(0, h.f8)(this.options, t) &&
-                                this.#e
-                                    .getQueryCache()
-                                    .notify({
-                                        type: "observerOptionsUpdated",
-                                        query: this.#s,
-                                        observer: this,
-                                    }));
+                                this.#e.getQueryCache().notify({
+                                    type: "observerOptionsUpdated",
+                                    query: this.#s,
+                                    observer: this,
+                                }));
                         let s = this.hasListeners();
                         (s && d(this.#s, r, this.options, t) && this.#y(),
                             this.updateResult(),
@@ -390,12 +388,10 @@
                                 this.listeners.forEach((e) => {
                                     e(this.#n);
                                 }),
-                                this.#e
-                                    .getQueryCache()
-                                    .notify({
-                                        query: this.#s,
-                                        type: "observerResultsUpdated",
-                                    }));
+                                this.#e.getQueryCache().notify({
+                                    query: this.#s,
+                                    type: "observerResultsUpdated",
+                                }));
                         });
                     }
                 };

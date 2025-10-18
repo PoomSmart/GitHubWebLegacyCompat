@@ -42,8 +42,8 @@ const TEMP_DIR = path.join(__dirname, "temp-downloads");
 // File patterns to search for
 const FILE_PATTERNS = {
     "issues-react": /issues-react-[a-f0-9]+\.js$/,
-    "issue-viewer": /ui_packages_issue-viewer_.*-[a-f0-9]+\.js$/,
     "list-view": /ui_packages_list-view_.*-[a-f0-9]+\.js$/,
+    "nested-list-view": /packages_nested-list-view_src_NestedListItem_.*-[a-f0-9]+\.js$/,
     "react-core": /react-core-[a-f0-9]+\.js$/,
     "mdast-util":
         /vendors-node_modules_hastscript_lib_index_js-node_modules_mdast-util-gfm_lib_index_js-node_mo-[a-f0-9-]+\.js$/,
@@ -71,13 +71,13 @@ const FILE_PATTERNS = {
     "comment-box-markdown-css":
         /packages_comment-box_api_file-upload_ts-packages_comment-box_api_preview_ts-packages_markdown-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
     "commenting-markdown-css":
-        /packages_commenting_hooks_use-markdown-body_ts-packages_commenting_utils_blocked-commenting-[a-z0-9-]+\.[a-f0-9]+\.module\.css$/,
+        /packages_app-uuid_app-uuid_ts-packages_commenting_constants_values_ts-packages_document-metad-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
 };
 
 // Alternative patterns if primary ones don't match
 const ALTERNATIVE_PATTERNS = {
-    "issue-viewer": /issue-viewer.*-[a-f0-9]+\.js$/,
     "list-view": /list-view.*-[a-f0-9]+\.js$/,
+    "nested-list-view": /nested-list-view.*\.js$/i,
     "mdast-util": /vendors.*hastscript.*mdast-util.*\.js$/i,
     "text-expander": /text-expander.*-[a-f0-9]+\.js$/,
     "emoji-element": /emoji-element.*-[a-f0-9]+\.js$/,
@@ -98,15 +98,15 @@ const ALTERNATIVE_PATTERNS = {
     "issues-react-css": /issues-react.*\.module\.css$/,
     // Comment Box Markdown CSS fallback
     "comment-box-markdown-css": /comment-box.*markdown.*\.module\.css$/i,
-    // Commenting Markdown CSS fallback
-    "commenting-markdown-css": /commenting.*use-markdown-body.*\.module\.css$/i,
+    // Commenting Markdown CSS fallback - now matches app-uuid/commenting/document-metadata bundle
+    "commenting-markdown-css": /packages_app-uuid.*commenting.*document-metad.*\.module\.css$/i,
 };
 
 // Target files in scripts directory
 const TARGET_FILES = {
     "issues-react": "16.4-issues-react.js",
-    "issue-viewer": "16.4-issue-viewer.js",
     "list-view": "16.4-list-view.js",
+    "nested-list-view": "16.4-nested-list-view.js",
     "react-core": "16.4-a-react-core.js",
     "mdast-util": "16.4-mdast-util.js",
     "text-expander": "15.0-text-expander.js",
@@ -671,7 +671,9 @@ async function main() {
         // Step 2: Download matched files
         const downloadedFiles = {};
         for (const [key, url] of Object.entries(matches)) {
-            const filename = `${key}-new.js`;
+            // Use correct extension based on whether it's CSS or JS
+            const extension = CSS_KEYS.has(key) ? "css" : "js";
+            const filename = `${key}-new.${extension}`;
             const downloadPath = path.join(TEMP_DIR, filename);
             await downloadFile(url, downloadPath);
             downloadedFiles[key] = downloadPath;
@@ -685,6 +687,26 @@ async function main() {
             console.log(`Processing ${key} (keeping minified format)...`);
             const content = fs.readFileSync(downloadPath, "utf8");
             processedFiles[key] = content;
+        }
+
+        // Step 3.5: Also process existing files that weren't downloaded (still need patches)
+        console.log("\n--- Checking Existing Files for Patch Updates ---");
+        for (const [key, targetFileName] of Object.entries(TARGET_FILES)) {
+            // Skip if we already downloaded this file
+            if (downloadedFiles[key]) {
+                continue;
+            }
+
+            const isCss = CSS_KEYS.has(key);
+            const targetDir = isCss ? STYLES_DIR : SCRIPTS_DIR;
+            const targetFile = path.join(targetDir, targetFileName);
+
+            // Check if file exists locally
+            if (fs.existsSync(targetFile)) {
+                console.log(`Found existing file for ${key}, will process for patches...`);
+                const content = fs.readFileSync(targetFile, "utf8");
+                processedFiles[key] = content;
+            }
         }
 
         console.log("\n--- Applying Patches ---");
@@ -845,7 +867,8 @@ async function main() {
                 (file) =>
                     file.includes("react-core-formatted.js") ||
                     file.includes("react-core-temp.js") ||
-                    file.includes("-new.js") // Preserve all downloaded files for debugging
+                    file.includes("-new.js") || // Preserve all downloaded JS files for debugging
+                    file.includes("-new.css")   // Preserve all downloaded CSS files for debugging
             );
 
             if (debugFiles.length > 0) {

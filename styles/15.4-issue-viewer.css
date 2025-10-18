@@ -64,43 +64,6 @@
     gap: var(--base-size-4);
   }
 }
-.Avatar-module__avatarOuter--waYVs {
-  display: flex;
-}
-.Avatar-module__avatarInner--leXLe {
-  display: none !important;
-}
-.ActivityHeader-module__activityHeader--WiwzD {
-  grid-template-areas: "avatar     title   edits     badges      actions" "avatar     footer  footer     footer       footer";
-  grid-template-columns: auto 1fr auto auto auto;
-}
-.ActivityHeader-module__narrowViewportWrapper--k4ncm
-  .ActivityHeader-module__footer--ssKOW {
-  padding-bottom: 0;
-}
-.ActivityHeader-module__edits--WkfqY {
-  align-items: center;
-}
-.ActivityHeader-module__activityHeader--WiwzD {
-  display: flex;
-}
-.ActivityHeader-module__footer--ssKOW {
-  font-size: var(--text-body-size-medium, 14px);
-  padding-bottom: 0;
-}
-.ActivityHeader-module__narrowViewportWrapper--k4ncm {
-  display: flex;
-}
-.ActivityHeader-module__edits--WkfqY {
-  align-items: center;
-}
-.ActivityHeader-module__activityHeader--WiwzD {
-  display: flex;
-}
-.ActivityHeader-module__footer--ssKOW {
-  font-size: var(--text-body-size-medium, 14px);
-  padding-bottom: 0;
-}
 .MarkdownLastEditedBy-module__lastEditInfoContainer--EN_Qz {
   font-size: var(--text-body-size-small) !important;
 }

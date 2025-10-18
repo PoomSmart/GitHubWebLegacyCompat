@@ -5,363 +5,45 @@
         "vendors-node_modules_hastscript_lib_index_js-node_modules_mdast-util-gfm_lib_index_js-node_mo-2895d2",
     ],
     {
-        74313: (e, t, n) => {
-            n.d(t, { h: () => h, s: () => d });
-            var r = n(55035),
-                i = n(72282);
-            let o = /[#.]/g;
-            var l = n(91775),
-                a = n(77457),
-                s = n(72485);
-            let u = {}.hasOwnProperty;
-            function c(e, t, n) {
-                let r =
-                    n &&
-                    (function (e) {
-                        let t = {},
-                            n = -1;
-                        for (; ++n < e.length; ) t[e[n].toLowerCase()] = e[n];
-                        return t;
-                    })(n);
-                return function (n, a, ...c) {
-                    let h,
-                        d = -1;
-                    if (null == n)
-                        ((h = { type: "root", children: [] }), c.unshift(a));
-                    else if (
-                        (((h = (function (e, t) {
-                            let n,
-                                r,
-                                i = e || "",
-                                l = {},
-                                a = 0;
-                            for (; a < i.length; ) {
-                                o.lastIndex = a;
-                                let e = o.exec(i),
-                                    t = i.slice(a, e ? e.index : i.length);
-                                (t &&
-                                    (n
-                                        ? "#" === n
-                                            ? (l.id = t)
-                                            : Array.isArray(l.className)
-                                              ? l.className.push(t)
-                                              : (l.className = [t])
-                                        : (r = t),
-                                    (a += t.length)),
-                                    e && ((n = e[0]), a++));
-                            }
-                            return {
-                                type: "element",
-                                tagName: r || t || "div",
-                                properties: l,
-                                children: [],
-                            };
-                        })(n, t)).tagName = h.tagName.toLowerCase()),
-                        r && u.call(r, h.tagName) && (h.tagName = r[h.tagName]),
-                        (function (e) {
-                            if (
-                                null === e ||
-                                "object" != typeof e ||
-                                Array.isArray(e)
-                            )
-                                return !0;
-                            if ("string" != typeof e.type) return !1;
-                            for (let t of Object.keys(e)) {
-                                let n = e[t];
-                                if (n && "object" == typeof n) {
-                                    if (!Array.isArray(n)) return !0;
-                                    for (let e of n)
-                                        if (
-                                            "number" != typeof e &&
-                                            "string" != typeof e
-                                        )
-                                            return !0;
-                                }
-                            }
-                            return !!(
-                                "children" in e && Array.isArray(e.children)
-                            );
-                        })(a))
+        5594: (e, t, n) => {
+            n.d(t, { f: () => l });
+            var r = n(47970),
+                i = n(76814),
+                o = n(72534);
+            function l(e, t) {
+                let n = !1;
+                return (
+                    (0, r.YR)(e, function (e) {
+                        if (
+                            ("value" in e && /\r?\n|\r/.test(e.value)) ||
+                            "break" === e.type
+                        )
+                            return ((n = !0), i.dc);
+                    }),
+                    !!(
+                        (!e.depth || e.depth < 3) &&
+                        (0, o.d)(e) &&
+                        (t.options.setext || n)
                     )
-                        c.unshift(a);
-                    else {
-                        let t;
-                        for (t in a)
-                            u.call(a, t) &&
-                                (function (e, t, n, r) {
-                                    let o,
-                                        a = (0, l.I)(e, n),
-                                        c = -1;
-                                    if (null != r) {
-                                        if ("number" == typeof r) {
-                                            if (Number.isNaN(r)) return;
-                                            o = r;
-                                        } else
-                                            o =
-                                                "boolean" == typeof r
-                                                    ? r
-                                                    : "string" == typeof r
-                                                      ? a.spaceSeparated
-                                                          ? (0, s.q)(r)
-                                                          : a.commaSeparated
-                                                            ? (0, i.q)(r)
-                                                            : a.commaOrSpaceSeparated
-                                                              ? (0, s.q)(
-                                                                    (0, i.q)(
-                                                                        r
-                                                                    ).join(" ")
-                                                                )
-                                                              : f(
-                                                                    a,
-                                                                    a.property,
-                                                                    r
-                                                                )
-                                                      : Array.isArray(r)
-                                                        ? r.concat()
-                                                        : "style" === a.property
-                                                          ? (function (e) {
-                                                                let t,
-                                                                    n = [];
-                                                                for (t in e)
-                                                                    u.call(
-                                                                        e,
-                                                                        t
-                                                                    ) &&
-                                                                        n.push(
-                                                                            [
-                                                                                t,
-                                                                                e[
-                                                                                    t
-                                                                                ],
-                                                                            ].join(
-                                                                                ": "
-                                                                            )
-                                                                        );
-                                                                return n.join(
-                                                                    "; "
-                                                                );
-                                                            })(r)
-                                                          : String(r);
-                                        if (Array.isArray(o)) {
-                                            let e = [];
-                                            for (; ++c < o.length; ) {
-                                                let t = f(a, a.property, o[c]);
-                                                e[c] = t;
-                                            }
-                                            o = e;
-                                        }
-                                        if (
-                                            "className" === a.property &&
-                                            Array.isArray(t.className)
-                                        ) {
-                                            let e = o;
-                                            o = t.className.concat(e);
-                                        }
-                                        t[a.property] = o;
-                                    }
-                                })(e, h.properties, t, a[t]);
-                    }
-                    for (; ++d < c.length; )
-                        !(function e(t, n) {
-                            let r = -1;
-                            if (null == n);
-                            else if (
-                                "string" == typeof n ||
-                                "number" == typeof n
-                            )
-                                t.push({ type: "text", value: String(n) });
-                            else if (Array.isArray(n))
-                                for (; ++r < n.length; ) e(t, n[r]);
-                            else if ("object" == typeof n && "type" in n)
-                                "root" === n.type
-                                    ? e(t, n.children)
-                                    : t.push(n);
-                            else
-                                throw Error(
-                                    "Expected node, nodes, or string, got `" +
-                                        n +
-                                        "`"
-                                );
-                        })(h.children, c[d]);
-                    return (
-                        "element" === h.type &&
-                            "template" === h.tagName &&
-                            ((h.content = {
-                                type: "root",
-                                children: h.children,
-                            }),
-                            (h.children = [])),
-                        h
-                    );
-                };
+                );
             }
-            function f(e, t, n) {
-                if ("string" == typeof n) {
-                    if (e.number && n && !Number.isNaN(Number(n)))
-                        return Number(n);
-                    if (
-                        (e.boolean || e.overloadedBoolean) &&
-                        ("" === n || (0, a.S)(n) === (0, a.S)(t))
-                    )
-                        return !0;
-                }
-                return n;
-            }
-            let h = c(r.qy, "div"),
-                d = c(r.JW, "g", [
-                    "altGlyph",
-                    "altGlyphDef",
-                    "altGlyphItem",
-                    "animateColor",
-                    "animateMotion",
-                    "animateTransform",
-                    "clipPath",
-                    "feBlend",
-                    "feColorMatrix",
-                    "feComponentTransfer",
-                    "feComposite",
-                    "feConvolveMatrix",
-                    "feDiffuseLighting",
-                    "feDisplacementMap",
-                    "feDistantLight",
-                    "feDropShadow",
-                    "feFlood",
-                    "feFuncA",
-                    "feFuncB",
-                    "feFuncG",
-                    "feFuncR",
-                    "feGaussianBlur",
-                    "feImage",
-                    "feMerge",
-                    "feMergeNode",
-                    "feMorphology",
-                    "feOffset",
-                    "fePointLight",
-                    "feSpecularLighting",
-                    "feSpotLight",
-                    "feTile",
-                    "feTurbulence",
-                    "foreignObject",
-                    "glyphRef",
-                    "linearGradient",
-                    "radialGradient",
-                    "solidColor",
-                    "textArea",
-                    "textPath",
-                ]);
         },
-        95459: (e, t, n) => {
-            n.d(t, { T: () => o });
-            var r = n(76814),
-                i = n(69143);
-            function o(e, t, n) {
-                let o = (0, i.C)((n || {}).ignore || []),
-                    l = (function (e) {
-                        let t = [];
-                        if (!Array.isArray(e))
-                            throw TypeError(
-                                "Expected find and replace tuple or list of tuples"
-                            );
-                        let n = !e[0] || Array.isArray(e[0]) ? e : [e],
-                            r = -1;
-                        for (; ++r < n.length; ) {
-                            var i;
-                            let e = n[r];
-                            t.push([
-                                "string" == typeof (i = e[0])
-                                    ? RegExp(
-                                          (function (e) {
-                                              if ("string" != typeof e)
-                                                  throw TypeError(
-                                                      "Expected a string"
-                                                  );
-                                              return e
-                                                  .replace(
-                                                      /[|\\{}()[\]^$+*?.]/g,
-                                                      "\\$&"
-                                                  )
-                                                  .replace(/-/g, "\\x2d");
-                                          })(i),
-                                          "g"
-                                      )
-                                    : i,
-                                (function (e) {
-                                    return "function" == typeof e
-                                        ? e
-                                        : function () {
-                                              return e;
-                                          };
-                                })(e[1]),
-                            ]);
-                        }
-                        return t;
-                    })(t),
-                    a = -1;
-                for (; ++a < l.length; ) (0, r.VG)(e, "text", s);
-                function s(e, t) {
-                    let n,
-                        r = -1;
-                    for (; ++r < t.length; ) {
-                        let e = t[r],
-                            i = n ? n.children : void 0;
-                        if (o(e, i ? i.indexOf(e) : void 0, n)) return;
-                        n = e;
-                    }
-                    if (n)
-                        return (function (e, t) {
-                            let n = t[t.length - 1],
-                                r = l[a][0],
-                                i = l[a][1],
-                                o = 0,
-                                s = n.children.indexOf(e),
-                                u = !1,
-                                c = [];
-                            r.lastIndex = 0;
-                            let f = r.exec(e.value);
-                            for (; f; ) {
-                                let n = f.index,
-                                    l = {
-                                        index: f.index,
-                                        input: f.input,
-                                        stack: [...t, e],
-                                    },
-                                    a = i(...f, l);
-                                if (
-                                    ("string" == typeof a &&
-                                        (a =
-                                            a.length > 0
-                                                ? { type: "text", value: a }
-                                                : void 0),
-                                    !1 === a
-                                        ? (r.lastIndex = n + 1)
-                                        : (o !== n &&
-                                              c.push({
-                                                  type: "text",
-                                                  value: e.value.slice(o, n),
-                                              }),
-                                          Array.isArray(a)
-                                              ? c.push(...a)
-                                              : a && c.push(a),
-                                          (o = n + f[0].length),
-                                          (u = !0)),
-                                    !r.global)
-                                )
-                                    break;
-                                f = r.exec(e.value);
-                            }
-                            return (
-                                u
-                                    ? (o < e.value.length &&
-                                          c.push({
-                                              type: "text",
-                                              value: e.value.slice(o),
-                                          }),
-                                      n.children.splice(s, 1, ...c))
-                                    : (c = [e]),
-                                s + c.length
-                            );
-                        })(e, t);
-                }
+        23503: (e, t, n) => {
+            n.d(t, { T: () => r });
+            function r(e) {
+                return "&#x" + e.toString(16).toUpperCase() + ";";
+            }
+        },
+        35857: (e, t, n) => {
+            n.d(t, { m: () => r });
+            function r(e, t) {
+                return !!(
+                    !1 === t.options.fences &&
+                    e.value &&
+                    !e.lang &&
+                    /[^ \r\n]/.test(e.value) &&
+                    !/^[\t ]*(?:[\r\n]|$)|(?:^|[\r\n])[\t ]*$/.test(e.value)
+                );
             }
         },
         54157: (e, t, n) => {
@@ -1858,47 +1540,6 @@
                 },
             };
         },
-        23503: (e, t, n) => {
-            n.d(t, { T: () => r });
-            function r(e) {
-                return "&#x" + e.toString(16).toUpperCase() + ";";
-            }
-        },
-        35857: (e, t, n) => {
-            n.d(t, { m: () => r });
-            function r(e, t) {
-                return !!(
-                    !1 === t.options.fences &&
-                    e.value &&
-                    !e.lang &&
-                    /[^ \r\n]/.test(e.value) &&
-                    !/^[\t ]*(?:[\r\n]|$)|(?:^|[\r\n])[\t ]*$/.test(e.value)
-                );
-            }
-        },
-        5594: (e, t, n) => {
-            n.d(t, { f: () => l });
-            var r = n(47970),
-                i = n(76814),
-                o = n(72534);
-            function l(e, t) {
-                let n = !1;
-                return (
-                    (0, r.YR)(e, function (e) {
-                        if (
-                            ("value" in e && /\r?\n|\r/.test(e.value)) ||
-                            "break" === e.type
-                        )
-                            return ((n = !0), i.dc);
-                    }),
-                    !!(
-                        (!e.depth || e.depth < 3) &&
-                        (0, o.d)(e) &&
-                        (t.options.setext || n)
-                    )
-                );
-            }
-        },
         69384: (e, t, n) => {
             function r(e, t) {
                 return i(e, t.inConstruct, !0) && !i(e, t.notInConstruct, !1);
@@ -1911,6 +1552,315 @@
                 return !1;
             }
             n.d(t, { q: () => r });
+        },
+        74313: (e, t, n) => {
+            n.d(t, { h: () => h, s: () => d });
+            var r = n(55035),
+                i = n(72282);
+            let o = /[#.]/g;
+            var l = n(91775),
+                a = n(77457),
+                s = n(72485);
+            let u = {}.hasOwnProperty;
+            function c(e, t, n) {
+                let r =
+                    n &&
+                    (function (e) {
+                        let t = {},
+                            n = -1;
+                        for (; ++n < e.length; ) t[e[n].toLowerCase()] = e[n];
+                        return t;
+                    })(n);
+                return function (n, a, ...c) {
+                    let h,
+                        d = -1;
+                    if (null == n)
+                        ((h = { type: "root", children: [] }), c.unshift(a));
+                    else if (
+                        (((h = (function (e, t) {
+                            let n,
+                                r,
+                                i = e || "",
+                                l = {},
+                                a = 0;
+                            for (; a < i.length; ) {
+                                o.lastIndex = a;
+                                let e = o.exec(i),
+                                    t = i.slice(a, e ? e.index : i.length);
+                                (t &&
+                                    (n
+                                        ? "#" === n
+                                            ? (l.id = t)
+                                            : Array.isArray(l.className)
+                                              ? l.className.push(t)
+                                              : (l.className = [t])
+                                        : (r = t),
+                                    (a += t.length)),
+                                    e && ((n = e[0]), a++));
+                            }
+                            return {
+                                type: "element",
+                                tagName: r || t || "div",
+                                properties: l,
+                                children: [],
+                            };
+                        })(n, t)).tagName = h.tagName.toLowerCase()),
+                        r && u.call(r, h.tagName) && (h.tagName = r[h.tagName]),
+                        (function (e) {
+                            if (
+                                null === e ||
+                                "object" != typeof e ||
+                                Array.isArray(e)
+                            )
+                                return !0;
+                            if ("string" != typeof e.type) return !1;
+                            for (let t of Object.keys(e)) {
+                                let n = e[t];
+                                if (n && "object" == typeof n) {
+                                    if (!Array.isArray(n)) return !0;
+                                    for (let e of n)
+                                        if (
+                                            "number" != typeof e &&
+                                            "string" != typeof e
+                                        )
+                                            return !0;
+                                }
+                            }
+                            return !!(
+                                "children" in e && Array.isArray(e.children)
+                            );
+                        })(a))
+                    )
+                        c.unshift(a);
+                    else {
+                        let t;
+                        for (t in a)
+                            u.call(a, t) &&
+                                (function (e, t, n, r) {
+                                    let o,
+                                        a = (0, l.I)(e, n),
+                                        c = -1;
+                                    if (null != r) {
+                                        if ("number" == typeof r) {
+                                            if (Number.isNaN(r)) return;
+                                            o = r;
+                                        } else
+                                            o =
+                                                "boolean" == typeof r
+                                                    ? r
+                                                    : "string" == typeof r
+                                                      ? a.spaceSeparated
+                                                          ? (0, s.q)(r)
+                                                          : a.commaSeparated
+                                                            ? (0, i.q)(r)
+                                                            : a.commaOrSpaceSeparated
+                                                              ? (0, s.q)(
+                                                                    (0, i.q)(
+                                                                        r
+                                                                    ).join(" ")
+                                                                )
+                                                              : f(
+                                                                    a,
+                                                                    a.property,
+                                                                    r
+                                                                )
+                                                      : Array.isArray(r)
+                                                        ? r.concat()
+                                                        : "style" === a.property
+                                                          ? (function (e) {
+                                                                let t,
+                                                                    n = [];
+                                                                for (t in e)
+                                                                    u.call(
+                                                                        e,
+                                                                        t
+                                                                    ) &&
+                                                                        n.push(
+                                                                            [
+                                                                                t,
+                                                                                e[
+                                                                                    t
+                                                                                ],
+                                                                            ].join(
+                                                                                ": "
+                                                                            )
+                                                                        );
+                                                                return n.join(
+                                                                    "; "
+                                                                );
+                                                            })(r)
+                                                          : String(r);
+                                        if (Array.isArray(o)) {
+                                            let e = [];
+                                            for (; ++c < o.length; ) {
+                                                let t = f(a, a.property, o[c]);
+                                                e[c] = t;
+                                            }
+                                            o = e;
+                                        }
+                                        if (
+                                            "className" === a.property &&
+                                            Array.isArray(t.className)
+                                        ) {
+                                            let e = o;
+                                            o = t.className.concat(e);
+                                        }
+                                        t[a.property] = o;
+                                    }
+                                })(e, h.properties, t, a[t]);
+                    }
+                    for (; ++d < c.length; )
+                        !(function e(t, n) {
+                            let r = -1;
+                            if (null == n);
+                            else if (
+                                "string" == typeof n ||
+                                "number" == typeof n
+                            )
+                                t.push({ type: "text", value: String(n) });
+                            else if (Array.isArray(n))
+                                for (; ++r < n.length; ) e(t, n[r]);
+                            else if ("object" == typeof n && "type" in n)
+                                "root" === n.type
+                                    ? e(t, n.children)
+                                    : t.push(n);
+                            else
+                                throw Error(
+                                    "Expected node, nodes, or string, got `" +
+                                        n +
+                                        "`"
+                                );
+                        })(h.children, c[d]);
+                    return (
+                        "element" === h.type &&
+                            "template" === h.tagName &&
+                            ((h.content = {
+                                type: "root",
+                                children: h.children,
+                            }),
+                            (h.children = [])),
+                        h
+                    );
+                };
+            }
+            function f(e, t, n) {
+                if ("string" == typeof n) {
+                    if (e.number && n && !Number.isNaN(Number(n)))
+                        return Number(n);
+                    if (
+                        (e.boolean || e.overloadedBoolean) &&
+                        ("" === n || (0, a.S)(n) === (0, a.S)(t))
+                    )
+                        return !0;
+                }
+                return n;
+            }
+            let h = c(r.qy, "div"),
+                d = c(r.JW, "g", [
+                    "altGlyph",
+                    "altGlyphDef",
+                    "altGlyphItem",
+                    "animateColor",
+                    "animateMotion",
+                    "animateTransform",
+                    "clipPath",
+                    "feBlend",
+                    "feColorMatrix",
+                    "feComponentTransfer",
+                    "feComposite",
+                    "feConvolveMatrix",
+                    "feDiffuseLighting",
+                    "feDisplacementMap",
+                    "feDistantLight",
+                    "feDropShadow",
+                    "feFlood",
+                    "feFuncA",
+                    "feFuncB",
+                    "feFuncG",
+                    "feFuncR",
+                    "feGaussianBlur",
+                    "feImage",
+                    "feMerge",
+                    "feMergeNode",
+                    "feMorphology",
+                    "feOffset",
+                    "fePointLight",
+                    "feSpecularLighting",
+                    "feSpotLight",
+                    "feTile",
+                    "feTurbulence",
+                    "foreignObject",
+                    "glyphRef",
+                    "linearGradient",
+                    "radialGradient",
+                    "solidColor",
+                    "textArea",
+                    "textPath",
+                ]);
+        },
+        77760: (e, t, n) => {
+            function r(e) {
+                let t = String(e),
+                    n = [];
+                return {
+                    toOffset: function (e) {
+                        if (
+                            e &&
+                            "number" == typeof e.line &&
+                            "number" == typeof e.column &&
+                            !Number.isNaN(e.line) &&
+                            !Number.isNaN(e.column)
+                        ) {
+                            for (; n.length < e.line; ) {
+                                let e = n[n.length - 1],
+                                    r = i(t, e),
+                                    o = -1 === r ? t.length + 1 : r + 1;
+                                if (e === o) break;
+                                n.push(o);
+                            }
+                            let r =
+                                (e.line > 1 ? n[e.line - 2] : 0) + e.column - 1;
+                            if (r < n[e.line - 1]) return r;
+                        }
+                    },
+                    toPoint: function (e) {
+                        if ("number" == typeof e && e > -1 && e <= t.length) {
+                            let r = 0;
+                            for (;;) {
+                                let o = n[r];
+                                if (void 0 === o) {
+                                    let e = i(t, n[r - 1]);
+                                    ((o = -1 === e ? t.length + 1 : e + 1),
+                                        (n[r] = o));
+                                }
+                                if (o > e)
+                                    return {
+                                        line: r + 1,
+                                        column: e - (r > 0 ? n[r - 1] : 0) + 1,
+                                        offset: e,
+                                    };
+                                r++;
+                            }
+                        }
+                    },
+                };
+            }
+            function i(e, t) {
+                let n = e.indexOf("\r", t),
+                    r = e.indexOf(
+                        `
+`,
+                        t
+                    );
+                return -1 === r
+                    ? n
+                    : -1 === n || n + 1 === r
+                      ? r
+                      : n < r
+                        ? n
+                        : r;
+            }
+            n.d(t, { C: () => r });
         },
         84600: (e, t, n) => {
             n.d(t, { T: () => X, I: () => ee });
@@ -3498,70 +3448,120 @@
                 ]);
             }
         },
-        77760: (e, t, n) => {
-            function r(e) {
-                let t = String(e),
-                    n = [];
-                return {
-                    toOffset: function (e) {
-                        if (
-                            e &&
-                            "number" == typeof e.line &&
-                            "number" == typeof e.column &&
-                            !Number.isNaN(e.line) &&
-                            !Number.isNaN(e.column)
-                        ) {
-                            for (; n.length < e.line; ) {
-                                let e = n[n.length - 1],
-                                    r = i(t, e),
-                                    o = -1 === r ? t.length + 1 : r + 1;
-                                if (e === o) break;
-                                n.push(o);
-                            }
-                            let r =
-                                (e.line > 1 ? n[e.line - 2] : 0) + e.column - 1;
-                            if (r < n[e.line - 1]) return r;
+        95459: (e, t, n) => {
+            n.d(t, { T: () => o });
+            var r = n(76814),
+                i = n(69143);
+            function o(e, t, n) {
+                let o = (0, i.C)((n || {}).ignore || []),
+                    l = (function (e) {
+                        let t = [];
+                        if (!Array.isArray(e))
+                            throw TypeError(
+                                "Expected find and replace tuple or list of tuples"
+                            );
+                        let n = !e[0] || Array.isArray(e[0]) ? e : [e],
+                            r = -1;
+                        for (; ++r < n.length; ) {
+                            var i;
+                            let e = n[r];
+                            t.push([
+                                "string" == typeof (i = e[0])
+                                    ? RegExp(
+                                          (function (e) {
+                                              if ("string" != typeof e)
+                                                  throw TypeError(
+                                                      "Expected a string"
+                                                  );
+                                              return e
+                                                  .replace(
+                                                      /[|\\{}()[\]^$+*?.]/g,
+                                                      "\\$&"
+                                                  )
+                                                  .replace(/-/g, "\\x2d");
+                                          })(i),
+                                          "g"
+                                      )
+                                    : i,
+                                (function (e) {
+                                    return "function" == typeof e
+                                        ? e
+                                        : function () {
+                                              return e;
+                                          };
+                                })(e[1]),
+                            ]);
                         }
-                    },
-                    toPoint: function (e) {
-                        if ("number" == typeof e && e > -1 && e <= t.length) {
-                            let r = 0;
-                            for (;;) {
-                                let o = n[r];
-                                if (void 0 === o) {
-                                    let e = i(t, n[r - 1]);
-                                    ((o = -1 === e ? t.length + 1 : e + 1),
-                                        (n[r] = o));
-                                }
-                                if (o > e)
-                                    return {
-                                        line: r + 1,
-                                        column: e - (r > 0 ? n[r - 1] : 0) + 1,
-                                        offset: e,
-                                    };
-                                r++;
+                        return t;
+                    })(t),
+                    a = -1;
+                for (; ++a < l.length; ) (0, r.VG)(e, "text", s);
+                function s(e, t) {
+                    let n,
+                        r = -1;
+                    for (; ++r < t.length; ) {
+                        let e = t[r],
+                            i = n ? n.children : void 0;
+                        if (o(e, i ? i.indexOf(e) : void 0, n)) return;
+                        n = e;
+                    }
+                    if (n)
+                        return (function (e, t) {
+                            let n = t[t.length - 1],
+                                r = l[a][0],
+                                i = l[a][1],
+                                o = 0,
+                                s = n.children.indexOf(e),
+                                u = !1,
+                                c = [];
+                            r.lastIndex = 0;
+                            let f = r.exec(e.value);
+                            for (; f; ) {
+                                let n = f.index,
+                                    l = {
+                                        index: f.index,
+                                        input: f.input,
+                                        stack: [...t, e],
+                                    },
+                                    a = i(...f, l);
+                                if (
+                                    ("string" == typeof a &&
+                                        (a =
+                                            a.length > 0
+                                                ? { type: "text", value: a }
+                                                : void 0),
+                                    !1 === a
+                                        ? (r.lastIndex = n + 1)
+                                        : (o !== n &&
+                                              c.push({
+                                                  type: "text",
+                                                  value: e.value.slice(o, n),
+                                              }),
+                                          Array.isArray(a)
+                                              ? c.push(...a)
+                                              : a && c.push(a),
+                                          (o = n + f[0].length),
+                                          (u = !0)),
+                                    !r.global)
+                                )
+                                    break;
+                                f = r.exec(e.value);
                             }
-                        }
-                    },
-                };
+                            return (
+                                u
+                                    ? (o < e.value.length &&
+                                          c.push({
+                                              type: "text",
+                                              value: e.value.slice(o),
+                                          }),
+                                      n.children.splice(s, 1, ...c))
+                                    : (c = [e]),
+                                s + c.length
+                            );
+                        })(e, t);
+                }
             }
-            function i(e, t) {
-                let n = e.indexOf("\r", t),
-                    r = e.indexOf(
-                        `
-`,
-                        t
-                    );
-                return -1 === r
-                    ? n
-                    : -1 === n || n + 1 === r
-                      ? r
-                      : n < r
-                        ? n
-                        : r;
-            }
-            n.d(t, { C: () => r });
         },
     },
 ]);
-//# sourceMappingURL=vendors-node_modules_hastscript_lib_index_js-node_modules_mdast-util-gfm_lib_index_js-node_mo-2895d2-83df6aa9bcdc.js.map
+//# sourceMappingURL=vendors-node_modules_hastscript_lib_index_js-node_modules_mdast-util-gfm_lib_index_js-node_mo-2895d2-d088fea9dc1c.js.map

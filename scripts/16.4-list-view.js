@@ -5,6 +5,700 @@
         "packages_list-view_src_hooks_use-next-header-tag_ts-packages_list-view_src_ListItem_ListItem_-055669",
     ],
     {
+        2970: (e, t, r) => {
+            r.d(t, { c: () => A });
+            var i = r(74848),
+                a = r(73189),
+                l = r(34164),
+                n = r(96540),
+                s = r(75986),
+                o = r(18377),
+                c = r(24347),
+                u = r(35220),
+                d = r(9214);
+            let m = (0, n.createContext)({
+                    actionsOpen: !1,
+                    setActionsOpen: a.l,
+                }),
+                h = ({ children: e }) => {
+                    let [t, r] = (0, n.useState)(!1),
+                        a = (0, n.useMemo)(
+                            () => ({ actionsOpen: t, setActionsOpen: r }),
+                            [t]
+                        );
+                    return (0, i.jsx)(m.Provider, { value: a, children: e });
+                };
+            h.displayName = "ListItemActionsProvider";
+            try {
+                m.displayName || (m.displayName = "ActionsContext");
+            } catch {}
+            var v = r(77177);
+            let y = {
+                listItem: "ListItem-module__listItem--k4eMk",
+                compact: "ListItem-module__compact--f4FSR",
+                hasActionBar: "ListItem-module__hasActionBar--t14sR",
+                selected: "ListItem-module__selected--WTEJT",
+            };
+            var f = r(29731);
+            let p = { container: "MetadataContainer-module__container--nU0s9" };
+            function x({ style: e, className: t, children: r }) {
+                return (0, i.jsx)("div", {
+                    className: (0, l.$)(p.container, t),
+                    style: e,
+                    ...(0, f.G)("list-view-item-metadata"),
+                    children: r,
+                });
+            }
+            try {
+                x.displayName || (x.displayName = "ListItemMetadataContainer");
+            } catch {}
+            var N = r(49744),
+                b = r(60257),
+                w = r(27603),
+                C = r(74501);
+            let g = (0, n.forwardRef)(
+                (
+                    {
+                        children: e,
+                        isActive: t = !1,
+                        title: r,
+                        metadata: a,
+                        secondaryActions: m,
+                        style: h,
+                        className: f,
+                        metadataContainerStyle: p,
+                        metadataContainerClassName: g,
+                        as: A,
+                        ...I
+                    },
+                    j
+                ) => {
+                    let { idPrefix: _ } = (0, s.If)(),
+                        { isSelectable: S } = (0, c.v)(),
+                        { variant: L } = (0, u.e)(),
+                        {
+                            anyItemsWithActionBar: P,
+                            hasResizableActionsWithActionBar: E,
+                        } = (0, o.Z)(),
+                        M = (0, n.useId)(),
+                        { isSelected: B, onSelect: R } = (0, b.r)(),
+                        { status: T } = (0, w.x)(),
+                        {
+                            title: k,
+                            titleAction: V,
+                            headingRef: O,
+                        } = (0, C.J)(),
+                        { description: W } = (0, v.L)(),
+                        { hasNewActivity: H } = (0, N.I)(),
+                        z = (0, n.useRef)(null);
+                    ((0, n.useEffect)(() => {
+                        "function" == typeof j
+                            ? j(z.current)
+                            : j && (j.current = z.current);
+                    }, [j]),
+                        (0, n.useEffect)(() => {
+                            z.current &&
+                                t &&
+                                document.activeElement?.tagName === "BODY" &&
+                                z.current.focus();
+                        }));
+                    let $ = (0, n.useCallback)(
+                            (e) => {
+                                switch (e.key) {
+                                    case "Enter":
+                                        if (V) {
+                                            let t = document.activeElement,
+                                                r = z.current === t,
+                                                i =
+                                                    O.current &&
+                                                    (O.current === t ||
+                                                        O.current.contains(t));
+                                            (r || i) && V(e);
+                                        }
+                                        break;
+                                    case " ":
+                                        if (
+                                            !S ||
+                                            z?.current !==
+                                                document.activeElement
+                                        )
+                                            break;
+                                        (e.preventDefault(), R(!B));
+                                        break;
+                                    case "Escape":
+                                        z?.current?.focus();
+                                }
+                            },
+                            [V, S, R, B, O]
+                        ),
+                        D = (0, n.useCallback)(() => {
+                            let e = B ? "Selected" : "",
+                                t = H ? "New activity" : "",
+                                r = !!m,
+                                i =
+                                    (Array.isArray(a) && a.length > 0) ||
+                                    (a && !Array.isArray(a)),
+                                l = "";
+                            (i || r) &&
+                                (l = "More information available below");
+                            let n = [k, T].filter((e) => e.trim()).join(": ");
+                            try {
+                                n = n.endsWith("...")
+                                    ? n
+                                    : n.replace(/\.+$/, "");
+                            } catch {
+                                for (; n.endsWith("."); )
+                                    n = n.substring(0, n.length - 1);
+                            }
+                            let s = [e, n, W, t, l]
+                                .filter((e) => e.trim())
+                                .join(". ");
+                            return s.endsWith(".") ? s : `${s}.`;
+                        }, [m, a, B, H, k, T, W]);
+                    return (0, i.jsxs)(A || "li", {
+                        ref: z,
+                        id: `${_}-list-view-node-${M}`,
+                        className: (0, l.$)(
+                            y.listItem,
+                            B && y.selected,
+                            "compact" === L && y.compact,
+                            P && E && y.hasActionBar,
+                            f
+                        ),
+                        tabIndex: -1,
+                        "aria-label": D(),
+                        style: h,
+                        onKeyDown: $,
+                        ...I,
+                        children: [
+                            r,
+                            e,
+                            Array.isArray(a) && a.length > 0
+                                ? (0, i.jsx)(x, {
+                                      style: p,
+                                      className: g,
+                                      children: a.map((e, t) =>
+                                          (0, i.jsx)(
+                                              n.Fragment,
+                                              { children: e },
+                                              t
+                                          )
+                                      ),
+                                  })
+                                : !!(a && !Array.isArray(a)) &&
+                                  (0, i.jsx)(x, {
+                                      style: p,
+                                      className: g,
+                                      children: a,
+                                  }),
+                            m ?? (P && (0, i.jsx)(d.L, {})),
+                        ],
+                    });
+                }
+            );
+            g.displayName = "ListItemBase";
+            let A = (0, n.forwardRef)(
+                (
+                    {
+                        children: e,
+                        isSelected: t = !1,
+                        onSelect: r = a.l,
+                        ...l
+                    },
+                    s
+                ) => {
+                    let { setSelectedCount: o } = (0, c.v)(),
+                        u = (0, n.useRef)(t);
+                    ((u.current = t),
+                        (0, n.useEffect)(() => {
+                            o((e) => (t ? e + 1 : Math.max(0, e - 1)));
+                        }, [t, o]),
+                        (0, n.useEffect)(
+                            () => () => {
+                                u.current && o((e) => Math.max(0, e - 1));
+                            },
+                            [o]
+                        ));
+                    let d = (0, n.useMemo)(
+                        () => ({ isSelected: t, onSelect: r }),
+                        [t, r]
+                    );
+                    return (0, i.jsx)(h, {
+                        children: (0, i.jsx)(C.y, {
+                            children: (0, i.jsx)(b.W, {
+                                value: d,
+                                children: (0, i.jsx)(N.t, {
+                                    children: (0, i.jsx)(v.O, {
+                                        children: (0, i.jsx)(w.u, {
+                                            children: (0, i.jsx)(g, {
+                                                ref: s,
+                                                ...l,
+                                                children: e,
+                                            }),
+                                        }),
+                                    }),
+                                }),
+                            }),
+                        }),
+                    });
+                }
+            );
+            A.displayName = "ListItem";
+        },
+        9214: (e, t, r) => {
+            r.d(t, { L: () => u });
+            var i = r(74848),
+                a = r(91230),
+                l = r(29731),
+                n = r(34164),
+                s = r(96540),
+                o = r(18377);
+            let c = {
+                    container: "ActionBar-module__container--8I2RB",
+                    hasActions: "ActionBar-module__hasActions--HH0uB",
+                },
+                u = ({
+                    anchorIcon: e,
+                    style: t,
+                    className: r,
+                    label: u = "list item action bar",
+                    ...d
+                }) => {
+                    let {
+                        setAnyItemsWithActionBar: m,
+                        setHasResizableActionsWithActionBar: h,
+                    } = (0, o.Z)();
+                    return (
+                        (0, s.useEffect)(() => m(!0), [m]),
+                        (0, s.useEffect)(() => {
+                            d.actions && h(!0);
+                        }, [d.actions, h]),
+                        (0, i.jsx)("div", {
+                            className: (0, n.$)(
+                                c.container,
+                                d.actions && c.hasActions,
+                                r
+                            ),
+                            style: t,
+                            ...(0, l.G)("list-view-item-action-bar-container"),
+                            children: (0, i.jsx)(a.E7, {
+                                ...d,
+                                label: u,
+                                variant: "menu",
+                                overflowMenuToggleProps: e
+                                    ? { icon: e }
+                                    : void 0,
+                            }),
+                        })
+                    );
+                };
+            try {
+                u.displayName || (u.displayName = "ListItemActionBar");
+            } catch {}
+        },
+        18377: (e, t, r) => {
+            r.d(t, { Z: () => o, w: () => s });
+            var i = r(74848),
+                a = r(73189),
+                l = r(96540);
+            let n = (0, l.createContext)({
+                    anyItemsWithActionBar: !1,
+                    setAnyItemsWithActionBar: a.l,
+                    hasResizableActionsWithActionBar: !1,
+                    setHasResizableActionsWithActionBar: a.l,
+                }),
+                s = ({ children: e }) => {
+                    let [t, r] = (0, l.useState)(!1),
+                        [a, s] = (0, l.useState)(!1),
+                        o = (0, l.useMemo)(
+                            () => ({
+                                anyItemsWithActionBar: t,
+                                setAnyItemsWithActionBar: r,
+                                hasResizableActionsWithActionBar: a,
+                                setHasResizableActionsWithActionBar: s,
+                            }),
+                            [t, a]
+                        );
+                    return (0, i.jsx)(n.Provider, { value: o, children: e });
+                };
+            s.displayName = "ListViewItemsProvider";
+            let o = () => (0, l.useContext)(n);
+            try {
+                n.displayName || (n.displayName = "ItemsContext");
+            } catch {}
+        },
+        24347: (e, t, r) => {
+            r.d(t, { W: () => u, v: () => d });
+            var i = r(74848),
+                a = r(73189),
+                l = r(96540),
+                n = r(50205);
+            let s = "list item",
+                o = "list items",
+                c = (0, l.createContext)({
+                    selectedCount: 0,
+                    setSelectedCount: a.l,
+                    countOnPage: 0,
+                    isSelectAllChecked: !1,
+                    anyItemsSelected: !1,
+                    singularUnits: s,
+                    pluralUnits: o,
+                    isSelectable: n.eX,
+                    hasDragHandle: n.os,
+                }),
+                u = (
+                    {
+                        children: e,
+                        countOnPage: t = 0,
+                        singularUnits: r = s,
+                        pluralUnits: a = o,
+                        totalCount: u,
+                        selectedCount: d = 0,
+                        isSelectable: m = n.eX,
+                        hasDragHandle: h = n.os,
+                    } = {
+                        singularUnits: s,
+                        pluralUnits: o,
+                        selectedCount: 0,
+                        countOnPage: 0,
+                        isSelectable: n.eX,
+                        hasDragHandle: n.os,
+                    }
+                ) => {
+                    let [v, y] = (0, l.useState)(d);
+                    (0, l.useEffect)(() => y(d), [d]);
+                    let f = v > 0 && v >= t,
+                        p = v > 0,
+                        x = (0, l.useMemo)(
+                            () => ({
+                                totalCount: u,
+                                countOnPage: t,
+                                selectedCount: v,
+                                setSelectedCount: y,
+                                isSelectAllChecked: f,
+                                anyItemsSelected: p,
+                                singularUnits: r,
+                                pluralUnits: a,
+                                isSelectable: m,
+                                hasDragHandle: h,
+                            }),
+                            [u, t, v, y, f, p, r, a, m, h]
+                        );
+                    return (0, i.jsx)(c.Provider, { value: x, children: e });
+                };
+            u.displayName = "ListViewSelectionProvider";
+            let d = () => (0, l.useContext)(c);
+            try {
+                c.displayName || (c.displayName = "SelectionContext");
+            } catch {}
+        },
+        27603: (e, t, r) => {
+            r.d(t, { u: () => n, x: () => s });
+            var i = r(74848),
+                a = r(96540);
+            let l = (0, a.createContext)(void 0),
+                n = ({ children: e }) => {
+                    let [t, r] = (0, a.useState)(""),
+                        n = (0, a.useMemo)(
+                            () => ({ status: t, setStatus: r }),
+                            [t]
+                        );
+                    return (0, i.jsx)(l.Provider, { value: n, children: e });
+                };
+            n.displayName = "ListItemStatusProvider";
+            let s = () => {
+                let e = (0, a.useContext)(l);
+                if (!e)
+                    throw Error(
+                        "useListItemStatus must be used with StatusProvider."
+                    );
+                return e;
+            };
+            try {
+                l.displayName || (l.displayName = "StatusContext");
+            } catch {}
+        },
+        35220: (e, t, r) => {
+            r.d(t, { H: () => o, e: () => c });
+            var i = r(74848),
+                a = r(73189),
+                l = r(96540),
+                n = r(50205);
+            let s = (0, l.createContext)(void 0),
+                o = ({
+                    children: e,
+                    variant: t = n.tp,
+                    setVariant: r = a.l,
+                }) => {
+                    let o = (0, l.useMemo)(
+                        () => ({ variant: t, setVariant: r }),
+                        [r, t]
+                    );
+                    return (0, i.jsx)(s.Provider, { value: o, children: e });
+                };
+            o.displayName = "ListViewVariantProvider";
+            let c = () => {
+                let e = (0, l.useContext)(s);
+                if (!e)
+                    throw Error(
+                        "useListViewVariant must be used with VariantProvider."
+                    );
+                return e;
+            };
+            try {
+                s.displayName || (s.displayName = "VariantContext");
+            } catch {}
+        },
+        49744: (e, t, r) => {
+            r.d(t, { I: () => s, t: () => n });
+            var i = r(74848),
+                a = r(96540);
+            let l = (0, a.createContext)(void 0),
+                n = ({ children: e }) => {
+                    let [t, r] = (0, a.useState)(!1),
+                        n = (0, a.useMemo)(
+                            () => ({ hasNewActivity: t, setHasNewActivity: r }),
+                            [t]
+                        );
+                    return (0, i.jsx)(l.Provider, { value: n, children: e });
+                };
+            n.displayName = "ListItemNewActivityProvider";
+            let s = () => {
+                let e = (0, a.useContext)(l);
+                if (!e)
+                    throw Error(
+                        "useListItemNewActivity must be used with NewActivityProvider."
+                    );
+                return e;
+            };
+            try {
+                l.displayName || (l.displayName = "NewActivityContext");
+            } catch {}
+        },
+        50205: (e, t, r) => {
+            r.d(t, {
+                Dy: () => a,
+                O1: () => n,
+                QL: () => u,
+                eX: () => o,
+                n1: () => i,
+                os: () => c,
+                tD: () => l,
+                tp: () => s,
+            });
+            let i = ["h1", "h2", "h3", "h4", "h5", "h6"],
+                a = ["list-view", "list-view-metadata", "listitem"],
+                l = "h2",
+                n = {
+                    "list-view": l,
+                    "list-view-metadata": "h3",
+                    listitem: "h3",
+                },
+                s = "default",
+                o = !1,
+                c = !1,
+                u = "List view";
+        },
+        53687: (e, t, r) => {
+            r.d(t, { P: () => s, e: () => n });
+            var i = r(74848),
+                a = r(96540);
+            let l = (0, a.createContext)({ multiPageSelectionAllowed: !1 }),
+                n = ({ children: e, multiPageSelectionAllowed: t = !1 }) => {
+                    let [r, n] = (0, a.useState)(t),
+                        s = (0, a.useMemo)(
+                            () => ({
+                                multiPageSelectionAllowed: r,
+                                setMultiPageSelectionAllowed: n,
+                            }),
+                            [r]
+                        );
+                    return (0, i.jsx)(l.Provider, { value: s, children: e });
+                };
+            n.displayName = "ListViewMultiPageSelectionProvider";
+            let s = () => (0, a.useContext)(l);
+            try {
+                l.displayName || (l.displayName = "MultiPageSelectionContext");
+            } catch {}
+        },
+        56825: (e, t, r) => {
+            r.d(t, { m: () => n });
+            var i = r(96540),
+                a = r(50205),
+                l = r(61015);
+            function n(e) {
+                let { titleHeaderTag: t, hasMetadataTitle: r } = (0, l.t)();
+                return (0, i.useMemo)(() => {
+                    let i = a.Dy.findIndex((t) => t === e),
+                        l = a.n1.indexOf(t) + (r ? i : i - 1);
+                    return l > a.n1.length - 1 ? "h6" : a.n1[l] || a.O1[e];
+                }, [t, r, e]);
+            }
+        },
+        60257: (e, t, r) => {
+            r.d(t, { W: () => c, r: () => u });
+            var i = r(74848),
+                a = r(4559),
+                l = r(73189),
+                n = r(96540),
+                s = r(74501);
+            let o = (0, n.createContext)({ isSelected: !1, onSelect: l.l }),
+                c = ({
+                    children: e,
+                    value: { isSelected: t, onSelect: r },
+                }) => {
+                    let { title: l } = (0, s.J)(),
+                        c = (0, n.useMemo)(
+                            () => ({
+                                isSelected: t,
+                                onSelect: (e) => {
+                                    ((0, a.i)(
+                                        e
+                                            ? `Selected. ${l}.`
+                                            : `Unselected. ${l}.`
+                                    ),
+                                        r(e));
+                                },
+                            }),
+                            [t, r, l]
+                        );
+                    return (0, i.jsx)(o.Provider, { value: c, children: e });
+                };
+            c.displayName = "ListItemSelectionProvider";
+            let u = () => (0, n.useContext)(o);
+            try {
+                o.displayName || (o.displayName = "SelectionContext");
+            } catch {}
+        },
+        61015: (e, t, r) => {
+            r.d(t, { t: () => o, y: () => s });
+            var i = r(74848),
+                a = r(96540),
+                l = r(50205);
+            let n = (0, a.createContext)(void 0),
+                s = ({ children: e, title: t, titleHeaderTag: r = l.tD }) => {
+                    let [s, o] = (0, a.useState)(!1),
+                        c = (0, a.useMemo)(
+                            () => ({
+                                title: t.trim() || l.QL,
+                                titleHeaderTag: r,
+                                hasMetadataTitle: s,
+                                setHasMetadataTitle: o,
+                            }),
+                            [s, t, r]
+                        );
+                    return (0, i.jsx)(n.Provider, { value: c, children: e });
+                };
+            s.displayName = "ListViewTitleProvider";
+            let o = () => {
+                let e = (0, a.useContext)(n);
+                if (!e)
+                    throw Error(
+                        "useListViewTitle must be used with TitleProvider."
+                    );
+                return e;
+            };
+            try {
+                n.displayName || (n.displayName = "TitleContext");
+            } catch {}
+        },
+        74501: (e, t, r) => {
+            r.d(t, { J: () => s, y: () => n });
+            var i = r(74848),
+                a = r(96540);
+            let l = (0, a.createContext)(void 0),
+                n = ({ children: e }) => {
+                    let [t, r] = (0, a.useState)(""),
+                        [n, s] = (0, a.useState)(null),
+                        o = (0, a.useRef)(null);
+                    (0, a.useEffect)(() => {
+                        o?.current?.textContent &&
+                            r(o.current.textContent.trim());
+                    }, [o, r]);
+                    let c = (0, a.useMemo)(
+                        () => ({
+                            title: t,
+                            titleAction: n,
+                            setTitleAction: s,
+                            headingRef: o,
+                        }),
+                        [t, n]
+                    );
+                    return (0, i.jsx)(l.Provider, { value: c, children: e });
+                };
+            n.displayName = "ListItemTitleProvider";
+            let s = () => {
+                let e = (0, a.useContext)(l);
+                if (!e)
+                    throw Error(
+                        "useListItemTitle must be used with TitleProvider."
+                    );
+                return e;
+            };
+            try {
+                l.displayName || (l.displayName = "TitleContext");
+            } catch {}
+        },
+        75986: (e, t, r) => {
+            r.d(t, { If: () => s, JE: () => n });
+            var i = r(74848),
+                a = r(96540);
+            let l = (0, a.createContext)(void 0),
+                n = ({ children: e }) => {
+                    let t = (0, a.useId)(),
+                        r = (0, a.useMemo)(() => ({ idPrefix: t }), [t]);
+                    return (0, i.jsx)(l.Provider, { value: r, children: e });
+                };
+            n.displayName = "ListViewIdProvider";
+            let s = () => {
+                let e = (0, a.useContext)(l);
+                if (!e)
+                    throw Error("useListViewId must be used with IdProvider.");
+                return e;
+            };
+            try {
+                l.displayName || (l.displayName = "IdContext");
+            } catch {}
+        },
+        77177: (e, t, r) => {
+            r.d(t, { L: () => s, O: () => n });
+            var i = r(74848),
+                a = r(96540);
+            let l = (0, a.createContext)(void 0),
+                n = ({ children: e }) => {
+                    let [t, r] = (0, a.useState)(""),
+                        n = (0, a.useMemo)(
+                            () => ({ description: t, setDescription: r }),
+                            [t]
+                        );
+                    return (0, i.jsx)(l.Provider, { value: n, children: e });
+                };
+            n.displayName = "ListItemDescriptionProvider";
+            let s = () => {
+                let e = (0, a.useContext)(l);
+                if (!e)
+                    throw Error(
+                        "useListItemDescription must be used with DescriptionProvider."
+                    );
+                return e;
+            };
+            try {
+                l.displayName || (l.displayName = "DescriptionContext");
+            } catch {}
+        },
+        80293: (e, t, r) => {
+            r.d(t, { N: () => a });
+            var i = r(96540);
+            function a(
+                e,
+                { isPropUpdateDisabled: t = !1, isEqual: r = Object.is } = {}
+            ) {
+                let [l, n] = (0, i.useState)(e),
+                    [s, o] = (0, i.useState)(e),
+                    c = e instanceof Function ? e() : e;
+                return (t || r(s, c) || (o(c), n(c)), [l, n]);
+            }
+        },
         91230: (e, t, r) => {
             r.d(t, { E7: () => $ });
             var i = r(74848),
@@ -242,10 +936,10 @@
                 g = r(45800),
                 A = r(34164),
                 I = r(38621),
-                j = r(1992),
+                j = r(27042),
                 _ = r(26108),
                 S = r(5524),
-                L = r(21998);
+                L = r(87448);
             let P = {
                     IconButton_0: "OverflowMenu-module__IconButton_0--cxtvS",
                 },
@@ -325,11 +1019,11 @@
             try {
                 B.displayName || (B.displayName = "OverflowMenu");
             } catch {}
-            let T = {
+            let R = {
                     Box_0: "VisibleAndOverflowContainer-module__Box_0--KyT2b",
                     space: "VisibleAndOverflowContainer-module__space--fVHr3",
                 },
-                R = { Box_0: "VisibleItem-module__Box_0--BsJkb" },
+                T = { Box_0: "VisibleItem-module__Box_0--BsJkb" },
                 k = ({ children: e, actionKey: t }) => {
                     let r = (0, a.useRef)(null),
                         { recalculateItemSize: l } = b();
@@ -341,7 +1035,7 @@
                             ...(0, w.G)(`action-bar-item-${t}`),
                             "data-action-bar-item": t,
                             ref: r,
-                            className: R.Box_0,
+                            className: T.Box_0,
                             children: e,
                         })
                     );
@@ -393,7 +1087,7 @@
                         role: "toolbar" === o ? "toolbar" : void 0,
                         "aria-label": "toolbar" === o ? n : void 0,
                         style: { gap: c },
-                        className: (0, A.$)(T.Box_0, d && T.space),
+                        className: (0, A.$)(R.Box_0, d && R.space),
                         children: [
                             (0, i.jsx)(O, { ...a }),
                             r,
@@ -473,538 +1167,6 @@
             } catch {}
             try {
                 $.displayName || ($.displayName = "ActionBar");
-            } catch {}
-        },
-        50205: (e, t, r) => {
-            r.d(t, {
-                Dy: () => a,
-                O1: () => n,
-                QL: () => u,
-                eX: () => o,
-                n1: () => i,
-                os: () => c,
-                tD: () => l,
-                tp: () => s,
-            });
-            let i = ["h1", "h2", "h3", "h4", "h5", "h6"],
-                a = ["list-view", "list-view-metadata", "listitem"],
-                l = "h2",
-                n = {
-                    "list-view": l,
-                    "list-view-metadata": "h3",
-                    listitem: "h3",
-                },
-                s = "default",
-                o = !1,
-                c = !1,
-                u = "List view";
-        },
-        56825: (e, t, r) => {
-            r.d(t, { m: () => n });
-            var i = r(96540),
-                a = r(50205),
-                l = r(61015);
-            function n(e) {
-                let { titleHeaderTag: t, hasMetadataTitle: r } = (0, l.t)();
-                return (0, i.useMemo)(() => {
-                    let i = a.Dy.findIndex((t) => t === e),
-                        l = a.n1.indexOf(t) + (r ? i : i - 1);
-                    return l > a.n1.length - 1 ? "h6" : a.n1[l] || a.O1[e];
-                }, [t, r, e]);
-            }
-        },
-        80293: (e, t, r) => {
-            r.d(t, { N: () => a });
-            var i = r(96540);
-            function a(
-                e,
-                { isPropUpdateDisabled: t = !1, isEqual: r = Object.is } = {}
-            ) {
-                let [l, n] = (0, i.useState)(e),
-                    [s, o] = (0, i.useState)(e),
-                    c = e instanceof Function ? e() : e;
-                return (t || r(s, c) || (o(c), n(c)), [l, n]);
-            }
-        },
-        9214: (e, t, r) => {
-            r.d(t, { L: () => u });
-            var i = r(74848),
-                a = r(91230),
-                l = r(29731),
-                n = r(34164),
-                s = r(96540),
-                o = r(18377);
-            let c = {
-                    container: "ActionBar-module__container--8I2RB",
-                    hasActions: "ActionBar-module__hasActions--HH0uB",
-                },
-                u = ({
-                    anchorIcon: e,
-                    style: t,
-                    className: r,
-                    label: u = "list item action bar",
-                    ...d
-                }) => {
-                    let {
-                        setAnyItemsWithActionBar: m,
-                        setHasResizableActionsWithActionBar: h,
-                    } = (0, o.Z)();
-                    return (
-                        (0, s.useEffect)(() => m(!0), [m]),
-                        (0, s.useEffect)(() => {
-                            d.actions && h(!0);
-                        }, [d.actions, h]),
-                        (0, i.jsx)("div", {
-                            className: (0, n.$)(
-                                c.container,
-                                d.actions && c.hasActions,
-                                r
-                            ),
-                            style: t,
-                            ...(0, l.G)("list-view-item-action-bar-container"),
-                            children: (0, i.jsx)(a.E7, {
-                                ...d,
-                                label: u,
-                                variant: "menu",
-                                overflowMenuToggleProps: e
-                                    ? { icon: e }
-                                    : void 0,
-                            }),
-                        })
-                    );
-                };
-            try {
-                u.displayName || (u.displayName = "ListItemActionBar");
-            } catch {}
-        },
-        77177: (e, t, r) => {
-            r.d(t, { L: () => s, O: () => n });
-            var i = r(74848),
-                a = r(96540);
-            let l = (0, a.createContext)(void 0),
-                n = ({ children: e }) => {
-                    let [t, r] = (0, a.useState)(""),
-                        n = (0, a.useMemo)(
-                            () => ({ description: t, setDescription: r }),
-                            [t]
-                        );
-                    return (0, i.jsx)(l.Provider, { value: n, children: e });
-                };
-            n.displayName = "ListItemDescriptionProvider";
-            let s = () => {
-                let e = (0, a.useContext)(l);
-                if (!e)
-                    throw Error(
-                        "useListItemDescription must be used with DescriptionProvider."
-                    );
-                return e;
-            };
-            try {
-                l.displayName || (l.displayName = "DescriptionContext");
-            } catch {}
-        },
-        2970: (e, t, r) => {
-            r.d(t, { c: () => A });
-            var i = r(74848),
-                a = r(73189),
-                l = r(34164),
-                n = r(96540),
-                s = r(75986),
-                o = r(18377),
-                c = r(24347),
-                u = r(35220),
-                d = r(9214);
-            let m = (0, n.createContext)({
-                    actionsOpen: !1,
-                    setActionsOpen: a.l,
-                }),
-                h = ({ children: e }) => {
-                    let [t, r] = (0, n.useState)(!1),
-                        a = (0, n.useMemo)(
-                            () => ({ actionsOpen: t, setActionsOpen: r }),
-                            [t]
-                        );
-                    return (0, i.jsx)(m.Provider, { value: a, children: e });
-                };
-            h.displayName = "ListItemActionsProvider";
-            try {
-                m.displayName || (m.displayName = "ActionsContext");
-            } catch {}
-            var v = r(77177);
-            let y = {
-                listItem: "ListItem-module__listItem--k4eMk",
-                compact: "ListItem-module__compact--f4FSR",
-                hasActionBar: "ListItem-module__hasActionBar--t14sR",
-                selected: "ListItem-module__selected--WTEJT",
-            };
-            var f = r(29731);
-            let p = { container: "MetadataContainer-module__container--nU0s9" };
-            function x({ style: e, className: t, children: r }) {
-                return (0, i.jsx)("div", {
-                    className: (0, l.$)(p.container, t),
-                    style: e,
-                    ...(0, f.G)("list-view-item-metadata"),
-                    children: r,
-                });
-            }
-            try {
-                x.displayName || (x.displayName = "ListItemMetadataContainer");
-            } catch {}
-            var N = r(49744),
-                b = r(60257),
-                w = r(27603),
-                C = r(74501);
-            let g = ({
-                    children: e,
-                    isActive: t = !1,
-                    title: r,
-                    metadata: a,
-                    secondaryActions: m,
-                    style: h,
-                    className: f,
-                    metadataContainerStyle: p,
-                    metadataContainerClassName: g,
-                    as: A,
-                    ...I
-                }) => {
-                    let { idPrefix: j } = (0, s.If)(),
-                        { isSelectable: _ } = (0, c.v)(),
-                        { variant: S } = (0, u.e)(),
-                        {
-                            anyItemsWithActionBar: L,
-                            hasResizableActionsWithActionBar: P,
-                        } = (0, o.Z)(),
-                        E = (0, n.useId)(),
-                        { isSelected: M, onSelect: B } = (0, b.r)(),
-                        { status: T } = (0, w.x)(),
-                        {
-                            title: R,
-                            titleAction: k,
-                            headingRef: V,
-                        } = (0, C.J)(),
-                        { description: O } = (0, v.L)(),
-                        { hasNewActivity: W } = (0, N.I)(),
-                        H = (0, n.useRef)(null);
-                    (0, n.useEffect)(() => {
-                        H.current &&
-                            t &&
-                            document.activeElement?.tagName === "BODY" &&
-                            H.current.focus();
-                    });
-                    let z = (0, n.useCallback)(
-                            (e) => {
-                                switch (e.key) {
-                                    case "Enter":
-                                        if (k) {
-                                            let t = document.activeElement,
-                                                r = H.current === t,
-                                                i =
-                                                    V.current &&
-                                                    (V.current === t ||
-                                                        V.current.contains(t));
-                                            (r || i) && k(e);
-                                        }
-                                        break;
-                                    case " ":
-                                        if (
-                                            !_ ||
-                                            H?.current !==
-                                                document.activeElement
-                                        )
-                                            break;
-                                        (e.preventDefault(), B(!M));
-                                        break;
-                                    case "Escape":
-                                        H?.current?.focus();
-                                }
-                            },
-                            [k, _, B, M, V]
-                        ),
-                        $ = (0, n.useCallback)(() => {
-                            let e = M ? "Selected" : "",
-                                t = W ? "New activity" : "",
-                                r = !!m,
-                                i =
-                                    (Array.isArray(a) && a.length > 0) ||
-                                    (a && !Array.isArray(a)),
-                                l = "";
-                            (i || r) &&
-                                (l = "More information available below");
-                            let n = [R, T].filter((e) => e.trim()).join(": ");
-                            try {
-                                n = n.endsWith("...")
-                                    ? n
-                                    : n.replace(/\.+$/, "");
-                            } catch {
-                                for (; n.endsWith("."); )
-                                    n = n.substring(0, n.length - 1);
-                            }
-                            let s = [e, n, O, t, l]
-                                .filter((e) => e.trim())
-                                .join(". ");
-                            return s.endsWith(".") ? s : `${s}.`;
-                        }, [m, a, M, W, R, T, O]);
-                    return (0, i.jsxs)(A || "li", {
-                        ref: H,
-                        id: `${j}-list-view-node-${E}`,
-                        className: (0, l.$)(
-                            y.listItem,
-                            M && y.selected,
-                            "compact" === S && y.compact,
-                            L && P && y.hasActionBar,
-                            f
-                        ),
-                        tabIndex: -1,
-                        "aria-label": $(),
-                        style: h,
-                        onKeyDown: z,
-                        ...I,
-                        children: [
-                            r,
-                            e,
-                            Array.isArray(a) && a.length > 0
-                                ? (0, i.jsx)(x, {
-                                      style: p,
-                                      className: g,
-                                      children: a.map((e, t) =>
-                                          (0, i.jsx)(
-                                              n.Fragment,
-                                              { children: e },
-                                              t
-                                          )
-                                      ),
-                                  })
-                                : !!(a && !Array.isArray(a)) &&
-                                  (0, i.jsx)(x, {
-                                      style: p,
-                                      className: g,
-                                      children: a,
-                                  }),
-                            m ?? (L && (0, i.jsx)(d.L, {})),
-                        ],
-                    });
-                },
-                A = ({
-                    children: e,
-                    isSelected: t = !1,
-                    onSelect: r = a.l,
-                    ...l
-                }) => {
-                    let { setSelectedCount: s } = (0, c.v)(),
-                        o = (0, n.useRef)(t);
-                    ((o.current = t),
-                        (0, n.useEffect)(() => {
-                            s((e) => (t ? e + 1 : Math.max(0, e - 1)));
-                        }, [t, s]),
-                        (0, n.useEffect)(
-                            () => () => {
-                                o.current && s((e) => Math.max(0, e - 1));
-                            },
-                            [s]
-                        ));
-                    let u = (0, n.useMemo)(
-                        () => ({ isSelected: t, onSelect: r }),
-                        [t, r]
-                    );
-                    return (0, i.jsx)(h, {
-                        children: (0, i.jsx)(C.y, {
-                            children: (0, i.jsx)(b.W, {
-                                value: u,
-                                children: (0, i.jsx)(N.t, {
-                                    children: (0, i.jsx)(v.O, {
-                                        children: (0, i.jsx)(w.u, {
-                                            children: (0, i.jsx)(g, {
-                                                ...l,
-                                                children: e,
-                                            }),
-                                        }),
-                                    }),
-                                }),
-                            }),
-                        }),
-                    });
-                };
-            try {
-                g.displayName || (g.displayName = "ListItemBase");
-            } catch {}
-            try {
-                A.displayName || (A.displayName = "ListItem");
-            } catch {}
-        },
-        49744: (e, t, r) => {
-            r.d(t, { I: () => s, t: () => n });
-            var i = r(74848),
-                a = r(96540);
-            let l = (0, a.createContext)(void 0),
-                n = ({ children: e }) => {
-                    let [t, r] = (0, a.useState)(!1),
-                        n = (0, a.useMemo)(
-                            () => ({ hasNewActivity: t, setHasNewActivity: r }),
-                            [t]
-                        );
-                    return (0, i.jsx)(l.Provider, { value: n, children: e });
-                };
-            n.displayName = "ListItemNewActivityProvider";
-            let s = () => {
-                let e = (0, a.useContext)(l);
-                if (!e)
-                    throw Error(
-                        "useListItemNewActivity must be used with NewActivityProvider."
-                    );
-                return e;
-            };
-            try {
-                l.displayName || (l.displayName = "NewActivityContext");
-            } catch {}
-        },
-        60257: (e, t, r) => {
-            r.d(t, { W: () => c, r: () => u });
-            var i = r(74848),
-                a = r(4559),
-                l = r(73189),
-                n = r(96540),
-                s = r(74501);
-            let o = (0, n.createContext)({ isSelected: !1, onSelect: l.l }),
-                c = ({
-                    children: e,
-                    value: { isSelected: t, onSelect: r },
-                }) => {
-                    let { title: l } = (0, s.J)(),
-                        c = (0, n.useMemo)(
-                            () => ({
-                                isSelected: t,
-                                onSelect: (e) => {
-                                    ((0, a.i)(
-                                        e
-                                            ? `Selected. ${l}.`
-                                            : `Unselected. ${l}.`
-                                    ),
-                                        r(e));
-                                },
-                            }),
-                            [t, r, l]
-                        );
-                    return (0, i.jsx)(o.Provider, { value: c, children: e });
-                };
-            c.displayName = "ListItemSelectionProvider";
-            let u = () => (0, n.useContext)(o);
-            try {
-                o.displayName || (o.displayName = "SelectionContext");
-            } catch {}
-        },
-        27603: (e, t, r) => {
-            r.d(t, { u: () => n, x: () => s });
-            var i = r(74848),
-                a = r(96540);
-            let l = (0, a.createContext)(void 0),
-                n = ({ children: e }) => {
-                    let [t, r] = (0, a.useState)(""),
-                        n = (0, a.useMemo)(
-                            () => ({ status: t, setStatus: r }),
-                            [t]
-                        );
-                    return (0, i.jsx)(l.Provider, { value: n, children: e });
-                };
-            n.displayName = "ListItemStatusProvider";
-            let s = () => {
-                let e = (0, a.useContext)(l);
-                if (!e)
-                    throw Error(
-                        "useListItemStatus must be used with StatusProvider."
-                    );
-                return e;
-            };
-            try {
-                l.displayName || (l.displayName = "StatusContext");
-            } catch {}
-        },
-        74501: (e, t, r) => {
-            r.d(t, { J: () => s, y: () => n });
-            var i = r(74848),
-                a = r(96540);
-            let l = (0, a.createContext)(void 0),
-                n = ({ children: e }) => {
-                    let [t, r] = (0, a.useState)(""),
-                        [n, s] = (0, a.useState)(null),
-                        o = (0, a.useRef)(null);
-                    (0, a.useEffect)(() => {
-                        o?.current?.textContent &&
-                            r(o.current.textContent.trim());
-                    }, [o, r]);
-                    let c = (0, a.useMemo)(
-                        () => ({
-                            title: t,
-                            titleAction: n,
-                            setTitleAction: s,
-                            headingRef: o,
-                        }),
-                        [t, n]
-                    );
-                    return (0, i.jsx)(l.Provider, { value: c, children: e });
-                };
-            n.displayName = "ListItemTitleProvider";
-            let s = () => {
-                let e = (0, a.useContext)(l);
-                if (!e)
-                    throw Error(
-                        "useListItemTitle must be used with TitleProvider."
-                    );
-                return e;
-            };
-            try {
-                l.displayName || (l.displayName = "TitleContext");
-            } catch {}
-        },
-        75986: (e, t, r) => {
-            r.d(t, { If: () => s, JE: () => n });
-            var i = r(74848),
-                a = r(96540);
-            let l = (0, a.createContext)(void 0),
-                n = ({ children: e }) => {
-                    let t = (0, a.useId)(),
-                        r = (0, a.useMemo)(() => ({ idPrefix: t }), [t]);
-                    return (0, i.jsx)(l.Provider, { value: r, children: e });
-                };
-            n.displayName = "ListViewIdProvider";
-            let s = () => {
-                let e = (0, a.useContext)(l);
-                if (!e)
-                    throw Error("useListViewId must be used with IdProvider.");
-                return e;
-            };
-            try {
-                l.displayName || (l.displayName = "IdContext");
-            } catch {}
-        },
-        18377: (e, t, r) => {
-            r.d(t, { Z: () => o, w: () => s });
-            var i = r(74848),
-                a = r(73189),
-                l = r(96540);
-            let n = (0, l.createContext)({
-                    anyItemsWithActionBar: !1,
-                    setAnyItemsWithActionBar: a.l,
-                    hasResizableActionsWithActionBar: !1,
-                    setHasResizableActionsWithActionBar: a.l,
-                }),
-                s = ({ children: e }) => {
-                    let [t, r] = (0, l.useState)(!1),
-                        [a, s] = (0, l.useState)(!1),
-                        o = (0, l.useMemo)(
-                            () => ({
-                                anyItemsWithActionBar: t,
-                                setAnyItemsWithActionBar: r,
-                                hasResizableActionsWithActionBar: a,
-                                setHasResizableActionsWithActionBar: s,
-                            }),
-                            [t, a]
-                        );
-                    return (0, i.jsx)(n.Provider, { value: o, children: e });
-                };
-            s.displayName = "ListViewItemsProvider";
-            let o = () => (0, l.useContext)(n);
-            try {
-                n.displayName || (n.displayName = "ItemsContext");
             } catch {}
         },
         97174: (e, t, r) => {
@@ -1279,156 +1441,6 @@
                 _.displayName || (_.displayName = "ListViewContainer");
             } catch {}
         },
-        53687: (e, t, r) => {
-            r.d(t, { P: () => s, e: () => n });
-            var i = r(74848),
-                a = r(96540);
-            let l = (0, a.createContext)({ multiPageSelectionAllowed: !1 }),
-                n = ({ children: e, multiPageSelectionAllowed: t = !1 }) => {
-                    let [r, n] = (0, a.useState)(t),
-                        s = (0, a.useMemo)(
-                            () => ({
-                                multiPageSelectionAllowed: r,
-                                setMultiPageSelectionAllowed: n,
-                            }),
-                            [r]
-                        );
-                    return (0, i.jsx)(l.Provider, { value: s, children: e });
-                };
-            n.displayName = "ListViewMultiPageSelectionProvider";
-            let s = () => (0, a.useContext)(l);
-            try {
-                l.displayName || (l.displayName = "MultiPageSelectionContext");
-            } catch {}
-        },
-        24347: (e, t, r) => {
-            r.d(t, { W: () => u, v: () => d });
-            var i = r(74848),
-                a = r(73189),
-                l = r(96540),
-                n = r(50205);
-            let s = "list item",
-                o = "list items",
-                c = (0, l.createContext)({
-                    selectedCount: 0,
-                    setSelectedCount: a.l,
-                    countOnPage: 0,
-                    isSelectAllChecked: !1,
-                    anyItemsSelected: !1,
-                    singularUnits: s,
-                    pluralUnits: o,
-                    isSelectable: n.eX,
-                    hasDragHandle: n.os,
-                }),
-                u = (
-                    {
-                        children: e,
-                        countOnPage: t = 0,
-                        singularUnits: r = s,
-                        pluralUnits: a = o,
-                        totalCount: u,
-                        selectedCount: d = 0,
-                        isSelectable: m = n.eX,
-                        hasDragHandle: h = n.os,
-                    } = {
-                        singularUnits: s,
-                        pluralUnits: o,
-                        selectedCount: 0,
-                        countOnPage: 0,
-                        isSelectable: n.eX,
-                        hasDragHandle: n.os,
-                    }
-                ) => {
-                    let [v, y] = (0, l.useState)(d);
-                    (0, l.useEffect)(() => y(d), [d]);
-                    let f = v > 0 && v >= t,
-                        p = v > 0,
-                        x = (0, l.useMemo)(
-                            () => ({
-                                totalCount: u,
-                                countOnPage: t,
-                                selectedCount: v,
-                                setSelectedCount: y,
-                                isSelectAllChecked: f,
-                                anyItemsSelected: p,
-                                singularUnits: r,
-                                pluralUnits: a,
-                                isSelectable: m,
-                                hasDragHandle: h,
-                            }),
-                            [u, t, v, y, f, p, r, a, m, h]
-                        );
-                    return (0, i.jsx)(c.Provider, { value: x, children: e });
-                };
-            u.displayName = "ListViewSelectionProvider";
-            let d = () => (0, l.useContext)(c);
-            try {
-                c.displayName || (c.displayName = "SelectionContext");
-            } catch {}
-        },
-        61015: (e, t, r) => {
-            r.d(t, { t: () => o, y: () => s });
-            var i = r(74848),
-                a = r(96540),
-                l = r(50205);
-            let n = (0, a.createContext)(void 0),
-                s = ({ children: e, title: t, titleHeaderTag: r = l.tD }) => {
-                    let [s, o] = (0, a.useState)(!1),
-                        c = (0, a.useMemo)(
-                            () => ({
-                                title: t.trim() || l.QL,
-                                titleHeaderTag: r,
-                                hasMetadataTitle: s,
-                                setHasMetadataTitle: o,
-                            }),
-                            [s, t, r]
-                        );
-                    return (0, i.jsx)(n.Provider, { value: c, children: e });
-                };
-            s.displayName = "ListViewTitleProvider";
-            let o = () => {
-                let e = (0, a.useContext)(n);
-                if (!e)
-                    throw Error(
-                        "useListViewTitle must be used with TitleProvider."
-                    );
-                return e;
-            };
-            try {
-                n.displayName || (n.displayName = "TitleContext");
-            } catch {}
-        },
-        35220: (e, t, r) => {
-            r.d(t, { H: () => o, e: () => c });
-            var i = r(74848),
-                a = r(73189),
-                l = r(96540),
-                n = r(50205);
-            let s = (0, l.createContext)(void 0),
-                o = ({
-                    children: e,
-                    variant: t = n.tp,
-                    setVariant: r = a.l,
-                }) => {
-                    let o = (0, l.useMemo)(
-                        () => ({ variant: t, setVariant: r }),
-                        [r, t]
-                    );
-                    return (0, i.jsx)(s.Provider, { value: o, children: e });
-                };
-            o.displayName = "ListViewVariantProvider";
-            let c = () => {
-                let e = (0, l.useContext)(s);
-                if (!e)
-                    throw Error(
-                        "useListViewVariant must be used with VariantProvider."
-                    );
-                return e;
-            };
-            try {
-                s.displayName || (s.displayName = "VariantContext");
-            } catch {}
-        },
     },
 ]);
-//# sourceMappingURL=packages_list-view_src_hooks_use-next-header-tag_ts-packages_list-view_src_ListItem_ListItem_-055669-3f4a645c6c8d.js.map
+//# sourceMappingURL=packages_list-view_src_hooks_use-next-header-tag_ts-packages_list-view_src_ListItem_ListItem_-055669-2c6af850c928.js.map
