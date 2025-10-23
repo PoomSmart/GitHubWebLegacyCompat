@@ -929,14 +929,15 @@
             };
         },
         34418: (e, t, r) => {
-            r.d(t, { X: () => i });
+            r.d(t, { X: () => s });
             var n = r(37285),
                 a = r(96379),
-                o = r(95224);
-            async function i({
+                o = r(86185),
+                i = r(95224);
+            async function s({
                 queryDeps: { pathname: e, searchParams: t, init: r },
             }) {
-                let i = (function (e, t) {
+                let s = (function (e, t) {
                         let r = [e],
                             n = (function (e) {
                                 if (e instanceof URLSearchParams) return e;
@@ -952,10 +953,11 @@
                             })(t).toString();
                         return (n && r.push(n.toString()), r.join("?"));
                     })(e, t),
-                    s = await (0, a.Sr)(i, r);
-                if (!s.ok) throw new o.o(s.statusText, s);
-                let l = await s.json();
-                return ((0, n.Av)(l), l);
+                    l = await (0, a.Sr)(s, r);
+                if ((o.z.checkResponse(l), !l.ok))
+                    throw new i.o(l.statusText, l);
+                let u = await l.json();
+                return ((0, n.Av)(u), u);
             }
         },
         38056: (e, t, r) => {
@@ -12016,4 +12018,4 @@ Please change the parent <Route path="${e}"> to <Route path="${"/" === e ? "*" :
         },
     },
 ]);
-//# sourceMappingURL=react-core-8d57c684d3e8.js.map
+//# sourceMappingURL=react-core-fc1455e71d76.js.map

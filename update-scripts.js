@@ -104,9 +104,9 @@ const ALTERNATIVE_PATTERNS = {
 
 // Target files in scripts directory
 const TARGET_FILES = {
-    "issues-react": "16.4-issues-react.js",
-    "list-view": "16.4-list-view.js",
-    "nested-list-view": "16.4-nested-list-view.js",
+    "issues-react": "16.4-d-issues-react.js",
+    "list-view": "16.4-b-list-view.js",
+    "nested-list-view": "16.4-c-nested-list-view.js",
     "react-core": "16.4-a-react-core.js",
     "mdast-util": "16.4-mdast-util.js",
     "text-expander": "15.0-text-expander.js",
@@ -278,10 +278,6 @@ async function fetchGitHubPage() {
             {
                 name: "gist homepage",
                 url: "https://gist.github.com/",
-            },
-            {
-                name: "Copilot features",
-                url: "https://github.com/features/copilot",
             },
         ];
 

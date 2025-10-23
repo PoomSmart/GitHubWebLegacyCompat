@@ -3,7 +3,6 @@
     globalThis.webpackChunk_github_ui_github_ui || []).push([
     [
         "vendors-node_modules_fzy_js_index_js-node_modules_github_g-emoji-element_dist_index_js-node_m-b54f2c",
-        "vendors-node_modules_fzy_js_index_js-node_modules_primer_styled-react_dist_deprecated_js-node-558e1e",
     ],
     {
         3767: (e, t, n) => {
@@ -10678,17 +10677,29 @@ ${s}${i}
                         a.jG.batch(() => {
                             if (this.#D && this.hasListeners()) {
                                 let t = this.#C.variables,
-                                    n = this.#C.context;
+                                    n = this.#C.context,
+                                    r = {
+                                        client: this.#g,
+                                        meta: this.options.meta,
+                                        mutationKey: this.options.mutationKey,
+                                    };
                                 e?.type === "success"
-                                    ? (this.#D.onSuccess?.(e.data, t, n),
-                                      this.#D.onSettled?.(e.data, null, t, n))
+                                    ? (this.#D.onSuccess?.(e.data, t, n, r),
+                                      this.#D.onSettled?.(
+                                          e.data,
+                                          null,
+                                          t,
+                                          n,
+                                          r
+                                      ))
                                     : e?.type === "error" &&
-                                      (this.#D.onError?.(e.error, t, n),
+                                      (this.#D.onError?.(e.error, t, n, r),
                                       this.#D.onSettled?.(
                                           void 0,
                                           e.error,
                                           t,
-                                          n
+                                          n,
+                                          r
                                       ));
                             }
                             this.listeners.forEach((e) => {
@@ -11734,4 +11745,4 @@ ${s}${i}
         },
     },
 ]);
-//# sourceMappingURL=vendors-node_modules_fzy_js_index_js-node_modules_github_g-emoji-element_dist_index_js-node_m-b54f2c-c47293d3026e.js.map
+//# sourceMappingURL=vendors-node_modules_fzy_js_index_js-node_modules_github_g-emoji-element_dist_index_js-node_m-b54f2c-550abfcac8f7.js.map
