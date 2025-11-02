@@ -11,7 +11,7 @@ close: /(?<![ $])\$/
 close: /(?:^|[^ $])(?=\$)\$/
 
 # Old
-`(?<![a-z0-9])${e.source}(.+?)${n.source}(?![a-z0-9])`,
+`(?<![a-z0-9])${e.source}(.+?)${t.source}(?![a-z0-9])`,
 
 # New
-`(?:^|[^a-z0-9])(?=${e.source})${e.source}(.+?)${n.source}(?![a-z0-9])`,
+`(?:^|[^a-z0-9])(?=${e.source})${e.source}(.+?)${t.source}(?![a-z0-9])`,

@@ -7,7 +7,7 @@
             a.d(l, { Y0: () => V, $I: () => M, kR: () => D });
             var n = a(74848),
                 s = a(96540),
-                i = a(97949),
+                i = a(84078),
                 t = a(38621),
                 r = a(88934),
                 o = a(31315),
@@ -136,7 +136,7 @@
             try {
                 f.displayName || (f.displayName = "DismissalSummary");
             } catch {}
-            var S = a(27042),
+            var S = a(94236),
                 F = a(5524),
                 L = a(46251);
             let v = 30,
@@ -897,98 +897,6 @@
             try {
                 (n = Wrapper).displayName || (n.displayName = "Wrapper");
             } catch {}
-        },
-        30158: (e, l, a) => {
-            a.d(l, {
-                A: () => AssigneeFilterProviderWithCopilotSupport,
-                OD: () => AuthorFilterProviderWithCopilotSupport,
-                Te: () => ReviewRequestedFilterProviderWithCopilotSupport,
-                Tq: () => InvolvesFilterProviderWithCopilotSupport,
-                Tr: () => ReviewedByFilterProviderWithCopilotSupport,
-            });
-            var n = a(50467),
-                s = a(92415),
-                i = a(48738),
-                t = a(38621);
-            let r = class CopilotUserFilterProvider extends i.Qh {
-                async getSuggestions(e, l, a, n) {
-                    return (
-                        this.copilotQueryParamKey &&
-                            e.addQueryParam(this.copilotQueryParamKey, "1"),
-                        super.getSuggestions(e, l, a, n)
-                    );
-                }
-                validateFilterValue(e, l, a) {
-                    let n = new URLSearchParams(l);
-                    return (
-                        this.copilotQueryParamKey &&
-                            n.append(this.copilotQueryParamKey, "1"),
-                        super.validateFilterValue(e, n, a)
-                    );
-                }
-                processSuggestion(e, l) {
-                    let { login: a, avatarUrl: n, isCopilot: r } = e;
-                    if (r)
-                        return {
-                            type: s.ak.Value,
-                            value: i.RY,
-                            ariaLabel: `${i.RY}, Your AI pair programmer`,
-                            displayName: a,
-                            description: "Your AI pair programmer",
-                            inlineDescription: !0,
-                            priority: 1,
-                            icon: t.CopilotIcon,
-                            avatarUrl: n ? { url: n, type: s.uW.User } : void 0,
-                            iconColor:
-                                "var(--fgColor-done, var(--color-done-fg))",
-                        };
-                    return super.processSuggestion(e, l);
-                }
-                constructor(e, l, a) {
-                    (super(e, l, a),
-                        (0, n._)(this, "copilotQueryParamKey", void 0));
-                }
-            };
-            let AssigneeFilterProviderWithCopilotSupport = class AssigneeFilterProviderWithCopilotSupport extends r {
-                constructor(e, l) {
-                    (super(s.yV.assignee, e, l),
-                        (this.copilotQueryParamKey = e?.showAtCopilot
-                            ? "show_assignee_copilot"
-                            : void 0));
-                }
-            };
-            let AuthorFilterProviderWithCopilotSupport = class AuthorFilterProviderWithCopilotSupport extends r {
-                constructor(e, l) {
-                    (super(s.yV.author, e, l),
-                        (this.copilotQueryParamKey = e?.showAtCopilot
-                            ? "show_author_copilot"
-                            : void 0));
-                }
-            };
-            let ReviewedByFilterProviderWithCopilotSupport = class ReviewedByFilterProviderWithCopilotSupport extends r {
-                constructor(e, l) {
-                    (super(s.yV.reviewedBy, e, l),
-                        (this.copilotQueryParamKey = e?.showAtCopilot
-                            ? "show_pull_request_reviewer_copilot"
-                            : void 0));
-                }
-            };
-            let ReviewRequestedFilterProviderWithCopilotSupport = class ReviewRequestedFilterProviderWithCopilotSupport extends r {
-                constructor(e, l) {
-                    (super(s.yV.reviewRequested, e, l),
-                        (this.copilotQueryParamKey = e?.showAtCopilot
-                            ? "show_pull_request_reviewer_copilot"
-                            : void 0));
-                }
-            };
-            let InvolvesFilterProviderWithCopilotSupport = class InvolvesFilterProviderWithCopilotSupport extends r {
-                constructor(e, l) {
-                    (super(s.yV.involves, e, l),
-                        (this.copilotQueryParamKey = e?.showAtCopilot
-                            ? "show_involves_copilot"
-                            : void 0));
-                }
-            };
         },
         30835: (e, l, a) => {
             var n,
@@ -9762,7 +9670,7 @@
                         ],
                     },
                     params: {
-                        id: "cc9ac4a28040751f1576af67f879da3f",
+                        id: "b9adf4facc980a39efa70b2db71d15be",
                         metadata: {},
                         name: "InternalIssueNewPageUrlArgumentsMetadataQuery",
                         operationKind: "query",
@@ -10327,26 +10235,18 @@
                         storageKey: null,
                     },
                     r = [
+                        l,
+                        s,
+                        a,
                         {
-                            kind: "InlineDataFragmentSpread",
-                            name: "LabelPickerLabel",
-                            selections: [
-                                l,
-                                s,
-                                a,
-                                {
-                                    alias: null,
-                                    args: null,
-                                    kind: "ScalarField",
-                                    name: "nameHTML",
-                                    storageKey: null,
-                                },
-                                i,
-                                t,
-                            ],
+                            alias: null,
                             args: null,
-                            argumentDefinitions: [],
+                            kind: "ScalarField",
+                            name: "nameHTML",
+                            storageKey: null,
                         },
+                        i,
+                        t,
                     ],
                     o = {
                         alias: null,
@@ -10973,7 +10873,7 @@
                     abstractKey: null,
                 };
             })();
-            lp.hash = "f97fc0e088f22197a44c3e4c28bb98f2";
+            lp.hash = "aab3d73c29d4f432d207c50cc722b967";
             let ly = (function () {
                 var e = {
                         alias: null,
@@ -11098,26 +10998,18 @@
                                         name: "node",
                                         plural: !1,
                                         selections: [
+                                            e,
+                                            c,
+                                            a,
                                             {
-                                                kind: "InlineDataFragmentSpread",
-                                                name: "LabelPickerLabel",
-                                                selections: [
-                                                    e,
-                                                    c,
-                                                    a,
-                                                    {
-                                                        alias: null,
-                                                        args: null,
-                                                        kind: "ScalarField",
-                                                        name: "nameHTML",
-                                                        storageKey: null,
-                                                    },
-                                                    m,
-                                                    g,
-                                                ],
+                                                alias: null,
                                                 args: null,
-                                                argumentDefinitions: [],
+                                                kind: "ScalarField",
+                                                name: "nameHTML",
+                                                storageKey: null,
                                             },
+                                            m,
+                                            g,
                                         ],
                                         storageKey: null,
                                     },
@@ -11893,42 +11785,40 @@
                     currentRepository: l,
                     storageKeyPrefix: a,
                     emojiSkinTonePreference: n,
-                    singleKeyShortcutsEnabled: s,
-                    copilotShowFunctionality: i,
+                    copilotShowFunctionality: s,
                 }) => {
-                    let t = (0, ed.useFragment)(ly, l),
-                        [r] = (0, N.ok)(),
-                        o = !!r.get("template"),
-                        u = (0, lk.Jo)(t),
-                        { currentUser: d } = (0, le.J)(),
-                        c = (() => {
+                    let i = (0, ed.useFragment)(ly, l),
+                        [t] = (0, N.ok)(),
+                        r = !!t.get("template"),
+                        o = (0, lk.Jo)(i),
+                        { currentUser: u } = (0, le.J)(),
+                        d = (() => {
                             let e = (0, C.useContext)(lC);
                             return e || {};
                         })(),
-                        m = {
+                        c = {
                             storageKeyPrefix: a,
-                            singleKeyShortcutsEnabled: s,
                             emojiSkinTonePreference: n,
-                            copilotShowFunctionality: i,
+                            copilotShowFunctionality: s,
                             issueCreateArguments: {
-                                ...(0, lw.mZ)(r, e, c),
+                                ...(0, lw.mZ)(t, e, d),
                                 repository: {
-                                    owner: t.owner.login,
-                                    name: t.name,
+                                    owner: i.owner.login,
+                                    name: i.name,
                                 },
                             },
                             insidePortal: !1,
                         },
-                        g = (0, e5.S)(m),
-                        p = o ? (0, lx.EV)(t) : void 0,
-                        k = (0, C.useRef)(null),
-                        h = (0, C.useMemo)(
+                        m = (0, e5.S)(c),
+                        g = r ? (0, lx.EV)(i) : void 0,
+                        p = (0, C.useRef)(null),
+                        k = (0, C.useMemo)(
                             () =>
-                                !!u.viewerInteractionLimitReasonHTML &&
-                                u.viewerInteractionLimitReasonHTML.length > 0,
-                            [u.viewerInteractionLimitReasonHTML]
+                                !!o.viewerInteractionLimitReasonHTML &&
+                                o.viewerInteractionLimitReasonHTML.length > 0,
+                            [o.viewerInteractionLimitReasonHTML]
                         );
-                    if (!d)
+                    if (!u)
                         return (
                             reportError(
                                 Error(
@@ -11939,27 +11829,27 @@
                                 children: "Current user not found",
                             })
                         );
-                    let { avatarUrl: b, login: f } = d;
+                    let { avatarUrl: h, login: b } = u;
                     return (0, y.jsx)(e7.S, {
-                        optionConfig: g,
-                        preselectedData: { repository: u, template: p },
+                        optionConfig: m,
+                        preselectedData: { repository: o, template: g },
                         children: (0, y.jsxs)("div", {
                             className: lv.createPane,
                             children: [
                                 (0, y.jsxs)(ll.A, {
-                                    href: `/${f}`,
+                                    href: `/${b}`,
                                     className: lv.avatarLink,
                                     children: [
                                         (0, y.jsx)("span", {
                                             className: "sr-only",
-                                            children: lh.k.viewProfile(f),
+                                            children: lh.k.viewProfile(b),
                                         }),
                                         (0, y.jsx)(e3.r, {
-                                            src: b,
+                                            src: h,
                                             size: 32,
                                             alt: "",
                                             "data-hovercard-url": (0, e9.dCN)({
-                                                owner: f,
+                                                owner: b,
                                             }),
                                             className: lv.avatar,
                                         }),
@@ -11975,9 +11865,9 @@
                                                 display: "flex",
                                                 flexDirection: "column",
                                                 alignItems: "flexStart",
-                                                marginBottom: p ? 4 : 12,
+                                                marginBottom: g ? 4 : 12,
                                                 position: "relative",
-                                                top: p ? "-10px" : 0,
+                                                top: g ? "-10px" : 0,
                                             },
                                             children: [
                                                 (0, y.jsx)(la.A, {
@@ -11989,13 +11879,13 @@
                                                         lh.k
                                                             .issueCreateDialogTitleTemplatePane,
                                                 }),
-                                                t.hasAnyTemplates &&
-                                                    !h &&
+                                                i.hasAnyTemplates &&
+                                                    !k &&
                                                     (0, y.jsx)(lI, {
                                                         nameWithOwner:
-                                                            u.nameWithOwner,
-                                                        templateName: p?.name,
-                                                        issueFormRef: k,
+                                                            o.nameWithOwner,
+                                                        templateName: g?.name,
+                                                        issueFormRef: p,
                                                     }),
                                             ],
                                         }),
@@ -12004,11 +11894,11 @@
                                             className:
                                                 lv.IssueCreatePageContainer,
                                             children: (0, y.jsx)(lj, {
-                                                template: p,
-                                                repository: u,
-                                                optionConfig: g,
-                                                issueFormRef: k,
-                                                showUserRestrictedView: h,
+                                                template: g,
+                                                repository: o,
+                                                optionConfig: m,
+                                                issueFormRef: p,
+                                                showUserRestrictedView: k,
                                             }),
                                         }),
                                     ],
@@ -12087,17 +11977,16 @@
             try {
                 lj.displayName || (lj.displayName = "IssueCreatePageInternal");
             } catch {}
-            var lR = a(19720),
-                lP = a(65990);
-            let lT = ({ urlParameterQueryData: e }) => {
+            var lR = a(32232);
+            let lP = ({ urlParameterQueryData: e }) => {
                     let l = (0, ed.usePreloadedQuery)(eY, e)?.repository;
                     return l
-                        ? (0, y.jsx)(lA, { repository: l })
+                        ? (0, y.jsx)(lT, { repository: l })
                         : (0, y.jsx)("div", {
                               children: "Repository not found",
                           });
                 },
-                lA = ({ repository: e }) => {
+                lT = ({ repository: e }) => {
                     let l = (0, w.X)(),
                         a = (0, ed.useFragment)(lp, e),
                         n = a?.suggestedActors?.nodes,
@@ -12108,7 +11997,7 @@
                         i = a?.labels?.nodes,
                         t =
                             i && a.viewerIssueCreationPermissions?.labelable
-                                ? i.flatMap((e) => (e ? [(0, lP.P5)(e)] : []))
+                                ? i.flatMap((e) => (e ? [e] : []))
                                 : void 0,
                         r = a?.owner?.projectsV2ByNumber?.nodes,
                         o =
@@ -12131,8 +12020,7 @@
                                   title: a.discussion.title,
                                   formattedBody: a.discussion.formattedBody,
                                   labels: a.discussion.labels?.edges?.flatMap(
-                                      (e) =>
-                                          e?.node ? [(0, lP.P5)(e?.node)] : []
+                                      (e) => (e?.node ? [e?.node] : [])
                                   ),
                               }
                             : void 0,
@@ -12147,41 +12035,37 @@
                         g = B.storageKeyPrefix(l),
                         p = l?.current_user_settings?.preferred_emoji_skin_tone,
                         k =
-                            l?.current_user_settings?.use_single_key_shortcut ||
-                            !1,
-                        h =
                             l?.current_user_settings
                                 ?.copilot_show_functionality || !1;
                     return (0, y.jsx)(lN, {
                         initialMetadataValues: m,
                         storageKeyPrefix: g,
                         emojiSkinTonePreference: p,
-                        singleKeyShortcutsEnabled: k,
-                        copilotShowFunctionality: h,
+                        copilotShowFunctionality: k,
                         currentRepository: a,
                     });
                 };
             try {
-                lT.displayName ||
-                    (lT.displayName = "InternalIssueNewPageWithUrlParams");
+                lP.displayName ||
+                    (lP.displayName = "InternalIssueNewPageWithUrlParams");
             } catch {}
             try {
-                lA.displayName ||
-                    (lA.displayName =
+                lT.displayName ||
+                    (lT.displayName =
                         "InternalIssueNewPageWithUrlParamsInternal");
             } catch {}
-            let lM = ({ queries: { pageQuery: e } }) => {
+            let lA = ({ queries: { pageQuery: e } }) => {
                     let { queryRef: l } = ls(e, eY);
                     return l
                         ? (0, y.jsx)(lu, {
                               category: "Repository Issue Create",
-                              children: (0, y.jsx)(lT, {
+                              children: (0, y.jsx)(lP, {
                                   urlParameterQueryData: l,
                               }),
                           })
                         : null;
                 },
-                lV = {
+                lM = {
                     argumentDefinitions: [
                         {
                             defaultValue: null,
@@ -12248,8 +12132,8 @@
                     type: "Searchable",
                     abstractKey: "__isSearchable",
                 };
-            lV.hash = "8ffa7642e54448af5beab6dd8d9e3bcf";
-            let lD = {
+            lM.hash = "8ffa7642e54448af5beab6dd8d9e3bcf";
+            let lV = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -12264,12 +12148,12 @@
                 type: "Shortcutable",
                 abstractKey: "__isShortcutable",
             };
-            lD.hash = "a93246eb19a6ce78ccda6b3c1177859f";
-            var lE = a(16070),
-                lq = a(54486),
-                lO = a(96747),
-                lB = a(96628);
-            let l$ = {
+            lV.hash = "a93246eb19a6ce78ccda6b3c1177859f";
+            var lD = a(16070),
+                lE = a(84371),
+                lq = a(96747),
+                lO = a(96628);
+            let lB = {
                 ThreePanesLayout:
                     "ThreePanesLayout-module__ThreePanesLayout--Tq4hI",
                 ThreePanesLayoutLeftPane:
@@ -12281,7 +12165,7 @@
                 ThreePanesLayoutMiddleOnlyPane:
                     "ThreePanesLayout-module__ThreePanesLayoutMiddleOnlyPane--uNVJC",
             };
-            function lQ({
+            function l$({
                 leftPane: e,
                 middlePane: l,
                 contentAs: a,
@@ -12291,13 +12175,13 @@
                 resizeable: t = !0,
                 leftPaneWidth: r = "large",
             }) {
-                return (0, y.jsxs)(lB.M, {
+                return (0, y.jsxs)(lO.M, {
                     containerWidth: "full",
                     columnGap: "none",
-                    className: l$.ThreePanesLayout,
+                    className: lB.ThreePanesLayout,
                     children: [
                         e &&
-                            (0, y.jsx)(lB.M.Pane, {
+                            (0, y.jsx)(lO.M.Pane, {
                                 width: r,
                                 position: "start",
                                 divider: "line",
@@ -12305,19 +12189,19 @@
                                 resizable: t,
                                 widthStorageKey: "hyperlist.pane-sidewidth",
                                 "aria-label": e.ariaLabel,
-                                className: l$.ThreePanesLayoutLeftPane,
+                                className: lB.ThreePanesLayoutLeftPane,
                                 children: e.element,
                             }),
-                        (0, y.jsx)(lB.M.Content, {
+                        (0, y.jsx)(lO.M.Content, {
                             as: a,
                             children: n
-                                ? (0, y.jsxs)(lB.M, {
+                                ? (0, y.jsxs)(lO.M, {
                                       containerWidth: "full",
                                       columnGap: "none",
-                                      className: l$.ThreePanesLayoutNested,
+                                      className: lB.ThreePanesLayoutNested,
                                       children: [
                                           l &&
-                                              (0, y.jsx)(lB.M.Pane, {
+                                              (0, y.jsx)(lO.M.Pane, {
                                                   width: "large",
                                                   divider: "line",
                                                   resizable: t,
@@ -12327,11 +12211,11 @@
                                                   position: "start",
                                                   "aria-label": n.ariaLabel,
                                                   className:
-                                                      l$.ThreePanesLayoutMiddlePane,
+                                                      lB.ThreePanesLayoutMiddlePane,
                                                   children: l,
                                               }),
                                           n &&
-                                              (0, y.jsx)(lB.M.Content, {
+                                              (0, y.jsx)(lO.M.Content, {
                                                   as: i,
                                                   padding: s
                                                       ? "normal"
@@ -12343,7 +12227,7 @@
                                 : l
                                   ? (0, y.jsx)("div", {
                                         className:
-                                            l$.ThreePanesLayoutMiddleOnlyPane,
+                                            lB.ThreePanesLayoutMiddleOnlyPane,
                                         children: l,
                                     })
                                   : null,
@@ -12352,10 +12236,10 @@
                 });
             }
             try {
-                lQ.displayName || (lQ.displayName = "ThreePanesLayout");
+                l$.displayName || (l$.displayName = "ThreePanesLayout");
             } catch {}
-            var lU = a(26108);
-            let lz = {
+            var lQ = a(26108);
+            let lU = {
                 argumentDefinitions: [
                     {
                         defaultValue: null,
@@ -12418,8 +12302,8 @@
                 type: "Searchable",
                 abstractKey: "__isSearchable",
             };
-            lz.hash = "c798fd569d54187c387a94dbb72d8826";
-            let lH = {
+            lU.hash = "c798fd569d54187c387a94dbb72d8826";
+            let lz = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -12451,10 +12335,10 @@
                 type: "Shortcutable",
                 abstractKey: "__isShortcutable",
             };
-            lH.hash = "a8438ebbf35da2ba8c7c5360a65efc1f";
-            var lW = a(33544),
-                lG = a(51587);
-            let lZ = {
+            lz.hash = "a8438ebbf35da2ba8c7c5360a65efc1f";
+            var lH = a(33544),
+                lW = a(51587);
+            let lG = {
                     NewViewExperienceContainer:
                         "NewViewExperience-module__NewViewExperienceContainer--NJFI9",
                     textContent: "NewViewExperience-module__textContent--yTiXO",
@@ -12462,11 +12346,11 @@
                     descriptionText:
                         "NewViewExperience-module__descriptionText--AlKtQ",
                 },
-                lX = {
+                lZ = {
                     NewViewGraphicContainer:
                         "NewViewGraphic-module__NewViewGraphicContainer--hX_4x",
                 },
-                lJ = () =>
+                lX = () =>
                     (0, y.jsxs)("svg", {
                         role: "presentation",
                         width: "100%",
@@ -12626,7 +12510,7 @@
                             }),
                         ],
                     }),
-                lY = () =>
+                lJ = () =>
                     (0, y.jsxs)("svg", {
                         role: "presentation",
                         width: "100%",
@@ -12849,52 +12733,52 @@
                             }),
                         ],
                     }),
-                l1 = () => {
+                lY = () => {
                     let { resolvedColorMode: e } = (0, ln.DP)();
                     switch (e) {
                         case "day":
                         case "light":
-                            return (0, y.jsx)(lJ, {});
+                            return (0, y.jsx)(lX, {});
                         case "night":
                         case "dark":
-                            return (0, y.jsx)(lY, {});
+                            return (0, y.jsx)(lJ, {});
                         default:
                             return null;
                     }
                 },
-                l2 = () =>
+                l1 = () =>
                     (0, y.jsx)("div", {
-                        className: lX.NewViewGraphicContainer,
-                        children: (0, y.jsx)(l1, {}),
+                        className: lZ.NewViewGraphicContainer,
+                        children: (0, y.jsx)(lY, {}),
                     });
             try {
-                lJ.displayName || (lJ.displayName = "InboxZeroLightGraphic");
+                lX.displayName || (lX.displayName = "InboxZeroLightGraphic");
             } catch {}
             try {
-                lY.displayName || (lY.displayName = "InboxZeroDarkGraphic");
+                lJ.displayName || (lJ.displayName = "InboxZeroDarkGraphic");
             } catch {}
             try {
-                l1.displayName || (l1.displayName = "InboxZeroGraphic");
+                lY.displayName || (lY.displayName = "InboxZeroGraphic");
             } catch {}
             try {
-                l2.displayName || (l2.displayName = "InboxZeroGraphicWrapper");
+                l1.displayName || (l1.displayName = "InboxZeroGraphicWrapper");
             } catch {}
-            function l0() {
+            function l2() {
                 return (0, y.jsxs)("div", {
-                    className: lZ.NewViewExperienceContainer,
+                    className: lG.NewViewExperienceContainer,
                     children: [
-                        (0, y.jsx)(l2, {}),
+                        (0, y.jsx)(l1, {}),
                         (0, y.jsxs)("div", {
-                            className: lZ.textContent,
+                            className: lG.textContent,
                             children: [
                                 (0, y.jsx)(la.A, {
                                     as: "h2",
-                                    className: lZ.Heading,
+                                    className: lG.Heading,
                                     children:
                                         "Build powerful views to keep track of work",
                                 }),
                                 (0, y.jsx)("span", {
-                                    className: lZ.descriptionText,
+                                    className: lG.descriptionText,
                                     children:
                                         "Create your own views to quickly find and access your work.",
                                 }),
@@ -12904,9 +12788,9 @@
                 });
             }
             try {
-                l0.displayName || (l0.displayName = "NewViewExperience");
+                l2.displayName || (l2.displayName = "NewViewExperience");
             } catch {}
-            let l3 = (function () {
+            let l0 = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -12970,8 +12854,8 @@
                     abstractKey: "__isShortcutable",
                 };
             })();
-            l3.hash = "9c50d63e7c8b908e123ab49c4f0f99ed";
-            let l4 = {
+            l0.hash = "9c50d63e7c8b908e123ab49c4f0f99ed";
+            let l3 = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -13000,9 +12884,10 @@
                 type: "Repository",
                 abstractKey: null,
             };
-            l4.hash = "fb9a1c5ba299c39422336b8e4fd4d059";
-            var l5 = a(92415),
-                l7 = a(55461);
+            l3.hash = "fb9a1c5ba299c39422336b8e4fd4d059";
+            var l4 = a(92415),
+                l5 = a(55461),
+                l7 = a(44569);
             let l6 = {
                     assigned: "assigned",
                     pullsAssignedToMe: "assigned",
@@ -13145,7 +13030,7 @@
             let aL = (e, l, a, n) =>
                 (0, aF.fetchQuery)(
                     e,
-                    lq.k5,
+                    lE.k5,
                     { owner: l, repo: a, number: n, count: 15 },
                     { fetchPolicy: "store-or-network" }
                 ).toPromise();
@@ -13168,8 +13053,8 @@
                             (0, af.N)(),
                         d = (0, C.useRef)(null),
                         c = (0, e8.Z)(),
-                        m = (0, aF.useRelayEnvironment)(),
-                        { issues_react_force_turbo_nav: g } = (0, aK.h)(),
+                        { issues_react_force_turbo_nav: m } = (0, aK.h)(),
+                        g = (0, aF.useRelayEnvironment)(),
                         p = (0, C.useCallback)(
                             async (e, l, n) => {
                                 if (r) return;
@@ -13189,17 +13074,22 @@
                                     } = p.groups;
                                     if (a && s && t) {
                                         let r = parseInt(t);
-                                        ((d.current = i),
-                                            (0, aI.SC)("react"),
-                                            await aL(m, a, s, r),
-                                            d.current === i &&
-                                                i !== D.cg?.location.pathname &&
-                                                ((d.current = null),
-                                                n && window.scrollTo(0, 0),
-                                                c(e, l)));
+                                        ((d.current = i), (0, aI.SC)("react"));
+                                        try {
+                                            (await aL(g, a, s, r),
+                                                d.current === i &&
+                                                    i !==
+                                                        D.cg?.location
+                                                            .pathname &&
+                                                    ((d.current = null),
+                                                    n && window.scrollTo(0, 0),
+                                                    c(e, l)));
+                                        } catch {
+                                            c(e, { ...l, reloadDocument: !0 });
+                                        }
                                     }
                                 } else
-                                    y && t && g
+                                    y && t && m
                                         ? (async () => {
                                               let { softNavigate: e } =
                                                   await Promise.all([
@@ -13214,7 +13104,7 @@
                                           })()
                                         : (n && window.scrollTo(0, 0), c(e, l));
                             },
-                            [u, m, r, o, g, t, c]
+                            [u, g, r, o, m, t, c]
                         ),
                         y = (0, C.useCallback)(
                             (e) => {
@@ -13424,13 +13314,13 @@
                                     switch (e) {
                                         case "text":
                                         default:
-                                            return l5.CH.Text;
+                                            return l4.CH.Text;
                                         case "single_select":
-                                            return l5.CH.Select;
+                                            return l4.CH.Select;
                                         case "date":
-                                            return l5.CH.Date;
+                                            return l4.CH.Date;
                                         case "number":
-                                            return l5.CH.Number;
+                                            return l4.CH.Number;
                                     }
                                 })(s),
                                 values: o,
@@ -13505,7 +13395,7 @@
                 aW = new WeakSet(),
                 aG = new WeakSet();
             let IssueFieldFilterQueryParser = class IssueFieldFilterQueryParser extends aj.i {
-                parse(e, l = new l5.Ny("", [], this.config), a = -1) {
+                parse(e, l = new l4.Ny("", [], this.config), a = -1) {
                     let n = super.parse(e, l, a);
                     return (0, aw._)(this, aH, aZ).call(this, n, e);
                 }
@@ -13537,7 +13427,7 @@
                 if (0 === a.length) return e;
                 let n = e.blocks.map((e) => {
                     if (
-                        (0, l7.aK)(e) &&
+                        (0, l5.aK)(e) &&
                         e.provider.key.startsWith("field.") &&
                         e.provider.aliases?.includes(e.key.value)
                     ) {
@@ -13554,7 +13444,7 @@
                     }
                     return e;
                 });
-                return new l5.Ny(
+                return new l4.Ny(
                     e.raw,
                     n,
                     e.config,
@@ -13620,7 +13510,7 @@
             function aY(e) {
                 let l = {};
                 for (let a of e)
-                    if ((0, l7.B8)(a)) {
+                    if ((0, l5.B8)(a)) {
                         if (a.filterProviders)
                             for (let e of a.filterProviders) {
                                 let a = e.key;
@@ -13636,22 +13526,21 @@
             function a2(e) {
                 return null != e;
             }
-            var a0 = a(30158);
-            let a3 = { positive: !0, negative: !0, decimal: !0 },
-                a4 = new Map();
-            async function a5(e, l) {
+            let a0 = { positive: !0, negative: !0, decimal: !0 },
+                a3 = new Map();
+            async function a4(e, l) {
                 let a = `${l}-${JSON.stringify(e)}`;
-                if (a4.has(a)) return a4.get(a);
-                let n = a7(e, l);
-                return (a4.set(a, n), n);
+                if (a3.has(a)) return a3.get(a);
+                let n = a5(e, l);
+                return (a3.set(a, n), n);
             }
-            async function a7(e, l) {
+            async function a5(e, l) {
                 let a = new URL(
                     "/_filter/issue_fields",
                     window.location.origin
                 );
                 l && a.searchParams.set("repo", l);
-                let n = await a6(a.toString());
+                let n = await a7(a.toString());
                 return new aR.tW(
                     {
                         key: "field",
@@ -13676,6 +13565,7 @@
                                                       value: e.name,
                                                       displayName: e.name,
                                                       priority: aP.a6,
+                                                      iconColor: e.color,
                                                   })
                                               ))
                                             : "date" === n && (i = aT.p),
@@ -13687,7 +13577,7 @@
                                                     .replace(/\s+/g, "-"),
                                             displayName: a,
                                             icon: aA.d6[n].icon,
-                                            type: a9(n),
+                                            type: a6(n),
                                             values: i,
                                             options: (function (e, l) {
                                                 let a = {
@@ -13704,7 +13594,7 @@
                                                     },
                                                 };
                                                 return "number" === l
-                                                    ? { ...a, ...a3 }
+                                                    ? { ...a, ...a0 }
                                                     : a;
                                             })(l, n),
                                         }
@@ -13723,7 +13613,7 @@
                     e
                 );
             }
-            async function a6(e, l) {
+            async function a7(e, l) {
                 let a;
                 try {
                     if (
@@ -13745,33 +13635,33 @@
                     return;
                 }
             }
-            let a9 = (e) => {
+            let a6 = (e) => {
                 switch (e) {
                     case "text":
                     default:
-                        return l5.CH.Text;
+                        return l4.CH.Text;
                     case "single_select":
-                        return l5.CH.Select;
+                        return l4.CH.Select;
                     case "date":
-                        return l5.CH.Date;
+                        return l4.CH.Date;
                     case "number":
-                        return l5.CH.Number;
+                        return l4.CH.Number;
                 }
             };
-            var a8 = a(19459);
+            var a9 = a(19459);
             let SubIssueFilterProvider = class SubIssueFilterProvider extends aR.uy {
                 getSuggestions(e, l, a, n) {
-                    let s = (0, l7.DS)(l, n),
+                    let s = (0, l5.DS)(l, n),
                         i = l.provider.key,
                         t = [];
                     if (
-                        ((0, l7.uT)(l) &&
+                        ((0, l5.uT)(l) &&
                             l.raw !== `-${i}:` &&
-                            (t.push((0, l7.jL)(this.displayName, this.icon)),
-                            t.push((0, l7.Ms)(this.displayName, this.icon))),
-                        "" === s && (0, l7.aK)(l) && l.raw !== `-${i}:`)
+                            (t.push((0, l5.jL)(this.displayName, this.icon)),
+                            t.push((0, l5.Ms)(this.displayName, this.icon))),
+                        "" === s && (0, l5.aK)(l) && l.raw !== `-${i}:`)
                     ) {
-                        let e = (0, l7.m1)(i);
+                        let e = (0, l5.m1)(i);
                         t.unshift(e);
                     }
                     return t;
@@ -13781,15 +13671,15 @@
                         '^"?(?<owner>[a-zA-Z0-9-_.]+)/(?<repo>[a-zA-Z0-9-_.]+)#(?<number>[0-9]+)"?$'
                     );
                     return a.map((e) => {
-                        let l = (0, l7.q5)((0, l7.I8)(e.value));
+                        let l = (0, l5.q5)((0, l5.I8)(e.value));
                         return a.length < 1 || !l
                             ? {
                                   ...e,
                                   valid: !1,
                                   validations: [
                                       {
-                                          type: l5.b.EmptyValue,
-                                          message: a8.D.filterValueEmpty(
+                                          type: l4.b.EmptyValue,
+                                          message: a9.D.filterValueEmpty(
                                               this.key
                                           ),
                                       },
@@ -13802,8 +13692,8 @@
                                     valid: !1,
                                     validations: [
                                         {
-                                            type: l5.b.InvalidValue,
-                                            message: `${a8.D.filterInvalidValue(this.key, l)}. Use the format <pre>&lt;owner&gt;/&lt;repo&gt;#&lt;number&gt;</pre>.`,
+                                            type: l4.b.InvalidValue,
+                                            message: `${a9.D.filterInvalidValue(this.key, l)}. Use the format <pre>&lt;owner&gt;/&lt;repo&gt;#&lt;number&gt;</pre>.`,
                                         },
                                     ],
                                 };
@@ -13816,22 +13706,22 @@
                             displayName: "Sub-issue",
                             icon: V.IssueTracksIcon,
                             priority: 5,
-                            type: l5.CH.Text,
+                            type: l4.CH.Text,
                         },
                         [],
-                        { filterTypes: { ...l5.dQ?.filterTypes, hasValue: !0 } }
+                        { filterTypes: { ...l4.dQ?.filterTypes, hasValue: !0 } }
                     );
                 }
             };
-            let ne = (e, l) => (e ? [l] : []),
-                nl = {
+            let a8 = (e, l) => (e ? [l] : []),
+                ne = {
                     gap8: "SearchBar-module__gap8--tZi0W",
                     filterContainer: "SearchBar-module__filterContainer--XzLet",
                     validation: "SearchBar-module__validation--m94_M",
                     filter: "SearchBar-module__filter--uooUm",
                     FormControl: "SearchBar-module__FormControl--SjyQK",
                 },
-                na = {
+                nl = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -13855,10 +13745,10 @@
                     type: "Repository",
                     abstractKey: null,
                 };
-            na.hash = "a797e54d6a4d9410241158e79db7ba3d";
-            var nn = a(92559),
-                ns = a(21373);
-            let ni = {
+            nl.hash = "a797e54d6a4d9410241158e79db7ba3d";
+            var na = a(92559),
+                nn = a(21373);
+            let ns = {
                     cancel: "Cancel",
                     apply: "Apply",
                     issues: "Issues",
@@ -13867,39 +13757,39 @@
                     returnToList: "Return to list",
                     setIssueType: "Issue type",
                 },
-                nt = {
+                ni = {
                     gap8: "SearchBarActions-module__gap8--TvBJx",
                     buttons: "SearchBarActions-module__buttons--DBEMp",
                 };
-            function nr({ currentRepository: e }) {
+            function nt({ currentRepository: e }) {
                 let l = (0, e8.Z)(),
                     { currentUser: a } = (0, le.J)(),
                     { scoped_repository: n, current_user_settings: s } = (0,
                     w.X)(),
-                    i = (0, ed.useFragment)(na, e),
+                    i = (0, ed.useFragment)(nl, e),
                     t =
                         n?.is_archived ||
                         (null != a &&
                             !!a?.is_emu &&
                             (!i || !i.isOwnerEnterpriseManaged));
                 return (0, y.jsxs)("div", {
-                    className: `${nt.buttons} ${nt.gap8} d-flex flex-wrap`,
+                    className: `${ni.buttons} ${ni.gap8} d-flex flex-wrap`,
                     children: [
-                        (0, y.jsx)(ns.Q, {
+                        (0, y.jsx)(nn.Q, {
                             as: "a",
                             href: `/${i?.nameWithOwner}/labels`,
                             leadingVisual: V.TagIcon,
                             children: "Labels",
                         }),
-                        (0, y.jsx)(ns.Q, {
+                        (0, y.jsx)(nn.Q, {
                             as: "a",
                             href: `/${i?.nameWithOwner}/milestones`,
                             leadingVisual: V.MilestoneIcon,
                             children: "Milestones",
                         }),
                         !t &&
-                            (0, y.jsx)(nn.a, {
-                                label: ni.newIssue,
+                            (0, y.jsx)(na.a, {
+                                label: ns.newIssue,
                                 navigate: l,
                                 optionConfig: {
                                     issueCreateArguments: {
@@ -13910,8 +13800,6 @@
                                     showRepositoryPicker: null === n,
                                     emojiSkinTonePreference:
                                         s?.preferred_emoji_skin_tone,
-                                    singleKeyShortcutsEnabled:
-                                        s?.use_single_key_shortcut || !1,
                                     showFullScreenButton: !0,
                                     canBypassTemplateSelection: !0,
                                     navigate: l,
@@ -13921,16 +13809,16 @@
                 });
             }
             try {
-                nr.displayName || (nr.displayName = "SearchBarActions");
+                nt.displayName || (nt.displayName = "SearchBarActions");
             } catch {}
-            let no = ({ editing: e, children: l }) =>
+            let nr = ({ editing: e, children: l }) =>
                 e
                     ? (0, y.jsx)(ah.A, {
-                          className: nl.FormControl,
+                          className: ne.FormControl,
                           children: l,
                       })
                     : (0, y.jsx)(y.Fragment, { children: l });
-            function nu({
+            function no({
                 currentViewKey: e,
                 currentRepository: l,
                 queryFromCustomView: a,
@@ -13946,46 +13834,45 @@
                     [u, d] = (0, C.useState)([]),
                     { search: c, pathname: m } = (0, N.zy)(),
                     g = new URLSearchParams(c).get("q"),
-                    { scoped_repository: p, current_user_settings: h } = (0,
-                    w.X)(),
-                    { navigateToUrl: b } = ax(),
-                    f = (0, k.G7)("issue_fields_global_search"),
-                    S = (0, k.G7)("issue_search_trailing_space_removal"),
+                    { scoped_repository: p } = (0, w.X)(),
+                    { navigateToUrl: h } = ax(),
+                    b = (0, k.G7)("issue_fields_global_search"),
+                    f = (0, k.G7)("issue_search_trailing_space_removal"),
                     {
-                        id: F,
-                        scopingRepository: L,
-                        query: v,
-                    } = (0, ed.useFragment)(l3, e),
-                    K = (0, ed.useFragment)(l4, l),
+                        id: S,
+                        scopingRepository: F,
+                        query: L,
+                    } = (0, ed.useFragment)(l0, e),
+                    v = (0, ed.useFragment)(l3, l),
                     {
-                        author: I,
-                        assignee: _,
-                        mentioned: x,
-                        label: j,
+                        author: K,
+                        assignee: I,
+                        mentioned: _,
+                        label: x,
                     } = (0, N.g)(),
-                    R = `${et.defaultQuery} ${et.query({ author: I, assignee: _, mentioned: x, label: j, createdByApp: eC(m) })}`,
-                    P = v;
+                    j = `${et.defaultQuery} ${et.query({ author: K, assignee: I, mentioned: _, label: x, createdByApp: eC(m) })}`,
+                    R = L;
                 ef(m)
-                    ? (P = R)
-                    : eb(m) && j && (P = eP("state:open", [j], "label"));
-                let T = L ? `repo:${L.owner.login}/${L.name} ${P}` : P,
+                    ? (R = j)
+                    : eb(m) && x && (R = eP("state:open", [x], "label"));
+                let P = F ? `repo:${F.owner.login}/${F.name} ${R}` : R,
                     {
-                        dirtySearchQuery: A,
-                        setDirtySearchQuery: M,
-                        setShouldFocusSearchOnNav: V,
-                        shouldFocusSearchOnNav: D,
+                        dirtySearchQuery: T,
+                        setDirtySearchQuery: A,
+                        setShouldFocusSearchOnNav: M,
+                        shouldFocusSearchOnNav: V,
                     } = eq(),
-                    B = (0, C.useCallback)(
+                    D = (0, C.useCallback)(
                         (e) => {
-                            (i(e), M(null));
+                            (i(e), A(null));
                         },
-                        [i, M]
+                        [i, A]
                     );
                 (0, C.useEffect)(() => {
-                    ey(m) || (i(g || T || ""), M(g));
-                }, [B, g, m, T, i, M]);
-                let { sendAnalyticsEvent: $ } = (0, ay.s)(),
-                    Q = ((e) => {
+                    ey(m) || (i(g || P || ""), A(g));
+                }, [D, g, m, P, i, A]);
+                let { sendAnalyticsEvent: B } = (0, ay.s)(),
+                    $ = ((e) => {
                         let {
                                 isOrgScope: l = !1,
                                 isIssueFieldsEnabled: a = !1,
@@ -14009,7 +13896,7 @@
                                     a = { filterTypes: { valueless: !1 } },
                                     n = { filterTypes: { hasValue: !0 } };
                                 return [
-                                    ...ne(
+                                    ...a8(
                                         !r,
                                         new aR.pH({
                                             ...a,
@@ -14017,18 +13904,18 @@
                                         })
                                     ),
                                     ...u,
-                                    ...ne(!r, new aR.E({ ...a })),
+                                    ...a8(!r, new aR.E({ ...a })),
                                     new aR.I4(m, a),
                                     new aR.PT("mixed", a),
                                     new aR.aF(n),
-                                    ...ne(l || !r, new a1.B(n, !0, i, c)),
+                                    ...a8(l || !r, new a1.B(n, !0, i, c)),
                                     new aR.FG(n),
                                     new aR.Qq(n),
-                                    new a0.A({ ...e, showAtCopilot: o }, n),
-                                    new a0.OD({ ...e, showAtCopilot: o }, a),
-                                    new a0.Tq({ ...e, showAtCopilot: !0 }, a),
+                                    new aR.n5({ ...e, showAtCopilot: o }, n),
+                                    new aR.Bc({ ...e, showAtCopilot: o }, a),
+                                    new aR.IL({ ...e, showAtCopilot: !0 }, a),
                                     new aR.Pd(e, a),
-                                    new aR.$q(l5._i.parentIssue, n),
+                                    new aR.$q(l4._i.parentIssue, n),
                                     new aR.tQ(),
                                     new aR.rL(),
                                     new SubIssueFilterProvider(),
@@ -14036,12 +13923,12 @@
                                     new aR._O(a),
                                     new aR.ws(a),
                                     new aR.Or(a),
-                                    new a0.Te({ ...e, showAtCopilot: !0 }, a),
+                                    new aR.kL({ ...e, showAtCopilot: !0 }, a),
                                     new aR.HD(),
                                     new aR._N(e, a),
                                     new aR.Dv(e, a),
                                     new aR.LB(e, a),
-                                    new a0.Tr({ ...e, showAtCopilot: !0 }, a),
+                                    new aR.sW({ ...e, showAtCopilot: !0 }, a),
                                     new aR.Ge(a),
                                     new aR.NT(a),
                                     new aR.Ag(a),
@@ -14073,7 +13960,7 @@
                             let e = async () => {
                                 let e;
                                 (c && a
-                                    ? (e = await a5(
+                                    ? (e = await a4(
                                           {
                                               filterTypes: {
                                                   hasValue: !0,
@@ -14120,49 +14007,50 @@
                             [g]
                         ),
                         g))
-                            "priority" in e && (e.priority = l5.$D);
+                            "priority" in e && (e.priority = l4.$D);
                         return g;
                     })({
-                        isOrgScope: !!K?.isInOrganization,
-                        isIssueFieldsEnabled: !!K?.viewerCanSeeIssueFields,
-                        isIssueFieldsGlobalSearchEnabled: f,
+                        isOrgScope: !!v?.isInOrganization,
+                        isIssueFieldsEnabled: !!v?.viewerCanSeeIssueFields,
+                        isIssueFieldsGlobalSearchEnabled: b,
                     }),
-                    U = (0, C.useCallback)(
+                    Q = (0, C.useCallback)(
                         (e, l) => {
                             let a = e.raw;
-                            l === l5.FT.Clear && ((a = T), B(T));
+                            l === l4.FT.Clear && ((a = P), D(P));
                             let n = (a || "is:issue").trim();
                             (e.config.groupAndKeywordSupport ||
                                 (n = ((e) => {
                                     let l = eA(e, "is", E);
                                     return eA(l, "state", O);
                                 })(a)),
-                                $("search.execute", "FILTER_BAR_INPUT", {
+                                B("search.execute", "FILTER_BAR_INPUT", {
                                     new_query: n,
                                 }),
-                                b(ao({ viewId: F, query: n }), {
+                                h(ao({ viewId: S, query: n }), {
                                     preventAutofocus: !0,
                                 }),
                                 o(1));
                         },
-                        [$, b, o, T, B, F]
+                        [B, h, o, P, D, S]
                     ),
+                    U = (0, C.useMemo)(() => (0, l7.zw)(), []),
                     z = (0, C.useCallback)(
                         (e) => {
-                            if (h?.use_single_key_shortcut && s && s.current) {
+                            if (U && s && s.current) {
                                 s.current.focus();
                                 let l = s.current.value?.length || 0;
                                 (s.current.setSelectionRange(l, l),
                                     e.preventDefault());
                             }
                         },
-                        [h?.use_single_key_shortcut]
+                        [U]
                     ),
                     H = (0, C.useCallback)(
                         (e) => {
-                            M(e.trim());
+                            A(e.trim());
                         },
-                        [M]
+                        [A]
                     ),
                     [G, Z] = (0, C.useState)(!1);
                 (0, C.useEffect)(() => {
@@ -14182,22 +14070,22 @@
                 let X = (0, C.useCallback)((e) => d(e), [d]);
                 ((0, ak._)([ap.focusSearch], z, { [ak.A.metaKey]: !0 }),
                     (0, ak._)([ap.focusSearch], z, { [ak.A.ctrlKey]: !0 }));
-                let Y = r && t(F);
+                let Y = r && t(S);
                 ((0, C.useEffect)(() => {
                     if (!s.current || !Y) return;
                     let e = s.current;
                     function l() {
-                        V(!0);
+                        M(!0);
                     }
                     return (
                         e.addEventListener("focus", l),
                         () => e.removeEventListener("focus", l)
                     );
-                }, [Y, V]),
+                }, [Y, M]),
                     (0, C.useEffect)(() => {
                         Y &&
                             s.current &&
-                            D &&
+                            V &&
                             requestAnimationFrame(() => {
                                 if (s.current) {
                                     s.current.focus();
@@ -14205,23 +14093,23 @@
                                     s.current.setSelectionRange(e, e);
                                 }
                             });
-                    }, [Y, D]));
+                    }, [Y, V]));
                 let ee =
                         ef(m) || eb(m)
-                            ? P
-                            : [...er, en].find((e) => e.id === F)?.query,
+                            ? R
+                            : [...er, en].find((e) => e.id === S)?.query,
                     el = (0, C.useMemo)(
-                        () => (F === J.id ? (g ?? ee) : (ee ?? g)),
-                        [ee, g, F]
+                        () => (S === J.id ? (g ?? ee) : (ee ?? g)),
+                        [ee, g, S]
                     ),
-                    ea = (0, C.useMemo)(() => A ?? el ?? a ?? "", [A, el, a]),
+                    ea = (0, C.useMemo)(() => T ?? el ?? a ?? "", [T, el, a]),
                     es = p ? `${p.owner}/${p.name}` : void 0,
                     ei = !1;
-                ei = t(F)
-                    ? A?.trim() !== a?.trim()
-                    : F === J.id
-                      ? A?.trim() !== ee?.trim()
-                      : A?.trim() !== el?.trim();
+                ei = t(S)
+                    ? T?.trim() !== a?.trim()
+                    : S === J.id
+                      ? T?.trim() !== ee?.trim()
+                      : T?.trim() !== el?.trim();
                 let eo = (function ({
                         baseFilterProviders: e,
                         effectiveQuery: l,
@@ -14233,7 +14121,7 @@
                                     a &&
                                     e.some(
                                         (e) =>
-                                            !!(0, l7.B8)(e) &&
+                                            !!(0, l5.B8)(e) &&
                                             !!e.filterProviders &&
                                             e.filterProviders.some(
                                                 (e) => e.key && az(e.key)
@@ -14244,8 +14132,8 @@
                             i = (0, C.useMemo)(
                                 () =>
                                     new aj.i(
-                                        e.filter((e) => !(0, l7.B8)(e)),
-                                        { ...l5.a7, groupAndKeywordSupport: !0 }
+                                        e.filter((e) => !(0, l5.B8)(e)),
+                                        { ...l4.a7, groupAndKeywordSupport: !0 }
                                     ),
                                 [e]
                             ),
@@ -14412,7 +14300,7 @@
                             try {
                                 a = i.parse(l || "");
                             } catch {
-                                a = new l5.Ny(
+                                a = new l4.Ny(
                                     l || "",
                                     [],
                                     void 0,
@@ -14431,16 +14319,16 @@
                             return Object.values(r(a, o, t.orgNames));
                         }, [e, s, t.hasContext, t.orgNames, n, i, r, l]);
                     })({
-                        baseFilterProviders: Q,
+                        baseFilterProviders: $,
                         effectiveQuery: ea,
-                        issueFieldsGlobalSearchEnabled: f,
+                        issueFieldsGlobalSearchEnabled: b,
                     }),
                     eu = (0, C.useMemo)(
                         () =>
                             new IssueFieldFilterQueryParser(
-                                eo.filter((e) => !(0, l7.B8)(e)),
+                                eo.filter((e) => !(0, l5.B8)(e)),
                                 {
-                                    ...l5.a7,
+                                    ...l4.a7,
                                     aliasMatching: !0,
                                     groupAndKeywordSupport: !0,
                                 }
@@ -14448,10 +14336,10 @@
                         [eo]
                     ),
                     ec = (0, C.useMemo)(
-                        () => (S || G ? ea : ea ? `${ea.trim()} ` : ""),
-                        [S, G, ea]
+                        () => (f || G ? ea : ea ? `${ea.trim()} ` : ""),
+                        [f, G, ea]
                     );
-                return (0, y.jsxs)(no, {
+                return (0, y.jsxs)(nr, {
                     editing: Y,
                     children: [
                         Y &&
@@ -14460,14 +14348,14 @@
                                 children: ab.query,
                             }),
                         (0, y.jsx)("div", {
-                            className: `${nl.gap8} px-0 ${Y ? "d-flex" : "d-block"} flex-row flex-justify-between`,
+                            className: `${ne.gap8} px-0 ${Y ? "d-flex" : "d-block"} flex-row flex-justify-between`,
                             children: (0, y.jsxs)("div", {
-                                className: `${nl.filterContainer} ${nl.gap8} d-flex flex-row flex-1 flexWrap min-width-0`,
+                                className: `${ne.filterContainer} ${ne.gap8} d-flex flex-row flex-1 flexWrap min-width-0`,
                                 children: [
                                     (0, y.jsx)("div", {
-                                        className: `${nl.filter} d-flex flex-1 flex-column`,
-                                        children: (0, y.jsx)(l5.dJ, {
-                                            id: F ?? "search",
+                                        className: `${ne.filter} d-flex flex-1 flex-column`,
+                                        children: (0, y.jsx)(l4.dJ, {
+                                            id: S ?? "search",
                                             context: es ? { repo: es } : void 0,
                                             label: Y
                                                 ? W.issueEditingSearchInputAriaLabel
@@ -14475,9 +14363,9 @@
                                             visuallyHideLabel: !Y,
                                             placeholder:
                                                 W.issueSearchInputPlaceholder,
-                                            onSubmit: U,
+                                            onSubmit: Q,
                                             onChange: H,
-                                            providers: es ? Q : eo,
+                                            providers: es ? $ : eo,
                                             inputRef: s,
                                             filterValue: ec,
                                             variant: "input",
@@ -14487,20 +14375,20 @@
                                             },
                                             showValidationMessage: !1,
                                             onValidation: X,
-                                            showClearButton: null !== A && ei,
+                                            showClearButton: null !== T && ei,
                                             customParser: es ? void 0 : eu,
                                         }),
                                     }),
                                     n,
                                     p &&
                                         !ey(m) &&
-                                        (0, y.jsx)(nr, {
-                                            currentRepository: K,
+                                        (0, y.jsx)(nt, {
+                                            currentRepository: v,
                                         }),
                                     u.length > 0 &&
                                         (0, y.jsx)("div", {
-                                            className: `${nl.validation} mt-1`,
-                                            children: (0, y.jsx)(l5.Xl, {
+                                            className: `${ne.validation} mt-1`,
+                                            children: (0, y.jsx)(l4.Xl, {
                                                 messages: u,
                                                 id: "repository-validation-message",
                                             }),
@@ -14512,12 +14400,12 @@
                 });
             }
             try {
-                no.displayName || (no.displayName = "DynamicWrapper");
+                nr.displayName || (nr.displayName = "DynamicWrapper");
             } catch {}
             try {
-                nu.displayName || (nu.displayName = "SearchBar");
+                no.displayName || (no.displayName = "SearchBar");
             } catch {}
-            let nd = {
+            let nu = {
                 argumentDefinitions: [
                     {
                         defaultValue: null,
@@ -14580,8 +14468,8 @@
                 type: "Searchable",
                 abstractKey: "__isSearchable",
             };
-            nd.hash = "eba993ac639526f6caaf137566bcdb58";
-            let nc = {
+            nu.hash = "eba993ac639526f6caaf137566bcdb58";
+            let nd = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -14626,9 +14514,9 @@
                 type: "Repository",
                 abstractKey: null,
             };
-            nc.hash = "f65187d282f8f58f706a2eabbfe6075b";
-            var nm = a(90434);
-            let ng = {
+            nd.hash = "f65187d282f8f58f706a2eabbfe6075b";
+            var nc = a(90434);
+            let nm = {
                     "+1": "Thumbs up",
                     "-1": "Thumbs down",
                     rocket: "Rocket",
@@ -14638,7 +14526,7 @@
                     smile: "Laugh",
                     thinking_face: "Confused",
                 },
-                np = {
+                ng = {
                     sort: "Sort",
                     Newest: "Newest",
                     Oldest: "Oldest",
@@ -14655,9 +14543,9 @@
                         updated: "Updated",
                         relevance: "Best match",
                         reactions: "Reactions",
-                        ...ng,
+                        ...nm,
                     },
-                    sortDropdownReactionLabels: ng,
+                    sortDropdownReactionLabels: nm,
                     sortKeyToQuery: {
                         created: "sort:created",
                         comments: "sort:comments",
@@ -14681,9 +14569,9 @@
                     descending: "Descending",
                     totalReactions: "Total reactions",
                 };
-            var ny = a(5524),
-                nk = a(81945);
-            let nh = {
+            var np = a(5524),
+                ny = a(81945);
+            let nk = {
                     rowLoadingContainer:
                         "RowLoading-module__rowLoadingContainer--mNExW",
                     rowLoadingContent:
@@ -14691,25 +14579,25 @@
                     LoadingSkeleton:
                         "RowLoading-module__LoadingSkeleton--J59rS",
                 },
-                nb = ({ width: e = "random", showCompactDensity: l = !1 }) =>
-                    (0, y.jsx)(ny.l.Item, {
+                nh = ({ width: e = "random", showCompactDensity: l = !1 }) =>
+                    (0, y.jsx)(np.l.Item, {
                         "aria-disabled": "true",
                         children: (0, y.jsxs)(ln.az, {
                             sx: {
                                 alignItems: l ? "center" : "flex-start",
                                 height: l ? "20px" : "40px",
                             },
-                            className: nh.rowLoadingContainer,
+                            className: nk.rowLoadingContainer,
                             children: [
-                                (0, y.jsx)(nk.O, {
+                                (0, y.jsx)(ny.O, {
                                     variant: "elliptical",
                                     height: "md",
                                     width: "md",
                                 }),
                                 (0, y.jsxs)("div", {
-                                    className: nh.rowLoadingContent,
+                                    className: nk.rowLoadingContent,
                                     children: [
-                                        (0, y.jsx)(nk.O, {
+                                        (0, y.jsx)(ny.O, {
                                             variant: "rounded",
                                             height: "sm",
                                             width: e,
@@ -14719,11 +14607,11 @@
                                             }),
                                         }),
                                         !l &&
-                                            (0, y.jsx)(nk.O, {
+                                            (0, y.jsx)(ny.O, {
                                                 variant: "rounded",
                                                 height: "12px",
                                                 width: e,
-                                                className: nh.LoadingSkeleton,
+                                                className: nk.LoadingSkeleton,
                                             }),
                                     ],
                                 }),
@@ -14731,22 +14619,22 @@
                         }),
                     });
             try {
-                nb.displayName || (nb.displayName = "RowLoading");
+                nh.displayName || (nh.displayName = "RowLoading");
             } catch {}
-            let nf = ({ numberOfRows: e, isCompact: l }) =>
-                (0, y.jsx)(ny.l, {
+            let nb = ({ numberOfRows: e, isCompact: l }) =>
+                (0, y.jsx)(np.l, {
                     children: [...Array(e)].map((e, a) =>
-                        (0, y.jsx)(nb, { showCompactDensity: l }, a)
+                        (0, y.jsx)(nh, { showCompactDensity: l }, a)
                     ),
                 });
             try {
-                nf.displayName || (nf.displayName = "ActionListLoading");
+                nb.displayName || (nb.displayName = "ActionListLoading");
             } catch {}
-            let nC = {
+            let nf = {
                     ListLoadingHeader:
                         "ListLoading-module__ListLoadingHeader--dnuoU",
                 },
-                nS = ({
+                nC = ({
                     pageSize: e,
                     showBorder: l = !0,
                     headerTitle: a,
@@ -14764,7 +14652,7 @@
                         children: [
                             l &&
                                 (0, y.jsxs)("div", {
-                                    className: nC.ListLoadingHeader,
+                                    className: nf.ListLoadingHeader,
                                     children: [
                                         a,
                                         n?.map((e, l) =>
@@ -14776,38 +14664,38 @@
                                         ),
                                     ],
                                 }),
-                            (0, y.jsx)(nf, { numberOfRows: e, isCompact: s }),
+                            (0, y.jsx)(nb, { numberOfRows: e, isCompact: s }),
                         ],
                     });
             try {
-                nS.displayName || (nS.displayName = "ListLoading");
+                nC.displayName || (nC.displayName = "ListLoading");
             } catch {}
-            let nF = ({ layoutDensity: e, ...l }) => {
-                let a = e === np.Compact.toLowerCase();
-                return (0, y.jsx)(nS, { isCompactRows: a, ...l });
+            let nS = ({ layoutDensity: e, ...l }) => {
+                let a = e === ng.Compact.toLowerCase();
+                return (0, y.jsx)(nC, { isCompactRows: a, ...l });
             };
             try {
-                nF.displayName || (nF.displayName = "ListLoading");
+                nS.displayName || (nS.displayName = "ListLoading");
             } catch {}
-            let nL = {
+            let nF = {
                     label: "label",
                     assignee: "assignee",
                     "parent-issue": "parent-issue",
                     is: "is",
                 },
-                nv = { today: "@today" },
-                nK = { day: "d", week: "w", month: "m", year: "y" },
-                nI = RegExp(`^(\\d+)(${Object.values(nK).join("|")})`),
-                n_ = /(?:^|\s)reason:"?(completed|not(\s|-)planned)"?(?:$|\s)/g;
-            function nx(e, l) {
+                nL = { today: "@today" },
+                nv = { day: "d", week: "w", month: "m", year: "y" },
+                nK = RegExp(`^(\\d+)(${Object.values(nv).join("|")})`),
+                nI = /(?:^|\s)reason:"?(completed|not(\s|-)planned)"?(?:$|\s)/g;
+            function n_(e, l) {
                 var a;
-                let n = nw(
+                let n = nx(
                     ((a = e),
                     l?.is_archived ? a : `${"" === a ? "archived:false" : a}`)
                 );
                 if (!l) return n;
                 let s = "",
-                    i = nN(n),
+                    i = nw(n),
                     t = (function (e) {
                         let l = new Map(e),
                             a = l.get("is") || [],
@@ -14847,14 +14735,14 @@
                     .join(" ")
                     .trim();
             }
-            function nw(e) {
+            function nx(e) {
                 let l = (function (e) {
                     let l = [],
                         a = e.indexOf("@");
                     if (-1 === a) return l;
                     for (; a < e.length; ) {
-                        for (let n in nv) {
-                            let s = nv[n];
+                        for (let n in nL) {
+                            let s = nL[n];
                             if (e.startsWith(s, a)) {
                                 (l.push({ token: s, pos: a }), (a += s.length));
                                 break;
@@ -14869,7 +14757,7 @@
                     let a = new Date(),
                         n = [];
                     for (let s of l) {
-                        let l = s.token === nv.today ? a.getTime() : void 0;
+                        let l = s.token === nL.today ? a.getTime() : void 0;
                         if (!l) continue;
                         let i = (function (e, l, a) {
                             let n = l.token.length,
@@ -14883,7 +14771,7 @@
                                 let r = e.substring(
                                     l.pos + l.token.length + s.length
                                 );
-                                var i = nI.exec(r),
+                                var i = nK.exec(r),
                                     t = n;
                                 if (!i) return null;
                                 let o = parseInt(i[1], 10),
@@ -14893,19 +14781,19 @@
                                     let s = new Date(e.getTime()),
                                         i = "-" === n ? -1 : 1;
                                     switch (a) {
-                                        case nK.day:
+                                        case nv.day:
                                             s.setDate(e.getDate() + i * l);
                                             break;
-                                        case nK.week:
+                                        case nv.week:
                                             s.setDate(e.getDate() + i * l * 7);
                                             break;
-                                        case nK.month:
+                                        case nv.month:
                                             (s.setMonth(e.getMonth() + i * l),
                                                 1 === s.getDate() &&
                                                     1 !== e.getDate() &&
                                                     s.setDate(s.getDate() - 1));
                                             break;
-                                        case nK.year:
+                                        case nv.year:
                                             s.setFullYear(
                                                 e.getFullYear() + i * l
                                             );
@@ -14944,7 +14832,7 @@
                           return a;
                       })(e, a);
             }
-            function nN(e) {
+            function nw(e) {
                 let l = new Map();
                 for (let a of (l.set("searchTerms", []),
                 e
@@ -14964,15 +14852,15 @@
                 }
                 return l;
             }
-            function nj(e) {
+            function nN(e) {
                 if (!e) return !1;
-                let l = nN(e).get("sort");
+                let l = nw(e).get("sort");
                 return (
                     (l && 1 === l.length && l[0].startsWith("reactions-")) || !1
                 );
             }
-            function nR(e) {
-                let l = nN(e),
+            function nj(e) {
+                let l = nw(e),
                     a = new Map(
                         [...(l.get("is") || []), ...(l.get("type") || [])].map(
                             (e) => [e, !0]
@@ -14982,16 +14870,16 @@
                     s = a.has("issue") || a.has("issues");
                 return n && !s;
             }
-            var nP = a(76873),
-                nT = a(66730),
-                nA = a(10095),
-                nM = a(34164);
-            let nV = {
+            var nR = a(76873),
+                nP = a(66730),
+                nT = a(10095),
+                nA = a(34164);
+            let nM = {
                     errorIcon: "ListError-module__errorIcon--JanXt",
                     errorMessage: "ListError-module__errorMessage--Ba9p5",
                     retryLink: "ListError-module__retryLink--dfTU6",
                 },
-                nD = ({
+                nV = ({
                     retry: e,
                     icon: l,
                     title: a,
@@ -15003,10 +14891,10 @@
                         className: "blankslate",
                         "data-testid": i,
                         children: [
-                            (0, y.jsx)(nA.A, {
-                                className: (0, nM.$)(
+                            (0, y.jsx)(nT.A, {
+                                className: (0, nA.$)(
                                     "blankslate-icon",
-                                    nV.errorIcon
+                                    nM.errorIcon
                                 ),
                                 icon: l ?? V.AlertFillIcon,
                             }),
@@ -15015,23 +14903,23 @@
                                 children: a,
                             }),
                             (0, y.jsx)("p", {
-                                className: nV.errorMessage,
+                                className: nM.errorMessage,
                                 children: n,
                             }),
                             e &&
                                 (0, y.jsx)(ll.A, {
                                     as: "button",
-                                    underline: !0,
+                                    inline: !0,
                                     onClick: e,
-                                    className: nV.retryLink,
-                                    children: s ?? nT.l.tryAgain,
+                                    className: nM.retryLink,
+                                    children: s ?? nP.l.tryAgain,
                                 }),
                         ],
                     });
             try {
-                nD.displayName || (nD.displayName = "ListError");
+                nV.displayName || (nV.displayName = "ListError");
             } catch {}
-            let nE = {
+            let nD = {
                     list: "list",
                     listHeader: "list-header",
                     issueRowItem: (e) => `issue-row-${e}`,
@@ -15044,17 +14932,17 @@
                     ftcBannerContributingGuidelinesLink:
                         "contributing-guidelines",
                 },
-                nq = (e) =>
-                    (0, y.jsx)(nD, {
+                nE = (e) =>
+                    (0, y.jsx)(nV, {
                         retry: e,
                         title: ab.failedToLoadIssues,
                         message: ab.errorLoadingIssues,
-                        testid: nE.fallback,
+                        testid: nD.fallback,
                     });
             try {
-                nq.displayName || (nq.displayName = "ListError");
+                nE.displayName || (nE.displayName = "ListError");
             } catch {}
-            let nO = (function () {
+            let nq = (function () {
                 var e = {
                         defaultValue: null,
                         kind: "LocalArgument",
@@ -16025,8 +15913,8 @@
                     },
                 };
             })();
-            nO.hash = "e1b8aa7e19458e9e6efcbb2e0d9f0481";
-            let nB = (function () {
+            nq.hash = "e1b8aa7e19458e9e6efcbb2e0d9f0481";
+            let nO = (function () {
                 var e = ["search"],
                     l = {
                         alias: null,
@@ -16110,7 +15998,7 @@
                                 path: e,
                             },
                             fragmentPathInResult: ["node"],
-                            operation: nO,
+                            operation: nq,
                             identifierInfo: {
                                 identifierField: "id",
                                 identifierQueryVariableName: "id",
@@ -16473,10 +16361,10 @@
                     abstractKey: "__isSearchable",
                 };
             })();
-            nB.hash = "e1b8aa7e19458e9e6efcbb2e0d9f0481";
-            var n$ = a(4559),
-                nQ = a(97174);
-            let nU = {
+            nO.hash = "e1b8aa7e19458e9e6efcbb2e0d9f0481";
+            var nB = a(4559),
+                n$ = a(97174);
+            let nQ = {
                 argumentDefinitions: [
                     {
                         defaultValue: null,
@@ -16568,10 +16456,10 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            nU.hash = "21fd35aed4bf06bc46c2c5f43e336427";
-            var nz = a(21067),
-                nH = a(83494);
-            let nW = (function () {
+            nQ.hash = "21fd35aed4bf06bc46c2c5f43e336427";
+            var nU = a(21067),
+                nz = a(83494);
+            let nH = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -16676,13 +16564,13 @@
                     abstractKey: null,
                 };
             })();
-            nW.hash = "c20a301821f28d981af0c2c745f39cf2";
-            var nG = a(72822),
-                nZ = a(2970),
-                nX = a(98994),
-                nJ = a(51880),
-                nY = a(43617);
-            let n1 = {
+            nH.hash = "c20a301821f28d981af0c2c745f39cf2";
+            var nW = a(72822),
+                nG = a(2970),
+                nZ = a(98994),
+                nX = a(51880),
+                nJ = a(43617);
+            let nY = {
                     ListItem_0: "IssueItem-module__ListItem_0--ni8FY",
                     leadingContent: "IssueItem-module__leadingContent--s16iU",
                     commentCountContainer:
@@ -16699,7 +16587,7 @@
                         "IssueItem-module__compactNameWithOwnerLabel--DzPNM",
                     token: "IssueItem-module__token--huZNl",
                 },
-                n2 = {
+                n1 = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -16734,14 +16622,14 @@
                     type: "Issue",
                     abstractKey: null,
                 };
-            n2.hash = "9c625883c1ab2a710b78eb3d2e69cda8";
-            var n0 = a(29731),
-                n3 = a(54070);
-            function n4({ metadataRef: e, issueId: l, getIssueTypeHref: a }) {
+            n1.hash = "9c625883c1ab2a710b78eb3d2e69cda8";
+            var n2 = a(29731),
+                n0 = a(54070);
+            function n3({ metadataRef: e, issueId: l, getIssueTypeHref: a }) {
                 return e
                     ? (0, y.jsx)(C.Suspense, {
                           fallback: null,
-                          children: (0, y.jsx)(n5, {
+                          children: (0, y.jsx)(n4, {
                               issueId: l,
                               metadataRef: e,
                               getIssueTypeHref: a,
@@ -16749,44 +16637,44 @@
                       })
                     : null;
             }
-            function n5({ metadataRef: e, issueId: l, getIssueTypeHref: a }) {
-                let { nodes: n } = (0, ed.usePreloadedQuery)(iG, e),
+            function n4({ metadataRef: e, issueId: l, getIssueTypeHref: a }) {
+                let { nodes: n } = (0, ed.usePreloadedQuery)(iW, e),
                     s = n?.find((e) => e?.id === l);
                 return s
-                    ? (0, y.jsx)(n7, { blockedByKey: s, getIssueTypeHref: a })
+                    ? (0, y.jsx)(n5, { blockedByKey: s, getIssueTypeHref: a })
                     : null;
             }
-            function n7({ blockedByKey: e, getIssueTypeHref: l }) {
-                let a = (0, ed.useFragment)(n2, e);
+            function n5({ blockedByKey: e, getIssueTypeHref: l }) {
+                let a = (0, ed.useFragment)(n1, e);
                 if (a?.state === "CLOSED" || !a?.issueDependenciesSummary)
                     return null;
                 let { blockedBy: n } = a.issueDependenciesSummary;
                 if (0 === n) return null;
                 let s = l?.() ?? void 0;
-                return (0, y.jsx)(n3.A, {
+                return (0, y.jsx)(n0.A, {
                     text: "Blocked",
                     leadingVisual: () =>
                         (0, y.jsx)(V.BlockedIcon, {
                             className: "fgColor-danger",
                             size: 14,
                         }),
-                    className: n1.token,
+                    className: nY.token,
                     ...(s ? { as: "a", href: s } : {}),
-                    ...(0, n0.G)("blocked-by-token"),
+                    ...(0, n2.G)("blocked-by-token"),
                 });
             }
             try {
-                n4.displayName || (n4.displayName = "IssueItemBlockedBy");
+                n3.displayName || (n3.displayName = "IssueItemBlockedBy");
+            } catch {}
+            try {
+                n4.displayName ||
+                    (n4.displayName = "IssueItemBlockedByFetched");
             } catch {}
             try {
                 n5.displayName ||
-                    (n5.displayName = "IssueItemBlockedByFetched");
+                    (n5.displayName = "IssueItemBlockedByInternal");
             } catch {}
-            try {
-                n7.displayName ||
-                    (n7.displayName = "IssueItemBlockedByInternal");
-            } catch {}
-            let n6 = {
+            let n7 = {
                 argumentDefinitions: [
                     {
                         defaultValue: 10,
@@ -16881,17 +16769,17 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            n6.hash = "40031c7706e02f95b7bde55bd32d1463";
-            var n9 = a(4929),
-                n8 = a(35220);
-            let se = {
+            n7.hash = "40031c7706e02f95b7bde55bd32d1463";
+            var n6 = a(4929),
+                n9 = a(35220);
+            let n8 = {
                     listRowRepoNameAndNumber: "list-row-repo-name-and-number",
                     listRowStateIcon: "list-row-state-icon",
                     listRowComments: "list-row-comments",
                     listRowAssignees: "list-row-assignees",
                     listRowLinkedPullRequests: "list-row-linked-pull-requests",
                 },
-                sl = (function () {
+                se = (function () {
                     var e = [
                             {
                                 defaultValue: null,
@@ -17164,8 +17052,8 @@
                         },
                     };
                 })();
-            sl.hash = "41d14cf91bf92efb2a566753ba6b8363";
-            let sa = (function () {
+            se.hash = "41d14cf91bf92efb2a566753ba6b8363";
+            let sl = (function () {
                 var e = ["assignedActors"],
                     l = {
                         alias: null,
@@ -17221,7 +17109,7 @@
                                 path: e,
                             },
                             fragmentPathInResult: ["node"],
-                            operation: sl,
+                            operation: se,
                             identifierInfo: {
                                 identifierField: "id",
                                 identifierQueryVariableName: "id",
@@ -17336,14 +17224,14 @@
                     abstractKey: "__isAssignable",
                 };
             })();
-            sa.hash = "41d14cf91bf92efb2a566753ba6b8363";
-            var sn = a(94602),
-                ss = a(12360),
-                si = a(20403);
-            let st = {
+            sl.hash = "41d14cf91bf92efb2a566753ba6b8363";
+            var sa = a(94602),
+                sn = a(12360),
+                ss = a(20403);
+            let si = {
                     AssigneeAvatar: "Assignee-module__AssigneeAvatar--HCh3l",
                 },
-                sr = {
+                st = {
                     noAssigneeContainer:
                         "Assignees-module__noAssigneeContainer--ah41X",
                     assigneeIconLink:
@@ -17355,7 +17243,7 @@
                     noAssigneeBackgroundIcon:
                         "Assignees-module__noAssigneeBackgroundIcon--D8tOJ",
                 };
-            function so({
+            function sr({
                 login: e,
                 avatarUrl: l,
                 isCopilot: a,
@@ -17363,44 +17251,44 @@
                 className: s,
             }) {
                 let i = a ? "Copilot" : e,
-                    t = (0, si.S)(e, { isCopilot: a });
+                    t = (0, ss.S)(e, { isCopilot: a });
                 return (0, y.jsx)(ll.A, {
                     "aria-label": `${i} is assigned`,
                     href: n(a ? "@copilot" : e),
                     ...t,
-                    className: (0, nM.$)(
+                    className: (0, nA.$)(
                         s,
                         "pc-AvatarItem",
-                        sr.assigneeIconLink
+                        st.assigneeIconLink
                     ),
                     children: a
-                        ? (0, y.jsx)(ss.C, { size: "small" }, e)
+                        ? (0, y.jsx)(sn.C, { size: "small" }, e)
                         : (0, y.jsx)(
                               e3.r,
-                              { alt: i, src: l, className: st.AssigneeAvatar },
+                              { alt: i, src: l, className: si.AssigneeAvatar },
                               e
                           ),
                 });
             }
             try {
-                so.displayName || (so.displayName = "Assignee");
+                sr.displayName || (sr.displayName = "Assignee");
             } catch {}
-            function su({
+            function so({
                 assigneeskey: e,
                 getAssigneeHref: l,
                 showPlaceholder: a = !0,
             }) {
-                let { data: n } = (0, ed.usePaginationFragment)(sa, e),
+                let { data: n } = (0, ed.usePaginationFragment)(sl, e),
                     s = (n.assignedActors?.edges || []).flatMap((e) =>
                         e && e.node ? e.node : []
                     );
                 return s.length
-                    ? (0, y.jsx)(sn.A, {
+                    ? (0, y.jsx)(sa.A, {
                           alignRight: !0,
-                          className: sr.AssigneesAvatarStack,
+                          className: st.AssigneesAvatarStack,
                           children: s.map((e) =>
                               (0, y.jsx)(
-                                  so,
+                                  sr,
                                   {
                                       login: e.login || "",
                                       avatarUrl: e.avatarUrl || "",
@@ -17413,30 +17301,30 @@
                       })
                     : a
                       ? (0, y.jsxs)("div", {
-                            className: sr.noAssigneeContainer,
+                            className: st.noAssigneeContainer,
                             children: [
-                                (0, y.jsx)(nA.A, {
+                                (0, y.jsx)(nT.A, {
                                     icon: V.PersonIcon,
-                                    className: sr.noAssigneePersonIcon,
+                                    className: st.noAssigneePersonIcon,
                                 }),
-                                (0, y.jsx)(nA.A, {
+                                (0, y.jsx)(nT.A, {
                                     size: 24,
                                     icon: V.CircleIcon,
-                                    className: sr.noAssigneeBackgroundIcon,
+                                    className: st.noAssigneeBackgroundIcon,
                                 }),
                             ],
                         })
                       : null;
             }
             try {
-                su.displayName || (su.displayName = "Assignees");
+                so.displayName || (so.displayName = "Assignees");
             } catch {}
-            var sd = a(82082);
-            let sc = {
+            var su = a(82082);
+            let sd = {
                     ListItemMetadata_0:
                         "IssueItemMetadata-module__ListItemMetadata_0--iaEA1",
                 },
-                sm = {
+                sc = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -17482,17 +17370,17 @@
                     type: "Reactable",
                     abstractKey: "__isReactable",
                 };
-            sm.hash = "74f8d34cc7d8c1ceb397b94750030f0d";
-            let sg = {
+            sc.hash = "74f8d34cc7d8c1ceb397b94750030f0d";
+            let sm = {
                     reactionsContainer:
                         "Reactions-module__reactionsContainer--pA7Pn",
                 },
-                sp = ({
+                sg = ({
                     dataKey: e,
                     reactionEmojiToDisplay: l,
                     showCompactDensity: a = !1,
                 }) => {
-                    let n = (0, ed.useFragment)(sm, e),
+                    let n = (0, ed.useFragment)(sc, e),
                         s =
                             n.reactionGroups?.filter(
                                 (e) => e.content === l.reaction
@@ -17500,7 +17388,7 @@
                     return l?.reactionEmoji && 0 !== s
                         ? (0, y.jsx)(ln.az, {
                               sx: { minWidth: a ? 0 : "45px", ml: 3 * !a },
-                              className: sg.reactionsContainer,
+                              className: sm.reactionsContainer,
                               children:
                                   s > 0 &&
                                   (0, y.jsxs)(y.Fragment, {
@@ -17515,19 +17403,19 @@
                         : null;
                 };
             try {
-                sp.displayName || (sp.displayName = "Reactions");
+                sg.displayName || (sg.displayName = "Reactions");
             } catch {}
-            function sy({ metadataRef: e, ...l }) {
+            function sp({ metadataRef: e, ...l }) {
                 return null === e
                     ? null
                     : e
                       ? (0, y.jsx)(C.Suspense, {
-                            fallback: (0, y.jsx)(sk, { ...l }),
-                            children: (0, y.jsx)(sh, { ...l, metadataRef: e }),
+                            fallback: (0, y.jsx)(sy, { ...l }),
+                            children: (0, y.jsx)(sk, { ...l, metadataRef: e }),
                         })
-                      : (0, y.jsx)(sk, { ...l });
+                      : (0, y.jsx)(sy, { ...l });
             }
-            function sk({
+            function sy({
                 showAssignees: e,
                 showCommentCount: l = !0,
                 reactionEmojiToDisplay: a,
@@ -17537,38 +17425,38 @@
                 return (0, y.jsxs)(y.Fragment, {
                     children: [
                         n &&
-                            (0, y.jsx)(n9.V, {
-                                "data-testid": se.listRowLinkedPullRequests,
-                                className: sc.ListItemMetadata_0,
-                                children: (0, y.jsx)(nk.O, {
+                            (0, y.jsx)(n6.V, {
+                                "data-testid": n8.listRowLinkedPullRequests,
+                                className: sd.ListItemMetadata_0,
+                                children: (0, y.jsx)(ny.O, {
                                     variant: "pill",
                                     width: "xl",
                                 }),
                             }),
-                        (0, y.jsx)(n9.V, {
-                            "data-testid": se.listRowComments,
-                            className: sc.ListItemMetadata_0,
+                        (0, y.jsx)(n6.V, {
+                            "data-testid": n8.listRowComments,
+                            className: sd.ListItemMetadata_0,
                             children:
                                 l &&
-                                (0, y.jsx)(nk.O, {
+                                (0, y.jsx)(ny.O, {
                                     variant: "pill",
                                     width: "xl",
                                 }),
                         }),
                         s &&
-                            (0, y.jsx)(n9.V, {
-                                className: sc.ListItemMetadata_0,
-                                children: (0, y.jsx)(nk.O, {
+                            (0, y.jsx)(n6.V, {
+                                className: sd.ListItemMetadata_0,
+                                children: (0, y.jsx)(ny.O, {
                                     variant: "pill",
                                     width: "xl",
                                 }),
                             }),
                         e &&
-                            (0, y.jsx)(n9.V, {
-                                "data-testid": se.listRowAssignees,
+                            (0, y.jsx)(n6.V, {
+                                "data-testid": n8.listRowAssignees,
                                 alignment: "right",
-                                className: sc.ListItemMetadata_0,
-                                children: (0, y.jsx)(nk.O, {
+                                className: sd.ListItemMetadata_0,
+                                children: (0, y.jsx)(ny.O, {
                                     variant: "pill",
                                     width: "lg",
                                 }),
@@ -17576,14 +17464,14 @@
                     ],
                 });
             }
-            function sh({ issueId: e, metadataRef: l, ...a }) {
-                let { nodes: n } = (0, ed.usePreloadedQuery)(iG, l),
+            function sk({ issueId: e, metadataRef: l, ...a }) {
+                let { nodes: n } = (0, ed.usePreloadedQuery)(iW, l),
                     s = n?.find((l) => l?.id === e);
                 return s
-                    ? (0, y.jsx)(sb, { itemKey: s, ...a })
-                    : (0, y.jsx)(sk, { ...a });
+                    ? (0, y.jsx)(sh, { itemKey: s, ...a })
+                    : (0, y.jsx)(sy, { ...a });
             }
-            let sb = ({
+            let sh = ({
                 itemKey: e,
                 getMetadataHref: l,
                 reactionEmojiToDisplay: a,
@@ -17594,12 +17482,12 @@
             }) => {
                 let r,
                     o,
-                    { variant: u } = (0, n8.e)(),
-                    d = (0, ed.useFragment)(n6, e),
+                    { variant: u } = (0, n9.e)(),
+                    d = (0, ed.useFragment)(n7, e),
                     c = !!a?.reaction,
                     m = (0, k.G7)("issues_react_remove_placeholders");
                 if (void 0 === d.totalCommentsCount)
-                    return (0, y.jsx)(sk, {
+                    return (0, y.jsx)(sy, {
                         reactionEmojiToDisplay: a,
                         showCommentCount: !0,
                         showLinkedPullRequests: !0,
@@ -17621,22 +17509,22 @@
                         children: [
                             d &&
                                 t &&
-                                (0, y.jsx)(n9.V, {
-                                    "data-testid": se.listRowLinkedPullRequests,
-                                    className: sc.ListItemMetadata_0,
-                                    children: (0, y.jsx)(sd.d, {
+                                (0, y.jsx)(n6.V, {
+                                    "data-testid": n8.listRowLinkedPullRequests,
+                                    className: sd.ListItemMetadata_0,
+                                    children: (0, y.jsx)(su.d, {
                                         issueId: d.id,
                                         closedByPullRequestsReferencesKey: d,
                                     }),
                                 }),
-                            (0, y.jsx)(n9.V, {
+                            (0, y.jsx)(n6.V, {
                                 "aria-label": g,
-                                "data-testid": se.listRowComments,
-                                className: sc.ListItemMetadata_0,
+                                "data-testid": n8.listRowComments,
+                                className: sd.ListItemMetadata_0,
                                 children:
                                     r &&
                                     (0, y.jsxs)("div", {
-                                        className: n1.commentCountContainer,
+                                        className: nY.commentCountContainer,
                                         children: [
                                             (0, y.jsx)(V.CommentIcon, {
                                                 size: 16,
@@ -17657,11 +17545,11 @@
                                     }),
                             }),
                             c &&
-                                (0, y.jsx)(n9.V, {
-                                    className: sc.ListItemMetadata_0,
+                                (0, y.jsx)(n6.V, {
+                                    className: sd.ListItemMetadata_0,
                                     children:
                                         d.reactionGroups &&
-                                        (0, y.jsx)(sp, {
+                                        (0, y.jsx)(sg, {
                                             dataKey: d,
                                             reactionEmojiToDisplay: a,
                                             showCompactDensity: "compact" === u,
@@ -17669,15 +17557,15 @@
                                 }),
                             n &&
                                 d &&
-                                (0, y.jsx)(n9.V, {
-                                    "data-testid": se.listRowAssignees,
+                                (0, y.jsx)(n6.V, {
+                                    "data-testid": n8.listRowAssignees,
                                     alignment: "right",
-                                    className: sc.ListItemMetadata_0,
-                                    children: (0, y.jsx)(su, {
+                                    className: sd.ListItemMetadata_0,
+                                    children: (0, y.jsx)(so, {
                                         showPlaceholder: !m,
                                         assigneeskey: d,
                                         getAssigneeHref: (e) =>
-                                            l(nL.assignee, e),
+                                            l(nF.assignee, e),
                                     }),
                                 }),
                         ],
@@ -17685,18 +17573,18 @@
                 );
             };
             try {
-                sy.displayName || (sy.displayName = "LazyIssueItemMetadata");
+                sp.displayName || (sp.displayName = "LazyIssueItemMetadata");
             } catch {}
             try {
-                sk.displayName || (sk.displayName = "LoadingMetadata");
+                sy.displayName || (sy.displayName = "LoadingMetadata");
             } catch {}
             try {
-                sh.displayName || (sh.displayName = "LazyIssueMetadataFetched");
+                sk.displayName || (sk.displayName = "LazyIssueMetadataFetched");
             } catch {}
             try {
-                sb.displayName || (sb.displayName = "IssueItemMetadata");
+                sh.displayName || (sh.displayName = "IssueItemMetadata");
             } catch {}
-            let sf = (function () {
+            let sb = (function () {
                 var e = [
                     {
                         alias: null,
@@ -17736,12 +17624,12 @@
                     abstractKey: "__isIssueOrPullRequest",
                 };
             })();
-            sf.hash = "691d1fd40629826d5b45aaffeb927341";
-            let sC = { unread: "UnreadIndicator-module__unread--TzgM4" };
-            function sS({ unread: e }) {
+            sb.hash = "691d1fd40629826d5b45aaffeb927341";
+            let sf = { unread: "UnreadIndicator-module__unread--TzgM4" };
+            function sC({ unread: e }) {
                 return e
                     ? (0, y.jsx)("div", {
-                          className: sC.unread,
+                          className: sf.unread,
                           children: (0, y.jsx)("span", {
                               className: "sr-only",
                               children: "New activity.",
@@ -17750,44 +17638,44 @@
                     : null;
             }
             try {
-                sS.displayName || (sS.displayName = "UnreadIndicator");
+                sC.displayName || (sC.displayName = "UnreadIndicator");
             } catch {}
-            function sF({ issueId: e, metadataRef: l }) {
+            function sS({ issueId: e, metadataRef: l }) {
                 return l
                     ? (0, y.jsx)(C.Suspense, {
                           fallback: null,
-                          children: (0, y.jsx)(sL, {
+                          children: (0, y.jsx)(sF, {
                               issueId: e,
                               metadataRef: l,
                           }),
                       })
                     : null;
             }
-            function sL({ issueId: e, metadataRef: l }) {
-                let { nodes: a } = (0, ed.usePreloadedQuery)(iG, l),
+            function sF({ issueId: e, metadataRef: l }) {
+                let { nodes: a } = (0, ed.usePreloadedQuery)(iW, l),
                     n = a?.find((l) => l?.id === e);
-                return n ? (0, y.jsx)(sv, { notificationKey: n }) : null;
+                return n ? (0, y.jsx)(sL, { notificationKey: n }) : null;
             }
-            function sv({ notificationKey: e }) {
-                let l = (0, ed.useFragment)(sf, e),
+            function sL({ notificationKey: e }) {
+                let l = (0, ed.useFragment)(sb, e),
                     a = !!l && "isReadByViewer" in l && l.isReadByViewer;
-                return (0, y.jsx)(sS, { unread: !a });
+                return (0, y.jsx)(sC, { unread: !a });
             }
             try {
+                sS.displayName ||
+                    (sS.displayName = "IssueOrPullRequestUnreadIndicator");
+            } catch {}
+            try {
                 sF.displayName ||
-                    (sF.displayName = "IssueOrPullRequestUnreadIndicator");
+                    (sF.displayName =
+                        "IssueOrPullRequestUnreadIndicatorFetched");
             } catch {}
             try {
                 sL.displayName ||
                     (sL.displayName =
-                        "IssueOrPullRequestUnreadIndicatorFetched");
-            } catch {}
-            try {
-                sv.displayName ||
-                    (sv.displayName =
                         "IssueOrPullRequestUnreadIndicatorInternal");
             } catch {}
-            let sK = (function () {
+            let sv = (function () {
                 var e = {
                         alias: null,
                         args: null,
@@ -17972,12 +17860,12 @@
                     abstractKey: "__isIssueOrPullRequest",
                 };
             })();
-            sK.hash = "ae51d4f2c4e742a3cf605da6e94aa6a8";
-            var sI = a(81366),
-                s_ = a(69497),
-                sx = a(62935),
-                sw = a(42409);
-            let sN = (function () {
+            sv.hash = "ae51d4f2c4e742a3cf605da6e94aa6a8";
+            var sK = a(81366),
+                sI = a(69497),
+                s_ = a(62935),
+                sx = a(42409);
+            let sw = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -18046,8 +17934,8 @@
                     abstractKey: null,
                 };
             })();
-            sN.hash = "6dc5ad338ebeeb78e4452c83673b4bec";
-            let sj = (function () {
+            sw.hash = "6dc5ad338ebeeb78e4452c83673b4bec";
+            let sN = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -18116,13 +18004,13 @@
                     abstractKey: null,
                 };
             })();
-            sj.hash = "d75a7a69f99bfff558b671bcd7aeb083";
-            var sR = a(99896);
-            let sP = {
+            sN.hash = "d75a7a69f99bfff558b671bcd7aeb083";
+            var sj = a(99896);
+            let sR = {
                     checkRunStatusContainer:
                         "CheckRunStatus-module__checkRunStatusContainer--yY4j1",
                 },
-                sT = {
+                sP = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -18166,8 +18054,8 @@
                     type: "PullRequest",
                     abstractKey: null,
                 };
-            sT.hash = "fd277c6401a8f4dcc071cc6026716196";
-            let sA = (function () {
+            sP.hash = "fd277c6401a8f4dcc071cc6026716196";
+            let sT = (function () {
                 var e = {
                     kind: "Variable",
                     name: "includeGitData",
@@ -18309,8 +18197,8 @@
                     abstractKey: null,
                 };
             })();
-            sA.hash = "6141a029801edc1d0f101b336064cb62";
-            let sM = {
+            sT.hash = "6141a029801edc1d0f101b336064cb62";
+            let sA = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -18327,8 +18215,8 @@
                 type: "PullRequest",
                 abstractKey: null,
             };
-            sM.hash = "d466f881ba7ae18b784921131fd14a79";
-            let sV = {
+            sA.hash = "d466f881ba7ae18b784921131fd14a79";
+            let sM = {
                 argumentDefinitions: [
                     {
                         defaultValue: !0,
@@ -18407,10 +18295,10 @@
                 type: "IssueOrPullRequest",
                 abstractKey: "__isIssueOrPullRequest",
             };
-            sV.hash = "bad896aa98ad487f05ec49c3434b03aa";
-            var sD = a(65964),
-                sE = a(82319);
-            let sq = {
+            sM.hash = "bad896aa98ad487f05ec49c3434b03aa";
+            var sV = a(65964),
+                sD = a(82319);
+            let sE = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -18464,8 +18352,8 @@
                 type: "PullRequest",
                 abstractKey: null,
             };
-            sq.hash = "e97d88728742c8b65cc52759a9e77b36";
-            let sO = (function () {
+            sE.hash = "e97d88728742c8b65cc52759a9e77b36";
+            let sq = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -18539,8 +18427,8 @@
                     },
                 };
             })();
-            sO.hash = "2c6fa54e180c24a3939b45f4ed793005";
-            let sB = (function () {
+            sq.hash = "2c6fa54e180c24a3939b45f4ed793005";
+            let sO = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -18614,8 +18502,8 @@
                     },
                 };
             })();
-            sB.hash = "a2fdd16da7a5dc39dd035c3334c00473";
-            let s$ = (function () {
+            sO.hash = "a2fdd16da7a5dc39dd035c3334c00473";
+            let sB = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -18682,8 +18570,8 @@
                     },
                 };
             })();
-            s$.hash = "c07750a7baf2631bfdee073a48c7ec32";
-            let sQ = (function () {
+            sB.hash = "c07750a7baf2631bfdee073a48c7ec32";
+            let s$ = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -18750,8 +18638,8 @@
                     },
                 };
             })();
-            sQ.hash = "25171224ff286ab953decc6e4bf6938a";
-            let sU = (function () {
+            s$.hash = "25171224ff286ab953decc6e4bf6938a";
+            let sQ = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -18883,8 +18771,8 @@
                     },
                 };
             })();
-            sU.hash = "5dee87e2713acc6cc0a5df4aebd42df6";
-            let sz = (function () {
+            sQ.hash = "5dee87e2713acc6cc0a5df4aebd42df6";
+            let sU = (function () {
                 var e = {
                     alias: null,
                     args: null,
@@ -19019,9 +18907,9 @@
                     abstractKey: null,
                 };
             })();
-            sz.hash = "341904fa888e7deff66a0c98b01b7491";
-            let sH = { row: "PullRequestRow-module__row--WgtyC" },
-                sW = (function () {
+            sU.hash = "341904fa888e7deff66a0c98b01b7491";
+            let sz = { row: "PullRequestRow-module__row--WgtyC" },
+                sH = (function () {
                     var e = [
                             {
                                 defaultValue: null,
@@ -19613,37 +19501,37 @@
                         },
                     };
                 })();
-            function sG({ secondaryDataKey: e }) {
-                let l = (0, aF.useFragment)(sq, e);
+            function sW({ secondaryDataKey: e }) {
+                let l = (0, aF.useFragment)(sE, e);
                 return l && l.headCommit
-                    ? (0, y.jsx)(sJ, { commitId: l.headCommit.commit.id })
+                    ? (0, y.jsx)(sX, { commitId: l.headCommit.commit.id })
                     : null;
             }
-            function sZ({ id: e, secondaryQueryRef: l }) {
-                let { nodes: a } = (0, aF.usePreloadedQuery)(iG, l),
+            function sG({ id: e, secondaryQueryRef: l }) {
+                let { nodes: a } = (0, aF.usePreloadedQuery)(iW, l),
                     n = a?.find((l) => l?.id === e);
-                return n ? (0, y.jsx)(sG, { secondaryDataKey: n }) : null;
+                return n ? (0, y.jsx)(sW, { secondaryDataKey: n }) : null;
             }
-            function sX({ id: e, secondaryQueryRef: l }) {
+            function sZ({ id: e, secondaryQueryRef: l }) {
                 return l
                     ? (0, y.jsx)(C.Suspense, {
                           fallback: null,
-                          children: (0, y.jsx)(sZ, {
+                          children: (0, y.jsx)(sG, {
                               id: e,
                               secondaryQueryRef: l,
                           }),
                       })
                     : null;
             }
-            function sJ({ commitId: e }) {
+            function sX({ commitId: e }) {
                 let l = (0, C.useMemo)(
-                    () => ({ subscription: sU, variables: { id: e } }),
+                    () => ({ subscription: sQ, variables: { id: e } }),
                     [e]
                 );
                 return ((0, ed.useSubscription)(l), (0, y.jsx)(y.Fragment, {}));
             }
-            sW.hash = "7997810aa9b64cc2931eccffac774bc1";
-            let sY = (0, C.forwardRef)(
+            sH.hash = "7997810aa9b64cc2931eccffac774bc1";
+            let sJ = (0, C.forwardRef)(
                 (
                     {
                         pullRequestKey: e,
@@ -19665,14 +19553,14 @@
                             use_pull_request_subscriptions_enabled: g,
                             pull_request_single_subscription: p,
                         } = (0, aK.h)(),
-                        k = (0, aF.useFragment)(sz, e);
+                        k = (0, aF.useFragment)(sU, e);
                     g &&
-                        (0, nz.M3)() &&
+                        (0, nU.M3)() &&
                         (p
                             ? ((e) => {
                                   let l = (0, C.useMemo)(
                                       () => ({
-                                          subscription: sW,
+                                          subscription: sH,
                                           variables: { pullRequestId: e },
                                       }),
                                       [e]
@@ -19682,28 +19570,28 @@
                             : (function (e) {
                                   let l = (0, C.useMemo)(
                                           () => ({
-                                              subscription: sO,
+                                              subscription: sq,
                                               variables: { id: e },
                                           }),
                                           [e]
                                       ),
                                       a = (0, C.useMemo)(
                                           () => ({
-                                              subscription: sB,
+                                              subscription: sO,
                                               variables: { id: e },
                                           }),
                                           [e]
                                       ),
                                       n = (0, C.useMemo)(
                                           () => ({
-                                              subscription: s$,
+                                              subscription: sB,
                                               variables: { id: e },
                                           }),
                                           [e]
                                       ),
                                       s = (0, C.useMemo)(
                                           () => ({
-                                              subscription: sQ,
+                                              subscription: s$,
                                               variables: { id: e },
                                           }),
                                           [e]
@@ -19739,22 +19627,22 @@
                             g &&
                                 !p &&
                                 (k.headCommit
-                                    ? (0, y.jsx)(sJ, {
+                                    ? (0, y.jsx)(sX, {
                                           commitId: k.headCommit.commit.id,
                                       })
-                                    : (0, y.jsx)(sX, {
+                                    : (0, y.jsx)(sZ, {
                                           id: k.id,
                                           secondaryQueryRef: l,
                                       })),
-                            (0, y.jsx)(nH.tL, {
+                            (0, y.jsx)(nz.tL, {
                                 commands: {
                                     "list-view-items-issues-prs:open-focused-item":
                                         f,
                                     "list-view-items-issues-prs:toggle-focused-item-selection":
                                         F,
                                 },
-                                className: sH.row,
-                                children: (0, y.jsx)(iL, {
+                                className: sz.row,
+                                children: (0, y.jsx)(iF, {
                                     itemKey: k,
                                     metadataRef: l,
                                     isActive: t,
@@ -19777,55 +19665,55 @@
                     });
                 }
             );
-            sY.displayName = "PullRequestRow";
-            let s1 = C.memo(sY);
+            sJ.displayName = "PullRequestRow";
+            let sY = C.memo(sJ);
+            try {
+                sW.displayName ||
+                    (sW.displayName =
+                        "LazyCommitChecksUpdateSubscriptionWrapperInternal");
+            } catch {}
             try {
                 sG.displayName ||
                     (sG.displayName =
-                        "LazyCommitChecksUpdateSubscriptionWrapperInternal");
+                        "LazyCommitChecksUpdateSubscriptionWrapperFetched");
             } catch {}
             try {
                 sZ.displayName ||
                     (sZ.displayName =
-                        "LazyCommitChecksUpdateSubscriptionWrapperFetched");
-            } catch {}
-            try {
-                sX.displayName ||
-                    (sX.displayName =
                         "LazyCommitChecksUpdateSubscriptionWrapper");
             } catch {}
             try {
-                sJ.displayName ||
-                    (sJ.displayName = "CommitChecksUpdateSubscriptionWrapper");
+                sX.displayName ||
+                    (sX.displayName = "CommitChecksUpdateSubscriptionWrapper");
             } catch {}
             try {
-                s1.displayName || (s1.displayName = "PullRequestRow");
+                sY.displayName || (sY.displayName = "PullRequestRow");
             } catch {}
-            function s2({ id: e, dataKey: l, metadataRef: a }) {
-                let n = (0, ed.useFragment)(sV, l);
+            function s1({ id: e, dataKey: l, metadataRef: a }) {
+                let n = (0, ed.useFragment)(sM, l);
                 return "PullRequest" === n.__typename
                     ? void 0 === n.isInMergeQueue
-                        ? (0, y.jsx)(s3, { id: e, data: n, metadataRef: a })
-                        : (0, y.jsx)(s0, {
+                        ? (0, y.jsx)(s0, { id: e, data: n, metadataRef: a })
+                        : (0, y.jsx)(s2, {
                               data: n,
                               isInMergeQueue: n.isInMergeQueue,
                           })
-                    : (0, y.jsx)(s0, { data: n, isInMergeQueue: !1 });
+                    : (0, y.jsx)(s2, { data: n, isInMergeQueue: !1 });
             }
-            function s0({ data: e, isInMergeQueue: l }) {
+            function s2({ data: e, isInMergeQueue: l }) {
                 let {
                     icon: a,
                     color: n,
                     description: s,
-                } = (0, C.useMemo)(() => (0, sE.q)(null), []);
+                } = (0, C.useMemo)(() => (0, sD.q)(null), []);
                 if ("PullRequest" === e.__typename) {
                     let i = (function (e, l, a) {
                             if (l) return "IN_MERGE_QUEUE";
                             if ("OPEN" === a && e) return "DRAFT";
-                            if (a in sw.g.pullRequestIcons) return a;
+                            if (a in sx.g.pullRequestIcons) return a;
                             throw Error(`Invalid pull request state: ${a}`);
                         })(e.isDraft, l, e.pullRequestState),
-                        t = (0, sE.V)(i);
+                        t = (0, sD.V)(i);
                     ((a = t.icon), (n = t.color), (s = t.description));
                 }
                 if ("Issue" === e.__typename) {
@@ -19835,65 +19723,65 @@
                                 "DUPLICATE" === e.stateReason)
                                 ? e.stateReason
                                 : e.state,
-                        i = (0, sE.q)(l);
+                        i = (0, sD.q)(l);
                     ((a = i.icon), (n = i.color), (s = i.description));
                 }
-                return (0, y.jsx)(sD.e, {
+                return (0, y.jsx)(sV.e, {
                     icon: a,
                     color: n,
                     description: s,
-                    "data-testid": se.listRowStateIcon,
+                    "data-testid": n8.listRowStateIcon,
                 });
             }
-            function s3({ data: e, metadataRef: l, id: a }) {
+            function s0({ data: e, metadataRef: l, id: a }) {
                 return "PullRequest" === e.__typename && l
                     ? (0, y.jsx)(C.Suspense, {
-                          fallback: (0, y.jsx)(s0, {
+                          fallback: (0, y.jsx)(s2, {
                               data: e,
                               isInMergeQueue: !1,
                           }),
-                          children: (0, y.jsx)(s4, {
+                          children: (0, y.jsx)(s3, {
                               id: a,
                               data: e,
                               metadataRef: l,
                           }),
                       })
-                    : (0, y.jsx)(s0, { data: e, isInMergeQueue: !1 });
+                    : (0, y.jsx)(s2, { data: e, isInMergeQueue: !1 });
             }
-            function s4({ id: e, data: l, metadataRef: a }) {
-                let { nodes: n } = (0, ed.usePreloadedQuery)(iG, a),
+            function s3({ id: e, data: l, metadataRef: a }) {
+                let { nodes: n } = (0, ed.usePreloadedQuery)(iW, a),
                     s = n?.find((l) => l?.id === e);
-                return (0, y.jsx)(s5, { data: l, secondaryDataKey: s });
+                return (0, y.jsx)(s4, { data: l, secondaryDataKey: s });
             }
-            function s5({ data: e, secondaryDataKey: l }) {
-                let a = (0, ed.useFragment)(sq, l),
-                    n = (0, ed.useFragment)(sM, a);
-                return (0, y.jsx)(s0, {
+            function s4({ data: e, secondaryDataKey: l }) {
+                let a = (0, ed.useFragment)(sE, l),
+                    n = (0, ed.useFragment)(sA, a);
+                return (0, y.jsx)(s2, {
                     data: e,
                     isInMergeQueue: !!n?.isInMergeQueue,
                 });
             }
             try {
+                s1.displayName ||
+                    (s1.displayName = "IssuePullRequestStateIcon");
+            } catch {}
+            try {
                 s2.displayName ||
-                    (s2.displayName = "IssuePullRequestStateIcon");
+                    (s2.displayName = "IssuePullRequestStateIconInternal");
             } catch {}
             try {
                 s0.displayName ||
-                    (s0.displayName = "IssuePullRequestStateIconInternal");
+                    (s0.displayName = "LazyIssuePullRequestStateIcon");
             } catch {}
             try {
                 s3.displayName ||
-                    (s3.displayName = "LazyIssuePullRequestStateIcon");
+                    (s3.displayName = "LazyIssuePullRequestStateIconFetched");
             } catch {}
             try {
                 s4.displayName ||
-                    (s4.displayName = "LazyIssuePullRequestStateIconFetched");
+                    (s4.displayName = "LazyIssuePullRequestStateIconInternal");
             } catch {}
-            try {
-                s5.displayName ||
-                    (s5.displayName = "LazyIssuePullRequestStateIconInternal");
-            } catch {}
-            let s7 = (function () {
+            let s5 = (function () {
                 var e = {
                         count: "labelPageSize",
                         cursor: null,
@@ -20037,12 +19925,12 @@
                     abstractKey: "__isIssueOrPullRequest",
                 };
             })();
-            s7.hash = "a24e25f6c540b1b24c68cfd21c14e1a2";
-            var s6 = a(95378),
-                s9 = a(42299),
-                s8 = a(54571),
-                ie = a(65848);
-            let il = {
+            s5.hash = "a24e25f6c540b1b24c68cfd21c14e1a2";
+            var s7 = a(95378),
+                s6 = a(42299),
+                s9 = a(54571),
+                s8 = a(65848);
+            let ie = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -20084,19 +19972,19 @@
                 type: "Issue",
                 abstractKey: null,
             };
-            il.hash = "69d927a8cc29fe0a0e03b982885c9f3a";
-            var ia = a(56742),
-                is = a(11196);
-            let ii = {
+            ie.hash = "69d927a8cc29fe0a0e03b982885c9f3a";
+            var il = a(56742),
+                ia = a(11196);
+            let is = {
                 progressCircle:
                     "IssueItemSubIssuesSummary-module__progressCircle--B_9jW",
                 token: "IssueItemSubIssuesSummary-module__token--lQcLp",
             };
-            function it({ metadataRef: e, issueId: l, link: a }) {
+            function ii({ metadataRef: e, issueId: l, link: a }) {
                 return e
                     ? (0, y.jsx)(C.Suspense, {
                           fallback: null,
-                          children: (0, y.jsx)(ir, {
+                          children: (0, y.jsx)(it, {
                               issueId: l,
                               metadataRef: e,
                               link: a,
@@ -20104,13 +19992,13 @@
                       })
                     : null;
             }
-            function ir({ metadataRef: e, issueId: l, link: a }) {
-                let { nodes: n } = (0, ed.usePreloadedQuery)(iG, e),
+            function it({ metadataRef: e, issueId: l, link: a }) {
+                let { nodes: n } = (0, ed.usePreloadedQuery)(iW, e),
                     s = n?.find((e) => e?.id === l);
-                return s ? (0, y.jsx)(io, { summaryKey: s, link: a }) : null;
+                return s ? (0, y.jsx)(ir, { summaryKey: s, link: a }) : null;
             }
-            function io({ summaryKey: e, link: l }) {
-                let a = (0, ed.useFragment)(il, e);
+            function ir({ summaryKey: e, link: l }) {
+                let a = (0, ed.useFragment)(ie, e);
                 if (!a?.subIssuesSummary) return null;
                 let {
                     total: n,
@@ -20119,21 +20007,21 @@
                 } = a.subIssuesSummary;
                 return 0 === n
                     ? null
-                    : (0, y.jsx)(s9.r, {
+                    : (0, y.jsx)(s6.r, {
                           title: "sub-issues summary",
-                          children: (0, y.jsx)(is.m, {
+                          children: (0, y.jsx)(ia.m, {
                               text: `${i}% completed`,
                               type: "description",
                               children: (0, y.jsx)(ll.A, {
                                   href: l,
                                   onKeyDown: (e) => e.stopPropagation(),
-                                  children: (0, y.jsx)(n3.A, {
-                                      className: ii.token,
+                                  children: (0, y.jsx)(n0.A, {
+                                      className: is.token,
                                       leadingVisual: () =>
-                                          (0, y.jsx)(ia.a, {
+                                          (0, y.jsx)(il.a, {
                                               percentCompleted: i,
                                               size: 14,
-                                              svgClassName: ii.progressCircle,
+                                              svgClassName: is.progressCircle,
                                           }),
                                       text: (0, y.jsx)("span", {
                                           children: `${s} / ${n}`,
@@ -20144,22 +20032,22 @@
                       });
             }
             try {
-                it.displayName ||
-                    (it.displayName = "IssueItemSubIssuesSummary");
+                ii.displayName ||
+                    (ii.displayName = "IssueItemSubIssuesSummary");
             } catch {}
             try {
-                ir.displayName || (ir.displayName = "SubIssuesSummaryFetched");
+                it.displayName || (it.displayName = "SubIssuesSummaryFetched");
             } catch {}
             try {
-                io.displayName || (io.displayName = "SubIssuesSummaryInternal");
+                ir.displayName || (ir.displayName = "SubIssuesSummaryInternal");
             } catch {}
-            let iu = {
+            let io = {
                     ListItemTitle_0:
                         "IssuePullRequestTitle-module__ListItemTitle_0--ORbH2",
                     ListItemTitle_1:
                         "IssuePullRequestTitle-module__ListItemTitle_1--FWLq8",
                 },
-                id = {
+                iu = {
                     argumentDefinitions: [],
                     kind: "Fragment",
                     metadata: null,
@@ -20204,11 +20092,11 @@
                     type: "Label",
                     abstractKey: null,
                 };
-            id.hash = "df87cd3d5d39328fcca137f7bf3b8c12";
-            var ic = a(2892),
-                im = a(73017);
-            let ig = { LabelTooltip: "Label-module__LabelTooltip--BUH7n" };
-            function ip({
+            iu.hash = "df87cd3d5d39328fcca137f7bf3b8c12";
+            var id = a(2892),
+                ic = a(73017);
+            let im = { LabelTooltip: "Label-module__LabelTooltip--BUH7n" };
+            function ig({
                 label: e,
                 hidden: l = !1,
                 getLabelHref: a,
@@ -20220,24 +20108,24 @@
                     id: t,
                     name: r,
                     description: o,
-                } = (0, aF.useFragment)(id, e);
+                } = (0, aF.useFragment)(iu, e);
                 return (0, y.jsx)(ln.m_, {
                     text: o ?? "",
                     type: "description",
                     "aria-label": o ?? "",
                     sx: { visibility: o ? "visible" : "hidden" },
-                    className: ig.LabelTooltip,
+                    className: im.LabelTooltip,
                     children: (0, y.jsxs)(ln.N_, {
                         href: a(r),
-                        className: (0, nM.$)({ "sr-only": l }),
+                        className: (0, nA.$)({ "sr-only": l }),
                         "aria-describedby": `${t}-tooltip`,
                         sx: { visibility: l ? "hidden" : null },
                         children: [
                             (0, y.jsx)(
-                                ic.a,
+                                id.a,
                                 {
                                     interactive: !0,
-                                    text: (0, y.jsx)(im.JR, { html: s }),
+                                    text: (0, y.jsx)(ic.JR, { html: s }),
                                     fillColor: `#${i}`,
                                     fontWeight: n,
                                 },
@@ -20253,9 +20141,9 @@
                 });
             }
             try {
-                ip.displayName || (ip.displayName = "Label");
+                ig.displayName || (ig.displayName = "Label");
             } catch {}
-            function iy({
+            function ip({
                 dataKey: e,
                 metadataRef: l,
                 ref: a,
@@ -20270,7 +20158,7 @@
                 repositoryOwner: c,
                 repositoryName: m,
             }) {
-                let g = (0, ed.useFragment)(s7, e),
+                let g = (0, ed.useFragment)(s5, e),
                     { number: p, labels: k } =
                         "PullRequest" === g.__typename ||
                         "Issue" === g.__typename
@@ -20291,10 +20179,10 @@
                             .flatMap((e) => e?.node || [])
                             .map((e) =>
                                 (0, y.jsx)(
-                                    s9.r,
+                                    s6.r,
                                     {
                                         title: e.name,
-                                        children: (0, y.jsx)(ip, {
+                                        children: (0, y.jsx)(ig, {
                                             label: e,
                                             getLabelHref: o,
                                             fontWeight: 500,
@@ -20306,7 +20194,7 @@
                     ];
                 if ("Issue" === g.__typename) {
                     let e = (0, y.jsx)(
-                        it,
+                        ii,
                         {
                             metadataRef: l,
                             issueId: g.id,
@@ -20340,28 +20228,28 @@
                                 : void 0,
                         [g.__typename, p, m, c]
                     ),
-                    [S] = (0, s8.I)(() => !1, !0, []),
+                    [S] = (0, s9.I)(() => !1, !0, []),
                     F = (0, C.useMemo)(() => {
                         let e = (0, y.jsx)("a", {
                             "data-hovercard-url": f,
                             "data-testid": "issue-pr-title-link",
-                            className: (0, nM.$)(p && iu.ListItemTitle_1),
+                            className: (0, nA.$)(p && io.ListItemTitle_1),
                             target: s,
                             ref: a,
                             href: n,
                             children: " ",
                         });
-                        return (0, ie.F0)(e).replace(/ <\/a>$/, `${t}</a>`);
+                        return (0, s8.F0)(e).replace(/ <\/a>$/, `${t}</a>`);
                     }, [f, n, p, a, s, t]);
                 return S
-                    ? (0, y.jsx)(s6.ao, {
+                    ? (0, y.jsx)(s7.ao, {
                           value: t,
                           onClick: h,
                           leadingBadge: r,
                           trailingBadges: b,
-                          headingClassName: (0, nM.$)(d, iu.ListItemTitle_0),
+                          headingClassName: (0, nA.$)(d, io.ListItemTitle_0),
                           anchorRef: a,
-                          anchorClassName: (0, nM.$)(p && iu.ListItemTitle_1),
+                          anchorClassName: (0, nA.$)(p && io.ListItemTitle_1),
                           href: n,
                           target: s,
                           linkProps: {
@@ -20369,21 +20257,21 @@
                               "data-testid": "issue-pr-title-link",
                           },
                       })
-                    : (0, y.jsx)(s6.kx, {
+                    : (0, y.jsx)(s7.kx, {
                           html: F,
                           onClick: h,
                           leadingBadge: r,
                           trailingBadges: b,
-                          headingClassName: (0, nM.$)(d, iu.ListItemTitle_0),
+                          headingClassName: (0, nA.$)(d, io.ListItemTitle_0),
                       });
             }
             try {
-                iy.displayName || (iy.displayName = "IssuePullRequestTitle");
+                ip.displayName || (ip.displayName = "IssuePullRequestTitle");
             } catch {}
-            let ik = {
+            let iy = {
                     ListItem_0: "PullRequestItem-module__ListItem_0--uJQc9",
                 },
-                ih = {
+                ik = {
                     argumentDefinitions: [
                         {
                             defaultValue: 10,
@@ -20466,27 +20354,27 @@
                     type: "PullRequest",
                     abstractKey: null,
                 };
-            ih.hash = "54e17665aafa06d00fcfbe5073208c99";
-            let ib = {
+            ik.hash = "54e17665aafa06d00fcfbe5073208c99";
+            let ih = {
                     ListItemMetadata_0:
                         "PullRequestItemMetadata-module__ListItemMetadata_0--Aqw5G",
                 },
-                iC = ({ metadataRef: e, ...l }) =>
+                ib = ({ metadataRef: e, ...l }) =>
                     e
                         ? (0, y.jsx)(C.Suspense, {
-                              fallback: (0, y.jsx)(sk, { ...l }),
-                              children: (0, y.jsx)(iS, {
+                              fallback: (0, y.jsx)(sy, { ...l }),
+                              children: (0, y.jsx)(iC, {
                                   ...l,
                                   metadataRef: e,
                               }),
                           })
-                        : (0, y.jsx)(sk, { ...l });
-            function iS({ pullId: e, metadataRef: l, ...a }) {
-                let { nodes: n } = (0, ed.usePreloadedQuery)(iG, l),
+                        : (0, y.jsx)(sy, { ...l });
+            function iC({ pullId: e, metadataRef: l, ...a }) {
+                let { nodes: n } = (0, ed.usePreloadedQuery)(iW, l),
                     s = n?.find((l) => l?.id === e);
-                return s ? (0, y.jsx)(iF, { itemKey: s, ...a }) : null;
+                return s ? (0, y.jsx)(iS, { itemKey: s, ...a }) : null;
             }
-            let iF = ({
+            let iS = ({
                 itemKey: e,
                 getMetadataHref: l,
                 reactionEmojiToDisplay: a,
@@ -20494,8 +20382,8 @@
                 showCommentCount: s = !0,
                 showCommentZeroCount: i = !1,
             }) => {
-                let { variant: t } = (0, n8.e)(),
-                    r = (0, ed.useFragment)(ih, e),
+                let { variant: t } = (0, n9.e)(),
+                    r = (0, ed.useFragment)(ik, e),
                     o = (0, k.G7)("issues_react_remove_placeholders"),
                     u =
                         r?.totalCommentsCount && r.totalCommentsCount > 0
@@ -20505,10 +20393,10 @@
                     c = (s && !!r.totalCommentsCount) || (s && i);
                 return (0, y.jsxs)(y.Fragment, {
                     children: [
-                        (0, y.jsx)(n9.V, {
+                        (0, y.jsx)(n6.V, {
                             "aria-label": u,
-                            "data-testid": se.listRowComments,
-                            className: ib.ListItemMetadata_0,
+                            "data-testid": n8.listRowComments,
+                            className: ih.ListItemMetadata_0,
                             children:
                                 c &&
                                 (0, y.jsxs)(y.Fragment, {
@@ -20522,42 +20410,42 @@
                                 }),
                         }),
                         d &&
-                            (0, y.jsx)(n9.V, {
-                                className: ib.ListItemMetadata_0,
+                            (0, y.jsx)(n6.V, {
+                                className: ih.ListItemMetadata_0,
                                 children:
                                     r.reactionGroups &&
-                                    (0, y.jsx)(sp, {
+                                    (0, y.jsx)(sg, {
                                         dataKey: r,
                                         reactionEmojiToDisplay: a,
                                         showCompactDensity: "compact" === t,
                                     }),
                             }),
-                        (0, y.jsx)(n9.V, {
+                        (0, y.jsx)(n6.V, {
                             alignment: "right",
-                            className: ib.ListItemMetadata_0,
+                            className: ih.ListItemMetadata_0,
                             children:
                                 n &&
                                 r &&
-                                (0, y.jsx)(su, {
+                                (0, y.jsx)(so, {
                                     showPlaceholder: !o,
                                     assigneeskey: r,
-                                    getAssigneeHref: (e) => l(nL.assignee, e),
+                                    getAssigneeHref: (e) => l(nF.assignee, e),
                                 }),
                         }),
                     ],
                 });
             };
             try {
-                iC.displayName ||
-                    (iC.displayName = "LazyPullRequestItemMetadata");
+                ib.displayName ||
+                    (ib.displayName = "LazyPullRequestItemMetadata");
             } catch {}
             try {
-                iS.displayName || (iS.displayName = "LazyPullMetadataFetched");
+                iC.displayName || (iC.displayName = "LazyPullMetadataFetched");
             } catch {}
             try {
-                iF.displayName || (iF.displayName = "PullRequestItemMetadata");
+                iS.displayName || (iS.displayName = "PullRequestItemMetadata");
             } catch {}
-            let iL = ({
+            let iF = ({
                 itemKey: e,
                 metadataRef: l,
                 isActive: a = !1,
@@ -20577,15 +20465,15 @@
                 as: h,
                 role: b,
             }) => {
-                let f = (0, ed.useFragment)(sA, e),
-                    C = f && (0, nG.us)(f.title, f.titleHTML),
+                let f = (0, ed.useFragment)(sT, e),
+                    C = f && (0, nW.us)(f.title, f.titleHTML),
                     { pull_request_single_subscription: S } = (0, aK.h)(),
-                    F = (0, ed.useFragment)(sT, !S && k ? f : null),
+                    F = (0, ed.useFragment)(sP, !S && k ? f : null),
                     L = (0, ed.useFragment)(
-                        iv,
+                        iL,
                         S ? null : F?.headCommit?.commit
                     ),
-                    v = (0, y.jsx)(iy, {
+                    v = (0, y.jsx)(ip, {
                         value: C,
                         dataKey: f,
                         href: i,
@@ -20593,9 +20481,9 @@
                         repositoryOwner: f.repository.owner.login,
                         repositoryName: f.repository.name,
                         onClick: c,
-                        getLabelHref: (e) => m(nL.label, e),
+                        getLabelHref: (e) => m(nF.label, e),
                     }),
-                    K = (0, y.jsx)(iE, {
+                    K = (0, y.jsx)(iD, {
                         repositoryOwner: f.repository.owner.login,
                         repositoryName: f.repository.name,
                         statusCheckRollup: L?.statusCheckRollup || void 0,
@@ -20607,7 +20495,7 @@
                         metadataRef: l,
                         includeGitDataFromMainQuery: k,
                     }),
-                    I = (0, y.jsx)(iC, {
+                    I = (0, y.jsx)(ib, {
                         pullId: f.id,
                         metadataRef: l,
                         getMetadataHref: m,
@@ -20617,39 +20505,39 @@
                         showCommentZeroCount: r,
                     });
                 return (0, y.jsxs)(
-                    nZ.c,
+                    nG.c,
                     {
                         title: v,
                         isActive: a,
                         isSelected: n,
                         onSelect: d,
                         metadata: I,
-                        metadataContainerClassName: ik.ListItem_0,
+                        metadataContainerClassName: iy.ListItem_0,
                         role: b || "listitem",
                         as: h,
                         children: [
-                            (0, y.jsx)(sF, { metadataRef: l, issueId: f.id }),
-                            (0, y.jsx)(nJ.B, {
-                                children: (0, y.jsx)(s2, {
+                            (0, y.jsx)(sS, { metadataRef: l, issueId: f.id }),
+                            (0, y.jsx)(nX.B, {
+                                children: (0, y.jsx)(s1, {
                                     id: f.id,
                                     dataKey: f,
                                     metadataRef: l,
                                 }),
                             }),
-                            (0, y.jsx)(nY.Q, {
-                                children: (0, y.jsx)(nX.U, { children: K }),
+                            (0, y.jsx)(nJ.Q, {
+                                children: (0, y.jsx)(nZ.U, { children: K }),
                             }),
                         ],
                     },
                     f.id
                 );
             };
-            iL.nodeType = "pullRequest";
+            iF.nodeType = "pullRequest";
             try {
-                iL.displayName || (iL.displayName = "PullRequestItem");
+                iF.displayName || (iF.displayName = "PullRequestItem");
             } catch {}
-            let iv = sN;
-            function iK({ statusCheckRollup: e, variant: l }) {
+            let iL = sw;
+            function iv({ statusCheckRollup: e, variant: l }) {
                 if (!e) return null;
                 let a = e.contexts?.checkRunCount,
                     n = e.contexts?.checkRunCountsByState?.find(
@@ -20658,11 +20546,11 @@
                     s = `${n}/${a}`,
                     i = e.state.toLowerCase() || "";
                 return (0, y.jsxs)("span", {
-                    className: sP.checkRunStatusContainer,
+                    className: sR.checkRunStatusContainer,
                     children: [
                         " ",
                         "\xb7 ",
-                        (0, y.jsx)(sR.B6, {
+                        (0, y.jsx)(sj.B6, {
                             disablePopover: !0,
                             statusRollup: i,
                         }),
@@ -20670,7 +20558,7 @@
                     ],
                 });
             }
-            function iI({
+            function iK({
                 id: e,
                 primaryQueryRef: l,
                 secondaryQueryRef: a,
@@ -20678,11 +20566,11 @@
             }) {
                 return a || l
                     ? l
-                        ? (0, y.jsx)(iw, { dataKey: l, variant: n })
+                        ? (0, y.jsx)(ix, { dataKey: l, variant: n })
                         : a
                           ? (0, y.jsx)(C.Suspense, {
                                 fallback: null,
-                                children: (0, y.jsx)(i_, {
+                                children: (0, y.jsx)(iI, {
                                     id: e,
                                     secondaryQueryRef: a,
                                     variant: n,
@@ -20691,66 +20579,66 @@
                           : null
                     : null;
             }
-            function i_({ id: e, secondaryQueryRef: l, variant: a }) {
-                let { nodes: n } = (0, ed.usePreloadedQuery)(iG, l),
+            function iI({ id: e, secondaryQueryRef: l, variant: a }) {
+                let { nodes: n } = (0, ed.usePreloadedQuery)(iW, l),
                     s = n?.find((l) => l?.id === e),
                     { pull_request_single_subscription: i } = (0, aK.h)();
                 return s
                     ? i
-                        ? (0, y.jsx)(iw, { dataKey: s, variant: a })
-                        : (0, y.jsx)(ix, { secondaryDataKey: s, variant: a })
+                        ? (0, y.jsx)(ix, { dataKey: s, variant: a })
+                        : (0, y.jsx)(i_, { secondaryDataKey: s, variant: a })
                     : null;
             }
-            function ix({ secondaryDataKey: e, variant: l }) {
-                let a = (0, ed.useFragment)(sT, e),
-                    n = (0, ed.useFragment)(iv, a.headCommit?.commit);
+            function i_({ secondaryDataKey: e, variant: l }) {
+                let a = (0, ed.useFragment)(sP, e),
+                    n = (0, ed.useFragment)(iL, a.headCommit?.commit);
                 return n?.statusCheckRollup
-                    ? (0, y.jsx)(iK, {
+                    ? (0, y.jsx)(iv, {
                           statusCheckRollup: n.statusCheckRollup,
                           variant: l,
                       })
                     : null;
             }
-            function iw({ dataKey: e, variant: l }) {
-                let a = (0, ed.useFragment)(sj, e);
+            function ix({ dataKey: e, variant: l }) {
+                let a = (0, ed.useFragment)(sN, e);
                 return a?.statusCheckRollup
-                    ? (0, y.jsx)(iK, {
+                    ? (0, y.jsx)(iv, {
                           statusCheckRollup: a.statusCheckRollup,
                           variant: l,
                       })
                     : null;
             }
             try {
-                iK.displayName || (iK.displayName = "CheckRunStatus");
+                iv.displayName || (iv.displayName = "CheckRunStatus");
             } catch {}
             try {
-                iI.displayName || (iI.displayName = "LazyCheckRunStatus");
+                iK.displayName || (iK.displayName = "LazyCheckRunStatus");
+            } catch {}
+            try {
+                iI.displayName ||
+                    (iI.displayName = "LazyCheckRunStatusFetched");
             } catch {}
             try {
                 i_.displayName ||
-                    (i_.displayName = "LazyCheckRunStatusFetched");
+                    (i_.displayName = "LazyCheckRunStatusInternal");
             } catch {}
             try {
                 ix.displayName ||
-                    (ix.displayName = "LazyCheckRunStatusInternal");
+                    (ix.displayName = "LazyCheckRunStatusFromPRInternal");
             } catch {}
-            try {
-                iw.displayName ||
-                    (iw.displayName = "LazyCheckRunStatusFromPRInternal");
-            } catch {}
-            let iN = {
+            let iw = {
                     repositoryNameTruncate:
                         "IssuePullRequestDescription-module__repositoryNameTruncate--dTjwn",
                     RelativeTime:
                         "IssuePullRequestDescription-module__RelativeTime--lbeGP",
                 },
-                ij = {
+                iN = {
                     milestoneLink:
                         "MilestoneMetadata-module__milestoneLink--gnE34",
                     milestoneTitleTruncate:
                         "MilestoneMetadata-module__milestoneTitleTruncate--ZhflK",
                 },
-                iR = ({ title: e, url: l }) =>
+                ij = ({ title: e, url: l }) =>
                     (0, y.jsxs)(y.Fragment, {
                         children: [
                             "\xb7",
@@ -20758,16 +20646,16 @@
                                 href: l,
                                 muted: !0,
                                 "aria-label": e,
-                                className: ij.milestoneLink,
+                                className: iN.milestoneLink,
                                 children: [
-                                    (0, y.jsx)(nA.A, {
+                                    (0, y.jsx)(nT.A, {
                                         icon: V.MilestoneIcon,
                                         size: 16,
                                     }),
                                     "\xa0",
-                                    (0, y.jsx)(s_.A, {
+                                    (0, y.jsx)(sI.A, {
                                         title: e,
-                                        className: ij.milestoneTitleTruncate,
+                                        className: iN.milestoneTitleTruncate,
                                         children: e,
                                     }),
                                 ],
@@ -20775,9 +20663,9 @@
                         ],
                     });
             try {
-                iR.displayName || (iR.displayName = "MilestoneMetadata");
+                ij.displayName || (ij.displayName = "MilestoneMetadata");
             } catch {}
-            let iP = {
+            let iR = {
                 argumentDefinitions: [],
                 kind: "Fragment",
                 metadata: null,
@@ -20794,8 +20682,8 @@
                 type: "PullRequest",
                 abstractKey: null,
             };
-            iP.hash = "1c213dcaa975bc9ffa4c8aaaba1c8aec";
-            let iT = {
+            iR.hash = "1c213dcaa975bc9ffa4c8aaaba1c8aec";
+            let iP = {
                 reviewDecisionContainer:
                     "ReviewDecision-module__reviewDecisionContainer--OQCsF",
                 reviewDecisionContent:
@@ -20807,20 +20695,20 @@
                 reviewRequiredIcon:
                     "ReviewDecision-module__reviewRequiredIcon--CMkL2",
             };
-            function iA({ decision: e, variant: l = "default" }) {
+            function iT({ decision: e, variant: l = "default" }) {
                 let a = (function (e) {
                     switch (e) {
                         case "APPROVED":
                             return (0, y.jsxs)(y.Fragment, {
                                 children: [
-                                    (0, y.jsx)(nA.A, {
+                                    (0, y.jsx)(nT.A, {
                                         icon: V.CheckCircleFillIcon,
                                         size: 12,
-                                        className: iT.approvedIcon,
+                                        className: iP.approvedIcon,
                                     }),
                                     " ",
                                     (0, y.jsx)("span", {
-                                        className: iT.statusText,
+                                        className: iP.statusText,
                                         children: "Approved",
                                     }),
                                 ],
@@ -20828,14 +20716,14 @@
                         case "CHANGES_REQUESTED":
                             return (0, y.jsxs)(y.Fragment, {
                                 children: [
-                                    (0, y.jsx)(nA.A, {
+                                    (0, y.jsx)(nT.A, {
                                         icon: V.XCircleFillIcon,
                                         size: 12,
-                                        className: iT.changesRequestedIcon,
+                                        className: iP.changesRequestedIcon,
                                     }),
                                     " ",
                                     (0, y.jsx)("span", {
-                                        className: iT.statusText,
+                                        className: iP.statusText,
                                         children: "Changes requested",
                                     }),
                                 ],
@@ -20843,14 +20731,14 @@
                         case "REVIEW_REQUIRED":
                             return (0, y.jsxs)(y.Fragment, {
                                 children: [
-                                    (0, y.jsx)(nA.A, {
+                                    (0, y.jsx)(nT.A, {
                                         icon: V.NoEntryFillIcon,
                                         size: 12,
-                                        className: iT.reviewRequiredIcon,
+                                        className: iP.reviewRequiredIcon,
                                     }),
                                     " ",
                                     (0, y.jsx)("span", {
-                                        className: iT.statusText,
+                                        className: iP.statusText,
                                         children: "Review required",
                                     }),
                                 ],
@@ -20862,18 +20750,18 @@
                 return a
                     ? "default" === l
                         ? (0, y.jsxs)("div", {
-                              className: iT.reviewDecisionContainer,
+                              className: iP.reviewDecisionContainer,
                               children: [
                                   " ",
                                   "\xb7",
                                   (0, y.jsx)("span", {
-                                      className: iT.reviewDecisionContent,
+                                      className: iP.reviewDecisionContent,
                                       children: a,
                                   }),
                               ],
                           })
                         : (0, y.jsxs)("div", {
-                              className: iT.reviewDecisionContainer,
+                              className: iP.reviewDecisionContainer,
                               children: [
                                   (0, y.jsx)("span", { children: "\xb7" }),
                                   a,
@@ -20881,11 +20769,11 @@
                           })
                     : null;
             }
-            function iM({ id: e, secondaryQueryRef: l, variant: a }) {
+            function iA({ id: e, secondaryQueryRef: l, variant: a }) {
                 return l
                     ? (0, y.jsx)(C.Suspense, {
                           fallback: null,
-                          children: (0, y.jsx)(iV, {
+                          children: (0, y.jsx)(iM, {
                               id: e,
                               secondaryQueryRef: l,
                               variant: a,
@@ -20893,45 +20781,45 @@
                       })
                     : null;
             }
-            function iV({ id: e, secondaryQueryRef: l, variant: a }) {
-                let { nodes: n } = (0, ed.usePreloadedQuery)(iG, l),
+            function iM({ id: e, secondaryQueryRef: l, variant: a }) {
+                let { nodes: n } = (0, ed.usePreloadedQuery)(iW, l),
                     s = n?.find((l) => l?.id === e);
                 return s
-                    ? (0, y.jsx)(iD, { secondaryDataKey: s, variant: a })
+                    ? (0, y.jsx)(iV, { secondaryDataKey: s, variant: a })
                     : null;
             }
-            function iD({ secondaryDataKey: e, variant: l }) {
-                let a = (0, ed.useFragment)(sq, e),
-                    n = (0, ed.useFragment)(iP, a);
+            function iV({ secondaryDataKey: e, variant: l }) {
+                let a = (0, ed.useFragment)(sE, e),
+                    n = (0, ed.useFragment)(iR, a);
                 return n?.reviewDecision
-                    ? (0, y.jsx)(iA, { decision: n.reviewDecision, variant: l })
+                    ? (0, y.jsx)(iT, { decision: n.reviewDecision, variant: l })
                     : null;
             }
             try {
-                iA.displayName || (iA.displayName = "ReviewDecision");
+                iT.displayName || (iT.displayName = "ReviewDecision");
             } catch {}
             try {
-                iM.displayName || (iM.displayName = "LazyReviewDecision");
+                iA.displayName || (iA.displayName = "LazyReviewDecision");
+            } catch {}
+            try {
+                iM.displayName ||
+                    (iM.displayName = "LazyReviewDecisionFetched");
             } catch {}
             try {
                 iV.displayName ||
-                    (iV.displayName = "LazyReviewDecisionFetched");
+                    (iV.displayName = "LazyReviewDecisionInternal");
             } catch {}
-            try {
-                iD.displayName ||
-                    (iD.displayName = "LazyReviewDecisionInternal");
-            } catch {}
-            function iE({
+            function iD({
                 dataKey: e,
                 repositoryOwner: l,
                 repositoryName: a,
                 ...n
             }) {
-                let { number: s } = (0, ed.useFragment)(sK, e),
+                let { number: s } = (0, ed.useFragment)(sv, e),
                     i = `${l}/${a}`,
                     t = { number: `number ${s} `, repo: `In ${i};` },
                     r = (0, y.jsxs)("div", {
-                        className: n1.defaultRepoContainer,
+                        className: nY.defaultRepoContainer,
                         children: [
                             (0, y.jsx)("span", {
                                 children: n.showRepository ? i : "",
@@ -20943,7 +20831,7 @@
                         ],
                     }),
                     o = (0, y.jsxs)("span", {
-                        className: n1.defaultNumberDescription,
+                        className: nY.defaultNumberDescription,
                         children: [
                             (0, y.jsxs)("span", { children: ["#", s] }),
                             "\xa0",
@@ -20953,7 +20841,7 @@
                             }),
                         ],
                     });
-                return (0, y.jsx)(iq, {
+                return (0, y.jsx)(iE, {
                     dataKey: e,
                     defaultRepositoryRender: r,
                     defaultMetaRender: o,
@@ -20964,7 +20852,7 @@
                     ...n,
                 });
             }
-            let iq = ({
+            let iE = ({
                     dataKey: e,
                     metadataRef: l,
                     showRepository: a = !0,
@@ -20978,9 +20866,9 @@
                     id: d,
                     includeGitDataFromMainQuery: c,
                 }) => {
-                    let m = (0, ed.useFragment)(sK, e),
+                    let m = (0, ed.useFragment)(sv, e),
                         { pull_request_single_subscription: g } = (0, aK.h)(),
-                        { variant: p } = (0, n8.e)(),
+                        { variant: p } = (0, n9.e)(),
                         {
                             author: k,
                             reviewDecision: h,
@@ -20992,29 +20880,29 @@
                             milestone: L,
                         } = m,
                         v = k?.__typename,
-                        K = k?.login || sw.t.ghostUserLogin,
+                        K = k?.login || sx.t.ghostUserLogin,
                         I = "Bot" === v ? `app/${K}` : K,
                         _ = k?.isCopilot,
-                        x = _ ? sw.t.copilotDisplayName : K,
+                        x = _ ? sx.t.copilotDisplayName : K,
                         w = k?.resourcePath || "",
-                        N = (0, si.S)(K, { isCopilot: _ }),
+                        N = (0, ss.S)(K, { isCopilot: _ }),
                         j = C ? new Date(C) : void 0,
                         R = S ? new Date(S) : void 0,
                         P = f ? new Date(f) : void 0;
-                    return (0, y.jsxs)(sI.z, {
-                        "data-testid": se.listRowRepoNameAndNumber,
+                    return (0, y.jsxs)(sK.z, {
+                        "data-testid": n8.listRowRepoNameAndNumber,
                         children: [
                             "compact" === p
                                 ? a &&
                                   (0, y.jsxs)(y.Fragment, {
                                       children: [
-                                          (0, y.jsx)(s_.A, {
+                                          (0, y.jsx)(sI.A, {
                                               title: r,
                                               className:
-                                                  iN.repositoryNameTruncate,
+                                                  iw.repositoryNameTruncate,
                                               children: (0, y.jsx)("span", {
                                                   className:
-                                                      n1.compactNameWithOwnerLabel,
+                                                      nY.compactNameWithOwnerLabel,
                                                   children: r,
                                               }),
                                           }),
@@ -21030,7 +20918,7 @@
                                 (0, y.jsxs)(y.Fragment, {
                                     children: [
                                         b
-                                            ? (0, y.jsx)(iB, {
+                                            ? (0, y.jsx)(iO, {
                                                   displayName: x,
                                                   authorFullLogin: I,
                                                   resourcePath: w,
@@ -21038,9 +20926,9 @@
                                                   hovercardAttributes: N,
                                                   timestamp: P,
                                                   testId: "closed-at",
-                                                  action: iO.Closed,
+                                                  action: iq.Closed,
                                               })
-                                            : (0, y.jsx)(iB, {
+                                            : (0, y.jsx)(iO, {
                                                   displayName: x,
                                                   authorFullLogin: I,
                                                   resourcePath: w,
@@ -21048,23 +20936,23 @@
                                                   hovercardAttributes: N,
                                                   timestamp: j,
                                                   testId: "created-at",
-                                                  action: iO.Opened,
+                                                  action: iq.Opened,
                                               }),
-                                        (n === np.RecentlyUpdated ||
+                                        (n === ng.RecentlyUpdated ||
                                             "updated" === n) &&
                                             R &&
                                             (0, y.jsxs)("div", {
                                                 "data-testid": "updated-at",
                                                 className:
-                                                    n1.timestampContainer,
+                                                    nY.timestampContainer,
                                                 children: [
                                                     " ",
                                                     "\xb7 Updated",
                                                     " ",
-                                                    (0, y.jsxs)(sx.A, {
+                                                    (0, y.jsxs)(s_.A, {
                                                         date: R,
                                                         className:
-                                                            iN.RelativeTime,
+                                                            iw.RelativeTime,
                                                         children: [
                                                             "on ",
                                                             R.toLocaleDateString(
@@ -21087,19 +20975,19 @@
                                     children: [" \xb7", " Duplicate"],
                                 }),
                             h
-                                ? (0, y.jsx)(iA, { decision: h, variant: p })
-                                : (0, y.jsx)(iM, {
+                                ? (0, y.jsx)(iT, { decision: h, variant: p })
+                                : (0, y.jsx)(iA, {
                                       id: d,
                                       variant: p,
                                       secondaryQueryRef: l,
                                   }),
-                            L && (0, y.jsx)(iR, { title: L.title, url: L.url }),
+                            L && (0, y.jsx)(ij, { title: L.title, url: L.url }),
                             s
-                                ? (0, y.jsx)(iK, {
+                                ? (0, y.jsx)(iv, {
                                       variant: p,
                                       statusCheckRollup: s,
                                   })
-                                : (0, y.jsx)(iI, {
+                                : (0, y.jsx)(iK, {
                                       id: d,
                                       variant: p,
                                       primaryQueryRef: g && c ? e : void 0,
@@ -21108,8 +20996,8 @@
                         ],
                     });
                 },
-                iO = { Opened: "opened", Closed: "closed" },
-                iB = ({
+                iq = { Opened: "opened", Closed: "closed" },
+                iO = ({
                     displayName: e,
                     authorFullLogin: l,
                     resourcePath: a,
@@ -21121,27 +21009,27 @@
                 }) =>
                     (0, y.jsxs)("div", {
                         "data-testid": t,
-                        className: n1.timestampContainer,
+                        className: nY.timestampContainer,
                         children: [
                             (0, y.jsx)("span", { children: "\xb7 " }),
                             (0, y.jsx)("span", {
-                                children: r === iO.Closed && " by ",
+                                children: r === iq.Closed && " by ",
                             }),
                             (0, y.jsx)(ll.A, {
                                 href: n ? n(l) : a,
-                                className: n1.authorCreatedLink,
+                                className: nY.authorCreatedLink,
                                 ...s,
                                 children: e,
                             }),
                             " ",
                             (0, y.jsx)("span", {
                                 children:
-                                    r === iO.Opened
+                                    r === iq.Opened
                                         ? " opened "
                                         : " was closed ",
                             }),
                             i &&
-                                (0, y.jsxs)(sx.A, {
+                                (0, y.jsxs)(s_.A, {
                                     date: i,
                                     children: [
                                         "on ",
@@ -21155,28 +21043,28 @@
                         ],
                     });
             try {
+                iD.displayName ||
+                    (iD.displayName = "IssuePullRequestDescription");
+            } catch {}
+            try {
                 iE.displayName ||
-                    (iE.displayName = "IssuePullRequestDescription");
+                    (iE.displayName = "IssuePullRequestDescriptionItem");
             } catch {}
             try {
-                iq.displayName ||
-                    (iq.displayName = "IssuePullRequestDescriptionItem");
+                iO.displayName || (iO.displayName = "TimestampContainer");
             } catch {}
-            try {
-                iB.displayName || (iB.displayName = "TimestampContainer");
-            } catch {}
-            var i$ = a(25983);
-            let iQ = {
+            var iB = a(25983);
+            let i$ = {
                     container: "IssueTypeIndicator-module__container--Pqzj1",
                 },
-                iU = ({
+                iQ = ({
                     issueTypeName: e,
                     issueTypeColor: l,
                     getIssueTypeHref: a,
                 }) =>
                     (0, y.jsx)("div", {
-                        className: iQ.container,
-                        children: (0, y.jsx)(i$.n, {
+                        className: i$.container,
+                        children: (0, y.jsx)(iB.n, {
                             name: e,
                             color: l,
                             href: a(e),
@@ -21184,9 +21072,9 @@
                         }),
                     });
             try {
-                iU.displayName || (iU.displayName = "IssueTypeIndicator");
+                iQ.displayName || (iQ.displayName = "IssueTypeIndicator");
             } catch {}
-            let iz = ({
+            let iU = ({
                 itemKey: e,
                 metadataRef: l,
                 isSelected: a,
@@ -21209,9 +21097,9 @@
                 as: C,
                 role: S,
             }) => {
-                let F = (0, ed.useFragment)(nW, e),
-                    L = F && (0, nG.us)(F.title, F.titleHtml),
-                    v = (0, y.jsx)(iy, {
+                let F = (0, ed.useFragment)(nH, e),
+                    L = F && (0, nW.us)(F.title, F.titleHtml),
+                    v = (0, y.jsx)(ip, {
                         value: L,
                         dataKey: F,
                         metadataRef: l,
@@ -21220,11 +21108,11 @@
                         ref: k,
                         href: h,
                         onClick: d,
-                        getLabelHref: (e) => c(nL.label, e),
+                        getLabelHref: (e) => c(nF.label, e),
                         getSubIssuesHref: (e, l, a) =>
-                            c(nL["parent-issue"], `${e}/${l}#${a}`),
+                            c(nF["parent-issue"], `${e}/${l}#${a}`),
                     }),
-                    K = (0, y.jsx)(iE, {
+                    K = (0, y.jsx)(iD, {
                         repositoryOwner: b,
                         repositoryName: f,
                         dataKey: F,
@@ -21233,7 +21121,7 @@
                         getAuthorHref: (e) => c("author", e),
                         id: F.id,
                     }),
-                    I = (0, y.jsx)(sy, {
+                    I = (0, y.jsx)(sp, {
                         issueId: F.id,
                         metadataRef: l,
                         getMetadataHref: c,
@@ -21244,7 +21132,7 @@
                         showLinkedPullRequests: !0,
                     });
                 return (0, y.jsxs)(
-                    nZ.c,
+                    nG.c,
                     {
                         title: v,
                         isSelected: a,
@@ -21252,32 +21140,32 @@
                         onSelect: o,
                         onFocus: u,
                         metadata: I,
-                        metadataContainerClassName: n1.ListItem_0,
+                        metadataContainerClassName: nY.ListItem_0,
                         role: S || "listitem",
                         as: C,
                         children: [
-                            (0, y.jsx)(sF, { metadataRef: l, issueId: F.id }),
-                            (0, y.jsx)(nJ.B, {
-                                className: n1.leadingContent,
-                                children: (0, y.jsx)(s2, { dataKey: F }),
+                            (0, y.jsx)(sS, { metadataRef: l, issueId: F.id }),
+                            (0, y.jsx)(nX.B, {
+                                className: nY.leadingContent,
+                                children: (0, y.jsx)(s1, { dataKey: F }),
                             }),
-                            (0, y.jsx)(nY.Q, {
-                                children: (0, y.jsxs)(nX.U, {
+                            (0, y.jsx)(nJ.Q, {
+                                children: (0, y.jsxs)(nZ.U, {
                                     children: [
                                         F.issueType &&
                                             F.issueType.name &&
-                                            (0, y.jsx)(iU, {
+                                            (0, y.jsx)(iQ, {
                                                 issueTypeName: F.issueType.name,
                                                 issueTypeColor:
                                                     F.issueType.color,
                                                 getIssueTypeHref: (e) =>
                                                     c("type", e),
                                             }),
-                                        (0, y.jsx)(n4, {
+                                        (0, y.jsx)(n3, {
                                             metadataRef: l,
                                             issueId: F.id,
                                             getIssueTypeHref: () =>
-                                                m(nL.is, "blocked"),
+                                                m(nF.is, "blocked"),
                                         }),
                                         K,
                                     ],
@@ -21288,12 +21176,12 @@
                     F.id
                 );
             };
-            iz.nodeType = "issue";
+            iU.nodeType = "issue";
             try {
-                iz.displayName || (iz.displayName = "IssueItem");
+                iU.displayName || (iU.displayName = "IssueItem");
             } catch {}
-            let iH = { row: "IssueRow-module__row--pHXv5" },
-                iW = (function () {
+            let iz = { row: "IssueRow-module__row--pHXv5" },
+                iH = (function () {
                     var e = [
                             {
                                 defaultValue: null,
@@ -21910,9 +21798,9 @@
                         },
                     };
                 })();
-            iW.hash = "a8fcf60382a5cfb1d2d61e1bbc5bd21c";
-            let iG = c,
-                iZ = (0, C.forwardRef)(
+            iH.hash = "a8fcf60382a5cfb1d2d61e1bbc5bd21c";
+            let iW = c,
+                iG = (0, C.forwardRef)(
                     (
                         {
                             isActive: e,
@@ -21932,13 +21820,13 @@
                         },
                         p
                     ) => {
-                        let k = (0, aF.useFragment)(nU, a),
-                            h = (0, aF.useFragment)(nW, k);
-                        (0, nz.M3)() &&
+                        let k = (0, aF.useFragment)(nQ, a),
+                            h = (0, aF.useFragment)(nH, k);
+                        (0, nU.M3)() &&
                             ((e) => {
                                 let l = (0, C.useMemo)(
                                     () => ({
-                                        subscription: iW,
+                                        subscription: iH,
                                         variables: { issueId: e },
                                     }),
                                     [e]
@@ -21976,15 +21864,15 @@
                             v = (0, C.useCallback)(() => {
                                 t?.(!l);
                             }, [t, l]);
-                        return (0, y.jsx)(nH.tL, {
+                        return (0, y.jsx)(nz.tL, {
                             commands: {
                                 "list-view-items-issues-prs:open-focused-item":
                                     F,
                                 "list-view-items-issues-prs:toggle-focused-item-selection":
                                     v,
                             },
-                            className: iH.row,
-                            children: (0, y.jsx)(iz, {
+                            className: iz.row,
+                            children: (0, y.jsx)(iU, {
                                 isActive: e,
                                 itemKey: k,
                                 metadataRef: m,
@@ -22008,12 +21896,12 @@
                         });
                     }
                 );
-            iZ.displayName = "IssueRowInternal";
-            let iX = C.memo(iZ);
+            iG.displayName = "IssueRowInternal";
+            let iZ = C.memo(iG);
             try {
-                iX.displayName || (iX.displayName = "IssueRow");
+                iZ.displayName || (iZ.displayName = "IssueRow");
             } catch {}
-            let iJ = ({ id: e, ariaLabel: l }) =>
+            let iX = ({ id: e, ariaLabel: l }) =>
                 (0, y.jsxs)("div", {
                     id: e,
                     className: "blankslate",
@@ -22024,29 +21912,29 @@
                     children: [
                         (0, y.jsx)("h3", {
                             className: "blankslate-heading",
-                            children: np.noResultsTitle,
+                            children: ng.noResultsTitle,
                         }),
-                        (0, y.jsx)("p", { children: np.noResultsDescription }),
+                        (0, y.jsx)("p", { children: ng.noResultsDescription }),
                     ],
                 });
             try {
-                iJ.displayName || (iJ.displayName = "NoResults");
+                iX.displayName || (iX.displayName = "NoResults");
             } catch {}
-            var iY = a(75202),
-                i1 = a(79866),
-                i2 = a(27042);
-            let i0 = {
+            var iJ = a(75202),
+                iY = a(79866),
+                i1 = a(94236);
+            let i2 = {
                     sortingMenuButton:
                         "sorting-dropdown-module__sortingMenuButton--nMVkF",
                 },
-                i3 = /(created|updated|comments|reactions|relevance?)/,
-                i4 = { asc: V.SortAscIcon, desc: V.SortDescIcon },
-                i5 = {
-                    ...np.sortDropdownOptionDisplayValues,
-                    ...np.sortDropdownReactionLabels,
-                    reactions: np.totalReactions,
+                i0 = /(created|updated|comments|reactions|relevance?)/,
+                i3 = { asc: V.SortAscIcon, desc: V.SortDescIcon },
+                i4 = {
+                    ...ng.sortDropdownOptionDisplayValues,
+                    ...ng.sortDropdownReactionLabels,
+                    reactions: ng.totalReactions,
                 };
-            function i7({
+            function i5({
                 activeSearchQuery: e,
                 dirtySearchQuery: l,
                 setReactionEmojiToDisplay: a,
@@ -22056,9 +21944,9 @@
                 nested: t = !1,
             }) {
                 var r, o;
-                let u = (0, C.useMemo)(() => nN(e).get("sort")?.[0] || "", [e]),
-                    [d, c] = (0, C.useState)(() => i8(u)),
-                    [m, g] = (0, C.useState)(() => te(u)),
+                let u = (0, C.useMemo)(() => nw(e).get("sort")?.[0] || "", [e]),
+                    [d, c] = (0, C.useState)(() => i9(u)),
+                    [m, g] = (0, C.useState)(() => i8(u)),
                     p = (0, e8.Z)(),
                     k = (0, C.useCallback)(
                         (e, a) => {
@@ -22066,7 +21954,7 @@
                             (p(
                                 s(
                                     ((n = l || ""),
-                                    (t = `${np.sortKeyToQuery[e]}-${a}`),
+                                    (t = `${ng.sortKeyToQuery[e]}-${a}`),
                                     n
                                         .replace(/\bsort\S+/gi, "")
                                         .concat(` ${t}`)
@@ -22079,8 +21967,8 @@
                     ),
                     h = (0, C.useCallback)(
                         (e) => {
-                            let l = i9(e),
-                                s = i1.qG[l || ""];
+                            let l = i6(e),
+                                s = iY.qG[l || ""];
                             l &&
                                 s &&
                                 (n(e), a({ reaction: l, reactionEmoji: s }));
@@ -22104,42 +21992,42 @@
                     ),
                     S = (0, C.useCallback)(
                         (e) => {
-                            m && (c(e), n(i5[m]), k(m, e));
+                            m && (c(e), n(i4[m]), k(m, e));
                         },
                         [k, m, n]
                     );
                 (0, C.useEffect)(() => {
-                    (c(i8(u)), g(te(u)));
-                    let e = i6(u);
+                    (c(i9(u)), g(i8(u)));
+                    let e = i7(u);
                     (n(e), h(e));
                 }, [a, n, u, h]);
-                let F = Object.entries(np.sortDropdownOptionDisplayValues),
-                    L = Object.entries(np.sortDropdownReactionLabels),
-                    v = ta(m) || "relevance" === m,
+                let F = Object.entries(ng.sortDropdownOptionDisplayValues),
+                    L = Object.entries(ng.sortDropdownReactionLabels),
+                    v = tl(m) || "relevance" === m,
                     K = (0, y.jsxs)(y.Fragment, {
                         children: [
                             (0, y.jsx)(
-                                ny.l.Item,
+                                np.l.Item,
                                 {
                                     onSelect: () =>
-                                        b(np.totalReactions, "reactions"),
+                                        b(ng.totalReactions, "reactions"),
                                     selected: "reactions" === m,
                                     role: "menuitemradio",
-                                    children: np.totalReactions,
+                                    children: ng.totalReactions,
                                 },
                                 "reactions"
                             ),
-                            (0, y.jsx)(ny.l.Divider, {}),
+                            (0, y.jsx)(np.l.Divider, {}),
                             L.map(([e, l]) =>
                                 (0, y.jsxs)(
-                                    ny.l.Item,
+                                    np.l.Item,
                                     {
                                         onSelect: () => f(e),
                                         selected: m === e,
                                         role: "menuitemradio",
                                         children: [
-                                            (0, y.jsx)(ny.l.LeadingVisual, {
-                                                children: i1.qG[i9(e) || ""],
+                                            (0, y.jsx)(np.l.LeadingVisual, {
+                                                children: iY.qG[i6(e) || ""],
                                             }),
                                             l,
                                         ],
@@ -22151,14 +22039,14 @@
                     }),
                     I = (0, y.jsxs)(y.Fragment, {
                         children: [
-                            (0, y.jsxs)(ny.l.Group, {
+                            (0, y.jsxs)(np.l.Group, {
                                 children: [
-                                    (0, y.jsx)(ny.l.GroupHeading, {
+                                    (0, y.jsx)(np.l.GroupHeading, {
                                         children: "Sort by",
                                     }),
                                     F.map(([e, l]) =>
                                         (0, y.jsx)(
-                                            ny.l.Item,
+                                            np.l.Item,
                                             {
                                                 onSelect: () => b(l, e),
                                                 selected: m === e,
@@ -22168,21 +22056,21 @@
                                             e
                                         )
                                     ),
-                                    (0, y.jsxs)(i2.W, {
+                                    (0, y.jsxs)(i1.W, {
                                         children: [
-                                            (0, y.jsx)(i2.W.Anchor, {
+                                            (0, y.jsx)(i1.W.Anchor, {
                                                 children: (0, y.jsx)(
-                                                    ny.l.Item,
+                                                    np.l.Item,
                                                     {
                                                         selected:
-                                                            ta(m) ||
+                                                            tl(m) ||
                                                             "reactions" === m,
-                                                        children: np.reactions,
+                                                        children: ng.reactions,
                                                     }
                                                 ),
                                             }),
-                                            (0, y.jsx)(i2.W.Overlay, {
-                                                children: (0, y.jsx)(ny.l, {
+                                            (0, y.jsx)(i1.W.Overlay, {
+                                                children: (0, y.jsx)(np.l, {
                                                     selectionVariant: "single",
                                                     children: K,
                                                 }),
@@ -22191,45 +22079,45 @@
                                     }),
                                 ],
                             }),
-                            (0, y.jsx)(ny.l.Divider, {}),
-                            (0, y.jsxs)(ny.l.Group, {
+                            (0, y.jsx)(np.l.Divider, {}),
+                            (0, y.jsxs)(np.l.Group, {
                                 children: [
-                                    (0, y.jsx)(ny.l.GroupHeading, {
+                                    (0, y.jsx)(np.l.GroupHeading, {
                                         children: "Order",
                                     }),
                                     (0, y.jsxs)(
-                                        ny.l.Item,
+                                        np.l.Item,
                                         {
                                             disabled: v,
                                             selected: "asc" === d && null !== m,
                                             onSelect: () => S("asc"),
                                             children: [
-                                                (0, y.jsx)(ny.l.LeadingVisual, {
+                                                (0, y.jsx)(np.l.LeadingVisual, {
                                                     children: (0, y.jsx)(
                                                         V.SortAscIcon,
                                                         {}
                                                     ),
                                                 }),
-                                                tl(m, "asc"),
+                                                te(m, "asc"),
                                             ],
                                         },
                                         "ascending"
                                     ),
                                     (0, y.jsxs)(
-                                        ny.l.Item,
+                                        np.l.Item,
                                         {
                                             disabled: v,
                                             selected:
                                                 "desc" === d && null !== m,
                                             onSelect: () => S("desc"),
                                             children: [
-                                                (0, y.jsx)(ny.l.LeadingVisual, {
+                                                (0, y.jsx)(np.l.LeadingVisual, {
                                                     children: (0, y.jsx)(
                                                         V.SortDescIcon,
                                                         {}
                                                     ),
                                                 }),
-                                                tl(m, "desc"),
+                                                te(m, "desc"),
                                             ],
                                         },
                                         "descending"
@@ -22239,23 +22127,23 @@
                         ],
                     });
                 return t
-                    ? (0, y.jsx)(iY.t, {
+                    ? (0, y.jsx)(iJ.t, {
                           fallback: null,
-                          children: (0, y.jsx)(ny.l, {
+                          children: (0, y.jsx)(np.l, {
                               selectionVariant: "single",
                               "aria-labelledby": "",
                               "aria-label": "Sort",
                               children: I,
                           }),
                       })
-                    : (0, y.jsxs)(i2.W, {
+                    : (0, y.jsxs)(i1.W, {
                           children: [
-                              (0, y.jsxs)(i2.W.Button, {
+                              (0, y.jsxs)(i1.W.Button, {
                                   variant: "invisible",
-                                  className: i0.sortingMenuButton,
-                                  leadingVisual: i4[d || "desc"],
+                                  className: i2.sortingMenuButton,
+                                  leadingVisual: i3[d || "desc"],
                                   children: [
-                                      tn(m ?? "")
+                                      ta(m ?? "")
                                           ? (0, y.jsx)("span", {
                                                 className: "sr-only",
                                                 children: "Sort by ",
@@ -22266,17 +22154,17 @@
                                               ? ((r = m),
                                                 (o = d || "desc"),
                                                 "created" === r
-                                                    ? np
+                                                    ? ng
                                                           .sortDropdownMenuButtonLabels[
                                                           r
                                                       ][o]
-                                                    : np
+                                                    : ng
                                                           .sortDropdownMenuButtonLabels[
                                                           r
                                                       ])
-                                              : np.sort,
+                                              : ng.sort,
                                       }),
-                                      tn(m ?? "")
+                                      ta(m ?? "")
                                           ? (0, y.jsx)("span", {
                                                 className: "sr-only",
                                                 children:
@@ -22287,8 +22175,8 @@
                                           : null,
                                   ],
                               }),
-                              (0, y.jsx)(i2.W.Overlay, {
-                                  children: (0, y.jsx)(ny.l, {
+                              (0, y.jsx)(i1.W.Overlay, {
+                                  children: (0, y.jsx)(np.l, {
                                       selectionVariant: "single",
                                       children: I,
                                   }),
@@ -22296,57 +22184,57 @@
                           ],
                       });
             }
-            function i6(e) {
-                let l = te(e);
+            function i7(e) {
+                let l = i8(e);
                 return l || "relevance";
             }
-            function i9(e) {
+            function i6(e) {
                 var l;
-                let a = i5[e]?.replace(" ", "_").toUpperCase();
-                return ((l = a), Object.keys(i1.qG).includes(l)) ? a : void 0;
+                let a = i4[e]?.replace(" ", "_").toUpperCase();
+                return ((l = a), Object.keys(iY.qG).includes(l)) ? a : void 0;
             }
-            function i8(e) {
+            function i9(e) {
                 let l = e.split("-")?.[1];
                 return "asc" === l || "desc" === l ? l : "desc";
             }
-            function te(e) {
+            function i8(e) {
                 if (!e) return "created";
-                let l = e.match(i3)?.[0];
+                let l = e.match(i0)?.[0];
                 return (
                     "reactions" === l &&
                         (l =
                             e
                                 .split(/-asc|-desc/)?.[0]
                                 ?.split("reactions-")?.[1] || "reactions"),
-                    tn(l) ? l : null
+                    ta(l) ? l : null
                 );
             }
-            function tl(e, l) {
+            function te(e, l) {
                 return "created" === e || "updated" === e
                     ? "asc" === l
-                        ? np.Oldest
-                        : np.Newest
+                        ? ng.Oldest
+                        : ng.Newest
                     : "asc" === l
-                      ? np.ascending
-                      : np.descending;
+                      ? ng.ascending
+                      : ng.descending;
+            }
+            function tl(e) {
+                return !!e && ng.sortDropdownReactionLabels.hasOwnProperty(e);
             }
             function ta(e) {
-                return !!e && np.sortDropdownReactionLabels.hasOwnProperty(e);
-            }
-            function tn(e) {
-                return !!e && Object.keys(i5).includes(e);
+                return !!e && Object.keys(i4).includes(e);
             }
             try {
-                i3.displayName || (i3.displayName = "SORT_KEY_MATCHING_REGEX");
+                i0.displayName || (i0.displayName = "SORT_KEY_MATCHING_REGEX");
             } catch {}
             try {
-                i7.displayName || (i7.displayName = "SortingDropdown");
+                i5.displayName || (i5.displayName = "SortingDropdown");
             } catch {}
-            var ts = a(39111),
-                ti = a(40104),
-                tt = a(64583),
-                tr = a(24347);
-            let to = (function () {
+            var tn = a(39111),
+                ts = a(40104),
+                ti = a(64583),
+                tt = a(24347);
+            let tr = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -22524,9 +22412,9 @@
                     },
                 };
             })();
-            to.hash = "04e5c6fde016e15e955cae480bc1c6d3";
-            var tu = a(84172);
-            let td = (e) => {
+            tr.hash = "04e5c6fde016e15e955cae480bc1c6d3";
+            var to = a(73580);
+            let tu = (e) => {
                     let l,
                         a,
                         n,
@@ -22545,12 +22433,12 @@
                     t[4] !== r || t[5] !== l
                         ? ((s = (e) =>
                               l
-                                  ? (0, y.jsxs)(ny.l.Item, {
+                                  ? (0, y.jsxs)(np.l.Item, {
                                         disabled: r,
                                         ...e,
                                         role: "menuitem",
                                         children: [
-                                            (0, y.jsx)(ny.l.LeadingVisual, {
+                                            (0, y.jsx)(np.l.LeadingVisual, {
                                                 children: (0, y.jsx)(
                                                     V.ProjectSymlinkIcon,
                                                     {}
@@ -22559,7 +22447,7 @@
                                             "Project",
                                         ],
                                     })
-                                  : (0, y.jsx)(ns.Q, {
+                                  : (0, y.jsx)(nn.Q, {
                                         "data-testid":
                                             "bulk-add-to-project-button",
                                         disabled: r,
@@ -22592,7 +22480,7 @@
                     }
                     return (
                         t[10] !== d || t[11] !== r || t[12] !== a
-                            ? ((i = (0, y.jsx)(tc, {
+                            ? ((i = (0, y.jsx)(td, {
                                   disabled: r,
                                   anchorElement: d,
                                   ...a,
@@ -22605,7 +22493,7 @@
                         i
                     );
                 },
-                tc = (e) => {
+                td = (e) => {
                     let l,
                         a,
                         n,
@@ -22628,14 +22516,14 @@
                             ? ((a = { fetchPolicy: "store-or-network" }),
                               (t[2] = a))
                             : (a = t[2]));
-                    let { nodes: p } = (0, ed.useLazyLoadQuery)(to, l, a);
+                    let { nodes: p } = (0, ed.useLazyLoadQuery)(tr, l, a);
                     if (t[3] !== p) {
                         let e = new Map(),
                             l = (p || []).map((l) => {
                                 let a = l?.id;
                                 return a
                                     ? ((l.projectItemsNext?.edges || [])
-                                          .flatMap(tm)
+                                          .flatMap(tc)
                                           .map((l) => {
                                               let n = e.get(a) || [];
                                               return (
@@ -22673,7 +22561,7 @@
                         t[12] !== m ||
                         t[13] !== g ||
                         t[14] !== s
-                            ? ((i = (0, y.jsx)(tu.k$, {
+                            ? ((i = (0, y.jsx)(to.k$, {
                                   pickerId: "add-to-projects-project-picker",
                                   issueIds: r,
                                   readonly: !1,
@@ -22700,20 +22588,20 @@
                     );
                 };
             try {
-                td.displayName || (td.displayName = "AddToProjectsBulkAction");
+                tu.displayName || (tu.displayName = "AddToProjectsBulkAction");
             } catch {}
             try {
-                tc.displayName || (tc.displayName = "LazyBulkProjectPicker");
+                td.displayName || (td.displayName = "LazyBulkProjectPicker");
             } catch {}
-            function tm(e) {
+            function tc(e) {
                 return e?.node?.project ? [e.node.project] : [];
             }
-            let tg = {
+            let tm = {
                 kind: "InlineDataFragment",
                 name: "ApplyAssigneesBulkActionIssueFragment",
             };
-            tg.hash = "bf89051fe20d80d2d3307cbae57ac84e";
-            let tp = (function () {
+            tm.hash = "bf89051fe20d80d2d3307cbae57ac84e";
+            let tg = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -23026,8 +22914,8 @@
                     },
                 };
             })();
-            tp.hash = "7b24a3d9b4d5a3ffef80b3c4da2c65e1";
-            let ty = (e) => {
+            tg.hash = "7b24a3d9b4d5a3ffef80b3c4da2c65e1";
+            let tp = (e) => {
                     let l,
                         a,
                         n,
@@ -23053,9 +22941,9 @@
                         g[5] === Symbol.for("react.memo_cache_sentinel")
                             ? ((s = { fetchPolicy: "store-only" }), (g[5] = s))
                             : (s = g[5]));
-                    let { nodes: p } = (0, ed.useLazyLoadQuery)(tp, n, s);
+                    let { nodes: p } = (0, ed.useLazyLoadQuery)(tg, n, s);
                     if (g[6] !== p) {
-                        let e = (p || []).filter(Boolean).map(th),
+                        let e = (p || []).filter(Boolean).map(tk),
                             l = e[0];
                         t = l?.repository;
                         let a = new Map(),
@@ -23064,7 +22952,7 @@
                                 let l = e?.id;
                                 return l
                                     ? ((e.assignedActors?.edges || [])
-                                          .flatMap(tb)
+                                          .flatMap(th)
                                           .map((e) => {
                                               n.set(e.id, e);
                                               let s = a.get(l) || [];
@@ -23092,7 +22980,7 @@
                                     )
                                         ? (c[l.assigneeId] = l.assigneeNode)
                                         : (m[l.assigneeId] = l.assigneeNode));
-                        ((i = tk),
+                        ((i = ty),
                             (r = a),
                             (o = [...n.values()]),
                             (u = Object.values(c)),
@@ -23153,7 +23041,7 @@
                         m
                     );
                 },
-                tk = (e) => {
+                ty = (e) => {
                     let l,
                         a,
                         n,
@@ -23179,7 +23067,7 @@
                     let d = void 0 !== s && s,
                         c = (0, C.useRef)(null);
                     u[5] !== l
-                        ? ((i = l.reduce(tf, {})), (u[5] = l), (u[6] = i))
+                        ? ((i = l.reduce(tb, {})), (u[5] = l), (u[6] = i))
                         : (i = u[6]);
                     let m = i;
                     u[7] !== d || u[8] !== a
@@ -23196,13 +23084,13 @@
                                                     (a.current = e);
                                       });
                               return a
-                                  ? (0, y.jsxs)(ny.l.Item, {
+                                  ? (0, y.jsxs)(np.l.Item, {
                                         disabled: d,
                                         ...s,
                                         role: "menuitem",
                                         ref: i,
                                         children: [
-                                            (0, y.jsx)(ny.l.LeadingVisual, {
+                                            (0, y.jsx)(np.l.LeadingVisual, {
                                                 children: (0, y.jsx)(
                                                     V.PeopleIcon,
                                                     {}
@@ -23211,7 +23099,7 @@
                                             "Assign",
                                         ],
                                     })
-                                  : (0, y.jsx)(ns.Q, {
+                                  : (0, y.jsx)(nn.Q, {
                                         ref: i,
                                         "data-testid":
                                             "bulk-set-assignee-button",
@@ -23257,19 +23145,19 @@
                     return o;
                 };
             try {
-                ty.displayName || (ty.displayName = "ApplyAssigneesBulkAction");
+                tp.displayName || (tp.displayName = "ApplyAssigneesBulkAction");
             } catch {}
             try {
-                tk.displayName ||
-                    (tk.displayName = "ApplyAssigneesActionInternal");
+                ty.displayName ||
+                    (ty.displayName = "ApplyAssigneesActionInternal");
             } catch {}
-            function th(e) {
-                return (0, ed.readInlineData)(tg, e);
+            function tk(e) {
+                return (0, ed.readInlineData)(tm, e);
             }
-            function tb(e) {
+            function th(e) {
                 return e?.node ? [(0, lR.uX)(e.node)] : [];
             }
-            function tf(e, l) {
+            function tb(e, l) {
                 return (
                     (e[l] = [
                         eJ.ConnectionHandler.getConnectionID(
@@ -23284,7 +23172,7 @@
                     e
                 );
             }
-            let tC = (function () {
+            let tf = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -23510,10 +23398,10 @@
                     },
                 };
             })();
-            tC.hash = "416b633dde6b7e12ba553423fd58f52a";
-            var tS = a(36202);
-            let tF = { markAs: "Mark as", setIssueType: "Issue type" },
-                tL = (e) => {
+            tf.hash = "416b633dde6b7e12ba553423fd58f52a";
+            var tC = a(22463);
+            let tS = { markAs: "Mark as", setIssueType: "Issue type" },
+                tF = (e) => {
                     let l,
                         a,
                         n,
@@ -23538,10 +23426,10 @@
                         d[7] === Symbol.for("react.memo_cache_sentinel")
                             ? ((t = { fetchPolicy: "store-only" }), (d[7] = t))
                             : (t = d[7]));
-                    let { nodes: c } = (0, ed.useLazyLoadQuery)(tC, i, t);
+                    let { nodes: c } = (0, ed.useLazyLoadQuery)(tf, i, t);
                     if (d[8] !== c) {
-                        let e = (c || []).filter(tv).map(tK);
-                        ((r = (1 === new Set(e.map(tI)).size && e[0]) || null),
+                        let e = (c || []).filter(tL).map(tv);
+                        ((r = (1 === new Set(e.map(tK)).size && e[0]) || null),
                             (d[8] = c),
                             (d[9] = r));
                     } else r = d[9];
@@ -23549,30 +23437,30 @@
                     d[10] !== l || d[11] !== n
                         ? ((o = (e) =>
                               n
-                                  ? (0, y.jsxs)(ny.l.Item, {
+                                  ? (0, y.jsxs)(np.l.Item, {
                                         "data-testid":
                                             "bulk-set-issue-type-button",
                                         disabled: l,
                                         ...e,
                                         role: "menuitem",
                                         children: [
-                                            (0, y.jsx)(ny.l.LeadingVisual, {
+                                            (0, y.jsx)(np.l.LeadingVisual, {
                                                 children: (0, y.jsx)(
                                                     V.IssueOpenedIcon,
                                                     {}
                                                 ),
                                             }),
-                                            tF.setIssueType,
+                                            tS.setIssueType,
                                         ],
                                     })
-                                  : (0, y.jsx)(ns.Q, {
+                                  : (0, y.jsx)(nn.Q, {
                                         "data-testid":
                                             "bulk-set-issue-type-button",
                                         disabled: l,
                                         leadingVisual: V.IssueOpenedIcon,
                                         trailingVisual: V.TriangleDownIcon,
                                         ...e,
-                                        children: tF.setIssueType,
+                                        children: tS.setIssueType,
                                     })),
                           (d[10] = l),
                           (d[11] = n),
@@ -23581,7 +23469,7 @@
                     let g = o;
                     return (
                         d[13] !== m || d[14] !== g || d[15] !== n || d[16] !== s
-                            ? ((u = (0, y.jsx)(tS.$H, {
+                            ? ((u = (0, y.jsx)(tC.$H, {
                                   readonly: !1,
                                   activeIssueType: m,
                                   anchorElement: g,
@@ -23598,18 +23486,18 @@
                     );
                 };
             try {
-                tL.displayName || (tL.displayName = "ApplyIssueTypeBulkAction");
+                tF.displayName || (tF.displayName = "ApplyIssueTypeBulkAction");
             } catch {}
-            function tv(e) {
+            function tL(e) {
                 return !!e;
             }
-            function tK(e) {
+            function tv(e) {
                 return e && e.actionIssueType ? e.actionIssueType : null;
             }
-            function tI(e) {
+            function tK(e) {
                 return e?.id;
             }
-            let t_ = (function () {
+            let tI = (function () {
                 var e = [
                         {
                             defaultValue: null,
@@ -23627,52 +23515,83 @@
                         name: "id",
                         storageKey: null,
                     },
-                    n = [
-                        { kind: "Literal", name: "first", value: 20 },
-                        {
-                            kind: "Literal",
-                            name: "orderBy",
-                            value: { direction: "ASC", field: "NAME" },
-                        },
-                    ],
-                    s = [
-                        a,
-                        {
-                            alias: null,
-                            args: null,
-                            kind: "ScalarField",
-                            name: "color",
-                            storageKey: null,
-                        },
-                        {
-                            alias: null,
-                            args: null,
-                            kind: "ScalarField",
-                            name: "name",
-                            storageKey: null,
-                        },
-                        {
-                            alias: null,
-                            args: null,
-                            kind: "ScalarField",
-                            name: "nameHTML",
-                            storageKey: null,
-                        },
-                        {
-                            alias: null,
-                            args: null,
-                            kind: "ScalarField",
-                            name: "description",
-                            storageKey: null,
-                        },
-                        {
-                            alias: null,
-                            args: null,
-                            kind: "ScalarField",
-                            name: "url",
-                            storageKey: null,
-                        },
-                    ];
+                    n = {
+                        alias: null,
+                        args: [
+                            { kind: "Literal", name: "first", value: 20 },
+                            {
+                                kind: "Literal",
+                                name: "orderBy",
+                                value: { direction: "ASC", field: "NAME" },
+                            },
+                        ],
+                        concreteType: "LabelConnection",
+                        kind: "LinkedField",
+                        name: "labels",
+                        plural: !1,
+                        selections: [
+                            {
+                                alias: null,
+                                args: null,
+                                concreteType: "LabelEdge",
+                                kind: "LinkedField",
+                                name: "edges",
+                                plural: !0,
+                                selections: [
+                                    {
+                                        alias: null,
+                                        args: null,
+                                        concreteType: "Label",
+                                        kind: "LinkedField",
+                                        name: "node",
+                                        plural: !1,
+                                        selections: [
+                                            a,
+                                            {
+                                                alias: null,
+                                                args: null,
+                                                kind: "ScalarField",
+                                                name: "color",
+                                                storageKey: null,
+                                            },
+                                            {
+                                                alias: null,
+                                                args: null,
+                                                kind: "ScalarField",
+                                                name: "name",
+                                                storageKey: null,
+                                            },
+                                            {
+                                                alias: null,
+                                                args: null,
+                                                kind: "ScalarField",
+                                                name: "nameHTML",
+                                                storageKey: null,
+                                            },
+                                            {
+                                                alias: null,
+                                                args: null,
+                                                kind: "ScalarField",
+                                                name: "description",
+                                                storageKey: null,
+                                            },
+                                            {
+                                                alias: null,
+                                                args: null,
+                                                kind: "ScalarField",
+                                                name: "url",
+                                                storageKey: null,
+                                            },
+                                        ],
+                                        storageKey: null,
+                                    },
+                                ],
+                                storageKey: null,
+                            },
+                        ],
+                        storageKey:
+                            'labels(first:20,orderBy:{"direction":"ASC","field":"NAME"})',
+                    };
                 return {
                     fragment: {
                         argumentDefinitions: e,
@@ -23690,55 +23609,7 @@
                                 selections: [
                                     {
                                         kind: "InlineFragment",
-                                        selections: [
-                                            a,
-                                            {
-                                                alias: null,
-                                                args: n,
-                                                concreteType: "LabelConnection",
-                                                kind: "LinkedField",
-                                                name: "labels",
-                                                plural: !1,
-                                                selections: [
-                                                    {
-                                                        alias: null,
-                                                        args: null,
-                                                        concreteType:
-                                                            "LabelEdge",
-                                                        kind: "LinkedField",
-                                                        name: "edges",
-                                                        plural: !0,
-                                                        selections: [
-                                                            {
-                                                                alias: null,
-                                                                args: null,
-                                                                concreteType:
-                                                                    "Label",
-                                                                kind: "LinkedField",
-                                                                name: "node",
-                                                                plural: !1,
-                                                                selections: [
-                                                                    {
-                                                                        kind: "InlineDataFragmentSpread",
-                                                                        name: "LabelPickerLabel",
-                                                                        selections:
-                                                                            s,
-                                                                        args: null,
-                                                                        argumentDefinitions:
-                                                                            [],
-                                                                    },
-                                                                ],
-                                                                storageKey:
-                                                                    null,
-                                                            },
-                                                        ],
-                                                        storageKey: null,
-                                                    },
-                                                ],
-                                                storageKey:
-                                                    'labels(first:20,orderBy:{"direction":"ASC","field":"NAME"})',
-                                            },
-                                        ],
+                                        selections: [a, n],
                                         type: "Issue",
                                         abstractKey: null,
                                     },
@@ -23773,44 +23644,7 @@
                                     a,
                                     {
                                         kind: "InlineFragment",
-                                        selections: [
-                                            {
-                                                alias: null,
-                                                args: n,
-                                                concreteType: "LabelConnection",
-                                                kind: "LinkedField",
-                                                name: "labels",
-                                                plural: !1,
-                                                selections: [
-                                                    {
-                                                        alias: null,
-                                                        args: null,
-                                                        concreteType:
-                                                            "LabelEdge",
-                                                        kind: "LinkedField",
-                                                        name: "edges",
-                                                        plural: !0,
-                                                        selections: [
-                                                            {
-                                                                alias: null,
-                                                                args: null,
-                                                                concreteType:
-                                                                    "Label",
-                                                                kind: "LinkedField",
-                                                                name: "node",
-                                                                plural: !1,
-                                                                selections: s,
-                                                                storageKey:
-                                                                    null,
-                                                            },
-                                                        ],
-                                                        storageKey: null,
-                                                    },
-                                                ],
-                                                storageKey:
-                                                    'labels(first:20,orderBy:{"direction":"ASC","field":"NAME"})',
-                                            },
-                                        ],
+                                        selections: [n],
                                         type: "Issue",
                                         abstractKey: null,
                                     },
@@ -23820,7 +23654,7 @@
                         ],
                     },
                     params: {
-                        id: "02815c0f1c7f68d3a5e520b675a5492b",
+                        id: "7beee036626c8856177850181ca48034",
                         metadata: {},
                         name: "ApplyLabelsBulkActionLabelQuery",
                         operationKind: "query",
@@ -23828,7 +23662,8 @@
                     },
                 };
             })();
-            t_.hash = "44889de9ad73a14e365e1011f491f2bf";
+            tI.hash = "4f892b0559a426febf9972fe237119b4";
+            var t_ = a(98530);
             let tx = (e) => {
                     let l,
                         a,
@@ -23852,7 +23687,7 @@
                             ? ((s = { fetchPolicy: "store-or-network" }),
                               (u[5] = s))
                             : (s = u[5]));
-                    let { nodes: d } = (0, ed.useLazyLoadQuery)(t_, n, s);
+                    let { nodes: d } = (0, ed.useLazyLoadQuery)(tI, n, s);
                     if (u[6] !== d) {
                         i = new Map();
                         let e = (d || []).map((e) => {
@@ -23938,12 +23773,12 @@
                     u[7] !== d || u[8] !== c
                         ? ((t = (e) =>
                               c
-                                  ? (0, y.jsxs)(ny.l.Item, {
+                                  ? (0, y.jsxs)(np.l.Item, {
                                         disabled: d,
                                         ...e,
                                         role: "menuitem",
                                         children: [
-                                            (0, y.jsx)(ny.l.LeadingVisual, {
+                                            (0, y.jsx)(np.l.LeadingVisual, {
                                                 children: (0, y.jsx)(
                                                     V.TagIcon,
                                                     {}
@@ -23952,7 +23787,7 @@
                                             "Label",
                                         ],
                                     })
-                                  : (0, y.jsx)(ns.Q, {
+                                  : (0, y.jsx)(nn.Q, {
                                         "data-testid": "bulk-set-label-button",
                                         disabled: d,
                                         leadingVisual: V.TagIcon,
@@ -23974,7 +23809,7 @@
                         u[14] !== c ||
                         u[15] !== a ||
                         u[16] !== r
-                            ? ((o = (0, y.jsx)(lP.CH, {
+                            ? ((o = (0, y.jsx)(t_.CH, {
                                   issuesToActOn: l,
                                   readonly: !1,
                                   canCreateLabel: !1,
@@ -24001,7 +23836,7 @@
                     (tw.displayName = "ApplyLabelsActionInternal");
             } catch {}
             function tN(e) {
-                return e?.node ? [(0, lP.P5)(e.node)] : [];
+                return e?.node ? [e.node] : [];
             }
             function tj(e, l) {
                 return (
@@ -24322,12 +24157,12 @@
                 m[10] !== l || m[11] !== n
                     ? ((o = (e) =>
                           n
-                              ? (0, y.jsxs)(ny.l.Item, {
+                              ? (0, y.jsxs)(np.l.Item, {
                                     disabled: l,
                                     ...e,
                                     role: "menuitem",
                                     children: [
-                                        (0, y.jsx)(ny.l.LeadingVisual, {
+                                        (0, y.jsx)(np.l.LeadingVisual, {
                                             children: (0, y.jsx)(
                                                 V.MilestoneIcon,
                                                 {}
@@ -24336,7 +24171,7 @@
                                         "Milestone",
                                     ],
                                 })
-                              : (0, y.jsx)(ns.Q, {
+                              : (0, y.jsx)(nn.Q, {
                                     "data-testid": "bulk-set-milestone-button",
                                     disabled: l,
                                     leadingVisual: V.MilestoneIcon,
@@ -24350,7 +24185,7 @@
                     : (o = m[12]);
                 let k = o;
                 (m[13] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((u = (0, y.jsx)(im.JR, {
+                    ? ((u = (0, y.jsx)(ic.JR, {
                           html: tP.v.noMilestoneData.title,
                       })),
                       (m[13] = u))
@@ -24601,11 +24436,11 @@
                     (h[12] !== w
                         ? ((u = tW.map((e, l) =>
                               (0, y.jsxs)(
-                                  ny.l.Item,
+                                  np.l.Item,
                                   {
                                       onSelect: () => w(e.value),
                                       children: [
-                                          (0, y.jsx)(ny.l.LeadingVisual, {
+                                          (0, y.jsx)(np.l.LeadingVisual, {
                                               children: (0, y.jsx)(e.icon, {}),
                                           }),
                                           e.name,
@@ -24627,10 +24462,10 @@
                         let e, l;
                         return (
                             h[16] === Symbol.for("react.memo_cache_sentinel")
-                                ? ((e = (0, y.jsx)(i2.W.Anchor, {
-                                      children: (0, y.jsxs)(ny.l.Item, {
+                                ? ((e = (0, y.jsx)(i1.W.Anchor, {
+                                      children: (0, y.jsxs)(np.l.Item, {
                                           children: [
-                                              (0, y.jsx)(ny.l.LeadingVisual, {
+                                              (0, y.jsx)(np.l.LeadingVisual, {
                                                   children: (0, y.jsx)(
                                                       tU.issueIcons.CLOSED.icon,
                                                       {}
@@ -24643,11 +24478,11 @@
                                   (h[16] = e))
                                 : (e = h[16]),
                             h[17] !== N
-                                ? ((l = (0, y.jsxs)(i2.W, {
+                                ? ((l = (0, y.jsxs)(i1.W, {
                                       children: [
                                           e,
-                                          (0, y.jsx)(i2.W.Overlay, {
-                                              children: (0, y.jsx)(ny.l, {
+                                          (0, y.jsx)(i1.W.Overlay, {
+                                              children: (0, y.jsx)(np.l, {
                                                   children: N,
                                               }),
                                           }),
@@ -24661,29 +24496,29 @@
                     }
                     return (
                         h[19] === Symbol.for("react.memo_cache_sentinel")
-                            ? ((c = (0, n0.G)("mark-as-action-menu-button")),
+                            ? ((c = (0, n2.G)("mark-as-action-menu-button")),
                               (h[19] = c))
                             : (c = h[19]),
                         h[20] !== S
-                            ? ((m = (0, y.jsx)(i2.W.Anchor, {
-                                  children: (0, y.jsx)(ns.Q, {
+                            ? ((m = (0, y.jsx)(i1.W.Anchor, {
+                                  children: (0, y.jsx)(nn.Q, {
                                       disabled: S,
                                       leadingVisual: tU.issueIcons.CLOSED.icon,
                                       trailingVisual: V.TriangleDownIcon,
                                       ...c,
-                                      children: tF.markAs,
+                                      children: tS.markAs,
                                   }),
                               })),
                               (h[20] = S),
                               (h[21] = m))
                             : (m = h[21]),
                         h[22] === Symbol.for("react.memo_cache_sentinel")
-                            ? ((g = (0, n0.G)("mark-as-action-menu-list")),
+                            ? ((g = (0, n2.G)("mark-as-action-menu-list")),
                               (h[22] = g))
                             : (g = h[22]),
                         h[23] !== N
-                            ? ((p = (0, y.jsx)(i2.W.Overlay, {
-                                  children: (0, y.jsx)(ny.l, {
+                            ? ((p = (0, y.jsx)(i1.W.Overlay, {
+                                  children: (0, y.jsx)(np.l, {
                                       ...g,
                                       children: N,
                                   }),
@@ -24692,7 +24527,7 @@
                               (h[24] = p))
                             : (p = h[24]),
                         h[25] !== I || h[26] !== m || h[27] !== p
-                            ? ((k = (0, y.jsxs)(i2.W, {
+                            ? ((k = (0, y.jsxs)(i1.W, {
                                   open: I,
                                   onOpenChange: x,
                                   children: [m, p],
@@ -24725,14 +24560,14 @@
                 let e = (0, C.useCallback)(
                         (e, l, a) =>
                             e
-                                ? (0, y.jsxs)(ny.l.Item, {
+                                ? (0, y.jsxs)(np.l.Item, {
                                       disabled: !0,
                                       children: [
-                                          (0, y.jsx)(ny.l.LeadingVisual, {
+                                          (0, y.jsx)(np.l.LeadingVisual, {
                                               children: (0, y.jsx)(l, {}),
                                           }),
                                           a,
-                                          (0, y.jsx)(ny.l.TrailingVisual, {
+                                          (0, y.jsx)(np.l.TrailingVisual, {
                                               children: (0, y.jsx)(
                                                   V.TriangleDownIcon,
                                                   {}
@@ -24740,7 +24575,7 @@
                                           }),
                                       ],
                                   })
-                                : (0, y.jsx)(ns.Q, {
+                                : (0, y.jsx)(nn.Q, {
                                       disabled: !0,
                                       leadingVisual: l,
                                       trailingVisual: V.TriangleDownIcon,
@@ -24776,7 +24611,7 @@
                             {
                                 key: "apply-issue-type",
                                 render: (l) =>
-                                    e(l, V.IssueOpenedIcon, ni.setIssueType),
+                                    e(l, V.IssueOpenedIcon, ns.setIssueType),
                             },
                         ],
                         [e]
@@ -24842,7 +24677,7 @@
                         }),
                         [F, b, S, m, l, c, p]
                     ),
-                    { setSelectedCount: K } = (0, tr.v)(),
+                    { setSelectedCount: K } = (0, tt.v)(),
                     I = (0, C.useCallback)(
                         (e) => {
                             e
@@ -24895,7 +24730,7 @@
                                 {
                                     key: "apply-assignees",
                                     render: (a) =>
-                                        (0, y.jsx)(ty, {
+                                        (0, y.jsx)(tp, {
                                             nested: a,
                                             issueIds: e,
                                             issueNumbers: l,
@@ -24907,7 +24742,7 @@
                                 {
                                     key: "add-to-projects",
                                     render: (e) =>
-                                        (0, y.jsx)(td, {
+                                        (0, y.jsx)(tu, {
                                             nested: e,
                                             issueIds: c.map((e) => e.id),
                                             owner: t?.owner,
@@ -24936,7 +24771,7 @@
                                             appName: "issue_types",
                                             category: "issues_index",
                                             metadata: x,
-                                            children: (0, y.jsx)(tL, {
+                                            children: (0, y.jsx)(tF, {
                                                 owner: t.owner,
                                                 repo: t.name,
                                                 nested: l,
@@ -24987,7 +24822,7 @@
                             id: tP.v.noAssigneeData.id,
                             description: "",
                             descriptionVariant: "inline",
-                            children: (0, y.jsx)(im.JR, {
+                            children: (0, y.jsx)(ic.JR, {
                                 html: tP.v.noAssigneeData.login,
                             }),
                             source: tP.v.noAssigneeData,
@@ -25033,12 +24868,12 @@
                 });
             }
             function t5(e) {
-                return (0, y.jsxs)(ny.l.Item, {
+                return (0, y.jsxs)(np.l.Item, {
                     ...e,
                     "aria-label": W.filters.assigneesLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(ny.l.LeadingVisual, {
+                        (0, y.jsx)(np.l.LeadingVisual, {
                             children: (0, y.jsx)(V.MentionIcon, {}),
                         }),
                         W.filters.assignees,
@@ -25047,7 +24882,7 @@
                 });
             }
             function t7(e) {
-                return (0, y.jsx)(ns.Q, {
+                return (0, y.jsx)(nn.Q, {
                     variant: "invisible",
                     "data-testid": "assignees-anchor-button",
                     trailingVisual: V.TriangleDownIcon,
@@ -25105,12 +24940,12 @@
                 });
             }
             function t8(e) {
-                return (0, y.jsxs)(ny.l.Item, {
+                return (0, y.jsxs)(np.l.Item, {
                     ...e,
                     "aria-label": W.filters.authorLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(ny.l.LeadingVisual, {
+                        (0, y.jsx)(np.l.LeadingVisual, {
                             children: (0, y.jsx)(V.PersonIcon, {}),
                         }),
                         W.filters.author,
@@ -25119,7 +24954,7 @@
                 });
             }
             function re(e) {
-                return (0, y.jsx)(ns.Q, {
+                return (0, y.jsx)(nn.Q, {
                     variant: "invisible",
                     "data-testid": "authors-anchor-button",
                     trailingVisual: V.TriangleDownIcon,
@@ -25165,7 +25000,7 @@
                         [o, l, t]
                     ),
                     c = (0, C.useMemo)(() => ej(o, "type").at(-1), [o]);
-                return (0, y.jsx)(tS.uF, {
+                return (0, y.jsx)(tC.uF, {
                     title: W.filters.issueTypeLabel,
                     repo: n,
                     owner: s,
@@ -25179,12 +25014,12 @@
                 });
             }
             function rn(e) {
-                return (0, y.jsxs)(ny.l.Item, {
+                return (0, y.jsxs)(np.l.Item, {
                     ...e,
                     "aria-label": W.filters.issueTypeLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(ny.l.LeadingVisual, {
+                        (0, y.jsx)(np.l.LeadingVisual, {
                             children: (0, y.jsx)(V.IssueOpenedIcon, {}),
                         }),
                         W.filters.issueType,
@@ -25193,9 +25028,9 @@
                 });
             }
             function rs(e) {
-                return (0, y.jsx)(ns.Q, {
+                return (0, y.jsx)(nn.Q, {
                     variant: "invisible",
-                    "data-testid": nE.issueTypeAnchorFilter,
+                    "data-testid": nD.issueTypeAnchorFilter,
                     trailingVisual: V.TriangleDownIcon,
                     "aria-label": W.filters.issueTypeLabel,
                     className: rl.issueTypeFilterButton,
@@ -25207,7 +25042,7 @@
                 id: tP.v.noTypeData.id,
                 description: "",
                 descriptionVariant: "inline",
-                children: (0, y.jsx)(im.JR, { html: tP.v.noTypeData.name }),
+                children: (0, y.jsx)(ic.JR, { html: tP.v.noTypeData.name }),
                 source: tP.v.noTypeData,
                 groupId: "",
                 selected: e.includes("no:type"),
@@ -25244,7 +25079,7 @@
                             id: tP.v.noLabelsData.id,
                             description: "",
                             descriptionVariant: "inline",
-                            children: (0, y.jsx)(im.JR, {
+                            children: (0, y.jsx)(ic.JR, {
                                 html: tP.v.noLabelsData.name,
                                 title: tP.v.noLabelsData.description,
                             }),
@@ -25282,7 +25117,7 @@
                         let e = ej(t, "label");
                         return e.length > 0 ? e : void 0;
                     }, [t]);
-                return (0, y.jsx)(lP.tJ, {
+                return (0, y.jsx)(t_.tJ, {
                     anchorElement: e ? ru : rd,
                     title: W.filters.labelsLabel,
                     showEditLabelsButton: !1,
@@ -25297,12 +25132,12 @@
                 });
             }
             function ru(e) {
-                return (0, y.jsxs)(ny.l.Item, {
+                return (0, y.jsxs)(np.l.Item, {
                     ...e,
                     "aria-label": W.filters.labelsLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(ny.l.LeadingVisual, {
+                        (0, y.jsx)(np.l.LeadingVisual, {
                             children: (0, y.jsx)(V.TagIcon, {}),
                         }),
                         W.filters.labels,
@@ -25311,7 +25146,7 @@
                 });
             }
             function rd(e) {
-                return (0, y.jsx)(ns.Q, {
+                return (0, y.jsx)(nn.Q, {
                     variant: "invisible",
                     "data-testid": "labels-anchor-button",
                     trailingVisual: V.TriangleDownIcon,
@@ -25348,7 +25183,7 @@
                                 id: tP.v.noMilestoneData.id,
                                 description: "",
                                 descriptionVariant: "inline",
-                                children: (0, y.jsx)(im.JR, {
+                                children: (0, y.jsx)(ic.JR, {
                                     html: tP.v.noMilestoneData.title,
                                 }),
                                 source: tP.v.noMilestoneData,
@@ -25386,12 +25221,12 @@
                     });
                 };
             function rg(e) {
-                return (0, y.jsxs)(ny.l.Item, {
+                return (0, y.jsxs)(np.l.Item, {
                     ...e,
                     "aria-label": W.filters.milestonesLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(ny.l.LeadingVisual, {
+                        (0, y.jsx)(np.l.LeadingVisual, {
                             children: (0, y.jsx)(V.MilestoneIcon, {}),
                         }),
                         W.filters.milestones,
@@ -25400,9 +25235,9 @@
                 });
             }
             function rp(e) {
-                return (0, y.jsx)(ns.Q, {
+                return (0, y.jsx)(nn.Q, {
                     variant: "invisible",
-                    "data-testid": nE.milestoneAnchorFilter,
+                    "data-testid": nD.milestoneAnchorFilter,
                     trailingVisual: V.TriangleDownIcon,
                     "aria-label": W.filters.milestonesLabel,
                     className: rc.milestoneFilterButton,
@@ -25464,25 +25299,25 @@
                         },
                         [r]
                     );
-                return (0, y.jsx)(tu.wX, {
+                return (0, y.jsx)(to.wX, {
                     pickerId: "list-project-filter",
                     anchorElement: a ? rh : rb,
                     repo: e.name,
                     owner: e.owner,
                     onSave: o,
                     selectedProjects: [],
-                    readonly: !0,
+                    readonly: !1,
                     getSelectedProjects: u,
                     title: W.filters.projectsLabel,
                 });
             }
             function rh(e) {
-                return (0, y.jsxs)(ny.l.Item, {
+                return (0, y.jsxs)(np.l.Item, {
                     ...e,
                     "aria-label": W.filters.projectsLabel,
                     role: "menuitem",
                     children: [
-                        (0, y.jsx)(ny.l.LeadingVisual, {
+                        (0, y.jsx)(np.l.LeadingVisual, {
                             children: (0, y.jsx)(V.ProjectIcon, {}),
                         }),
                         W.filters.projects,
@@ -25491,7 +25326,7 @@
                 });
             }
             function rb(e) {
-                return (0, y.jsx)(ns.Q, {
+                return (0, y.jsx)(nn.Q, {
                     variant: "invisible",
                     "data-testid": "projects-anchor-button",
                     trailingVisual: V.TriangleDownIcon,
@@ -25650,10 +25485,10 @@
                 },
                 rS = ({ isClosedTabActive: e, isOpenTabActive: l }) =>
                     (0, y.jsxs)("div", {
-                        className: `${(0, nM.$)(rC.tabsContainer, rC.loading)}`,
+                        className: `${(0, nA.$)(rC.tabsContainer, rC.loading)}`,
                         children: [
                             (0, y.jsx)(
-                                nm.L,
+                                nc.L,
                                 {
                                     title: "Open",
                                     isSelected: l,
@@ -25663,7 +25498,7 @@
                                 "open"
                             ),
                             (0, y.jsx)(
-                                nm.L,
+                                nc.L,
                                 {
                                     title: "Closed",
                                     isSelected: e,
@@ -25714,7 +25549,7 @@
                         [a]
                     ),
                     o = r ? `${n}?q=${encodeURIComponent(r)}` : n,
-                    u = (0, ts.X)(["mac"]),
+                    u = (0, tn.X)(["mac"]),
                     d = (0, C.useCallback)(
                         (l, n) => {
                             if (!a || !e || (u ? l.metaKey : l.ctrlKey)) return;
@@ -25731,8 +25566,8 @@
                     k = (c && !g) || p,
                     h = (m && !p) || g,
                     b = (0, C.useMemo)(() => {
-                        let e = s.match(n_) ? r : s;
-                        return ((e = nx(e, l)), s) ? e : `is:issue ${e}`;
+                        let e = s.match(nI) ? r : s;
+                        return ((e = n_(e, l)), s) ? e : `is:issue ${e}`;
                     }, [r, s, l]),
                     f = (0, ed.useLazyLoadQuery)(
                         rf,
@@ -25742,16 +25577,16 @@
                     S = f.repository?.search?.closedIssueCount || 0,
                     F = f.repository?.search?.openIssueCount || 0;
                 return (0, y.jsx)("div", {
-                    ...(0, n0.G)("list-view-section-filters"),
+                    ...(0, n2.G)("list-view-section-filters"),
                     children: (0, y.jsxs)("ul", {
-                        className: `list-style-none ${(0, nM.$)(rC.tabsContainer)}`,
+                        className: `list-style-none ${(0, nA.$)(rC.tabsContainer)}`,
                         children: [
                             (0, y.jsx)(
                                 "li",
                                 {
-                                    ...(0, n0.G)("list-view-section-filter-0"),
+                                    ...(0, n2.G)("list-view-section-filter-0"),
                                     children: (0, y.jsx)(
-                                        nm.L,
+                                        nc.L,
                                         {
                                             title: "Open",
                                             isSelected: k && !h,
@@ -25767,9 +25602,9 @@
                             (0, y.jsx)(
                                 "li",
                                 {
-                                    ...(0, n0.G)("list-view-section-filter-1"),
+                                    ...(0, n2.G)("list-view-section-filter-1"),
                                     children: (0, y.jsx)(
-                                        nm.L,
+                                        nc.L,
                                         {
                                             title: "Closed",
                                             isSelected: h && !k,
@@ -25822,7 +25657,7 @@
                         [k, i, c]
                     ),
                     [f, S] = (0, C.useState)(!1),
-                    { setSelectedCount: F } = (0, tr.v)(),
+                    { setSelectedCount: F } = (0, tt.v)(),
                     { setMultiPageSelectionAllowed: L } = (0, tX.P)(),
                     v = (0, C.useCallback)(
                         (e) => {
@@ -25855,7 +25690,7 @@
                         () => ({
                             key: "sort-by",
                             render: (e) =>
-                                (0, y.jsx)(i7, {
+                                (0, y.jsx)(i5, {
                                     activeSearchQuery: m,
                                     dirtySearchQuery: d || m,
                                     setReactionEmojiToDisplay: n,
@@ -25966,17 +25801,17 @@
                     (rv.displayName = "ListItemsHeaderWithoutBulkActions");
             } catch {}
             function rK({ ...e }) {
-                let { anyItemsSelected: l } = (0, tr.v)();
+                let { anyItemsSelected: l } = (0, tt.v)();
                 return l ? (0, y.jsx)(t1, { ...e }) : (0, y.jsx)(rv, { ...e });
             }
             try {
                 rK.displayName || (rK.displayName = "ListItemsHeader");
             } catch {}
-            var rI = a(97949);
+            var rI = a(84078);
             let r_ = ({ itemsLabel: e }) => {
                 let { activeSearchQuery: l } = eE(),
                     { currentUser: a } = (0, le.J)(),
-                    n = (0, C.useMemo)(() => nR(l), [l]),
+                    n = (0, C.useMemo)(() => nj(l), [l]),
                     s = (0, aK.u)("issues_react_bypass_es_limits");
                 return (0, y.jsx)("div", {
                     className: "p-2",
@@ -25996,7 +25831,7 @@
             } catch {}
             function rx({ key: e }) {
                 let { data: l, refetch: a } = (0, ed.usePaginationFragment)(
-                    nB,
+                    nO,
                     e
                 );
                 return { data: l, refetch: a };
@@ -26020,7 +25855,7 @@
                     } = eE(),
                     [g, p] = (0, C.useState)(!1),
                     k = (0, e8.Z)(),
-                    h = (0, ts.X)(["mac"]),
+                    h = (0, tn.X)(["mac"]),
                     [b, f] = (0, C.useState)(),
                     { shiftKeyPressedRef: S } = (function () {
                         let e = (0, C.useRef)(!1);
@@ -26047,7 +25882,7 @@
                         );
                     })(),
                     { issues_react_bypass_es_limits: F } = (0, aK.h)(),
-                    [L, v] = (0, aF.useQueryLoader)(iG),
+                    [L, v] = (0, aF.useQueryLoader)(iW),
                     { data: K, refetch: I } = rx({ key: e }),
                     _ = null === K.search || void 0 === K.search,
                     N = K.search?.ok ? null : K.search?.errors;
@@ -26074,7 +25909,7 @@
                         return !M && _ && e;
                     }, [M, _, K]);
                 ((0, C.useEffect)(() => {
-                    (0, n$.i)(W.numberOfResults(P || 0), { assertive: !0 });
+                    (0, nB.i)(W.numberOfResults(P || 0), { assertive: !0 });
                 }, [P]),
                     (0, C.useEffect)(() => {
                         if (E)
@@ -26100,7 +25935,7 @@
                         [R]
                     ),
                     O = (0, C.useRef)(null),
-                    $ = (0, C.useMemo)(() => nR(d), [d]),
+                    $ = (0, C.useMemo)(() => nj(d), [d]),
                     Q = B.maxIssuesListItems(F || !1, $, !!u),
                     U = (0, C.useMemo)(
                         () =>
@@ -26129,10 +25964,10 @@
                         initialSortingItem: J,
                         initialReactionEmojiToDisplay: Y,
                     } = (0, C.useMemo)(() => {
-                        let e = nN(l || d).get("sort"),
-                            a = i6(e?.[0] || ""),
-                            n = i9(a),
-                            s = i1.qG[n || ""];
+                        let e = nw(l || d).get("sort"),
+                            a = i7(e?.[0] || ""),
+                            n = i6(a),
+                            s = iY.qG[n || ""];
                         return {
                             initialSortingItem: a || "created",
                             initialReactionEmojiToDisplay: s
@@ -26148,7 +25983,7 @@
                         () =>
                             n &&
                             !(function (e) {
-                                let l = nN(e),
+                                let l = nw(e),
                                     a = new Set([
                                         ...(l.get("is") || []),
                                         ...(l.get("type") || []),
@@ -26245,7 +26080,7 @@
                     ),
                     ey = new Set(q?.map((e) => e?.__typename) || []),
                     ek = (0, C.useCallback)((e, l = {}) => G(e, l, !0), [G]),
-                    [eh] = (0, ti.Fo)(
+                    [eh] = (0, ts.Fo)(
                         `${o?.owner}-${o?.name}-deletedRecordId`,
                         ""
                     ),
@@ -26281,13 +26116,13 @@
                                   children: [
                                       "Issue" === e.__typename &&
                                           (0, y.jsx)(
-                                              iX,
+                                              iZ,
                                               {
                                                   issueKey: e,
                                                   metadataRef: L,
                                                   ...l,
                                                   "data-testid":
-                                                      nE.issueRowItem(
+                                                      nD.issueRowItem(
                                                           e?.number || "-1"
                                                       ),
                                                   onNavigate: (e, l) =>
@@ -26300,14 +26135,14 @@
                                           ),
                                       "PullRequest" === e.__typename &&
                                           (0, y.jsx)(
-                                              s1,
+                                              sY,
                                               {
                                                   pullRequestKey: e,
                                                   metadataRef: L,
                                                   onNavigate: k,
                                                   ...l,
                                                   "data-testid":
-                                                      nE.pullRequestRowItem(
+                                                      nD.pullRequestRowItem(
                                                           e?.number || "-1"
                                                       ),
                                                   getMetadataHref: z,
@@ -26324,7 +26159,7 @@
                 (0, C.useEffect)(() => {
                     g &&
                         c &&
-                        ((0, n$.i)(W.announcePage(c, U, eC.length)), p(!1));
+                        ((0, nB.i)(W.announcePage(c, U, eC.length)), p(!1));
                 }, [c, g, eC.length, U]);
                 let eS = void 0 !== c && U === c && void 0 !== P && P > Q,
                     eF = () => {
@@ -26335,7 +26170,7 @@
                     },
                     eL = (0, y.jsxs)(y.Fragment, {
                         children: [
-                            (0, y.jsx)(nH.ak, {
+                            (0, y.jsx)(nz.ak, {
                                 commands: {
                                     "issues-react:focus-next-issue": eF,
                                     "issues-react:focus-previous-issue": eF,
@@ -26344,19 +26179,19 @@
                             (0, y.jsx)("div", {
                                 "data-testid": "list-load-progress-bar",
                                 ref: O,
-                                className: (0, nM.$)(
+                                className: (0, nA.$)(
                                     "turbo-progress-bar",
                                     rC.progressBar
                                 ),
                             }),
-                            (0, y.jsx)(nH.tL, {
+                            (0, y.jsx)(nz.tL, {
                                 commands: {
                                     "issues-react:focus-next-issue": x.l,
                                     "issues-react:focus-previous-issue": x.l,
                                 },
                                 className: rC.listScopedCommand,
-                                children: (0, y.jsxs)(nQ.u, {
-                                    ...(0, n0.G)(nE.list),
+                                children: (0, y.jsxs)(n$.u, {
+                                    ...(0, n2.G)(nD.list),
                                     title: W.searchResults,
                                     totalCount: P || 0,
                                     selectedCount: eo.size,
@@ -26370,7 +26205,7 @@
                                         eC,
                                         0 === eC.length &&
                                             A &&
-                                            (0, y.jsx)(iJ, {}),
+                                            (0, y.jsx)(iX, {}),
                                         eS &&
                                             (0, y.jsx)(r_, {
                                                 itemsLabel:
@@ -26390,7 +26225,7 @@
                             children: eL,
                         }),
                         c && U > 1
-                            ? (0, y.jsx)(tt.A, {
+                            ? (0, y.jsx)(ti.A, {
                                   pageCount: U,
                                   currentPage: c,
                                   onPageChange: Z,
@@ -26418,43 +26253,43 @@
                 listRef: t,
                 onSidePanelNavigate: r,
             }) {
-                let o = (0, ed.useFragment)(nd, a),
+                let o = (0, ed.useFragment)(nu, a),
                     { scoped_repository: u } = (0, w.X)(),
                     { pathname: d } = (0, N.zy)(),
                     c = e?.number === void 0 && "/issues/new" !== d,
-                    m = (0, ed.useFragment)(nc, n),
+                    m = (0, ed.useFragment)(nd, n),
                     g =
                         m &&
                         m.viewerCanPush &&
                         !(m.isDisabled || m.isLocked || m.isArchived),
                     p = [
                         (0, y.jsx)(
-                            nm.L,
+                            nc.L,
                             { title: "Open", isLoading: !0, href: "" },
                             "open"
                         ),
                         (0, y.jsx)(
-                            nm.L,
+                            nc.L,
                             { title: "Closed", isLoading: !0, href: "" },
                             "closed"
                         ),
                     ];
                 return (0, y.jsx)(C.Suspense, {
-                    fallback: (0, y.jsx)(nF, {
+                    fallback: (0, y.jsx)(nS, {
                         sectionFilters: p,
                         showBorder: c,
                         layoutDensity: "default",
                         pageSize: B.issuesPageSize(),
                     }),
-                    children: (0, y.jsx)(nP.A, {
+                    children: (0, y.jsx)(nR.A, {
                         critical: !0,
-                        fallback: nq,
+                        fallback: nE,
                         onRetry: () => {
                             l &&
                                 s &&
                                 s(
                                     {
-                                        query: nx(l, u),
+                                        query: n_(l, u),
                                         owner: u ? u.owner : "",
                                         name: u ? u.name : "",
                                     },
@@ -26926,11 +26761,11 @@
                 return (0, y.jsxs)("div", {
                     className: `${rT.gap8} d-flex flex-row`,
                     children: [
-                        (0, y.jsx)(ns.Q, { onClick: A, children: ni.cancel }),
-                        (0, y.jsx)(ns.Q, {
+                        (0, y.jsx)(nn.Q, { onClick: A, children: ns.cancel }),
+                        (0, y.jsx)(nn.Q, {
                             variant: "primary",
                             onClick: P,
-                            children: ni.saveView,
+                            children: ns.saveView,
                         }),
                     ],
                 });
@@ -27082,30 +26917,30 @@
                     ];
                 return (0, y.jsx)("div", {
                     className: rD.searchBarContainer,
-                    children: (0, y.jsxs)(i2.W, {
+                    children: (0, y.jsxs)(i1.W, {
                         children: [
-                            (0, y.jsx)(i2.W.Button, {
+                            (0, y.jsx)(i1.W.Button, {
                                 disabled: !F || !S,
                                 children: "Save",
                             }),
-                            (0, y.jsx)(i2.W.Overlay, {
+                            (0, y.jsx)(i1.W.Overlay, {
                                 className: rD.menuOverlay,
-                                children: (0, y.jsx)(ny.l, {
+                                children: (0, y.jsx)(np.l, {
                                     children: _.map((e) =>
                                         (0, y.jsxs)(
-                                            ny.l.Item,
+                                            np.l.Item,
                                             {
                                                 onSelect: e.onSelect,
                                                 disabled: !e.enabled,
                                                 children: [
                                                     (0, y.jsx)(
-                                                        ny.l.LeadingVisual,
+                                                        np.l.LeadingVisual,
                                                         { children: e.icon }
                                                     ),
                                                     e.text,
                                                     e.showDescription &&
                                                         (0, y.jsx)(
-                                                            ny.l.Description,
+                                                            np.l.Description,
                                                             {
                                                                 variant:
                                                                     "block",
@@ -27141,10 +26976,10 @@
                 onSidePanelNavigate: s,
                 showSsoBanner: i = !0,
             }) {
-                let { ssoOrgs: t } = (0, lG.N)(),
+                let { ssoOrgs: t } = (0, lW.N)(),
                     r = t.map((e) => e.login).filter((e) => void 0 !== e),
-                    o = (0, ed.useFragment)(lz, a),
-                    u = (0, ed.useFragment)(lH, l),
+                    o = (0, ed.useFragment)(lU, a),
+                    u = (0, ed.useFragment)(lz, l),
                     { activeSearchQuery: d, isNewView: c, isEditing: m } = eE(),
                     g = (0, C.useRef)(void 0),
                     p = c && !d,
@@ -27154,7 +26989,7 @@
                 return (0, y.jsxs)("div", {
                     className: rM.searchContainer,
                     children: [
-                        (0, y.jsx)(nu, {
+                        (0, y.jsx)(no, {
                             currentViewKey: u,
                             currentRepository: null,
                             queryFromCustomView: u.query,
@@ -27164,11 +26999,11 @@
                             }),
                         }),
                         p
-                            ? (0, y.jsx)(l0, {})
+                            ? (0, y.jsx)(l2, {})
                             : (0, y.jsxs)(y.Fragment, {
                                   children: [
                                       i &&
-                                          (0, y.jsx)(lW.x, {
+                                          (0, y.jsx)(lH.x, {
                                               protectedOrgs: r,
                                           }),
                                       (0, y.jsx)(rN, {
@@ -27383,7 +27218,7 @@
                     ? (0, y.jsx)(ln.az, {
                           sx: { backgroundColor: F, color: L },
                           className: rX.iconDisplayContainer,
-                          children: (0, y.jsx)(nA.A, { icon: Q(s) }),
+                          children: (0, y.jsx)(nT.A, { icon: Q(s) }),
                       })
                     : (0, y.jsx)(rZ.T, {
                           renderAnchor: (e) =>
@@ -27424,7 +27259,7 @@
                                               n = e === f,
                                               s = T[e] ?? e;
                                           return (0, y.jsx)(
-                                              is.m,
+                                              ia.m,
                                               {
                                                   text: `${s} color`,
                                                   direction: "n",
@@ -27478,7 +27313,7 @@
                                       children: Object.keys(z).map((e) => {
                                           let l = e === b;
                                           return (0, y.jsx)(
-                                              is.m,
+                                              ia.m,
                                               {
                                                   text: `${(function (e) {
                                                       if (!e) return e;
@@ -27534,14 +27369,14 @@
                                   (0, y.jsxs)("div", {
                                       className: rX.actionButtonsContainer,
                                       children: [
-                                          (0, y.jsx)(ns.Q, {
+                                          (0, y.jsx)(nn.Q, {
                                               onClick: h,
-                                              children: ni.cancel,
+                                              children: ns.cancel,
                                           }),
-                                          (0, y.jsx)(ns.Q, {
+                                          (0, y.jsx)(nn.Q, {
                                               variant: "primary",
                                               onClick: g,
-                                              children: ni.apply,
+                                              children: ns.apply,
                                           }),
                                       ],
                                   }),
@@ -27690,10 +27525,10 @@
                         w = l !== I.repository && (u || !r),
                         N = r(l) && u;
                     return N || w
-                        ? (0, y.jsxs)(i2.W, {
+                        ? (0, y.jsxs)(i1.W, {
                               children: [
-                                  (0, y.jsx)(i2.W.Anchor, {
-                                      children: (0, y.jsx)(lU.K, {
+                                  (0, y.jsx)(i1.W.Anchor, {
+                                      children: (0, y.jsx)(lQ.K, {
                                           icon: V.KebabHorizontalIcon,
                                           "aria-label":
                                               W.views.editButtonAriaLabel,
@@ -27701,16 +27536,16 @@
                                           ref: p,
                                       }),
                                   }),
-                                  (0, y.jsx)(i2.W.Overlay, {
+                                  (0, y.jsx)(i1.W.Overlay, {
                                       width: "small",
-                                      children: (0, y.jsxs)(ny.l, {
+                                      children: (0, y.jsxs)(np.l, {
                                           children: [
                                               N &&
-                                                  (0, y.jsxs)(ny.l.Item, {
+                                                  (0, y.jsxs)(np.l.Item, {
                                                       onSelect: K,
                                                       children: [
                                                           (0, y.jsx)(
-                                                              ny.l
+                                                              np.l
                                                                   .LeadingVisual,
                                                               {
                                                                   children: (0,
@@ -27724,12 +27559,12 @@
                                                       ],
                                                   }),
                                               w &&
-                                                  (0, y.jsxs)(ny.l.Item, {
+                                                  (0, y.jsxs)(np.l.Item, {
                                                       onSelect: _,
                                                       disabled: g,
                                                       children: [
                                                           (0, y.jsx)(
-                                                              ny.l
+                                                              np.l
                                                                   .LeadingVisual,
                                                               {
                                                                   children: (0,
@@ -27742,7 +27577,7 @@
                                                           W.views.duplicate,
                                                           g &&
                                                               (0, y.jsx)(
-                                                                  ny.l
+                                                                  np.l
                                                                       .Description,
                                                                   {
                                                                       variant:
@@ -27768,11 +27603,11 @@
                                                   (0, y.jsxs)(y.Fragment, {
                                                       children: [
                                                           (0, y.jsx)(
-                                                              ny.l.Divider,
+                                                              np.l.Divider,
                                                               {}
                                                           ),
                                                           (0, y.jsxs)(
-                                                              ny.l.Item,
+                                                              np.l.Item,
                                                               {
                                                                   variant:
                                                                       "danger",
@@ -27780,7 +27615,7 @@
                                                                   children: [
                                                                       (0,
                                                                       y.jsx)(
-                                                                          ny.l
+                                                                          np.l
                                                                               .LeadingVisual,
                                                                           {
                                                                               children:
@@ -27926,7 +27761,7 @@
                                                   }),
                                               (0, y.jsx)(la.A, {
                                                   as: "h1",
-                                                  className: (0, nM.$)(
+                                                  className: (0, nA.$)(
                                                       s ? "sr-only" : "",
                                                       rW.Heading
                                                   ),
@@ -28006,7 +27841,7 @@
                         [S]
                     );
                 return (0, y.jsx)("div", {
-                    "data-testid": nE.listHeader,
+                    "data-testid": nD.listHeader,
                     children: s
                         ? (0, y.jsx)("div", {
                               className: r$.HeaderCreateIssueContainer,
@@ -28014,7 +27849,7 @@
                                   className: r$.leftSideContent,
                                   children: [
                                       l &&
-                                          (0, y.jsx)(lU.K, {
+                                          (0, y.jsx)(lQ.K, {
                                               variant: "invisible",
                                               icon: V.SidebarExpandIcon,
                                               onClick: l,
@@ -28022,14 +27857,14 @@
                                               keybindingHint: "Mod+B",
                                               tooltipDirection: "e",
                                           }),
-                                      (0, y.jsx)(ns.Q, {
+                                      (0, y.jsx)(nn.Q, {
                                           variant: "invisible",
                                           onClick: b,
                                           leadingVisual: V.ArrowLeftIcon,
                                           size: "small",
-                                          title: ni.returnToList,
+                                          title: ns.returnToList,
                                           className: r$.Button,
-                                          children: (0, y.jsx)(s_.A, {
+                                          children: (0, y.jsx)(sI.A, {
                                               id: "view-title",
                                               title: c,
                                               className: r$.Truncate,
@@ -28046,7 +27881,7 @@
                                       (0, y.jsx)("div", {
                                           className:
                                               r$.mobileNavigationContainer,
-                                          children: (0, y.jsx)(ns.Q, {
+                                          children: (0, y.jsx)(nn.Q, {
                                               variant: "invisible",
                                               size: "small",
                                               onClick: g,
@@ -28065,15 +27900,12 @@
                                           className: r$.actionButtonsContainer,
                                           children:
                                               !p &&
-                                              (0, y.jsx)(nn.a, {
-                                                  label: ni.newIssue,
+                                              (0, y.jsx)(na.a, {
+                                                  label: ns.newIssue,
                                                   navigate: F,
                                                   optionConfig: {
                                                       showRepositoryPicker:
                                                           null === p,
-                                                      singleKeyShortcutsEnabled:
-                                                          k?.use_single_key_shortcut ||
-                                                          !1,
                                                       emojiSkinTonePreference:
                                                           k?.preferred_emoji_skin_tone,
                                                       showFullScreenButton: !0,
@@ -28097,7 +27929,7 @@
                 },
                 r9 = () =>
                     (0, y.jsxs)("div", {
-                        "data-testid": nE.headerLoading,
+                        "data-testid": nD.headerLoading,
                         className: r6.HeaderLoadingContainer,
                         children: [
                             (0, y.jsx)("div", {
@@ -28105,7 +27937,7 @@
                                 children: (0, y.jsx)(la.A, {
                                     as: "h1",
                                     className: r6.Heading,
-                                    children: ni.issues,
+                                    children: ns.issues,
                                 }),
                             }),
                             (0, y.jsx)(r7.Q, { height: "xl", width: "150px" }),
@@ -28173,7 +28005,7 @@
                                 (0, y.jsx)("span", {
                                     tabIndex: -1,
                                     ref: n,
-                                    ...(0, n0.G)("side-panel-focus-target"),
+                                    ...(0, n2.G)("side-panel-focus-target"),
                                 }),
                                 l,
                             ],
@@ -28384,7 +28216,7 @@
                                 children: a
                                     ? (0, y.jsx)(a, {})
                                     : l
-                                      ? (0, y.jsx)(nA.A, { icon: $(l) })
+                                      ? (0, y.jsx)(nT.A, { icon: $(l) })
                                       : null,
                             }),
                             (0, y.jsx)("span", {
@@ -28525,7 +28357,7 @@
                     }, [l, u, p, a, n, s, r, m, o, t]);
                 return (0, y.jsxs)(y.Fragment, {
                     children: [
-                        (0, y.jsx)(lU.K, {
+                        (0, y.jsx)(lQ.K, {
                             icon: V.PlusIcon,
                             size: "small",
                             variant: "invisible",
@@ -28784,7 +28616,7 @@
                     onClick: i,
                     children: [
                         (0, y.jsx)(or.c.LeadingVisual, {
-                            children: (0, y.jsx)(nA.A, { icon: e }),
+                            children: (0, y.jsx)(nT.A, { icon: e }),
                         }),
                         (0, y.jsx)(ox.A, { "aria-label": s, children: l }),
                     ],
@@ -29010,7 +28842,7 @@
                             onSubIssueClick: p,
                             onParentIssueActivate: r,
                             navigateBack: t,
-                            additionalHeaderActions: (0, y.jsx)(lU.K, {
+                            additionalHeaderActions: (0, y.jsx)(lQ.K, {
                                 as: "a",
                                 role: "link",
                                 variant: "invisible",
@@ -29019,7 +28851,7 @@
                                 href: i,
                             }),
                         },
-                        h = Object.assign({}, lO.C, k);
+                        h = Object.assign({}, lq.C, k);
                     return (0, y.jsxs)(y.Fragment, {
                         children: [
                             (0, y.jsx)(oM, {
@@ -29031,7 +28863,7 @@
                             n &&
                                 (0, y.jsx)(oi, {
                                     onClose: t,
-                                    children: (0, y.jsx)(lq.cI, {
+                                    children: (0, y.jsx)(lE.cI, {
                                         itemIdentifier: n,
                                         optionConfig: h,
                                     }),
@@ -29048,15 +28880,15 @@
                 let { itemIdentifier: s } = lo(),
                     i = (0, ed.usePreloadedQuery)(eQ, e),
                     t = (0, ed.usePreloadedQuery)(e$, l),
-                    r = (0, ed.useFragment)(lV, i),
-                    o = (0, ed.useFragment)(lD, t.node);
+                    r = (0, ed.useFragment)(lM, i),
+                    o = (0, ed.useFragment)(lV, t.node);
                 if (!t.node || !o || !a) return null;
                 let u = (0, k.G7)("global_sso_banner");
                 return (0, y.jsxs)(lu, {
                     category: "Issues Dashboard",
                     children: [
-                        u && (0, y.jsx)(lE.Y0, {}),
-                        (0, y.jsx)(lQ, {
+                        u && (0, y.jsx)(lD.Y0, {}),
+                        (0, y.jsx)(l$, {
                             leftPaneWidth: "small",
                             leftPane: {
                                 element: (0, y.jsx)(oj, {
@@ -29308,7 +29140,7 @@
                 onSidePanelNavigate: t,
                 showSsoBanner: r,
             }) {
-                let { ssoOrgs: o } = (0, lG.N)(),
+                let { ssoOrgs: o } = (0, lW.N)(),
                     u = o.map((e) => e.login).filter((e) => void 0 !== e),
                     d = (0, ed.useFragment)(oq, n),
                     c = (0, ed.useFragment)(oO, a),
@@ -29318,17 +29150,17 @@
                 return (0, y.jsxs)("div", {
                     className: o$.SearchContainer,
                     children: [
-                        (0, y.jsx)(nu, {
+                        (0, y.jsx)(no, {
                             currentViewKey: m,
                             currentRepository: c ?? null,
                             queryFromCustomView: i,
                         }),
                         p && !g
-                            ? (0, y.jsx)(l0, {})
+                            ? (0, y.jsx)(l2, {})
                             : (0, y.jsxs)(y.Fragment, {
                                   children: [
                                       r &&
-                                          (0, y.jsx)(lW.x, {
+                                          (0, y.jsx)(lH.x, {
                                               protectedOrgs: u,
                                           }),
                                       (0, y.jsx)(rN, {
@@ -29434,7 +29266,7 @@
                         onSubIssueClick: g,
                         onParentIssueActivate: t,
                         navigateBack: i,
-                        additionalHeaderActions: (0, y.jsx)(lU.K, {
+                        additionalHeaderActions: (0, y.jsx)(lQ.K, {
                             as: "a",
                             role: "link",
                             variant: "invisible",
@@ -29443,7 +29275,7 @@
                             href: s,
                         }),
                     },
-                    k = Object.assign({}, lO.C, p);
+                    k = Object.assign({}, lq.C, p);
                 return (0, y.jsxs)(y.Fragment, {
                     children: [
                         (0, y.jsx)(oW, {
@@ -29456,7 +29288,7 @@
                         a &&
                             (0, y.jsx)(oi, {
                                 onClose: i,
-                                children: (0, y.jsx)(lq.cI, {
+                                children: (0, y.jsx)(lE.cI, {
                                     itemIdentifier: a,
                                     optionConfig: k,
                                 }),
@@ -29481,8 +29313,8 @@
                 return (0, y.jsxs)(lu, {
                     category: "Issues Dashboard",
                     children: [
-                        r && (0, y.jsx)(lE.Y0, {}),
-                        (0, y.jsx)(lQ, {
+                        r && (0, y.jsx)(lD.Y0, {}),
+                        (0, y.jsx)(l$, {
                             leftPaneWidth: "small",
                             leftPane: {
                                 element: (0, y.jsx)(oj, {
@@ -29540,7 +29372,7 @@
                         onSubIssueClick: m,
                         onParentIssueActivate: t,
                         navigateBack: i,
-                        additionalHeaderActions: (0, y.jsx)(lU.K, {
+                        additionalHeaderActions: (0, y.jsx)(lQ.K, {
                             as: "a",
                             role: "link",
                             variant: "invisible",
@@ -29549,7 +29381,7 @@
                             href: s,
                         }),
                     },
-                    p = Object.assign({}, lO.C, g);
+                    p = Object.assign({}, lq.C, g);
                 return (0, y.jsxs)(y.Fragment, {
                     children: [
                         (0, y.jsx)(oZ, {
@@ -29561,7 +29393,7 @@
                         a &&
                             (0, y.jsx)(oi, {
                                 onClose: i,
-                                children: (0, y.jsx)(lq.cI, {
+                                children: (0, y.jsx)(lE.cI, {
                                     itemIdentifier: a,
                                     optionConfig: p,
                                 }),
@@ -29590,8 +29422,8 @@
                 return (0, y.jsxs)(lu, {
                     category: "Issues Dashboard",
                     children: [
-                        r && (0, y.jsx)(lE.Y0, {}),
-                        (0, y.jsx)(lQ, {
+                        r && (0, y.jsx)(lD.Y0, {}),
+                        (0, y.jsx)(l$, {
                             leftPaneWidth: "small",
                             leftPane: {
                                 element: (0, y.jsx)(oj, { customViewsRef: a }),
@@ -30344,7 +30176,7 @@
                                               (_.current = !1),
                                           n.jobId === I.current ||
                                               _.current ||
-                                              ((0, n$.i)(
+                                              ((0, nB.i)(
                                                   `Bulk update completed ${s > 0 ? "with errors" : "successfully"}`
                                               ),
                                               (_.current = !0),
@@ -30730,21 +30562,21 @@
                     children: [
                         (0, y.jsx)("div", {
                             className: "float-right",
-                            children: (0, y.jsxs)(i2.W, {
+                            children: (0, y.jsxs)(i1.W, {
                                 children: [
-                                    (0, y.jsx)(i2.W.Button, {
+                                    (0, y.jsx)(i1.W.Button, {
                                         children: "Dismiss",
                                     }),
-                                    (0, y.jsx)(i2.W.Overlay, {
+                                    (0, y.jsx)(i1.W.Overlay, {
                                         width: "medium",
-                                        children: (0, y.jsxs)(ny.l, {
+                                        children: (0, y.jsxs)(np.l, {
                                             children: [
-                                                (0, y.jsx)(ny.l.Item, {
+                                                (0, y.jsx)(np.l.Item, {
                                                     onSelect: i,
                                                     children:
                                                         "Dismiss for this repository only",
                                                 }),
-                                                (0, y.jsx)(ny.l.Item, {
+                                                (0, y.jsx)(np.l.Item, {
                                                     onSelect: s,
                                                     children:
                                                         "Dismiss for all repositories",
@@ -30778,7 +30610,7 @@
                                                 "https://opensource.guide/",
                                             target: "_blank",
                                             "data-testid":
-                                                nE.ftcBannerContributingGuidelinesLink,
+                                                nD.ftcBannerContributingGuidelinesLink,
                                             children: "contributing guidelines",
                                         }),
                                         (0, y.jsx)("span", {
@@ -31479,7 +31311,7 @@
                         "CLOSED" === l.state && "NOT_PLANNED" === l.stateReason
                             ? "NOT_PLANNED"
                             : l.state,
-                    r = (0, sE.q)(t),
+                    r = (0, sD.q)(t),
                     o = l.totalCommentsCount ?? 0,
                     u = new Date(l.createdAt);
                 return (0, y.jsx)("div", {
@@ -31492,7 +31324,7 @@
                                 children: [
                                     (0, y.jsxs)(ll.A, {
                                         "aria-label": `View ${l.title}`,
-                                        className: (0, nM.$)(
+                                        className: (0, nA.$)(
                                             "css-truncate",
                                             ur.Link
                                         ),
@@ -31505,17 +31337,17 @@
                                                 "aria-label": r.description,
                                                 className: ur.Octicon,
                                             }),
-                                            (0, y.jsx)(im.JR, {
+                                            (0, y.jsx)(ic.JR, {
                                                 html: l.titleHTML,
                                             }),
                                         ],
                                     }),
                                     l.repository.viewerCanPinIssues &&
-                                        (0, y.jsxs)(i2.W, {
+                                        (0, y.jsxs)(i1.W, {
                                             anchorRef: i,
                                             children: [
-                                                (0, y.jsx)(i2.W.Anchor, {
-                                                    children: (0, y.jsx)(lU.K, {
+                                                (0, y.jsx)(i1.W.Anchor, {
+                                                    children: (0, y.jsx)(lQ.K, {
                                                         size: "small",
                                                         icon: V.KebabHorizontalIcon,
                                                         variant: "invisible",
@@ -31525,15 +31357,15 @@
                                                             ur.IconButton,
                                                     }),
                                                 }),
-                                                (0, y.jsx)(i2.W.Overlay, {
+                                                (0, y.jsx)(i1.W.Overlay, {
                                                     width: "medium",
                                                     children: (0, y.jsxs)(
-                                                        ny.l,
+                                                        np.l,
                                                         {
                                                             children: [
                                                                 l &&
                                                                     (0, y.jsxs)(
-                                                                        ny.l
+                                                                        np.l
                                                                             .Item,
                                                                         {
                                                                             onSelect:
@@ -31543,7 +31375,7 @@
                                                                                 [
                                                                                     (0,
                                                                                     y.jsx)(
-                                                                                        ny
+                                                                                        np
                                                                                             .l
                                                                                             .LeadingVisual,
                                                                                         {
@@ -31603,7 +31435,7 @@
                                             (0, y.jsx)("span", {
                                                 children: "opened ",
                                             }),
-                                            (0, y.jsxs)(sx.A, {
+                                            (0, y.jsxs)(s_.A, {
                                                 date: u,
                                                 children: [
                                                     "on ",
@@ -31642,10 +31474,10 @@
                 });
             }
             function uu({ onClick: e }) {
-                return (0, y.jsxs)(ny.l.Item, {
+                return (0, y.jsxs)(np.l.Item, {
                     onSelect: e,
                     children: [
-                        (0, y.jsx)(ny.l.LeadingVisual, {
+                        (0, y.jsx)(np.l.LeadingVisual, {
                             children: (0, y.jsx)(ut.m4, {
                                 icon: V.GrabberIcon,
                             }),
@@ -31835,7 +31667,7 @@
                               bulkJobId: n,
                               setBulkJobId: s,
                               children: [
-                                  (0, y.jsx)(lQ, {
+                                  (0, y.jsx)(l$, {
                                       contentAs: "div",
                                       resizeable: !1,
                                       leftPaneWidth: "small",
@@ -31922,13 +31754,12 @@
                         { onIssueHrefLinkClick: o, navigateToRoot: u } = ax(),
                         { query: d } = (0, ed.useFragment)(uk, e),
                         c = (0, w.X)(),
-                        m = c?.current_user_settings?.preferred_emoji_skin_tone,
-                        g = !c.scoped_repository,
-                        p = (0, C.useCallback)(() => {
+                        m = !c.scoped_repository,
+                        g = (0, C.useCallback)(() => {
                             u(s ?? en.id, d);
                         }, [s, d, u]),
-                        { navigateToUrl: k } = ax(),
-                        h = (0, C.useCallback)(
+                        { navigateToUrl: p } = ax(),
+                        k = (0, C.useCallback)(
                             (e) => {
                                 let { owner: l, repo: a, number: n } = e;
                                 t({
@@ -31940,33 +31771,33 @@
                             },
                             [t]
                         ),
-                        b = (0, C.useCallback)(() => {
+                        h = (0, C.useCallback)(() => {
                             t(null);
                         }, [t]),
-                        [f, S] = (0, ti.Fo)(
+                        [b, f] = (0, ts.Fo)(
                             `${c.scoped_repository?.owner}-${c.scoped_repository?.name}-deletedRecordId`,
                             ""
                         ),
-                        F = (0, C.useCallback)(
+                        S = (0, C.useCallback)(
                             (e) => {
-                                S(e);
+                                f(e);
                             },
-                            [S]
+                            [f]
                         ),
-                        L = (0, C.useCallback)(
+                        F = (0, C.useCallback)(
                             (e, l) =>
                                 !!n &&
                                 l.owner === n.owner &&
                                 l.repo === n.repo &&
                                 l.number === n.number &&
-                                (e.preventDefault(), b(), !0),
-                            [n, b]
+                                (e.preventDefault(), h(), !0),
+                            [n, h]
                         );
                     return (
                         (a = (e, l) => {
                             if (eS(e, n?.owner || "", n?.repo || "")) return;
                             let a = l.target.closest("a");
-                            a && k(a);
+                            a && p(a);
                         }),
                         (0, C.useEffect)(() => {
                             let e = (e) => {
@@ -31992,27 +31823,26 @@
                         (0, y.jsxs)(y.Fragment, {
                             children: [
                                 (0, y.jsx)("div", {
-                                    className: (0, nM.$)(
+                                    className: (0, nA.$)(
                                         "primary-viewer",
                                         ub.IssueDetailContainer
                                     ),
-                                    "data-testid": nE.issueViewerContainer,
+                                    "data-testid": nD.issueViewerContainer,
                                     children: (0, y.jsx)(C.Suspense, {
                                         fallback: (0, y.jsx)("span", {
                                             children: "Loading Issue...",
                                         }),
                                         children:
                                             n &&
-                                            (0, y.jsx)(lq.cI, {
+                                            (0, y.jsx)(lE.cI, {
                                                 itemIdentifier: n,
                                                 optionConfig: {
-                                                    emojiSkinTonePreference: m,
-                                                    showRepositoryPill: g,
+                                                    showRepositoryPill: m,
                                                     showIssueCreateButton: !0,
                                                     onLinkClick: o,
-                                                    navigateBack: p,
-                                                    onIssueDelete: F,
-                                                    navigate: k,
+                                                    navigateBack: g,
+                                                    onIssueDelete: S,
+                                                    navigate: p,
                                                     preloadedQueries: l,
                                                     timelineEventBaseUrl: ((
                                                         e,
@@ -32027,7 +31857,7 @@
                                                             ?.owner
                                                     ),
                                                     scrollToTopOnClick: !0,
-                                                    onSubIssueClick: h,
+                                                    onSubIssueClick: k,
                                                     useViewportQueries: !0,
                                                     insideSidePanel:
                                                         !i && void 0,
@@ -32037,23 +31867,23 @@
                                 }),
                                 i &&
                                     (0, y.jsx)(oi, {
-                                        onClose: b,
-                                        children: (0, y.jsx)(lq.cI, {
+                                        onClose: h,
+                                        children: (0, y.jsx)(lE.cI, {
                                             itemIdentifier: i,
                                             optionConfig: Object.assign(
                                                 {},
-                                                lO.C,
+                                                lq.C,
                                                 {
                                                     shouldSkipSetDocumentTitle:
                                                         !0,
-                                                    onClose: b,
+                                                    onClose: h,
                                                     insideSidePanel: !0,
-                                                    onSubIssueClick: h,
-                                                    onParentIssueActivate: L,
-                                                    onIssueDelete: F,
-                                                    navigateBack: b,
+                                                    onSubIssueClick: k,
+                                                    onParentIssueActivate: F,
+                                                    onIssueDelete: S,
+                                                    navigateBack: h,
                                                     additionalHeaderActions: (0,
-                                                    y.jsx)(lU.K, {
+                                                    y.jsx)(lQ.K, {
                                                         as: "a",
                                                         role: "link",
                                                         variant: "invisible",
@@ -32673,18 +32503,18 @@
                                     children: [
                                         o &&
                                             u &&
-                                            (0, y.jsx)(ns.Q, {
+                                            (0, y.jsx)(nn.Q, {
                                                 onClick: (e) => o?.(e, b),
                                                 children: u,
                                             }),
                                         (0, y.jsxs)("div", {
                                             className: ux.buttonGroup,
                                             children: [
-                                                (0, y.jsx)(ns.Q, {
+                                                (0, y.jsx)(nn.Q, {
                                                     onClick: l,
                                                     children: u_.cancel,
                                                 }),
-                                                (0, y.jsx)(ns.Q, {
+                                                (0, y.jsx)(nn.Q, {
                                                     type: "submit",
                                                     variant: "primary",
                                                     loading: h,
@@ -33224,7 +33054,7 @@
                 return (0, y.jsx)("div", {
                     className: uN.middlePaneWrapper,
                     "data-testid": "milestone-edit",
-                    children: (0, y.jsx)(iY.t, {
+                    children: (0, y.jsx)(iJ.t, {
                         fallback: (0, y.jsx)(uP, {
                             title: u_.milestonePageError,
                             message: u_.milestonePageErrorMessage,
@@ -33278,12 +33108,8 @@
                       (0, y.jsx)("div", { children: "Repository not found" }));
             }
             function uO({ repository: e }) {
-                let l = (0, ed.useFragment)(uF, e),
-                    { current_user_settings: a } = (0, w.X)(),
-                    n = {
-                        singleKeyShortcutsEnabled: a.use_single_key_shortcut,
-                    };
-                return (0, y.jsx)(uD, { repository: l, optionConfig: n });
+                let l = (0, ed.useFragment)(uF, e);
+                return (0, y.jsx)(uD, { repository: l });
             }
             try {
                 uq.displayName ||
@@ -33646,7 +33472,7 @@
                     className: uN.middlePaneWrapper,
                     "data-hpc": !0,
                     "data-testid": "milestone-create",
-                    children: (0, y.jsx)(iY.t, {
+                    children: (0, y.jsx)(iJ.t, {
                         fallback: (0, y.jsx)(uP, {
                             title: u_.milestonePageError,
                             message: u_.milestonePageErrorMessage,
@@ -34148,7 +33974,7 @@
                 S[6] !== j
                     ? ((i = (e, l) =>
                           (0, y.jsx)(
-                              ns.Q,
+                              nn.Q,
                               {
                                   variant: "invisible",
                                   className: u0.color,
@@ -34176,7 +34002,7 @@
                           (S[11] = r))
                         : (r = S[11]),
                     S[12] !== R || S[13] !== r
-                        ? ((o = (0, y.jsx)(lU.K, {
+                        ? ((o = (0, y.jsx)(lQ.K, {
                               style: r,
                               icon: V.SyncIcon,
                               "aria-label": "Choose random color",
@@ -34197,7 +34023,7 @@
                       (S[16] = u))
                     : (u = S[16]),
                     S[17] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((d = (0, n0.G)("color-input")), (S[17] = d))
+                        ? ((d = (0, n2.G)("color-input")), (S[17] = d))
                         : (d = S[17]),
                     S[18] === Symbol.for("react.memo_cache_sentinel")
                         ? ((c = () => w(!0)),
@@ -34294,7 +34120,7 @@
                     s = (0, b.c)(8),
                     { nameHTML: i, name: t, color: r } = e;
                 s[0] !== t || s[1] !== i
-                    ? ((l = i ? (0, y.jsx)(im.JR, { html: i }) : t || ""),
+                    ? ((l = i ? (0, y.jsx)(ic.JR, { html: i }) : t || ""),
                       (s[0] = t),
                       (s[1] = i),
                       (s[2] = l))
@@ -34314,7 +34140,7 @@
                     s[4] !== o || s[5] !== t || s[6] !== u
                         ? ((n = (0, y.jsx)("div", {
                               className: u8.container,
-                              children: (0, y.jsx)(ic.a, {
+                              children: (0, y.jsx)(id.a, {
                                   text: o,
                                   fillColor: u,
                                   "aria-label": t,
@@ -34640,7 +34466,7 @@
                           (j[51] = K))
                         : (K = j[51]),
                     j[52] !== X
-                        ? ((I = (0, y.jsx)(nH.cQ, {
+                        ? ((I = (0, y.jsx)(nz.cQ, {
                               commandId: "repository-label:cancel-save-label",
                               disabled: X,
                               children: uY.cancelButtonText,
@@ -34649,7 +34475,7 @@
                           (j[53] = I))
                         : (I = j[53]),
                     j[54] !== X || j[55] !== B
-                        ? ((_ = (0, y.jsx)(nH.cQ, {
+                        ? ((_ = (0, y.jsx)(nz.cQ, {
                               commandId: "repository-label:save-label-submit",
                               variant: "primary",
                               loading: X,
@@ -34683,7 +34509,7 @@
                           (j[64] = w))
                         : (w = j[64]),
                     j[65] !== w || j[66] !== t
-                        ? ((N = (0, y.jsx)(nH.tL, {
+                        ? ((N = (0, y.jsx)(nz.tL, {
                               commands: t,
                               children: w,
                           })),
@@ -35778,7 +35604,7 @@
                         } = e;
                     return i
                         ? (s[0] === Symbol.for("react.memo_cache_sentinel")
-                              ? ((l = (0, y.jsxs)(sI.z, {
+                              ? ((l = (0, y.jsxs)(sK.z, {
                                     className: dl.labelRowIssuesAndPrsCount,
                                     children: [
                                         (0, y.jsx)(V.AlertIcon, { size: 16 }),
@@ -35791,7 +35617,7 @@
                               ? ((a = (0, y.jsx)(db, {})), (s[1] = a))
                               : (a = s[1]),
                           s[2] !== r || s[3] !== t || s[4] !== o || s[5] !== i
-                              ? ((n = (0, y.jsx)(iY.t, {
+                              ? ((n = (0, y.jsx)(iJ.t, {
                                     fallback: l,
                                     children: (0, y.jsx)(C.Suspense, {
                                         fallback: a,
@@ -35817,7 +35643,7 @@
                         l = (0, b.c)(1);
                     return (
                         l[0] === Symbol.for("react.memo_cache_sentinel")
-                            ? ((e = (0, y.jsxs)(sI.z, {
+                            ? ((e = (0, y.jsxs)(sK.z, {
                                   className: dl.labelRowIssuesAndPrsCount,
                                   children: [
                                       (0, y.jsx)(dy.f, {
@@ -35904,14 +35730,14 @@
                         S = h > 0,
                         F = !C && dl.empty;
                     (d[4] !== F
-                        ? ((n = (0, nM.$)(dl.countContainer, F)),
+                        ? ((n = (0, nA.$)(dl.countContainer, F)),
                           (d[4] = F),
                           (d[5] = n))
                         : (n = d[5]),
                         d[6] !== k || d[7] !== C || d[8] !== f
                             ? ((s =
                                   C &&
-                                  (0, y.jsx)(is.m, {
+                                  (0, y.jsx)(ia.m, {
                                       text: `${f} open pull requests`,
                                       direction: "n",
                                       children: (0, y.jsxs)(ll.A, {
@@ -35948,14 +35774,14 @@
                     let L = !S && dl.empty;
                     return (
                         d[13] !== L
-                            ? ((t = (0, nM.$)(dl.countContainer, L)),
+                            ? ((t = (0, nA.$)(dl.countContainer, L)),
                               (d[13] = L),
                               (d[14] = t))
                             : (t = d[14]),
                         d[15] !== k || d[16] !== S || d[17] !== h
                             ? ((r =
                                   S &&
-                                  (0, y.jsx)(is.m, {
+                                  (0, y.jsx)(ia.m, {
                                       text: `${h} open issues`,
                                       direction: "n",
                                       children: (0, y.jsxs)(ll.A, {
@@ -35989,7 +35815,7 @@
                               (d[21] = o))
                             : (o = d[21]),
                         d[22] !== o || d[23] !== i
-                            ? ((u = (0, y.jsxs)(sI.z, {
+                            ? ((u = (0, y.jsxs)(sK.z, {
                                   className: dl.labelRowIssuesAndPrsCount,
                                   children: [i, o],
                               })),
@@ -36065,7 +35891,7 @@
                         g = Math.ceil(t / r);
                     return (
                         i[8] !== d || i[9] !== c || i[10] !== m || i[11] !== g
-                            ? ((s = (0, y.jsx)(tt.A, {
+                            ? ((s = (0, y.jsx)(ti.A, {
                                   pageCount: g,
                                   hrefBuilder: m,
                                   currentPage: d,
@@ -36490,7 +36316,7 @@
                                                       key: "edit",
                                                       render: () =>
                                                           (0, y.jsx)(
-                                                              ny.l.Item,
+                                                              np.l.Item,
                                                               {
                                                                   onSelect:
                                                                       () =>
@@ -36513,13 +36339,13 @@
                                                                   children: [
                                                                       (0,
                                                                       y.jsx)(
-                                                                          ny.l
+                                                                          np.l
                                                                               .Divider,
                                                                           {}
                                                                       ),
                                                                       (0,
                                                                       y.jsx)(
-                                                                          ny.l
+                                                                          np.l
                                                                               .Item,
                                                                           {
                                                                               variant:
@@ -36548,13 +36374,13 @@
                         : (o = F[16]));
                 let z = !v && dl.noActionBar;
                 F[17] !== z
-                    ? ((u = (0, nM.$)(dl.labelRowDescription, z)),
+                    ? ((u = (0, nA.$)(dl.labelRowDescription, z)),
                       (F[17] = z),
                       (F[18] = u))
                     : (u = F[18]);
                 let H = q.nameHTML;
                 F[19] !== H
-                    ? ((d = (0, y.jsx)(im.JR, { html: H })),
+                    ? ((d = (0, y.jsx)(ic.JR, { html: H })),
                       (F[19] = H),
                       (F[20] = d))
                     : (d = F[20]);
@@ -36562,7 +36388,7 @@
                 return (
                     F[21] !== d || F[22] !== W
                         ? ((c = (0, y.jsx)(
-                              ic.a,
+                              id.a,
                               { text: d, interactive: !0, fillColor: W },
                               0
                           )),
@@ -36571,7 +36397,7 @@
                           (F[23] = c))
                         : (c = F[23]),
                     F[24] !== q.name || F[25] !== Q || F[26] !== c
-                        ? ((m = (0, y.jsxs)(sI.z, {
+                        ? ((m = (0, y.jsxs)(sK.z, {
                               children: [
                                   (0, y.jsx)(ll.A, {
                                       href: Q,
@@ -36588,7 +36414,7 @@
                           (F[27] = m))
                         : (m = F[27]),
                     F[28] !== q.description
-                        ? ((g = (0, y.jsx)(sI.z, {
+                        ? ((g = (0, y.jsx)(sK.z, {
                               className: dl.labelRowDescriptionItemDescription,
                               children: q.description,
                           })),
@@ -36612,8 +36438,8 @@
                           (F[34] = p))
                         : (p = F[34]),
                     F[35] !== u || F[36] !== m || F[37] !== g || F[38] !== p
-                        ? ((k = (0, y.jsx)(nY.Q, {
-                              children: (0, y.jsxs)(nX.U, {
+                        ? ((k = (0, y.jsx)(nJ.Q, {
+                              children: (0, y.jsxs)(nZ.U, {
                                   className: u,
                                   children: [m, g, p],
                               }),
@@ -36709,7 +36535,7 @@
                     F[54] !== f ||
                     F[55] !== o
                         ? ((S = (0, y.jsxs)(
-                              nZ.c,
+                              nG.c,
                               {
                                   title: r,
                                   role: "listitem",
@@ -36797,7 +36623,7 @@
                 let _ = n,
                     x = "asc" === e ? V.SortAscIcon : V.SortDescIcon;
                 (L[12] !== x
-                    ? ((s = (0, y.jsx)(i2.W.Button, {
+                    ? ((s = (0, y.jsx)(i1.W.Button, {
                           variant: "invisible",
                           leadingVisual: x,
                           children: "Sort",
@@ -36806,7 +36632,7 @@
                       (L[13] = s))
                     : (s = L[13]),
                     L[14] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((i = (0, y.jsx)(ny.l.GroupHeading, {
+                        ? ((i = (0, y.jsx)(np.l.GroupHeading, {
                               children: "Sort by",
                           })),
                           (L[14] = i))
@@ -36816,7 +36642,7 @@
                         : (t = L[16]));
                 let w = "name" === l;
                 (L[17] !== t || L[18] !== w
-                    ? ((r = (0, y.jsx)(ny.l.Item, {
+                    ? ((r = (0, y.jsx)(np.l.Item, {
                           onSelect: t,
                           selected: w,
                           children: "Name",
@@ -36830,7 +36656,7 @@
                         : (o = L[21]));
                 let N = "count" === l;
                 (L[22] !== o || L[23] !== N
-                    ? ((u = (0, y.jsx)(ny.l.Item, {
+                    ? ((u = (0, y.jsx)(np.l.Item, {
                           onSelect: o,
                           selected: N,
                           children: "Total issue count",
@@ -36840,7 +36666,7 @@
                       (L[24] = u))
                     : (u = L[24]),
                     L[25] !== u || L[26] !== r
-                        ? ((d = (0, y.jsxs)(ny.l.Group, {
+                        ? ((d = (0, y.jsxs)(np.l.Group, {
                               children: [i, r, u],
                           })),
                           (L[25] = u),
@@ -36848,7 +36674,7 @@
                           (L[27] = d))
                         : (d = L[27]),
                     L[28] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((c = (0, y.jsx)(ny.l.GroupHeading, {
+                        ? ((c = (0, y.jsx)(np.l.GroupHeading, {
                               children: "Order",
                           })),
                           (L[28] = c))
@@ -36858,14 +36684,14 @@
                     ? ((m = () => _("asc")), (L[29] = _), (L[30] = m))
                     : (m = L[30]),
                     L[31] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((g = (0, y.jsx)(ny.l.LeadingVisual, {
+                        ? ((g = (0, y.jsx)(np.l.LeadingVisual, {
                               children: (0, y.jsx)(V.SortAscIcon, {}),
                           })),
                           (L[31] = g))
                         : (g = L[31]),
                     L[32] !== j || L[33] !== m
                         ? ((p = (0, y.jsxs)(
-                              ny.l.Item,
+                              np.l.Item,
                               {
                                   selected: j,
                                   onSelect: m,
@@ -36883,14 +36709,14 @@
                         ? ((k = () => _("desc")), (L[35] = _), (L[36] = k))
                         : (k = L[36]),
                     L[37] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((h = (0, y.jsx)(ny.l.LeadingVisual, {
+                        ? ((h = (0, y.jsx)(np.l.LeadingVisual, {
                               children: (0, y.jsx)(V.SortDescIcon, {}),
                           })),
                           (L[37] = h))
                         : (h = L[37]),
                     L[38] !== R || L[39] !== k
                         ? ((f = (0, y.jsxs)(
-                              ny.l.Item,
+                              np.l.Item,
                               {
                                   selected: R,
                                   onSelect: k,
@@ -36903,7 +36729,7 @@
                           (L[40] = f))
                         : (f = L[40]),
                     L[41] !== p || L[42] !== f
-                        ? ((C = (0, y.jsxs)(ny.l.Group, {
+                        ? ((C = (0, y.jsxs)(np.l.Group, {
                               children: [c, p, f],
                           })),
                           (L[41] = p),
@@ -36911,8 +36737,8 @@
                           (L[43] = C))
                         : (C = L[43]),
                     L[44] !== d || L[45] !== C
-                        ? ((S = (0, y.jsx)(i2.W.Overlay, {
-                              children: (0, y.jsxs)(ny.l, {
+                        ? ((S = (0, y.jsx)(i1.W.Overlay, {
+                              children: (0, y.jsxs)(np.l, {
                                   selectionVariant: "single",
                                   children: [d, C],
                               }),
@@ -36922,7 +36748,7 @@
                           (L[46] = S))
                         : (S = L[46]),
                     L[47] !== S || L[48] !== s
-                        ? ((F = (0, y.jsxs)(i2.W, { children: [s, S] })),
+                        ? ((F = (0, y.jsxs)(i1.W, { children: [s, S] })),
                           (L[47] = S),
                           (L[48] = s),
                           (L[49] = F))
@@ -37037,7 +36863,7 @@
                     : ((i = g[11]), (t = g[12])),
                     (0, C.useEffect)(i, t),
                     g[13] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((r = (0, n0.G)("repository-label-list-view")),
+                        ? ((r = (0, n2.G)("repository-label-list-view")),
                           (g[13] = r))
                         : (r = g[13]));
                 let w = h.length > 0 ? "ul" : "div",
@@ -37096,7 +36922,7 @@
                     g[28] !== o ||
                     g[29] !== u ||
                     g[30] !== w
-                        ? ((d = (0, y.jsxs)(nQ.u, {
+                        ? ((d = (0, y.jsxs)(n$.u, {
                               ...r,
                               title: "Labels",
                               metadata: I,
@@ -37224,7 +37050,7 @@
                     d[13] !== S || d[14] !== p
                         ? ((t =
                               "" !== p
-                                  ? (0, y.jsx)(lU.K, {
+                                  ? (0, y.jsx)(lQ.K, {
                                         icon: V.XCircleFillIcon,
                                         onClick: S,
                                         "aria-label": uY.clearSearch,
@@ -37258,7 +37084,7 @@
                           (d[19] = r))
                         : (r = d[19]),
                     d[20] !== h
-                        ? ((o = (0, y.jsx)(lU.K, {
+                        ? ((o = (0, y.jsx)(lQ.K, {
                               "aria-label": uY.search,
                               size: "medium",
                               icon: V.SearchIcon,
@@ -37322,7 +37148,7 @@
                     g[2] !== f.viewerCanPush
                         ? ((n =
                               f.viewerCanPush &&
-                              (0, y.jsx)(ns.Q, {
+                              (0, y.jsx)(nn.Q, {
                                   variant: "primary",
                                   onClick: () => h(!0),
                                   children: "New label",
@@ -37351,7 +37177,7 @@
                         ? ((r = () => h(!0)), (g[8] = r))
                         : (r = g[8]),
                     g[9] !== f
-                        ? ((o = (0, y.jsx)(iY.t, {
+                        ? ((o = (0, y.jsx)(iJ.t, {
                               fallback: t,
                               children: (0, y.jsx)(dN, {
                                   repositoryRef: f,
@@ -37362,7 +37188,7 @@
                           (g[10] = o))
                         : (o = g[10]),
                     g[11] !== s || g[12] !== o
-                        ? ((u = (0, y.jsx)(lQ, {
+                        ? ((u = (0, y.jsx)(l$, {
                               contentAs: "div",
                               resizeable: !1,
                               leftPaneWidth: "small",
@@ -38788,9 +38614,9 @@
                     }, [r, i]),
                     (0, y.jsxs)(y.Fragment, {
                         children: [
-                            (0, y.jsxs)(i2.W, {
+                            (0, y.jsxs)(i1.W, {
                                 children: [
-                                    (0, y.jsx)(i2.W.Button, {
+                                    (0, y.jsx)(i1.W.Button, {
                                         className: uR.menuButton,
                                         "aria-label": "Milestone menu",
                                         variant: "invisible",
@@ -38800,22 +38626,22 @@
                                         ),
                                         onKeyDown: h,
                                     }),
-                                    (0, y.jsx)(i2.W.Overlay, {
-                                        children: (0, y.jsxs)(ny.l, {
+                                    (0, y.jsx)(i1.W.Overlay, {
+                                        children: (0, y.jsxs)(np.l, {
                                             children: [
-                                                (0, y.jsx)(ny.l.Item, {
+                                                (0, y.jsx)(np.l.Item, {
                                                     onSelect: () => g(),
                                                     children: "Edit",
                                                 }),
-                                                (0, y.jsx)(ny.l.Item, {
+                                                (0, y.jsx)(np.l.Item, {
                                                     onSelect: () => p(),
                                                     children:
                                                         "CLOSED" === o.state
                                                             ? "Open"
                                                             : "Close",
                                                 }),
-                                                (0, y.jsx)(ny.l.Divider, {}),
-                                                (0, y.jsx)(ny.l.Item, {
+                                                (0, y.jsx)(np.l.Divider, {}),
+                                                (0, y.jsx)(np.l.Item, {
                                                     onSelect: () => a(!0),
                                                     children: (0, y.jsx)(
                                                         "span",
@@ -38984,7 +38810,7 @@
             function d6({ milestone: e }) {
                 let l = (0, ed.useFragment)(d7, e),
                     a = l.url,
-                    n = (0, ts.X)(["mac"]),
+                    n = (0, tn.X)(["mac"]),
                     s = (0, e8.Z)(),
                     i = (0, C.useCallback)(
                         (e) => {
@@ -38994,7 +38820,7 @@
                         },
                         [a, n, s]
                     );
-                return (0, y.jsx)(s6.ao, {
+                return (0, y.jsx)(s7.ao, {
                     value: l.title,
                     href: l.url,
                     onClick: i,
@@ -39012,15 +38838,15 @@
                         repositoryNameWithOwner: l,
                     });
                 return (0, y.jsx)(
-                    nZ.c,
+                    nG.c,
                     {
                         title: n,
                         role: "listitem",
                         metadata: s,
                         className: uR.milestoneRow,
                         metadataContainerClassName: uR.listMetadataContainer,
-                        children: (0, y.jsx)(nY.Q, {
-                            children: (0, y.jsxs)(nX.U, {
+                        children: (0, y.jsx)(nJ.Q, {
+                            children: (0, y.jsxs)(nZ.U, {
                                 className: uR.listItemContent,
                                 children: [
                                     a.description &&
@@ -39065,28 +38891,28 @@
                         },
                         [n, e]
                     );
-                return (0, y.jsxs)(i2.W, {
+                return (0, y.jsxs)(i1.W, {
                     children: [
-                        (0, y.jsx)(i2.W.Button, {
+                        (0, y.jsx)(i1.W.Button, {
                             variant: "invisible",
                             leadingVisual: V.SortDescIcon,
                             children: "Sort",
                         }),
-                        (0, y.jsx)(i2.W.Overlay, {
-                            children: (0, y.jsx)(ny.l, {
+                        (0, y.jsx)(i1.W.Overlay, {
+                            children: (0, y.jsx)(np.l, {
                                 selectionVariant: "single",
-                                children: (0, y.jsxs)(ny.l.Group, {
+                                children: (0, y.jsxs)(np.l.Group, {
                                     children: [
-                                        (0, y.jsx)(ny.l.GroupHeading, {
+                                        (0, y.jsx)(np.l.GroupHeading, {
                                             children: "Sort by",
                                         }),
-                                        (0, y.jsx)(ny.l.Item, {
+                                        (0, y.jsx)(np.l.Item, {
                                             onSelect: () => s(void 0, void 0),
                                             selected: !l,
                                             role: "menuitemradio",
                                             children: "Recently updated",
                                         }),
-                                        (0, y.jsx)(ny.l.Item, {
+                                        (0, y.jsx)(np.l.Item, {
                                             onSelect: () =>
                                                 s("due_date", "desc"),
                                             selected:
@@ -39095,7 +38921,7 @@
                                             role: "menuitemradio",
                                             children: "Furthest due date",
                                         }),
-                                        (0, y.jsx)(ny.l.Item, {
+                                        (0, y.jsx)(np.l.Item, {
                                             onSelect: () =>
                                                 s("due_date", "asc"),
                                             selected:
@@ -39103,7 +38929,7 @@
                                             role: "menuitemradio",
                                             children: "Closest due date",
                                         }),
-                                        (0, y.jsx)(ny.l.Item, {
+                                        (0, y.jsx)(np.l.Item, {
                                             onSelect: () =>
                                                 s("completeness", "asc"),
                                             selected:
@@ -39112,7 +38938,7 @@
                                             role: "menuitemradio",
                                             children: "Least complete",
                                         }),
-                                        (0, y.jsx)(ny.l.Item, {
+                                        (0, y.jsx)(np.l.Item, {
                                             onSelect: () =>
                                                 s("completeness", "desc"),
                                             selected:
@@ -39121,28 +38947,28 @@
                                             role: "menuitemradio",
                                             children: "Most complete",
                                         }),
-                                        (0, y.jsx)(ny.l.Item, {
+                                        (0, y.jsx)(np.l.Item, {
                                             onSelect: () => s("title", "asc"),
                                             selected:
                                                 "title" === l && "asc" === a,
                                             role: "menuitemradio",
                                             children: "Alphabetical",
                                         }),
-                                        (0, y.jsx)(ny.l.Item, {
+                                        (0, y.jsx)(np.l.Item, {
                                             onSelect: () => s("title", "desc"),
                                             selected:
                                                 "title" === l && "desc" === a,
                                             role: "menuitemradio",
                                             children: "Reverse alphabetical",
                                         }),
-                                        (0, y.jsx)(ny.l.Item, {
+                                        (0, y.jsx)(np.l.Item, {
                                             onSelect: () => s("count", "desc"),
                                             selected:
                                                 "count" === l && "desc" === a,
                                             role: "menuitemradio",
                                             children: "Most issues",
                                         }),
-                                        (0, y.jsx)(ny.l.Item, {
+                                        (0, y.jsx)(np.l.Item, {
                                             onSelect: () => s("count", "asc"),
                                             selected:
                                                 "count" === l && "asc" === a,
@@ -39224,7 +39050,7 @@
                 let i = `${s}?state=closed`,
                     [t] = (0, e8.o)(),
                     r = t.get("state"),
-                    o = (0, ts.X)(["mac"]),
+                    o = (0, tn.X)(["mac"]),
                     u = (0, e8.Z)(),
                     d = (0, C.useCallback)(
                         (e, l) => {
@@ -39238,13 +39064,13 @@
                     );
                 return (0, y.jsx)("div", {
                     children: (0, y.jsxs)("ul", {
-                        className: `list-style-none ${(0, nM.$)(uR.tabsContainer)}`,
+                        className: `list-style-none ${(0, nA.$)(uR.tabsContainer)}`,
                         children: [
                             (0, y.jsx)(
                                 "li",
                                 {
                                     children: (0, y.jsx)(
-                                        nm.L,
+                                        nc.L,
                                         {
                                             title: "Open",
                                             isSelected: D.KJ && "closed" !== r,
@@ -39262,7 +39088,7 @@
                                 "li",
                                 {
                                     children: (0, y.jsx)(
-                                        nm.L,
+                                        nc.L,
                                         {
                                             title: "Closed",
                                             isSelected: D.KJ && "closed" === r,
@@ -39335,7 +39161,7 @@
                             l
                                 ? (0, y.jsx)("div", {
                                       className: uR.loadMoreButtonWrapper,
-                                      children: (0, y.jsx)(ns.Q, {
+                                      children: (0, y.jsx)(nn.Q, {
                                           variant: "invisible",
                                           onClick: () =>
                                               n(dH.milestonePageSize),
@@ -39354,8 +39180,8 @@
                         (0, y.jsx)("div", {
                             className: uR.milestoneListWrapper,
                             "data-hpc": !0,
-                            children: (0, y.jsx)(nQ.u, {
-                                ...(0, n0.G)("repository-milestone-list-view"),
+                            children: (0, y.jsx)(n$.u, {
+                                ...(0, n2.G)("repository-milestone-list-view"),
                                 title: "",
                                 metadata: o,
                                 titleHeaderTag: "h2",
@@ -39439,7 +39265,7 @@
                         l
                             ? (0, y.jsx)("div", {
                                   className: uR.actionsGrp,
-                                  children: (0, y.jsx)(ns.Q, {
+                                  children: (0, y.jsx)(nn.Q, {
                                       as: "a",
                                       href: s,
                                       onClick: t,
@@ -39458,13 +39284,13 @@
             } catch {}
             function ct({ repository: e }) {
                 let l = (0, ed.useFragment)(dQ, e);
-                return (0, y.jsx)(lQ, {
+                return (0, y.jsx)(l$, {
                     contentAs: "div",
                     resizeable: !1,
                     leftPaneWidth: "small",
                     middlePane: (0, y.jsx)("div", {
                         className: uR.middlePaneWrapper,
-                        children: (0, y.jsxs)(iY.t, {
+                        children: (0, y.jsxs)(iJ.t, {
                             fallback: (0, y.jsx)(uP, {
                                 title: u_.milestonesError,
                                 message: u_.milestonesErrorMessage,
@@ -40494,7 +40320,7 @@
                 abstractKey: null,
             };
             cp.hash = "3aa545b4589bf0d967e46deb8f691360";
-            var cy = a(35405);
+            var cy = a(76662);
             function ck({ milestoneRef: e }) {
                 let { title: l, repository: a } = (0, ed.useFragment)(cp, e);
                 return (0, y.jsxs)("div", {
@@ -40573,7 +40399,7 @@
                             },
                         });
                     }, [n, l.closed, l.id, a]);
-                return (0, y.jsx)(ns.Q, {
+                return (0, y.jsx)(nn.Q, {
                     onClick: s,
                     variant: "default",
                     children: l.closed ? "Reopen Milestone" : "Close Milestone",
@@ -40612,7 +40438,7 @@
                                 n
                                     ? (0, y.jsxs)(y.Fragment, {
                                           children: [
-                                              (0, y.jsx)(ns.Q, {
+                                              (0, y.jsx)(nn.Q, {
                                                   as: "a",
                                                   href: u,
                                                   children: u_.editMilestone,
@@ -40623,7 +40449,7 @@
                                           ],
                                       })
                                     : null,
-                                (0, y.jsx)(nn.a, {
+                                (0, y.jsx)(na.a, {
                                     label: u_.newIssue,
                                     navigate: r,
                                     optionConfig: {
@@ -40750,7 +40576,7 @@
                                                                           u_.milestoneLastUpdated,
                                                                   }
                                                               ),
-                                                        (0, y.jsx)(sx.A, {
+                                                        (0, y.jsx)(s_.A, {
                                                             date: new Date(
                                                                 l.updatedAt
                                                             ),
@@ -40797,7 +40623,7 @@
                                   id: "milestone-description",
                                   children: [
                                       (0, y.jsx)(cS.G, {
-                                          className: (0, nM.$)(
+                                          className: (0, nA.$)(
                                               uR.mdViewer,
                                               s
                                                   ? a
@@ -40811,11 +40637,11 @@
                                       }),
                                       s &&
                                           (0, y.jsx)("div", {
-                                              className: (0, nM.$)(
+                                              className: (0, nA.$)(
                                                   uR.showMoreButtonContainer,
                                                   a ? uR.expanded : uR.collapsed
                                               ),
-                                              children: (0, y.jsx)(ns.Q, {
+                                              children: (0, y.jsx)(nn.Q, {
                                                   size: "small",
                                                   variant: "invisible",
                                                   className: uR.button,
@@ -41926,14 +41752,14 @@
                 let e = (0, C.useCallback)(
                         (e, l, a) =>
                             e
-                                ? (0, y.jsxs)(ny.l.Item, {
+                                ? (0, y.jsxs)(np.l.Item, {
                                       disabled: !0,
                                       children: [
-                                          (0, y.jsx)(ny.l.LeadingVisual, {
+                                          (0, y.jsx)(np.l.LeadingVisual, {
                                               children: (0, y.jsx)(l, {}),
                                           }),
                                           a,
-                                          (0, y.jsx)(ny.l.TrailingVisual, {
+                                          (0, y.jsx)(np.l.TrailingVisual, {
                                               children: (0, y.jsx)(
                                                   V.TriangleDownIcon,
                                                   {}
@@ -41941,7 +41767,7 @@
                                           }),
                                       ],
                                   })
-                                : (0, y.jsx)(ns.Q, {
+                                : (0, y.jsx)(nn.Q, {
                                       disabled: !0,
                                       leadingVisual: l,
                                       trailingVisual: V.TriangleDownIcon,
@@ -42001,7 +41827,7 @@
                 isInOrganization: o,
             }) => {
                 let { addToast: u, addPersistedToast: d } = (0, f.Y6)(),
-                    { setSelectedCount: c } = (0, tr.v)(),
+                    { setSelectedCount: c } = (0, tt.v)(),
                     { setMultiPageSelectionAllowed: m } = (0, tX.P)(),
                     [g, p] = (0, C.useState)(null !== t),
                     k = Array.from(e.values())
@@ -42102,7 +41928,7 @@
                                 {
                                     key: "apply-assignees",
                                     render: (a) =>
-                                        (0, y.jsx)(ty, {
+                                        (0, y.jsx)(tp, {
                                             nested: a,
                                             issueIds: e,
                                             issueNumbers: l,
@@ -42114,7 +41940,7 @@
                                 {
                                     key: "add-to-projects",
                                     render: (l) =>
-                                        (0, y.jsx)(td, {
+                                        (0, y.jsx)(tu, {
                                             nested: l,
                                             issueIds: e,
                                             owner: i?.owner,
@@ -42143,7 +41969,7 @@
                                             appName: "issue_types",
                                             category: "issues_index",
                                             metadata: I,
-                                            children: (0, y.jsx)(tL, {
+                                            children: (0, y.jsx)(tF, {
                                                 owner: i.owner,
                                                 repo: i.name,
                                                 nested: l,
@@ -42182,7 +42008,7 @@
                 updateListHasPRs: n,
                 ...s
             }) => {
-                let { setSelectedCount: i } = (0, tr.v)(),
+                let { setSelectedCount: i } = (0, tt.v)(),
                     { setMultiPageSelectionAllowed: t } = (0, tX.P)(),
                     r = (0, C.useCallback)(
                         (e) => {
@@ -42221,7 +42047,7 @@
                     (cj.displayName = "ListItemsHeaderWithoutBulkActions");
             } catch {}
             function cR({ ...e }) {
-                let { anyItemsSelected: l } = (0, tr.v)();
+                let { anyItemsSelected: l } = (0, tt.v)();
                 return l ? (0, y.jsx)(cN, { ...e }) : (0, y.jsx)(cj, { ...e });
             }
             try {
@@ -42238,7 +42064,7 @@
                 handleNavigate: r,
             }) {
                 let o = (0, e8.Z)(),
-                    [u, d] = (0, ed.useQueryLoader)(iG),
+                    [u, d] = (0, ed.useQueryLoader)(iW),
                     c = null !== u;
                 (0, C.useEffect)(() => {
                     D.X3 ||
@@ -42263,7 +42089,7 @@
                     if (!i)
                         if ("Issue" === e.__typename)
                             return (0, y.jsx)(
-                                iX,
+                                iZ,
                                 {
                                     issueKey: e,
                                     onNavigate: (l, a) => r(e.number, l, a),
@@ -42273,7 +42099,7 @@
                             );
                         else
                             return (0, y.jsx)(
-                                s1,
+                                sY,
                                 {
                                     pullRequestKey: e,
                                     includeGitDataFromMainQuery: !1,
@@ -42297,7 +42123,7 @@
                             children:
                                 "Issue" === e.__typename
                                     ? (0, y.jsx)(
-                                          iX,
+                                          iZ,
                                           {
                                               issueKey: e,
                                               onNavigate: (l, a) =>
@@ -42309,7 +42135,7 @@
                                           e.id
                                       )
                                     : (0, y.jsx)(
-                                          s1,
+                                          sY,
                                           {
                                               pullRequestKey: e,
                                               includeGitDataFromMainQuery: !1,
@@ -42441,7 +42267,7 @@
                 let i = `${s}?closed=1`,
                     [t] = (0, e8.o)(),
                     r = t.get("closed"),
-                    o = (0, ts.X)(["mac"]),
+                    o = (0, tn.X)(["mac"]),
                     u = (0, e8.Z)(),
                     d = (0, C.useCallback)(
                         (e, l) => {
@@ -42452,13 +42278,13 @@
                     );
                 return (0, y.jsx)("div", {
                     children: (0, y.jsxs)("ul", {
-                        className: `list-style-none ${(0, nM.$)(uR.tabsContainer)}`,
+                        className: `list-style-none ${(0, nA.$)(uR.tabsContainer)}`,
                         children: [
                             (0, y.jsx)(
                                 "li",
                                 {
                                     children: (0, y.jsx)(
-                                        nm.L,
+                                        nc.L,
                                         {
                                             title: "Open",
                                             isSelected: D.KJ && "1" !== r,
@@ -42475,7 +42301,7 @@
                                 "li",
                                 {
                                     children: (0, y.jsx)(
-                                        nm.L,
+                                        nc.L,
                                         {
                                             title: "Closed",
                                             isSelected: D.KJ && "1" === r,
@@ -42783,7 +42609,7 @@
                             z > dH.issuesPageSize && n
                                 ? (0, y.jsx)("div", {
                                       className: uR.loadMoreButtonWrapper,
-                                      children: (0, y.jsx)(ns.Q, {
+                                      children: (0, y.jsx)(nn.Q, {
                                           variant: "invisible",
                                           onClick: Z,
                                           className: uR.loadMoreButton,
@@ -42807,7 +42633,7 @@
                             if (!a) return null;
                             let n = null;
                             return ("Issue" === a.__typename &&
-                                (n = (0, y.jsx)(iX, {
+                                (n = (0, y.jsx)(iZ, {
                                     metadataRef: null,
                                     issueKey: a,
                                     getMetadataHref: () => "",
@@ -42818,7 +42644,7 @@
                                     onNavigate: x.l,
                                 })),
                             "PullRequest" === a.__typename)
-                                ? (0, y.jsx)(s1, {
+                                ? (0, y.jsx)(sY, {
                                       metadataRef: null,
                                       pullRequestKey: a,
                                       includeGitDataFromMainQuery: !1,
@@ -42853,8 +42679,8 @@
                         (0, y.jsx)("div", {
                             className: uR.milestoneListWrapper,
                             "data-hpc": !0,
-                            ...(0, n0.G)("repository-milestone-list-view"),
-                            children: (0, y.jsxs)(nQ.u, {
+                            ...(0, n2.G)("repository-milestone-list-view"),
+                            children: (0, y.jsxs)(n$.u, {
                                 title: "",
                                 totalCount: z,
                                 selectedCount: r.size,
@@ -42907,13 +42733,13 @@
                     ? (0, y.jsx)(o1, {
                           bulkJobId: n,
                           setBulkJobId: s,
-                          children: (0, y.jsx)(lQ, {
+                          children: (0, y.jsx)(l$, {
                               contentAs: "div",
                               resizeable: !1,
                               leftPaneWidth: "small",
                               middlePane: (0, y.jsx)("div", {
                                   className: uR.middlePaneWrapper,
-                                  children: (0, y.jsxs)(iY.t, {
+                                  children: (0, y.jsxs)(iJ.t, {
                                       fallback: (0, y.jsx)(uP, {
                                           title: u_.milestoneError,
                                           message: u_.milestoneErrorMessage,
@@ -42929,7 +42755,7 @@
                                                   (0, y.jsx)(cL, {
                                                       milestoneRef: a.milestone,
                                                   }),
-                                                  (0, y.jsx)(iY.t, {
+                                                  (0, y.jsx)(iJ.t, {
                                                       fallback: (0, y.jsx)(uP, {
                                                           title: u_.milestoneIssuesError,
                                                           message:
@@ -42997,12 +42823,8 @@
                       (0, y.jsx)("div", { children: "Repository not found" }));
             }
             function c$({ repository: e }) {
-                let l = (0, ed.useFragment)(cd, e),
-                    { current_user_settings: a } = (0, w.X)(),
-                    n = {
-                        singleKeyShortcutsEnabled: a.use_single_key_shortcut,
-                    };
-                return (0, y.jsx)(cq, { repository: l, optionConfig: n });
+                let l = (0, ed.useFragment)(cd, e);
+                return (0, y.jsx)(cq, { repository: l });
             }
             try {
                 cB.displayName ||
@@ -43022,14 +42844,14 @@
                                 mentioned: l.pathParams.mentioned,
                                 label: l.pathParams.label,
                             });
-                        ((e.query = nx(s && !a ? `${n} ${s}` : n, {
+                        ((e.query = n_(s && !a ? `${n} ${s}` : n, {
                             owner: l.pathParams.owner,
                             name: l.pathParams.repo,
                         })),
                             ew(l.searchParams, e),
                             (e.owner = l.pathParams.owner),
                             (e.name = l.pathParams.repo),
-                            (e.includeReactions = !!a && nj(a)));
+                            (e.includeReactions = !!a && nN(a)));
                     }
                     return e;
                 },
@@ -43181,13 +43003,13 @@
                                       "asc" === a ? "ASC" : "DESC"));
                         }
                         let s = l.searchParams.get("q");
-                        return (s && (e.query = nw(s)), e);
+                        return (s && (e.query = nx(s)), e);
                     },
                     "/:owner/:repo/labels/:label": (e, l) => {
                         if (Object.keys(l.pathParams).length > 0) {
                             let a = l.searchParams.get("q"),
                                 n = eP(_.open, [l.pathParams.label], "label");
-                            ((e.query = nx(a?.trim() || n, {
+                            ((e.query = n_(a?.trim() || n, {
                                 owner: l.pathParams.owner,
                                 name: l.pathParams.repo,
                             })),
@@ -43209,11 +43031,11 @@
                                 i = a.getStore().getSource().get(n);
                             i &&
                                 (s
-                                    ? ((e.query = nw(s)),
-                                      (e.includeReactions = nj(s)))
+                                    ? ((e.query = nx(s)),
+                                      (e.includeReactions = nN(s)))
                                     : i.query &&
-                                      ((e.query = nw(`${i.query}`)),
-                                      (e.includeReactions = nj(`${i.query}`))));
+                                      ((e.query = nx(`${i.query}`)),
+                                      (e.includeReactions = nN(`${i.query}`))));
                         }
                         return (ew(l.searchParams, e), e);
                     },
@@ -43232,8 +43054,8 @@
                         let a = l.searchParams.get("q");
                         return (
                             a &&
-                                ((e.query = nw(a)),
-                                (e.includeReactions = nj(a))),
+                                ((e.query = nx(a)),
+                                (e.includeReactions = nN(a))),
                             ew(l.searchParams, e),
                             e
                         );
@@ -43241,7 +43063,7 @@
                     "/issues/assigned": (e, l) => {
                         let a = l.searchParams.get("q");
                         return (
-                            (e.query = a ? nw(a) : _.assignedToMe),
+                            (e.query = a ? nx(a) : _.assignedToMe),
                             ew(l.searchParams, e),
                             e
                         );
@@ -43249,13 +43071,13 @@
                     "/issues/mentioned": (e, l) => {
                         let a = l.searchParams.get("q");
                         return (
-                            (e.query = a ? nw(a) : _.mentioned),
+                            (e.query = a ? nx(a) : _.mentioned),
                             ew(l.searchParams, e),
                             e
                         );
                     },
                     "/issues/recent": (e, l) => (
-                        (e.query = nw(
+                        (e.query = nx(
                             l.searchParams.get("q") || _.recentActivity
                         )),
                         ew(l.searchParams, e),
@@ -43264,7 +43086,7 @@
                     "/issues/created": (e, l) => {
                         let a = l.searchParams.get("q");
                         return (
-                            (e.query = a ? nw(a) : _.createdByMe),
+                            (e.query = a ? nx(a) : _.createdByMe),
                             ew(l.searchParams, e),
                             e
                         );
@@ -43337,7 +43159,7 @@
                             path: "/:owner/:name/issues/new",
                             resourceName: "IssueRepoNew",
                             title: "New Issue",
-                            Component: lM,
+                            Component: lA,
                             transformVariables: cU["/:owner/:name/issues/new"],
                             queryConfigs: {
                                 pageQuery: {
@@ -43668,7 +43490,7 @@
             var n = a(74848),
                 s = a(38621),
                 i = a(57352),
-                t = a(27042),
+                t = a(94236),
                 r = a(5524),
                 o = a(87448),
                 u = a(88934),
@@ -45166,19 +44988,20 @@
                 "vendors-node_modules_dompurify_dist_purify_es_mjs",
                 "vendors-node_modules_tanstack_query-core_build_modern_queryObserver_js-node_modules_tanstack_-defd52",
                 "vendors-node_modules_date-fns_format_mjs",
-                "vendors-node_modules_lodash-es__Stack_js-node_modules_lodash-es__Uint8Array_js-node_modules_l-4faaa6",
                 "vendors-node_modules_date-fns_addWeeks_mjs-node_modules_date-fns_addYears_mjs-node_modules_da-827f4f",
+                "vendors-node_modules_lodash-es__Stack_js-node_modules_lodash-es__Uint8Array_js-node_modules_l-4faaa6",
                 "vendors-node_modules_github_relative-time-element_dist_index_js",
                 "vendors-node_modules_github_hotkey_dist_index_js-node_modules_date-fns_getDaysInMonth_mjs-nod-70c11b",
-                "vendors-node_modules_github_hydro-analytics-client_dist_analytics-client_js-node_modules_gith-c7919d",
-                "vendors-node_modules_dnd-kit_modifiers_dist_modifiers_esm_js-node_modules_dnd-kit_sortable_di-5ada6e",
+                "vendors-node_modules_dnd-kit_modifiers_dist_modifiers_esm_js-node_modules_dnd-kit_sortable_di-72228e",
+                "vendors-node_modules_swc_helpers_esm__define_property_js-node_modules_lodash-es__getAllKeys_j-86c8c2",
                 "vendors-node_modules_lodash-es_cloneDeep_js",
                 "vendors-node_modules_braintree_browser-detection_dist_browser-detection_js-node_modules_githu-bb80ec",
                 "vendors-node_modules_tanstack_react-virtual_dist_esm_index_js",
+                "vendors-node_modules_tanstack_react-query_build_modern_useQuery_js-node_modules_diff_lib_index_mjs",
                 "vendors-node_modules_react-relay_index_js",
                 "vendors-node_modules_comma-separated-tokens_index_js-node_modules_mdast-util-from-markdown_li-6db53e",
                 "vendors-node_modules_hastscript_lib_index_js-node_modules_mdast-util-gfm_lib_index_js-node_mo-2895d2",
-                "vendors-node_modules_github_mini-throttle_dist_decorators_js-node_modules_accname_dist_access-690142",
+                "vendors-node_modules_github_mini-throttle_dist_decorators_js-node_modules_accname_dist_access-ce77c7",
                 "vendors-node_modules_codemirror_language_dist_index_js",
                 "vendors-node_modules_codemirror_commands_dist_index_js",
                 "vendors-node_modules_fzy_js_index_js-node_modules_github_g-emoji-element_dist_index_js-node_m-b54f2c",
@@ -45188,16 +45011,16 @@
                 "packages_ui-commands_ui-commands_ts",
                 "packages_date-picker_components_DatePicker_tsx",
                 "packages_drag-and-drop_drag-and-drop_ts-packages_hydro-analytics_hydro-analytics_ts",
-                "packages_list-view_src_hooks_use-next-header-tag_ts-packages_list-view_src_ListItem_ListItem_-055669",
-                "packages_filter_utils_index_ts-packages_fuzzy-score_fuzzy-score_ts-packages_use-analytics_use-efa20b",
+                "packages_copilot-chat_utils_copilot-chat-helpers_ts-packages_verified-fetch_verified-fetch_ts",
+                "packages_list-view_src_ListItem_ListItem_tsx-packages_list-view_src_ListItem_Title_tsx-packag-29fce3",
+                "packages_filter_utils_index_ts-packages_fuzzy-score_fuzzy-score_ts-packages_use-analytics_use-554964",
                 "packages_ref-selector_RefSelector_tsx",
-                "packages_copilot-chat_utils_copilot-local-storage_ts",
                 "packages_filter_Filter_tsx",
                 "packages_filter_providers_index_ts",
                 "packages_copilot-chat_components_tracing_TraceProvider_tsx",
-                "packages_relay-environment_relay-environment_ts",
                 "packages_copilot-chat_utils_CopilotChatContext_tsx",
-                "packages_item-picker_components_RepositoryPicker_tsx-packages_safe-html_VerifiedHTML_tsx",
+                "packages_relay-environment_relay-environment_ts",
+                "packages_item-picker_components_RepositoryPicker_tsx",
                 "packages_history_history_ts-packages_soft-nav_state_ts-packages_agent-sessions_components_new-9fc8d0",
                 "packages_comment-box_api_file-upload_ts-packages_comment-box_api_preview_ts-packages_markdown-c95d34",
                 "packages_signed-commit-badge_index_ts",
@@ -45205,7 +45028,7 @@
                 "packages_nested-list-view_src_NestedListItem_LeadingContent_tsx-packages_nested-list-view_src-1f776c",
                 "packages_markdown-viewer_NewMarkdownViewer_tsx",
                 "packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-f66842",
-                "packages_list-view-items-issues-prs_constants_stateIcon_ts-packages_promise-with-resolvers-po-969e43",
+                "packages_list-view-items-issues-prs_constants_stateIcon_ts-packages_promise-with-resolvers-po-34febf",
                 "packages_app-uuid_app-uuid_ts-packages_commenting_constants_values_ts-packages_document-metad-429d81",
             ],
             () => e((e.s = 30835))
@@ -45213,4 +45036,4 @@
             e.O());
     },
 ]);
-//# sourceMappingURL=issues-react-cb1738e01724.js.map
+//# sourceMappingURL=issues-react-16ce46d1e3b3.js.map

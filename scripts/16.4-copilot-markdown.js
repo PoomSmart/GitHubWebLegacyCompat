@@ -3,17 +3,17 @@
     globalThis.webpackChunk_github_ui_github_ui || []).push([
     ["packages_copilot-markdown_MarkdownRenderer_tsx"],
     {
-        4817: (e, n, o) => {
-            o.d(n, {
-                To: () => $,
-                sX: () => Q,
+        4817: (e, t, n) => {
+            n.d(t, {
+                To: () => Z,
+                sX: () => J,
             });
-            var s = o(74848),
-                a = o(21728),
-                t = o(96540),
-                r = o(85094),
-                i = o(98755);
-            let l = {
+            var r = n(74848),
+                a = n(21728),
+                o = n(96540),
+                l = n(85094),
+                s = n(98755);
+            let i = {
                 container: "CodeBlock-module__container--QRI4L",
                 copyContent: "CodeBlock-module__copyContent--BH7EX",
                 copyButton: "CodeBlock-module__copyButton--eyFr8",
@@ -26,28 +26,28 @@
                 languageName: "CodeBlock-module__languageName--fxI6n",
                 codeWrap: "CodeBlock-module__codeWrap--UMQo8",
             };
-            var c = o(23967),
-                m = o(31339),
-                x = o(57826),
-                d = o(34164),
-                p = o(53419),
-                E = o(39876),
-                A = o(26108),
-                f = o(38621),
-                S = o(22072);
-            let C = () => {
+            var c = n(23967),
+                d = n(31339),
+                m = n(57826),
+                u = n(34164),
+                p = n(53419),
+                h = n(39876),
+                f = n(26108),
+                g = n(38621),
+                y = n(22072);
+            let v = () => {
                 let e,
-                    n = (0, a.c)(1);
+                    t = (0, a.c)(1);
                 return (
-                    n[0] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((e = (0, s.jsx)("svg", {
+                    t[0] === Symbol.for("react.memo_cache_sentinel")
+                        ? ((e = (0, r.jsx)("svg", {
                               xmlns: "http://www.w3.org/2000/svg",
                               width: "16",
                               height: "16",
                               fill: "none",
                               viewBox: "0 0 16 16",
                               "aria-hidden": "true",
-                              children: (0, s.jsx)("path", {
+                              children: (0, r.jsx)("path", {
                                   stroke: "currentColor",
                                   strokeLinecap: "round",
                                   strokeLinejoin: "round",
@@ -55,20 +55,20 @@
                                   d: "M1 13h3M1 8h14M1 3h14",
                               }),
                           })),
-                          (n[0] = e))
-                        : (e = n[0]),
+                          (t[0] = e))
+                        : (e = t[0]),
                     e
                 );
             };
             try {
-                C.displayName || (C.displayName = "UnwrapIcon");
+                v.displayName || (v.displayName = "UnwrapIcon");
             } catch {}
-            let L = () => {
+            let _ = () => {
                 let e,
-                    n = (0, a.c)(1);
+                    t = (0, a.c)(1);
                 return (
-                    n[0] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((e = (0, s.jsxs)("svg", {
+                    t[0] === Symbol.for("react.memo_cache_sentinel")
+                        ? ((e = (0, r.jsxs)("svg", {
                               xmlns: "http://www.w3.org/2000/svg",
                               width: "16",
                               height: "16",
@@ -76,14 +76,14 @@
                               viewBox: "0 0 16 16",
                               "aria-hidden": "true",
                               children: [
-                                  (0, s.jsx)("path", {
+                                  (0, r.jsx)("path", {
                                       stroke: "currentColor",
                                       strokeLinecap: "round",
                                       strokeLinejoin: "round",
                                       strokeWidth: "1.5",
                                       d: "M1 13h3M1 3h14",
                                   }),
-                                  (0, s.jsx)("path", {
+                                  (0, r.jsx)("path", {
                                       fill: "currentColor",
                                       fillRule: "evenodd",
                                       d: "M1 7.25a.75.75 0 0 0 0 1.5h11.5a1.75 1.75 0 1 1 0 3.5H9.536v-.464a.679.679 0 0 0-1.086-.543l-1.619 1.214a.68.68 0 0 0 0 1.086l1.619 1.214a.679.679 0 0 0 1.086-.543v-.464H12.5a3.25 3.25 0 0 0 0-6.5z",
@@ -91,274 +91,275 @@
                                   }),
                               ],
                           })),
-                          (n[0] = e))
-                        : (e = n[0]),
+                          (t[0] = e))
+                        : (e = t[0]),
                     e
                 );
             };
             try {
-                L.displayName || (L.displayName = "WrapIcon");
+                _.displayName || (_.displayName = "WrapIcon");
             } catch {}
-            function R(e) {
-                let n,
-                    o,
-                    r,
-                    R,
-                    T,
-                    u,
-                    O,
+            function x(e) {
+                let t,
+                    n,
+                    l,
+                    x,
+                    C,
                     b,
-                    I,
+                    k,
                     N,
-                    h,
-                    g,
-                    P,
-                    M,
-                    D,
-                    y = (0, a.c)(50),
+                    j,
+                    w,
+                    R,
+                    $,
+                    L,
+                    S,
+                    B,
+                    I = (0, a.c)(50),
                     {
-                        language: F,
-                        children: B,
-                        code: k,
-                        startOffset: v,
-                        endOffset: G,
+                        language: M,
+                        children: O,
+                        code: D,
+                        startOffset: E,
+                        endOffset: T,
                     } = e;
-                y[0] !== F
-                    ? ((n = (0, c.vL)(F)), (y[0] = F), (y[1] = n))
-                    : (n = y[1]);
-                let { color: j, name: w } = n,
-                    U = (0, t.useId)(),
+                I[0] !== M
+                    ? ((t = (0, c.vL)(M)), (I[0] = M), (I[1] = t))
+                    : (t = I[1]);
+                let { color: A, name: F } = t,
+                    H = (0, o.useId)(),
                     {
-                        copilotAnnotations: H,
-                        chatMode: K,
-                        wrapCodeLines: Y,
+                        copilotAnnotations: P,
+                        chatMode: W,
+                        wrapCodeLines: K,
                         onWrapCodeLinesChange: V,
-                    } = (0, t.useContext)(x.F),
-                    [_, X] = (0, t.useState)(!1),
-                    { publicCodeReferences: J, codeVulnerabilities: W } = (0,
-                    E.R)(H, v, G);
-                y[2] !== K || y[3] !== V || y[4] !== Y
-                    ? ((o = () => {
-                          (V?.(!Y),
+                    } = (0, o.useContext)(m.F),
+                    [U, Y] = (0, o.useState)(!1),
+                    { publicCodeReferences: z, codeVulnerabilities: Q } = (0,
+                    h.R)(P, E, T);
+                I[2] !== W || I[3] !== V || I[4] !== K
+                    ? ((n = () => {
+                          (V?.(!K),
                               (0, p.BI)("dotcom_chat.activate", {
-                                  target: Y
+                                  target: K
                                       ? "CODE_BLOCK_UNWRAP"
                                       : "CODE_BLOCK_WRAP",
-                                  mode: K,
+                                  mode: W,
                               }));
                       }),
-                      (y[2] = K),
-                      (y[3] = V),
-                      (y[4] = Y),
-                      (y[5] = o))
-                    : (o = y[5]);
-                let q = o,
-                    Q = "immersive" === K,
-                    z = "assistive" === K;
-                (y[6] !== Q || y[7] !== z
-                    ? ((r = (0, d.$)(l.container, {
-                          [l.immersive]: Q,
-                          [l.assistive]: z,
+                      (I[2] = W),
+                      (I[3] = V),
+                      (I[4] = K),
+                      (I[5] = n))
+                    : (n = I[5]);
+                let q = n,
+                    J = "immersive" === W,
+                    X = "assistive" === W;
+                (I[6] !== J || I[7] !== X
+                    ? ((l = (0, u.$)(i.container, {
+                          [i.immersive]: J,
+                          [i.assistive]: X,
                       })),
-                      (y[6] = Q),
-                      (y[7] = z),
-                      (y[8] = r))
-                    : (r = y[8]),
-                    y[9] !== j
-                        ? ((R = (0, s.jsx)(m.q, {
-                              color: j,
+                      (I[6] = J),
+                      (I[7] = X),
+                      (I[8] = l))
+                    : (l = I[8]),
+                    I[9] !== A
+                        ? ((x = (0, r.jsx)(d.q, {
+                              color: A,
                           })),
-                          (y[9] = j),
-                          (y[10] = R))
-                        : (R = y[10]));
-                let $ = w || "Code";
-                (y[11] !== U || y[12] !== $
-                    ? ((T = (0, s.jsx)("span", {
-                          id: U,
-                          className: l.languageName,
-                          children: $,
+                          (I[9] = A),
+                          (I[10] = x))
+                        : (x = I[10]));
+                let Z = F || "Code";
+                (I[11] !== H || I[12] !== Z
+                    ? ((C = (0, r.jsx)("span", {
+                          id: H,
+                          className: i.languageName,
+                          children: Z,
                       })),
-                      (y[11] = U),
-                      (y[12] = $),
-                      (y[13] = T))
-                    : (T = y[13]),
-                    y[14] !== V || y[15] !== q || y[16] !== Y
-                        ? ((u =
+                      (I[11] = H),
+                      (I[12] = Z),
+                      (I[13] = C))
+                    : (C = I[13]),
+                    I[14] !== V || I[15] !== q || I[16] !== K
+                        ? ((b =
                               V &&
-                              (0, s.jsx)(A.K, {
+                              (0, r.jsx)(f.K, {
                                   variant: "invisible",
-                                  icon: Y ? C : L,
-                                  "aria-label": Y ? "Unwrap" : "Wrap",
+                                  icon: K ? v : _,
+                                  "aria-label": K ? "Unwrap" : "Wrap",
                                   onClick: q,
                               })),
-                          (y[14] = V),
-                          (y[15] = q),
-                          (y[16] = Y),
-                          (y[17] = u))
-                        : (u = y[17]),
-                    y[18] !== K || y[19] !== W || y[20] !== J.length
-                        ? ((O =
-                              (J.length > 0 || W.length > 0) &&
-                              (0, s.jsx)(A.K, {
+                          (I[14] = V),
+                          (I[15] = q),
+                          (I[16] = K),
+                          (I[17] = b))
+                        : (b = I[17]),
+                    I[18] !== W || I[19] !== Q || I[20] !== z.length
+                        ? ((k =
+                              (z.length > 0 || Q.length > 0) &&
+                              (0, r.jsx)(f.K, {
                                   variant: "invisible",
-                                  icon: f.ShieldIcon,
+                                  icon: g.ShieldIcon,
                                   "aria-label": "Code insights",
                                   onClick: () => {
-                                      (X(!0),
+                                      (Y(!0),
                                           (0, p.BI)("dotcom_chat.activate", {
                                               target: "CODE_BLOCK_SHIELD",
-                                              mode: K,
+                                              mode: W,
                                           }));
                                   },
                               })),
-                          (y[18] = K),
-                          (y[19] = W),
-                          (y[20] = J.length),
-                          (y[21] = O))
-                        : (O = y[21]),
-                    y[22] !== O || y[23] !== R || y[24] !== T || y[25] !== u
-                        ? ((b = (0, s.jsxs)("div", {
-                              className: l.header,
-                              children: [R, T, u, O],
+                          (I[18] = W),
+                          (I[19] = Q),
+                          (I[20] = z.length),
+                          (I[21] = k))
+                        : (k = I[21]),
+                    I[22] !== k || I[23] !== x || I[24] !== C || I[25] !== b
+                        ? ((N = (0, r.jsxs)("div", {
+                              className: i.header,
+                              children: [x, C, b, k],
                           })),
-                          (y[22] = O),
-                          (y[23] = R),
-                          (y[24] = T),
-                          (y[25] = u),
-                          (y[26] = b))
-                        : (b = y[26]),
-                    y[27] !== K
-                        ? ((I = () => {
+                          (I[22] = k),
+                          (I[23] = x),
+                          (I[24] = C),
+                          (I[25] = b),
+                          (I[26] = N))
+                        : (N = I[26]),
+                    I[27] !== W
+                        ? ((j = () => {
                               (0, p.BI)("dotcom_chat.activate", {
                                   target: "CODE_BLOCK_COPY",
-                                  mode: K,
+                                  mode: W,
                               });
                           }),
-                          (y[27] = K),
-                          (y[28] = I))
-                        : (I = y[28]),
-                    y[29] !== k || y[30] !== I
-                        ? ((N = (0, s.jsx)("div", {
-                              className: l.copyContainer,
-                              children: (0, s.jsx)("div", {
-                                  className: l.copyContent,
-                                  children: (0, s.jsx)(i.T, {
-                                      textToCopy: k,
+                          (I[27] = W),
+                          (I[28] = j))
+                        : (j = I[28]),
+                    I[29] !== D || I[30] !== j
+                        ? ((w = (0, r.jsx)("div", {
+                              className: i.copyContainer,
+                              children: (0, r.jsx)("div", {
+                                  className: i.copyContent,
+                                  children: (0, r.jsx)(s.T, {
+                                      textToCopy: D,
                                       ariaLabel: "Copy code",
-                                      className: l.copyButton,
-                                      onCopy: I,
+                                      className: i.copyButton,
+                                      onCopy: j,
                                   }),
                               }),
                           })),
-                          (y[29] = k),
-                          (y[30] = I),
-                          (y[31] = N))
-                        : (N = y[31]));
-                let Z = Y && l.codeWrap;
+                          (I[29] = D),
+                          (I[30] = j),
+                          (I[31] = w))
+                        : (w = I[31]));
+                let G = K && i.codeWrap;
                 return (
-                    y[32] !== Z
-                        ? ((h = (0, d.$)(Z)), (y[32] = Z), (y[33] = h))
-                        : (h = y[33]),
-                    y[34] !== B || y[35] !== h
-                        ? ((g = (0, s.jsx)("div", {
-                              className: l.codeContainer,
-                              children: (0, s.jsx)("pre", {
-                                  className: l.code,
+                    I[32] !== G
+                        ? ((R = (0, u.$)(G)), (I[32] = G), (I[33] = R))
+                        : (R = I[33]),
+                    I[34] !== O || I[35] !== R
+                        ? (($ = (0, r.jsx)("div", {
+                              className: i.codeContainer,
+                              children: (0, r.jsx)("pre", {
+                                  className: i.code,
                                   tabIndex: 0,
-                                  children: (0, s.jsx)("code", {
-                                      className: h,
-                                      children: B,
+                                  children: (0, r.jsx)("code", {
+                                      className: R,
+                                      children: O,
                                   }),
                               }),
                           })),
-                          (y[34] = B),
-                          (y[35] = h),
-                          (y[36] = g))
-                        : (g = y[36]),
-                    y[37] !== U ||
-                    y[38] !== b ||
-                    y[39] !== N ||
-                    y[40] !== g ||
-                    y[41] !== r
-                        ? ((P = (0, s.jsxs)("figure", {
-                              className: r,
-                              "aria-labelledby": U,
-                              children: [b, N, g],
+                          (I[34] = O),
+                          (I[35] = R),
+                          (I[36] = $))
+                        : ($ = I[36]),
+                    I[37] !== H ||
+                    I[38] !== N ||
+                    I[39] !== w ||
+                    I[40] !== $ ||
+                    I[41] !== l
+                        ? ((L = (0, r.jsxs)("figure", {
+                              className: l,
+                              "aria-labelledby": H,
+                              children: [N, w, $],
                           })),
-                          (y[37] = U),
-                          (y[38] = b),
-                          (y[39] = N),
-                          (y[40] = g),
-                          (y[41] = r),
-                          (y[42] = P))
-                        : (P = y[42]),
-                    y[43] !== W || y[44] !== _ || y[45] !== J
-                        ? ((M =
-                              _ &&
-                              (0, s.jsx)(S.t, {
-                                  publicCodeReferences: J,
-                                  codeVulnerabilities: W,
-                                  onClose: () => X(!1),
+                          (I[37] = H),
+                          (I[38] = N),
+                          (I[39] = w),
+                          (I[40] = $),
+                          (I[41] = l),
+                          (I[42] = L))
+                        : (L = I[42]),
+                    I[43] !== Q || I[44] !== U || I[45] !== z
+                        ? ((S =
+                              U &&
+                              (0, r.jsx)(y.t, {
+                                  publicCodeReferences: z,
+                                  codeVulnerabilities: Q,
+                                  onClose: () => Y(!1),
                               })),
-                          (y[43] = W),
-                          (y[44] = _),
-                          (y[45] = J),
-                          (y[46] = M))
-                        : (M = y[46]),
-                    y[47] !== P || y[48] !== M
-                        ? ((D = (0, s.jsxs)(s.Fragment, {
-                              children: [P, M],
+                          (I[43] = Q),
+                          (I[44] = U),
+                          (I[45] = z),
+                          (I[46] = S))
+                        : (S = I[46]),
+                    I[47] !== L || I[48] !== S
+                        ? ((B = (0, r.jsxs)(r.Fragment, {
+                              children: [L, S],
                           })),
-                          (y[47] = P),
-                          (y[48] = M),
-                          (y[49] = D))
-                        : (D = y[49]),
-                    D
+                          (I[47] = L),
+                          (I[48] = S),
+                          (I[49] = B))
+                        : (B = I[49]),
+                    B
                 );
             }
             try {
-                R.displayName || (R.displayName = "CodeBlock");
+                x.displayName || (x.displayName = "CodeBlock");
             } catch {}
-            var T = o(47970);
-            let u = "data-codeblock-props",
-                O = (0, r.F)(u),
-                b = {
-                    code: (e, n) => {
-                        let o = (0, r.k)(e, u);
-                        return o
-                            ? (0, s.jsx)(R, {
-                                  ...o,
+            var C = n(47970);
+            let b = "data-codeblock-props",
+                k = (0, l.F)(b),
+                N = {
+                    code: (e, t) => {
+                        let n = (0, l.k)(e, b);
+                        return n
+                            ? (0, r.jsx)(x, {
+                                  ...n,
                                   children: e.children,
                               })
-                            : n;
+                            : t;
                     },
                 };
-            var I = o(15514),
-                N = o(76814);
-            let h = [
+            var j = n(15514),
+                w = n(76814);
+            let R = [
                     "raw.githubusercontent.com/",
                     "private-user-images.githubusercontent.com/",
                     "avatars.githubusercontent.com/",
                     "gist.github.com/assets/",
+                    "github.com/user-attachments/assets/",
                 ],
-                g = (e, n) =>
-                    (0, T.YR)(e, (e, o, s) => {
+                $ = (e, t) =>
+                    (0, C.YR)(e, (e, n, r) => {
                         if (
                             "element" === e.type &&
                             "img" === e.tagName &&
                             "src" in e.properties
                         ) {
                             let a,
-                                t = e.properties.src;
+                                o = e.properties.src;
                             try {
-                                a = new URL(t, window.location.origin);
+                                a = new URL(o, window.location.origin);
                             } catch {}
-                            let r = a ? a.hostname + a.pathname : "";
-                            if (!a || !h.some((e) => r.startsWith(e))) {
-                                let a = (0, I.s)(n, e) ?? "";
-                                if (s && "number" == typeof o)
+                            let l = a ? a.hostname + a.pathname : "";
+                            if (!a || !R.some((e) => l.startsWith(e))) {
+                                let a = (0, j.s)(t, e) ?? "";
+                                if (r && "number" == typeof n)
                                     return (
-                                        (s.children[o] = {
+                                        (r.children[n] = {
                                             type: "element",
                                             tagName: "span",
                                             properties: {},
@@ -369,18 +370,18 @@
                                                 },
                                             ],
                                         }),
-                                        [N._Z, o]
+                                        [w._Z, n]
                                     );
                             }
                         }
                     }),
-                P = [
+                L = [
                     {
                         open: /(?:^|\\n)\$\$/,
                         close: /\$\$/,
                     },
                 ],
-                M = [
+                S = [
                     {
                         open: /\$`/,
                         close: /`\$/,
@@ -394,9 +395,9 @@
                         close: /(?:^|[^ $])(?=\$)\$/,
                     },
                 ],
-                D = new Set(["math"]);
-            var y = o(95459);
-            function F(e) {
+                B = new Set(["math"]);
+            var I = n(95459);
+            function M(e) {
                 return {
                     type: "displaymath",
                     value: e,
@@ -415,40 +416,40 @@
                     },
                 };
             }
-            let B = {
+            let O = {
                     displayDelimiters: [
-                        ...P,
+                        ...L,
                         {
                             open: /\[\s/,
                             close: /\s\]/,
                         },
                     ],
                     inlineDelimiters: [
-                        ...M,
+                        ...S,
                         {
                             open: /\( /,
                             close: / \)/,
                         },
                     ],
                 },
-                k = {
+                D = {
                     "math-renderer": ({
                         node: e,
-                        children: n,
-                        className: o,
-                        ...s
+                        children: t,
+                        className: n,
+                        ...r
                     }) =>
-                        (0, t.createElement)(
+                        (0, o.createElement)(
                             "math-renderer",
                             {
-                                ...s,
-                                class: o,
+                                ...r,
+                                class: n,
                             },
-                            n
+                            t
                         ),
                 },
-                v = (e) =>
-                    (0, T.YR)(e, (e) => {
+                E = (e) =>
+                    (0, C.YR)(e, (e) => {
                         "element" === e.type &&
                             !(
                                 "a" === e.tagName &&
@@ -463,41 +464,41 @@
                                     "href" in e.properties) &&
                                 (e.properties["xlink:show"] = "new"));
                     }),
-                G = {
+                T = {
                     container: "MarkdownRenderer-module__container--dNKcF",
                     fadeInContent:
                         "MarkdownRenderer-module__fadeInContent--e9SCi",
                     noFade: "MarkdownRenderer-module__noFade--P7umO",
                 };
-            var j = o(32269),
-                w = o(91905),
-                U = o(23144),
-                H = o(16961);
-            let K = Symbol("renderFallthrough"),
-                Y = {
+            var A = n(32269),
+                F = n(91905),
+                H = n(23144),
+                P = n(16961);
+            let W = Symbol("renderFallthrough"),
+                K = {
                     entries: (e) => Object.entries(e),
                 };
             function V(e) {
-                let n = {};
-                for (let o of e)
-                    for (let [e, s] of Y.entries(o))
-                        if (s) {
-                            let o = n[e];
-                            n[e] = (n) => {
-                                let a = s(n, K);
-                                return a !== K
+                let t = {};
+                for (let n of e)
+                    for (let [e, r] of K.entries(n))
+                        if (r) {
+                            let n = t[e];
+                            t[e] = (t) => {
+                                let a = r(t, W);
+                                return a !== W
                                     ? a
-                                    : (o?.(n) ?? (0, t.createElement)(e, n));
+                                    : (n?.(t) ?? (0, o.createElement)(e, t));
                             };
                         }
-                return n;
+                return t;
             }
-            function _(e) {
+            function U(e) {
                 return e.map((e) => e.reactComponents).filter((e) => !!e);
             }
-            var X = o(74313);
-            let J = /^\s*$/,
-                W = [
+            var Y = n(74313);
+            let z = /^\s*$/,
+                Q = [
                     [/^\s`/, /^[^\s]`/, "`"],
                     [/^\s_/, /^[^\s]_/, "_"],
                     [/^\s\*\*/, /^[^\s]\*\*/, "**"],
@@ -506,70 +507,70 @@
                     [/^\s\[/, /^[^\s]\]/, "](#)"],
                     [/^\]\(/, /^[^\s]\)/, ")"],
                 ];
-            var q = o(54571);
-            let Q = G.noFade,
-                z = [],
-                $ = (0, t.forwardRef)(function (e, n) {
-                    let o,
-                        r,
-                        i,
+            var q = n(54571);
+            let J = T.noFade,
+                X = [],
+                Z = (0, o.forwardRef)(function (e, t) {
+                    let n,
                         l,
+                        s,
+                        i,
                         c,
-                        m,
+                        d,
                         p,
-                        E,
-                        A,
-                        f,
-                        S,
-                        C,
-                        L,
-                        R,
-                        u,
-                        I,
                         h,
+                        f,
+                        g,
+                        y,
+                        v,
+                        _,
+                        x,
+                        b,
+                        j,
+                        R,
+                        W,
                         K,
-                        Y,
-                        Q,
-                        $ = (0, a.c)(48),
+                        J,
+                        Z = (0, a.c)(48),
                         {
                             className: ea,
-                            markdown: et,
-                            chatMode: er,
-                            openLinksInCurrentTab: ei,
-                            extensions: el,
+                            markdown: eo,
+                            chatMode: el,
+                            openLinksInCurrentTab: es,
+                            extensions: ei,
                             isStreaming: ec,
-                            accessibleHeader: em,
-                            copilotAnnotations: ex,
-                            wrapCodeLines: ed,
+                            accessibleHeader: ed,
+                            copilotAnnotations: em,
+                            wrapCodeLines: eu,
                             onWrapCodeLinesChange: ep,
                         } = e,
-                        eE = void 0 === el ? z : el,
-                        [eA, ef] = (0, t.useState)(ec ?? !1);
-                    ($[0] !== ec
-                        ? ((o = () => {
-                              if (ec) ef(!0);
+                        eh = void 0 === ei ? X : ei,
+                        [ef, eg] = (0, o.useState)(ec ?? !1);
+                    (Z[0] !== ec
+                        ? ((n = () => {
+                              if (ec) eg(!0);
                               else {
                                   let e = setTimeout(() => {
-                                      ef(!1);
+                                      eg(!1);
                                   }, 750);
                                   return () => clearTimeout(e);
                               }
                           }),
-                          (r = [ec]),
-                          ($[0] = ec),
-                          ($[1] = o),
-                          ($[2] = r))
-                        : ((o = $[1]), (r = $[2])),
-                        (0, t.useEffect)(o, r),
-                        $[3] === Symbol.for("react.memo_cache_sentinel")
-                            ? ((i = {
+                          (l = [ec]),
+                          (Z[0] = ec),
+                          (Z[1] = n),
+                          (Z[2] = l))
+                        : ((n = Z[1]), (l = Z[2])),
+                        (0, o.useEffect)(n, l),
+                        Z[3] === Symbol.for("react.memo_cache_sentinel")
+                            ? ((s = {
                                   transformMarkdown: (e) =>
-                                      (0, T.YR)(e, "code", (e) => {
+                                      (0, C.YR)(e, "code", (e) => {
                                           e.data = {
                                               ...e.data,
                                               hName: "code",
                                               hProperties: {
-                                                  [O]: JSON.stringify({
+                                                  [k]: JSON.stringify({
                                                       language: e.lang ?? "",
                                                       code: e.value,
                                                       startOffset:
@@ -583,80 +584,80 @@
                                           };
                                       }),
                                   transformHtml: (e) =>
-                                      (0, T.YR)(e, "element", (e, n, o) => {
-                                          let s = e.children?.[0];
-                                          o &&
-                                              void 0 !== n &&
+                                      (0, C.YR)(e, "element", (e, t, n) => {
+                                          let r = e.children?.[0];
+                                          n &&
+                                              void 0 !== t &&
                                               "pre" === e.tagName &&
                                               e.children?.length === 1 &&
-                                              s?.type === "element" &&
-                                              "code" === s.tagName &&
-                                              O in s.properties &&
-                                              o.children.splice(n, 1, s);
+                                              r?.type === "element" &&
+                                              "code" === r.tagName &&
+                                              k in r.properties &&
+                                              n.children.splice(t, 1, r);
                                       }),
-                                  reactComponents: b,
+                                  reactComponents: N,
                               }),
-                              (l = {
+                              (i = {
                                   transformMarkdown: (
                                       ({
-                                          displayDelimiters: e = P,
-                                          inlineDelimiters: n = M,
-                                          codeBlockLanguages: o = D,
+                                          displayDelimiters: e = L,
+                                          inlineDelimiters: t = S,
+                                          codeBlockLanguages: n = B,
                                       } = {}) =>
-                                      (s) => {
+                                      (r) => {
                                           (((e) => {
-                                              let n = e.map(
-                                                  ({ open: e, close: n }) =>
+                                              let t = e.map(
+                                                  ({ open: e, close: t }) =>
                                                       RegExp(
                                                           `(?:^|\\n) *${e.source}((?:
-|.)+?)${n.source}(?= *(?:\\n|$))`,
+|.)+?)${t.source}(?= *(?:\\n|$))`,
                                                           "g"
                                                       )
                                               );
                                               return (e) =>
-                                                  (0, y.T)(
+                                                  (0, I.T)(
                                                       e,
-                                                      n.map((e) => [
+                                                      t.map((e) => [
                                                           e,
-                                                          (e, n) => F(n),
+                                                          (e, t) => M(t),
                                                       ])
                                                   );
-                                          })(e)(s),
+                                          })(e)(r),
                                               ((e) =>
-                                                  (0, T.YR)(
+                                                  (0, C.YR)(
                                                       e,
                                                       "code",
-                                                      (e, n, s) => {
+                                                      (e, t, r) => {
                                                           e.lang &&
-                                                              o.has(e.lang) &&
-                                                              s &&
-                                                              void 0 !== n &&
-                                                              s.children.splice(
-                                                                  n,
+                                                              n.has(e.lang) &&
+                                                              r &&
+                                                              void 0 !== t &&
+                                                              r.children.splice(
+                                                                  t,
                                                                   1,
-                                                                  F(e.value)
+                                                                  M(e.value)
                                                               );
                                                       }
-                                                  ))(s),
+                                                  ))(r),
                                               ((e) => {
-                                                  let n = e.map(
-                                                      ({ open: e, close: n }) =>
+                                                  let t = e.map(
+                                                      ({ open: e, close: t }) =>
                                                           RegExp(
-                                                              `(?:^|[^a-z0-9])(?=${e.source})${e.source}(.+?)${n.source}(?![a-z0-9])`,
+                                                              `(?:^|[^a-z0-9])(?=${e.source})${e.source}(.+?)${t.source}(?![a-z0-9])`,
                                                               "g"
                                                           )
                                                   );
                                                   return (e) =>
-                                                      (0, y.T)(
+                                                      (0, I.T)(
                                                           e,
-                                                          n.map((e) => [
+                                                          t.map((e) => [
                                                               e,
-                                                              (e, n) => {
-                                                                  var o;
+                                                              (e, t) => {
+                                                                  var n;
                                                                   return {
                                                                       type: "inlinemath",
-                                                                      value: (o =
-                                                                          n),
+                                                                      value: (n =
+                                                                          t),
                                                                       data: {
                                                                           hName: "math-renderer",
                                                                           hProperties:
@@ -669,7 +670,7 @@
                                                                               [
                                                                                   {
                                                                                       type: "text",
-                                                                                      value: o,
+                                                                                      value: n,
                                                                                   },
                                                                               ],
                                                                       },
@@ -677,473 +678,473 @@
                                                               },
                                                           ])
                                                       );
-                                              })(n)(s));
+                                              })(t)(r));
                                       }
-                                  )(B),
-                                  reactComponents: k,
+                                  )(O),
+                                  reactComponents: D,
                               }),
-                              ($[3] = i),
-                              ($[4] = l))
-                            : ((i = $[3]), (l = $[4])),
-                        $[5] !== ei
+                              (Z[3] = s),
+                              (Z[4] = i))
+                            : ((s = Z[3]), (i = Z[4])),
+                        Z[5] !== es
                             ? ((c = (function ({ openLinksInCurrentTab: e }) {
                                   return {
-                                      transformHtml: e ? void 0 : v,
+                                      transformHtml: e ? void 0 : E,
                                   };
                               })({
-                                  openLinksInCurrentTab: ei,
+                                  openLinksInCurrentTab: es,
                               })),
-                              ($[5] = ei),
-                              ($[6] = c))
-                            : (c = $[6]),
-                        $[7] !== eA
-                            ? ((m = (function ({ isStreaming: e }) {
+                              (Z[5] = es),
+                              (Z[6] = c))
+                            : (c = Z[6]),
+                        Z[7] !== ef
+                            ? ((d = (function ({ isStreaming: e }) {
                                   return e
                                       ? {
                                             preprocessMarkdown: (
                                                 e
                                             ) => `${(function (e) {
-                                                let n = new Set();
+                                                let t = new Set();
                                                 for (
-                                                    let o = -1,
-                                                        s = ` ${e.slice(0, 2)}`;
-                                                    o <= e.length - 3;
-                                                    o++, s = e.slice(o, o + 3)
+                                                    let n = -1,
+                                                        r = ` ${e.slice(0, 2)}`;
+                                                    n <= e.length - 3;
+                                                    n++, r = e.slice(n, n + 3)
                                                 )
-                                                    for (let [e, o, a] of W)
+                                                    for (let [e, n, a] of Q)
                                                         if (
-                                                            !n.has(a) &&
-                                                            e.test(s)
+                                                            !t.has(a) &&
+                                                            e.test(r)
                                                         ) {
-                                                            n.add(a);
+                                                            t.add(a);
                                                             break;
                                                         } else if (
-                                                            n.has(a) &&
-                                                            o.test(s)
+                                                            t.has(a) &&
+                                                            n.test(r)
                                                         ) {
-                                                            n.delete(a);
+                                                            t.delete(a);
                                                             break;
                                                         }
-                                                for (let o of Array.from(
-                                                    n
+                                                for (let n of Array.from(
+                                                    t
                                                 ).reverse())
-                                                    e += o;
+                                                    e += n;
                                                 return e;
                                             })(e)}
 \uE000`,
                                             transformMarkdown: (e) =>
-                                                (0, N.VG)(e, (e, n) => {
+                                                (0, w.VG)(e, (e, t) => {
                                                     if (
                                                         "value" in e &&
                                                         e.value?.includes(
                                                             "\uE000"
                                                         )
                                                     )
-                                                        for (let o of ((e.value =
+                                                        for (let n of ((e.value =
                                                             e.value.replace(
                                                                 "\uE000",
                                                                 ""
                                                             )),
                                                         (e.isStreaming = !0),
-                                                        n))
-                                                            o.isStreaming = !0;
+                                                        t))
+                                                            n.isStreaming = !0;
                                                 }),
                                             transformHtml: (e) =>
-                                                (0, T.YR)(
+                                                (0, C.YR)(
                                                     e,
                                                     "text",
-                                                    (e, n, o) => {
+                                                    (e, t, n) => {
                                                         if (
-                                                            void 0 === o ||
                                                             void 0 === n ||
-                                                            J.test(e.value)
+                                                            void 0 === t ||
+                                                            z.test(e.value)
                                                         )
                                                             return;
-                                                        let s = e.value
+                                                        let r = e.value
                                                             .split(" ")
                                                             .map(
                                                                 (
                                                                     e,
-                                                                    n,
+                                                                    t,
                                                                     {
-                                                                        length: o,
+                                                                        length: n,
                                                                     }
                                                                 ) => {
-                                                                    let s =
-                                                                        n <
-                                                                        o - 1
+                                                                    let r =
+                                                                        t <
+                                                                        n - 1
                                                                             ? `${e} `
                                                                             : e;
-                                                                    return J.test(
-                                                                        s
+                                                                    return z.test(
+                                                                        r
                                                                     )
                                                                         ? {
                                                                               type: "text",
-                                                                              value: s,
+                                                                              value: r,
                                                                           }
                                                                         : (0,
-                                                                          X.h)(
+                                                                          Y.h)(
                                                                               "span",
-                                                                              s
+                                                                              r
                                                                           );
                                                                 }
                                                             );
                                                         return (
-                                                            o.children.splice(
-                                                                n,
+                                                            n.children.splice(
+                                                                t,
                                                                 1,
-                                                                ...s
+                                                                ...r
                                                             ),
-                                                            n + s.length
+                                                            t + r.length
                                                         );
                                                     }
                                                 ),
                                         }
                                       : {};
                               })({
-                                  isStreaming: eA,
+                                  isStreaming: ef,
                               })),
-                              ($[7] = eA),
-                              ($[8] = m))
-                            : (m = $[8]),
-                        $[9] === Symbol.for("react.memo_cache_sentinel")
+                              (Z[7] = ef),
+                              (Z[8] = d))
+                            : (d = Z[8]),
+                        Z[9] === Symbol.for("react.memo_cache_sentinel")
                             ? ((p = {
-                                  transformHtml: g,
+                                  transformHtml: $,
                               }),
-                              ($[9] = p))
-                            : (p = $[9]),
-                        $[10] !== eE || $[11] !== c || $[12] !== m
-                            ? ((E = [i, l, c, m, p, ...eE]),
-                              ($[10] = eE),
-                              ($[11] = c),
-                              ($[12] = m),
-                              ($[13] = E))
-                            : (E = $[13]));
-                    let eS = E;
-                    $[14] !== eS
-                        ? ((A = [w.A, ...eS.map(Z).filter(ee)]),
-                          ($[14] = eS),
-                          ($[15] = A))
-                        : (A = $[15]);
-                    let eC = A;
-                    ($[16] !== eS
-                        ? ((f = () => [
+                              (Z[9] = p))
+                            : (p = Z[9]),
+                        Z[10] !== eh || Z[11] !== c || Z[12] !== d
+                            ? ((h = [s, i, c, d, p, ...eh]),
+                              (Z[10] = eh),
+                              (Z[11] = c),
+                              (Z[12] = d),
+                              (Z[13] = h))
+                            : (h = Z[13]));
+                    let ey = h;
+                    Z[14] !== ey
+                        ? ((f = [F.A, ...ey.map(G).filter(ee)]),
+                          (Z[14] = ey),
+                          (Z[15] = f))
+                        : (f = Z[15]);
+                    let ev = f;
+                    (Z[16] !== ey
+                        ? ((g = () => [
                               [
-                                  U.A,
+                                  H.A,
                                   {
-                                      languages: H.l,
+                                      languages: P.l,
                                   },
                               ],
-                              ...eS.map(en).filter(eo),
+                              ...ey.map(et).filter(en),
                           ]),
-                          ($[16] = eS),
-                          ($[17] = f))
-                        : (f = $[17]),
-                        $[18] === Symbol.for("react.memo_cache_sentinel")
-                            ? ((S = []), (C = []), ($[18] = S), ($[19] = C))
-                            : ((S = $[18]), (C = $[19])));
-                    let [eL] = (0, q.I)(f, S, C),
-                        eR = (function (e) {
-                            let n,
-                                o,
-                                s,
-                                r = (0, a.c)(5);
-                            r[0] !== e
-                                ? ((n = () => V(_(e))), (r[0] = e), (r[1] = n))
-                                : (n = r[1]);
-                            let [i, l] = (0, t.useState)(n),
-                                c = (0, t.useRef)(e);
+                          (Z[16] = ey),
+                          (Z[17] = g))
+                        : (g = Z[17]),
+                        Z[18] === Symbol.for("react.memo_cache_sentinel")
+                            ? ((y = []), (v = []), (Z[18] = y), (Z[19] = v))
+                            : ((y = Z[18]), (v = Z[19])));
+                    let [e_] = (0, q.I)(g, y, v),
+                        ex = (function (e) {
+                            let t,
+                                n,
+                                r,
+                                l = (0, a.c)(5);
+                            l[0] !== e
+                                ? ((t = () => V(U(e))), (l[0] = e), (l[1] = t))
+                                : (t = l[1]);
+                            let [s, i] = (0, o.useState)(t),
+                                c = (0, o.useRef)(e);
                             return (
-                                r[2] !== e
-                                    ? ((o = () => {
-                                          let n = _(c.current),
-                                              o = _(e);
+                                l[2] !== e
+                                    ? ((n = () => {
+                                          let t = U(c.current),
+                                              n = U(e);
                                           c.current = e;
-                                          let s = null;
-                                          for (let [e, a] of (n.length !==
-                                              o.length &&
-                                              (s = Error(
+                                          let r = null;
+                                          for (let [e, a] of (t.length !==
+                                              n.length &&
+                                              (r = Error(
                                                   "A `MarkdownRenderer` extension containing a `reactComponents` field was added or removed. React extensions must remain referentially constant."
                                               )),
-                                          n.entries()))
-                                              a !== o[e] &&
-                                                  (s =
+                                          t.entries()))
+                                              a !== n[e] &&
+                                                  (r =
                                                       Error(`The \`reactComponents\` field in at least one \`MarkdownRenderer\` extension changed, or extensions containing \`reactComponent\` fields were reordered. React extensions must remain referentially constant.
 NOTE: This error may be safely ignored if it occurs due to hot-reloading in local development.`));
-                                          s &&
-                                              (l(V(o)),
+                                          r &&
+                                              (i(V(n)),
                                               (async () => {
-                                                  throw s;
+                                                  throw r;
                                               })());
                                       }),
-                                      (s = [e]),
-                                      (r[2] = e),
-                                      (r[3] = o),
-                                      (r[4] = s))
-                                    : ((o = r[3]), (s = r[4])),
-                                (0, t.useEffect)(o, s),
-                                i
+                                      (r = [e]),
+                                      (l[2] = e),
+                                      (l[3] = n),
+                                      (l[4] = r))
+                                    : ((n = l[3]), (r = l[4])),
+                                (0, o.useEffect)(n, r),
+                                s
                             );
-                        })(eS);
-                    $[20] !== eS || $[21] !== et
-                        ? ((L = eS.reduce(es, et)),
-                          ($[20] = eS),
-                          ($[21] = et),
-                          ($[22] = L))
-                        : (L = $[22]);
-                    let eT = L;
-                    $[23] !== er ||
-                    $[24] !== ex ||
-                    $[25] !== ec ||
-                    $[26] !== ep ||
-                    $[27] !== ed
-                        ? ((R = {
+                        })(ey);
+                    Z[20] !== ey || Z[21] !== eo
+                        ? ((_ = ey.reduce(er, eo)),
+                          (Z[20] = ey),
+                          (Z[21] = eo),
+                          (Z[22] = _))
+                        : (_ = Z[22]);
+                    let eC = _;
+                    Z[23] !== el ||
+                    Z[24] !== em ||
+                    Z[25] !== ec ||
+                    Z[26] !== ep ||
+                    Z[27] !== eu
+                        ? ((x = {
                               isStreaming: ec,
-                              chatMode: er,
-                              copilotAnnotations: ex,
-                              wrapCodeLines: ed,
+                              chatMode: el,
+                              copilotAnnotations: em,
+                              wrapCodeLines: eu,
                               onWrapCodeLinesChange: ep,
                           }),
-                          ($[23] = er),
-                          ($[24] = ex),
-                          ($[25] = ec),
-                          ($[26] = ep),
-                          ($[27] = ed),
-                          ($[28] = R))
-                        : (R = $[28]);
-                    let eu = R;
-                    $[29] !== em
-                        ? ((u =
-                              em &&
-                              (0, s.jsx)("h3", {
+                          (Z[23] = el),
+                          (Z[24] = em),
+                          (Z[25] = ec),
+                          (Z[26] = ep),
+                          (Z[27] = eu),
+                          (Z[28] = x))
+                        : (x = Z[28]);
+                    let eb = x;
+                    Z[29] !== ed
+                        ? ((b =
+                              ed &&
+                              (0, r.jsx)("h3", {
                                   className: "sr-only",
-                                  children: em,
+                                  children: ed,
                               })),
-                          ($[29] = em),
-                          ($[30] = u))
-                        : (u = $[30]);
-                    let eO = eA && G.fadeInContent;
+                          (Z[29] = ed),
+                          (Z[30] = b))
+                        : (b = Z[30]);
+                    let ek = ef && T.fadeInContent;
                     return (
-                        $[31] !== ea || $[32] !== eO
-                            ? ((I = (0, d.$)(
+                        Z[31] !== ea || Z[32] !== ek
+                            ? ((j = (0, u.$)(
                                   "markdown-body",
-                                  G.container,
+                                  T.container,
                                   ea,
-                                  eO
+                                  ek
                               )),
-                              ($[31] = ea),
-                              ($[32] = eO),
-                              ($[33] = I))
-                            : (I = $[33]),
-                        $[34] === Symbol.for("react.memo_cache_sentinel")
-                            ? ((h = {
+                              (Z[31] = ea),
+                              (Z[32] = ek),
+                              (Z[33] = j))
+                            : (j = Z[33]),
+                        Z[34] === Symbol.for("react.memo_cache_sentinel")
+                            ? ((R = {
                                   "--MarkdownRenderer_streaming-fade-duration":
                                       "750ms",
                               }),
-                              ($[34] = h))
-                            : (h = $[34]),
-                        $[35] !== eR ||
-                        $[36] !== eT ||
-                        $[37] !== eL ||
-                        $[38] !== eC
-                            ? ((K = (0, s.jsx)(j.o, {
-                                  remarkPlugins: eC,
-                                  rehypePlugins: eL,
-                                  components: eR,
-                                  children: eT,
+                              (Z[34] = R))
+                            : (R = Z[34]),
+                        Z[35] !== ex ||
+                        Z[36] !== eC ||
+                        Z[37] !== e_ ||
+                        Z[38] !== ev
+                            ? ((W = (0, r.jsx)(A.o, {
+                                  remarkPlugins: ev,
+                                  rehypePlugins: e_,
+                                  components: ex,
+                                  children: eC,
                               })),
-                              ($[35] = eR),
-                              ($[36] = eT),
-                              ($[37] = eL),
-                              ($[38] = eC),
-                              ($[39] = K))
-                            : (K = $[39]),
-                        $[40] !== n || $[41] !== I || $[42] !== K
-                            ? ((Y = (0, s.jsx)("div", {
-                                  ref: n,
-                                  className: I,
-                                  style: h,
+                              (Z[35] = ex),
+                              (Z[36] = eC),
+                              (Z[37] = e_),
+                              (Z[38] = ev),
+                              (Z[39] = W))
+                            : (W = Z[39]),
+                        Z[40] !== t || Z[41] !== j || Z[42] !== W
+                            ? ((K = (0, r.jsx)("div", {
+                                  ref: t,
+                                  className: j,
+                                  style: R,
                                   "data-copilot-markdown": !0,
-                                  children: K,
+                                  children: W,
                               })),
-                              ($[40] = n),
-                              ($[41] = I),
-                              ($[42] = K),
-                              ($[43] = Y))
-                            : (Y = $[43]),
-                        $[44] !== eu || $[45] !== u || $[46] !== Y
-                            ? ((Q = (0, s.jsxs)(x.F.Provider, {
-                                  value: eu,
-                                  children: [u, Y],
+                              (Z[40] = t),
+                              (Z[41] = j),
+                              (Z[42] = W),
+                              (Z[43] = K))
+                            : (K = Z[43]),
+                        Z[44] !== eb || Z[45] !== b || Z[46] !== K
+                            ? ((J = (0, r.jsxs)(m.F.Provider, {
+                                  value: eb,
+                                  children: [b, K],
                               })),
-                              ($[44] = eu),
-                              ($[45] = u),
-                              ($[46] = Y),
-                              ($[47] = Q))
-                            : (Q = $[47]),
-                        Q
+                              (Z[44] = eb),
+                              (Z[45] = b),
+                              (Z[46] = K),
+                              (Z[47] = J))
+                            : (J = Z[47]),
+                        J
                     );
                 });
             try {
-                $.displayName || ($.displayName = "MarkdownRenderer");
+                Z.displayName || (Z.displayName = "MarkdownRenderer");
             } catch {}
-            function Z(e) {
+            function G(e) {
                 return e.transformMarkdown ? () => e.transformMarkdown : void 0;
             }
             function ee(e) {
                 return !!e;
             }
-            function en(e) {
+            function et(e) {
                 return e.transformHtml ? () => e.transformHtml : void 0;
             }
-            function eo(e) {
+            function en(e) {
                 return !!e;
             }
-            function es(e, n) {
-                return n.preprocessMarkdown?.(e) ?? e;
+            function er(e, t) {
+                return t.preprocessMarkdown?.(e) ?? e;
             }
         },
-        22072: (e, n, o) => {
-            o.d(n, {
-                t: () => A,
+        22072: (e, t, n) => {
+            n.d(t, {
+                t: () => f,
             });
-            var s = o(74848),
-                a = o(21728),
-                t = o(15220),
-                r = o(38621),
-                i = o(5524),
-                l = o(77430);
+            var r = n(74848),
+                a = n(21728),
+                o = n(15220),
+                l = n(38621),
+                s = n(5524),
+                i = n(77430);
             let c = {
                 summary: "AnnotationsList-module__summary--s4Hbl",
                 summaryText: "AnnotationsList-module__summaryText--fuV8i",
                 chevron: "AnnotationsList-module__chevron--bQbqF",
                 items: "AnnotationsList-module__items--bRsb6",
             };
-            function m(e) {
-                let n,
+            function d(e) {
+                let t,
+                    n,
                     o,
-                    t,
-                    l,
-                    m,
-                    x = (0, a.c)(11),
-                    { summary: d, icon: p, children: E } = e;
+                    i,
+                    d,
+                    m = (0, a.c)(11),
+                    { summary: u, icon: p, children: h } = e;
                 return (
-                    x[0] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((n = (0, s.jsx)("span", {
+                    m[0] === Symbol.for("react.memo_cache_sentinel")
+                        ? ((t = (0, r.jsx)("span", {
                               className: c.chevron,
-                              children: (0, s.jsx)(r.ChevronRightIcon, {
+                              children: (0, r.jsx)(l.ChevronRightIcon, {
                                   size: "small",
                               }),
                           })),
-                          (x[0] = n))
-                        : (n = x[0]),
-                    x[1] !== d
-                        ? ((o = (0, s.jsx)("span", {
+                          (m[0] = t))
+                        : (t = m[0]),
+                    m[1] !== u
+                        ? ((n = (0, r.jsx)("span", {
                               className: c.summaryText,
-                              children: d,
+                              children: u,
                           })),
-                          (x[1] = d),
-                          (x[2] = o))
-                        : (o = x[2]),
-                    x[3] !== p || x[4] !== o
-                        ? ((t = (0, s.jsxs)("summary", {
+                          (m[1] = u),
+                          (m[2] = n))
+                        : (n = m[2]),
+                    m[3] !== p || m[4] !== n
+                        ? ((o = (0, r.jsxs)("summary", {
                               className: c.summary,
-                              children: [n, p, " ", o],
+                              children: [t, p, " ", n],
                           })),
-                          (x[3] = p),
-                          (x[4] = o),
-                          (x[5] = t))
-                        : (t = x[5]),
-                    x[6] !== E
-                        ? ((l = (0, s.jsx)("div", {
+                          (m[3] = p),
+                          (m[4] = n),
+                          (m[5] = o))
+                        : (o = m[5]),
+                    m[6] !== h
+                        ? ((i = (0, r.jsx)("div", {
                               className: c.items,
-                              children: (0, s.jsx)(i.l, {
+                              children: (0, r.jsx)(s.l, {
                                   variant: "full",
-                                  children: E,
+                                  children: h,
                               }),
                           })),
-                          (x[6] = E),
-                          (x[7] = l))
-                        : (l = x[7]),
-                    x[8] !== t || x[9] !== l
-                        ? ((m = (0, s.jsxs)("details", {
-                              children: [t, l],
+                          (m[6] = h),
+                          (m[7] = i))
+                        : (i = m[7]),
+                    m[8] !== o || m[9] !== i
+                        ? ((d = (0, r.jsxs)("details", {
+                              children: [o, i],
                           })),
-                          (x[8] = t),
-                          (x[9] = l),
-                          (x[10] = m))
-                        : (m = x[10]),
-                    m
+                          (m[8] = o),
+                          (m[9] = i),
+                          (m[10] = d))
+                        : (d = m[10]),
+                    d
                 );
             }
             try {
-                m.displayName || (m.displayName = "AnnotationsList");
+                d.displayName || (d.displayName = "AnnotationsList");
             } catch {}
-            function x(e) {
-                let n,
-                    o = (0, a.c)(3),
-                    { references: t } = e;
-                if (o[0] !== t) {
+            function m(e) {
+                let t,
+                    n = (0, a.c)(3),
+                    { references: o } = e;
+                if (n[0] !== o) {
                     let e,
                         a = (function (e) {
-                            let n = new Map();
-                            for (let o of e) {
+                            let t = new Map();
+                            for (let n of e) {
                                 let e = (function (e) {
-                                    let n =
+                                    let t =
                                         /^https?:\/\/github\.com\/([^/]+)\/([^/]+)/.exec(
                                             e
                                         );
-                                    return n && n[1] && n[2]
+                                    return t && t[1] && t[2]
                                         ? {
-                                              owner: n[1],
-                                              name: n[2],
+                                              owner: t[1],
+                                              name: t[2],
                                           }
                                         : null;
-                                })(o.sourceURL);
+                                })(n.sourceURL);
                                 if (!e) continue;
-                                let { owner: s, name: a } = e;
-                                n.set(a, {
+                                let { owner: r, name: a } = e;
+                                t.set(a, {
                                     name: a,
-                                    owner: s,
-                                    url: `https://github.com/${s}/${a}`,
+                                    owner: r,
+                                    url: `https://github.com/${r}/${a}`,
                                     license:
-                                        "NOASSERTION" === o.license
+                                        "NOASSERTION" === n.license
                                             ? null
-                                            : o.license,
+                                            : n.license,
                                 });
                             }
-                            return Array.from(n.values()).sort((e, n) =>
-                                e.name.localeCompare(n.name)
+                            return Array.from(t.values()).sort((e, t) =>
+                                e.name.localeCompare(t.name)
                             );
-                        })(t);
-                    (o[2] === Symbol.for("react.memo_cache_sentinel")
-                        ? ((e = (0, s.jsx)("span", {
+                        })(o);
+                    (n[2] === Symbol.for("react.memo_cache_sentinel")
+                        ? ((e = (0, r.jsx)("span", {
                               style: {
                                   color: "var(--fgColor-muted)",
                               },
-                              children: (0, s.jsx)(r.LawIcon, {}),
+                              children: (0, r.jsx)(l.LawIcon, {}),
                           })),
-                          (o[2] = e))
-                        : (e = o[2]),
-                        (n = (0, s.jsx)(m, {
+                          (n[2] = e))
+                        : (e = n[2]),
+                        (t = (0, r.jsx)(d, {
                             icon: e,
                             summary: `Public code references from ${a.length} ${1 === a.length ? "repository" : "repositories"}`,
-                            children: a.map(d),
+                            children: a.map(u),
                         })),
-                        (o[0] = t),
-                        (o[1] = n));
-                } else n = o[1];
-                return n;
+                        (n[0] = o),
+                        (n[1] = t));
+                } else t = n[1];
+                return t;
             }
-            function d(e) {
-                return (0, s.jsxs)(
-                    i.l.LinkItem,
+            function u(e) {
+                return (0, r.jsxs)(
+                    s.l.LinkItem,
                     {
                         href: e.url,
                         tabIndex: void 0,
                         children: [
-                            (0, s.jsx)(i.l.LeadingVisual, {
-                                children: (0, s.jsx)(l.r, {
+                            (0, r.jsx)(s.l.LeadingVisual, {
+                                children: (0, r.jsx)(i.r, {
                                     src: `https://github.com/${e.owner}.png`,
                                     alt: `@${e.owner} avatar`,
                                     size: 20,
@@ -1152,7 +1153,7 @@ NOTE: This error may be safely ignored if it occurs due to hot-reloading in loca
                             e.owner,
                             "/",
                             e.name,
-                            (0, s.jsx)(i.l.Description, {
+                            (0, r.jsx)(s.l.Description, {
                                 children: e.license
                                     ? `${e.license} license`
                                     : "No license",
@@ -1163,4769 +1164,220 @@ NOTE: This error may be safely ignored if it occurs due to hot-reloading in loca
                 );
             }
             try {
-                x.displayName || (x.displayName = "ReferenceAnnotations");
+                m.displayName || (m.displayName = "ReferenceAnnotations");
             } catch {}
             function p(e) {
-                let n,
+                let t,
+                    n,
                     o,
-                    t,
-                    i = (0, a.c)(6),
-                    { vulnerabilities: l } = e;
-                i[0] === Symbol.for("react.memo_cache_sentinel")
-                    ? ((n = (0, s.jsx)("span", {
+                    s = (0, a.c)(6),
+                    { vulnerabilities: i } = e;
+                s[0] === Symbol.for("react.memo_cache_sentinel")
+                    ? ((t = (0, r.jsx)("span", {
                           style: {
                               color: "var(--fgColor-attention)",
                           },
-                          children: (0, s.jsx)(r.AlertIcon, {}),
+                          children: (0, r.jsx)(l.AlertIcon, {}),
                       })),
-                      (i[0] = n))
-                    : (n = i[0]);
-                let c = `${l.length} ${1 === l.length ? "vulnerability" : "vulnerabilities"} detected`;
+                      (s[0] = t))
+                    : (t = s[0]);
+                let c = `${i.length} ${1 === i.length ? "vulnerability" : "vulnerabilities"} detected`;
                 return (
-                    i[1] !== l
-                        ? ((o = l.map(E)), (i[1] = l), (i[2] = o))
-                        : (o = i[2]),
-                    i[3] !== c || i[4] !== o
-                        ? ((t = (0, s.jsx)(m, {
-                              icon: n,
+                    s[1] !== i
+                        ? ((n = i.map(h)), (s[1] = i), (s[2] = n))
+                        : (n = s[2]),
+                    s[3] !== c || s[4] !== n
+                        ? ((o = (0, r.jsx)(d, {
+                              icon: t,
                               summary: c,
-                              children: o,
+                              children: n,
                           })),
-                          (i[3] = c),
-                          (i[4] = o),
-                          (i[5] = t))
-                        : (t = i[5]),
-                    t
+                          (s[3] = c),
+                          (s[4] = n),
+                          (s[5] = o))
+                        : (o = s[5]),
+                    o
                 );
             }
-            function E(e, n) {
-                return (0, s.jsxs)(
-                    i.l.Item,
+            function h(e, t) {
+                return (0, r.jsxs)(
+                    s.l.Item,
                     {
                         children: [
                             e.uiType,
-                            (0, s.jsx)(i.l.Description, {
+                            (0, r.jsx)(s.l.Description, {
                                 variant: "block",
                                 children: e.uiDescription,
                             }),
                         ],
                     },
-                    n
+                    t
                 );
             }
             try {
                 p.displayName || (p.displayName = "VulnerabilityAnnotations");
             } catch {}
-            let A = (e) => {
-                let n,
-                    o,
-                    r,
-                    i,
-                    l = (0, a.c)(10),
+            let f = (e) => {
+                let t,
+                    n,
+                    l,
+                    s,
+                    i = (0, a.c)(10),
                     {
                         publicCodeReferences: c,
-                        codeVulnerabilities: m,
-                        onClose: d,
+                        codeVulnerabilities: d,
+                        onClose: u,
                     } = e;
-                l[0] !== d
-                    ? ((n = () => {
-                          d();
+                i[0] !== u
+                    ? ((t = () => {
+                          u();
                       }),
-                      (l[0] = d),
-                      (l[1] = n))
-                    : (n = l[1]);
-                let E = n;
+                      (i[0] = u),
+                      (i[1] = t))
+                    : (t = i[1]);
+                let h = t;
                 return (
-                    l[2] !== c
-                        ? ((o =
+                    i[2] !== c
+                        ? ((n =
                               c &&
                               c.length > 0 &&
-                              (0, s.jsx)(x, {
-                                  references: c.map(f),
+                              (0, r.jsx)(m, {
+                                  references: c.map(g),
                               })),
-                          (l[2] = c),
-                          (l[3] = o))
-                        : (o = l[3]),
-                    l[4] !== m
-                        ? ((r =
-                              m &&
-                              m.length > 0 &&
-                              (0, s.jsx)(p, {
-                                  vulnerabilities: m.map(S),
+                          (i[2] = c),
+                          (i[3] = n))
+                        : (n = i[3]),
+                    i[4] !== d
+                        ? ((l =
+                              d &&
+                              d.length > 0 &&
+                              (0, r.jsx)(p, {
+                                  vulnerabilities: d.map(y),
                               })),
-                          (l[4] = m),
-                          (l[5] = r))
-                        : (r = l[5]),
-                    l[6] !== E || l[7] !== o || l[8] !== r
-                        ? ((i = (0, s.jsxs)(t.l, {
+                          (i[4] = d),
+                          (i[5] = l))
+                        : (l = i[5]),
+                    i[6] !== h || i[7] !== n || i[8] !== l
+                        ? ((s = (0, r.jsxs)(o.l, {
                               title: "Code insights",
                               subtitle:
                                   "Find matches across our platform or check for code vulnerabilities.",
-                              onClose: E,
+                              onClose: h,
                               width: "xlarge",
-                              children: [o, r],
+                              children: [n, l],
                           })),
-                          (l[6] = E),
-                          (l[7] = o),
-                          (l[8] = r),
-                          (l[9] = i))
-                        : (i = l[9]),
-                    i
+                          (i[6] = h),
+                          (i[7] = n),
+                          (i[8] = l),
+                          (i[9] = s))
+                        : (s = i[9]),
+                    s
                 );
             };
             try {
-                A.displayName || (A.displayName = "CodeInsightsDialog");
+                f.displayName || (f.displayName = "CodeInsightsDialog");
             } catch {}
-            function f(e) {
+            function g(e) {
                 return e.details;
             }
-            function S(e) {
+            function y(e) {
                 return e.details;
             }
         },
-        23967: (e, n, o) => {
-            function s(e) {
-                let n = e.toUpperCase(),
-                    o = r[n];
-                return (
-                    !o && t[n] && (o = r[t[n]]),
-                    o ?? {
-                        name: e,
-                    }
-                );
-            }
-            o.d(n, {
-                Yr: () => a,
-                r4: () => r,
-                vL: () => s,
+        31339: (e, t, n) => {
+            n.d(t, {
+                q: () => l,
             });
-            let a = new Set(["Markdown", "MDX"]),
-                t = {
-                    CPP: "C++",
-                    CSHARP: "C#",
-                    FSHARP: "F#",
-                    VBNET: "VISUAL BASIC .NET",
-                },
-                r = {
-                    "1C ENTERPRISE": {
-                        color: "#814CCC",
-                        name: "1C Enterprise",
-                        extensions: [".bsl", ".os"],
-                    },
-                    "2-DIMENSIONAL ARRAY": {
-                        color: "#38761D",
-                        name: "2-Dimensional Array",
-                        extensions: [".2da"],
-                    },
-                    "4D": {
-                        color: "#004289",
-                        name: "4D",
-                        extensions: [".4dm"],
-                    },
-                    ABAP: {
-                        color: "#E8274B",
-                        name: "ABAP",
-                        extensions: [".abap"],
-                    },
-                    "ABAP CDS": {
-                        color: "#555e25",
-                        name: "ABAP CDS",
-                        extensions: [".asddls"],
-                    },
-                    ABNF: {
-                        name: "ABNF",
-                        extensions: [".abnf"],
-                    },
-                    "AGS SCRIPT": {
-                        color: "#B9D9FF",
-                        name: "AGS Script",
-                        extensions: [".asc", ".ash"],
-                    },
-                    AIDL: {
-                        color: "#34EB6B",
-                        name: "AIDL",
-                        extensions: [".aidl"],
-                    },
-                    AL: {
-                        color: "#3AA2B5",
-                        name: "AL",
-                        extensions: [".al"],
-                    },
-                    AMPL: {
-                        color: "#E6EFBB",
-                        name: "AMPL",
-                        extensions: [".ampl", ".mod"],
-                    },
-                    ANTLR: {
-                        color: "#9DC3FF",
-                        name: "ANTLR",
-                        extensions: [".g4"],
-                    },
-                    "API BLUEPRINT": {
-                        color: "#2ACCA8",
-                        name: "API Blueprint",
-                        extensions: [".apib"],
-                    },
-                    APL: {
-                        color: "#5A8164",
-                        name: "APL",
-                        extensions: [".apl", ".dyalog"],
-                    },
-                    ASL: {
-                        name: "ASL",
-                        extensions: [".asl", ".dsl"],
-                    },
-                    "ASN.1": {
-                        name: "ASN.1",
-                        extensions: [".asn", ".asn1"],
-                    },
-                    "ASP.NET": {
-                        color: "#9400ff",
-                        name: "ASP.NET",
-                        extensions: [
-                            ".asax",
-                            ".ascx",
-                            ".ashx",
-                            ".asmx",
-                            ".aspx",
-                            ".axd",
-                        ],
-                    },
-                    ATS: {
-                        color: "#1ac620",
-                        name: "ATS",
-                        extensions: [".dats", ".hats", ".sats"],
-                    },
-                    ACTIONSCRIPT: {
-                        color: "#882B0F",
-                        name: "ActionScript",
-                        extensions: [".as"],
-                    },
-                    ADA: {
-                        color: "#02f88c",
-                        name: "Ada",
-                        extensions: [".adb", ".ada", ".ads"],
-                    },
-                    "ADBLOCK FILTER LIST": {
-                        color: "#800000",
-                        name: "Adblock Filter List",
-                        extensions: [".txt"],
-                    },
-                    "ADOBE FONT METRICS": {
-                        color: "#fa0f00",
-                        name: "Adobe Font Metrics",
-                        extensions: [".afm"],
-                    },
-                    AGDA: {
-                        color: "#315665",
-                        name: "Agda",
-                        extensions: [".agda"],
-                    },
-                    AIKEN: {
-                        color: "#640ff8",
-                        name: "Aiken",
-                        extensions: [".ak"],
-                    },
-                    ALLOY: {
-                        color: "#64C800",
-                        name: "Alloy",
-                        extensions: [".als"],
-                    },
-                    "ALPINE ABUILD": {
-                        color: "#0D597F",
-                        name: "Alpine Abuild",
-                    },
-                    "ALTIUM DESIGNER": {
-                        color: "#A89663",
-                        name: "Altium Designer",
-                        extensions: [
-                            ".OutJob",
-                            ".PcbDoc",
-                            ".PrjPCB",
-                            ".SchDoc",
-                        ],
-                    },
-                    ANGELSCRIPT: {
-                        color: "#C7D7DC",
-                        name: "AngelScript",
-                        extensions: [".as", ".angelscript"],
-                    },
-                    "ANSWER SET PROGRAMMING": {
-                        color: "#A9CC29",
-                        name: "Answer Set Programming",
-                        extensions: [".lp"],
-                    },
-                    "ANT BUILD SYSTEM": {
-                        color: "#A9157E",
-                        name: "Ant Build System",
-                    },
-                    ANTLERS: {
-                        color: "#ff269e",
-                        name: "Antlers",
-                        extensions: [
-                            ".antlers.html",
-                            ".antlers.php",
-                            ".antlers.xml",
-                        ],
-                    },
-                    APACHECONF: {
-                        color: "#d12127",
-                        name: "ApacheConf",
-                        extensions: [".apacheconf", ".vhost"],
-                    },
-                    APEX: {
-                        color: "#1797c0",
-                        name: "Apex",
-                        extensions: [".cls", ".apex", ".trigger"],
-                    },
-                    "APOLLO GUIDANCE COMPUTER": {
-                        color: "#0B3D91",
-                        name: "Apollo Guidance Computer",
-                        extensions: [".agc"],
-                    },
-                    APPLESCRIPT: {
-                        color: "#101F1F",
-                        name: "AppleScript",
-                        extensions: [".applescript", ".scpt"],
-                    },
-                    ARC: {
-                        color: "#aa2afe",
-                        name: "Arc",
-                        extensions: [".arc"],
-                    },
-                    ASCIIDOC: {
-                        color: "#73a0c5",
-                        name: "AsciiDoc",
-                        extensions: [".asciidoc", ".adoc", ".asc"],
-                        wrap: !0,
-                    },
-                    ASPECTJ: {
-                        color: "#a957b0",
-                        name: "AspectJ",
-                        extensions: [".aj"],
-                    },
-                    ASSEMBLY: {
-                        color: "#6E4C13",
-                        name: "Assembly",
-                        extensions: [
-                            ".asm",
-                            ".a51",
-                            ".i",
-                            ".inc",
-                            ".nas",
-                            ".nasm",
-                            ".s",
-                        ],
-                    },
-                    ASTRO: {
-                        color: "#ff5a03",
-                        name: "Astro",
-                        extensions: [".astro"],
-                    },
-                    ASYMPTOTE: {
-                        color: "#ff0000",
-                        name: "Asymptote",
-                        extensions: [".asy"],
-                    },
-                    AUGEAS: {
-                        color: "#9CC134",
-                        name: "Augeas",
-                        extensions: [".aug"],
-                    },
-                    AUTOHOTKEY: {
-                        color: "#6594b9",
-                        name: "AutoHotkey",
-                        extensions: [".ahk", ".ahkl"],
-                    },
-                    AUTOIT: {
-                        color: "#1C3552",
-                        name: "AutoIt",
-                        extensions: [".au3"],
-                    },
-                    "AVRO IDL": {
-                        color: "#0040FF",
-                        name: "Avro IDL",
-                        extensions: [".avdl"],
-                    },
-                    AWK: {
-                        color: "#c30e9b",
-                        name: "Awk",
-                        extensions: [".awk", ".auk", ".gawk", ".mawk", ".nawk"],
-                    },
-                    B4X: {
-                        color: "#00e4ff",
-                        name: "B4X",
-                        extensions: [".bas"],
-                    },
-                    BASIC: {
-                        color: "#ff0000",
-                        name: "BASIC",
-                        extensions: [".bas"],
-                    },
-                    BQN: {
-                        color: "#2b7067",
-                        name: "BQN",
-                        extensions: [".bqn"],
-                    },
-                    BALLERINA: {
-                        color: "#FF5000",
-                        name: "Ballerina",
-                        extensions: [".bal"],
-                    },
-                    BATCHFILE: {
-                        color: "#C1F12E",
-                        name: "Batchfile",
-                        extensions: [".bat", ".cmd"],
-                    },
-                    BEEF: {
-                        color: "#a52f4e",
-                        name: "Beef",
-                        extensions: [".bf"],
-                    },
-                    BEFUNGE: {
-                        name: "Befunge",
-                        extensions: [".befunge", ".bf"],
-                    },
-                    BERRY: {
-                        color: "#15A13C",
-                        name: "Berry",
-                        extensions: [".be"],
-                    },
-                    BIBTEX: {
-                        color: "#778899",
-                        name: "BibTeX",
-                        extensions: [".bib", ".bibtex"],
-                    },
-                    "BIBTEX STYLE": {
-                        name: "BibTeX Style",
-                        extensions: [".bst"],
-                    },
-                    BICEP: {
-                        color: "#519aba",
-                        name: "Bicep",
-                        extensions: [".bicep", ".bicepparam"],
-                    },
-                    BIKESHED: {
-                        color: "#5562ac",
-                        name: "Bikeshed",
-                        extensions: [".bs"],
-                    },
-                    BISON: {
-                        color: "#6A463F",
-                        name: "Bison",
-                        extensions: [".bison"],
-                    },
-                    BITBAKE: {
-                        color: "#00bce4",
-                        name: "BitBake",
-                        extensions: [".bb", ".bbappend", ".bbclass", ".inc"],
-                    },
-                    BLADE: {
-                        color: "#f7523f",
-                        name: "Blade",
-                        extensions: [".blade", ".blade.php"],
-                    },
-                    BLITZBASIC: {
-                        color: "#00FFAE",
-                        name: "BlitzBasic",
-                        extensions: [".bb", ".decls"],
-                    },
-                    BLITZMAX: {
-                        color: "#cd6400",
-                        name: "BlitzMax",
-                        extensions: [".bmx"],
-                    },
-                    BLUESPEC: {
-                        color: "#12223c",
-                        name: "Bluespec",
-                        extensions: [".bsv"],
-                    },
-                    "BLUESPEC BH": {
-                        color: "#12223c",
-                        name: "Bluespec BH",
-                        extensions: [".bs"],
-                    },
-                    BOO: {
-                        color: "#d4bec1",
-                        name: "Boo",
-                        extensions: [".boo"],
-                    },
-                    BOOGIE: {
-                        color: "#c80fa0",
-                        name: "Boogie",
-                        extensions: [".bpl"],
-                    },
-                    BRAINFUCK: {
-                        color: "#2F2530",
-                        name: "Brainfuck",
-                        extensions: [".b", ".bf"],
-                    },
-                    BRIGHTERSCRIPT: {
-                        color: "#66AABB",
-                        name: "BrighterScript",
-                        extensions: [".bs"],
-                    },
-                    BRIGHTSCRIPT: {
-                        color: "#662D91",
-                        name: "Brightscript",
-                        extensions: [".brs"],
-                    },
-                    BROWSERSLIST: {
-                        color: "#ffd539",
-                        name: "Browserslist",
-                    },
-                    BUILDSTREAM: {
-                        color: "#006bff",
-                        name: "BuildStream",
-                        extensions: [".bst"],
-                    },
-                    C: {
-                        color: "#555555",
-                        name: "C",
-                        extensions: [".c", ".cats", ".h", ".h.in", ".idc"],
-                    },
-                    "C#": {
-                        color: "#178600",
-                        name: "C#",
-                        extensions: [".cs", ".cake", ".cs.pp", ".csx", ".linq"],
-                    },
-                    "C++": {
-                        color: "#f34b7d",
-                        name: "C++",
-                        extensions: [
-                            ".cpp",
-                            ".c++",
-                            ".cc",
-                            ".cp",
-                            ".cppm",
-                            ".cxx",
-                            ".h",
-                            ".h++",
-                            ".hh",
-                            ".hpp",
-                            ".hxx",
-                            ".inc",
-                            ".inl",
-                            ".ino",
-                            ".ipp",
-                            ".ixx",
-                            ".re",
-                            ".tcc",
-                            ".tpp",
-                            ".txx",
-                        ],
-                    },
-                    "C-OBJDUMP": {
-                        name: "C-ObjDump",
-                        extensions: [".c-objdump"],
-                    },
-                    "C2HS HASKELL": {
-                        name: "C2hs Haskell",
-                        extensions: [".chs"],
-                    },
-                    "CAP CDS": {
-                        color: "#0092d1",
-                        name: "CAP CDS",
-                        extensions: [".cds"],
-                    },
-                    CIL: {
-                        name: "CIL",
-                        extensions: [".cil"],
-                    },
-                    CLIPS: {
-                        color: "#00A300",
-                        name: "CLIPS",
-                        extensions: [".clp"],
-                    },
-                    CMAKE: {
-                        color: "#DA3434",
-                        name: "CMake",
-                        extensions: [".cmake", ".cmake.in"],
-                    },
-                    COBOL: {
-                        name: "COBOL",
-                        extensions: [".cob", ".cbl", ".ccp", ".cobol", ".cpy"],
-                    },
-                    CODEOWNERS: {
-                        name: "CODEOWNERS",
-                    },
-                    COLLADA: {
-                        color: "#F1A42B",
-                        name: "COLLADA",
-                        extensions: [".dae"],
-                    },
-                    CSON: {
-                        color: "#244776",
-                        name: "CSON",
-                        extensions: [".cson"],
-                    },
-                    CSS: {
-                        color: "#663399",
-                        name: "CSS",
-                        extensions: [".css"],
-                    },
-                    CSV: {
-                        color: "#237346",
-                        name: "CSV",
-                        extensions: [".csv"],
-                    },
-                    CUE: {
-                        color: "#5886E1",
-                        name: "CUE",
-                        extensions: [".cue"],
-                    },
-                    CWEB: {
-                        color: "#00007a",
-                        name: "CWeb",
-                        extensions: [".w"],
-                    },
-                    "CABAL CONFIG": {
-                        color: "#483465",
-                        name: "Cabal Config",
-                        extensions: [".cabal"],
-                    },
-                    CADDYFILE: {
-                        color: "#22b638",
-                        name: "Caddyfile",
-                        extensions: [".caddyfile"],
-                    },
-                    CADENCE: {
-                        color: "#00ef8b",
-                        name: "Cadence",
-                        extensions: [".cdc"],
-                    },
-                    CAIRO: {
-                        color: "#ff4a48",
-                        name: "Cairo",
-                        extensions: [".cairo"],
-                    },
-                    "CAIRO ZERO": {
-                        color: "#ff4a48",
-                        name: "Cairo Zero",
-                        extensions: [".cairo"],
-                    },
-                    CAMELIGO: {
-                        color: "#3be133",
-                        name: "CameLIGO",
-                        extensions: [".mligo"],
-                    },
-                    "CAP'N PROTO": {
-                        color: "#c42727",
-                        name: "Cap'n Proto",
-                        extensions: [".capnp"],
-                    },
-                    CARBON: {
-                        color: "#222222",
-                        name: "Carbon",
-                        extensions: [".carbon"],
-                    },
-                    CARTOCSS: {
-                        name: "CartoCSS",
-                        extensions: [".mss"],
-                    },
-                    CEYLON: {
-                        color: "#dfa535",
-                        name: "Ceylon",
-                        extensions: [".ceylon"],
-                    },
-                    CHAPEL: {
-                        color: "#8dc63f",
-                        name: "Chapel",
-                        extensions: [".chpl"],
-                    },
-                    CHARITY: {
-                        name: "Charity",
-                        extensions: [".ch"],
-                    },
-                    CHECKSUMS: {
-                        name: "Checksums",
-                        extensions: [
-                            ".crc32",
-                            ".md2",
-                            ".md4",
-                            ".md5",
-                            ".sha1",
-                            ".sha2",
-                            ".sha224",
-                            ".sha256",
-                            ".sha256sum",
-                            ".sha3",
-                            ".sha384",
-                            ".sha512",
-                        ],
-                    },
-                    CHUCK: {
-                        color: "#3f8000",
-                        name: "ChucK",
-                        extensions: [".ck"],
-                    },
-                    CIRCOM: {
-                        color: "#707575",
-                        name: "Circom",
-                        extensions: [".circom"],
-                    },
-                    CIRRU: {
-                        color: "#ccccff",
-                        name: "Cirru",
-                        extensions: [".cirru"],
-                    },
-                    CLARION: {
-                        color: "#db901e",
-                        name: "Clarion",
-                        extensions: [".clw"],
-                    },
-                    CLARITY: {
-                        color: "#5546ff",
-                        name: "Clarity",
-                        extensions: [".clar"],
-                    },
-                    "CLASSIC ASP": {
-                        color: "#6a40fd",
-                        name: "Classic ASP",
-                        extensions: [".asp"],
-                    },
-                    CLEAN: {
-                        color: "#3F85AF",
-                        name: "Clean",
-                        extensions: [".icl", ".dcl"],
-                    },
-                    CLICK: {
-                        color: "#E4E6F3",
-                        name: "Click",
-                        extensions: [".click"],
-                    },
-                    CLOJURE: {
-                        color: "#db5855",
-                        name: "Clojure",
-                        extensions: [
-                            ".clj",
-                            ".bb",
-                            ".boot",
-                            ".cl2",
-                            ".cljc",
-                            ".cljs",
-                            ".cljs.hl",
-                            ".cljscm",
-                            ".cljx",
-                            ".hic",
-                        ],
-                    },
-                    "CLOSURE TEMPLATES": {
-                        color: "#0d948f",
-                        name: "Closure Templates",
-                        extensions: [".soy"],
-                    },
-                    "CLOUD FIRESTORE SECURITY RULES": {
-                        color: "#FFA000",
-                        name: "Cloud Firestore Security Rules",
-                    },
-                    CLUE: {
-                        color: "#0009b5",
-                        name: "Clue",
-                        extensions: [".clue"],
-                    },
-                    "CONLL-U": {
-                        name: "CoNLL-U",
-                        extensions: [".conllu", ".conll"],
-                    },
-                    CODEQL: {
-                        color: "#140f46",
-                        name: "CodeQL",
-                        extensions: [".ql", ".qll"],
-                    },
-                    COFFEESCRIPT: {
-                        color: "#244776",
-                        name: "CoffeeScript",
-                        extensions: [
-                            ".coffee",
-                            "._coffee",
-                            ".cake",
-                            ".cjsx",
-                            ".iced",
-                        ],
-                    },
-                    COLDFUSION: {
-                        color: "#ed2cd6",
-                        name: "ColdFusion",
-                        extensions: [".cfm", ".cfml"],
-                    },
-                    "COLDFUSION CFC": {
-                        color: "#ed2cd6",
-                        name: "ColdFusion CFC",
-                        extensions: [".cfc"],
-                    },
-                    "COMMON LISP": {
-                        color: "#3fb68b",
-                        name: "Common Lisp",
-                        extensions: [
-                            ".lisp",
-                            ".asd",
-                            ".cl",
-                            ".l",
-                            ".lsp",
-                            ".ny",
-                            ".podsl",
-                            ".sexp",
-                        ],
-                    },
-                    "COMMON WORKFLOW LANGUAGE": {
-                        color: "#B5314C",
-                        name: "Common Workflow Language",
-                        extensions: [".cwl"],
-                    },
-                    "COMPONENT PASCAL": {
-                        color: "#B0CE4E",
-                        name: "Component Pascal",
-                        extensions: [".cp", ".cps"],
-                    },
-                    COOL: {
-                        name: "Cool",
-                        extensions: [".cl"],
-                    },
-                    "CPP-OBJDUMP": {
-                        name: "Cpp-ObjDump",
-                        extensions: [
-                            ".cppobjdump",
-                            ".c++-objdump",
-                            ".c++objdump",
-                            ".cpp-objdump",
-                            ".cxx-objdump",
-                        ],
-                    },
-                    CREOLE: {
-                        name: "Creole",
-                        extensions: [".creole"],
-                        wrap: !0,
-                    },
-                    CRYSTAL: {
-                        color: "#000100",
-                        name: "Crystal",
-                        extensions: [".cr"],
-                    },
-                    CSOUND: {
-                        color: "#1a1a1a",
-                        name: "Csound",
-                        extensions: [".orc", ".udo"],
-                    },
-                    "CSOUND DOCUMENT": {
-                        color: "#1a1a1a",
-                        name: "Csound Document",
-                        extensions: [".csd"],
-                    },
-                    "CSOUND SCORE": {
-                        color: "#1a1a1a",
-                        name: "Csound Score",
-                        extensions: [".sco"],
-                    },
-                    CUDA: {
-                        color: "#3A4E3A",
-                        name: "Cuda",
-                        extensions: [".cu", ".cuh"],
-                    },
-                    "CUE SHEET": {
-                        name: "Cue Sheet",
-                        extensions: [".cue"],
-                    },
-                    CURRY: {
-                        color: "#531242",
-                        name: "Curry",
-                        extensions: [".curry"],
-                    },
-                    CYCRIPT: {
-                        name: "Cycript",
-                        extensions: [".cy"],
-                    },
-                    CYLC: {
-                        color: "#00b3fd",
-                        name: "Cylc",
-                        extensions: [".cylc"],
-                    },
-                    CYPHER: {
-                        color: "#34c0eb",
-                        name: "Cypher",
-                        extensions: [".cyp", ".cypher"],
-                    },
-                    CYTHON: {
-                        color: "#fedf5b",
-                        name: "Cython",
-                        extensions: [".pyx", ".pxd", ".pxi"],
-                    },
-                    D: {
-                        color: "#ba595e",
-                        name: "D",
-                        extensions: [".d", ".di"],
-                    },
-                    "D-OBJDUMP": {
-                        name: "D-ObjDump",
-                        extensions: [".d-objdump"],
-                    },
-                    D2: {
-                        color: "#526ee8",
-                        name: "D2",
-                        extensions: [".d2"],
-                    },
-                    "DIGITAL COMMAND LANGUAGE": {
-                        name: "DIGITAL Command Language",
-                        extensions: [".com"],
-                    },
-                    DM: {
-                        color: "#447265",
-                        name: "DM",
-                        extensions: [".dm"],
-                    },
-                    "DNS ZONE": {
-                        name: "DNS Zone",
-                        extensions: [".zone", ".arpa"],
-                    },
-                    DTRACE: {
-                        name: "DTrace",
-                        extensions: [".d"],
-                    },
-                    DAFNY: {
-                        color: "#FFEC25",
-                        name: "Dafny",
-                        extensions: [".dfy"],
-                    },
-                    "DARCS PATCH": {
-                        color: "#8eff23",
-                        name: "Darcs Patch",
-                        extensions: [".darcspatch", ".dpatch"],
-                    },
-                    DART: {
-                        color: "#00B4AB",
-                        name: "Dart",
-                        extensions: [".dart"],
-                    },
-                    DASLANG: {
-                        color: "#d3d3d3",
-                        name: "Daslang",
-                        extensions: [".das"],
-                    },
-                    DATAWEAVE: {
-                        color: "#003a52",
-                        name: "DataWeave",
-                        extensions: [".dwl"],
-                    },
-                    "DEBIAN PACKAGE CONTROL FILE": {
-                        color: "#D70751",
-                        name: "Debian Package Control File",
-                        extensions: [".dsc"],
-                    },
-                    DENIZENSCRIPT: {
-                        color: "#FBEE96",
-                        name: "DenizenScript",
-                        extensions: [".dsc"],
-                    },
-                    DHALL: {
-                        color: "#dfafff",
-                        name: "Dhall",
-                        extensions: [".dhall"],
-                    },
-                    DIFF: {
-                        name: "Diff",
-                        extensions: [".diff", ".patch"],
-                    },
-                    "DIRECTX 3D FILE": {
-                        color: "#aace60",
-                        name: "DirectX 3D File",
-                        extensions: [".x"],
-                    },
-                    DOCKERFILE: {
-                        color: "#384d54",
-                        name: "Dockerfile",
-                        extensions: [".dockerfile", ".containerfile"],
-                    },
-                    DOGESCRIPT: {
-                        color: "#cca760",
-                        name: "Dogescript",
-                        extensions: [".djs"],
-                    },
-                    DOTENV: {
-                        color: "#e5d559",
-                        name: "Dotenv",
-                        extensions: [".env"],
-                    },
-                    DUNE: {
-                        color: "#89421e",
-                        name: "Dune",
-                    },
-                    DYLAN: {
-                        color: "#6c616e",
-                        name: "Dylan",
-                        extensions: [".dylan", ".dyl", ".intr", ".lid"],
-                    },
-                    E: {
-                        color: "#ccce35",
-                        name: "E",
-                        extensions: [".e"],
-                    },
-                    "E-MAIL": {
-                        name: "E-mail",
-                        extensions: [".eml", ".mbox"],
-                    },
-                    EBNF: {
-                        name: "EBNF",
-                        extensions: [".ebnf"],
-                    },
-                    ECL: {
-                        color: "#8a1267",
-                        name: "ECL",
-                        extensions: [".ecl", ".eclxml"],
-                    },
-                    ECLIPSE: {
-                        color: "#001d9d",
-                        name: "ECLiPSe",
-                        extensions: [".ecl"],
-                    },
-                    EJS: {
-                        color: "#a91e50",
-                        name: "EJS",
-                        extensions: [".ejs", ".ect", ".ejs.t", ".jst"],
-                    },
-                    EQ: {
-                        color: "#a78649",
-                        name: "EQ",
-                        extensions: [".eq"],
-                    },
-                    EAGLE: {
-                        name: "Eagle",
-                        extensions: [".sch", ".brd"],
-                    },
-                    EARTHLY: {
-                        color: "#2af0ff",
-                        name: "Earthly",
-                    },
-                    EASYBUILD: {
-                        color: "#069406",
-                        name: "Easybuild",
-                        extensions: [".eb"],
-                    },
-                    "ECERE PROJECTS": {
-                        color: "#913960",
-                        name: "Ecere Projects",
-                        extensions: [".epj"],
-                    },
-                    ECMARKUP: {
-                        color: "#eb8131",
-                        name: "Ecmarkup",
-                        extensions: [".html"],
-                    },
-                    EDGE: {
-                        color: "#0dffe0",
-                        name: "Edge",
-                        extensions: [".edge"],
-                    },
-                    EDGEQL: {
-                        color: "#31A7FF",
-                        name: "EdgeQL",
-                        extensions: [".edgeql", ".esdl"],
-                    },
-                    EDITORCONFIG: {
-                        color: "#fff1f2",
-                        name: "EditorConfig",
-                        extensions: [".editorconfig"],
-                    },
-                    "EDJE DATA COLLECTION": {
-                        name: "Edje Data Collection",
-                        extensions: [".edc"],
-                    },
-                    EIFFEL: {
-                        color: "#4d6977",
-                        name: "Eiffel",
-                        extensions: [".e"],
-                    },
-                    ELIXIR: {
-                        color: "#6e4a7e",
-                        name: "Elixir",
-                        extensions: [".ex", ".exs"],
-                    },
-                    ELM: {
-                        color: "#60B5CC",
-                        name: "Elm",
-                        extensions: [".elm"],
-                    },
-                    ELVISH: {
-                        color: "#55BB55",
-                        name: "Elvish",
-                        extensions: [".elv"],
-                    },
-                    "ELVISH TRANSCRIPT": {
-                        color: "#55BB55",
-                        name: "Elvish Transcript",
-                    },
-                    "EMACS LISP": {
-                        color: "#c065db",
-                        name: "Emacs Lisp",
-                        extensions: [".el", ".emacs", ".emacs.desktop"],
-                    },
-                    EMBERSCRIPT: {
-                        color: "#FFF4F3",
-                        name: "EmberScript",
-                        extensions: [".em", ".emberscript"],
-                    },
-                    ERLANG: {
-                        color: "#B83998",
-                        name: "Erlang",
-                        extensions: [
-                            ".erl",
-                            ".app",
-                            ".app.src",
-                            ".es",
-                            ".escript",
-                            ".hrl",
-                            ".xrl",
-                            ".yrl",
-                        ],
-                    },
-                    EUPHORIA: {
-                        color: "#FF790B",
-                        name: "Euphoria",
-                        extensions: [".e", ".ex"],
-                    },
-                    "F#": {
-                        color: "#b845fc",
-                        name: "F#",
-                        extensions: [".fs", ".fsi", ".fsx"],
-                    },
-                    "F*": {
-                        color: "#572e30",
-                        name: "F*",
-                        extensions: [".fst", ".fsti"],
-                    },
-                    "FIGLET FONT": {
-                        color: "#FFDDBB",
-                        name: "FIGlet Font",
-                        extensions: [".flf"],
-                    },
-                    FIRRTL: {
-                        color: "#2f632f",
-                        name: "FIRRTL",
-                        extensions: [".fir"],
-                    },
-                    FLUX: {
-                        color: "#88ccff",
-                        name: "FLUX",
-                        extensions: [".fx", ".flux"],
-                    },
-                    FACTOR: {
-                        color: "#636746",
-                        name: "Factor",
-                        extensions: [".factor"],
-                    },
-                    FANCY: {
-                        color: "#7b9db4",
-                        name: "Fancy",
-                        extensions: [".fy", ".fancypack"],
-                    },
-                    FANTOM: {
-                        color: "#14253c",
-                        name: "Fantom",
-                        extensions: [".fan"],
-                    },
-                    FAUST: {
-                        color: "#c37240",
-                        name: "Faust",
-                        extensions: [".dsp"],
-                    },
-                    FENNEL: {
-                        color: "#fff3d7",
-                        name: "Fennel",
-                        extensions: [".fnl"],
-                    },
-                    "FILEBENCH WML": {
-                        color: "#F6B900",
-                        name: "Filebench WML",
-                        extensions: [".f"],
-                    },
-                    FILTERSCRIPT: {
-                        name: "Filterscript",
-                        extensions: [".fs"],
-                    },
-                    FLUENT: {
-                        color: "#ffcc33",
-                        name: "Fluent",
-                        extensions: [".ftl"],
-                    },
-                    FORMATTED: {
-                        name: "Formatted",
-                        extensions: [".for", ".eam.fs"],
-                    },
-                    FORTH: {
-                        color: "#341708",
-                        name: "Forth",
-                        extensions: [
-                            ".fth",
-                            ".4th",
-                            ".f",
-                            ".for",
-                            ".forth",
-                            ".fr",
-                            ".frt",
-                            ".fs",
-                        ],
-                    },
-                    FORTRAN: {
-                        color: "#4d41b1",
-                        name: "Fortran",
-                        extensions: [".f", ".f77", ".for", ".fpp"],
-                    },
-                    "FORTRAN FREE FORM": {
-                        color: "#4d41b1",
-                        name: "Fortran Free Form",
-                        extensions: [".f90", ".f03", ".f08", ".f95"],
-                    },
-                    FREEBASIC: {
-                        color: "#141AC9",
-                        name: "FreeBASIC",
-                        extensions: [".bi", ".bas"],
-                    },
-                    FREEMARKER: {
-                        color: "#0050b2",
-                        name: "FreeMarker",
-                        extensions: [".ftl"],
-                    },
-                    FREGE: {
-                        color: "#00cafe",
-                        name: "Frege",
-                        extensions: [".fr"],
-                    },
-                    FUTHARK: {
-                        color: "#5f021f",
-                        name: "Futhark",
-                        extensions: [".fut"],
-                    },
-                    "G-CODE": {
-                        color: "#D08CF2",
-                        name: "G-code",
-                        extensions: [".g", ".cnc", ".gco", ".gcode"],
-                    },
-                    GAML: {
-                        color: "#FFC766",
-                        name: "GAML",
-                        extensions: [".gaml"],
-                    },
-                    GAMS: {
-                        color: "#f49a22",
-                        name: "GAMS",
-                        extensions: [".gms"],
-                    },
-                    GAP: {
-                        color: "#0000cc",
-                        name: "GAP",
-                        extensions: [".g", ".gap", ".gd", ".gi", ".tst"],
-                    },
-                    "GCC MACHINE DESCRIPTION": {
-                        color: "#FFCFAB",
-                        name: "GCC Machine Description",
-                        extensions: [".md"],
-                    },
-                    GDB: {
-                        name: "GDB",
-                        extensions: [".gdb", ".gdbinit"],
-                    },
-                    GDSCRIPT: {
-                        color: "#355570",
-                        name: "GDScript",
-                        extensions: [".gd"],
-                    },
-                    GDSHADER: {
-                        color: "#478CBF",
-                        name: "GDShader",
-                        extensions: [".gdshader", ".gdshaderinc"],
-                    },
-                    GEDCOM: {
-                        color: "#003058",
-                        name: "GEDCOM",
-                        extensions: [".ged"],
-                    },
-                    GLSL: {
-                        color: "#5686a5",
-                        name: "GLSL",
-                        extensions: [
-                            ".glsl",
-                            ".fp",
-                            ".frag",
-                            ".frg",
-                            ".fs",
-                            ".fsh",
-                            ".fshader",
-                            ".geo",
-                            ".geom",
-                            ".glslf",
-                            ".glslv",
-                            ".gs",
-                            ".gshader",
-                            ".rchit",
-                            ".rmiss",
-                            ".shader",
-                            ".tesc",
-                            ".tese",
-                            ".vert",
-                            ".vrx",
-                            ".vs",
-                            ".vsh",
-                            ".vshader",
-                        ],
-                    },
-                    GN: {
-                        name: "GN",
-                        extensions: [".gn", ".gni"],
-                    },
-                    GSC: {
-                        color: "#FF6800",
-                        name: "GSC",
-                        extensions: [".gsc", ".csc", ".gsh"],
-                    },
-                    "GAME MAKER LANGUAGE": {
-                        color: "#71b417",
-                        name: "Game Maker Language",
-                        extensions: [".gml"],
-                    },
-                    "GEMFILE.LOCK": {
-                        color: "#701516",
-                        name: "Gemfile.lock",
-                    },
-                    GEMINI: {
-                        color: "#ff6900",
-                        name: "Gemini",
-                        extensions: [".gmi"],
-                        wrap: !0,
-                    },
-                    "GENERO 4GL": {
-                        color: "#63408e",
-                        name: "Genero 4gl",
-                        extensions: [".4gl"],
-                    },
-                    "GENERO PER": {
-                        color: "#d8df39",
-                        name: "Genero per",
-                        extensions: [".per"],
-                    },
-                    GENIE: {
-                        color: "#fb855d",
-                        name: "Genie",
-                        extensions: [".gs"],
-                    },
-                    GENSHI: {
-                        color: "#951531",
-                        name: "Genshi",
-                        extensions: [".kid"],
-                    },
-                    "GENTOO EBUILD": {
-                        color: "#9400ff",
-                        name: "Gentoo Ebuild",
-                        extensions: [".ebuild"],
-                    },
-                    "GENTOO ECLASS": {
-                        color: "#9400ff",
-                        name: "Gentoo Eclass",
-                        extensions: [".eclass"],
-                    },
-                    "GERBER IMAGE": {
-                        color: "#d20b00",
-                        name: "Gerber Image",
-                        extensions: [
-                            ".gbr",
-                            ".cmp",
-                            ".gbl",
-                            ".gbo",
-                            ".gbp",
-                            ".gbs",
-                            ".gko",
-                            ".gml",
-                            ".gpb",
-                            ".gpt",
-                            ".gtl",
-                            ".gto",
-                            ".gtp",
-                            ".gts",
-                            ".ncl",
-                            ".sol",
-                        ],
-                    },
-                    "GETTEXT CATALOG": {
-                        name: "Gettext Catalog",
-                        extensions: [".po", ".pot"],
-                    },
-                    GHERKIN: {
-                        color: "#5B2063",
-                        name: "Gherkin",
-                        extensions: [".feature", ".story"],
-                    },
-                    "GIT ATTRIBUTES": {
-                        color: "#F44D27",
-                        name: "Git Attributes",
-                    },
-                    "GIT CONFIG": {
-                        color: "#F44D27",
-                        name: "Git Config",
-                        extensions: [".gitconfig"],
-                    },
-                    "GIT REVISION LIST": {
-                        color: "#F44D27",
-                        name: "Git Revision List",
-                    },
-                    GLEAM: {
-                        color: "#ffaff3",
-                        name: "Gleam",
-                        extensions: [".gleam"],
-                    },
-                    "GLIMMER JS": {
-                        color: "#F5835F",
-                        name: "Glimmer JS",
-                        extensions: [".gjs"],
-                    },
-                    "GLIMMER TS": {
-                        color: "#3178c6",
-                        name: "Glimmer TS",
-                        extensions: [".gts"],
-                    },
-                    GLYPH: {
-                        color: "#c1ac7f",
-                        name: "Glyph",
-                        extensions: [".glf"],
-                    },
-                    "GLYPH BITMAP DISTRIBUTION FORMAT": {
-                        name: "Glyph Bitmap Distribution Format",
-                        extensions: [".bdf"],
-                    },
-                    GNUPLOT: {
-                        color: "#f0a9f0",
-                        name: "Gnuplot",
-                        extensions: [
-                            ".gp",
-                            ".gnu",
-                            ".gnuplot",
-                            ".p",
-                            ".plot",
-                            ".plt",
-                        ],
-                    },
-                    GO: {
-                        color: "#00ADD8",
-                        name: "Go",
-                        extensions: [".go"],
-                    },
-                    "GO CHECKSUMS": {
-                        color: "#00ADD8",
-                        name: "Go Checksums",
-                    },
-                    "GO MODULE": {
-                        color: "#00ADD8",
-                        name: "Go Module",
-                    },
-                    "GO WORKSPACE": {
-                        color: "#00ADD8",
-                        name: "Go Workspace",
-                    },
-                    "GODOT RESOURCE": {
-                        color: "#355570",
-                        name: "Godot Resource",
-                        extensions: [".gdnlib", ".gdns", ".tres", ".tscn"],
-                    },
-                    GOLO: {
-                        color: "#88562A",
-                        name: "Golo",
-                        extensions: [".golo"],
-                    },
-                    GOSU: {
-                        color: "#82937f",
-                        name: "Gosu",
-                        extensions: [".gs", ".gst", ".gsx", ".vark"],
-                    },
-                    GRACE: {
-                        color: "#615f8b",
-                        name: "Grace",
-                        extensions: [".grace"],
-                    },
-                    GRADLE: {
-                        color: "#02303a",
-                        name: "Gradle",
-                        extensions: [".gradle"],
-                    },
-                    "GRADLE KOTLIN DSL": {
-                        color: "#02303a",
-                        name: "Gradle Kotlin DSL",
-                        extensions: [".gradle.kts"],
-                    },
-                    "GRAMMATICAL FRAMEWORK": {
-                        color: "#ff0000",
-                        name: "Grammatical Framework",
-                        extensions: [".gf"],
-                    },
-                    "GRAPH MODELING LANGUAGE": {
-                        name: "Graph Modeling Language",
-                        extensions: [".gml"],
-                    },
-                    GRAPHQL: {
-                        color: "#e10098",
-                        name: "GraphQL",
-                        extensions: [".graphql", ".gql", ".graphqls"],
-                    },
-                    "GRAPHVIZ (DOT)": {
-                        color: "#2596be",
-                        name: "Graphviz (DOT)",
-                        extensions: [".dot", ".gv"],
-                    },
-                    GROOVY: {
-                        color: "#4298b8",
-                        name: "Groovy",
-                        extensions: [".groovy", ".grt", ".gtpl", ".gvy"],
-                    },
-                    "GROOVY SERVER PAGES": {
-                        color: "#4298b8",
-                        name: "Groovy Server Pages",
-                        extensions: [".gsp"],
-                    },
-                    HAPROXY: {
-                        color: "#106da9",
-                        name: "HAProxy",
-                        extensions: [".cfg"],
-                    },
-                    HCL: {
-                        color: "#844FBA",
-                        name: "HCL",
-                        extensions: [
-                            ".hcl",
-                            ".nomad",
-                            ".tf",
-                            ".tfvars",
-                            ".workflow",
-                        ],
-                    },
-                    HIP: {
-                        color: "#4F3A4F",
-                        name: "HIP",
-                        extensions: [".hip"],
-                    },
-                    HLSL: {
-                        color: "#aace60",
-                        name: "HLSL",
-                        extensions: [
-                            ".hlsl",
-                            ".cginc",
-                            ".fx",
-                            ".fxh",
-                            ".hlsli",
-                        ],
-                    },
-                    HOCON: {
-                        color: "#9ff8ee",
-                        name: "HOCON",
-                        extensions: [".hocon"],
-                    },
-                    HTML: {
-                        color: "#e34c26",
-                        name: "HTML",
-                        extensions: [
-                            ".html",
-                            ".hta",
-                            ".htm",
-                            ".html.hl",
-                            ".inc",
-                            ".xht",
-                            ".xhtml",
-                        ],
-                    },
-                    "HTML+ECR": {
-                        color: "#2e1052",
-                        name: "HTML+ECR",
-                        extensions: [".ecr"],
-                    },
-                    "HTML+EEX": {
-                        color: "#6e4a7e",
-                        name: "HTML+EEX",
-                        extensions: [".html.eex", ".heex", ".leex"],
-                    },
-                    "HTML+ERB": {
-                        color: "#701516",
-                        name: "HTML+ERB",
-                        extensions: [".erb", ".erb.deface", ".rhtml"],
-                    },
-                    "HTML+PHP": {
-                        color: "#4f5d95",
-                        name: "HTML+PHP",
-                        extensions: [".phtml"],
-                    },
-                    "HTML+RAZOR": {
-                        color: "#512be4",
-                        name: "HTML+Razor",
-                        extensions: [".cshtml", ".razor"],
-                    },
-                    HTTP: {
-                        color: "#005C9C",
-                        name: "HTTP",
-                        extensions: [".http"],
-                    },
-                    HXML: {
-                        color: "#f68712",
-                        name: "HXML",
-                        extensions: [".hxml"],
-                    },
-                    HACK: {
-                        color: "#878787",
-                        name: "Hack",
-                        extensions: [".hack", ".hh", ".hhi", ".php"],
-                    },
-                    HAML: {
-                        color: "#ece2a9",
-                        name: "Haml",
-                        extensions: [".haml", ".haml.deface"],
-                    },
-                    HANDLEBARS: {
-                        color: "#f7931e",
-                        name: "Handlebars",
-                        extensions: [".handlebars", ".hbs"],
-                    },
-                    HARBOUR: {
-                        color: "#0e60e3",
-                        name: "Harbour",
-                        extensions: [".hb"],
-                    },
-                    HARE: {
-                        color: "#9d7424",
-                        name: "Hare",
-                        extensions: [".ha"],
-                    },
-                    HASKELL: {
-                        color: "#5e5086",
-                        name: "Haskell",
-                        extensions: [".hs", ".hs-boot", ".hsc"],
-                    },
-                    HAXE: {
-                        color: "#df7900",
-                        name: "Haxe",
-                        extensions: [".hx", ".hxsl"],
-                    },
-                    HIVEQL: {
-                        color: "#dce200",
-                        name: "HiveQL",
-                        extensions: [".q", ".hql"],
-                    },
-                    HOLYC: {
-                        color: "#ffefaf",
-                        name: "HolyC",
-                        extensions: [".hc"],
-                    },
-                    "HOSTS FILE": {
-                        color: "#308888",
-                        name: "Hosts File",
-                    },
-                    HY: {
-                        color: "#7790B2",
-                        name: "Hy",
-                        extensions: [".hy"],
-                    },
-                    HYPHY: {
-                        name: "HyPhy",
-                        extensions: [".bf"],
-                    },
-                    IDL: {
-                        color: "#a3522f",
-                        name: "IDL",
-                        extensions: [".pro", ".dlm"],
-                    },
-                    "IGOR PRO": {
-                        color: "#0000cc",
-                        name: "IGOR Pro",
-                        extensions: [".ipf"],
-                    },
-                    INI: {
-                        color: "#d1dbe0",
-                        name: "INI",
-                        extensions: [
-                            ".ini",
-                            ".cfg",
-                            ".cnf",
-                            ".dof",
-                            ".frm",
-                            ".lektorproject",
-                            ".prefs",
-                            ".pro",
-                            ".properties",
-                            ".url",
-                        ],
-                    },
-                    "IRC LOG": {
-                        name: "IRC log",
-                        extensions: [".irclog", ".weechatlog"],
-                    },
-                    ISPC: {
-                        color: "#2D68B1",
-                        name: "ISPC",
-                        extensions: [".ispc"],
-                    },
-                    IDRIS: {
-                        color: "#b30000",
-                        name: "Idris",
-                        extensions: [".idr", ".lidr"],
-                    },
-                    "IGNORE LIST": {
-                        color: "#000000",
-                        name: "Ignore List",
-                        extensions: [".gitignore"],
-                    },
-                    "IMAGEJ MACRO": {
-                        color: "#99AAFF",
-                        name: "ImageJ Macro",
-                        extensions: [".ijm"],
-                    },
-                    IMBA: {
-                        color: "#16cec6",
-                        name: "Imba",
-                        extensions: [".imba"],
-                    },
-                    "INFORM 7": {
-                        name: "Inform 7",
-                        extensions: [".ni", ".i7x"],
-                        wrap: !0,
-                    },
-                    INK: {
-                        name: "Ink",
-                        extensions: [".ink"],
-                        wrap: !0,
-                    },
-                    "INNO SETUP": {
-                        color: "#264b99",
-                        name: "Inno Setup",
-                        extensions: [".iss", ".isl"],
-                    },
-                    IO: {
-                        color: "#a9188d",
-                        name: "Io",
-                        extensions: [".io"],
-                    },
-                    IOKE: {
-                        color: "#078193",
-                        name: "Ioke",
-                        extensions: [".ik"],
-                    },
-                    ISABELLE: {
-                        color: "#FEFE00",
-                        name: "Isabelle",
-                        extensions: [".thy"],
-                    },
-                    "ISABELLE ROOT": {
-                        color: "#FEFE00",
-                        name: "Isabelle ROOT",
-                    },
-                    J: {
-                        color: "#9EEDFF",
-                        name: "J",
-                        extensions: [".ijs"],
-                    },
-                    "JAR MANIFEST": {
-                        color: "#b07219",
-                        name: "JAR Manifest",
-                    },
-                    JCL: {
-                        color: "#d90e09",
-                        name: "JCL",
-                        extensions: [".jcl"],
-                    },
-                    JFLEX: {
-                        color: "#DBCA00",
-                        name: "JFlex",
-                        extensions: [".flex", ".jflex"],
-                    },
-                    JSON: {
-                        color: "#292929",
-                        name: "JSON",
-                        extensions: [
-                            ".json",
-                            ".4DForm",
-                            ".4DProject",
-                            ".avsc",
-                            ".geojson",
-                            ".gltf",
-                            ".har",
-                            ".ice",
-                            ".JSON-tmLanguage",
-                            ".json.example",
-                            ".jsonl",
-                            ".mcmeta",
-                            ".sarif",
-                            ".tact",
-                            ".tfstate",
-                            ".tfstate.backup",
-                            ".topojson",
-                            ".webapp",
-                            ".webmanifest",
-                            ".yy",
-                            ".yyp",
-                        ],
-                    },
-                    "JSON WITH COMMENTS": {
-                        color: "#292929",
-                        name: "JSON with Comments",
-                        extensions: [
-                            ".jsonc",
-                            ".code-snippets",
-                            ".code-workspace",
-                            ".sublime-build",
-                            ".sublime-color-scheme",
-                            ".sublime-commands",
-                            ".sublime-completions",
-                            ".sublime-keymap",
-                            ".sublime-macro",
-                            ".sublime-menu",
-                            ".sublime-mousemap",
-                            ".sublime-project",
-                            ".sublime-settings",
-                            ".sublime-theme",
-                            ".sublime-workspace",
-                            ".sublime_metrics",
-                            ".sublime_session",
-                        ],
-                    },
-                    JSON5: {
-                        color: "#267CB9",
-                        name: "JSON5",
-                        extensions: [".json5"],
-                    },
-                    JSONLD: {
-                        color: "#0c479c",
-                        name: "JSONLD",
-                        extensions: [".jsonld"],
-                    },
-                    JSONIQ: {
-                        color: "#40d47e",
-                        name: "JSONiq",
-                        extensions: [".jq"],
-                    },
-                    JAI: {
-                        color: "#ab8b4b",
-                        name: "Jai",
-                        extensions: [".jai"],
-                    },
-                    JANET: {
-                        color: "#0886a5",
-                        name: "Janet",
-                        extensions: [".janet"],
-                    },
-                    JASMIN: {
-                        color: "#d03600",
-                        name: "Jasmin",
-                        extensions: [".j"],
-                    },
-                    JAVA: {
-                        color: "#b07219",
-                        name: "Java",
-                        extensions: [".java", ".jav", ".jsh"],
-                    },
-                    "JAVA PROPERTIES": {
-                        color: "#2A6277",
-                        name: "Java Properties",
-                        extensions: [".properties"],
-                    },
-                    "JAVA SERVER PAGES": {
-                        color: "#2A6277",
-                        name: "Java Server Pages",
-                        extensions: [".jsp", ".tag"],
-                    },
-                    "JAVA TEMPLATE ENGINE": {
-                        color: "#2A6277",
-                        name: "Java Template Engine",
-                        extensions: [".jte"],
-                    },
-                    JAVASCRIPT: {
-                        color: "#f1e05a",
-                        name: "JavaScript",
-                        extensions: [
-                            ".js",
-                            "._js",
-                            ".bones",
-                            ".cjs",
-                            ".es",
-                            ".es6",
-                            ".frag",
-                            ".gs",
-                            ".jake",
-                            ".javascript",
-                            ".jsb",
-                            ".jscad",
-                            ".jsfl",
-                            ".jslib",
-                            ".jsm",
-                            ".jspre",
-                            ".jss",
-                            ".jsx",
-                            ".mjs",
-                            ".njs",
-                            ".pac",
-                            ".sjs",
-                            ".ssjs",
-                            ".xsjs",
-                            ".xsjslib",
-                        ],
-                    },
-                    "JAVASCRIPT+ERB": {
-                        color: "#f1e05a",
-                        name: "JavaScript+ERB",
-                        extensions: [".js.erb"],
-                    },
-                    "JEST SNAPSHOT": {
-                        color: "#15c213",
-                        name: "Jest Snapshot",
-                        extensions: [".snap"],
-                    },
-                    "JETBRAINS MPS": {
-                        color: "#21D789",
-                        name: "JetBrains MPS",
-                        extensions: [".mps", ".mpl", ".msd"],
-                    },
-                    JINJA: {
-                        color: "#a52a22",
-                        name: "Jinja",
-                        extensions: [".jinja", ".j2", ".jinja2"],
-                    },
-                    JISON: {
-                        color: "#56b3cb",
-                        name: "Jison",
-                        extensions: [".jison"],
-                    },
-                    "JISON LEX": {
-                        color: "#56b3cb",
-                        name: "Jison Lex",
-                        extensions: [".jisonlex"],
-                    },
-                    JOLIE: {
-                        color: "#843179",
-                        name: "Jolie",
-                        extensions: [".ol", ".iol"],
-                    },
-                    JSONNET: {
-                        color: "#0064bd",
-                        name: "Jsonnet",
-                        extensions: [".jsonnet", ".libsonnet"],
-                    },
-                    JULIA: {
-                        color: "#a270ba",
-                        name: "Julia",
-                        extensions: [".jl"],
-                    },
-                    "JULIA REPL": {
-                        color: "#a270ba",
-                        name: "Julia REPL",
-                    },
-                    "JUPYTER NOTEBOOK": {
-                        color: "#DA5B0B",
-                        name: "Jupyter Notebook",
-                        extensions: [".ipynb"],
-                    },
-                    JUST: {
-                        color: "#384d54",
-                        name: "Just",
-                        extensions: [".just"],
-                    },
-                    KDL: {
-                        color: "#ffb3b3",
-                        name: "KDL",
-                        extensions: [".kdl"],
-                    },
-                    KRL: {
-                        color: "#28430A",
-                        name: "KRL",
-                        extensions: [".krl"],
-                    },
-                    "KAITAI STRUCT": {
-                        color: "#773b37",
-                        name: "Kaitai Struct",
-                        extensions: [".ksy"],
-                    },
-                    KAKOUNESCRIPT: {
-                        color: "#6f8042",
-                        name: "KakouneScript",
-                        extensions: [".kak"],
-                    },
-                    KERBOSCRIPT: {
-                        color: "#41adf0",
-                        name: "KerboScript",
-                        extensions: [".ks"],
-                    },
-                    "KICAD LAYOUT": {
-                        color: "#2f4aab",
-                        name: "KiCad Layout",
-                        extensions: [".kicad_pcb", ".kicad_mod", ".kicad_wks"],
-                    },
-                    "KICAD LEGACY LAYOUT": {
-                        color: "#2f4aab",
-                        name: "KiCad Legacy Layout",
-                        extensions: [".brd"],
-                    },
-                    "KICAD SCHEMATIC": {
-                        color: "#2f4aab",
-                        name: "KiCad Schematic",
-                        extensions: [".kicad_sch", ".kicad_sym", ".sch"],
-                    },
-                    KICKSTART: {
-                        name: "Kickstart",
-                        extensions: [".ks"],
-                    },
-                    KIT: {
-                        name: "Kit",
-                        extensions: [".kit"],
-                    },
-                    KOKA: {
-                        color: "#215166",
-                        name: "Koka",
-                        extensions: [".kk"],
-                    },
-                    KOTLIN: {
-                        color: "#A97BFF",
-                        name: "Kotlin",
-                        extensions: [".kt", ".ktm", ".kts"],
-                    },
-                    KUSTO: {
-                        name: "Kusto",
-                        extensions: [".csl", ".kql"],
-                    },
-                    LFE: {
-                        color: "#4C3023",
-                        name: "LFE",
-                        extensions: [".lfe"],
-                    },
-                    LLVM: {
-                        color: "#185619",
-                        name: "LLVM",
-                        extensions: [".ll"],
-                    },
-                    LOLCODE: {
-                        color: "#cc9900",
-                        name: "LOLCODE",
-                        extensions: [".lol"],
-                    },
-                    LSL: {
-                        color: "#3d9970",
-                        name: "LSL",
-                        extensions: [".lsl", ".lslp"],
-                    },
-                    "LTSPICE SYMBOL": {
-                        name: "LTspice Symbol",
-                        extensions: [".asy"],
-                    },
-                    LABVIEW: {
-                        color: "#fede06",
-                        name: "LabVIEW",
-                        extensions: [".lvproj", ".lvclass", ".lvlib"],
-                    },
-                    LARK: {
-                        color: "#2980B9",
-                        name: "Lark",
-                        extensions: [".lark"],
-                    },
-                    LASSO: {
-                        color: "#999999",
-                        name: "Lasso",
-                        extensions: [".lasso", ".las", ".lasso8", ".lasso9"],
-                    },
-                    LATTE: {
-                        color: "#f2a542",
-                        name: "Latte",
-                        extensions: [".latte"],
-                    },
-                    LEAN: {
-                        name: "Lean",
-                        extensions: [".lean", ".hlean"],
-                    },
-                    "LEAN 4": {
-                        name: "Lean 4",
-                        extensions: [".lean"],
-                    },
-                    LEO: {
-                        color: "#C4FFC2",
-                        name: "Leo",
-                        extensions: [".leo"],
-                        wrap: !0,
-                    },
-                    LESS: {
-                        color: "#1d365d",
-                        name: "Less",
-                        extensions: [".less"],
-                    },
-                    LEX: {
-                        color: "#DBCA00",
-                        name: "Lex",
-                        extensions: [".l", ".lex"],
-                    },
-                    LIGOLANG: {
-                        color: "#0e74ff",
-                        name: "LigoLANG",
-                        extensions: [".ligo"],
-                    },
-                    LILYPOND: {
-                        color: "#9ccc7c",
-                        name: "LilyPond",
-                        extensions: [".ly", ".ily"],
-                    },
-                    LIMBO: {
-                        name: "Limbo",
-                        extensions: [".b", ".m"],
-                    },
-                    "LINEAR PROGRAMMING": {
-                        name: "Linear Programming",
-                        extensions: [".lp"],
-                    },
-                    "LINKER SCRIPT": {
-                        name: "Linker Script",
-                        extensions: [".ld", ".lds", ".x"],
-                    },
-                    "LINUX KERNEL MODULE": {
-                        name: "Linux Kernel Module",
-                        extensions: [".mod"],
-                    },
-                    LIQUID: {
-                        color: "#67b8de",
-                        name: "Liquid",
-                        extensions: [".liquid"],
-                    },
-                    "LITERATE AGDA": {
-                        color: "#315665",
-                        name: "Literate Agda",
-                        extensions: [".lagda"],
-                    },
-                    "LITERATE COFFEESCRIPT": {
-                        color: "#244776",
-                        name: "Literate CoffeeScript",
-                        extensions: [".litcoffee", ".coffee.md"],
-                        wrap: !0,
-                    },
-                    "LITERATE HASKELL": {
-                        color: "#5e5086",
-                        name: "Literate Haskell",
-                        extensions: [".lhs"],
-                    },
-                    "LIVECODE SCRIPT": {
-                        color: "#0c5ba5",
-                        name: "LiveCode Script",
-                        extensions: [".livecodescript"],
-                    },
-                    LIVESCRIPT: {
-                        color: "#499886",
-                        name: "LiveScript",
-                        extensions: [".ls", "._ls"],
-                    },
-                    LOGOS: {
-                        name: "Logos",
-                        extensions: [".xm", ".x", ".xi"],
-                    },
-                    LOGTALK: {
-                        color: "#295b9a",
-                        name: "Logtalk",
-                        extensions: [".lgt", ".logtalk"],
-                    },
-                    LOOKML: {
-                        color: "#652B81",
-                        name: "LookML",
-                        extensions: [".lkml", ".lookml"],
-                    },
-                    LOOMSCRIPT: {
-                        name: "LoomScript",
-                        extensions: [".ls"],
-                    },
-                    LUA: {
-                        color: "#000080",
-                        name: "Lua",
-                        extensions: [
-                            ".lua",
-                            ".fcgi",
-                            ".nse",
-                            ".p8",
-                            ".pd_lua",
-                            ".rbxs",
-                            ".rockspec",
-                            ".wlua",
-                        ],
-                    },
-                    LUAU: {
-                        color: "#00A2FF",
-                        name: "Luau",
-                        extensions: [".luau"],
-                    },
-                    M: {
-                        name: "M",
-                        extensions: [".mumps", ".m"],
-                    },
-                    M3U: {
-                        color: "#179C7D",
-                        name: "M3U",
-                        extensions: [".m3u", ".m3u8"],
-                    },
-                    M4: {
-                        name: "M4",
-                        extensions: [".m4", ".mc"],
-                    },
-                    M4SUGAR: {
-                        name: "M4Sugar",
-                        extensions: [".m4"],
-                    },
-                    MATLAB: {
-                        color: "#e16737",
-                        name: "MATLAB",
-                        extensions: [".matlab", ".m"],
-                    },
-                    MAXSCRIPT: {
-                        color: "#00a6a6",
-                        name: "MAXScript",
-                        extensions: [".ms", ".mcr"],
-                    },
-                    MDX: {
-                        color: "#fcb32c",
-                        name: "MDX",
-                        extensions: [".mdx"],
-                        wrap: !0,
-                    },
-                    MLIR: {
-                        color: "#5EC8DB",
-                        name: "MLIR",
-                        extensions: [".mlir"],
-                    },
-                    MQL4: {
-                        color: "#62A8D6",
-                        name: "MQL4",
-                        extensions: [".mq4", ".mqh"],
-                    },
-                    MQL5: {
-                        color: "#4A76B8",
-                        name: "MQL5",
-                        extensions: [".mq5", ".mqh"],
-                    },
-                    MTML: {
-                        color: "#b7e1f4",
-                        name: "MTML",
-                        extensions: [".mtml"],
-                    },
-                    MUF: {
-                        name: "MUF",
-                        extensions: [".muf", ".m"],
-                    },
-                    MACAULAY2: {
-                        color: "#d8ffff",
-                        name: "Macaulay2",
-                        extensions: [".m2"],
-                    },
-                    MAKEFILE: {
-                        color: "#427819",
-                        name: "Makefile",
-                        extensions: [
-                            ".mak",
-                            ".d",
-                            ".make",
-                            ".makefile",
-                            ".mk",
-                            ".mkfile",
-                        ],
-                    },
-                    MAKO: {
-                        color: "#7e858d",
-                        name: "Mako",
-                        extensions: [".mako", ".mao"],
-                    },
-                    MARKDOWN: {
-                        color: "#083fa1",
-                        name: "Markdown",
-                        extensions: [
-                            ".md",
-                            ".livemd",
-                            ".markdown",
-                            ".mdown",
-                            ".mdwn",
-                            ".mkd",
-                            ".mkdn",
-                            ".mkdown",
-                            ".ronn",
-                            ".scd",
-                            ".workbook",
-                        ],
-                        wrap: !0,
-                    },
-                    MARKO: {
-                        color: "#42bff2",
-                        name: "Marko",
-                        extensions: [".marko"],
-                    },
-                    MASK: {
-                        color: "#f97732",
-                        name: "Mask",
-                        extensions: [".mask"],
-                    },
-                    MATHEMATICA: {
-                        color: "#dd1100",
-                        name: "Mathematica",
-                        extensions: [
-                            ".mathematica",
-                            ".cdf",
-                            ".m",
-                            ".ma",
-                            ".mt",
-                            ".nb",
-                            ".nbp",
-                            ".wl",
-                            ".wlt",
-                        ],
-                    },
-                    "MAVEN POM": {
-                        name: "Maven POM",
-                    },
-                    MAX: {
-                        color: "#c4a79c",
-                        name: "Max",
-                        extensions: [
-                            ".maxpat",
-                            ".maxhelp",
-                            ".maxproj",
-                            ".mxt",
-                            ".pat",
-                        ],
-                    },
-                    MERCURY: {
-                        color: "#ff2b2b",
-                        name: "Mercury",
-                        extensions: [".m", ".moo"],
-                    },
-                    MERMAID: {
-                        color: "#ff3670",
-                        name: "Mermaid",
-                        extensions: [".mmd", ".mermaid"],
-                    },
-                    MESON: {
-                        color: "#007800",
-                        name: "Meson",
-                    },
-                    METAL: {
-                        color: "#8f14e9",
-                        name: "Metal",
-                        extensions: [".metal"],
-                    },
-                    "MICROSOFT DEVELOPER STUDIO PROJECT": {
-                        name: "Microsoft Developer Studio Project",
-                        extensions: [".dsp"],
-                    },
-                    "MICROSOFT VISUAL STUDIO SOLUTION": {
-                        name: "Microsoft Visual Studio Solution",
-                        extensions: [".sln"],
-                    },
-                    MINID: {
-                        name: "MiniD",
-                        extensions: [".minid"],
-                    },
-                    MINIYAML: {
-                        color: "#ff1111",
-                        name: "MiniYAML",
-                        extensions: [".yaml", ".yml"],
-                    },
-                    MINIZINC: {
-                        color: "#06a9e6",
-                        name: "MiniZinc",
-                        extensions: [".mzn"],
-                    },
-                    "MINIZINC DATA": {
-                        name: "MiniZinc Data",
-                        extensions: [".dzn"],
-                    },
-                    MINT: {
-                        color: "#02b046",
-                        name: "Mint",
-                        extensions: [".mint"],
-                    },
-                    MIRAH: {
-                        color: "#c7a938",
-                        name: "Mirah",
-                        extensions: [".druby", ".duby", ".mirah"],
-                    },
-                    MODELICA: {
-                        color: "#de1d31",
-                        name: "Modelica",
-                        extensions: [".mo"],
-                    },
-                    "MODULA-2": {
-                        color: "#10253f",
-                        name: "Modula-2",
-                        extensions: [".mod"],
-                    },
-                    "MODULA-3": {
-                        color: "#223388",
-                        name: "Modula-3",
-                        extensions: [".i3", ".ig", ".m3", ".mg"],
-                    },
-                    "MODULE MANAGEMENT SYSTEM": {
-                        name: "Module Management System",
-                        extensions: [".mms", ".mmk"],
-                    },
-                    MOJO: {
-                        color: "#ff4c1f",
-                        name: "Mojo",
-                        extensions: [".mojo"],
-                    },
-                    MONKEY: {
-                        name: "Monkey",
-                        extensions: [".monkey", ".monkey2"],
-                    },
-                    "MONKEY C": {
-                        color: "#8D6747",
-                        name: "Monkey C",
-                        extensions: [".mc"],
-                    },
-                    MOOCODE: {
-                        name: "Moocode",
-                        extensions: [".moo"],
-                    },
-                    MOONBIT: {
-                        color: "#b92381",
-                        name: "MoonBit",
-                        extensions: [".mbt"],
-                    },
-                    MOONSCRIPT: {
-                        color: "#ff4585",
-                        name: "MoonScript",
-                        extensions: [".moon"],
-                    },
-                    MOTOKO: {
-                        color: "#fbb03b",
-                        name: "Motoko",
-                        extensions: [".mo"],
-                    },
-                    "MOTOROLA 68K ASSEMBLY": {
-                        color: "#005daa",
-                        name: "Motorola 68K Assembly",
-                        extensions: [".asm", ".i", ".inc", ".s", ".x68"],
-                    },
-                    MOVE: {
-                        color: "#4a137a",
-                        name: "Move",
-                        extensions: [".move"],
-                    },
-                    MUSE: {
-                        name: "Muse",
-                        extensions: [".muse"],
-                        wrap: !0,
-                    },
-                    MUSTACHE: {
-                        color: "#724b3b",
-                        name: "Mustache",
-                        extensions: [".mustache"],
-                    },
-                    MYGHTY: {
-                        name: "Myghty",
-                        extensions: [".myt"],
-                    },
-                    NASL: {
-                        name: "NASL",
-                        extensions: [".nasl", ".inc"],
-                    },
-                    NCL: {
-                        color: "#28431f",
-                        name: "NCL",
-                        extensions: [".ncl"],
-                    },
-                    NEON: {
-                        name: "NEON",
-                        extensions: [".neon"],
-                    },
-                    NL: {
-                        name: "NL",
-                        extensions: [".nl"],
-                    },
-                    NMODL: {
-                        color: "#00356B",
-                        name: "NMODL",
-                        extensions: [".mod"],
-                    },
-                    "NPM CONFIG": {
-                        color: "#cb3837",
-                        name: "NPM Config",
-                    },
-                    NSIS: {
-                        name: "NSIS",
-                        extensions: [".nsi", ".nsh"],
-                    },
-                    NWSCRIPT: {
-                        color: "#111522",
-                        name: "NWScript",
-                        extensions: [".nss"],
-                    },
-                    NASAL: {
-                        color: "#1d2c4e",
-                        name: "Nasal",
-                        extensions: [".nas"],
-                    },
-                    NEARLEY: {
-                        color: "#990000",
-                        name: "Nearley",
-                        extensions: [".ne", ".nearley"],
-                    },
-                    NEMERLE: {
-                        color: "#3d3c6e",
-                        name: "Nemerle",
-                        extensions: [".n"],
-                    },
-                    NETLINX: {
-                        color: "#0aa0ff",
-                        name: "NetLinx",
-                        extensions: [".axs", ".axi"],
-                    },
-                    "NETLINX+ERB": {
-                        color: "#747faa",
-                        name: "NetLinx+ERB",
-                        extensions: [".axs.erb", ".axi.erb"],
-                    },
-                    NETLOGO: {
-                        color: "#ff6375",
-                        name: "NetLogo",
-                        extensions: [".nlogo"],
-                    },
-                    NEWLISP: {
-                        color: "#87AED7",
-                        name: "NewLisp",
-                        extensions: [".nl", ".lisp", ".lsp"],
-                    },
-                    NEXTFLOW: {
-                        color: "#3ac486",
-                        name: "Nextflow",
-                        extensions: [".nf"],
-                    },
-                    NGINX: {
-                        color: "#009639",
-                        name: "Nginx",
-                        extensions: [".nginx", ".nginxconf", ".vhost"],
-                    },
-                    NICKEL: {
-                        color: "#E0C3FC",
-                        name: "Nickel",
-                        extensions: [".ncl"],
-                    },
-                    NIM: {
-                        color: "#ffc200",
-                        name: "Nim",
-                        extensions: [
-                            ".nim",
-                            ".nim.cfg",
-                            ".nimble",
-                            ".nimrod",
-                            ".nims",
-                        ],
-                    },
-                    NINJA: {
-                        name: "Ninja",
-                        extensions: [".ninja"],
-                    },
-                    NIT: {
-                        color: "#009917",
-                        name: "Nit",
-                        extensions: [".nit"],
-                    },
-                    NIX: {
-                        color: "#7e7eff",
-                        name: "Nix",
-                        extensions: [".nix"],
-                    },
-                    NOIR: {
-                        color: "#2f1f49",
-                        name: "Noir",
-                        extensions: [".nr"],
-                    },
-                    NU: {
-                        color: "#c9df40",
-                        name: "Nu",
-                        extensions: [".nu"],
-                    },
-                    NUMPY: {
-                        color: "#9C8AF9",
-                        name: "NumPy",
-                        extensions: [".numpy", ".numpyw", ".numsc"],
-                    },
-                    NUNJUCKS: {
-                        color: "#3d8137",
-                        name: "Nunjucks",
-                        extensions: [".njk"],
-                    },
-                    NUSHELL: {
-                        color: "#4E9906",
-                        name: "Nushell",
-                        extensions: [".nu"],
-                    },
-                    "OASV2-JSON": {
-                        color: "#85ea2d",
-                        name: "OASv2-json",
-                        extensions: [".json"],
-                    },
-                    "OASV2-YAML": {
-                        color: "#85ea2d",
-                        name: "OASv2-yaml",
-                        extensions: [".yaml", ".yml"],
-                    },
-                    "OASV3-JSON": {
-                        color: "#85ea2d",
-                        name: "OASv3-json",
-                        extensions: [".json"],
-                    },
-                    "OASV3-YAML": {
-                        color: "#85ea2d",
-                        name: "OASv3-yaml",
-                        extensions: [".yaml", ".yml"],
-                    },
-                    OCAML: {
-                        color: "#ef7a08",
-                        name: "OCaml",
-                        extensions: [
-                            ".ml",
-                            ".eliom",
-                            ".eliomi",
-                            ".ml4",
-                            ".mli",
-                            ".mll",
-                            ".mly",
-                        ],
-                    },
-                    "OMNET++ MSG": {
-                        color: "#a0e0a0",
-                        name: "OMNeT++ MSG",
-                        extensions: [".msg"],
-                    },
-                    "OMNET++ NED": {
-                        color: "#08607c",
-                        name: "OMNeT++ NED",
-                        extensions: [".ned"],
-                    },
-                    OBERON: {
-                        name: "Oberon",
-                        extensions: [".ob2"],
-                    },
-                    OBJDUMP: {
-                        name: "ObjDump",
-                        extensions: [".objdump"],
-                    },
-                    "OBJECT DATA INSTANCE NOTATION": {
-                        name: "Object Data Instance Notation",
-                        extensions: [".odin"],
-                    },
-                    OBJECTSCRIPT: {
-                        color: "#424893",
-                        name: "ObjectScript",
-                        extensions: [".cls"],
-                    },
-                    "OBJECTIVE-C": {
-                        color: "#438eff",
-                        name: "Objective-C",
-                        extensions: [".m", ".h"],
-                    },
-                    "OBJECTIVE-C++": {
-                        color: "#6866fb",
-                        name: "Objective-C++",
-                        extensions: [".mm"],
-                    },
-                    "OBJECTIVE-J": {
-                        color: "#ff0c5a",
-                        name: "Objective-J",
-                        extensions: [".j", ".sj"],
-                    },
-                    ODIN: {
-                        color: "#60AFFE",
-                        name: "Odin",
-                        extensions: [".odin"],
-                    },
-                    OMGROFL: {
-                        color: "#cabbff",
-                        name: "Omgrofl",
-                        extensions: [".omgrofl"],
-                    },
-                    OPA: {
-                        name: "Opa",
-                        extensions: [".opa"],
-                    },
-                    OPAL: {
-                        color: "#f7ede0",
-                        name: "Opal",
-                        extensions: [".opal"],
-                    },
-                    "OPEN POLICY AGENT": {
-                        color: "#7d9199",
-                        name: "Open Policy Agent",
-                        extensions: [".rego"],
-                    },
-                    "OPENAPI SPECIFICATION V2": {
-                        color: "#85ea2d",
-                        name: "OpenAPI Specification v2",
-                    },
-                    "OPENAPI SPECIFICATION V3": {
-                        color: "#85ea2d",
-                        name: "OpenAPI Specification v3",
-                    },
-                    OPENCL: {
-                        color: "#ed2e2d",
-                        name: "OpenCL",
-                        extensions: [".cl", ".opencl"],
-                    },
-                    "OPENEDGE ABL": {
-                        color: "#5ce600",
-                        name: "OpenEdge ABL",
-                        extensions: [".p", ".cls", ".w"],
-                    },
-                    OPENQASM: {
-                        color: "#AA70FF",
-                        name: "OpenQASM",
-                        extensions: [".qasm"],
-                    },
-                    "OPENRC RUNSCRIPT": {
-                        name: "OpenRC runscript",
-                    },
-                    OPENSCAD: {
-                        color: "#e5cd45",
-                        name: "OpenSCAD",
-                        extensions: [".scad"],
-                    },
-                    "OPENSTEP PROPERTY LIST": {
-                        name: "OpenStep Property List",
-                        extensions: [".plist", ".glyphs"],
-                    },
-                    "OPENTYPE FEATURE FILE": {
-                        name: "OpenType Feature File",
-                        extensions: [".fea"],
-                    },
-                    "OPTION LIST": {
-                        color: "#476732",
-                        name: "Option List",
-                    },
-                    ORG: {
-                        color: "#77aa99",
-                        name: "Org",
-                        extensions: [".org"],
-                        wrap: !0,
-                    },
-                    OVERPASSQL: {
-                        color: "#cce2aa",
-                        name: "OverpassQL",
-                        extensions: [".overpassql"],
-                        wrap: !0,
-                    },
-                    OX: {
-                        name: "Ox",
-                        extensions: [".ox", ".oxh", ".oxo"],
-                    },
-                    OXYGENE: {
-                        color: "#cdd0e3",
-                        name: "Oxygene",
-                        extensions: [".oxygene"],
-                    },
-                    OZ: {
-                        color: "#fab738",
-                        name: "Oz",
-                        extensions: [".oz"],
-                    },
-                    P4: {
-                        color: "#7055b5",
-                        name: "P4",
-                        extensions: [".p4"],
-                    },
-                    PDDL: {
-                        color: "#0d00ff",
-                        name: "PDDL",
-                        extensions: [".pddl"],
-                    },
-                    "PEG.JS": {
-                        color: "#234d6b",
-                        name: "PEG.js",
-                        extensions: [".pegjs", ".peggy"],
-                    },
-                    PHP: {
-                        color: "#4F5D95",
-                        name: "PHP",
-                        extensions: [
-                            ".php",
-                            ".aw",
-                            ".ctp",
-                            ".fcgi",
-                            ".inc",
-                            ".php3",
-                            ".php4",
-                            ".php5",
-                            ".phps",
-                            ".phpt",
-                        ],
-                    },
-                    PLSQL: {
-                        color: "#dad8d8",
-                        name: "PLSQL",
-                        extensions: [
-                            ".pls",
-                            ".bdy",
-                            ".ddl",
-                            ".fnc",
-                            ".pck",
-                            ".pkb",
-                            ".pks",
-                            ".plb",
-                            ".plsql",
-                            ".prc",
-                            ".spc",
-                            ".sql",
-                            ".tpb",
-                            ".tps",
-                            ".trg",
-                            ".vw",
-                        ],
-                    },
-                    PLPGSQL: {
-                        color: "#336790",
-                        name: "PLpgSQL",
-                        extensions: [".pgsql", ".sql"],
-                    },
-                    "POV-RAY SDL": {
-                        color: "#6bac65",
-                        name: "POV-Ray SDL",
-                        extensions: [".pov", ".inc"],
-                    },
-                    PACT: {
-                        color: "#F7A8B8",
-                        name: "Pact",
-                        extensions: [".pact"],
-                    },
-                    PAN: {
-                        color: "#cc0000",
-                        name: "Pan",
-                        extensions: [".pan"],
-                    },
-                    PAPYRUS: {
-                        color: "#6600cc",
-                        name: "Papyrus",
-                        extensions: [".psc"],
-                    },
-                    PARROT: {
-                        color: "#f3ca0a",
-                        name: "Parrot",
-                        extensions: [".parrot"],
-                    },
-                    "PARROT ASSEMBLY": {
-                        name: "Parrot Assembly",
-                        extensions: [".pasm"],
-                    },
-                    "PARROT INTERNAL REPRESENTATION": {
-                        name: "Parrot Internal Representation",
-                        extensions: [".pir"],
-                    },
-                    PASCAL: {
-                        color: "#E3F171",
-                        name: "Pascal",
-                        extensions: [
-                            ".pas",
-                            ".dfm",
-                            ".dpr",
-                            ".inc",
-                            ".lpr",
-                            ".pascal",
-                            ".pp",
-                        ],
-                    },
-                    PAWN: {
-                        color: "#dbb284",
-                        name: "Pawn",
-                        extensions: [".pwn", ".inc", ".sma"],
-                    },
-                    PEP8: {
-                        color: "#C76F5B",
-                        name: "Pep8",
-                        extensions: [".pep"],
-                    },
-                    PERL: {
-                        color: "#0298c3",
-                        name: "Perl",
-                        extensions: [
-                            ".pl",
-                            ".al",
-                            ".cgi",
-                            ".fcgi",
-                            ".perl",
-                            ".ph",
-                            ".plx",
-                            ".pm",
-                            ".psgi",
-                            ".t",
-                        ],
-                    },
-                    PIC: {
-                        name: "Pic",
-                        extensions: [".pic", ".chem"],
-                    },
-                    PICKLE: {
-                        name: "Pickle",
-                        extensions: [".pkl"],
-                    },
-                    PICOLISP: {
-                        color: "#6067af",
-                        name: "PicoLisp",
-                        extensions: [".l"],
-                    },
-                    PIGLATIN: {
-                        color: "#fcd7de",
-                        name: "PigLatin",
-                        extensions: [".pig"],
-                    },
-                    PIKE: {
-                        color: "#005390",
-                        name: "Pike",
-                        extensions: [".pike", ".pmod"],
-                    },
-                    "PIP REQUIREMENTS": {
-                        color: "#FFD343",
-                        name: "Pip Requirements",
-                    },
-                    PKL: {
-                        color: "#6b9543",
-                        name: "Pkl",
-                        extensions: [".pkl"],
-                    },
-                    PLANTUML: {
-                        color: "#fbbd16",
-                        name: "PlantUML",
-                        extensions: [".puml", ".iuml", ".plantuml"],
-                    },
-                    POD: {
-                        name: "Pod",
-                        extensions: [".pod"],
-                        wrap: !0,
-                    },
-                    "POD 6": {
-                        name: "Pod 6",
-                        extensions: [".pod", ".pod6"],
-                        wrap: !0,
-                    },
-                    POGOSCRIPT: {
-                        color: "#d80074",
-                        name: "PogoScript",
-                        extensions: [".pogo"],
-                    },
-                    POLAR: {
-                        color: "#ae81ff",
-                        name: "Polar",
-                        extensions: [".polar"],
-                    },
-                    PONY: {
-                        name: "Pony",
-                        extensions: [".pony"],
-                    },
-                    PORTUGOL: {
-                        color: "#f8bd00",
-                        name: "Portugol",
-                        extensions: [".por"],
-                    },
-                    POSTCSS: {
-                        color: "#dc3a0c",
-                        name: "PostCSS",
-                        extensions: [".pcss", ".postcss"],
-                    },
-                    POSTSCRIPT: {
-                        color: "#da291c",
-                        name: "PostScript",
-                        extensions: [".ps", ".eps", ".epsi", ".pfa"],
-                    },
-                    POWERBUILDER: {
-                        color: "#8f0f8d",
-                        name: "PowerBuilder",
-                        extensions: [".pbt", ".sra", ".sru", ".srw"],
-                    },
-                    POWERSHELL: {
-                        color: "#012456",
-                        name: "PowerShell",
-                        extensions: [".ps1", ".psd1", ".psm1"],
-                    },
-                    PRAAT: {
-                        color: "#c8506d",
-                        name: "Praat",
-                        extensions: [".praat"],
-                    },
-                    PRISMA: {
-                        color: "#0c344b",
-                        name: "Prisma",
-                        extensions: [".prisma"],
-                    },
-                    PROCESSING: {
-                        color: "#0096D8",
-                        name: "Processing",
-                        extensions: [".pde"],
-                    },
-                    PROCFILE: {
-                        color: "#3B2F63",
-                        name: "Procfile",
-                    },
-                    PROGUARD: {
-                        name: "Proguard",
-                        extensions: [".pro"],
-                    },
-                    PROLOG: {
-                        color: "#74283c",
-                        name: "Prolog",
-                        extensions: [".pl", ".plt", ".pro", ".prolog", ".yap"],
-                    },
-                    PROMELA: {
-                        color: "#de0000",
-                        name: "Promela",
-                        extensions: [".pml"],
-                    },
-                    "PROPELLER SPIN": {
-                        color: "#7fa2a7",
-                        name: "Propeller Spin",
-                        extensions: [".spin"],
-                    },
-                    "PROTOCOL BUFFER": {
-                        name: "Protocol Buffer",
-                        extensions: [".proto"],
-                    },
-                    "PROTOCOL BUFFER TEXT FORMAT": {
-                        name: "Protocol Buffer Text Format",
-                        extensions: [".textproto", ".pbt", ".pbtxt"],
-                    },
-                    "PUBLIC KEY": {
-                        name: "Public Key",
-                        extensions: [".asc", ".pub"],
-                    },
-                    PUG: {
-                        color: "#a86454",
-                        name: "Pug",
-                        extensions: [".jade", ".pug"],
-                    },
-                    PUPPET: {
-                        color: "#302B6D",
-                        name: "Puppet",
-                        extensions: [".pp"],
-                    },
-                    "PURE DATA": {
-                        name: "Pure Data",
-                        extensions: [".pd"],
-                    },
-                    PUREBASIC: {
-                        color: "#5a6986",
-                        name: "PureBasic",
-                        extensions: [".pb", ".pbi"],
-                    },
-                    PURESCRIPT: {
-                        color: "#1D222D",
-                        name: "PureScript",
-                        extensions: [".purs"],
-                    },
-                    PYRET: {
-                        color: "#ee1e10",
-                        name: "Pyret",
-                        extensions: [".arr"],
-                    },
-                    PYTHON: {
-                        color: "#3572A5",
-                        name: "Python",
-                        extensions: [
-                            ".py",
-                            ".cgi",
-                            ".fcgi",
-                            ".gyp",
-                            ".gypi",
-                            ".lmi",
-                            ".py3",
-                            ".pyde",
-                            ".pyi",
-                            ".pyp",
-                            ".pyt",
-                            ".pyw",
-                            ".rpy",
-                            ".spec",
-                            ".tac",
-                            ".wsgi",
-                            ".xpy",
-                        ],
-                    },
-                    "PYTHON CONSOLE": {
-                        color: "#3572A5",
-                        name: "Python console",
-                    },
-                    "PYTHON TRACEBACK": {
-                        color: "#3572A5",
-                        name: "Python traceback",
-                        extensions: [".pytb"],
-                    },
-                    "Q#": {
-                        color: "#fed659",
-                        name: "Q#",
-                        extensions: [".qs"],
-                    },
-                    QML: {
-                        color: "#44a51c",
-                        name: "QML",
-                        extensions: [".qml", ".qbs"],
-                    },
-                    QMAKE: {
-                        name: "QMake",
-                        extensions: [".pro", ".pri"],
-                    },
-                    "QT SCRIPT": {
-                        color: "#00b841",
-                        name: "Qt Script",
-                        extensions: [".qs"],
-                    },
-                    QUAKE: {
-                        color: "#882233",
-                        name: "Quake",
-                    },
-                    QUICKBASIC: {
-                        color: "#008080",
-                        name: "QuickBASIC",
-                        extensions: [".bas"],
-                    },
-                    R: {
-                        color: "#198CE7",
-                        name: "R",
-                        extensions: [".r", ".rd", ".rsx"],
-                    },
-                    RAML: {
-                        color: "#77d9fb",
-                        name: "RAML",
-                        extensions: [".raml"],
-                    },
-                    RBS: {
-                        color: "#701516",
-                        name: "RBS",
-                        extensions: [".rbs"],
-                    },
-                    RDOC: {
-                        color: "#701516",
-                        name: "RDoc",
-                        extensions: [".rdoc"],
-                        wrap: !0,
-                    },
-                    REALBASIC: {
-                        name: "REALbasic",
-                        extensions: [
-                            ".rbbas",
-                            ".rbfrm",
-                            ".rbmnu",
-                            ".rbres",
-                            ".rbtbar",
-                            ".rbuistate",
-                        ],
-                    },
-                    REXX: {
-                        color: "#d90e09",
-                        name: "REXX",
-                        extensions: [".rexx", ".pprx", ".rex"],
-                    },
-                    RMARKDOWN: {
-                        color: "#198ce7",
-                        name: "RMarkdown",
-                        extensions: [".qmd", ".rmd"],
-                        wrap: !0,
-                    },
-                    RON: {
-                        color: "#a62c00",
-                        name: "RON",
-                        extensions: [".ron"],
-                    },
-                    RPC: {
-                        name: "RPC",
-                        extensions: [".x"],
-                    },
-                    RPGLE: {
-                        color: "#2BDE21",
-                        name: "RPGLE",
-                        extensions: [".rpgle", ".sqlrpgle"],
-                    },
-                    "RPM SPEC": {
-                        name: "RPM Spec",
-                        extensions: [".spec"],
-                    },
-                    RUNOFF: {
-                        color: "#665a4e",
-                        name: "RUNOFF",
-                        extensions: [".rnh", ".rno"],
-                        wrap: !0,
-                    },
-                    RACKET: {
-                        color: "#3c5caa",
-                        name: "Racket",
-                        extensions: [".rkt", ".rktd", ".rktl", ".scrbl"],
-                    },
-                    RAGEL: {
-                        color: "#9d5200",
-                        name: "Ragel",
-                        extensions: [".rl"],
-                    },
-                    RAKU: {
-                        color: "#0000fb",
-                        name: "Raku",
-                        extensions: [
-                            ".6pl",
-                            ".6pm",
-                            ".nqp",
-                            ".p6",
-                            ".p6l",
-                            ".p6m",
-                            ".pl",
-                            ".pl6",
-                            ".pm",
-                            ".pm6",
-                            ".raku",
-                            ".rakumod",
-                            ".t",
-                        ],
-                    },
-                    RASCAL: {
-                        color: "#fffaa0",
-                        name: "Rascal",
-                        extensions: [".rsc"],
-                    },
-                    "RAW TOKEN DATA": {
-                        name: "Raw token data",
-                        extensions: [".raw"],
-                    },
-                    RESCRIPT: {
-                        color: "#ed5051",
-                        name: "ReScript",
-                        extensions: [".res", ".resi"],
-                    },
-                    "READLINE CONFIG": {
-                        name: "Readline Config",
-                    },
-                    REASON: {
-                        color: "#ff5847",
-                        name: "Reason",
-                        extensions: [".re", ".rei"],
-                    },
-                    REASONLIGO: {
-                        color: "#ff5847",
-                        name: "ReasonLIGO",
-                        extensions: [".religo"],
-                    },
-                    REBOL: {
-                        color: "#358a5b",
-                        name: "Rebol",
-                        extensions: [".reb", ".r", ".r2", ".r3", ".rebol"],
-                    },
-                    "RECORD JAR": {
-                        color: "#0673ba",
-                        name: "Record Jar",
-                    },
-                    RED: {
-                        color: "#f50000",
-                        name: "Red",
-                        extensions: [".red", ".reds"],
-                    },
-                    REDCODE: {
-                        name: "Redcode",
-                        extensions: [".cw"],
-                    },
-                    "REDIRECT RULES": {
-                        name: "Redirect Rules",
-                    },
-                    "REGULAR EXPRESSION": {
-                        color: "#009a00",
-                        name: "Regular Expression",
-                        extensions: [".regexp", ".regex"],
-                    },
-                    "REN'PY": {
-                        color: "#ff7f7f",
-                        name: "Ren'Py",
-                        extensions: [".rpy"],
-                    },
-                    RENDERSCRIPT: {
-                        name: "RenderScript",
-                        extensions: [".rs", ".rsh"],
-                    },
-                    REZ: {
-                        color: "#FFDAB3",
-                        name: "Rez",
-                        extensions: [".r"],
-                    },
-                    "RICH TEXT FORMAT": {
-                        name: "Rich Text Format",
-                        extensions: [".rtf"],
-                    },
-                    RING: {
-                        color: "#2D54CB",
-                        name: "Ring",
-                        extensions: [".ring"],
-                    },
-                    RIOT: {
-                        color: "#A71E49",
-                        name: "Riot",
-                        extensions: [".riot"],
-                    },
-                    ROBOTFRAMEWORK: {
-                        color: "#00c0b5",
-                        name: "RobotFramework",
-                        extensions: [".robot", ".resource"],
-                    },
-                    ROC: {
-                        color: "#7c38f5",
-                        name: "Roc",
-                        extensions: [".roc"],
-                    },
-                    "ROCQ PROVER": {
-                        color: "#d0b68c",
-                        name: "Rocq Prover",
-                        extensions: [".v", ".coq"],
-                    },
-                    ROFF: {
-                        color: "#ecdebe",
-                        name: "Roff",
-                        extensions: [
-                            ".roff",
-                            ".1",
-                            ".1in",
-                            ".1m",
-                            ".1x",
-                            ".2",
-                            ".3",
-                            ".3in",
-                            ".3m",
-                            ".3p",
-                            ".3pm",
-                            ".3qt",
-                            ".3x",
-                            ".4",
-                            ".5",
-                            ".6",
-                            ".7",
-                            ".8",
-                            ".9",
-                            ".l",
-                            ".man",
-                            ".mdoc",
-                            ".me",
-                            ".ms",
-                            ".n",
-                            ".nr",
-                            ".rno",
-                            ".tmac",
-                        ],
-                        wrap: !0,
-                    },
-                    "ROFF MANPAGE": {
-                        color: "#ecdebe",
-                        name: "Roff Manpage",
-                        extensions: [
-                            ".1",
-                            ".1in",
-                            ".1m",
-                            ".1x",
-                            ".2",
-                            ".3",
-                            ".3in",
-                            ".3m",
-                            ".3p",
-                            ".3pm",
-                            ".3qt",
-                            ".3x",
-                            ".4",
-                            ".5",
-                            ".6",
-                            ".7",
-                            ".8",
-                            ".9",
-                            ".man",
-                            ".mdoc",
-                        ],
-                        wrap: !0,
-                    },
-                    ROUGE: {
-                        color: "#cc0088",
-                        name: "Rouge",
-                        extensions: [".rg"],
-                    },
-                    "ROUTEROS SCRIPT": {
-                        color: "#DE3941",
-                        name: "RouterOS Script",
-                        extensions: [".rsc"],
-                    },
-                    RUBY: {
-                        color: "#701516",
-                        name: "Ruby",
-                        extensions: [
-                            ".rb",
-                            ".builder",
-                            ".eye",
-                            ".fcgi",
-                            ".gemspec",
-                            ".god",
-                            ".jbuilder",
-                            ".mspec",
-                            ".pluginspec",
-                            ".podspec",
-                            ".prawn",
-                            ".rabl",
-                            ".rake",
-                            ".rbi",
-                            ".rbuild",
-                            ".rbw",
-                            ".rbx",
-                            ".ru",
-                            ".ruby",
-                            ".spec",
-                            ".thor",
-                            ".watchr",
-                        ],
-                    },
-                    RUST: {
-                        color: "#dea584",
-                        name: "Rust",
-                        extensions: [".rs", ".rs.in"],
-                    },
-                    SAS: {
-                        color: "#B34936",
-                        name: "SAS",
-                        extensions: [".sas"],
-                    },
-                    SCSS: {
-                        color: "#c6538c",
-                        name: "SCSS",
-                        extensions: [".scss"],
-                    },
-                    "SELINUX POLICY": {
-                        name: "SELinux Policy",
-                        extensions: [".te"],
-                    },
-                    SMT: {
-                        name: "SMT",
-                        extensions: [".smt2", ".smt", ".z3"],
-                    },
-                    SPARQL: {
-                        color: "#0C4597",
-                        name: "SPARQL",
-                        extensions: [".sparql", ".rq"],
-                    },
-                    SQF: {
-                        color: "#3F3F3F",
-                        name: "SQF",
-                        extensions: [".sqf", ".hqf"],
-                    },
-                    SQL: {
-                        color: "#e38c00",
-                        name: "SQL",
-                        extensions: [
-                            ".sql",
-                            ".cql",
-                            ".ddl",
-                            ".inc",
-                            ".mysql",
-                            ".prc",
-                            ".tab",
-                            ".udf",
-                            ".viw",
-                        ],
-                    },
-                    SQLPL: {
-                        color: "#e38c00",
-                        name: "SQLPL",
-                        extensions: [".sql", ".db2"],
-                    },
-                    "SRECODE TEMPLATE": {
-                        color: "#348a34",
-                        name: "SRecode Template",
-                        extensions: [".srt"],
-                    },
-                    "SSH CONFIG": {
-                        name: "SSH Config",
-                    },
-                    STAR: {
-                        name: "STAR",
-                        extensions: [".star"],
-                    },
-                    STL: {
-                        color: "#373b5e",
-                        name: "STL",
-                        extensions: [".stl"],
-                    },
-                    STON: {
-                        name: "STON",
-                        extensions: [".ston"],
-                    },
-                    SVG: {
-                        color: "#ff9900",
-                        name: "SVG",
-                        extensions: [".svg"],
-                    },
-                    SWIG: {
-                        name: "SWIG",
-                        extensions: [".i", ".swg", ".swig"],
-                    },
-                    SAGE: {
-                        name: "Sage",
-                        extensions: [".sage", ".sagews"],
-                    },
-                    SAIL: {
-                        color: "#259dd5",
-                        name: "Sail",
-                        extensions: [".sail"],
-                    },
-                    SALTSTACK: {
-                        color: "#646464",
-                        name: "SaltStack",
-                        extensions: [".sls"],
-                    },
-                    SASS: {
-                        color: "#a53b70",
-                        name: "Sass",
-                        extensions: [".sass"],
-                    },
-                    SCALA: {
-                        color: "#c22d40",
-                        name: "Scala",
-                        extensions: [".scala", ".kojo", ".sbt", ".sc"],
-                    },
-                    SCAML: {
-                        color: "#bd181a",
-                        name: "Scaml",
-                        extensions: [".scaml"],
-                    },
-                    SCENIC: {
-                        color: "#fdc700",
-                        name: "Scenic",
-                        extensions: [".scenic"],
-                    },
-                    SCHEME: {
-                        color: "#1e4aec",
-                        name: "Scheme",
-                        extensions: [
-                            ".scm",
-                            ".sch",
-                            ".sld",
-                            ".sls",
-                            ".sps",
-                            ".ss",
-                        ],
-                    },
-                    SCILAB: {
-                        color: "#ca0f21",
-                        name: "Scilab",
-                        extensions: [".sci", ".sce", ".tst"],
-                    },
-                    SELF: {
-                        color: "#0579aa",
-                        name: "Self",
-                        extensions: [".self"],
-                    },
-                    SHADERLAB: {
-                        color: "#222c37",
-                        name: "ShaderLab",
-                        extensions: [".shader"],
-                    },
-                    SHELL: {
-                        color: "#89e051",
-                        name: "Shell",
-                        extensions: [
-                            ".sh",
-                            ".bash",
-                            ".bats",
-                            ".cgi",
-                            ".command",
-                            ".fcgi",
-                            ".ksh",
-                            ".sh.in",
-                            ".tmux",
-                            ".tool",
-                            ".trigger",
-                            ".zsh",
-                            ".zsh-theme",
-                        ],
-                    },
-                    "SHELLCHECK CONFIG": {
-                        color: "#cecfcb",
-                        name: "ShellCheck Config",
-                    },
-                    SHELLSESSION: {
-                        name: "ShellSession",
-                        extensions: [".sh-session"],
-                    },
-                    SHEN: {
-                        color: "#120F14",
-                        name: "Shen",
-                        extensions: [".shen"],
-                    },
-                    SIEVE: {
-                        name: "Sieve",
-                        extensions: [".sieve"],
-                    },
-                    "SIMPLE FILE VERIFICATION": {
-                        color: "#C9BFED",
-                        name: "Simple File Verification",
-                        extensions: [".sfv"],
-                    },
-                    SINGULARITY: {
-                        color: "#64E6AD",
-                        name: "Singularity",
-                    },
-                    SLANG: {
-                        color: "#1fbec9",
-                        name: "Slang",
-                        extensions: [".slang"],
-                    },
-                    SLASH: {
-                        color: "#007eff",
-                        name: "Slash",
-                        extensions: [".sl"],
-                    },
-                    SLICE: {
-                        color: "#003fa2",
-                        name: "Slice",
-                        extensions: [".ice"],
-                    },
-                    SLIM: {
-                        color: "#2b2b2b",
-                        name: "Slim",
-                        extensions: [".slim"],
-                    },
-                    SLINT: {
-                        color: "#2379F4",
-                        name: "Slint",
-                        extensions: [".slint"],
-                    },
-                    SMPL: {
-                        color: "#c94949",
-                        name: "SmPL",
-                        extensions: [".cocci"],
-                    },
-                    SMALI: {
-                        name: "Smali",
-                        extensions: [".smali"],
-                    },
-                    SMALLTALK: {
-                        color: "#596706",
-                        name: "Smalltalk",
-                        extensions: [".st", ".cs"],
-                    },
-                    SMARTY: {
-                        color: "#f0c040",
-                        name: "Smarty",
-                        extensions: [".tpl"],
-                    },
-                    SMITHY: {
-                        color: "#c44536",
-                        name: "Smithy",
-                        extensions: [".smithy"],
-                    },
-                    SNAKEMAKE: {
-                        color: "#419179",
-                        name: "Snakemake",
-                        extensions: [".smk", ".snakefile"],
-                    },
-                    SOLIDITY: {
-                        color: "#AA6746",
-                        name: "Solidity",
-                        extensions: [".sol"],
-                    },
-                    SOONG: {
-                        name: "Soong",
-                    },
-                    SOURCEPAWN: {
-                        color: "#f69e1d",
-                        name: "SourcePawn",
-                        extensions: [".sp", ".inc"],
-                    },
-                    "SPLINE FONT DATABASE": {
-                        name: "Spline Font Database",
-                        extensions: [".sfd"],
-                    },
-                    SQUIRREL: {
-                        color: "#800000",
-                        name: "Squirrel",
-                        extensions: [".nut"],
-                    },
-                    STAN: {
-                        color: "#b2011d",
-                        name: "Stan",
-                        extensions: [".stan"],
-                    },
-                    "STANDARD ML": {
-                        color: "#dc566d",
-                        name: "Standard ML",
-                        extensions: [".ml", ".fun", ".sig", ".sml"],
-                    },
-                    STARLARK: {
-                        color: "#76d275",
-                        name: "Starlark",
-                        extensions: [".bzl", ".star"],
-                    },
-                    STATA: {
-                        color: "#1a5f91",
-                        name: "Stata",
-                        extensions: [
-                            ".do",
-                            ".ado",
-                            ".doh",
-                            ".ihlp",
-                            ".mata",
-                            ".matah",
-                            ".sthlp",
-                        ],
-                    },
-                    STRINGTEMPLATE: {
-                        color: "#3fb34f",
-                        name: "StringTemplate",
-                        extensions: [".st"],
-                    },
-                    STYLUS: {
-                        color: "#ff6347",
-                        name: "Stylus",
-                        extensions: [".styl"],
-                    },
-                    "SUBRIP TEXT": {
-                        color: "#9e0101",
-                        name: "SubRip Text",
-                        extensions: [".srt"],
-                    },
-                    SUGARSS: {
-                        color: "#2fcc9f",
-                        name: "SugarSS",
-                        extensions: [".sss"],
-                    },
-                    SUPERCOLLIDER: {
-                        color: "#46390b",
-                        name: "SuperCollider",
-                        extensions: [".sc", ".scd"],
-                    },
-                    "SURVEX DATA": {
-                        color: "#ffcc99",
-                        name: "Survex data",
-                        extensions: [".svx"],
-                    },
-                    SVELTE: {
-                        color: "#ff3e00",
-                        name: "Svelte",
-                        extensions: [".svelte"],
-                    },
-                    SWAY: {
-                        color: "#00F58C",
-                        name: "Sway",
-                        extensions: [".sw"],
-                    },
-                    SWEAVE: {
-                        color: "#198ce7",
-                        name: "Sweave",
-                        extensions: [".rnw"],
-                    },
-                    SWIFT: {
-                        color: "#F05138",
-                        name: "Swift",
-                        extensions: [".swift"],
-                    },
-                    SYSTEMVERILOG: {
-                        color: "#DAE1C2",
-                        name: "SystemVerilog",
-                        extensions: [".sv", ".svh", ".vh"],
-                    },
-                    "TI PROGRAM": {
-                        color: "#A0AA87",
-                        name: "TI Program",
-                        extensions: [".8xp", ".8xp.txt"],
-                    },
-                    "TL-VERILOG": {
-                        color: "#C40023",
-                        name: "TL-Verilog",
-                        extensions: [".tlv"],
-                    },
-                    TLA: {
-                        color: "#4b0079",
-                        name: "TLA",
-                        extensions: [".tla"],
-                    },
-                    TOML: {
-                        color: "#9c4221",
-                        name: "TOML",
-                        extensions: [".toml"],
-                    },
-                    "TSPLIB DATA": {
-                        name: "TSPLIB data",
-                        extensions: [".tsp"],
-                    },
-                    TSQL: {
-                        color: "#e38c00",
-                        name: "TSQL",
-                        extensions: [".sql"],
-                    },
-                    TSV: {
-                        color: "#237346",
-                        name: "TSV",
-                        extensions: [".tsv", ".vcf"],
-                    },
-                    TSX: {
-                        color: "#3178c6",
-                        name: "TSX",
-                        extensions: [".tsx"],
-                    },
-                    TXL: {
-                        color: "#0178b8",
-                        name: "TXL",
-                        extensions: [".txl"],
-                    },
-                    TACT: {
-                        color: "#48b5ff",
-                        name: "Tact",
-                        extensions: [".tact"],
-                    },
-                    TALON: {
-                        color: "#333333",
-                        name: "Talon",
-                        extensions: [".talon"],
-                    },
-                    TCL: {
-                        color: "#e4cc98",
-                        name: "Tcl",
-                        extensions: [
-                            ".tcl",
-                            ".adp",
-                            ".sdc",
-                            ".tcl.in",
-                            ".tm",
-                            ".xdc",
-                        ],
-                    },
-                    TCSH: {
-                        name: "Tcsh",
-                        extensions: [".tcsh", ".csh"],
-                    },
-                    TEX: {
-                        color: "#3D6117",
-                        name: "TeX",
-                        extensions: [
-                            ".tex",
-                            ".aux",
-                            ".bbx",
-                            ".cbx",
-                            ".cls",
-                            ".dtx",
-                            ".ins",
-                            ".lbx",
-                            ".ltx",
-                            ".mkii",
-                            ".mkiv",
-                            ".mkvi",
-                            ".sty",
-                            ".toc",
-                        ],
-                        wrap: !0,
-                    },
-                    TEA: {
-                        name: "Tea",
-                        extensions: [".tea"],
-                    },
-                    TERRA: {
-                        color: "#00004c",
-                        name: "Terra",
-                        extensions: [".t"],
-                    },
-                    "TERRAFORM TEMPLATE": {
-                        color: "#7b42bb",
-                        name: "Terraform Template",
-                        extensions: [".tftpl"],
-                    },
-                    TEXINFO: {
-                        name: "Texinfo",
-                        extensions: [".texinfo", ".texi", ".txi"],
-                        wrap: !0,
-                    },
-                    TEXT: {
-                        name: "Text",
-                        extensions: [".txt", ".fr", ".nb", ".ncl", ".no"],
-                        wrap: !0,
-                    },
-                    TEXTGRID: {
-                        color: "#c8506d",
-                        name: "TextGrid",
-                        extensions: [".TextGrid"],
-                    },
-                    "TEXTMATE PROPERTIES": {
-                        color: "#df66e4",
-                        name: "TextMate Properties",
-                    },
-                    TEXTILE: {
-                        color: "#ffe7ac",
-                        name: "Textile",
-                        extensions: [".textile"],
-                        wrap: !0,
-                    },
-                    THRIFT: {
-                        color: "#D12127",
-                        name: "Thrift",
-                        extensions: [".thrift"],
-                    },
-                    TOIT: {
-                        color: "#c2c9fb",
-                        name: "Toit",
-                        extensions: [".toit"],
-                    },
-                    "TOR CONFIG": {
-                        color: "#59316b",
-                        name: "Tor Config",
-                    },
-                    "TREE-SITTER QUERY": {
-                        color: "#8ea64c",
-                        name: "Tree-sitter Query",
-                        extensions: [".scm"],
-                    },
-                    TURING: {
-                        color: "#cf142b",
-                        name: "Turing",
-                        extensions: [".t", ".tu"],
-                    },
-                    TURTLE: {
-                        name: "Turtle",
-                        extensions: [".ttl"],
-                    },
-                    TWIG: {
-                        color: "#c1d026",
-                        name: "Twig",
-                        extensions: [".twig"],
-                    },
-                    "TYPE LANGUAGE": {
-                        name: "Type Language",
-                        extensions: [".tl"],
-                    },
-                    TYPESCRIPT: {
-                        color: "#3178c6",
-                        name: "TypeScript",
-                        extensions: [".ts", ".cts", ".mts"],
-                    },
-                    TYPESPEC: {
-                        color: "#4A3665",
-                        name: "TypeSpec",
-                        extensions: [".tsp"],
-                    },
-                    TYPST: {
-                        color: "#239dad",
-                        name: "Typst",
-                        extensions: [".typ"],
-                    },
-                    "UNIFIED PARALLEL C": {
-                        color: "#4e3617",
-                        name: "Unified Parallel C",
-                        extensions: [".upc"],
-                    },
-                    "UNITY3D ASSET": {
-                        color: "#222c37",
-                        name: "Unity3D Asset",
-                        extensions: [
-                            ".anim",
-                            ".asset",
-                            ".mask",
-                            ".mat",
-                            ".meta",
-                            ".prefab",
-                            ".unity",
-                        ],
-                    },
-                    "UNIX ASSEMBLY": {
-                        name: "Unix Assembly",
-                        extensions: [".s", ".ms"],
-                    },
-                    UNO: {
-                        color: "#9933cc",
-                        name: "Uno",
-                        extensions: [".uno"],
-                    },
-                    UNREALSCRIPT: {
-                        color: "#a54c4d",
-                        name: "UnrealScript",
-                        extensions: [".uc"],
-                    },
-                    "UNTYPED PLUTUS CORE": {
-                        color: "#36adbd",
-                        name: "Untyped Plutus Core",
-                        extensions: [".uplc"],
-                    },
-                    URWEB: {
-                        color: "#ccccee",
-                        name: "UrWeb",
-                        extensions: [".ur", ".urs"],
-                    },
-                    V: {
-                        color: "#4f87c4",
-                        name: "V",
-                        extensions: [".v"],
-                    },
-                    VBA: {
-                        color: "#867db1",
-                        name: "VBA",
-                        extensions: [".bas", ".cls", ".frm", ".vba"],
-                    },
-                    VBSCRIPT: {
-                        color: "#15dcdc",
-                        name: "VBScript",
-                        extensions: [".vbs"],
-                    },
-                    VCL: {
-                        color: "#148AA8",
-                        name: "VCL",
-                        extensions: [".vcl"],
-                    },
-                    VHDL: {
-                        color: "#adb2cb",
-                        name: "VHDL",
-                        extensions: [
-                            ".vhdl",
-                            ".vhd",
-                            ".vhf",
-                            ".vhi",
-                            ".vho",
-                            ".vhs",
-                            ".vht",
-                            ".vhw",
-                        ],
-                    },
-                    VALA: {
-                        color: "#a56de2",
-                        name: "Vala",
-                        extensions: [".vala", ".vapi"],
-                    },
-                    "VALVE DATA FORMAT": {
-                        color: "#f26025",
-                        name: "Valve Data Format",
-                        extensions: [".vdf"],
-                    },
-                    "VELOCITY TEMPLATE LANGUAGE": {
-                        color: "#507cff",
-                        name: "Velocity Template Language",
-                        extensions: [".vtl"],
-                    },
-                    VENTO: {
-                        color: "#ff0080",
-                        name: "Vento",
-                        extensions: [".vto"],
-                    },
-                    VERILOG: {
-                        color: "#b2b7f8",
-                        name: "Verilog",
-                        extensions: [".v", ".veo"],
-                    },
-                    "VIM HELP FILE": {
-                        color: "#199f4b",
-                        name: "Vim Help File",
-                        extensions: [".txt"],
-                    },
-                    "VIM SCRIPT": {
-                        color: "#199f4b",
-                        name: "Vim Script",
-                        extensions: [".vim", ".vba", ".vimrc", ".vmb"],
-                    },
-                    "VIM SNIPPET": {
-                        color: "#199f4b",
-                        name: "Vim Snippet",
-                        extensions: [".snip", ".snippet", ".snippets"],
-                    },
-                    "VISUAL BASIC .NET": {
-                        color: "#945db7",
-                        name: "Visual Basic .NET",
-                        extensions: [".vb", ".vbhtml"],
-                    },
-                    "VISUAL BASIC 6.0": {
-                        color: "#2c6353",
-                        name: "Visual Basic 6.0",
-                        extensions: [".bas", ".cls", ".ctl", ".Dsr", ".frm"],
-                    },
-                    VOLT: {
-                        color: "#1F1F1F",
-                        name: "Volt",
-                        extensions: [".volt"],
-                    },
-                    VUE: {
-                        color: "#41b883",
-                        name: "Vue",
-                        extensions: [".vue"],
-                    },
-                    VYPER: {
-                        color: "#9F4CF2",
-                        name: "Vyper",
-                        extensions: [".vy"],
-                    },
-                    WDL: {
-                        color: "#42f1f4",
-                        name: "WDL",
-                        extensions: [".wdl"],
-                    },
-                    WGSL: {
-                        color: "#1a5e9a",
-                        name: "WGSL",
-                        extensions: [".wgsl"],
-                    },
-                    "WAVEFRONT MATERIAL": {
-                        name: "Wavefront Material",
-                        extensions: [".mtl"],
-                    },
-                    "WAVEFRONT OBJECT": {
-                        name: "Wavefront Object",
-                        extensions: [".obj"],
-                    },
-                    "WEB ONTOLOGY LANGUAGE": {
-                        color: "#5b70bd",
-                        name: "Web Ontology Language",
-                        extensions: [".owl"],
-                    },
-                    WEBASSEMBLY: {
-                        color: "#04133b",
-                        name: "WebAssembly",
-                        extensions: [".wast", ".wat"],
-                    },
-                    "WEBASSEMBLY INTERFACE TYPE": {
-                        color: "#6250e7",
-                        name: "WebAssembly Interface Type",
-                        extensions: [".wit"],
-                    },
-                    WEBIDL: {
-                        name: "WebIDL",
-                        extensions: [".webidl"],
-                    },
-                    WEBVTT: {
-                        name: "WebVTT",
-                        extensions: [".vtt"],
-                        wrap: !0,
-                    },
-                    "WGET CONFIG": {
-                        name: "Wget Config",
-                    },
-                    WHILEY: {
-                        color: "#d5c397",
-                        name: "Whiley",
-                        extensions: [".whiley"],
-                    },
-                    WIKITEXT: {
-                        color: "#fc5757",
-                        name: "Wikitext",
-                        extensions: [".mediawiki", ".wiki", ".wikitext"],
-                        wrap: !0,
-                    },
-                    "WIN32 MESSAGE FILE": {
-                        name: "Win32 Message File",
-                        extensions: [".mc"],
-                    },
-                    "WINDOWS REGISTRY ENTRIES": {
-                        color: "#52d5ff",
-                        name: "Windows Registry Entries",
-                        extensions: [".reg"],
-                    },
-                    "WITCHER SCRIPT": {
-                        color: "#ff0000",
-                        name: "Witcher Script",
-                        extensions: [".ws"],
-                    },
-                    WOLLOK: {
-                        color: "#a23738",
-                        name: "Wollok",
-                        extensions: [".wlk"],
-                    },
-                    "WORLD OF WARCRAFT ADDON DATA": {
-                        color: "#f7e43f",
-                        name: "World of Warcraft Addon Data",
-                        extensions: [".toc"],
-                    },
-                    WREN: {
-                        color: "#383838",
-                        name: "Wren",
-                        extensions: [".wren"],
-                    },
-                    "X BITMAP": {
-                        name: "X BitMap",
-                        extensions: [".xbm"],
-                    },
-                    "X FONT DIRECTORY INDEX": {
-                        name: "X Font Directory Index",
-                    },
-                    "X PIXMAP": {
-                        name: "X PixMap",
-                        extensions: [".xpm", ".pm"],
-                    },
-                    X10: {
-                        color: "#4B6BEF",
-                        name: "X10",
-                        extensions: [".x10"],
-                    },
-                    XC: {
-                        color: "#99DA07",
-                        name: "XC",
-                        extensions: [".xc"],
-                    },
-                    XCOMPOSE: {
-                        name: "XCompose",
-                    },
-                    XML: {
-                        color: "#0060ac",
-                        name: "XML",
-                        extensions: [
-                            ".xml",
-                            ".adml",
-                            ".admx",
-                            ".ant",
-                            ".axaml",
-                            ".axml",
-                            ".builds",
-                            ".ccproj",
-                            ".ccxml",
-                            ".clixml",
-                            ".cproject",
-                            ".cscfg",
-                            ".csdef",
-                            ".csl",
-                            ".csproj",
-                            ".ct",
-                            ".depproj",
-                            ".dita",
-                            ".ditamap",
-                            ".ditaval",
-                            ".dll.config",
-                            ".dotsettings",
-                            ".filters",
-                            ".fsproj",
-                            ".fxml",
-                            ".glade",
-                            ".gml",
-                            ".gmx",
-                            ".gpx",
-                            ".grxml",
-                            ".gst",
-                            ".hzp",
-                            ".iml",
-                            ".ivy",
-                            ".jelly",
-                            ".jsproj",
-                            ".kml",
-                            ".launch",
-                            ".mdpolicy",
-                            ".mjml",
-                            ".mm",
-                            ".mod",
-                            ".mojo",
-                            ".mxml",
-                            ".natvis",
-                            ".ncl",
-                            ".ndproj",
-                            ".nproj",
-                            ".nuspec",
-                            ".odd",
-                            ".osm",
-                            ".pkgproj",
-                            ".pluginspec",
-                            ".proj",
-                            ".props",
-                            ".ps1xml",
-                            ".psc1",
-                            ".pt",
-                            ".qhelp",
-                            ".rdf",
-                            ".res",
-                            ".resx",
-                            ".rs",
-                            ".rss",
-                            ".sch",
-                            ".scxml",
-                            ".sfproj",
-                            ".shproj",
-                            ".slnx",
-                            ".srdf",
-                            ".storyboard",
-                            ".sublime-snippet",
-                            ".sw",
-                            ".targets",
-                            ".tml",
-                            ".ts",
-                            ".tsx",
-                            ".typ",
-                            ".ui",
-                            ".urdf",
-                            ".ux",
-                            ".vbproj",
-                            ".vcxproj",
-                            ".vsixmanifest",
-                            ".vssettings",
-                            ".vstemplate",
-                            ".vxml",
-                            ".wixproj",
-                            ".workflow",
-                            ".wsdl",
-                            ".wsf",
-                            ".wxi",
-                            ".wxl",
-                            ".wxs",
-                            ".x3d",
-                            ".xacro",
-                            ".xaml",
-                            ".xib",
-                            ".xlf",
-                            ".xliff",
-                            ".xmi",
-                            ".xml.dist",
-                            ".xmp",
-                            ".xproj",
-                            ".xsd",
-                            ".xspec",
-                            ".xul",
-                            ".zcml",
-                        ],
-                    },
-                    "XML PROPERTY LIST": {
-                        color: "#0060ac",
-                        name: "XML Property List",
-                        extensions: [
-                            ".plist",
-                            ".stTheme",
-                            ".tmCommand",
-                            ".tmLanguage",
-                            ".tmPreferences",
-                            ".tmSnippet",
-                            ".tmTheme",
-                        ],
-                    },
-                    XPAGES: {
-                        name: "XPages",
-                        extensions: [".xsp-config", ".xsp.metadata"],
-                    },
-                    XPROC: {
-                        name: "XProc",
-                        extensions: [".xpl", ".xproc"],
-                    },
-                    XQUERY: {
-                        color: "#5232e7",
-                        name: "XQuery",
-                        extensions: [".xquery", ".xq", ".xql", ".xqm", ".xqy"],
-                    },
-                    XS: {
-                        name: "XS",
-                        extensions: [".xs"],
-                    },
-                    XSLT: {
-                        color: "#EB8CEB",
-                        name: "XSLT",
-                        extensions: [".xslt", ".xsl"],
-                    },
-                    XMAKE: {
-                        color: "#22a079",
-                        name: "Xmake",
-                    },
-                    XOJO: {
-                        color: "#81bd41",
-                        name: "Xojo",
-                        extensions: [
-                            ".xojo_code",
-                            ".xojo_menu",
-                            ".xojo_report",
-                            ".xojo_script",
-                            ".xojo_toolbar",
-                            ".xojo_window",
-                        ],
-                    },
-                    XONSH: {
-                        color: "#285EEF",
-                        name: "Xonsh",
-                        extensions: [".xsh"],
-                    },
-                    XTEND: {
-                        color: "#24255d",
-                        name: "Xtend",
-                        extensions: [".xtend"],
-                    },
-                    YAML: {
-                        color: "#cb171e",
-                        name: "YAML",
-                        extensions: [
-                            ".yml",
-                            ".mir",
-                            ".reek",
-                            ".rviz",
-                            ".sublime-syntax",
-                            ".syntax",
-                            ".yaml",
-                            ".yaml-tmlanguage",
-                            ".yaml.sed",
-                            ".yml.mysql",
-                        ],
-                    },
-                    YANG: {
-                        name: "YANG",
-                        extensions: [".yang"],
-                    },
-                    YARA: {
-                        color: "#220000",
-                        name: "YARA",
-                        extensions: [".yar", ".yara"],
-                    },
-                    YASNIPPET: {
-                        color: "#32AB90",
-                        name: "YASnippet",
-                        extensions: [".yasnippet"],
-                    },
-                    YACC: {
-                        color: "#4B6C4B",
-                        name: "Yacc",
-                        extensions: [".y", ".yacc", ".yy"],
-                    },
-                    YUL: {
-                        color: "#794932",
-                        name: "Yul",
-                        extensions: [".yul"],
-                    },
-                    ZAP: {
-                        color: "#0d665e",
-                        name: "ZAP",
-                        extensions: [".zap", ".xzap"],
-                    },
-                    ZIL: {
-                        color: "#dc75e5",
-                        name: "ZIL",
-                        extensions: [".zil", ".mud"],
-                    },
-                    ZEEK: {
-                        name: "Zeek",
-                        extensions: [".zeek", ".bro"],
-                    },
-                    ZENSCRIPT: {
-                        color: "#00BCD1",
-                        name: "ZenScript",
-                        extensions: [".zs"],
-                    },
-                    ZEPHIR: {
-                        color: "#118f9e",
-                        name: "Zephir",
-                        extensions: [".zep"],
-                    },
-                    ZIG: {
-                        color: "#ec915c",
-                        name: "Zig",
-                        extensions: [".zig", ".zig.zon"],
-                    },
-                    ZIMPL: {
-                        color: "#d67711",
-                        name: "Zimpl",
-                        extensions: [".zimpl", ".zmpl", ".zpl"],
-                    },
-                    ZMODEL: {
-                        color: "#ff7100",
-                        name: "Zmodel",
-                        extensions: [".zmodel"],
-                    },
-                    "CURL CONFIG": {
-                        name: "cURL Config",
-                    },
-                    CRONTAB: {
-                        color: "#ead7ac",
-                        name: "crontab",
-                    },
-                    DESKTOP: {
-                        name: "desktop",
-                        extensions: [".desktop", ".desktop.in", ".service"],
-                    },
-                    DIRCOLORS: {
-                        name: "dircolors",
-                        extensions: [".dircolors"],
-                    },
-                    EC: {
-                        color: "#913960",
-                        name: "eC",
-                        extensions: [".ec", ".eh"],
-                    },
-                    EDN: {
-                        name: "edn",
-                        extensions: [".edn"],
-                    },
-                    FISH: {
-                        color: "#4aae47",
-                        name: "fish",
-                        extensions: [".fish"],
-                    },
-                    HOON: {
-                        color: "#00b171",
-                        name: "hoon",
-                        extensions: [".hoon"],
-                    },
-                    ICALENDAR: {
-                        color: "#ec564c",
-                        name: "iCalendar",
-                        extensions: [".ics", ".ical"],
-                    },
-                    JQ: {
-                        color: "#c7254e",
-                        name: "jq",
-                        extensions: [".jq"],
-                    },
-                    KVLANG: {
-                        color: "#1da6e0",
-                        name: "kvlang",
-                        extensions: [".kv"],
-                    },
-                    "MIRC SCRIPT": {
-                        color: "#3d57c3",
-                        name: "mIRC Script",
-                        extensions: [".mrc"],
-                    },
-                    MCFUNCTION: {
-                        color: "#E22837",
-                        name: "mcfunction",
-                        extensions: [".mcfunction"],
-                    },
-                    MDSVEX: {
-                        color: "#5f9ea0",
-                        name: "mdsvex",
-                        extensions: [".svx"],
-                        wrap: !0,
-                    },
-                    MUPAD: {
-                        color: "#244963",
-                        name: "mupad",
-                        extensions: [".mu"],
-                    },
-                    NANORC: {
-                        color: "#2d004d",
-                        name: "nanorc",
-                        extensions: [".nanorc"],
-                    },
-                    NESC: {
-                        color: "#94B0C7",
-                        name: "nesC",
-                        extensions: [".nc"],
-                    },
-                    OOC: {
-                        color: "#b0b77e",
-                        name: "ooc",
-                        extensions: [".ooc"],
-                    },
-                    Q: {
-                        color: "#0040cd",
-                        name: "q",
-                        extensions: [".q"],
-                    },
-                    RESTRUCTUREDTEXT: {
-                        color: "#141414",
-                        name: "reStructuredText",
-                        extensions: [".rst", ".rest", ".rest.txt", ".rst.txt"],
-                        wrap: !0,
-                    },
-                    "ROBOTS.TXT": {
-                        name: "robots.txt",
-                    },
-                    SED: {
-                        color: "#64b970",
-                        name: "sed",
-                        extensions: [".sed"],
-                    },
-                    TEMPL: {
-                        color: "#66D0DD",
-                        name: "templ",
-                        extensions: [".templ"],
-                    },
-                    VCARD: {
-                        color: "#ee2647",
-                        name: "vCard",
-                        extensions: [".vcf"],
-                    },
-                    WISP: {
-                        color: "#7582D1",
-                        name: "wisp",
-                        extensions: [".wisp"],
-                    },
-                    XBASE: {
-                        color: "#403a40",
-                        name: "xBase",
-                        extensions: [".prg", ".ch", ".prw"],
-                    },
-                };
-        },
-        31339: (e, n, o) => {
-            o.d(n, {
-                q: () => r,
-            });
-            var s = o(74848),
-                a = o(21728);
-            let t = {
+            var r = n(74848),
+                a = n(21728);
+            let o = {
                 languageDot: "LanguageDot-module__languageDot--O6n2z",
                 languageDotCompact:
                     "LanguageDot-module__languageDotCompact--V51gt",
             };
-            function r(e) {
-                let n,
-                    o,
-                    r = (0, a.c)(5),
-                    { color: i, variant: l } = e;
-                r[0] !== i
-                    ? ((n = {
-                          backgroundColor: i,
+            function l(e) {
+                let t,
+                    n,
+                    l = (0, a.c)(5),
+                    { color: s, variant: i } = e;
+                l[0] !== s
+                    ? ((t = {
+                          backgroundColor: s,
                       }),
-                      (r[0] = i),
-                      (r[1] = n))
-                    : (n = r[1]);
-                let c = "compact" === l ? t.languageDotCompact : t.languageDot;
+                      (l[0] = s),
+                      (l[1] = t))
+                    : (t = l[1]);
+                let c = "compact" === i ? o.languageDotCompact : o.languageDot;
                 return (
-                    r[2] !== n || r[3] !== c
-                        ? ((o = (0, s.jsx)("span", {
-                              style: n,
+                    l[2] !== t || l[3] !== c
+                        ? ((n = (0, r.jsx)("span", {
+                              style: t,
                               className: c,
                           })),
-                          (r[2] = n),
-                          (r[3] = c),
-                          (r[4] = o))
-                        : (o = r[4]),
-                    o
+                          (l[2] = t),
+                          (l[3] = c),
+                          (l[4] = n))
+                        : (n = l[4]),
+                    n
                 );
             }
             try {
-                r.displayName || (r.displayName = "LanguageDot");
+                l.displayName || (l.displayName = "LanguageDot");
             } catch {}
         },
-        39876: (e, n, o) => {
-            o.d(n, {
+        39876: (e, t, n) => {
+            n.d(t, {
                 R: () => a,
             });
-            var s = o(96540);
-            function a(e, n, o) {
+            var r = n(96540);
+            function a(e, t, n) {
                 let {
                     publicCodeReferences: a = [],
-                    codeVulnerabilities: t = [],
-                } = (0, s.useMemo)(() => {
-                    if (void 0 === n || void 0 === o || !e)
+                    codeVulnerabilities: o = [],
+                } = (0, r.useMemo)(() => {
+                    if (void 0 === t || void 0 === n || !e)
                         return {
                             publicCodeReferences: [],
                             codeVulnerabilities: [],
                         };
-                    let { PublicCodeReference: s, CodeVulnerability: a } = e;
+                    let { PublicCodeReference: r, CodeVulnerability: a } = e;
                     return {
-                        publicCodeReferences: s?.filter(
-                            (e) => e.startOffset >= n && e.endOffset <= o
+                        publicCodeReferences: r?.filter(
+                            (e) => e.startOffset >= t && e.endOffset <= n
                         ),
                         codeVulnerabilities: a?.filter(
-                            (e) => e.startOffset >= n && e.endOffset <= o
+                            (e) => e.startOffset >= t && e.endOffset <= n
                         ),
                     };
-                }, [e, n, o]);
+                }, [e, t, n]);
                 return {
                     publicCodeReferences: a,
-                    codeVulnerabilities: t,
+                    codeVulnerabilities: o,
                 };
             }
         },
-        40260: (e, n, o) => {
-            o.d(n, {
-                D: () => s,
+        57826: (e, t, n) => {
+            n.d(t, {
+                F: () => r,
             });
-            function s(e) {
-                if ("clipboard" in navigator)
-                    return navigator.clipboard.writeText(e);
-                let n = document.body;
-                if (!n) return Promise.reject(Error());
-                let o = (function (e) {
-                    let n = document.createElement("pre");
-                    return (
-                        (n.style.width = "1px"),
-                        (n.style.height = "1px"),
-                        (n.style.position = "fixed"),
-                        (n.style.top = "5px"),
-                        (n.textContent = e),
-                        n
-                    );
-                })(e);
-                return (
-                    n.appendChild(o),
-                    !(function (e) {
-                        if ("clipboard" in navigator)
-                            return navigator.clipboard.writeText(
-                                e.textContent || ""
-                            );
-                        let n = getSelection();
-                        if (null == n) return Promise.reject(Error());
-                        n.removeAllRanges();
-                        let o = document.createRange();
-                        (o.selectNodeContents(e),
-                            n.addRange(o),
-                            document.execCommand("copy"),
-                            n.removeAllRanges(),
-                            Promise.resolve());
-                    })(o),
-                    n.removeChild(o),
-                    Promise.resolve()
-                );
-            }
-        },
-        57826: (e, n, o) => {
-            o.d(n, {
-                F: () => s,
-            });
-            let s = (0, o(96540).createContext)({});
+            let r = (0, n(96540).createContext)({});
             try {
-                s.displayName || (s.displayName = "ExtensionContext");
+                r.displayName || (r.displayName = "ExtensionContext");
             } catch {}
         },
-        85094: (e, n, o) => {
-            function s(e, n) {
-                return n in e && "string" == typeof e[n]
-                    ? JSON.parse(e[n])
+        85094: (e, t, n) => {
+            function r(e, t) {
+                return t in e && "string" == typeof e[t]
+                    ? JSON.parse(e[t])
                     : null;
             }
-            o.d(n, {
+            n.d(t, {
                 F: () => a,
-                k: () => s,
+                k: () => r,
             });
             let a = (e) =>
                 e.replaceAll(/-\w/g, (e) => e[1]?.toUpperCase() ?? "");
         },
-        98755: (e, n, o) => {
-            o.d(n, {
-                T: () => p,
-            });
-            var s = o(74848),
-                a = o(70263),
-                t = o(38621),
-                r = o(26108),
-                i = o(96540),
-                l = o(34164),
-                c = o(87448),
-                m = o(4559),
-                x = o(40260);
-            let d = {
-                tooltip: "CopyToClipboardButton-module__tooltip--HDUYz",
-            };
-            function p({
-                icon: e = t.CopyIcon,
-                size: n = "medium",
-                onCopy: o,
-                textToCopy: p,
-                tooltipProps: E,
-                variant: A = "invisible",
-                ariaLabel: f,
-                className: S,
-                disabled: C,
-                ...L
-            }) {
-                let [R, T] = i.useState(!1),
-                    u = (0, a.A)(),
-                    O = f ?? `Copy "${p}" to clipboard`,
-                    b = R ? "Copied!" : O,
-                    I = {
-                        size: n,
-                        variant: A,
-                        onClick: () => {
-                            (T(!0),
-                                (0, m.i)("Copied!"),
-                                (0, x.D)(p),
-                                o?.(),
-                                setTimeout(() => u() && T(!1), 2e3));
-                        },
-                        icon: R ? t.CheckIcon : e,
-                        className: (0, l.$)(R ? "color-fg-success" : void 0, S),
-                        ...L,
-                    },
-                    N = (0, i.useId)();
-                return C
-                    ? (0, s.jsx)(r.K, {
-                          ...I,
-                          "aria-label": O,
-                          disabled: !0,
-                      })
-                    : (0, s.jsx)(c.m_, {
-                          text: b,
-                          "aria-label": O,
-                          type: "label",
-                          id: N,
-                          "aria-hidden": !0,
-                          ...E,
-                          className: (0, l.$)(d.tooltip, E?.className),
-                          children: (0, s.jsx)(r.K, {
-                              ...I,
-                              "aria-labelledby": N,
-                          }),
-                      });
-            }
-            try {
-                p.displayName || (p.displayName = "CopyToClipboardButton");
-            } catch {}
-        },
     },
 ]);
-//# sourceMappingURL=packages_copilot-markdown_MarkdownRenderer_tsx-0d14745eb895.js.map
+//# sourceMappingURL=packages_copilot-markdown_MarkdownRenderer_tsx-483289588751.js.map
