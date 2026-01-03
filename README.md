@@ -4,7 +4,7 @@ A ~~simplistic~~ CydiaSubstrate tweak to make GitHub website work (accessible) o
 
 ### CSS Cascade Layers and `::backdrop` Support
 
-GitHub website nowadays uses a modern theming system that is not supported by older versions of WebKit, e.g. `@layer` at-rules. Anything inside `@layer` won't be recognized. Furthermore, the pseudoselector `::backdrop`, which is widely used when defining CSS variables for colors, is not supported. When it is present, the old WebKit engines will discard the ensire style rules under it.
+GitHub website nowadays uses a modern theming system that is not supported by older versions of WebKit, e.g. `@layer` at-rules. Anything inside `@layer` won't be recognized. Furthermore, the pseudoselector `::backdrop`, which is widely used when defining CSS variables for colors, is not supported. When it is present, the old WebKit engines will discard the entire style rules under it.
 
 To mitigate this, this tweak dynamically inserts new stylesheets into the page needed to make the website more accessible, with the unsupported syntax removed, using JavaScript.
 

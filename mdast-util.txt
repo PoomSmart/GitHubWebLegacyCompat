@@ -1,5 +1,0 @@
-# Old
-/(?<=^|\s|\p{P}|\p{S})([-.\w+]+)@([-\w]+(?:\.[-\w]+)+)/gu,b
-
-# New
-/(^|[\s\p{P}\p{S}])([-\w.+]+)@([-\w]+(?:\.[-\w]+)+)/gu,(_, prefix, local, domain) => prefix + b(`${local}@${domain}`)

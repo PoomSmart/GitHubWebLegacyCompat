@@ -1,9 +1,9 @@
+"use strict";
 (globalThis.webpackChunk_github_ui_github_ui =
     globalThis.webpackChunk_github_ui_github_ui || []).push([
-    ["environment"],
+    [75294],
     {
         5225: (e, t, n) => {
-            "use strict";
             function r(...e) {
                 return JSON.stringify(e, (e, t) =>
                     "object" == typeof t ? t : String(t)
@@ -28,7 +28,6 @@
             n.d(t, { A: () => o });
         },
         6923: (e, t, n) => {
-            "use strict";
             n.d(t, { KJ: () => a, X3: () => o, g5: () => i });
             var r = n(56038);
             let o = void 0 === r.XC,
@@ -46,86 +45,13 @@
                 );
             }
         },
-        11083: (e, t, n) => {
-            "use strict";
-            n.d(t, { X: () => h, i: () => l });
-            var r = n(71315),
-                o = n(34095),
-                a = n(99223),
-                i = n(69599),
-                c = n(21067),
-                s = n(70170);
-            let u = [];
-            function l(e, t = !1, n = 0.5) {
-                if (!r.X3 && !0 !== (0, i.G7)("browser_stats_disabled")) {
-                    if (n < 0 || n > 1)
-                        throw RangeError(
-                            "Sampling probability must be between 0 and 1"
-                        );
-                    (void 0 === e.timestamp && (e.timestamp = Date.now()),
-                        (e.loggedIn = (0, c.M3)()),
-                        (e.staff = h()),
-                        (e.bundler = a.v),
-                        Math.random() < n && u.push(e),
-                        t ? m() : d());
-                }
-            }
-            let f = null,
-                d = (0, s.n)(async function () {
-                    (await o.K,
-                        null == f && (f = window.requestIdleCallback(m)));
-                }, 5e3);
-            function m() {
-                if (((f = null), !u.length)) return;
-                let e = r.XC?.head?.querySelector(
-                    'meta[name="browser-stats-url"]'
-                )?.content;
-                if (e) {
-                    for (let o of (function (e) {
-                        let t = [],
-                            n = e.map((e) => JSON.stringify(e));
-                        for (; n.length > 0; )
-                            t.push(
-                                (function (e) {
-                                    let t = e.shift(),
-                                        n = [t],
-                                        r = t.length;
-                                    for (; e.length > 0 && r <= 65536; ) {
-                                        let t = e[0].length;
-                                        if (r + t <= 65536) {
-                                            let o = e.shift();
-                                            (n.push(o), (r += t));
-                                        } else break;
-                                    }
-                                    return n;
-                                })(n)
-                            );
-                        return t;
-                    })(u)) {
-                        var t = e,
-                            n = `{"stats": [${o.join(",")}], "target": "${r.XC?.head?.querySelector('meta[name="ui-target"]')?.content || "full"}"}`;
-                        try {
-                            navigator.sendBeacon && navigator.sendBeacon(t, n);
-                        } catch {}
-                    }
-                    u = [];
-                }
-            }
-            function h() {
-                return !!r.XC?.head?.querySelector('meta[name="user-staff"]')
-                    ?.content;
-            }
-            (r.XC?.addEventListener("pagehide", m),
-                r.XC?.addEventListener("visibilitychange", m));
-        },
         13523: (e, t, n) => {
-            "use strict";
             n.d(t, {
                 $r: () => i,
                 M1: () => c,
                 li: () => o,
-                pS: () => u,
-                wE: () => s,
+                pS: () => s,
+                wE: () => u,
             });
             var r = n(71315);
             let o = "X-Fetch-Nonce",
@@ -136,7 +62,7 @@
             function c() {
                 return a.values().next().value || "";
             }
-            function s(e) {
+            function u(e) {
                 let t = {};
                 return (
                     void 0 !== e && (t["X-Fetch-Nonce-To-Validate"] = e),
@@ -148,7 +74,7 @@
                     t
                 );
             }
-            function u() {
+            function s() {
                 let e =
                     r.XC?.head?.querySelector('meta[name="fetch-nonce"]')
                         ?.content || "";
@@ -156,17 +82,17 @@
             }
         },
         21067: (e, t, n) => {
-            "use strict";
             let r;
             function o() {
-                if (!r)
+                let e = void 0 ?? r;
+                if (!e)
                     throw Error(
                         "Client env was requested before it was loaded. This likely means you are attempting to use client env at the module level in SSR, which is not supported. Please move your client env usage into a function."
                     );
-                return r;
+                return e;
             }
             function a() {
-                return r?.locale ?? "en-US";
+                return o().locale ?? "en-US";
             }
             function i() {
                 return !!o().login;
@@ -174,21 +100,20 @@
             function c() {
                 return o().login;
             }
-            (n.d(t, { JK: () => a, M3: () => i, _$: () => o, cj: () => c }),
-                !(function () {
-                    if ("undefined" != typeof document) {
-                        let e = document.getElementById("client-env");
-                        if (e)
-                            try {
-                                r = JSON.parse(e.textContent || "");
-                            } catch (e) {
-                                console.error("Error parsing client-env", e);
-                            }
+            if (
+                (n.d(t, { JK: () => a, M3: () => i, _$: () => o, cj: () => c }),
+                "undefined" != typeof document)
+            ) {
+                let e = document.getElementById("client-env");
+                if (e)
+                    try {
+                        r = JSON.parse(e.textContent || "");
+                    } catch (e) {
+                        console.error("Error parsing client-env", e);
                     }
-                })());
+            }
         },
         34095: (e, t, n) => {
-            "use strict";
             n.d(t, { G: () => o, K: () => a });
             var r = n(71315);
             let o =
@@ -208,7 +133,6 @@
                           });
         },
         36301: (e, t, n) => {
-            "use strict";
             let r;
             function o() {
                 return `${Math.round(0x7fffffff * Math.random())}.${Math.round(Date.now() / 1e3)}`;
@@ -249,42 +173,45 @@
             n.d(t, { y: () => a });
         },
         38102: (e, t, n) => {
-            "use strict";
-            n.d(t, { N7: () => w });
-            var r = n(36301),
-                o = n(77065),
-                a = n(24212);
-            function i(e) {
-                return (0, a.q)(e.stack || "").map((e) => ({
+            let r;
+            n.d(t, { AW: () => w, fE: () => g, N7: () => v });
+            var o = n(36301),
+                a = n(77065),
+                i = n(24212);
+            function c(e) {
+                return (0, i.q)(e.stack || "").map((e) => ({
                     filename: e.file || "",
                     function: String(e.methodName),
                     lineno: (e.lineNumber || 0).toString(),
                     colno: (e.column || 0).toString(),
                 }));
             }
-            function c(e) {
+            function u(e) {
                 let t = document.querySelectorAll(e);
                 if (t.length > 0) return t[t.length - 1];
             }
             var s = n(99223),
-                u = n(71315),
-                l = n(94416),
-                f = n(69599),
-                d = n(88057);
-            let m = !1,
-                h = 0,
-                p = Date.now(),
-                y = new Set([
+                l = n(71315),
+                f = n(94416),
+                d = n(69599),
+                m = n(88057);
+            let h = !1,
+                p = 0,
+                y = Date.now(),
+                g = new Set([
                     "AbortError",
                     "AuthSessionExpiredError",
                     "TypeError",
+                    "RateLimitError",
+                    "NotAcceptableError",
+                    "SecFetchDestError",
                 ]),
-                g = new Set([
+                w = new Set([
                     "Failed to fetch",
                     "NetworkError when attempting to fetch resource.",
                     "Unable to perform this operation. Please try again later.",
                 ]);
-            function w(e, t = {}) {
+            function v(e, t = {}) {
                 if (
                     !(
                         e instanceof Error ||
@@ -305,7 +232,7 @@
                             )
                                 return !0;
                             if ("string" == typeof e) {
-                                if (q.some((t) => e.includes(t))) return !0;
+                                if (A.some((t) => e.includes(t))) return !0;
                             } else if (
                                 "object" == typeof e &&
                                 "string" == typeof e.message &&
@@ -324,12 +251,12 @@
                                 return "Unserializable";
                             }
                         })(e);
-                    v(
-                        S(
+                    S(
+                        E(
                             {
                                 type: "UnknownError",
                                 value: `Unable to report error, due to a thrown non-Error type: ${typeof e}, with value ${r}`,
-                                stacktrace: i(n),
+                                stacktrace: c(n),
                                 catalogService: document.head?.querySelector(
                                     'meta[name="current-catalog-service"]'
                                 )?.content,
@@ -345,14 +272,17 @@
                 }
                 (e.name &&
                     ("AbortError" === e.name ||
-                        (y.has(e.name) && g.has(e.message)) ||
-                        (e.name.startsWith("ApiError") && g.has(e.message)))) ||
-                    v(
-                        S(
+                        "RateLimitError" === e.name ||
+                        "NotAcceptableError" === e.name ||
+                        "SecFetchDestError" === e.name ||
+                        (g.has(e.name) && w.has(e.message)) ||
+                        (e.name.startsWith("ApiError") && w.has(e.message)))) ||
+                    S(
+                        E(
                             {
                                 type: e.name,
                                 value: e.message,
-                                stacktrace: i(e),
+                                stacktrace: c(e),
                                 catalogService:
                                     e.catalogService ||
                                     document.head?.querySelector(
@@ -368,8 +298,35 @@
                         )
                     );
             }
-            async function v(e) {
-                if (!(!E && !m && h < 10 && (0, o.TT)())) return;
+            async function S(e) {
+                if (
+                    !(
+                        !q &&
+                        !h &&
+                        p < 10 &&
+                        (r ??
+                            (r =
+                                (0, a.TT)() &&
+                                (function () {
+                                    let e = l.cg?.history,
+                                        t = l.cg?.location;
+                                    if (!e || !t) return !1;
+                                    try {
+                                        return (
+                                            e.replaceState(
+                                                e.state,
+                                                document.title,
+                                                t.href
+                                            ),
+                                            !0
+                                        );
+                                    } catch {
+                                        return !1;
+                                    }
+                                })()))
+                    )
+                )
+                    return;
                 let t = document.head?.querySelector(
                     'meta[name="browser-errors-url"]'
                 )?.content;
@@ -379,10 +336,10 @@
                             (e) => b.test(e.filename) || b.test(e.function)
                         )
                     ) {
-                        m = !0;
+                        h = !0;
                         return;
                     }
-                    h++;
+                    p++;
                     try {
                         await fetch(t, {
                             method: "post",
@@ -397,15 +354,16 @@
                     } catch {}
                 }
             }
-            function S(e, t = {}) {
-                let n = { ...t };
+            function E(e, t = {}) {
+                let n,
+                    r = { ...t };
                 return (
-                    (0, f.G7)("failbot_report_error_react_apps_on_page") &&
-                        !n.reactAppName &&
-                        (n.reactAppName = (function (e) {
+                    (0, d.G7)("failbot_report_error_react_apps_on_page") &&
+                        !r.reactAppName &&
+                        (r.reactAppName = (function (e) {
                             let t = (function () {
                                 let e = new Set();
-                                for (let [t, n] of _)
+                                for (let [t, n] of N)
                                     for (let r of document.querySelectorAll(t))
                                         if (r instanceof HTMLElement) {
                                             let t = r.getAttribute(n);
@@ -431,21 +389,16 @@
                             error: e,
                             sanitizedUrl:
                                 `${window.location.protocol}//${window.location.host}${
+                                    ((n = u("meta[name=analytics-location]"))
+                                        ? n.content
+                                        : window.location.pathname) +
                                     (function () {
-                                        let e = c(
-                                            "meta[name=analytics-location]"
-                                        );
-                                        return e
-                                            ? e.content
-                                            : window.location.pathname;
-                                    })() +
-                                    (function () {
-                                        let e = c(
+                                        let e = u(
                                                 "meta[name=analytics-location-query-strip]"
                                             ),
                                             t = "";
                                         e || (t = window.location.search);
-                                        let n = c(
+                                        let n = u(
                                             "meta[name=analytics-location-params]"
                                         );
                                         for (let e of (n &&
@@ -466,58 +419,98 @@
                                     })()
                                 }` || window.location.href,
                             readyState: document.readyState,
-                            referrer: (0, l.dR)(),
-                            timeSinceLoad: Math.round(Date.now() - p),
+                            referrer: (0, f.dR)(),
+                            timeSinceLoad: Math.round(Date.now() - y),
                             user:
                                 (function () {
                                     let e = document.head?.querySelector(
                                         'meta[name="user-login"]'
                                     )?.content;
                                     if (e) return e;
-                                    let t = (0, r.y)();
+                                    let t = (0, o.y)();
                                     return `anonymous-${t}`;
                                 })() || void 0,
                             actorId: document.head?.querySelector(
                                 'meta[name="octolytics-actor-id"]'
                             )?.content,
                             bundler: s.v,
-                            ui: !!document.querySelector('meta[name="ui"]'),
+                            ui: "vite-tss" === s.v,
                             release: document.head?.querySelector(
                                 'meta[name="release"]'
                             )?.content,
-                            pastRequestIds: (0, d.xA)(),
+                            pastRequestIds: (0, m.xA)(),
                         },
-                        n
+                        r
                     )
                 );
             }
             let b = /(chrome|moz|safari)-extension:\/\//,
-                E = !1;
-            (u.cg?.addEventListener("pageshow", () => (E = !1)),
-                u.cg?.addEventListener("pagehide", () => (E = !0)),
+                q = !1;
+            (l.cg?.addEventListener("pageshow", () => (q = !1)),
+                l.cg?.addEventListener("pagehide", () => (q = !0)),
                 "function" == typeof BroadcastChannel &&
                     new BroadcastChannel(
                         "shared-worker-error"
                     ).addEventListener("message", (e) => {
-                        w(e.data.error);
+                        v(e.data.error);
                     }));
-            let q = [
+            let A = [
                     "Object Not Found Matching Id",
                     "Not implemented on this platform",
                     "provider because it's not your default extension",
                 ],
-                _ = [
+                N = [
                     ["react-app", "app-name"],
                     ["react-partial", "partial-name"],
                 ];
         },
-        46471: (e, t, n) => {
-            "use strict";
+        51987: (e, t, n) => {
+            n.d(t, { jC: () => u, kt: () => i, tV: () => c });
+            var r = n(87057),
+                o = n(69599),
+                a = n(13523);
+            function i(e) {
+                let t = {
+                    "X-Requested-With": "XMLHttpRequest",
+                    ...(0, a.wE)(e),
+                };
+                return (
+                    (0, o.G7)("client_version_header") &&
+                        (t = { ...t, [r.S]: (0, r.O)() }),
+                    t
+                );
+            }
+            function c(e, t) {
+                for (let [n, r] of Object.entries(i(t))) e.set(n, r);
+            }
+            function u(e) {
+                return { "X-GitHub-App-Type": e };
+            }
+        },
+        56038: (e, t, n) => {
+            n.d(t, { Kn: () => i, XC: () => o, cg: () => a, fV: () => c });
+            let r = "undefined" != typeof FORCE_SERVER_ENV && FORCE_SERVER_ENV,
+                o = "undefined" == typeof document || r ? void 0 : document,
+                a = "undefined" == typeof window || r ? void 0 : window,
+                i = "undefined" == typeof history || r ? void 0 : history,
+                c =
+                    "undefined" == typeof location || r
+                        ? {
+                              pathname: "",
+                              origin: "",
+                              search: "",
+                              hash: "",
+                              href: "",
+                          }
+                        : location;
+        },
+        59368: (e, t, n) => {
             var r = n(38102),
                 o = n(71315);
-            (o.cg?.addEventListener("error", (e) => {
-                e.error && (0, r.N7)(e.error);
-            }),
+            if (
+                (o.cg?.addEventListener("error", (e) => {
+                    e.error && (0, r.N7)(e.error);
+                }),
                 o.cg?.addEventListener("unhandledrejection", async (e) => {
                     if (e.promise)
                         try {
@@ -530,118 +523,9 @@
                     setTimeout(() => {
                         throw Error("b00m");
                     }),
-                n(48359));
-            var a = n(11083);
-            let i = fetch;
-            function c({ input: e, error: t, status: n }) {
-                if (!t) return;
-                let r = e instanceof Request ? e.url : e.toString();
-                (0, a.i)(
-                    {
-                        incrementKey: "FETCH_ERROR",
-                        requestUrl: window.location.href,
-                        referredRequestUrl: r,
-                        incrementTags: { status: String(n) },
-                    },
-                    !1,
-                    1
-                );
-            }
-            var s = n(69599),
-                u = n(77065),
-                l = n(51987);
-            let f = window.fetch,
-                d = (e, t) => {
-                    if (e instanceof Request) {
-                        let t = {
-                            ...Object.fromEntries(e.headers.entries()),
-                            ...(0, l.kt)(),
-                        };
-                        return f(new Request(e, { headers: t }));
-                    }
-                    {
-                        let n = { ...(t?.headers ?? {}), ...(0, l.kt)() };
-                        return f(new Request(e, { ...t, headers: n }));
-                    }
-                };
-            document.documentElement.hasAttribute("override-fetch") &&
-                window.fetch !== d &&
-                (window.fetch = d);
-            var m = n(13523),
-                h = n(88057);
-            ((0, u.Bb)(),
-                "undefined" != typeof document &&
-                    (o.cg &&
-                        (o.cg.fetch = async (e, t) => {
-                            try {
-                                let n = await i(e, t);
-                                return (
-                                    c({
-                                        input: e,
-                                        error: !n.ok,
-                                        status: n.status,
-                                    }),
-                                    n
-                                );
-                            } catch (t) {
-                                throw (
-                                    c({
-                                        input: e,
-                                        error: !0,
-                                        status: "unknown",
-                                    }),
-                                    t
-                                );
-                            }
-                        }),
-                    (() => {
-                        if (
-                            (0, s.G7)("remove_child_patch") &&
-                            "function" == typeof Node &&
-                            Node.prototype
-                        ) {
-                            let e = Node.prototype.removeChild;
-                            Node.prototype.removeChild = function (t) {
-                                try {
-                                    return e.apply(this, [t]);
-                                } catch (e) {
-                                    if (
-                                        e instanceof Error &&
-                                        e.stack?.includes("react-lib")
-                                    )
-                                        return t;
-                                    throw e;
-                                }
-                            };
-                        }
-                    })(),
-                    (() => {
-                        if (
-                            (0, s.G7)("insert_before_patch") &&
-                            "function" == typeof Node &&
-                            Node.prototype
-                        ) {
-                            let e = Node.prototype.insertBefore;
-                            Node.prototype.insertBefore = function (t, n) {
-                                try {
-                                    return e.apply(this, [t, n]);
-                                } catch (e) {
-                                    if (
-                                        e instanceof Error &&
-                                        (e.stack?.includes("react-lib") ||
-                                            e.stack?.includes("react-dom"))
-                                    )
-                                        return t;
-                                    throw e;
-                                }
-                            };
-                        }
-                    })(),
-                    (0, m.pS)(),
-                    (0, h.kt)()));
-        },
-        48359: () => {
-            if (!("ariaNotify" in Element.prototype)) {
+                !("ariaNotify" in Element.prototype) ||
+                    !("ariaNotify" in Document.prototype))
+            ) {
                 let e = `${Date.now()}`;
                 try {
                     e = crypto.randomUUID();
@@ -723,65 +607,127 @@
                     }
                 };
                 (customElements.define(n, LiveRegionCustomElement),
-                    (Element.prototype.ariaNotify = function (
-                        e,
-                        { priority: t = "normal" } = {}
-                    ) {
-                        r.enqueue(
-                            new Message({
-                                element: this,
-                                message: e,
-                                priority: t,
-                            })
-                        );
-                    }));
+                    "ariaNotify" in Element.prototype ||
+                        (Element.prototype.ariaNotify = function (
+                            e,
+                            { priority: t = "normal" } = {}
+                        ) {
+                            r.enqueue(
+                                new Message({
+                                    element: this,
+                                    message: e,
+                                    priority: t,
+                                })
+                            );
+                        }),
+                    "ariaNotify" in Document.prototype ||
+                        (Document.prototype.ariaNotify = function (
+                            e,
+                            { priority: t = "normal" } = {}
+                        ) {
+                            r.enqueue(
+                                new Message({
+                                    element: this.documentElement,
+                                    message: e,
+                                    priority: t,
+                                })
+                            );
+                        }));
             }
-        },
-        51987: (e, t, n) => {
-            "use strict";
-            n.d(t, { jC: () => s, kt: () => i, tV: () => c });
-            var r = n(87057),
-                o = n(69599),
-                a = n(13523);
-            function i(e) {
-                let t = {
-                    "X-Requested-With": "XMLHttpRequest",
-                    ...(0, a.wE)(e),
-                };
-                return (
-                    (0, o.G7)("client_version_header") &&
-                        (t = { ...t, [r.S]: (0, r.O)() }),
-                    t
+            var a = n(82518);
+            let i = fetch;
+            function c({ input: e, error: t, status: n }) {
+                if (!t) return;
+                let r = e instanceof Request ? e.url : e.toString();
+                (0, a.iv)(
+                    {
+                        incrementKey: "FETCH_ERROR",
+                        requestUrl: window.location.href,
+                        referredRequestUrl: r,
+                        incrementTags: { status: String(n) },
+                    },
+                    !1,
+                    1
                 );
             }
-            function c(e, t) {
-                for (let [n, r] of Object.entries(i(t))) e.set(n, r);
-            }
+            let u = /\breact-(?:dom|lib|profiling)\b/;
             function s(e) {
-                return { "X-GitHub-App-Type": e };
+                return !!e && u.test(e);
             }
-        },
-        56038: (e, t, n) => {
-            "use strict";
-            n.d(t, { Kn: () => i, XC: () => o, cg: () => a, fV: () => c });
-            let r = "undefined" != typeof FORCE_SERVER_ENV && FORCE_SERVER_ENV,
-                o = "undefined" == typeof document || r ? void 0 : document,
-                a = "undefined" == typeof window || r ? void 0 : window,
-                i = "undefined" == typeof history || r ? void 0 : history,
-                c =
-                    "undefined" == typeof location || r
-                        ? {
-                              pathname: "",
-                              origin: "",
-                              search: "",
-                              hash: "",
-                              href: "",
-                          }
-                        : location;
+            var l = n(77065),
+                f = n(51987);
+            let d = window.fetch,
+                m = (e, t) => {
+                    if (e instanceof Request) {
+                        let t = {
+                            ...Object.fromEntries(e.headers.entries()),
+                            ...(0, f.kt)(),
+                        };
+                        return d(new Request(e, { headers: t }));
+                    }
+                    {
+                        let n = { ...(t?.headers ?? {}), ...(0, f.kt)() };
+                        return d(new Request(e, { ...t, headers: n }));
+                    }
+                };
+            document.documentElement.hasAttribute("override-fetch") &&
+                window.fetch !== m &&
+                (window.fetch = m);
+            var h = n(13523),
+                p = n(88057);
+            if (((0, l.Bb)(), "undefined" != typeof document)) {
+                if (
+                    (o.cg &&
+                        (o.cg.fetch = async (e, t) => {
+                            try {
+                                let n = await i(e, t);
+                                return (
+                                    c({
+                                        input: e,
+                                        error: !n.ok,
+                                        status: n.status,
+                                    }),
+                                    n
+                                );
+                            } catch (t) {
+                                throw (
+                                    c({
+                                        input: e,
+                                        error: !0,
+                                        status: "unknown",
+                                    }),
+                                    t
+                                );
+                            }
+                        }),
+                    "function" == typeof Node && Node.prototype)
+                ) {
+                    let e = Node.prototype.removeChild;
+                    Node.prototype.removeChild = function (t) {
+                        try {
+                            return e.apply(this, [t]);
+                        } catch (e) {
+                            if (e instanceof Error && s(e.stack)) return t;
+                            throw e;
+                        }
+                    };
+                }
+                if ("function" == typeof Node && Node.prototype) {
+                    let e = Node.prototype.insertBefore;
+                    Node.prototype.insertBefore = function (t, n) {
+                        try {
+                            return e.apply(this, [t, n]);
+                        } catch (e) {
+                            if (e instanceof Error && s(e.stack)) return t;
+                            throw e;
+                        }
+                    };
+                }
+                ((0, h.pS)(), (0, p.kt)());
+            }
         },
         69599: (e, t, n) => {
-            "use strict";
-            n.d(t, { G7: () => s, XY: () => u, fQ: () => c });
+            n.d(t, { G7: () => u, XY: () => s, fQ: () => c });
             var r = n(5225),
                 o = n(21067);
             function a() {
@@ -801,13 +747,12 @@
             function c() {
                 return Array.from(i());
             }
-            function s(e) {
+            function u(e) {
                 return i().has(e);
             }
-            let u = { isFeatureEnabled: s };
+            let s = { isFeatureEnabled: u };
         },
         70170: (e, t, n) => {
-            "use strict";
             function r(
                 e,
                 t = 0,
@@ -815,12 +760,12 @@
             ) {
                 let i,
                     c = n,
-                    s = 0,
-                    u = !1;
+                    u = 0,
+                    s = !1;
                 function l(...r) {
-                    if (u) return;
-                    let f = Date.now() - s;
-                    ((s = Date.now()),
+                    if (s) return;
+                    let f = Date.now() - u;
+                    ((u = Date.now()),
                         n && o && f >= t && (c = !0),
                         c
                             ? ((c = !1), e.apply(this, r), a && l.cancel())
@@ -828,7 +773,7 @@
                               (clearTimeout(i),
                               (i = setTimeout(
                                   () => {
-                                      ((s = Date.now()),
+                                      ((u = Date.now()),
                                           e.apply(this, r),
                                           a && l.cancel());
                                   },
@@ -837,7 +782,7 @@
                 }
                 return (
                     (l.cancel = () => {
-                        (clearTimeout(i), (u = !0));
+                        (clearTimeout(i), (s = !0));
                     }),
                     l
                 );
@@ -852,7 +797,6 @@
             n.d(t, { n: () => r, s: () => o });
         },
         71315: (e, t, n) => {
-            "use strict";
             n.d(t, {
                 KJ: () => r.KJ,
                 Kn: () => o.Kn,
@@ -866,10 +810,9 @@
                 o = n(56038);
         },
         82075: (e, t, n) => {
-            "use strict";
             n.d(t, { A: () => i, D: () => c });
             var r = n(71315),
-                o = n(11083);
+                o = n(82518);
             let a = class NoOpStorage {
                 getItem() {
                     return null;
@@ -889,34 +832,34 @@
                 t = { throwQuotaErrorsOnSet: !1 },
                 n = r.cg,
                 c = (e) => e,
-                s = (e) => e
+                u = (e) => e
             ) {
-                let u;
+                let s;
                 try {
                     if (!n) throw Error();
-                    u = n[e] || new a();
+                    s = n[e] || new a();
                 } catch {
-                    u = new a();
+                    s = new a();
                 }
                 let { throwQuotaErrorsOnSet: l } = t;
                 function f(e) {
-                    t.sendCacheStats && (0, o.i)({ incrementKey: e });
+                    t.sendCacheStats && (0, o.iv)({ incrementKey: e });
                 }
                 function d(e) {
                     try {
-                        if ((u.removeItem(e), t.ttl)) {
+                        if ((s.removeItem(e), t.ttl)) {
                             let t = `${e}:expiry`;
-                            u.removeItem(t);
+                            s.removeItem(t);
                         }
                     } catch {}
                 }
                 return {
                     getItem: function (e, t = Date.now()) {
                         try {
-                            let n = u.getItem(e);
+                            let n = s.getItem(e);
                             if (!n) return null;
                             let r = `${e}:expiry`,
-                                o = Number(u.getItem(r));
+                                o = Number(s.getItem(r));
                             if (o && t > o)
                                 return (
                                     d(e),
@@ -931,10 +874,10 @@
                     },
                     setItem: function (e, n, r = Date.now()) {
                         try {
-                            if ((u.setItem(e, s(n)), t.ttl)) {
+                            if ((s.setItem(e, u(n)), t.ttl)) {
                                 let n = `${e}:expiry`,
                                     o = r + t.ttl;
-                                u.setItem(n, o.toString());
+                                s.setItem(n, o.toString());
                             }
                         } catch (e) {
                             if (
@@ -946,12 +889,12 @@
                         }
                     },
                     removeItem: d,
-                    clear: u.clear,
+                    clear: () => s.clear(),
                     getKeys: function () {
-                        return Object.keys(u);
+                        return Object.keys(s);
                     },
                     get length() {
-                        return u.length;
+                        return s.length;
                     },
                 };
             }
@@ -965,8 +908,97 @@
                 );
             }
         },
+        82518: (e, t, n) => {
+            n.d(t, { Xl: () => y, au: () => f, iv: () => d });
+            var r = n(71315),
+                o = n(34095),
+                a = n(99223),
+                i = n(69599),
+                c = n(21067),
+                u = n(70170);
+            let s = {
+                    PRS_COMMENT_BOX_INP: {
+                        name: "pull_requests.comment_box.inp",
+                        hash: "070a85f091c124d118031ed374badf58df0cd9c2902f9aa4f9e09f6fdcbb91d0",
+                        type: "distribution",
+                    },
+                    PULL_REQUESTS_FILES_JS_HEAP: {
+                        name: "pull_requests.files.js_heap",
+                        hash: "7c5d986de8ccbfd17ae58e0da85158912cf65aeb256aecf28c35ddeb794cd2d3",
+                        type: "distribution",
+                    },
+                },
+                l = [];
+            function f({ name: e, value: t, tags: n }) {
+                d({
+                    customMetric: { ...s[e], value: t, tags: n },
+                    ui: "vite-tss" === a.v,
+                });
+            }
+            function d(e, t = !1, n = 0.5) {
+                if (!r.X3 && !0 !== (0, i.G7)("browser_stats_disabled")) {
+                    if (n < 0 || n > 1)
+                        throw RangeError(
+                            "Sampling probability must be between 0 and 1"
+                        );
+                    (void 0 === e.timestamp && (e.timestamp = Date.now()),
+                        (e.loggedIn = (0, c.M3)()),
+                        (e.staff = y()),
+                        (e.bundler = a.v),
+                        (e.ui = "vite-tss" === a.v),
+                        Math.random() < n && l.push(e),
+                        t ? p() : h());
+                }
+            }
+            let m = null,
+                h = (0, u.n)(async function () {
+                    (await o.K,
+                        null == m && (m = window.requestIdleCallback(p)));
+                }, 5e3);
+            function p() {
+                if (((m = null), !l.length)) return;
+                let e = r.XC?.head?.querySelector(
+                    'meta[name="browser-stats-url"]'
+                )?.content;
+                if (e) {
+                    for (let o of (function (e) {
+                        let t = [],
+                            n = e.map((e) => JSON.stringify(e));
+                        for (; n.length > 0; )
+                            t.push(
+                                (function (e) {
+                                    let t = e.shift(),
+                                        n = [t],
+                                        r = t.length;
+                                    for (; e.length > 0 && r <= 65536; ) {
+                                        let t = e[0].length;
+                                        if (r + t <= 65536) {
+                                            let o = e.shift();
+                                            (n.push(o), (r += t));
+                                        } else break;
+                                    }
+                                    return n;
+                                })(n)
+                            );
+                        return t;
+                    })(l)) {
+                        var t = e,
+                            n = `{"stats": [${o.join(",")}], "target": "${r.XC?.head?.querySelector('meta[name="ui-target"]')?.content || "full"}"}`;
+                        try {
+                            navigator.sendBeacon && navigator.sendBeacon(t, n);
+                        } catch {}
+                    }
+                    l = [];
+                }
+            }
+            function y() {
+                return !!r.XC?.head?.querySelector('meta[name="user-staff"]')
+                    ?.content;
+            }
+            (r.XC?.addEventListener("pagehide", p),
+                r.XC?.addEventListener("visibilitychange", p));
+        },
         87057: (e, t, n) => {
-            "use strict";
             n.d(t, { O: () => i, S: () => a });
             var r = n(71315);
             let o =
@@ -978,8 +1010,7 @@
             }
         },
         88057: (e, t, n) => {
-            "use strict";
-            n.d(t, { Ex: () => i, kt: () => s, xA: () => c });
+            n.d(t, { Ex: () => i, kt: () => u, xA: () => c });
             var r = n(71315);
             let o = Array(10).fill(null),
                 a = 0;
@@ -994,7 +1025,7 @@
                 }
                 return e;
             }
-            function s() {
+            function u() {
                 let e = r.XC;
                 if (!e) return;
                 let t = e.querySelector('meta[name="request-id"]'),
@@ -1003,23 +1034,21 @@
             }
         },
         94416: (e, t, n) => {
-            "use strict";
             n.d(t, {
                 BW: () => o,
                 Ff: () => m,
                 HK: () => v,
-                JA: () => C,
+                JA: () => N,
                 LM: () => h,
-                Pv: () => E,
+                Pv: () => b,
                 Vy: () => d,
-                ZW: () => b,
+                ZW: () => E,
                 dR: () => S,
                 di: () => p,
                 fX: () => q,
-                gc: () => _,
+                gc: () => A,
                 k9: () => w,
                 my: () => g,
-                r7: () => A,
                 wG: () => y,
                 xT: () => f,
             });
@@ -1028,29 +1057,29 @@
                 a = "soft-nav:fail",
                 i = "soft-nav:fail-referrer",
                 c = "soft-nav:referrer",
-                s = "soft-nav:marker",
-                u = "soft-nav:react-app-name",
+                u = "soft-nav:marker",
+                s = "soft-nav:react-app-name",
                 l = "soft-nav:latest-mechanism";
             function f() {
-                ((0, r.SO)(s, "0"),
+                ((0, r.SO)(u, "0"),
                     (0, r.Ai)(c),
                     (0, r.Ai)(a),
                     (0, r.Ai)(i),
-                    (0, r.Ai)(u),
+                    (0, r.Ai)(s),
                     (0, r.Ai)(l));
             }
             function d(e) {
-                (0, r.SO)(s, e);
+                (0, r.SO)(u, e);
             }
             function m() {
-                (0, r.SO)(s, "0");
+                (0, r.SO)(u, "0");
             }
             function h() {
-                let e = (0, r.Gq)(s);
+                let e = (0, r.Gq)(u);
                 return e && "0" !== e;
             }
             function p() {
-                return (0, r.Gq)(s);
+                return (0, r.Gq)(u);
             }
             function y() {
                 return !!g();
@@ -1067,12 +1096,12 @@
             function S() {
                 return (0, r.Gq)(c) || document.referrer;
             }
-            function b() {
-                let e = q();
-                e ? (0, r.SO)(u, e) : (0, r.Ai)(u);
-            }
             function E() {
-                return (0, r.Gq)(u);
+                let e = q();
+                e ? (0, r.SO)(s, e) : (0, r.Ai)(s);
+            }
+            function b() {
+                return (0, r.Gq)(s);
             }
             function q() {
                 return document.querySelector("projects-v2")
@@ -1085,7 +1114,7 @@
                             .querySelector("react-app")
                             ?.getAttribute("app-name");
             }
-            function _() {
+            function A() {
                 return (
                     !!document
                         .querySelector("react-app")
@@ -1093,15 +1122,11 @@
                     !!document.querySelector("projects-v2")
                 );
             }
-            function C(e) {
+            function N(e) {
                 (0, r.SO)(l, e);
-            }
-            function A() {
-                return (0, r.Gq)(l);
             }
         },
         95800: (e, t, n) => {
-            "use strict";
             n.d(t, { Ai: () => a, Gq: () => r, SO: () => o });
             let {
                 getItem: r,
@@ -1110,7 +1135,6 @@
             } = (0, n(82075).A)("sessionStorage");
         },
         99223: (e, t, n) => {
-            "use strict";
             n.d(t, { k: () => i, v: () => c });
             var r = n(5225),
                 o = n(71315);
@@ -1128,15 +1152,7 @@
         },
     },
     (e) => {
-        (e.O(
-            0,
-            [
-                "vendors-node_modules_oddbird_popover-polyfill_dist_popover-fn_js",
-                "vendors-node_modules_stacktrace-parser_dist_stack-trace-parser_esm_js-node_modules_github_bro-2f4e04",
-            ],
-            () => e((e.s = 46471))
-        ),
-            e.O());
+        (e.O(0, [913, 6488], () => e((e.s = 59368))), e.O());
     },
 ]);
-//# sourceMappingURL=environment-81d0567b7fc4.js.map
+//# sourceMappingURL=environment-7693cc5f4818.js.map

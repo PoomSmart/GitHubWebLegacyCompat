@@ -42,11 +42,7 @@ const TEMP_DIR = path.join(__dirname, "temp-downloads");
 // File patterns to search for
 const FILE_PATTERNS = {
     "issues-react": /issues-react-[a-f0-9]+\.js$/,
-    "list-view": /ui_packages_list-view_.*-[a-f0-9]+\.js$/,
-    "nested-list-view": /packages_nested-list-view_src_NestedListItem_.*-[a-f0-9]+\.js$/,
     "react-core": /react-core-[a-f0-9]+\.js$/,
-    "mdast-util":
-        /vendors-node_modules_hastscript_lib_index_js-node_modules_mdast-util-gfm_lib_index_js-node_mo-[a-f0-9-]+\.js$/,
     "text-expander":
         /vendors-node_modules_github_text-expander-element_dist_index_js-[a-f0-9]+\.js$/,
     "emoji-element":
@@ -58,27 +54,16 @@ const FILE_PATTERNS = {
         /vendors-node_modules_tanstack_(react-query|query-core)_build_modern_(useQuery|queryObserver)_js-[a-f0-9]+\.js$/,
     "tanstack-queryClient":
         /vendors-node_modules_tanstack_query-core_build_modern_queryClient_js-[a-f0-9]+\.js$/,
-    "copilot-markdown":
-        /packages_copilot-markdown_MarkdownRenderer_tsx-[a-f0-9]+\.js$/,
     // CSS
     "primer-react-css": /primer-react\.[a-f0-9]+\.module\.css$/,
     "primer-css": /primer-[a-f0-9]+\.css$/,
-    "new-task-chat-input-css":
-        /packages_react-core_deferred-registry_ts-packages_agent-sessions_components_NewTaskChatInput_-?[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
     "issue-viewer-css":
         /packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
     "issues-react-css": /issues-react\.[a-f0-9]+\.module\.css$/,
-    "comment-box-markdown-css":
-        /packages_comment-box_api_file-upload_ts-packages_comment-box_api_preview_ts-packages_markdown-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
-    "commenting-markdown-css":
-        /packages_app-uuid_app-uuid_ts-packages_commenting_constants_values_ts-packages_document-metad-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
 };
 
 // Alternative patterns if primary ones don't match
 const ALTERNATIVE_PATTERNS = {
-    "list-view": /list-view.*-[a-f0-9]+\.js$/,
-    "nested-list-view": /nested-list-view.*\.js$/i,
-    "mdast-util": /vendors.*hastscript.*mdast-util.*\.js$/i,
     "text-expander": /text-expander.*-[a-f0-9]+\.js$/,
     "emoji-element": /emoji-element.*-[a-f0-9]+\.js$/,
     "emotion-is-prop-valid": /is-prop-valid.*-[a-f0-9]+\.js$/,
@@ -87,53 +72,40 @@ const ALTERNATIVE_PATTERNS = {
         /tanstack.*(react-query|query-core).*_(useQuery|queryObserver)_js-[a-f0-9]+\.js$/i,
     "tanstack-queryClient":
         /tanstack.*query-core.*_queryClient_js-[a-f0-9]+\.js$/i,
-    "copilot-markdown": /copilot-markdown.*MarkdownRenderer.*\.js$/i,
-    // New Task Chat Input CSS fallback
-    "new-task-chat-input-css": /NewTaskChatInput_.*\.module\.css$/,
+    // Numeric-prefixed minimized bundles (e.g. 36183-c75dc75b0ad5.js)
+    "numeric-prefixed-js": /(^|\/)\d+-[a-f0-9]+\.js$/i,
     // Core Primer CSS fallback
     "primer-css": /primer.*\.css$/,
     // Issue Viewer CSS fallback
     "issue-viewer-css": /issue-viewer.*\.module\.css$/,
     // Issues React CSS fallback
     "issues-react-css": /issues-react.*\.module\.css$/,
-    // Comment Box Markdown CSS fallback
-    "comment-box-markdown-css": /comment-box.*markdown.*\.module\.css$/i,
-    // Commenting Markdown CSS fallback - now matches app-uuid/commenting/document-metadata bundle
-    "commenting-markdown-css": /packages_app-uuid.*commenting.*document-metad.*\.module\.css$/i,
 };
 
 // Target files in scripts directory
 const TARGET_FILES = {
     "issues-react": "16.4-d-issues-react.js",
-    "list-view": "16.4-b-list-view.js",
-    "nested-list-view": "16.4-c-nested-list-view.js",
     "react-core": "16.4-a-react-core.js",
-    "mdast-util": "16.4-mdast-util.js",
     "text-expander": "15.0-text-expander.js",
     "emoji-element": "15.0-emoji-element.js",
     "emotion-is-prop-valid": "15.0-emotion-is-prop-valid.js",
     environment: "15.0-environment.js",
     "tanstack-queryObserver": "15.0-tanstack-queryObserver.js",
     "tanstack-queryClient": "15.0-tanstack-queryClient.js",
-    "copilot-markdown": "16.4-copilot-markdown.js",
+    // Fallback for numeric-prefixed minimized bundles
+    "numeric-prefixed-js": "16.4-numeric-prefixed.js",
     "primer-react-css": "15.4-primer-react.css",
     "primer-css": "15.4-primer.css",
-    "new-task-chat-input-css": "15.4-new-task-chat-input.css",
     "issue-viewer-css": "15.4-issue-viewer.css",
     "issues-react-css": "15.4-issues-react.css",
-    "comment-box-markdown-css": "15.4-comment-box-markdown.css",
-    "commenting-markdown-css": "15.4-commenting-markdown.css",
 };
 
 // Keys that represent CSS assets (written to styles/ instead of scripts/)
 const CSS_KEYS = new Set([
     "primer-react-css",
     "primer-css",
-    "new-task-chat-input-css",
     "issue-viewer-css",
     "issues-react-css",
-    "comment-box-markdown-css",
-    "commenting-markdown-css",
 ]);
 
 async function fetchPageWithPuppeteer(url) {
@@ -349,6 +321,45 @@ async function fetchPageBasic(url, pageName) {
 function findMatchingAssets(assets) {
     const matches = {};
 
+    // Numeric bundle IDs that need transpilation for iOS compatibility
+    const NUMERIC_BUNDLE_IDS = [
+        36183,
+        77999,
+        40489,
+        4817,
+        347, // tanstack-query
+        1311, // tanstack-query
+        81028, // text-expander
+    ];
+    // Numeric CSS IDs
+    const NUMERIC_CSS_IDS = [95405, 78192];
+
+    // Look for discovered numeric bundles by their ID
+    for (const numId of NUMERIC_BUNDLE_IDS) {
+        const discovered = assets.find((url) => {
+            const filename = path.basename(url);
+            return new RegExp(`^${numId}-[a-f0-9]+\\.js$`).test(filename);
+        });
+
+        if (discovered) {
+            const key = `numeric-prefixed-js-${numId}`;
+            matches[key] = discovered;
+        }
+    }
+
+    // Look for discovered numeric CSS by their ID
+    for (const numId of NUMERIC_CSS_IDS) {
+        const discovered = assets.find((url) => {
+            const filename = path.basename(url);
+            return new RegExp(`^${numId}\\.[a-f0-9]+\\.module\\.css$`).test(filename);
+        });
+
+        if (discovered) {
+            const key = `numeric-prefixed-css-${numId}`;
+            matches[key] = discovered;
+        }
+    }
+
     for (const [key, pattern] of Object.entries(FILE_PATTERNS)) {
         let matchingAsset = assets.find((url) => {
             const filename = path.basename(url);
@@ -388,14 +399,33 @@ async function downloadFile(url, outputPath) {
                 );
             }
             content = await response.text();
+            fs.writeFileSync(outputPath, content);
+            console.log(`Downloaded to ${outputPath}`);
+            return content;
         } else {
-            // Use curl as fallback
-            content = execSync(`curl -s "${url}"`, { encoding: "utf8" });
+            // Use Node.js https module for large files
+            const https = require('https');
+            const file = fs.createWriteStream(outputPath);
+            await new Promise((resolve, reject) => {
+                https.get(url, (response) => {
+                    if (response.statusCode !== 200) {
+                        reject(new Error(`HTTP ${response.statusCode}: ${response.statusMessage}`));
+                        return;
+                    }
+                    response.pipe(file);
+                    file.on('finish', () => {
+                        file.close(resolve);
+                    });
+                }).on('error', (err) => {
+                    fs.unlinkSync(outputPath);
+                    reject(err);
+                });
+            });
+            // Read file content after download
+            content = fs.readFileSync(outputPath, 'utf8');
+            console.log(`Downloaded to ${outputPath}`);
+            return content;
         }
-
-        fs.writeFileSync(outputPath, content);
-        console.log(`Downloaded to ${outputPath}`);
-        return content;
     } catch (error) {
         console.error(`Error downloading ${url}:`, error);
         throw error;
@@ -406,8 +436,12 @@ function formatWithPrettier(filePath) {
     console.log(`Formatting ${path.basename(filePath)} with Prettier...`);
 
     try {
+        // Determine parser based on file extension
+        const isCss = filePath.endsWith(".css");
+        const parserArg = isCss ? "--parser css" : "";
+
         // Run Prettier using local config (.prettierrc)
-        execSync(`npx prettier --write "${filePath}"`, {
+        execSync(`npx prettier --write ${parserArg} "${filePath}"`, {
             cwd: __dirname, // This ensures it uses the .prettierrc in the current directory
             stdio: "pipe", // Suppress output unless there's an error
         });
@@ -592,6 +626,11 @@ function applyTextPatches(content, patchFile) {
     const originalLength = content.length;
     let totalChanges = 0;
 
+    // Helper to escape regex special characters
+    function escapeRegExp(string) {
+        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    }
+
     for (let i = 0; i < patches.length; i++) {
         const patch = patches[i];
         const beforeLength = modifiedContent.length;
@@ -604,11 +643,22 @@ function applyTextPatches(content, patchFile) {
             `    New: ${patch.newReplacement.substring(0, 60)}${patch.newReplacement.length > 60 ? "..." : ""}`
         );
 
-        // Apply the patch using simple string replacement
-        const patchedContent = modifiedContent.replace(
-            patch.oldPattern,
-            patch.newReplacement
-        );
+        // Apply the patch using regex replacement to support multi-line patterns
+        // Try literal match first for speed and precision
+        const escapedOld = escapeRegExp(patch.oldPattern);
+        let regex = new RegExp(escapedOld, 'g');
+        let patchedContent = modifiedContent.replace(regex, patch.newReplacement);
+
+        if (patchedContent === modifiedContent) {
+            // If literal match fails, try fuzzy match (ignoring whitespace differences)
+            // This handles cases where code spans multiple lines or has different indentation
+            const fuzzyOld = escapedOld
+                .replace(/\s+/g, '\\s*')
+                .replace(/(\\[.*+?^${}()|[\]\\]|[^a-zA-Z0-9_$\s])/g, '$1\\s*');
+            
+            regex = new RegExp(fuzzyOld, 'g');
+            patchedContent = modifiedContent.replace(regex, patch.newReplacement);
+        }
 
         if (patchedContent === modifiedContent) {
             console.log(`    ⚠️  No match found for patch ${i + 1}`);
@@ -668,7 +718,8 @@ async function main() {
         const downloadedFiles = {};
         for (const [key, url] of Object.entries(matches)) {
             // Use correct extension based on whether it's CSS or JS
-            const extension = CSS_KEYS.has(key) ? "css" : "js";
+            const isCss = CSS_KEYS.has(key) || key.startsWith("numeric-prefixed-css-");
+            const extension = isCss ? "css" : "js";
             const filename = `${key}-new.${extension}`;
             const downloadPath = path.join(TEMP_DIR, filename);
             await downloadFile(url, downloadPath);
@@ -693,7 +744,7 @@ async function main() {
                 continue;
             }
 
-            const isCss = CSS_KEYS.has(key);
+            const isCss = CSS_KEYS.has(key) || key.startsWith("numeric-prefixed-css-");
             const targetDir = isCss ? STYLES_DIR : SCRIPTS_DIR;
             const targetFile = path.join(targetDir, targetFileName);
 
@@ -746,11 +797,44 @@ async function main() {
             return joined ? joined + "\n" : "";
         }
 
+        // Special handling: transpile numeric-prefixed bundles with Babel FIRST
+        const babelCore = require("@babel/core");
+        for (const [key, downloadPath] of Object.entries(downloadedFiles)) {
+            if (key.startsWith("numeric-prefixed-js")) {
+                const bundleId = key.replace("numeric-prefixed-js-", "");
+                try {
+                    const srcContent = fs.readFileSync(downloadPath, "utf8");
+                    const babelConfig = require(path.join(
+                        __dirname,
+                        "babel.config.js"
+                    ));
+                    const result = babelCore.transformSync(srcContent, {
+                        ...babelConfig,
+                        filename: downloadPath,
+                    });
+                    if (result && result.code) {
+                        console.log(
+                            `  Transpiled numeric bundle ${bundleId}: ${srcContent.length} → ${result.code.length} chars`
+                        );
+                        // Store transpiled code in processedFiles so patches can be applied later
+                        processedFiles[key] = result.code;
+                    }
+                } catch (e) {
+                    console.log(
+                        `  Warning: Could not transpile numeric bundle ${bundleId}: ${e.message}`
+                    );
+                    console.log("  Falling back to original content");
+                    processedFiles[key] = fs.readFileSync(downloadPath, "utf8");
+                }
+            }
+        }
+
+        // Now apply patches to all files (including transpiled numeric bundles)
         for (const [key, content] of Object.entries(processedFiles)) {
             const originalLength = content.length;
             let modifiedContent = content;
 
-            if (CSS_KEYS.has(key)) {
+            if (CSS_KEYS.has(key) || key.startsWith("numeric-prefixed-css-")) {
                 // Extract only modern CSS guarded by @layer/@container and drop wrappers
                 const extracted = extractModernOnlyCss(content);
                 if (extracted && extracted.length > 0) {
@@ -781,16 +865,46 @@ async function main() {
                     modifiedContent = "";
                 }
             } else {
-                // Apply text patches to formatted content (if patch file exists)
-                const patchFile = `${key}.txt`;
-                const patchPath = path.join(__dirname, patchFile);
+                // Apply text or multi-line patches to formatted content (if patch file exists)
+                let patchFileName = `${key}.txt`;
+
+                // For numeric bundles, use numeric-<id>.txt instead of numeric-prefixed-js-<id>.txt or numeric-prefixed-css-<id>.txt
+                if (key.startsWith("numeric-prefixed-js-") || key.startsWith("numeric-prefixed-css-")) {
+                    const bundleId = key.replace("numeric-prefixed-js-", "").replace("numeric-prefixed-css-", "");
+                    patchFileName = `numeric-${bundleId}.txt`;
+                }
+
+                const patchPath = path.join(__dirname, patchFileName);
 
                 if (fs.existsSync(patchPath)) {
-                    modifiedContent = applyTextPatches(content, patchFile);
+                    // Only applyTextPatches for regular patch file
+                    modifiedContent = applyTextPatches(content, patchFileName);
                 } else {
                     console.log(
                         `No patch file found for ${key}, using original content`
                     );
+                }
+
+                // For numeric bundles, check for a dedicated multi-line patch file (numeric-<id>-ml.txt)
+                if (key.startsWith("numeric-prefixed-js-")) {
+                    const bundleId = key.replace("numeric-prefixed-js-", "");
+                    const mlPatchFile = `numeric-${bundleId}-ml.txt`;
+                    const mlPatchPath = path.join(__dirname, mlPatchFile);
+                    if (fs.existsSync(mlPatchPath)) {
+                        // Write current content to a temp file, run patch-multiline.js, and read back
+                        const tmp = require('os').tmpdir();
+                        const tempTarget = path.join(tmp, `patchml-${Date.now()}-${Math.random().toString(36).slice(2)}.js`);
+                        fs.writeFileSync(tempTarget, modifiedContent, 'utf8');
+                        try {
+                            execSync(`node \"${path.join(__dirname, 'patch-multiline.js')}\" \"${tempTarget}\" \"${mlPatchPath}\"`, { stdio: 'inherit' });
+                            modifiedContent = fs.readFileSync(tempTarget, 'utf8');
+                            console.log(`  Applied multi-line patch from ${mlPatchFile}`);
+                        } catch (e) {
+                            console.warn(`  Multi-line patch failed for ${mlPatchFile}: ${e.message}`);
+                        } finally {
+                            fs.unlinkSync(tempTarget);
+                        }
+                    }
                 }
             }
 
@@ -811,13 +925,31 @@ async function main() {
             if (content && typeof content.then === "function") {
                 content = await content; // resolve any stray promise
             }
-            const isCss = CSS_KEYS.has(key);
+            const isCss = CSS_KEYS.has(key) || key.startsWith("numeric-prefixed-css-");
             const targetDir = isCss ? STYLES_DIR : SCRIPTS_DIR;
-            const targetFile = path.join(targetDir, TARGET_FILES[key]);
+
+            // Handle numeric bundle keys dynamically
+            let targetFileName = TARGET_FILES[key];
+            if (!targetFileName) {
+                if (key.startsWith("numeric-prefixed-js-")) {
+                    const bundleId = key.replace("numeric-prefixed-js-", "");
+                    targetFileName = `16.4-numeric-${bundleId}.js`;
+                } else if (key.startsWith("numeric-prefixed-css-")) {
+                    const bundleId = key.replace("numeric-prefixed-css-", "");
+                    targetFileName = `15.4-numeric-${bundleId}.css`;
+                }
+            }
+
+            if (!targetFileName) {
+                console.log(`  ⚠️  Warning: No target filename for key ${key}, skipping`);
+                continue;
+            }
+
+            const targetFile = path.join(targetDir, targetFileName);
 
             if (isDryRun) {
                 console.log(
-                    `Would update: ${TARGET_FILES[key]} (${content.length} chars) in ${path.relative(__dirname, targetDir)}`
+                    `Would update: ${targetFileName} (${content.length} chars) in ${path.relative(__dirname, targetDir)}`
                 );
                 continue;
             }
@@ -842,16 +974,16 @@ async function main() {
                 if (isCss) {
                     formatCssFileIfNeeded(targetFile);
                 }
-                console.log(`Updated and formatted: ${TARGET_FILES[key]}`);
+                console.log(`Updated and formatted: ${targetFileName}`);
             } catch (formatError) {
                 console.warn(
-                    `  Warning: Final formatting failed for ${TARGET_FILES[key]}: ${formatError.message}`
+                    `  Warning: Final formatting failed for ${targetFileName}: ${formatError.message}`
                 );
                 if (isCss) {
                     formatCssFileIfNeeded(targetFile);
                 }
                 console.log(
-                    `Updated: ${TARGET_FILES[key]} (unformatted or partially formatted)`
+                    `Updated: ${targetFileName} (unformatted or partially formatted)`
                 );
             }
         }

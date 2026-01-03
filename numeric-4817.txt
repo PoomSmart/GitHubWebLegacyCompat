@@ -1,0 +1,17 @@
+# Old
+close: /(?<! )\$\$/
+
+# New
+close: /(?:^|[^ ])(?=\$\$)\$\$/
+
+# Old
+close: /(?<![ $])\$/
+
+# New
+close: /(?:^|[^ $])(?=\$)\$/
+
+# Old
+"(?<![a-z0-9])".concat(e.source,"(.+?)").concat(t.source,"(?![a-z0-9])")
+
+# New
+"(?:^|[^a-z0-9])(?=".concat(e.source,")").concat(e.source,"(.+?)").concat(t.source,"(?![a-z0-9])")
