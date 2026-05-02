@@ -1,5 +1,9 @@
 # GitHubWebLegacyCompat
 
+### DEPRECATED: Recommend using [Reynard Browser](https://github.com/minh-ton/reynard-browser) to access GitHub website instead
+
+---
+
 A ~~simplistic~~ CydiaSubstrate tweak to make GitHub website work (accessible) on older versions of WebKit / iOS.
 
 ### CSS Cascade Layers and `::backdrop` Support
