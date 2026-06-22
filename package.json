@@ -5,7 +5,8 @@
   "private": true,
   "scripts": {
     "update-scripts": "node update-scripts.js",
-    "update-scripts:dry-run": "node update-scripts.js --dry-run"
+    "update-scripts:dry-run": "node update-scripts.js --dry-run",
+    "audit:regex": "node audit-legacy-regex.js"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.0",
@@ -17,6 +18,10 @@
     "postcss-cli": "^9.1.0",
     "postcss-selector-not": "^8.0.1",
     "prettier": "^3.2.5",
+    "puppeteer": "^24.10.0",
     "uglify-js": "^3.19.3"
+  },
+  "allowScripts": {
+    "puppeteer@24.43.1": true
   }
 }

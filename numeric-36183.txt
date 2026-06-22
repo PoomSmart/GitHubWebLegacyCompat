@@ -1,5 +1,0 @@
-# Old
-a = a.replace(/(?<!\.)\.+$/, "");
-
-# New
-a = a.endsWith("...") ? a : a.replace(/\.+$/, "");

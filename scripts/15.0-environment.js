@@ -1,217 +1,349 @@
-"use strict";
-(globalThis.webpackChunk_github_ui_github_ui =
-    globalThis.webpackChunk_github_ui_github_ui || []).push([
-    [75294],
+performance.mark("js-parse-end:environment-84f18c48c0047c1d.js");
+("use strict");
+(globalThis.rspackChunk_github_ui_github_ui =
+    globalThis.rspackChunk_github_ui_github_ui || []).push([
+    [85363],
     {
-        5225: (e, t, n) => {
-            function r(...e) {
-                return JSON.stringify(e, (e, t) =>
-                    "object" == typeof t ? t : String(t)
-                );
+        634619(e, t, n) {
+            var r = n(826316);
+            let o =
+                r.cg?.document?.head?.querySelector('meta[name="release"]')
+                    ?.content || "";
+            function i() {
+                return o;
             }
-            function o(e, t = {}) {
-                let { hash: n = r, cache: a = new Map() } = t;
-                return function (...t) {
-                    let r = n.apply(this, t);
-                    if (a.has(r)) return a.get(r);
-                    let o = e.apply(this, t);
-                    return (
-                        o instanceof Promise &&
-                            (o = o.catch((e) => {
-                                throw (a.delete(r), e);
-                            })),
-                        a.set(r, o),
-                        o
-                    );
+            n.d(t, { O: () => i }, { S: "X-GitHub-Client-Version" });
+        },
+        478865(e, t, n) {
+            var r = n(351930),
+                o = n(826316);
+            (o.cg?.addEventListener("error", (e) => {
+                e.error && (0, r.N7)(e.error);
+            }),
+                o.cg?.addEventListener("unhandledrejection", async (e) => {
+                    if (e.promise)
+                        try {
+                            await e.promise;
+                        } catch (e) {
+                            (0, r.N7)(e);
+                        }
+                }),
+                o.cg?.location.hash === "#b00m" &&
+                    setTimeout(() => {
+                        throw Error("b00m");
+                    }),
+                n(789272));
+            var i = n(296133),
+                a = n(195477);
+            let s = /\breact-(?:dom|lib|profiling)\b/;
+            function l(e) {
+                return !!e && s.test(e);
+            }
+            var c = n(705045);
+            let u = window.fetch,
+                d = (e, t) => {
+                    if (e instanceof Request) {
+                        let t = {
+                            ...Object.fromEntries(e.headers.entries()),
+                            ...(0, c.kt)(),
+                        };
+                        return u(new Request(e, { headers: t }));
+                    }
+                    {
+                        let n = { ...(t?.headers ?? {}), ...(0, c.kt)() };
+                        return u(new Request(e, { ...t, headers: n }));
+                    }
+                };
+            document.documentElement.hasAttribute("override-fetch") &&
+                window.fetch !== d &&
+                (window.fetch = d);
+            var h = n(200381),
+                m = n(941763),
+                f = n(258038);
+            let p = /-[0-9a-f]{16}\.(js|(?:module\.)?css)$/;
+            function g(e) {
+                return 0 === e.transferSize && e.decodedBodySize > 0;
+            }
+            function y() {
+                return {
+                    count: 0,
+                    totalSizeBytes: 0,
+                    totalCompressedSizeBytes: 0,
+                    wallTimeMs: 0,
+                    maxAssetDownloadMs: 0,
+                    earliestResponseStart: 1 / 0,
+                    latestResponseEnd: -1 / 0,
+                    cachedCount: 0,
+                    entries: [],
                 };
             }
-            n.d(t, { A: () => o });
-        },
-        6923: (e, t, n) => {
-            n.d(t, { KJ: () => a, X3: () => o, g5: () => i });
-            var r = n(56038);
-            let o = void 0 === r.XC,
-                a = !o;
-            function i() {
-                return (
-                    !!o ||
-                    !r.XC ||
-                    !!(
-                        r.XC.querySelector('react-app[data-ssr="true"]') ||
-                        r.XC.querySelector(
-                            'react-partial[data-ssr="true"][partial-name="repos-overview"]'
-                        )
-                    )
-                );
-            }
-        },
-        13523: (e, t, n) => {
-            n.d(t, {
-                $r: () => i,
-                M1: () => c,
-                li: () => o,
-                pS: () => s,
-                wE: () => u,
-            });
-            var r = n(71315);
-            let o = "X-Fetch-Nonce",
-                a = new Set();
-            function i(e) {
-                a.add(e);
-            }
-            function c() {
-                return a.values().next().value || "";
-            }
-            function u(e) {
-                let t = {};
-                return (
-                    void 0 !== e && (t["X-Fetch-Nonce-To-Validate"] = e),
-                    void 0 === e
-                        ? (t[o] = c())
-                        : a.has(e)
-                          ? (t[o] = e)
-                          : (t[o] = Array.from(a).join(",")),
-                    t
-                );
-            }
-            function s() {
-                let e =
-                    r.XC?.head?.querySelector('meta[name="fetch-nonce"]')
-                        ?.content || "";
-                e && i(e);
-            }
-        },
-        21067: (e, t, n) => {
-            let r;
-            function o() {
-                let e = void 0 ?? r;
-                if (!e)
-                    throw Error(
-                        "Client env was requested before it was loaded. This likely means you are attempting to use client env at the module level in SSR, which is not supported. Please move your client env usage into a function."
-                    );
-                return e;
-            }
-            function a() {
-                return o().locale ?? "en-US";
-            }
-            function i() {
-                return !!o().login;
-            }
-            function c() {
-                return o().login;
-            }
-            if (
-                (n.d(t, { JK: () => a, M3: () => i, _$: () => o, cj: () => c }),
-                "undefined" != typeof document)
-            ) {
-                let e = document.getElementById("client-env");
-                if (e)
-                    try {
-                        r = JSON.parse(e.textContent || "");
-                    } catch (e) {
-                        console.error("Error parsing client-env", e);
-                    }
-            }
-        },
-        34095: (e, t, n) => {
-            n.d(t, { G: () => o, K: () => a });
-            var r = n(71315);
-            let o =
-                    r.XC?.readyState === "interactive" ||
-                    r.XC?.readyState === "complete"
-                        ? Promise.resolve()
-                        : new Promise((e) => {
-                              r.XC?.addEventListener("DOMContentLoaded", () => {
-                                  e();
-                              });
-                          }),
-                a =
-                    r.XC?.readyState === "complete"
-                        ? Promise.resolve()
-                        : new Promise((e) => {
-                              r.cg?.addEventListener("load", e);
-                          });
-        },
-        36301: (e, t, n) => {
-            let r;
-            function o() {
-                return `${Math.round(0x7fffffff * Math.random())}.${Math.round(Date.now() / 1e3)}`;
-            }
-            function a() {
-                try {
-                    let e = (function () {
-                        let e,
-                            t = document.cookie.match(/_octo=([^;]+)/g);
-                        if (!t) return;
-                        let n = [0, 0];
-                        for (let r of t) {
-                            let [, t] = r.split("="),
-                                [, o, ...a] = t.split("."),
-                                i = o.split("-").map(Number);
-                            i > n && ((n = i), (e = a.join(".")));
+            if (((0, i.Bb)(), "u" > typeof document)) {
+                if (((0, a.A)(), "function" == typeof Node && Node.prototype)) {
+                    let e = Node.prototype.removeChild;
+                    Node.prototype.removeChild = function (t) {
+                        try {
+                            return e.apply(this, [t]);
+                        } catch (e) {
+                            if (e instanceof Error && l(e.stack)) return t;
+                            throw e;
                         }
-                        return e;
-                    })();
-                    if (e) return e;
-                    let t = o();
-                    return (
-                        !(function (e) {
-                            let t = `GH1.1.${e}`,
-                                n = new Date(
-                                    Date.now() + 31536e6
-                                ).toUTCString(),
-                                { domain: r } = document;
-                            (r.endsWith(".github.com") && (r = "github.com"),
-                                (document.cookie = `_octo=${t}; expires=${n}; path=/; domain=${r}; secure; samesite=lax`));
-                        })(t),
-                        t
-                    );
-                } catch (e) {
-                    return (r || (r = o()), r);
+                    };
                 }
+                if ("function" == typeof Node && Node.prototype) {
+                    let e = Node.prototype.insertBefore;
+                    Node.prototype.insertBefore = function (t, n) {
+                        try {
+                            return e.apply(this, [t, n]);
+                        } catch (e) {
+                            if (e instanceof Error && l(e.stack)) return t;
+                            throw e;
+                        }
+                    };
+                }
+                ((0, h.pS)(),
+                    (0, m.kt)(),
+                    (function () {
+                        if (
+                            "u" < typeof PerformanceObserver ||
+                            "u" < typeof window
+                        )
+                            return;
+                        let e = [],
+                            t = new PerformanceObserver((t) => {
+                                for (let n of t.getEntries()) {
+                                    let t = (function (e) {
+                                        let t =
+                                            "link" === e.initiatorType &&
+                                            e.name.endsWith(".css")
+                                                ? "css"
+                                                : "script" ===
+                                                        e.initiatorType &&
+                                                    e.name.endsWith(".js")
+                                                  ? "js"
+                                                  : null;
+                                        return t
+                                            ? {
+                                                  name: e.name,
+                                                  resourceType: t,
+                                                  responseStart:
+                                                      e.responseStart,
+                                                  responseEnd: e.responseEnd,
+                                                  transferSize: e.transferSize,
+                                                  decodedBodySize:
+                                                      e.decodedBodySize,
+                                                  encodedBodySize:
+                                                      e.encodedBodySize,
+                                              }
+                                            : null;
+                                    })(n);
+                                    t && e.push(t);
+                                }
+                            });
+                        (t.observe({ type: "resource", buffered: !0 }),
+                            window.addEventListener(
+                                "load",
+                                () => {
+                                    setTimeout(() => {
+                                        let n;
+                                        t.disconnect();
+                                        let r =
+                                                ((n = performance
+                                                    .getEntriesByType("paint")
+                                                    .find(
+                                                        (e) =>
+                                                            "first-paint" ===
+                                                            e.name
+                                                    )),
+                                                n?.startTime),
+                                            o = new Map([
+                                                ["css-blocking", y()],
+                                                ["css-deferred", y()],
+                                                ["js-blocking", y()],
+                                                ["js-deferred", y()],
+                                            ]);
+                                        for (let t of e) {
+                                            let e = (function (e, t) {
+                                                if (void 0 === t) return null;
+                                                let n = e.responseEnd <= t;
+                                                return "css" === e.resourceType
+                                                    ? n
+                                                        ? "css-blocking"
+                                                        : "css-deferred"
+                                                    : n
+                                                      ? "js-blocking"
+                                                      : "js-deferred";
+                                            })(t, r);
+                                            if (!e) continue;
+                                            let n = o.get(e);
+                                            n &&
+                                                (function (e, t) {
+                                                    var n;
+                                                    let r =
+                                                            (n = t.name)
+                                                                .split("/")
+                                                                .pop() ?? n,
+                                                        o = g(t),
+                                                        i =
+                                                            Math.round(
+                                                                100 *
+                                                                    (g(t)
+                                                                        ? 0
+                                                                        : t.responseEnd -
+                                                                          t.responseStart)
+                                                            ) / 100,
+                                                        a =
+                                                            t.decodedBodySize ||
+                                                            0,
+                                                        s =
+                                                            t.encodedBodySize ||
+                                                            0;
+                                                    (e.count++,
+                                                        (e.totalSizeBytes += a),
+                                                        (e.totalCompressedSizeBytes +=
+                                                            s),
+                                                        !o &&
+                                                            (t.responseStart <
+                                                                e.earliestResponseStart &&
+                                                                (e.earliestResponseStart =
+                                                                    t.responseStart),
+                                                            t.responseEnd >
+                                                                e.latestResponseEnd &&
+                                                                (e.latestResponseEnd =
+                                                                    t.responseEnd),
+                                                            i >
+                                                                e.maxAssetDownloadMs &&
+                                                                (e.maxAssetDownloadMs =
+                                                                    i)),
+                                                        o && e.cachedCount++,
+                                                        e.entries.push({
+                                                            name: r,
+                                                            nameWithoutHash:
+                                                                r.replace(
+                                                                    p,
+                                                                    ".$1"
+                                                                ),
+                                                            cached: o,
+                                                            downloadMs: i,
+                                                            sizeBytes: a,
+                                                            compressedSizeBytes:
+                                                                s,
+                                                        }));
+                                                })(n, t);
+                                        }
+                                        for (let [e, t] of o)
+                                            !(function (e, t, n) {
+                                                if (0 === n.count) return;
+                                                n.earliestResponseStart !==
+                                                    1 / 0 &&
+                                                    n.latestResponseEnd !==
+                                                        -1 / 0 &&
+                                                    (n.wallTimeMs =
+                                                        Math.round(
+                                                            (n.latestResponseEnd -
+                                                                n.earliestResponseStart) *
+                                                                100
+                                                        ) / 100);
+                                                let r = (function (e) {
+                                                    if (0 === e.length)
+                                                        return [e];
+                                                    let t = [],
+                                                        n = [],
+                                                        r = 2;
+                                                    for (let o of e) {
+                                                        let e =
+                                                            JSON.stringify(o)
+                                                                .length + 2;
+                                                        (n.length > 0 &&
+                                                            r + e > 524288 &&
+                                                            (t.push(n),
+                                                            (n = []),
+                                                            (r = 2)),
+                                                            n.push(o),
+                                                            (r += e));
+                                                    }
+                                                    return (
+                                                        n.length > 0 &&
+                                                            t.push(n),
+                                                        t
+                                                    );
+                                                })(n.entries);
+                                                for (let o of r)
+                                                    (0, f.BI)(
+                                                        e,
+                                                        {
+                                                            category: t,
+                                                            count: n.count,
+                                                            totalSizeBytes:
+                                                                n.totalSizeBytes,
+                                                            totalCompressedSizeBytes:
+                                                                n.totalCompressedSizeBytes,
+                                                            wallTimeMs:
+                                                                n.wallTimeMs,
+                                                            maxAssetDownloadMs:
+                                                                n.maxAssetDownloadMs,
+                                                            cachedCount:
+                                                                n.cachedCount,
+                                                            entries:
+                                                                JSON.stringify(
+                                                                    o
+                                                                ),
+                                                            chunkTotal:
+                                                                r.length,
+                                                        },
+                                                        { batched: !0 }
+                                                    );
+                                            })("bundle-stats", e, t);
+                                        e.length = 0;
+                                    }, 0);
+                                },
+                                { once: !0 }
+                            ));
+                    })());
             }
-            n.d(t, { y: () => a });
         },
-        38102: (e, t, n) => {
+        351930(e, t, n) {
             let r;
-            n.d(t, { AW: () => w, fE: () => g, N7: () => v });
-            var o = n(36301),
-                a = n(77065),
-                i = n(24212);
-            function c(e) {
-                return (0, i.q)(e.stack || "").map((e) => ({
+            n.d(t, { AW: () => y, fE: () => g, ff: () => E, N7: () => w });
+            var o = n(836301),
+                i = n(296133),
+                a = n(207753),
+                s = n(724212);
+            function l(e) {
+                return (0, s.q)(e.stack || "").map((e) => ({
                     filename: e.file || "",
                     function: String(e.methodName),
                     lineno: (e.lineNumber || 0).toString(),
                     colno: (e.column || 0).toString(),
                 }));
             }
-            function u(e) {
+            function c(e) {
                 let t = document.querySelectorAll(e);
                 if (t.length > 0) return t[t.length - 1];
             }
-            var s = n(99223),
-                l = n(71315),
-                f = n(94416),
-                d = n(69599),
-                m = n(88057);
-            let h = !1,
-                p = 0,
-                y = Date.now(),
+            n(958209);
+            var u = n(826316),
+                d = n(497398),
+                h = n(941763);
+            let m = !1,
+                f = 0,
+                p = Date.now(),
                 g = new Set([
                     "AbortError",
                     "AuthSessionExpiredError",
                     "TypeError",
                     "RateLimitError",
                     "NotAcceptableError",
-                    "SecFetchDestError",
+                    "SecFetchHeaderError",
+                    "FetchNetworkError",
+                    "NoiseError",
+                    "ServiceUnavailableError",
                 ]),
-                w = new Set([
+                y = new Set([
                     "Failed to fetch",
                     "NetworkError when attempting to fetch resource.",
                     "Unable to perform this operation. Please try again later.",
                 ]);
-            function v(e, t = {}) {
+            function w(e, t = {}) {
                 if (
                     !(
                         e instanceof Error ||
@@ -232,7 +364,7 @@
                             )
                                 return !0;
                             if ("string" == typeof e) {
-                                if (A.some((t) => e.includes(t))) return !0;
+                                if (C.some((t) => e.includes(t))) return !0;
                             } else if (
                                 "object" == typeof e &&
                                 "string" == typeof e.message &&
@@ -252,11 +384,11 @@
                             }
                         })(e);
                     S(
-                        E(
+                        v(
                             {
                                 type: "UnknownError",
                                 value: `Unable to report error, due to a thrown non-Error type: ${typeof e}, with value ${r}`,
-                                stacktrace: c(n),
+                                stacktrace: l(n),
                                 catalogService: document.head?.querySelector(
                                     'meta[name="current-catalog-service"]'
                                 )?.content,
@@ -274,23 +406,26 @@
                     ("AbortError" === e.name ||
                         "RateLimitError" === e.name ||
                         "NotAcceptableError" === e.name ||
-                        "SecFetchDestError" === e.name ||
-                        (g.has(e.name) && w.has(e.message)) ||
-                        (e.name.startsWith("ApiError") && w.has(e.message)))) ||
+                        "SecFetchHeaderError" === e.name ||
+                        "FetchNetworkError" === e.name ||
+                        "NoiseError" === e.name ||
+                        ("ServiceUnavailableError" === e.name && E()) ||
+                        (g.has(e.name) && y.has(e.message)) ||
+                        (e.name.startsWith("ApiError") && y.has(e.message)))) ||
                     S(
-                        E(
+                        v(
                             {
                                 type: e.name,
                                 value: e.message,
-                                stacktrace: c(e),
+                                stacktrace: l(e),
                                 catalogService:
                                     e.catalogService ||
-                                    document.head?.querySelector(
+                                    globalThis.document?.head?.querySelector(
                                         'meta[name="current-catalog-service"]'
                                     )?.content,
                                 catalogServiceHash:
                                     e.catalogServiceHash ||
-                                    document.head?.querySelector(
+                                    globalThis.document?.head?.querySelector(
                                         'meta[name="current-catalog-service-hash"]'
                                     )?.content,
                             },
@@ -299,49 +434,52 @@
                     );
             }
             async function S(e) {
+                let t;
                 if (
+                    ((t = Date.now() - p > 2592e5),
                     !(
-                        !q &&
-                        !h &&
-                        p < 10 &&
-                        (r ??
-                            (r =
-                                (0, a.TT)() &&
-                                (function () {
-                                    let e = l.cg?.history,
-                                        t = l.cg?.location;
-                                    if (!e || !t) return !1;
-                                    try {
-                                        return (
-                                            e.replaceState(
-                                                e.state,
-                                                document.title,
-                                                t.href
-                                            ),
-                                            !0
-                                        );
-                                    } catch {
-                                        return !1;
-                                    }
-                                })()))
-                    )
+                        !A &&
+                        !m &&
+                        f < 10 &&
+                        (r ??=
+                            (0, i.TT)() &&
+                            (function () {
+                                let e = u.cg?.history,
+                                    t = u.cg?.location;
+                                if (!e || !t) return !1;
+                                try {
+                                    return (
+                                        e.replaceState(
+                                            e.state,
+                                            document.title,
+                                            t.href
+                                        ),
+                                        !0
+                                    );
+                                } catch {
+                                    return !1;
+                                }
+                            })())
+                    ) ||
+                        t ||
+                        (0, a.H)())
                 )
                     return;
-                let t = document.head?.querySelector(
+                let n = document.head?.querySelector(
                     'meta[name="browser-errors-url"]'
                 )?.content;
-                if (t) {
+                if (n) {
                     if (
                         e.error.stacktrace.some(
                             (e) => b.test(e.filename) || b.test(e.function)
                         )
                     ) {
-                        h = !0;
+                        m = !0;
                         return;
                     }
-                    p++;
+                    f++;
                     try {
-                        await fetch(t, {
+                        await fetch(n, {
                             method: "post",
                             body: JSON.stringify({
                                 context: e,
@@ -354,16 +492,15 @@
                     } catch {}
                 }
             }
-            function E(e, t = {}) {
+            function v(e, t = {}) {
                 let n,
                     r = { ...t };
                 return (
-                    (0, d.G7)("failbot_report_error_react_apps_on_page") &&
-                        !r.reactAppName &&
+                    r.reactAppName ||
                         (r.reactAppName = (function (e) {
                             let t = (function () {
                                 let e = new Set();
-                                for (let [t, n] of N)
+                                for (let [t, n] of k)
                                     for (let r of document.querySelectorAll(t))
                                         if (r instanceof HTMLElement) {
                                             let t = r.getAttribute(n);
@@ -389,16 +526,16 @@
                             error: e,
                             sanitizedUrl:
                                 `${window.location.protocol}//${window.location.host}${
-                                    ((n = u("meta[name=analytics-location]"))
+                                    ((n = c("meta[name=analytics-location]"))
                                         ? n.content
                                         : window.location.pathname) +
                                     (function () {
-                                        let e = u(
+                                        let e = c(
                                                 "meta[name=analytics-location-query-strip]"
                                             ),
                                             t = "";
                                         e || (t = window.location.search);
-                                        let n = u(
+                                        let n = c(
                                             "meta[name=analytics-location-params]"
                                         );
                                         for (let e of (n &&
@@ -419,8 +556,8 @@
                                     })()
                                 }` || window.location.href,
                             readyState: document.readyState,
-                            referrer: (0, f.dR)(),
-                            timeSinceLoad: Math.round(Date.now() - y),
+                            referrer: (0, d.dR)(),
+                            timeSinceLoad: Math.round(Date.now() - p),
                             user:
                                 (function () {
                                     let e = document.head?.querySelector(
@@ -433,97 +570,440 @@
                             actorId: document.head?.querySelector(
                                 'meta[name="octolytics-actor-id"]'
                             )?.content,
-                            bundler: s.v,
-                            ui: "vite-tss" === s.v,
+                            bundler: "rspack",
+                            ui: !1,
                             release: document.head?.querySelector(
                                 'meta[name="release"]'
                             )?.content,
-                            pastRequestIds: (0, m.xA)(),
+                            pastRequestIds: (0, h.xA)(),
                         },
                         r
                     )
                 );
             }
-            let b = /(chrome|moz|safari)-extension:\/\//,
-                q = !1;
-            (l.cg?.addEventListener("pageshow", () => (q = !1)),
-                l.cg?.addEventListener("pagehide", () => (q = !0)),
+            let b = /(chrome|moz|safari)-extension:\/\//;
+            function E() {
+                return !document.head?.querySelector('meta[name="user-login"]')
+                    ?.content;
+            }
+            let A = !1;
+            (u.cg?.addEventListener("pageshow", () => (A = !1)),
+                u.cg?.addEventListener("pagehide", () => (A = !0)),
                 "function" == typeof BroadcastChannel &&
                     new BroadcastChannel(
                         "shared-worker-error"
                     ).addEventListener("message", (e) => {
-                        v(e.data.error);
+                        w(e.data.error);
                     }));
-            let A = [
+            let C = [
                     "Object Not Found Matching Id",
                     "Not implemented on this platform",
                     "provider because it's not your default extension",
                 ],
-                N = [
+                k = [
                     ["react-app", "app-name"],
                     ["react-partial", "partial-name"],
                 ];
         },
-        51987: (e, t, n) => {
-            n.d(t, { jC: () => u, kt: () => i, tV: () => c });
-            var r = n(87057),
-                o = n(69599),
-                a = n(13523);
-            function i(e) {
-                let t = {
-                    "X-Requested-With": "XMLHttpRequest",
-                    ...(0, a.wE)(e),
-                };
+        258038(e, t, n) {
+            let r;
+            n.d(t, { sX: () => b, BI: () => E, lA: () => v, Ti: () => A });
+            var o = n(70837),
+                i = n(138768),
+                a = n(135205),
+                s = n(826316),
+                l = n(251189);
+            let c = "font-weight: bold; font-size: 12px;",
+                u = new Set([
+                    "actor_id",
+                    "actor_login",
+                    "actor_hash",
+                    "referrer",
+                    "request_id",
+                    "visitor_id",
+                    "region_edge",
+                    "region_render",
+                    "staff",
+                    "service",
+                    "react",
+                    "app_name",
+                    "page",
+                    "title",
+                ]),
+                d = new Set([
+                    "hpc",
+                    "ttfb",
+                    "fcp",
+                    "lcp",
+                    "fid",
+                    "inp",
+                    "cls",
+                    "elementtiming",
+                    "longTasks",
+                    "longAnimationFrames",
+                ]),
+                h = new Set([
+                    "react",
+                    "reactApp",
+                    "reactPartials",
+                    "featureFlags",
+                    "ssr",
+                    "controller",
+                    "action",
+                    "routePattern",
+                    "cpu",
+                    "domNodes",
+                    "previousDomNodes",
+                    "navigationId",
+                ]);
+            function m(e) {
+                try {
+                    return JSON.parse(e);
+                } catch {
+                    return e;
+                }
+            }
+            let { getItem: f } = (0, a.A)("localStorage"),
+                p = "dimension_",
+                g = [
+                    "utm_source",
+                    "utm_medium",
+                    "utm_campaign",
+                    "utm_term",
+                    "utm_content",
+                    "scid",
+                ];
+            function y(e) {
+                try {
+                    return (0, o.O)(e);
+                } catch {
+                    return;
+                }
+            }
+            let w = y("octolytics");
+            function S(e) {
+                let t = y("octolytics")?.baseContext ?? {};
+                if (t)
+                    for (let [e, n] of (delete t.app_id,
+                    delete t.event_url,
+                    delete t.host,
+                    Object.entries(t)))
+                        e.startsWith(p) &&
+                            ((t[e.replace(p, "")] = n), delete t[e]);
+                let n = s.XC?.querySelector("meta[name=visitor-payload]");
+                for (let [e, r] of (n &&
+                    Object.assign(t, JSON.parse(atob(n.content))),
+                new URLSearchParams(window.location.search)))
+                    g.includes(e.toLowerCase()) && (t[e] = r);
                 return (
-                    (0, o.G7)("client_version_header") &&
-                        (t = { ...t, [r.S]: (0, r.O)() }),
-                    t
+                    (t.staff = (0, l.Xl)().toString()),
+                    Object.assign(t, e)
                 );
             }
-            function c(e, t) {
-                for (let [n, r] of Object.entries(i(t))) e.set(n, r);
+            function v(e) {
+                r?.sendPageView(S(e));
             }
-            function u(e) {
-                return { "X-GitHub-App-Type": e };
+            function b() {
+                return s.XC?.head?.querySelector(
+                    'meta[name="current-catalog-service"]'
+                )?.content;
             }
+            function E(e, t = {}, { batched: n = !1, page: o } = {}) {
+                let i = b(),
+                    a = i ? { service: i } : {};
+                for (let [e, n] of Object.entries(t))
+                    null != n && (a[e] = `${n}`);
+                if (r) {
+                    let t = e || "unknown",
+                        i = S(a);
+                    (o
+                        ? (function (e, t, n) {
+                              if (!r) return;
+                              let o = {
+                                  page:
+                                      "u" < typeof window
+                                          ? n
+                                          : new URL(
+                                                n,
+                                                window.location.origin
+                                            ).toString(),
+                                  title: s.XC?.title ?? "",
+                                  context: t,
+                                  type: e,
+                              };
+                              r.send({ events: [o] });
+                          })(t, i, o)
+                        : n
+                          ? r.sendBatchedEvent(t, i)
+                          : r.sendEvent(t, i),
+                        "true" === f("stats-dev-logger") &&
+                            (function (e, t = {}) {
+                                let n,
+                                    r = [];
+                                for (let [e, n] of Object.entries(t))
+                                    u.has(e) || r.push([e, m(n)]);
+                                let o =
+                                    void 0 !== t.value
+                                        ? ` ${"number" == typeof (n = m(t.value)) ? String(Math.round(n)) : String(n)}`
+                                        : "";
+                                (console.groupCollapsed(
+                                    `%cevent%c ${e}${o}`,
+                                    "background: #8957e5; color: #fff; padding: 2px 6px; border-radius: 3px; font-weight: bold; font-size: 11px;",
+                                    c
+                                ),
+                                    "web-vital" === e
+                                        ? (function (e) {
+                                              for (let [t, n] of e)
+                                                  d.has(t)
+                                                      ? (console.log(
+                                                            `%c${t}`,
+                                                            c
+                                                        ),
+                                                        console.table(n))
+                                                      : h.has(t) ||
+                                                        console.log(`${t}:`, n);
+                                          })(r)
+                                        : (console.table(
+                                              Object.fromEntries(
+                                                  r.map(([e, t]) => [
+                                                      e,
+                                                      { value: t },
+                                                  ])
+                                              )
+                                          ),
+                                          console.log(Object.fromEntries(r))),
+                                    console.groupEnd());
+                            })(t, i));
+                }
+            }
+            function A(e) {
+                return Object.fromEntries(
+                    Object.entries(e).map(([e, t]) => [e, JSON.stringify(t)])
+                );
+            }
+            w &&
+                (delete w.baseContext,
+                (w.idleTimeout = 5e3),
+                (w.maxBatchSize = 50),
+                (r = new i.s(w)));
         },
-        56038: (e, t, n) => {
-            n.d(t, { Kn: () => i, XC: () => o, cg: () => a, fV: () => c });
-            let r = "undefined" != typeof FORCE_SERVER_ENV && FORCE_SERVER_ENV,
-                o = "undefined" == typeof document || r ? void 0 : document,
-                a = "undefined" == typeof window || r ? void 0 : window,
-                i = "undefined" == typeof history || r ? void 0 : history,
-                c =
-                    "undefined" == typeof location || r
-                        ? {
-                              pathname: "",
-                              origin: "",
-                              search: "",
-                              hash: "",
-                              href: "",
-                          }
-                        : location;
+        941763(e, t, n) {
+            var r = n(826316);
+            let o = Array(10).fill(null),
+                i = 0;
+            function a(e) {
+                ((o[i] = e), (i = (i + 1) % 10));
+            }
+            function s() {
+                let e = [];
+                for (let t = 0; t < 10; t++) {
+                    let n = o[(i - 1 - t + 10) % 10];
+                    n && e.push(n);
+                }
+                return e;
+            }
+            function l() {
+                let e = r.XC;
+                if (!e) return;
+                let t = e.querySelector('meta[name="request-id"]'),
+                    n = t?.getAttribute("content");
+                n && a(n);
+            }
+            n.d(t, { Ex: () => a, kt: () => l, xA: () => s });
         },
-        59368: (e, t, n) => {
-            var r = n(38102),
-                o = n(71315);
-            if (
-                (o.cg?.addEventListener("error", (e) => {
-                    e.error && (0, r.N7)(e.error);
-                }),
-                o.cg?.addEventListener("unhandledrejection", async (e) => {
-                    if (e.promise)
-                        try {
-                            await e.promise;
-                        } catch (e) {
-                            (0, r.N7)(e);
+        135205(e, t, n) {
+            var r = n(826316),
+                o = n(251189);
+            class i {
+                getItem() {
+                    return null;
+                }
+                setItem() {}
+                removeItem() {}
+                clear() {}
+                key() {
+                    return null;
+                }
+                get length() {
+                    return 0;
+                }
+            }
+            function a(
+                e,
+                t = { throwQuotaErrorsOnSet: !1 },
+                n = r.cg,
+                s = (e) => e,
+                l = (e) => e
+            ) {
+                let c;
+                try {
+                    if (!n) throw Error();
+                    c = n[e] || new i();
+                } catch {
+                    c = new i();
+                }
+                let { throwQuotaErrorsOnSet: u } = t;
+                function d(e) {
+                    t.sendCacheStats && (0, o.iv)({ incrementKey: e });
+                }
+                function h(e) {
+                    try {
+                        if ((c.removeItem(e), t.ttl)) {
+                            let t = `${e}:expiry`;
+                            c.removeItem(t);
                         }
-                }),
-                o.cg?.location.hash === "#b00m" &&
-                    setTimeout(() => {
-                        throw Error("b00m");
-                    }),
-                !("ariaNotify" in Element.prototype) ||
+                    } catch {}
+                }
+                return {
+                    getItem: function (e, t = Date.now()) {
+                        try {
+                            let n = c.getItem(e);
+                            if (!n) return null;
+                            let r = `${e}:expiry`,
+                                o = Number(c.getItem(r));
+                            if (o && t > o)
+                                return (
+                                    h(e),
+                                    h(r),
+                                    d("SAFE_STORAGE_VALUE_EXPIRED"),
+                                    null
+                                );
+                            return (d("SAFE_STORAGE_VALUE_WITHIN_TTL"), s(n));
+                        } catch {
+                            return null;
+                        }
+                    },
+                    setItem: function (e, n, r = Date.now()) {
+                        try {
+                            if ((c.setItem(e, l(n)), t.ttl)) {
+                                let n = `${e}:expiry`,
+                                    o = r + t.ttl;
+                                c.setItem(n, o.toString());
+                            }
+                        } catch (e) {
+                            if (
+                                u &&
+                                e instanceof Error &&
+                                e.message.toLowerCase().includes("quota")
+                            )
+                                throw e;
+                        }
+                    },
+                    removeItem: h,
+                    clear: () => c.clear(),
+                    getKeys: function () {
+                        return Object.keys(c);
+                    },
+                    get length() {
+                        return c.length;
+                    },
+                };
+            }
+            function s(e) {
+                return a(
+                    e,
+                    { throwQuotaErrorsOnSet: !1 },
+                    r.cg,
+                    JSON.parse,
+                    JSON.stringify
+                );
+            }
+            n.d(t, { A: () => a, D: () => s });
+        },
+        311730(e, t, n) {
+            let {
+                getItem: r,
+                setItem: o,
+                removeItem: i,
+            } = (0, n(135205).A)("sessionStorage");
+            n.d(t, {}, { Ai: i, Gq: r, SO: o });
+        },
+        497398(e, t, n) {
+            var r = n(311730),
+                o = n(826316),
+                i = n(366953);
+            let a = "soft-nav:fail",
+                s = "soft-nav:fail-referrer",
+                l = "soft-nav:referrer",
+                c = "soft-nav:marker",
+                u = "soft-nav:react-app-name",
+                d = "soft-nav:latest-mechanism";
+            function h() {
+                ((0, r.SO)(c, "0"),
+                    (0, r.Ai)(l),
+                    (0, r.Ai)(a),
+                    (0, r.Ai)(s),
+                    (0, r.Ai)(u),
+                    (0, r.Ai)(d));
+            }
+            function m(e) {
+                (0, r.SO)(c, e);
+            }
+            function f() {
+                (0, r.SO)(c, "0");
+            }
+            function p() {
+                let e = (0, r.Gq)(c);
+                return e && "0" !== e;
+            }
+            function g() {
+                return (0, r.Gq)(c);
+            }
+            function y() {
+                return !!w();
+            }
+            function w() {
+                return (0, r.Gq)(a);
+            }
+            function S(e) {
+                ((0, r.SO)(a, e || "reload"),
+                    (0, r.SO)(s, window.location.href));
+            }
+            function v() {
+                (0, r.SO)(l, window.location.href);
+            }
+            function b() {
+                return (0, r.Gq)(l) || document.referrer;
+            }
+            function E() {
+                let e = (0, i.f)();
+                e ? (0, r.SO)(u, e) : (0, r.Ai)(u);
+            }
+            function A() {
+                return (0, r.Gq)(u);
+            }
+            function C() {
+                return (
+                    !!o.XC?.querySelector("react-app")?.getAttribute(
+                        "app-name"
+                    ) || !!o.XC?.querySelector("projects-v2")
+                );
+            }
+            function k(e) {
+                (0, r.SO)(d, e);
+            }
+            n.d(t, {
+                Ff: () => f,
+                HK: () => v,
+                JA: () => k,
+                LM: () => p,
+                Pv: () => A,
+                Vy: () => m,
+                ZW: () => E,
+                dR: () => b,
+                di: () => g,
+                gc: () => C,
+                k9: () => S,
+                my: () => w,
+                wG: () => y,
+                xT: () => h,
+            });
+        },
+        789272() {
+            if (
+                void 0 !== globalThis.Element &&
+                void 0 !== globalThis.Document &&
+                (!("ariaNotify" in Element.prototype) ||
                     !("ariaNotify" in Document.prototype))
             ) {
                 let e = `${Date.now()}`;
@@ -532,7 +1012,7 @@
                 } catch {}
                 let t = Symbol(),
                     n = `live-region-${e}`;
-                let Message = class Message {
+                class r {
                     element;
                     message;
                     priority = "normal";
@@ -550,7 +1030,11 @@
                             this.element.isConnected &&
                             !this.element.closest("[inert]") &&
                             (this.element.ownerDocument
-                                .querySelector(":modal")
+                                .querySelector(
+                                    CSS.supports("selector(:modal)")
+                                        ? ":modal"
+                                        : "dialog[open]"
+                                )
                                 ?.contains(this.element) ??
                                 !0)
                         );
@@ -567,8 +1051,8 @@
                             await new Promise((e) => setTimeout(e, 250)),
                             r.handleMessage(t, this.message));
                     }
-                };
-                let r = new (class MessageQueue {
+                }
+                let o = new (class {
                     #t = [];
                     #n;
                     enqueue(e) {
@@ -586,7 +1070,7 @@
                             this.#n && (await this.#n.announce(), this.#r()));
                     }
                 })();
-                let LiveRegionCustomElement = class LiveRegionCustomElement extends HTMLElement {
+                class i extends HTMLElement {
                     #o = this.attachShadow({ mode: "closed" });
                     connectedCallback() {
                         ((this.ariaLive = "polite"),
@@ -605,15 +1089,15 @@
                             (this.#o.textContent == n && (n += "\xa0"),
                             (this.#o.textContent = n));
                     }
-                };
-                (customElements.define(n, LiveRegionCustomElement),
+                }
+                (customElements.define(n, i),
                     "ariaNotify" in Element.prototype ||
                         (Element.prototype.ariaNotify = function (
                             e,
                             { priority: t = "normal" } = {}
                         ) {
-                            r.enqueue(
-                                new Message({
+                            o.enqueue(
+                                new r({
                                     element: this,
                                     message: e,
                                     priority: t,
@@ -625,8 +1109,8 @@
                             e,
                             { priority: t = "normal" } = {}
                         ) {
-                            r.enqueue(
-                                new Message({
+                            o.enqueue(
+                                new r({
                                     element: this.documentElement,
                                     message: e,
                                     priority: t,
@@ -634,525 +1118,242 @@
                             );
                         }));
             }
-            var a = n(82518);
-            let i = fetch;
-            function c({ input: e, error: t, status: n }) {
-                if (!t) return;
-                let r = e instanceof Request ? e.url : e.toString();
-                (0, a.iv)(
-                    {
-                        incrementKey: "FETCH_ERROR",
-                        requestUrl: window.location.href,
-                        referredRequestUrl: r,
-                        incrementTags: { status: String(n) },
-                    },
-                    !1,
-                    1
-                );
-            }
-            let u = /\breact-(?:dom|lib|profiling)\b/;
-            function s(e) {
-                return !!e && u.test(e);
-            }
-            var l = n(77065),
-                f = n(51987);
-            let d = window.fetch,
-                m = (e, t) => {
-                    if (e instanceof Request) {
-                        let t = {
-                            ...Object.fromEntries(e.headers.entries()),
-                            ...(0, f.kt)(),
-                        };
-                        return d(new Request(e, { headers: t }));
-                    }
-                    {
-                        let n = { ...(t?.headers ?? {}), ...(0, f.kt)() };
-                        return d(new Request(e, { ...t, headers: n }));
-                    }
-                };
-            document.documentElement.hasAttribute("override-fetch") &&
-                window.fetch !== m &&
-                (window.fetch = m);
-            var h = n(13523),
-                p = n(88057);
-            if (((0, l.Bb)(), "undefined" != typeof document)) {
-                if (
-                    (o.cg &&
-                        (o.cg.fetch = async (e, t) => {
-                            try {
-                                let n = await i(e, t);
-                                return (
-                                    c({
-                                        input: e,
-                                        error: !n.ok,
-                                        status: n.status,
-                                    }),
-                                    n
-                                );
-                            } catch (t) {
-                                throw (
-                                    c({
-                                        input: e,
-                                        error: !0,
-                                        status: "unknown",
-                                    }),
-                                    t
-                                );
-                            }
+        },
+        138768(e, t, n) {
+            n.d(t, { s: () => i });
+            let r = [
+                "utm_source",
+                "utm_medium",
+                "utm_campaign",
+                "utm_term",
+                "utm_content",
+                "scid",
+            ];
+            var o = n(836301);
+            class i {
+                constructor(e) {
+                    ((this.options = e),
+                        (this.eventBatch = []),
+                        (this.idleCallbackId = null),
+                        (this.waitTimerId = null),
+                        (this.onVisibilityChange = () => {
+                            "hidden" === document.visibilityState &&
+                                this.flushBatch();
                         }),
-                    "function" == typeof Node && Node.prototype)
-                ) {
-                    let e = Node.prototype.removeChild;
-                    Node.prototype.removeChild = function (t) {
-                        try {
-                            return e.apply(this, [t]);
-                        } catch (e) {
-                            if (e instanceof Error && s(e.stack)) return t;
-                            throw e;
-                        }
+                        (this.boundFlush = () => this.flushBatch()),
+                        "u" > typeof document &&
+                            document.addEventListener(
+                                "visibilitychange",
+                                this.onVisibilityChange
+                            ),
+                        "u" > typeof window &&
+                            window.addEventListener(
+                                "pagehide",
+                                this.boundFlush
+                            ));
+                }
+                get collectorUrl() {
+                    return this.options.collectorUrl;
+                }
+                get clientId() {
+                    return this.options.clientId
+                        ? this.options.clientId
+                        : (0, o.y)();
+                }
+                get maxBatchSize() {
+                    return this.options.maxBatchSize ?? 10;
+                }
+                get idleTimeout() {
+                    return this.options.idleTimeout ?? 1e3;
+                }
+                createEvent(e) {
+                    return {
+                        page: location.href,
+                        title: document.title,
+                        context: {
+                            ...this.options.baseContext,
+                            ...(function () {
+                                let e = {};
+                                try {
+                                    for (let [t, n] of new URLSearchParams(
+                                        window.location.search
+                                    )) {
+                                        let o = t.toLowerCase();
+                                        r.includes(o) && (e[o] = n);
+                                    }
+                                    return e;
+                                } catch (e) {
+                                    return {};
+                                }
+                            })(),
+                            ...e,
+                        },
                     };
                 }
-                if ("function" == typeof Node && Node.prototype) {
-                    let e = Node.prototype.insertBefore;
-                    Node.prototype.insertBefore = function (t, n) {
-                        try {
-                            return e.apply(this, [t, n]);
-                        } catch (e) {
-                            if (e instanceof Error && s(e.stack)) return t;
-                            throw e;
-                        }
-                    };
+                sendPageView(e) {
+                    let t = this.createEvent(e);
+                    this.send({ page_views: [t] });
                 }
-                ((0, h.pS)(), (0, p.kt)());
-            }
-        },
-        69599: (e, t, n) => {
-            n.d(t, { G7: () => u, XY: () => s, fQ: () => c });
-            var r = n(5225),
-                o = n(21067);
-            function a() {
-                return new Set((0, o._$)().featureFlags);
-            }
-            let i =
-                n(71315).X3 ||
-                (function () {
+                sendEvent(e, t) {
+                    let n = { ...this.createEvent(t), type: e };
+                    this.send({ events: [n] });
+                }
+                sendBatchedEvent(e, t) {
+                    let n = { ...this.createEvent(t), type: e };
+                    (this.eventBatch.push(n),
+                        this.eventBatch.length >= this.maxBatchSize
+                            ? this.flushBatch()
+                            : this.scheduleFlush());
+                }
+                flushBatch() {
+                    if (0 === this.eventBatch.length) return;
+                    this.cancelScheduledFlush();
+                    let e = this.eventBatch;
+                    ((this.eventBatch = []), this.send({ events: e }));
+                }
+                destroy() {
+                    (this.flushBatch(),
+                        "u" > typeof document &&
+                            document.removeEventListener(
+                                "visibilitychange",
+                                this.onVisibilityChange
+                            ),
+                        "u" > typeof window &&
+                            window.removeEventListener(
+                                "pagehide",
+                                this.boundFlush
+                            ));
+                }
+                scheduleFlush() {
+                    null === this.idleCallbackId &&
+                        null === this.waitTimerId &&
+                        (this.waitTimerId = setTimeout(() => {
+                            ((this.waitTimerId = null),
+                                "function" == typeof requestIdleCallback
+                                    ? (this.idleCallbackId =
+                                          requestIdleCallback(this.boundFlush))
+                                    : this.boundFlush());
+                        }, this.idleTimeout));
+                }
+                cancelScheduledFlush() {
+                    (null !== this.idleCallbackId &&
+                        ("function" == typeof cancelIdleCallback &&
+                            cancelIdleCallback(this.idleCallbackId),
+                        (this.idleCallbackId = null)),
+                        null !== this.waitTimerId &&
+                            (clearTimeout(this.waitTimerId),
+                            (this.waitTimerId = null)));
+                }
+                send({ page_views: e, events: t }) {
+                    let n = JSON.stringify({
+                        client_id: this.clientId,
+                        page_views: e,
+                        events: t,
+                        request_context: {
+                            referrer: (function () {
+                                let e;
+                                try {
+                                    e = window.top.document.referrer;
+                                } catch (t) {
+                                    if (window.parent)
+                                        try {
+                                            e = window.parent.document.referrer;
+                                        } catch (e) {}
+                                }
+                                return ("" === e && (e = document.referrer), e);
+                            })(),
+                            user_agent: navigator.userAgent,
+                            screen_resolution: (function () {
+                                try {
+                                    return `${screen.width}x${screen.height}`;
+                                } catch (e) {
+                                    return "unknown";
+                                }
+                            })(),
+                            browser_resolution: (function () {
+                                let e = 0,
+                                    t = 0;
+                                try {
+                                    return (
+                                        "number" == typeof window.innerWidth
+                                            ? ((t = window.innerWidth),
+                                              (e = window.innerHeight))
+                                            : null !=
+                                                    document.documentElement &&
+                                                null !=
+                                                    document.documentElement
+                                                        .clientWidth
+                                              ? ((t =
+                                                    document.documentElement
+                                                        .clientWidth),
+                                                (e =
+                                                    document.documentElement
+                                                        .clientHeight))
+                                              : null != document.body &&
+                                                null !=
+                                                    document.body.clientWidth &&
+                                                ((t =
+                                                    document.body.clientWidth),
+                                                (e =
+                                                    document.body
+                                                        .clientHeight)),
+                                        `${t}x${e}`
+                                    );
+                                } catch (e) {
+                                    return "unknown";
+                                }
+                            })(),
+                            browser_languages: navigator.languages
+                                ? navigator.languages.join(",")
+                                : navigator.language || "",
+                            pixel_ratio: window.devicePixelRatio,
+                            timestamp: Date.now(),
+                            tz_seconds: -60 * new Date().getTimezoneOffset(),
+                        },
+                    });
                     try {
-                        return process?.env?.STORYBOOK === "true";
-                    } catch {
-                        return !1;
-                    }
-                })()
-                    ? a
-                    : (0, r.A)(a);
-            function c() {
-                return Array.from(i());
-            }
-            function u(e) {
-                return i().has(e);
-            }
-            let s = { isFeatureEnabled: u };
-        },
-        70170: (e, t, n) => {
-            function r(
-                e,
-                t = 0,
-                { start: n = !0, middle: o = !0, once: a = !1 } = {}
-            ) {
-                let i,
-                    c = n,
-                    u = 0,
-                    s = !1;
-                function l(...r) {
-                    if (s) return;
-                    let f = Date.now() - u;
-                    ((u = Date.now()),
-                        n && o && f >= t && (c = !0),
-                        c
-                            ? ((c = !1), e.apply(this, r), a && l.cancel())
-                            : ((o && f < t) || !o) &&
-                              (clearTimeout(i),
-                              (i = setTimeout(
-                                  () => {
-                                      ((u = Date.now()),
-                                          e.apply(this, r),
-                                          a && l.cancel());
-                                  },
-                                  o ? t - f : t
-                              ))));
-                }
-                return (
-                    (l.cancel = () => {
-                        (clearTimeout(i), (s = !0));
-                    }),
-                    l
-                );
-            }
-            function o(
-                e,
-                t = 0,
-                { start: n = !1, middle: a = !1, once: i = !1 } = {}
-            ) {
-                return r(e, t, { start: n, middle: a, once: i });
-            }
-            n.d(t, { n: () => r, s: () => o });
-        },
-        71315: (e, t, n) => {
-            n.d(t, {
-                KJ: () => r.KJ,
-                Kn: () => o.Kn,
-                X3: () => r.X3,
-                XC: () => o.XC,
-                cg: () => o.cg,
-                fV: () => o.fV,
-                g5: () => r.g5,
-            });
-            var r = n(6923),
-                o = n(56038);
-        },
-        82075: (e, t, n) => {
-            n.d(t, { A: () => i, D: () => c });
-            var r = n(71315),
-                o = n(82518);
-            let a = class NoOpStorage {
-                getItem() {
-                    return null;
-                }
-                setItem() {}
-                removeItem() {}
-                clear() {}
-                key() {
-                    return null;
-                }
-                get length() {
-                    return 0;
-                }
-            };
-            function i(
-                e,
-                t = { throwQuotaErrorsOnSet: !1 },
-                n = r.cg,
-                c = (e) => e,
-                u = (e) => e
-            ) {
-                let s;
-                try {
-                    if (!n) throw Error();
-                    s = n[e] || new a();
-                } catch {
-                    s = new a();
-                }
-                let { throwQuotaErrorsOnSet: l } = t;
-                function f(e) {
-                    t.sendCacheStats && (0, o.iv)({ incrementKey: e });
-                }
-                function d(e) {
-                    try {
-                        if ((s.removeItem(e), t.ttl)) {
-                            let t = `${e}:expiry`;
-                            s.removeItem(t);
-                        }
+                        if (navigator.sendBeacon)
+                            return void navigator.sendBeacon(
+                                this.collectorUrl,
+                                n
+                            );
                     } catch {}
+                    fetch(this.collectorUrl, {
+                        method: "POST",
+                        cache: "no-cache",
+                        headers: { "Content-Type": "application/json" },
+                        body: n,
+                        keepalive: !1,
+                    });
                 }
+            }
+        },
+        70837(e, t, n) {
+            function r(e = "ha") {
+                let t,
+                    n = {};
+                for (let r of Array.from(
+                    document.head.querySelectorAll(`meta[name^="${e}-"]`)
+                )) {
+                    let { name: o, content: i } = r,
+                        a = o.replace(`${e}-`, "").replace(/-/g, "_");
+                    "url" === a ? (t = i) : (n[a] = i);
+                }
+                if (!t)
+                    throw Error(`AnalyticsClient ${e}-url meta tag not found`);
                 return {
-                    getItem: function (e, t = Date.now()) {
-                        try {
-                            let n = s.getItem(e);
-                            if (!n) return null;
-                            let r = `${e}:expiry`,
-                                o = Number(s.getItem(r));
-                            if (o && t > o)
-                                return (
-                                    d(e),
-                                    d(r),
-                                    f("SAFE_STORAGE_VALUE_EXPIRED"),
-                                    null
-                                );
-                            return (f("SAFE_STORAGE_VALUE_WITHIN_TTL"), c(n));
-                        } catch {
-                            return null;
-                        }
-                    },
-                    setItem: function (e, n, r = Date.now()) {
-                        try {
-                            if ((s.setItem(e, u(n)), t.ttl)) {
-                                let n = `${e}:expiry`,
-                                    o = r + t.ttl;
-                                s.setItem(n, o.toString());
-                            }
-                        } catch (e) {
-                            if (
-                                l &&
-                                e instanceof Error &&
-                                e.message.toLowerCase().includes("quota")
-                            )
-                                throw e;
-                        }
-                    },
-                    removeItem: d,
-                    clear: () => s.clear(),
-                    getKeys: function () {
-                        return Object.keys(s);
-                    },
-                    get length() {
-                        return s.length;
-                    },
+                    collectorUrl: t,
+                    ...(Object.keys(n).length > 0 ? { baseContext: n } : {}),
                 };
             }
-            function c(e) {
-                return i(
-                    e,
-                    { throwQuotaErrorsOnSet: !1 },
-                    r.cg,
-                    JSON.parse,
-                    JSON.stringify
-                );
-            }
-        },
-        82518: (e, t, n) => {
-            n.d(t, { Xl: () => y, au: () => f, iv: () => d });
-            var r = n(71315),
-                o = n(34095),
-                a = n(99223),
-                i = n(69599),
-                c = n(21067),
-                u = n(70170);
-            let s = {
-                    PRS_COMMENT_BOX_INP: {
-                        name: "pull_requests.comment_box.inp",
-                        hash: "070a85f091c124d118031ed374badf58df0cd9c2902f9aa4f9e09f6fdcbb91d0",
-                        type: "distribution",
-                    },
-                    PULL_REQUESTS_FILES_JS_HEAP: {
-                        name: "pull_requests.files.js_heap",
-                        hash: "7c5d986de8ccbfd17ae58e0da85158912cf65aeb256aecf28c35ddeb794cd2d3",
-                        type: "distribution",
-                    },
-                },
-                l = [];
-            function f({ name: e, value: t, tags: n }) {
-                d({
-                    customMetric: { ...s[e], value: t, tags: n },
-                    ui: "vite-tss" === a.v,
-                });
-            }
-            function d(e, t = !1, n = 0.5) {
-                if (!r.X3 && !0 !== (0, i.G7)("browser_stats_disabled")) {
-                    if (n < 0 || n > 1)
-                        throw RangeError(
-                            "Sampling probability must be between 0 and 1"
-                        );
-                    (void 0 === e.timestamp && (e.timestamp = Date.now()),
-                        (e.loggedIn = (0, c.M3)()),
-                        (e.staff = y()),
-                        (e.bundler = a.v),
-                        (e.ui = "vite-tss" === a.v),
-                        Math.random() < n && l.push(e),
-                        t ? p() : h());
-                }
-            }
-            let m = null,
-                h = (0, u.n)(async function () {
-                    (await o.K,
-                        null == m && (m = window.requestIdleCallback(p)));
-                }, 5e3);
-            function p() {
-                if (((m = null), !l.length)) return;
-                let e = r.XC?.head?.querySelector(
-                    'meta[name="browser-stats-url"]'
-                )?.content;
-                if (e) {
-                    for (let o of (function (e) {
-                        let t = [],
-                            n = e.map((e) => JSON.stringify(e));
-                        for (; n.length > 0; )
-                            t.push(
-                                (function (e) {
-                                    let t = e.shift(),
-                                        n = [t],
-                                        r = t.length;
-                                    for (; e.length > 0 && r <= 65536; ) {
-                                        let t = e[0].length;
-                                        if (r + t <= 65536) {
-                                            let o = e.shift();
-                                            (n.push(o), (r += t));
-                                        } else break;
-                                    }
-                                    return n;
-                                })(n)
-                            );
-                        return t;
-                    })(l)) {
-                        var t = e,
-                            n = `{"stats": [${o.join(",")}], "target": "${r.XC?.head?.querySelector('meta[name="ui-target"]')?.content || "full"}"}`;
-                        try {
-                            navigator.sendBeacon && navigator.sendBeacon(t, n);
-                        } catch {}
-                    }
-                    l = [];
-                }
-            }
-            function y() {
-                return !!r.XC?.head?.querySelector('meta[name="user-staff"]')
-                    ?.content;
-            }
-            (r.XC?.addEventListener("pagehide", p),
-                r.XC?.addEventListener("visibilitychange", p));
-        },
-        87057: (e, t, n) => {
-            n.d(t, { O: () => i, S: () => a });
-            var r = n(71315);
-            let o =
-                    r.cg?.document?.head?.querySelector('meta[name="release"]')
-                        ?.content || "",
-                a = "X-GitHub-Client-Version";
-            function i() {
-                return o;
-            }
-        },
-        88057: (e, t, n) => {
-            n.d(t, { Ex: () => i, kt: () => u, xA: () => c });
-            var r = n(71315);
-            let o = Array(10).fill(null),
-                a = 0;
-            function i(e) {
-                ((o[a] = e), (a = (a + 1) % 10));
-            }
-            function c() {
-                let e = [];
-                for (let t = 0; t < 10; t++) {
-                    let n = o[(a - 1 - t + 10) % 10];
-                    n && e.push(n);
-                }
-                return e;
-            }
-            function u() {
-                let e = r.XC;
-                if (!e) return;
-                let t = e.querySelector('meta[name="request-id"]'),
-                    n = t?.getAttribute("content");
-                n && i(n);
-            }
-        },
-        94416: (e, t, n) => {
-            n.d(t, {
-                BW: () => o,
-                Ff: () => m,
-                HK: () => v,
-                JA: () => N,
-                LM: () => h,
-                Pv: () => b,
-                Vy: () => d,
-                ZW: () => E,
-                dR: () => S,
-                di: () => p,
-                fX: () => q,
-                gc: () => A,
-                k9: () => w,
-                my: () => g,
-                wG: () => y,
-                xT: () => f,
-            });
-            var r = n(95800);
-            let o = "reload",
-                a = "soft-nav:fail",
-                i = "soft-nav:fail-referrer",
-                c = "soft-nav:referrer",
-                u = "soft-nav:marker",
-                s = "soft-nav:react-app-name",
-                l = "soft-nav:latest-mechanism";
-            function f() {
-                ((0, r.SO)(u, "0"),
-                    (0, r.Ai)(c),
-                    (0, r.Ai)(a),
-                    (0, r.Ai)(i),
-                    (0, r.Ai)(s),
-                    (0, r.Ai)(l));
-            }
-            function d(e) {
-                (0, r.SO)(u, e);
-            }
-            function m() {
-                (0, r.SO)(u, "0");
-            }
-            function h() {
-                let e = (0, r.Gq)(u);
-                return e && "0" !== e;
-            }
-            function p() {
-                return (0, r.Gq)(u);
-            }
-            function y() {
-                return !!g();
-            }
-            function g() {
-                return (0, r.Gq)(a);
-            }
-            function w(e) {
-                ((0, r.SO)(a, e || o), (0, r.SO)(i, window.location.href));
-            }
-            function v() {
-                (0, r.SO)(c, window.location.href);
-            }
-            function S() {
-                return (0, r.Gq)(c) || document.referrer;
-            }
-            function E() {
-                let e = q();
-                e ? (0, r.SO)(s, e) : (0, r.Ai)(s);
-            }
-            function b() {
-                return (0, r.Gq)(s);
-            }
-            function q() {
-                return document.querySelector("projects-v2")
-                    ? "memex"
-                    : document.querySelector(
-                            'react-partial[partial-name="repos-overview"]'
-                        )
-                      ? "repos-overview"
-                      : document
-                            .querySelector("react-app")
-                            ?.getAttribute("app-name");
-            }
-            function A() {
-                return (
-                    !!document
-                        .querySelector("react-app")
-                        ?.getAttribute("app-name") ||
-                    !!document.querySelector("projects-v2")
-                );
-            }
-            function N(e) {
-                (0, r.SO)(l, e);
-            }
-        },
-        95800: (e, t, n) => {
-            n.d(t, { Ai: () => a, Gq: () => r, SO: () => o });
-            let {
-                getItem: r,
-                setItem: o,
-                removeItem: a,
-            } = (0, n(82075).A)("sessionStorage");
-        },
-        99223: (e, t, n) => {
-            n.d(t, { k: () => i, v: () => c });
-            var r = n(5225),
-                o = n(71315);
-            let a = (0, r.A)(function () {
-                    return (
-                        o.XC?.head?.querySelector(
-                            'meta[name="runtime-environment"]'
-                        )?.content || ""
-                    );
-                }),
-                i = (0, r.A)(function () {
-                    return "enterprise" === a();
-                }),
-                c = "webpack";
+            n.d(t, { O: () => r });
         },
     },
-    (e) => {
-        (e.O(0, [913, 6488], () => e((e.s = 59368))), e.O());
+    function (e) {
+        (e.O(0, [34646, 76015, 78205, 85924], function () {
+            return e((e.s = 478865));
+        }),
+            e.O());
     },
 ]);
-//# sourceMappingURL=environment-7693cc5f4818.js.map
+//# sourceMappingURL=environment-84f18c48c0047c1d-8b931d525c14dbce.js.map

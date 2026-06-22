@@ -3,6 +3,10 @@
 const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
+const {
+    auditLegacyRegexSyntax,
+    fixLegacyRegexInJs,
+} = require("./fix-lookbehind");
 
 // For Node.js < 18, we need to use a fetch polyfill or alternative
 let fetch;
@@ -38,6 +42,10 @@ try {
 const SCRIPTS_DIR = path.join(__dirname, "scripts");
 const STYLES_DIR = path.join(__dirname, "styles");
 const TEMP_DIR = path.join(__dirname, "temp-downloads");
+const ASSETS_DIR = path.join(
+    __dirname,
+    "layout/Library/Application Support/GitHubWebLegacyCompat"
+);
 
 // File patterns to search for
 const FILE_PATTERNS = {
@@ -49,13 +57,13 @@ const FILE_PATTERNS = {
         /vendors-node_modules_github_emoji-element_dist_index_js-[a-f0-9]+\.js$/,
     "emotion-is-prop-valid":
         /vendors-node_modules_@?emotion[_-]is-prop-valid.*-[a-f0-9]+\.js$/,
-    environment: /ui_packages_environment_.*-[a-f0-9]+\.js$/,
+    environment: /^environment-[a-f0-9]+\.js$/,
     "tanstack-queryObserver":
         /vendors-node_modules_tanstack_(react-query|query-core)_build_modern_(useQuery|queryObserver)_js-[a-f0-9]+\.js$/,
     "tanstack-queryClient":
         /vendors-node_modules_tanstack_query-core_build_modern_queryClient_js-[a-f0-9]+\.js$/,
     // CSS
-    "primer-react-css": /primer-react\.[a-f0-9]+\.module\.css$/,
+    "primer-react-css": /primer-react-css\.[a-f0-9]+\.module\.css$/,
     "primer-css": /primer-[a-f0-9]+\.css$/,
     "issue-viewer-css":
         /packages_issue-viewer_components_IssueViewer_tsx-packages_issue-viewer_contexts_IssueViewerCo-[a-f0-9]+\.[a-f0-9]+\.module\.css$/,
@@ -80,6 +88,7 @@ const ALTERNATIVE_PATTERNS = {
     "issue-viewer-css": /issue-viewer.*\.module\.css$/,
     // Issues React CSS fallback
     "issues-react-css": /issues-react.*\.module\.css$/,
+    "primer-react-css": /primer-react.*\.module\.css$/,
 };
 
 // Target files in scripts directory
@@ -108,7 +117,702 @@ const CSS_KEYS = new Set([
     "issues-react-css",
 ]);
 
-async function fetchPageWithPuppeteer(url) {
+// Numeric CSS module IDs to track when they appear on scraped GitHub pages (currently none)
+const LEGACY_NUMERIC_CSS_IDS = [];
+
+// Lazy rspack chunks often absent from static HTML; update hashes after GitHub deploys.
+// Puppeteer network capture is the primary discovery path; these are fallbacks.
+const KNOWN_LAZY_NUMERIC_URLS = [
+    "https://github.githubassets.com/assets/8384-d94b7d241b7ae898.js", // NestedListView / sub-issues
+    "https://github.githubassets.com/assets/2694-2ddb488b02ba1b01.js", // query-builder / search
+];
+
+// Chunks that must be transpiled for iOS <16.4 even without lookbehind (e.g. query-builder private fields)
+const FORCE_LEGACY_NUMERIC_IDS = new Set([2694]);
+
+// Keep in sync with Tweak.x + scripts/15.0-cdn-guard.js.
+const NUMERIC_CHUNK_SCOPES = {
+    shared: [43406, 64458, 85924],
+    repoNonIssues: [39890, 57639],
+    issuesOnly: [65354, 67133, 88576, 90501],
+    lazy: [2694, 8384, 23784],
+};
+
+const CDN_GUARD_NUMERIC_IDS = [
+    ...NUMERIC_CHUNK_SCOPES.shared,
+    ...NUMERIC_CHUNK_SCOPES.repoNonIssues,
+    ...NUMERIC_CHUNK_SCOPES.issuesOnly,
+    ...NUMERIC_CHUNK_SCOPES.lazy,
+];
+
+const SYSTEM_CHROME_PATH =
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
+
+// Optional chunk ID hints for 15.0-* aliasing when a bundle is eligible
+const NUMERIC_ID_TO_LEGACY_KEY = {
+    816: "text-expander",
+    81028: "text-expander",
+    347: "tanstack-queryObserver",
+    1311: "tanstack-queryClient",
+    24408: "tanstack-queryClient",
+};
+
+const LEGACY_15_JS_KEYS = new Set([
+    "text-expander",
+    "emoji-element",
+    "emotion-is-prop-valid",
+    "tanstack-queryObserver",
+    "tanstack-queryClient",
+]);
+
+const CONTENT_FINGERPRINTS = {
+    "text-expander":
+        /text-expander-activate|customElements\.get\("text-expander"\)/,
+    "emoji-element":
+        /customElements\.define\("emoji-|customElements\.get\("emoji-/,
+    "emotion-is-prop-valid":
+        /is-prop-valid|isPropValid|@emotion\/is-prop-valid/,
+    "tanstack-queryObserver": /\bQueryObserver\b|\buseQuery\b/,
+    "tanstack-queryClient":
+        /\bQueryClient\b|"No QueryClient set, use QueryClientProvider/,
+};
+
+function escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+function parseJsNumberToken(token) {
+    const trimmed = token.trim();
+    if (!trimmed) return null;
+    const value = Number(trimmed);
+    if (!Number.isFinite(value) || value <= 0 || !Number.isInteger(value)) {
+        return null;
+    }
+    return value;
+}
+
+function extractManifestChunkIds(content) {
+    const ids = new Set();
+
+    const manifestRe = /\.O\(\s*0\s*,\s*\[([\d,\s.eE+-]+)\]/g;
+    let match;
+    while ((match = manifestRe.exec(content)) !== null) {
+        for (const part of match[1].split(",")) {
+            const id = parseJsNumberToken(part);
+            if (id !== null) ids.add(id);
+        }
+    }
+
+    const pushRe = /\.push\(\[\[(\d+)\]/g;
+    while ((match = pushRe.exec(content)) !== null) {
+        ids.add(parseInt(match[1], 10));
+    }
+
+    return ids;
+}
+
+function buildNumericAssetMap(assets) {
+    const map = new Map();
+    for (const url of assets) {
+        const filename = path.basename(url);
+        const idMatch = filename.match(/^(\d+)-[a-f0-9]+\.js$/);
+        if (idMatch) {
+            map.set(parseInt(idMatch[1], 10), url);
+        }
+    }
+    return map;
+}
+
+function identifyLegacyKey(content, numericId) {
+    if (NUMERIC_ID_TO_LEGACY_KEY[numericId]) {
+        return NUMERIC_ID_TO_LEGACY_KEY[numericId];
+    }
+    for (const [key, pattern] of Object.entries(CONTENT_FINGERPRINTS)) {
+        if (pattern.test(content)) return key;
+    }
+    return null;
+}
+
+function findBalancedParenEnd(text, openParenIndex) {
+    if (text[openParenIndex] !== "(") return -1;
+    let depth = 0;
+    for (let i = openParenIndex; i < text.length; i++) {
+        const ch = text[i];
+        if (ch === "(") depth++;
+        else if (ch === ")") {
+            depth--;
+            if (depth === 0) return i;
+        }
+    }
+    return -1;
+}
+
+function paramNameConflictsWithCallee(callee, params) {
+    if (params.trim() === callee) return true;
+    const re = new RegExp(
+        `(?:^|[\\[,{\\s])${escapeRegExp(callee)}(?=[\\]},:\\s,]|$)|` +
+            `:\\s*${escapeRegExp(callee)}(?=[\\},])`,
+        "g"
+    );
+    return re.test(params);
+}
+
+function fixRegeneratorRuntimeRefs(code) {
+    // Babel regenerator exports inner helper as `{ w: i, m: f }`. If callee/param
+    // fix renamed `function i` → `function i_`, repair the export target.
+    return code.replace(
+        /(_regenerator\s*=\s*function\s*_regenerator\s*\(\)\s*\{[\s\S]*?return\s*\{\s*w:\s*)i(\s*,\s*m:\s*f\s*\})/g,
+        "$1i_$2"
+    );
+}
+
+function fixCalleeParamConflicts(code) {
+    const fnStartRe = /\b(async\s+function|function)\s+([A-Za-z_$][\w$]*)\s*\(/g;
+    const replacements = [];
+    let match;
+
+    while ((match = fnStartRe.exec(code)) !== null) {
+        const callee = match[2];
+        const openParenIndex = match.index + match[0].length - 1;
+        const closeParenIndex = findBalancedParenEnd(code, openParenIndex);
+        if (closeParenIndex === -1) continue;
+
+        const params = code.slice(openParenIndex + 1, closeParenIndex);
+        if (!paramNameConflictsWithCallee(callee, params)) continue;
+
+        const newCallee = `${callee}_`;
+        replacements.push({
+            start: match.index + match[1].length + 1,
+            end: match.index + match[0].length - 1,
+            newText: newCallee,
+        });
+    }
+
+    if (replacements.length === 0) {
+        return { code, fixes: 0 };
+    }
+
+    replacements.sort((a, b) => b.start - a.start);
+    let result = code;
+    for (const replacement of replacements) {
+        result =
+            result.slice(0, replacement.start) +
+            replacement.newText +
+            result.slice(replacement.end);
+    }
+
+    if (replacements.some((r) => r.newText === "i_")) {
+        result = fixRegeneratorRuntimeRefs(result);
+    }
+
+    return { code: result, fixes: replacements.length };
+}
+
+function countLookbehindPatterns(code) {
+    const matches = code.match(/\(\?<[=!]/g);
+    return matches ? matches.length : 0;
+}
+
+function extractBlockContents(css, atKeyword) {
+    let result = "";
+    let pos = 0;
+    while (true) {
+        const idx = css.indexOf(atKeyword, pos);
+        if (idx === -1) break;
+        const openBrace = css.indexOf("{", idx);
+        if (openBrace === -1) break;
+        let depth = 0;
+        let i = openBrace;
+        for (; i < css.length; i++) {
+            const ch = css[i];
+            if (ch === "{") depth++;
+            else if (ch === "}") {
+                depth--;
+                if (depth === 0) {
+                    i++;
+                    break;
+                }
+            }
+        }
+        const block = css.substring(openBrace + 1, i - 1);
+        result += block.trim() + "\n";
+        pos = i;
+    }
+    return result.trim();
+}
+
+function extractModernOnlyCss(css) {
+    const layers = extractBlockContents(css, "@layer");
+    const containers = extractBlockContents(css, "@container");
+    const parts = [];
+    if (layers) parts.push(layers);
+    if (containers) parts.push(containers);
+    const joined = parts.join("\n").trim();
+    return joined ? joined + "\n" : "";
+}
+
+function stripUnsupportedCss(css) {
+    if (!css.includes("::backdrop")) {
+        return css.trim() + "\n";
+    }
+
+    let result = "";
+    let i = 0;
+    while (i < css.length) {
+        const backdropIdx = css.indexOf("::backdrop", i);
+        if (backdropIdx === -1) {
+            result += css.slice(i);
+            break;
+        }
+
+        let ruleStart = css.lastIndexOf("}", backdropIdx);
+        ruleStart = ruleStart === -1 ? 0 : ruleStart + 1;
+        const brace = css.indexOf("{", backdropIdx);
+        if (brace === -1) {
+            result += css.slice(i, backdropIdx);
+            i = backdropIdx + "::backdrop".length;
+            continue;
+        }
+
+        let depth = 0;
+        let j = brace;
+        for (; j < css.length; j++) {
+            if (css[j] === "{") depth++;
+            else if (css[j] === "}") {
+                depth--;
+                if (depth === 0) {
+                    j++;
+                    break;
+                }
+            }
+        }
+
+        result += css.slice(i, ruleStart);
+        i = j;
+    }
+
+    return result.trim() + "\n";
+}
+
+async function formatCssWithPrettier(css) {
+    if (!prettier) return css;
+    try {
+        return await prettier.format(css, { parser: "css" });
+    } catch (e) {
+        console.log(`  Prettier CSS formatting failed: ${e.message}`);
+        return css;
+    }
+}
+
+async function processCssContent(content) {
+    const extracted = extractModernOnlyCss(content);
+    if (extracted && extracted.length > 0) {
+        console.log(
+            `  Extracted modern CSS (@layer/@container): ${content.length} → ${extracted.length} chars`
+        );
+        const formatted = await formatCssWithPrettier(extracted);
+        console.log("  Applied Prettier CSS formatting (programmatic)");
+        return { content: formatted, mode: "layer-extracted" };
+    }
+
+    const trimmed = content.trim();
+    if (!trimmed) {
+        console.log("  ⚠️  Empty CSS input");
+        return { content: "", mode: "empty" };
+    }
+
+    const passthrough = stripUnsupportedCss(trimmed);
+    console.log(
+        `  No @layer/@container wrappers; keeping plain CSS (${content.length} → ${passthrough.length} chars)`
+    );
+    const formatted = await formatCssWithPrettier(passthrough);
+    return { content: formatted, mode: "passthrough" };
+}
+
+function patchFileWouldApply(bundleId, content) {
+    const patchPath = path.join(__dirname, `numeric-${bundleId}.txt`);
+    if (!fs.existsSync(patchPath)) return false;
+
+    const patches = readPatchFile(`numeric-${bundleId}.txt`);
+    if (!patches) return false;
+
+    return patches.some((patch) => content.includes(patch.oldPattern.trim()));
+}
+
+function getLegacyFixReasons(content, bundleId) {
+    const reasons = [];
+
+    if (countLookbehindPatterns(content) > 0) {
+        reasons.push("lookbehind regex");
+    }
+    if (patchFileWouldApply(bundleId, content)) {
+        reasons.push("numeric patch required");
+    }
+    if (FORCE_LEGACY_NUMERIC_IDS.has(bundleId)) {
+        reasons.push("legacy WebKit transpile required");
+    }
+
+    return reasons;
+}
+
+function collectActiveChunkIds(assets, seedContents) {
+    const ids = new Set();
+
+    for (const content of seedContents) {
+        for (const id of extractManifestChunkIds(content)) {
+            ids.add(id);
+        }
+    }
+
+    for (const url of assets) {
+        const filename = path.basename(url);
+        const match = filename.match(/^(\d+)-[a-f0-9]+\.js$/);
+        if (match) {
+            ids.add(parseInt(match[1], 10));
+        }
+    }
+
+    return ids;
+}
+
+function listPatchDefinedNumericIds() {
+    return fs
+        .readdirSync(__dirname)
+        .filter((file) => /^numeric-\d+\.txt$/.test(file))
+        .map((file) => parseInt(file.match(/^numeric-(\d+)\.txt$/)[1], 10));
+}
+
+async function fetchAssetText(url) {
+    if (fetch) {
+        const response = await fetch(url);
+        if (!response.ok) {
+            throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+        return response.text();
+    }
+    return execSync(`curl -s "${url}"`, { encoding: "utf8" });
+}
+
+async function discoverEligibleNumericMatches(assets, seedContents) {
+    const matches = {};
+    const numericAssets = buildNumericAssetMap(assets);
+    const activeIds = collectActiveChunkIds(assets, seedContents);
+    const candidateIds = new Set(listPatchDefinedNumericIds());
+
+    for (const content of seedContents) {
+        for (const id of extractManifestChunkIds(content)) {
+            candidateIds.add(id);
+        }
+    }
+
+    for (const url of KNOWN_LAZY_NUMERIC_URLS) {
+        const normalized = normalizeGithubAssetUrl(url);
+        if (!normalized) continue;
+        const filename = path.basename(normalized);
+        const idMatch = filename.match(/^(\d+)-[a-f0-9]+\.js$/);
+        if (idMatch) {
+            candidateIds.add(parseInt(idMatch[1], 10));
+        }
+    }
+
+    // Lazy chunks loaded on repo/issues/etc. may not appear in main bundle manifests.
+    for (const id of activeIds) {
+        candidateIds.add(id);
+    }
+
+    console.log(
+        `  Checking ${candidateIds.size} candidate chunk(s) (${activeIds.size} active on scraped pages)...`
+    );
+
+    let included = 0;
+    let skippedNoFix = 0;
+    let skippedPatchOnly = 0;
+
+    for (const id of candidateIds) {
+        const url = numericAssets.get(id);
+        if (!url) {
+            if (listPatchDefinedNumericIds().includes(id)) {
+                skippedPatchOnly++;
+            }
+            continue;
+        }
+
+        let content;
+        try {
+            content = await fetchAssetText(url);
+        } catch (error) {
+            console.log(`  Skip chunk ${id}: download failed (${error.message})`);
+            continue;
+        }
+
+        const reasons = getLegacyFixReasons(content, id);
+        if (reasons.length === 0) {
+            skippedNoFix++;
+            continue;
+        }
+
+        if (!activeIds.has(id)) {
+            console.log(
+                `  Skip chunk ${id}: ${reasons.join(", ")} but not on current GitHub pages`
+            );
+            continue;
+        }
+
+        console.log(`  Include chunk ${id}: ${reasons.join(", ")}`);
+        matches[`numeric-prefixed-js-${id}`] = url;
+        included++;
+    }
+
+    console.log(
+        `  Summary: ${included} included, ${skippedNoFix} without iOS <16.4 fixes, ${skippedPatchOnly} patch file(s) for bundles no longer on CDN`
+    );
+
+    return matches;
+}
+
+function discoverNumericCssMatches(assets) {
+    const matches = {};
+
+    for (const numId of LEGACY_NUMERIC_CSS_IDS) {
+        const discovered = assets.find((url) => {
+            const filename = path.basename(url);
+            return new RegExp(`^${numId}\\.[a-f0-9]+\\.module\\.css$`).test(
+                filename
+            );
+        });
+        if (discovered) {
+            matches[`numeric-prefixed-css-${numId}`] = discovered;
+        }
+    }
+
+    return matches;
+}
+
+function cleanupObsoleteNumericAssets(
+    keptNumericIds,
+    keptNumericCssIds,
+    keptLegacy15Keys,
+    isDryRun
+) {
+    console.log("\n--- Cleaning Obsolete Numeric Assets ---");
+
+    const removeFile = (filePath, label) => {
+        if (!fs.existsSync(filePath)) return;
+        if (isDryRun) {
+            console.log(`  Would remove obsolete ${label}`);
+        } else {
+            fs.unlinkSync(filePath);
+            console.log(`  Removed obsolete ${label}`);
+        }
+    };
+
+    for (const file of fs.readdirSync(SCRIPTS_DIR)) {
+        const jsMatch = file.match(/^16\.4-numeric-(\d+)\.js$/);
+        if (jsMatch && !keptNumericIds.has(parseInt(jsMatch[1], 10))) {
+            removeFile(path.join(SCRIPTS_DIR, file), file);
+            continue;
+        }
+        const backupMatch = file.match(/^16\.4-numeric-(\d+)\.js\.backup\./);
+        if (backupMatch && !keptNumericIds.has(parseInt(backupMatch[1], 10))) {
+            removeFile(path.join(SCRIPTS_DIR, file), file);
+        }
+    }
+
+    if (fs.existsSync(STYLES_DIR)) {
+        for (const file of fs.readdirSync(STYLES_DIR)) {
+            const cssMatch = file.match(/^15\.4-numeric-(\d+)\.css$/);
+            if (cssMatch && !keptNumericCssIds.has(parseInt(cssMatch[1], 10))) {
+                removeFile(path.join(STYLES_DIR, file), file);
+            }
+        }
+    }
+
+    if (fs.existsSync(ASSETS_DIR)) {
+        for (const file of fs.readdirSync(ASSETS_DIR)) {
+            const jsMatch = file.match(/^16\.4-numeric-(\d+)\.min\.js$/);
+            if (jsMatch && !keptNumericIds.has(parseInt(jsMatch[1], 10))) {
+                removeFile(path.join(ASSETS_DIR, file), file);
+                continue;
+            }
+            const cssMatch = file.match(/^15\.4-numeric-(\d+)\.min\.css$/);
+            if (cssMatch && !keptNumericCssIds.has(parseInt(cssMatch[1], 10))) {
+                removeFile(path.join(ASSETS_DIR, file), file);
+            }
+        }
+    }
+
+    for (const key of LEGACY_15_JS_KEYS) {
+        if (keptLegacy15Keys.has(key)) continue;
+
+        const targetFileName = TARGET_FILES[key];
+        if (!targetFileName) continue;
+
+        const filePath = path.join(SCRIPTS_DIR, targetFileName);
+        if (!fs.existsSync(filePath)) continue;
+
+        if (isDryRun) {
+            console.log(`  Would remove obsolete ${targetFileName}`);
+        } else {
+            fs.unlinkSync(filePath);
+            console.log(`  Removed obsolete ${targetFileName}`);
+        }
+    }
+}
+
+function auditBundleDirectory(dir, label, failOnIssues) {
+    if (!fs.existsSync(dir)) return true;
+
+    let ok = true;
+    console.log(`\n--- Auditing ${label} for iOS <16.4 regex syntax ---`);
+
+    for (const file of fs.readdirSync(dir).filter((name) => name.endsWith(".js"))) {
+        const filePath = path.join(dir, file);
+        const content = fs.readFileSync(filePath, "utf8");
+        const audit = auditLegacyRegexSyntax(content);
+        const issues = audit.lookbehind + audit.namedCapture + audit.unicodeProperty;
+
+        if (issues === 0) continue;
+
+        ok = false;
+        console.log(
+            `  ⚠️  ${file}: lookbehind=${audit.lookbehind}, namedCapture=${audit.namedCapture}, unicodeProperty=${audit.unicodeProperty}`
+        );
+        for (const sample of audit.samples) {
+            console.log(`      e.g. ${sample}`);
+        }
+    }
+
+    if (ok) {
+        console.log(`  ${label}: OK (no lookbehind / named capture / \\p{{}})`);
+    } else if (failOnIssues) {
+        console.log(
+            `  ${label}: NOT SAFE for iOS <16.4 injection — run "make assets" after update-scripts if scripts/ only`
+        );
+    }
+
+    return ok;
+}
+
+function normalizeGithubAssetUrl(url) {
+    if (!url || !url.includes("github.githubassets.com/assets/")) {
+        return null;
+    }
+    try {
+        const parsed = new URL(url);
+        if (!/\.(?:js|css)$/i.test(parsed.pathname)) {
+            return null;
+        }
+        return `${parsed.origin}${parsed.pathname}`;
+    } catch (_) {
+        return null;
+    }
+}
+
+function extractAssetsFromHtml(html) {
+    const assetRegex =
+        /https:\/\/github\.githubassets\.com\/assets\/[^"']+\.(?:js|css)/g;
+    return [...html.matchAll(assetRegex)]
+        .map((match) => normalizeGithubAssetUrl(match[0]))
+        .filter(Boolean);
+}
+
+function mergeKnownLazyAssets(assets) {
+    const merged = [...assets];
+    for (const url of KNOWN_LAZY_NUMERIC_URLS) {
+        const normalized = normalizeGithubAssetUrl(url);
+        if (normalized && !merged.includes(normalized)) {
+            merged.push(normalized);
+        }
+    }
+    return merged;
+}
+
+async function launchPuppeteerBrowser() {
+    const launchOptions = {
+        headless: "new",
+        args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    };
+
+    if (fs.existsSync(SYSTEM_CHROME_PATH)) {
+        return puppeteer.launch({
+            ...launchOptions,
+            executablePath: SYSTEM_CHROME_PATH,
+        });
+    }
+
+    try {
+        return await puppeteer.launch(launchOptions);
+    } catch (bundledError) {
+        const fallbacks = [
+            { channel: "chrome" },
+            {
+                executablePath:
+                    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+            },
+        ];
+
+        for (const extra of fallbacks) {
+            const candidate = extra.executablePath;
+            if (candidate && !fs.existsSync(candidate)) {
+                continue;
+            }
+            try {
+                console.log(
+                    `    Bundled Chrome unavailable, trying ${extra.channel || candidate}...`
+                );
+                return await puppeteer.launch({ ...launchOptions, ...extra });
+            } catch (_) {}
+        }
+
+        throw bundledError;
+    }
+}
+
+async function runPuppeteerPageInteractions(page, hints = {}) {
+    if (hints.focusSearch) {
+        try {
+            console.log("    Puppeteer: focusing GitHub search to load search chunks...");
+            await page.keyboard.press("/");
+            await new Promise((resolve) => setTimeout(resolve, 600));
+            const searchInput =
+                'input[data-component="query-builder-input"], input#query-builder-test, [data-target="query-builder-input.inputField"] input, input[name="query-builder-test"]';
+            const input = await page.$(searchInput);
+            if (input) {
+                await input.click({ clickCount: 1 });
+                await page.keyboard.type("a", { delay: 30 });
+            }
+            await page
+                .waitForNetworkIdle({ idleTime: 500, timeout: 8000 })
+                .catch(() => {});
+        } catch (error) {
+            console.log(`    Puppeteer: search interaction skipped (${error.message})`);
+        }
+    }
+
+    if (hints.expandSubIssues) {
+        try {
+            console.log("    Puppeteer: looking for sub-issues UI...");
+            await page.evaluate(() => {
+                const text = /sub-issues?/i;
+                for (const el of document.querySelectorAll("button, a, summary")) {
+                    if (text.test(el.textContent || "")) {
+                        el.click();
+                        return;
+                    }
+                }
+            });
+            await page
+                .waitForNetworkIdle({ idleTime: 500, timeout: 8000 })
+                .catch(() => {});
+        } catch (error) {
+            console.log(
+                `    Puppeteer: sub-issues interaction skipped (${error.message})`
+            );
+        }
+    }
+}
+
+async function fetchPageWithPuppeteer(url, hints = {}) {
     if (!puppeteer) {
         throw new Error("Puppeteer not available");
     }
@@ -117,24 +821,28 @@ async function fetchPageWithPuppeteer(url) {
 
     let browser;
     try {
-        browser = await puppeteer.launch({
-            headless: "new",
-            args: ["--no-sandbox", "--disable-setuid-sandbox"],
+        browser = await launchPuppeteerBrowser();
+
+        const browserPage = await browser.newPage();
+        await browserPage.setViewport({ width: 1920, height: 1080 });
+
+        const networkAssets = new Set();
+        browserPage.on("response", (response) => {
+            const normalized = normalizeGithubAssetUrl(response.url());
+            if (normalized) {
+                networkAssets.add(normalized);
+            }
         });
 
-        const page = await browser.newPage();
-        await page.setViewport({ width: 1920, height: 1080 });
-
-        await page.goto(url, {
+        await browserPage.goto(url, {
             waitUntil: "networkidle2",
-            timeout: 30000,
+            timeout: 45000,
         });
 
-        // Wait for potential lazy-loaded content
         await new Promise((resolve) => setTimeout(resolve, 1500));
-        // Try to trigger lazy loading by scrolling to the bottom
+
         try {
-            await page.evaluate(async () => {
+            await browserPage.evaluate(async () => {
                 await new Promise((resolve) => {
                     let total = 0;
                     const step = () => {
@@ -157,13 +865,14 @@ async function fetchPageWithPuppeteer(url) {
                     requestAnimationFrame(step);
                 });
             });
-            await page
+            await browserPage
                 .waitForNetworkIdle({ idleTime: 500, timeout: 5000 })
                 .catch(() => {});
         } catch (_) {}
 
-        // Get all script sources that were actually loaded
-        const scriptSources = await page.evaluate(() => {
+        await runPuppeteerPageInteractions(browserPage, hints);
+
+        const scriptSources = await browserPage.evaluate(() => {
             const elements = [
                 ...Array.from(document.querySelectorAll("script[src]")),
                 ...Array.from(
@@ -171,43 +880,39 @@ async function fetchPageWithPuppeteer(url) {
                 ),
             ];
             const jsCssWithQuery = /(\.js|\.css)([?#].*)?$/i;
-            return (
-                elements
-                    .map((el) => el.src || el.href)
-                    .filter(
-                        (src) =>
-                            src &&
-                            src.includes("github.githubassets.com/assets/") &&
-                            jsCssWithQuery.test(src)
-                    )
-                    // Normalize by stripping query/hash to dedupe with HTML regex extraction later
-                    .map((src) =>
-                        src.replace(
-                            /([.#]?[a-z]*)?(\.js|\.css)([?#].*)?$/i,
-                            (m, _p, ext) =>
-                                ext
-                                    ? src.slice(
-                                          0,
-                                          src
-                                              .toLowerCase()
-                                              .lastIndexOf(ext.toLowerCase())
-                                      ) + ext
-                                    : src
-                        )
-                    )
-            );
+            return elements
+                .map((el) => el.src || el.href)
+                .filter(
+                    (src) =>
+                        src &&
+                        src.includes("github.githubassets.com/assets/") &&
+                        jsCssWithQuery.test(src)
+                );
         });
 
-        // Also get HTML content as backup
-        const html = await page.content();
-        const assetRegex =
-            /https:\/\/github\.githubassets\.com\/assets\/[^"']+\.(?:js|css)/g;
-        const htmlAssets = [...html.matchAll(assetRegex)].map(
-            (match) => match[0]
-        );
+        const html = await browserPage.content();
+        const htmlAssets = extractAssetsFromHtml(html);
+        const domAssets = scriptSources
+            .map((src) => normalizeGithubAssetUrl(src))
+            .filter(Boolean);
 
-        // Combine and deduplicate
-        const allAssets = [...new Set([...scriptSources, ...htmlAssets])];
+        const allAssets = [
+            ...new Set([...networkAssets, ...domAssets, ...htmlAssets]),
+        ];
+
+        const numericFromNetwork = [...networkAssets].filter((asset) =>
+            /\/\d+-[a-f0-9]+\.js$/i.test(asset)
+        );
+        if (numericFromNetwork.length > 0) {
+            const sample = numericFromNetwork
+                .map((asset) => path.basename(asset).replace(/-[a-f0-9]+\.js$/i, ""))
+                .slice(0, 8)
+                .join(", ");
+            console.log(
+                `    Puppeteer network captured ${numericFromNetwork.length} numeric chunk(s)${sample ? ` (e.g. ${sample})` : ""}`
+            );
+        }
+
         return allAssets;
     } finally {
         if (browser) {
@@ -230,14 +935,17 @@ async function fetchGitHubPage() {
             {
                 name: "github home",
                 url: "https://github.com/",
+                puppeteer: { focusSearch: true },
             },
             {
                 name: "main repository page",
                 url: "https://github.com/microsoft/vscode",
+                puppeteer: { focusSearch: true },
             },
             {
                 name: "issue detail page",
                 url: "https://github.com/microsoft/vscode/issues/1",
+                puppeteer: { expandSubIssues: true },
             },
             {
                 name: "README blob (markdown viewer)",
@@ -253,7 +961,8 @@ async function fetchGitHubPage() {
             },
         ];
 
-        for (const { name, url } of pages) {
+        for (const pageConfig of pages) {
+            const { name, url, puppeteer: puppeteerHints } = pageConfig;
             console.log(`  - Fetching from ${name}...`);
 
             try {
@@ -262,7 +971,10 @@ async function fetchGitHubPage() {
                 // Try Puppeteer first for better JS support
                 if (puppeteer) {
                     try {
-                        assets = await fetchPageWithPuppeteer(url);
+                        assets = await fetchPageWithPuppeteer(
+                            url,
+                            puppeteerHints || {}
+                        );
                         console.log(
                             `    Found ${assets.length} JavaScript asset URLs from ${name} (via Puppeteer)`
                         );
@@ -288,11 +1000,17 @@ async function fetchGitHubPage() {
 
         // Remove duplicates
         const uniqueAssets = [...new Set(allAssets)];
+        const withLazyAssets = mergeKnownLazyAssets(uniqueAssets);
+        if (withLazyAssets.length > uniqueAssets.length) {
+            console.log(
+                `  Added ${withLazyAssets.length - uniqueAssets.length} known lazy-load chunk URL(s)`
+            );
+        }
         console.log(
-            `Found ${uniqueAssets.length} unique JavaScript asset URLs total`
+            `Found ${withLazyAssets.length} unique JavaScript asset URLs total`
         );
 
-        return uniqueAssets;
+        return withLazyAssets;
     } catch (error) {
         console.error("Error fetching GitHub pages:", error);
         process.exit(1);
@@ -308,9 +1026,7 @@ async function fetchPageBasic(url, pageName) {
         html = execSync(`curl -s "${url}"`, { encoding: "utf8" });
     }
 
-    const assetRegex =
-        /https:\/\/github\.githubassets\.com\/assets\/[^"']+\.(?:js|css)/g;
-    const assets = [...html.matchAll(assetRegex)].map((match) => match[0]);
+    const assets = extractAssetsFromHtml(html);
     console.log(
         `    Found ${assets.length} JavaScript/CSS asset URLs from ${pageName}`
     );
@@ -319,46 +1035,7 @@ async function fetchPageBasic(url, pageName) {
 }
 
 function findMatchingAssets(assets) {
-    const matches = {};
-
-    // Numeric bundle IDs that need transpilation for iOS compatibility
-    const NUMERIC_BUNDLE_IDS = [
-        36183,
-        77999,
-        40489,
-        4817,
-        347, // tanstack-query
-        1311, // tanstack-query
-        81028, // text-expander
-    ];
-    // Numeric CSS IDs
-    const NUMERIC_CSS_IDS = [95405, 78192];
-
-    // Look for discovered numeric bundles by their ID
-    for (const numId of NUMERIC_BUNDLE_IDS) {
-        const discovered = assets.find((url) => {
-            const filename = path.basename(url);
-            return new RegExp(`^${numId}-[a-f0-9]+\\.js$`).test(filename);
-        });
-
-        if (discovered) {
-            const key = `numeric-prefixed-js-${numId}`;
-            matches[key] = discovered;
-        }
-    }
-
-    // Look for discovered numeric CSS by their ID
-    for (const numId of NUMERIC_CSS_IDS) {
-        const discovered = assets.find((url) => {
-            const filename = path.basename(url);
-            return new RegExp(`^${numId}\\.[a-f0-9]+\\.module\\.css$`).test(filename);
-        });
-
-        if (discovered) {
-            const key = `numeric-prefixed-css-${numId}`;
-            matches[key] = discovered;
-        }
-    }
+    const matches = { ...discoverNumericCssMatches(assets) };
 
     for (const [key, pattern] of Object.entries(FILE_PATTERNS)) {
         let matchingAsset = assets.find((url) => {
@@ -625,11 +1302,7 @@ function applyTextPatches(content, patchFile) {
     let modifiedContent = content;
     const originalLength = content.length;
     let totalChanges = 0;
-
-    // Helper to escape regex special characters
-    function escapeRegExp(string) {
-        return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    }
+    let obsoletePatches = 0;
 
     for (let i = 0; i < patches.length; i++) {
         const patch = patches[i];
@@ -643,25 +1316,44 @@ function applyTextPatches(content, patchFile) {
             `    New: ${patch.newReplacement.substring(0, 60)}${patch.newReplacement.length > 60 ? "..." : ""}`
         );
 
-        // Apply the patch using regex replacement to support multi-line patterns
-        // Try literal match first for speed and precision
         const escapedOld = escapeRegExp(patch.oldPattern);
-        let regex = new RegExp(escapedOld, 'g');
-        let patchedContent = modifiedContent.replace(regex, patch.newReplacement);
+        let regex = new RegExp(escapedOld, "g");
+        let patchedContent = modifiedContent.replace(
+            regex,
+            patch.newReplacement
+        );
 
         if (patchedContent === modifiedContent) {
-            // If literal match fails, try fuzzy match (ignoring whitespace differences)
-            // This handles cases where code spans multiple lines or has different indentation
             const fuzzyOld = escapedOld
-                .replace(/\s+/g, '\\s*')
-                .replace(/(\\[.*+?^${}()|[\]\\]|[^a-zA-Z0-9_$\s])/g, '$1\\s*');
-            
-            regex = new RegExp(fuzzyOld, 'g');
-            patchedContent = modifiedContent.replace(regex, patch.newReplacement);
+                .replace(/\s+/g, "\\s*")
+                .replace(
+                    /(\\[.*+?^${}()|[\]\\]|[^a-zA-Z0-9_$\s])/g,
+                    "$1\\s*"
+                );
+
+            regex = new RegExp(fuzzyOld, "g");
+            patchedContent = modifiedContent.replace(
+                regex,
+                patch.newReplacement
+            );
         }
 
         if (patchedContent === modifiedContent) {
-            console.log(`    ⚠️  No match found for patch ${i + 1}`);
+            if (
+                patch.oldPattern.includes("coreLoader") &&
+                /coreLoader:\s*async\s+function\s+\w+\(\{location:\w+\}/.test(
+                    modifiedContent
+                )
+            ) {
+                console.log(
+                    `    ℹ️  Patch ${i + 1} appears obsolete (coreLoader already uses distinct param name)`
+                );
+                obsoletePatches++;
+            } else if (!modifiedContent.includes(patch.oldPattern.split("\n")[0])) {
+                console.log(`    ⚠️  No match found for patch ${i + 1}`);
+            } else {
+                console.log(`    ⚠️  No match found for patch ${i + 1}`);
+            }
         } else {
             const changeSize = patchedContent.length - beforeLength;
             console.log(
@@ -673,7 +1365,7 @@ function applyTextPatches(content, patchFile) {
     }
 
     console.log(
-        `  Total result: ${originalLength} → ${modifiedContent.length} chars (${modifiedContent.length - originalLength >= 0 ? "+" : ""}${modifiedContent.length - originalLength}), ${totalChanges}/${patches.length} patches applied`
+        `  Total result: ${originalLength} → ${modifiedContent.length} chars (${modifiedContent.length - originalLength >= 0 ? "+" : ""}${modifiedContent.length - originalLength}), ${totalChanges}/${patches.length} patches applied${obsoletePatches ? `, ${obsoletePatches} obsolete` : ""}`
     );
 
     return modifiedContent;
@@ -714,16 +1406,43 @@ async function main() {
 
         console.log("\n--- Downloading Files ---");
 
-        // Step 2: Download matched files
         const downloadedFiles = {};
-        for (const [key, url] of Object.entries(matches)) {
-            // Use correct extension based on whether it's CSS or JS
-            const isCss = CSS_KEYS.has(key) || key.startsWith("numeric-prefixed-css-");
-            const extension = isCss ? "css" : "js";
-            const filename = `${key}-new.${extension}`;
-            const downloadPath = path.join(TEMP_DIR, filename);
-            await downloadFile(url, downloadPath);
-            downloadedFiles[key] = downloadPath;
+        async function downloadMatches(matchMap, logEach = true) {
+            for (const [key, url] of Object.entries(matchMap)) {
+                if (downloadedFiles[key]) continue;
+                const isCss =
+                    CSS_KEYS.has(key) || key.startsWith("numeric-prefixed-css-");
+                const extension = isCss ? "css" : "js";
+                const filename = `${key}-new.${extension}`;
+                const downloadPath = path.join(TEMP_DIR, filename);
+                await downloadFile(url, downloadPath);
+                downloadedFiles[key] = downloadPath;
+                if (!logEach) {
+                    console.log(`  ${key}: ${url}`);
+                }
+            }
+        }
+
+        await downloadMatches(matches);
+
+        const seedContents = [];
+        for (const key of ["issues-react", "react-core", "environment"]) {
+            if (downloadedFiles[key]) {
+                seedContents.push(
+                    fs.readFileSync(downloadedFiles[key], "utf8")
+                );
+            }
+        }
+
+        console.log("\n--- Discovering numeric chunks needing iOS <16.4 fixes ---");
+        const eligibleNumericMatches = await discoverEligibleNumericMatches(
+            assets,
+            seedContents
+        );
+        if (Object.keys(eligibleNumericMatches).length > 0) {
+            await downloadMatches(eligibleNumericMatches, false);
+        } else {
+            console.log("  No numeric chunks require transpilation/patching");
         }
 
         console.log("\n--- Processing Files (Skipping Formatting) ---");
@@ -758,52 +1477,27 @@ async function main() {
 
         console.log("\n--- Applying Patches ---");
 
-        // Step 4: Apply patches to minified files
-        // Helpers to extract inner rules of all @layer / @container blocks, removing wrappers
-        function extractBlockContents(css, atKeyword) {
-            let result = "";
-            let pos = 0;
-            while (true) {
-                const idx = css.indexOf(atKeyword, pos);
-                if (idx === -1) break;
-                const openBrace = css.indexOf("{", idx);
-                if (openBrace === -1) break;
-                let depth = 0;
-                let i = openBrace;
-                for (; i < css.length; i++) {
-                    const ch = css[i];
-                    if (ch === "{") depth++;
-                    else if (ch === "}") {
-                        depth--;
-                        if (depth === 0) {
-                            i++;
-                            break;
-                        }
-                    }
-                }
-                const block = css.substring(openBrace + 1, i - 1);
-                result += block.trim() + "\n";
-                pos = i;
-            }
-            return result.trim();
-        }
-        function extractModernOnlyCss(css) {
-            const layers = extractBlockContents(css, "@layer");
-            const containers = extractBlockContents(css, "@container");
-            const parts = [];
-            if (layers) parts.push(layers);
-            if (containers) parts.push(containers);
-            const joined = parts.join("\n").trim();
-            return joined ? joined + "\n" : "";
-        }
-
-        // Special handling: transpile numeric-prefixed bundles with Babel FIRST
+        const legacyAliases = {};
+        const legacyAliasSources = new Set();
         const babelCore = require("@babel/core");
         for (const [key, downloadPath] of Object.entries(downloadedFiles)) {
             if (key.startsWith("numeric-prefixed-js")) {
                 const bundleId = key.replace("numeric-prefixed-js-", "");
                 try {
-                    const srcContent = fs.readFileSync(downloadPath, "utf8");
+                    let srcContent = fs.readFileSync(downloadPath, "utf8");
+                    const lbPreBabel = fixLegacyRegexInJs(srcContent);
+                    if (lbPreBabel.fixes > 0) {
+                        console.log(
+                            `  Auto-fixed ${lbPreBabel.fixes} legacy regex issue(s) in raw ${bundleId}`
+                        );
+                        srcContent = lbPreBabel.code;
+                    }
+                    if (lbPreBabel.remaining > 0) {
+                        console.log(
+                            `  ⚠️  ${lbPreBabel.remaining} legacy regex pattern(s) remain in raw ${bundleId} before transpile`
+                        );
+                    }
+
                     const babelConfig = require(path.join(
                         __dirname,
                         "babel.config.js"
@@ -813,11 +1507,16 @@ async function main() {
                         filename: downloadPath,
                     });
                     if (result && result.code) {
+                        const postBabel = fixLegacyRegexInJs(result.code);
+                        if (postBabel.fixes > 0) {
+                            console.log(
+                                `  Auto-fixed ${postBabel.fixes} legacy regex issue(s) after transpile ${bundleId}`
+                            );
+                        }
                         console.log(
-                            `  Transpiled numeric bundle ${bundleId}: ${srcContent.length} → ${result.code.length} chars`
+                            `  Transpiled numeric bundle ${bundleId}: ${srcContent.length} → ${postBabel.code.length} chars`
                         );
-                        // Store transpiled code in processedFiles so patches can be applied later
-                        processedFiles[key] = result.code;
+                        processedFiles[key] = postBabel.code;
                     }
                 } catch (e) {
                     console.log(
@@ -835,35 +1534,8 @@ async function main() {
             let modifiedContent = content;
 
             if (CSS_KEYS.has(key) || key.startsWith("numeric-prefixed-css-")) {
-                // Extract only modern CSS guarded by @layer/@container and drop wrappers
-                const extracted = extractModernOnlyCss(content);
-                if (extracted && extracted.length > 0) {
-                    console.log(
-                        `  Extracted modern CSS (@layer/@container): ${content.length} → ${extracted.length} chars`
-                    );
-                    modifiedContent = extracted;
-                    if (prettier) {
-                        try {
-                            const pretty = await prettier.format(
-                                modifiedContent,
-                                { parser: "css" }
-                            );
-                            modifiedContent = pretty;
-                            console.log(
-                                "  Applied Prettier CSS formatting (programmatic)"
-                            );
-                        } catch (e) {
-                            console.log(
-                                `  Prettier CSS formatting failed: ${e.message}`
-                            );
-                        }
-                    }
-                } else {
-                    console.log(
-                        "  ⚠️  No modern CSS blocks found; leaving CSS empty to avoid injecting legacy rules"
-                    );
-                    modifiedContent = "";
-                }
+                const cssResult = await processCssContent(content);
+                modifiedContent = cssResult.content;
             } else {
                 // Apply text or multi-line patches to formatted content (if patch file exists)
                 let patchFileName = `${key}.txt`;
@@ -906,6 +1578,51 @@ async function main() {
                         }
                     }
                 }
+
+                const legacyRegexFix = fixLegacyRegexInJs(modifiedContent);
+                if (legacyRegexFix.fixes > 0) {
+                    console.log(
+                        `  Auto-fixed ${legacyRegexFix.fixes} legacy regex issue(s) in ${key}`
+                    );
+                    modifiedContent = legacyRegexFix.code;
+                }
+
+                const calleeFix = fixCalleeParamConflicts(modifiedContent);
+                if (calleeFix.fixes > 0) {
+                    console.log(
+                        `  Auto-fixed ${calleeFix.fixes} callee/param conflict(s)`
+                    );
+                    modifiedContent = calleeFix.code;
+                }
+
+                const regexAudit = auditLegacyRegexSyntax(modifiedContent);
+                const regexIssues =
+                    regexAudit.lookbehind +
+                    regexAudit.namedCapture +
+                    regexAudit.unicodeProperty;
+                if (regexIssues > 0) {
+                    console.log(
+                        `  ⚠️  ${key}: lookbehind=${regexAudit.lookbehind}, namedCapture=${regexAudit.namedCapture}, unicodeProperty=${regexAudit.unicodeProperty} (extend fix-lookbehind.js or add numeric-*.txt)`
+                    );
+                }
+
+                if (key.startsWith("numeric-prefixed-js-")) {
+                    const bundleId = parseInt(
+                        key.replace("numeric-prefixed-js-", ""),
+                        10
+                    );
+                    const legacyKey = identifyLegacyKey(
+                        modifiedContent,
+                        bundleId
+                    );
+                    if (legacyKey && TARGET_FILES[legacyKey]) {
+                        legacyAliases[legacyKey] = modifiedContent;
+                        legacyAliasSources.add(bundleId);
+                        console.log(
+                            `  Mapped numeric bundle ${bundleId} → 15.0 target ${legacyKey}`
+                        );
+                    }
+                }
             }
 
             if (modifiedContent && typeof modifiedContent.then === "function") {
@@ -915,6 +1632,29 @@ async function main() {
                 `  Processed ${key}: ${originalLength} → ${modifiedContent.length} chars`
             );
             processedFiles[key] = modifiedContent;
+        }
+
+        Object.assign(processedFiles, legacyAliases);
+
+        const keptNumericIds = new Set();
+        const keptNumericCssIds = new Set();
+        const keptLegacy15Keys = new Set(["environment"]);
+        for (const key of Object.keys(processedFiles)) {
+            if (key.startsWith("numeric-prefixed-js-")) {
+                keptNumericIds.add(
+                    parseInt(key.replace("numeric-prefixed-js-", ""), 10)
+                );
+            }
+            if (key.startsWith("numeric-prefixed-css-")) {
+                keptNumericCssIds.add(
+                    parseInt(key.replace("numeric-prefixed-css-", ""), 10)
+                );
+            }
+        }
+        for (const key of Object.keys(legacyAliases)) {
+            if (LEGACY_15_JS_KEYS.has(key)) {
+                keptLegacy15Keys.add(key);
+            }
         }
 
         console.log("\n--- Updating Script Files ---");
@@ -932,7 +1672,10 @@ async function main() {
             let targetFileName = TARGET_FILES[key];
             if (!targetFileName) {
                 if (key.startsWith("numeric-prefixed-js-")) {
-                    const bundleId = key.replace("numeric-prefixed-js-", "");
+                    const bundleId = parseInt(
+                        key.replace("numeric-prefixed-js-", ""),
+                        10
+                    );
                     targetFileName = `16.4-numeric-${bundleId}.js`;
                 } else if (key.startsWith("numeric-prefixed-css-")) {
                     const bundleId = key.replace("numeric-prefixed-css-", "");
@@ -987,6 +1730,14 @@ async function main() {
                 );
             }
         }
+
+        cleanupObsoleteNumericAssets(
+            keptNumericIds,
+            keptNumericCssIds,
+            keptLegacy15Keys,
+            isDryRun
+        );
+
         console.log("\n--- Cleanup ---");
 
         // Cleanup temp directory, but preserve debug files if they exist
@@ -1018,12 +1769,18 @@ async function main() {
             }
         }
 
+        auditBundleDirectory(SCRIPTS_DIR, "scripts/", false);
+        auditBundleDirectory(ASSETS_DIR, "layout/ (injection bundles)", true);
+
         if (isDryRun) {
             console.log(
                 "\n✅ Dry run completed successfully! Run without --dry-run to apply changes."
             );
         } else {
             console.log("\n✅ Script update completed successfully!");
+            console.log(
+                'Run "make assets" before packaging so layout/*.min.js matches scripts/.'
+            );
         }
     } catch (error) {
         console.error("\n❌ Script update failed:", error.message);

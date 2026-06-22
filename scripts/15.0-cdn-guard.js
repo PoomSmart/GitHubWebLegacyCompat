@@ -1,0 +1,47 @@
+(function () {
+    "use strict";
+
+    var blockedNames = /(?:^|\/)(environment|react-core|issues-react)-[a-f0-9]+\.js(?:\?|$)/;
+    var blockedNumericIds = {
+        2694: 1,
+        8384: 1,
+        23784: 1,
+        39890: 1,
+        43406: 1,
+        57639: 1,
+        64458: 1,
+        65354: 1,
+        67133: 1,
+        85924: 1,
+        88576: 1,
+        90501: 1,
+    };
+
+    function shouldBlock(src) {
+        if (!src || src.indexOf("github.githubassets.com/assets/") === -1) return false;
+        if (blockedNames.test(src)) return true;
+        var match = src.match(/\/assets\/(\d+)-[a-f0-9]+\.js/);
+        return !!(match && blockedNumericIds[match[1]]);
+    }
+
+    function neuterScript(node) {
+        if (!node || node.tagName !== "SCRIPT" || !node.src) return;
+        if (!shouldBlock(node.src)) return;
+        if (node.getAttribute("data-ghlegacy-blocked") === "1") return;
+        node.setAttribute("data-ghlegacy-blocked", "1");
+        node.remove();
+    }
+
+    function scan() {
+        var scripts = document.getElementsByTagName("script");
+        for (var i = 0; i < scripts.length; i++) {
+            neuterScript(scripts[i]);
+        }
+    }
+
+    new MutationObserver(function () {
+        scan();
+    }).observe(document.documentElement, { childList: true, subtree: true });
+
+    scan();
+})();

@@ -60,9 +60,19 @@ node update-scripts.js --dry-run
 ```
 
 The automation script:
-- Scrapes GitHub's issues page to discover current asset URLs
-- Downloads the latest JavaScript bundles (issues-react, issue-viewer, list-view, react-core)
+- Scrapes several GitHub pages (Puppeteer when available, otherwise curl) to discover asset URLs
+- Captures lazy-loaded rspack chunks via network requests and page interactions (search focus, sub-issues)
+- Downloads the latest JavaScript bundles (issues-react, react-core, environment, eligible numeric chunks)
 - Applies compatibility patches for iOS < 16.4 (callee/parameter conflicts, lookbehind regex)
 - Updates the bundled script files automatically
+
+For full lazy-chunk discovery, install Puppeteer’s browser after `npm install`:
+
+```bash
+npm approve-scripts puppeteer
+npx puppeteer browsers install chrome
+```
+
+If the bundled Chrome is unavailable, the script falls back to a locally installed Google Chrome.
 
 This eliminates the need for manual patching when GitHub updates their assets.

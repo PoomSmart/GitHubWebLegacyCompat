@@ -1,0 +1,3856 @@
+"use strict";
+
+function _classCallCheck(a, n) {
+    if (!(a instanceof n))
+        throw new TypeError("Cannot call a class as a function");
+}
+function _defineProperties(e, r) {
+    for (var t = 0; t < r.length; t++) {
+        var o = r[t];
+        ((o.enumerable = o.enumerable || !1),
+            (o.configurable = !0),
+            "value" in o && (o.writable = !0),
+            Object.defineProperty(e, _toPropertyKey(o.key), o));
+    }
+}
+function _createClass(e, r, t) {
+    return (
+        r && _defineProperties(e.prototype, r),
+        t && _defineProperties(e, t),
+        Object.defineProperty(e, "prototype", { writable: !1 }),
+        e
+    );
+}
+function ownKeys(e, r) {
+    var t = Object.keys(e);
+    if (Object.getOwnPropertySymbols) {
+        var o = Object.getOwnPropertySymbols(e);
+        (r &&
+            (o = o.filter(function (r) {
+                return Object.getOwnPropertyDescriptor(e, r).enumerable;
+            })),
+            t.push.apply(t, o));
+    }
+    return t;
+}
+function _objectSpread(e) {
+    for (var r = 1; r < arguments.length; r++) {
+        var t = null != arguments[r] ? arguments[r] : {};
+        r % 2
+            ? ownKeys(Object(t), !0).forEach(function (r) {
+                  _defineProperty(e, r, t[r]);
+              })
+            : Object.getOwnPropertyDescriptors
+              ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t))
+              : ownKeys(Object(t)).forEach(function (r) {
+                    Object.defineProperty(
+                        e,
+                        r,
+                        Object.getOwnPropertyDescriptor(t, r)
+                    );
+                });
+    }
+    return e;
+}
+function _defineProperty(e, r, t) {
+    return (
+        (r = _toPropertyKey(r)) in e
+            ? Object.defineProperty(e, r, {
+                  value: t,
+                  enumerable: !0,
+                  configurable: !0,
+                  writable: !0,
+              })
+            : (e[r] = t),
+        e
+    );
+}
+function _toPropertyKey(t) {
+    var i = _toPrimitive(t, "string");
+    return "symbol" == _typeof(i) ? i : i + "";
+}
+function _toPrimitive(t, r) {
+    if ("object" != _typeof(t) || !t) return t;
+    var e = t[Symbol.toPrimitive];
+    if (void 0 !== e) {
+        var i = e.call(t, r || "default");
+        if ("object" != _typeof(i)) return i;
+        throw new TypeError("@@toPrimitive must return a primitive value.");
+    }
+    return ("string" === r ? String : Number)(t);
+}
+function _toConsumableArray(r) {
+    return (
+        _arrayWithoutHoles(r) ||
+        _iterableToArray(r) ||
+        _unsupportedIterableToArray(r) ||
+        _nonIterableSpread()
+    );
+}
+function _nonIterableSpread() {
+    throw new TypeError(
+        "Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+    );
+}
+function _iterableToArray(r) {
+    if (
+        ("undefined" != typeof Symbol && null != r[Symbol.iterator]) ||
+        null != r["@@iterator"]
+    )
+        return Array.from(r);
+}
+function _arrayWithoutHoles(r) {
+    if (Array.isArray(r)) return _arrayLikeToArray(r);
+}
+function _slicedToArray(r, e) {
+    return (
+        _arrayWithHoles(r) ||
+        _iterableToArrayLimit(r, e) ||
+        _unsupportedIterableToArray(r, e) ||
+        _nonIterableRest()
+    );
+}
+function _nonIterableRest() {
+    throw new TypeError(
+        "Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+    );
+}
+function _iterableToArrayLimit(r, l) {
+    var t =
+        null == r
+            ? null
+            : ("undefined" != typeof Symbol && r[Symbol.iterator]) ||
+              r["@@iterator"];
+    if (null != t) {
+        var e,
+            n,
+            i,
+            u,
+            a = [],
+            f = !0,
+            o = !1;
+        try {
+            if (((i = (t = t.call(r)).next), 0 === l)) {
+                if (Object(t) !== t) return;
+                f = !1;
+            } else
+                for (
+                    ;
+                    !(f = (e = i.call(t)).done) &&
+                    (a.push(e.value), a.length !== l);
+                    f = !0
+                );
+        } catch (r) {
+            ((o = !0), (n = r));
+        } finally {
+            try {
+                if (
+                    !f &&
+                    null != t.return &&
+                    ((u = t.return()), Object(u) !== u)
+                )
+                    return;
+            } finally {
+                if (o) throw n;
+            }
+        }
+        return a;
+    }
+}
+function _arrayWithHoles(r) {
+    if (Array.isArray(r)) return r;
+}
+function _typeof(o) {
+    "@babel/helpers - typeof";
+    return (
+        (_typeof =
+            "function" == typeof Symbol && "symbol" == typeof Symbol.iterator
+                ? function (o) {
+                      return typeof o;
+                  }
+                : function (o) {
+                      return o &&
+                          "function" == typeof Symbol &&
+                          o.constructor === Symbol &&
+                          o !== Symbol.prototype
+                          ? "symbol"
+                          : typeof o;
+                  }),
+        _typeof(o)
+    );
+}
+function _createForOfIteratorHelper(r, e) {
+    var t =
+        ("undefined" != typeof Symbol && r[Symbol.iterator]) || r["@@iterator"];
+    if (!t) {
+        if (
+            Array.isArray(r) ||
+            (t = _unsupportedIterableToArray(r)) ||
+            (e && r && "number" == typeof r.length)
+        ) {
+            t && (r = t);
+            var _n1 = 0,
+                F = function F() {};
+            return {
+                s: F,
+                n: function n() {
+                    return _n1 >= r.length
+                        ? { done: !0 }
+                        : { done: !1, value: r[_n1++] };
+                },
+                e: function e(r) {
+                    throw r;
+                },
+                f: F,
+            };
+        }
+        throw new TypeError(
+            "Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."
+        );
+    }
+    var o,
+        a = !0,
+        u = !1;
+    return {
+        s: function s() {
+            t = t.call(r);
+        },
+        n: function n() {
+            var r = t.next();
+            return ((a = r.done), r);
+        },
+        e: function e(r) {
+            ((u = !0), (o = r));
+        },
+        f: function f() {
+            try {
+                a || null == t.return || t.return();
+            } finally {
+                if (u) throw o;
+            }
+        },
+    };
+}
+function _unsupportedIterableToArray(r, a) {
+    if (r) {
+        if ("string" == typeof r) return _arrayLikeToArray(r, a);
+        var t = {}.toString.call(r).slice(8, -1);
+        return (
+            "Object" === t && r.constructor && (t = r.constructor.name),
+            "Map" === t || "Set" === t
+                ? Array.from(r)
+                : "Arguments" === t ||
+                    /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t)
+                  ? _arrayLikeToArray(r, a)
+                  : void 0
+        );
+    }
+}
+function _arrayLikeToArray(r, a) {
+    (null == a || a > r.length) && (a = r.length);
+    for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];
+    return n;
+}
+performance.mark("js-parse-end:65354-053a056bc81a6fdc.js");
+("use strict");
+(globalThis.rspackChunk_github_ui_github_ui =
+    globalThis.rspackChunk_github_ui_github_ui || []).push([
+    [65354],
+    {
+        178256: function _(e, t, n) {
+            function r(e, t) {
+                var n = String(e);
+                if ("string" != typeof t) throw TypeError("Expected character");
+                var r = 0,
+                    i = n.indexOf(t);
+                for (; -1 !== i; ) (r++, (i = n.indexOf(t, i + t.length)));
+                return r;
+            }
+            n.d(t, {
+                D: function D() {
+                    return r;
+                },
+            });
+        },
+        654322: function _(e, t, n) {
+            n.d(t, {
+                h: function h() {
+                    return f;
+                },
+                s: function s() {
+                    return h;
+                },
+            });
+            var r = n(47731),
+                i = n(72282);
+            var o = /[#.]/g;
+            var l = n(891775),
+                a = n(177457),
+                u = n(472485);
+            function s(e, t, n) {
+                var r = n
+                    ? (function (e) {
+                          var t = new Map();
+                          var _iterator = _createForOfIteratorHelper(e),
+                              _step;
+                          try {
+                              for (
+                                  _iterator.s();
+                                  !(_step = _iterator.n()).done;
+
+                              ) {
+                                  var _n = _step.value;
+                                  t.set(_n.toLowerCase(), _n);
+                              }
+                          } catch (err) {
+                              _iterator.e(err);
+                          } finally {
+                              _iterator.f();
+                          }
+                          return t;
+                      })(n)
+                    : void 0;
+                return function (n, a) {
+                    var f;
+                    for (
+                        var _len = arguments.length,
+                            s = new Array(_len > 2 ? _len - 2 : 0),
+                            _key = 2;
+                        _key < _len;
+                        _key++
+                    ) {
+                        s[_key - 2] = arguments[_key];
+                    }
+                    if (null == n)
+                        ((f = {
+                            type: "root",
+                            children: [],
+                        }),
+                            s.unshift(a));
+                    else {
+                        var _h = (f = (function (e, t) {
+                                var n,
+                                    r,
+                                    i = e || "",
+                                    l = {},
+                                    a = 0;
+                                for (; a < i.length; ) {
+                                    o.lastIndex = a;
+                                    var _e = o.exec(i),
+                                        _t = i.slice(
+                                            a,
+                                            _e ? _e.index : i.length
+                                        );
+                                    (_t &&
+                                        (n
+                                            ? "#" === n
+                                                ? (l.id = _t)
+                                                : Array.isArray(l.className)
+                                                  ? l.className.push(_t)
+                                                  : (l.className = [_t])
+                                            : (r = _t),
+                                        (a += _t.length)),
+                                        _e && ((n = _e[0]), a++));
+                                }
+                                return {
+                                    type: "element",
+                                    tagName: r || t || "div",
+                                    properties: l,
+                                    children: [],
+                                };
+                            })(n, t)).tagName.toLowerCase(),
+                            p = r ? r.get(_h) : void 0;
+                        if (
+                            ((f.tagName = p || _h),
+                            (function (e) {
+                                if (
+                                    null === e ||
+                                    "object" != _typeof(e) ||
+                                    Array.isArray(e)
+                                )
+                                    return !0;
+                                if ("string" != typeof e.type) return !1;
+                                for (
+                                    var _i = 0, _Object$keys = Object.keys(e);
+                                    _i < _Object$keys.length;
+                                    _i++
+                                ) {
+                                    var _t2 = _Object$keys[_i];
+                                    var _n2 = e[_t2];
+                                    if (_n2 && "object" == _typeof(_n2)) {
+                                        if (!Array.isArray(_n2)) return !0;
+                                        var _iterator2 =
+                                                _createForOfIteratorHelper(_n2),
+                                            _step2;
+                                        try {
+                                            for (
+                                                _iterator2.s();
+                                                !(_step2 = _iterator2.n()).done;
+
+                                            ) {
+                                                var _e2 = _step2.value;
+                                                if (
+                                                    "number" != typeof _e2 &&
+                                                    "string" != typeof _e2
+                                                )
+                                                    return !0;
+                                            }
+                                        } catch (err) {
+                                            _iterator2.e(err);
+                                        } finally {
+                                            _iterator2.f();
+                                        }
+                                    }
+                                }
+                                return !!(
+                                    "children" in e && Array.isArray(e.children)
+                                );
+                            })(a))
+                        )
+                            s.unshift(a);
+                        else
+                            for (
+                                var _i2 = 0,
+                                    _Object$entries = Object.entries(a);
+                                _i2 < _Object$entries.length;
+                                _i2++
+                            ) {
+                                var _Object$entries$_i = _slicedToArray(
+                                        _Object$entries[_i2],
+                                        2
+                                    ),
+                                    _t3 = _Object$entries$_i[0],
+                                    _n3 = _Object$entries$_i[1];
+                                !(function (e, t, n, r) {
+                                    var o,
+                                        a = (0, l.I)(e, n);
+                                    if (null != r) {
+                                        if ("number" == typeof r) {
+                                            if (Number.isNaN(r)) return;
+                                            o = r;
+                                        } else
+                                            o =
+                                                "boolean" == typeof r
+                                                    ? r
+                                                    : "string" == typeof r
+                                                      ? a.spaceSeparated
+                                                          ? (0, u.q)(r)
+                                                          : a.commaSeparated
+                                                            ? (0, i.q)(r)
+                                                            : a.commaOrSpaceSeparated
+                                                              ? (0, u.q)(
+                                                                    (0, i.q)(
+                                                                        r
+                                                                    ).join(" ")
+                                                                )
+                                                              : c(
+                                                                    a,
+                                                                    a.property,
+                                                                    r
+                                                                )
+                                                      : Array.isArray(r)
+                                                        ? _toConsumableArray(r)
+                                                        : "style" === a.property
+                                                          ? (function (e) {
+                                                                var t = [];
+                                                                for (
+                                                                    var _i3 = 0,
+                                                                        _Object$entries2 =
+                                                                            Object.entries(
+                                                                                e
+                                                                            );
+                                                                    _i3 <
+                                                                    _Object$entries2.length;
+                                                                    _i3++
+                                                                ) {
+                                                                    var _Object$entries2$_i =
+                                                                            _slicedToArray(
+                                                                                _Object$entries2[
+                                                                                    _i3
+                                                                                ],
+                                                                                2
+                                                                            ),
+                                                                        _n4 =
+                                                                            _Object$entries2$_i[0],
+                                                                        _r =
+                                                                            _Object$entries2$_i[1];
+                                                                    t.push(
+                                                                        [
+                                                                            _n4,
+                                                                            _r,
+                                                                        ].join(
+                                                                            ": "
+                                                                        )
+                                                                    );
+                                                                }
+                                                                return t.join(
+                                                                    "; "
+                                                                );
+                                                            })(r)
+                                                          : String(r);
+                                        if (Array.isArray(o)) {
+                                            var _e3 = [];
+                                            var _iterator3 =
+                                                    _createForOfIteratorHelper(
+                                                        o
+                                                    ),
+                                                _step3;
+                                            try {
+                                                for (
+                                                    _iterator3.s();
+                                                    !(_step3 = _iterator3.n())
+                                                        .done;
+
+                                                ) {
+                                                    var _t4 = _step3.value;
+                                                    _e3.push(
+                                                        c(a, a.property, _t4)
+                                                    );
+                                                }
+                                            } catch (err) {
+                                                _iterator3.e(err);
+                                            } finally {
+                                                _iterator3.f();
+                                            }
+                                            o = _e3;
+                                        }
+                                        ("className" === a.property &&
+                                            Array.isArray(t.className) &&
+                                            (o = t.className.concat(o)),
+                                            (t[a.property] = o));
+                                    }
+                                })(e, f.properties, _t3, _n3);
+                            }
+                    }
+                    for (var _i4 = 0, _s = s; _i4 < _s.length; _i4++) {
+                        var _e4 = _s[_i4];
+                        !(function e(t, n) {
+                            if (null == n);
+                            else if (
+                                "number" == typeof n ||
+                                "string" == typeof n
+                            )
+                                t.push({
+                                    type: "text",
+                                    value: String(n),
+                                });
+                            else if (Array.isArray(n)) {
+                                var _iterator4 = _createForOfIteratorHelper(n),
+                                    _step4;
+                                try {
+                                    for (
+                                        _iterator4.s();
+                                        !(_step4 = _iterator4.n()).done;
+
+                                    ) {
+                                        var _r2 = _step4.value;
+                                        e(t, _r2);
+                                    }
+                                } catch (err) {
+                                    _iterator4.e(err);
+                                } finally {
+                                    _iterator4.f();
+                                }
+                            } else if ("object" == _typeof(n) && "type" in n)
+                                "root" === n.type
+                                    ? e(t, n.children)
+                                    : t.push(n);
+                            else
+                                throw Error(
+                                    "Expected node, nodes, or string, got `" +
+                                        n +
+                                        "`"
+                                );
+                        })(f.children, _e4);
+                    }
+                    return (
+                        "element" === f.type &&
+                            "template" === f.tagName &&
+                            ((f.content = {
+                                type: "root",
+                                children: f.children,
+                            }),
+                            (f.children = [])),
+                        f
+                    );
+                };
+            }
+            function c(e, t, n) {
+                if ("string" == typeof n) {
+                    if (e.number && n && !Number.isNaN(Number(n)))
+                        return Number(n);
+                    if (
+                        (e.boolean || e.overloadedBoolean) &&
+                        ("" === n || (0, a.S)(n) === (0, a.S)(t))
+                    )
+                        return !0;
+                }
+                return n;
+            }
+            var f = s(r.qy, "div"),
+                h = s(r.JW, "g", [
+                    "altGlyph",
+                    "altGlyphDef",
+                    "altGlyphItem",
+                    "animateColor",
+                    "animateMotion",
+                    "animateTransform",
+                    "clipPath",
+                    "feBlend",
+                    "feColorMatrix",
+                    "feComponentTransfer",
+                    "feComposite",
+                    "feConvolveMatrix",
+                    "feDiffuseLighting",
+                    "feDisplacementMap",
+                    "feDistantLight",
+                    "feDropShadow",
+                    "feFlood",
+                    "feFuncA",
+                    "feFuncB",
+                    "feFuncG",
+                    "feFuncR",
+                    "feGaussianBlur",
+                    "feImage",
+                    "feMerge",
+                    "feMergeNode",
+                    "feMorphology",
+                    "feOffset",
+                    "fePointLight",
+                    "feSpecularLighting",
+                    "feSpotLight",
+                    "feTile",
+                    "feTurbulence",
+                    "foreignObject",
+                    "glyphRef",
+                    "linearGradient",
+                    "radialGradient",
+                    "solidColor",
+                    "textArea",
+                    "textPath",
+                ]);
+        },
+        797345: function _(e, t, n) {
+            n.d(t, {
+                T: function T() {
+                    return o;
+                },
+            });
+            var r = n(799247),
+                i = n(169143);
+            function o(e, t, n) {
+                var o = (0, i.C)((n || {}).ignore || []),
+                    l = (function (e) {
+                        var t = [];
+                        if (!Array.isArray(e))
+                            throw TypeError(
+                                "Expected find and replace tuple or list of tuples"
+                            );
+                        var n = !e[0] || Array.isArray(e[0]) ? e : [e],
+                            r = -1;
+                        for (; ++r < n.length; ) {
+                            var i;
+                            var _e5 = n[r];
+                            t.push([
+                                "string" == typeof (i = _e5[0])
+                                    ? RegExp(
+                                          (function (e) {
+                                              if ("string" != typeof e)
+                                                  throw TypeError(
+                                                      "Expected a string"
+                                                  );
+                                              return e
+                                                  .replace(
+                                                      /[|\\{}()[\]^$+*?.]/g,
+                                                      "\\$&"
+                                                  )
+                                                  .replace(/-/g, "\\x2d");
+                                          })(i),
+                                          "g"
+                                      )
+                                    : i,
+                                (function (e) {
+                                    return "function" == typeof e
+                                        ? e
+                                        : function () {
+                                              return e;
+                                          };
+                                })(_e5[1]),
+                            ]);
+                        }
+                        return t;
+                    })(t),
+                    a = -1;
+                for (; ++a < l.length; ) (0, r.V)(e, "text", u);
+                function u(e, t) {
+                    var n,
+                        r = -1;
+                    for (; ++r < t.length; ) {
+                        var _e6 = t[r],
+                            _i5 = n ? n.children : void 0;
+                        if (o(_e6, _i5 ? _i5.indexOf(_e6) : void 0, n)) return;
+                        n = _e6;
+                    }
+                    if (n)
+                        return (function (e, t, _n$children) {
+                            var n = t[t.length - 1],
+                                r = l[a][0],
+                                i = l[a][1],
+                                o = 0,
+                                u = n.children.indexOf(e),
+                                s = !1,
+                                c = [];
+                            r.lastIndex = 0;
+                            var f = r.exec(e.value);
+                            for (; f; ) {
+                                var _c;
+                                var _n5 = f.index,
+                                    _l = {
+                                        index: f.index,
+                                        input: f.input,
+                                        stack: [].concat(
+                                            _toConsumableArray(t),
+                                            [e]
+                                        ),
+                                    },
+                                    _a = i.apply(
+                                        void 0,
+                                        _toConsumableArray(f).concat([_l])
+                                    );
+                                if (
+                                    ("string" == typeof _a &&
+                                        (_a =
+                                            _a.length > 0
+                                                ? {
+                                                      type: "text",
+                                                      value: _a,
+                                                  }
+                                                : void 0),
+                                    !1 === _a
+                                        ? (r.lastIndex = _n5 + 1)
+                                        : (o !== _n5 &&
+                                              c.push({
+                                                  type: "text",
+                                                  value: e.value.slice(o, _n5),
+                                              }),
+                                          Array.isArray(_a)
+                                              ? (_c = c).push.apply(
+                                                    _c,
+                                                    _toConsumableArray(_a)
+                                                )
+                                              : _a && c.push(_a),
+                                          (o = _n5 + f[0].length),
+                                          (s = !0)),
+                                    !r.global)
+                                )
+                                    break;
+                                f = r.exec(e.value);
+                            }
+                            return (
+                                s
+                                    ? (o < e.value.length &&
+                                          c.push({
+                                              type: "text",
+                                              value: e.value.slice(o),
+                                          }),
+                                      (_n$children = n.children).splice.apply(
+                                          _n$children,
+                                          [u, 1].concat(_toConsumableArray(c))
+                                      ))
+                                    : (c = [e]),
+                                u + c.length
+                            );
+                        })(e, t);
+                }
+            }
+        },
+        680972: function _(e, t, n) {
+            n.d(t, {
+                C: function C() {
+                    return Q;
+                },
+                H: function H() {
+                    return J;
+                },
+            });
+            var r = n(178256),
+                i = n(197471),
+                o = n(40574),
+                l = n(797345);
+            var a = "phrasing",
+                u = ["autolink", "link", "image", "label"];
+            function s(e) {
+                this.enter(
+                    {
+                        type: "link",
+                        title: null,
+                        url: "",
+                        children: [],
+                    },
+                    e
+                );
+            }
+            function c(e) {
+                this.config.enter.autolinkProtocol.call(this, e);
+            }
+            function f(e) {
+                this.config.exit.autolinkProtocol.call(this, e);
+            }
+            function h(e) {
+                this.config.exit.data.call(this, e);
+                var t = this.stack[this.stack.length - 1];
+                ((0, i.ok)("link" === t.type),
+                    (t.url = "http://" + this.sliceSerialize(e)));
+            }
+            function p(e) {
+                this.config.exit.autolinkEmail.call(this, e);
+            }
+            function d(e) {
+                this.exit(e);
+            }
+            function m(e) {
+                (0, l.T)(
+                    e,
+                    [
+                        [/(https?:\/\/|www(?=\.))([-.\w]+)([^ \t\r\n]*)/gi, g],
+                        [
+                            /(?:^|[\t-\r \xA0\u1680\u2000-\u200A\u2028\u2029\u202F\u205F\u3000\uFEFF]|(?:[!-#%-\*,-\/:;\?@\[-\]_\{\}\xA1\xA7\xAB\xB6\xB7\xBB\xBF\u037E\u0387\u055A-\u055F\u0589\u058A\u05BE\u05C0\u05C3\u05C6\u05F3\u05F4\u0609\u060A\u060C\u060D\u061B\u061D-\u061F\u066A-\u066D\u06D4\u0700-\u070D\u07F7-\u07F9\u0830-\u083E\u085E\u0964\u0965\u0970\u09FD\u0A76\u0AF0\u0C77\u0C84\u0DF4\u0E4F\u0E5A\u0E5B\u0F04-\u0F12\u0F14\u0F3A-\u0F3D\u0F85\u0FD0-\u0FD4\u0FD9\u0FDA\u104A-\u104F\u10FB\u1360-\u1368\u1400\u166E\u169B\u169C\u16EB-\u16ED\u1735\u1736\u17D4-\u17D6\u17D8-\u17DA\u1800-\u180A\u1944\u1945\u1A1E\u1A1F\u1AA0-\u1AA6\u1AA8-\u1AAD\u1B4E\u1B4F\u1B5A-\u1B60\u1B7D-\u1B7F\u1BFC-\u1BFF\u1C3B-\u1C3F\u1C7E\u1C7F\u1CC0-\u1CC7\u1CD3\u2010-\u2027\u2030-\u2043\u2045-\u2051\u2053-\u205E\u207D\u207E\u208D\u208E\u2308-\u230B\u2329\u232A\u2768-\u2775\u27C5\u27C6\u27E6-\u27EF\u2983-\u2998\u29D8-\u29DB\u29FC\u29FD\u2CF9-\u2CFC\u2CFE\u2CFF\u2D70\u2E00-\u2E2E\u2E30-\u2E4F\u2E52-\u2E5D\u3001-\u3003\u3008-\u3011\u3014-\u301F\u3030\u303D\u30A0\u30FB\uA4FE\uA4FF\uA60D-\uA60F\uA673\uA67E\uA6F2-\uA6F7\uA874-\uA877\uA8CE\uA8CF\uA8F8-\uA8FA\uA8FC\uA92E\uA92F\uA95F\uA9C1-\uA9CD\uA9DE\uA9DF\uAA5C-\uAA5F\uAADE\uAADF\uAAF0\uAAF1\uABEB\uFD3E\uFD3F\uFE10-\uFE19\uFE30-\uFE52\uFE54-\uFE61\uFE63\uFE68\uFE6A\uFE6B\uFF01-\uFF03\uFF05-\uFF0A\uFF0C-\uFF0F\uFF1A\uFF1B\uFF1F\uFF20\uFF3B-\uFF3D\uFF3F\uFF5B\uFF5D\uFF5F-\uFF65]|\uD800[\uDD00-\uDD02\uDF9F\uDFD0]|\uD801\uDD6F|\uD802[\uDC57\uDD1F\uDD3F\uDE50-\uDE58\uDE7F\uDEF0-\uDEF6\uDF39-\uDF3F\uDF99-\uDF9C]|\uD803[\uDD6E\uDEAD\uDF55-\uDF59\uDF86-\uDF89]|\uD804[\uDC47-\uDC4D\uDCBB\uDCBC\uDCBE-\uDCC1\uDD40-\uDD43\uDD74\uDD75\uDDC5-\uDDC8\uDDCD\uDDDB\uDDDD-\uDDDF\uDE38-\uDE3D\uDEA9\uDFD4\uDFD5\uDFD7\uDFD8]|\uD805[\uDC4B-\uDC4F\uDC5A\uDC5B\uDC5D\uDCC6\uDDC1-\uDDD7\uDE41-\uDE43\uDE60-\uDE6C\uDEB9\uDF3C-\uDF3E]|\uD806[\uDC3B\uDD44-\uDD46\uDDE2\uDE3F-\uDE46\uDE9A-\uDE9C\uDE9E-\uDEA2\uDF00-\uDF09\uDFE1]|\uD807[\uDC41-\uDC45\uDC70\uDC71\uDEF7\uDEF8\uDF43-\uDF4F\uDFFF]|\uD809[\uDC70-\uDC74]|\uD80B[\uDFF1\uDFF2]|\uD81A[\uDE6E\uDE6F\uDEF5\uDF37-\uDF3B\uDF44]|\uD81B[\uDD6D-\uDD6F\uDE97-\uDE9A\uDFE2]|\uD82F\uDC9F|\uD836[\uDE87-\uDE8B]|\uD839\uDDFF|\uD83A[\uDD5E\uDD5F])|(?:[\$\+<->\^`\|~\xA2-\xA6\xA8\xA9\xAC\xAE-\xB1\xB4\xB8\xD7\xF7\u02C2-\u02C5\u02D2-\u02DF\u02E5-\u02EB\u02ED\u02EF-\u02FF\u0375\u0384\u0385\u03F6\u0482\u058D-\u058F\u0606-\u0608\u060B\u060E\u060F\u06DE\u06E9\u06FD\u06FE\u07F6\u07FE\u07FF\u0888\u09F2\u09F3\u09FA\u09FB\u0AF1\u0B70\u0BF3-\u0BFA\u0C7F\u0D4F\u0D79\u0E3F\u0F01-\u0F03\u0F13\u0F15-\u0F17\u0F1A-\u0F1F\u0F34\u0F36\u0F38\u0FBE-\u0FC5\u0FC7-\u0FCC\u0FCE\u0FCF\u0FD5-\u0FD8\u109E\u109F\u1390-\u1399\u166D\u17DB\u1940\u19DE-\u19FF\u1B61-\u1B6A\u1B74-\u1B7C\u1FBD\u1FBF-\u1FC1\u1FCD-\u1FCF\u1FDD-\u1FDF\u1FED-\u1FEF\u1FFD\u1FFE\u2044\u2052\u207A-\u207C\u208A-\u208C\u20A0-\u20C0\u2100\u2101\u2103-\u2106\u2108\u2109\u2114\u2116-\u2118\u211E-\u2123\u2125\u2127\u2129\u212E\u213A\u213B\u2140-\u2144\u214A-\u214D\u214F\u218A\u218B\u2190-\u2307\u230C-\u2328\u232B-\u2429\u2440-\u244A\u249C-\u24E9\u2500-\u2767\u2794-\u27C4\u27C7-\u27E5\u27F0-\u2982\u2999-\u29D7\u29DC-\u29FB\u29FE-\u2B73\u2B76-\u2B95\u2B97-\u2BFF\u2CE5-\u2CEA\u2E50\u2E51\u2E80-\u2E99\u2E9B-\u2EF3\u2F00-\u2FD5\u2FF0-\u2FFF\u3004\u3012\u3013\u3020\u3036\u3037\u303E\u303F\u309B\u309C\u3190\u3191\u3196-\u319F\u31C0-\u31E5\u31EF\u3200-\u321E\u322A-\u3247\u3250\u3260-\u327F\u328A-\u32B0\u32C0-\u33FF\u4DC0-\u4DFF\uA490-\uA4C6\uA700-\uA716\uA720\uA721\uA789\uA78A\uA828-\uA82B\uA836-\uA839\uAA77-\uAA79\uAB5B\uAB6A\uAB6B\uFB29\uFBB2-\uFBC2\uFD40-\uFD4F\uFDCF\uFDFC-\uFDFF\uFE62\uFE64-\uFE66\uFE69\uFF04\uFF0B\uFF1C-\uFF1E\uFF3E\uFF40\uFF5C\uFF5E\uFFE0-\uFFE6\uFFE8-\uFFEE\uFFFC\uFFFD]|\uD800[\uDD37-\uDD3F\uDD79-\uDD89\uDD8C-\uDD8E\uDD90-\uDD9C\uDDA0\uDDD0-\uDDFC]|\uD802[\uDC77\uDC78\uDEC8]|\uD803[\uDD8E\uDD8F]|\uD805\uDF3F|\uD807[\uDFD5-\uDFF1]|\uD81A[\uDF3C-\uDF3F\uDF45]|\uD82F\uDC9C|\uD833[\uDC00-\uDCEF\uDD00-\uDEB3\uDF50-\uDFC3]|\uD834[\uDC00-\uDCF5\uDD00-\uDD26\uDD29-\uDD64\uDD6A-\uDD6C\uDD83\uDD84\uDD8C-\uDDA9\uDDAE-\uDDEA\uDE00-\uDE41\uDE45\uDF00-\uDF56]|\uD835[\uDEC1\uDEDB\uDEFB\uDF15\uDF35\uDF4F\uDF6F\uDF89\uDFA9\uDFC3]|\uD836[\uDC00-\uDDFF\uDE37-\uDE3A\uDE6D-\uDE74\uDE76-\uDE83\uDE85\uDE86]|\uD838[\uDD4F\uDEFF]|\uD83B[\uDCAC\uDCB0\uDD2E\uDEF0\uDEF1]|\uD83C[\uDC00-\uDC2B\uDC30-\uDC93\uDCA0-\uDCAE\uDCB1-\uDCBF\uDCC1-\uDCCF\uDCD1-\uDCF5\uDD0D-\uDDAD\uDDE6-\uDE02\uDE10-\uDE3B\uDE40-\uDE48\uDE50\uDE51\uDE60-\uDE65\uDF00-\uDFFF]|\uD83D[\uDC00-\uDED7\uDEDC-\uDEEC\uDEF0-\uDEFC\uDF00-\uDF76\uDF7B-\uDFD9\uDFE0-\uDFEB\uDFF0]|\uD83E[\uDC00-\uDC0B\uDC10-\uDC47\uDC50-\uDC59\uDC60-\uDC87\uDC90-\uDCAD\uDCB0-\uDCBB\uDCC0\uDCC1\uDD00-\uDE53\uDE60-\uDE6D\uDE70-\uDE7C\uDE80-\uDE89\uDE8F-\uDEC6\uDECE-\uDEDC\uDEDF-\uDEE9\uDEF0-\uDEF8\uDF00-\uDF92\uDF94-\uDFEF]))(?=([\+\x2D\.0-9A-Z_a-z]+)@([\x2D0-9A-Z_a-z]+(?:\.[\x2D0-9A-Z_a-z]+)+))([\+\x2D\.0-9A-Z_a-z]+)@([\x2D0-9A-Z_a-z]+(?:\.[\x2D0-9A-Z_a-z]+)+)/g,
+                            k,
+                        ],
+                    ],
+                    {
+                        ignore: ["link", "linkReference"],
+                    }
+                );
+            }
+            function g(e, t, n, i, o) {
+                var l,
+                    a = "";
+                if (!b(o)) return !1;
+                if (
+                    (/^w/i.test(t) && ((n = t + n), (t = ""), (a = "http://")),
+                    (l = n.split(".")).length < 2 ||
+                        (l[l.length - 1] &&
+                            (/_/.test(l[l.length - 1]) ||
+                                !/[a-zA-Z\d]/.test(l[l.length - 1]))) ||
+                        (l[l.length - 2] &&
+                            (/_/.test(l[l.length - 2]) ||
+                                !/[a-zA-Z\d]/.test(l[l.length - 2]))))
+                )
+                    return !1;
+                var u = (function (e) {
+                    var t = /[!"&'),.:;<>?\]}]+$/.exec(e);
+                    if (!t) return [e, void 0];
+                    e = e.slice(0, t.index);
+                    var n = t[0],
+                        i = n.indexOf(")"),
+                        o = (0, r.D)(e, "("),
+                        l = (0, r.D)(e, ")");
+                    for (; -1 !== i && o > l; )
+                        ((e += n.slice(0, i + 1)),
+                            (i = (n = n.slice(i + 1)).indexOf(")")),
+                            l++);
+                    return [e, n];
+                })(n + i);
+                if (!u[0]) return !1;
+                var s = {
+                    type: "link",
+                    title: null,
+                    url: a + t + u[0],
+                    children: [
+                        {
+                            type: "text",
+                            value: t + u[0],
+                        },
+                    ],
+                };
+                return u[1]
+                    ? [
+                          s,
+                          {
+                              type: "text",
+                              value: u[1],
+                          },
+                      ]
+                    : s;
+            }
+            function k(e, t, n, r) {
+                return (
+                    !(!b(r, !0) || /[-\d_]$/.test(n)) && {
+                        type: "link",
+                        title: null,
+                        url: "mailto:" + t + "@" + n,
+                        children: [
+                            {
+                                type: "text",
+                                value: t + "@" + n,
+                            },
+                        ],
+                    }
+                );
+            }
+            function b(e, t) {
+                var n = e.input.charCodeAt(e.index - 1);
+                return (
+                    (0 === e.index || (0, o.Ny)(n) || (0, o.es)(n)) &&
+                    (!t || 47 !== n)
+                );
+            }
+            var v = n(509638);
+            function y(e) {
+                this.enter(
+                    {
+                        type: "footnoteDefinition",
+                        identifier: "",
+                        label: "",
+                        children: [],
+                    },
+                    e
+                );
+            }
+            function x() {
+                this.buffer();
+            }
+            function C(e) {
+                var t = this.resume(),
+                    n = this.stack[this.stack.length - 1];
+                ((0, i.ok)("footnoteDefinition" === n.type),
+                    (n.label = t),
+                    (n.identifier = (0, v.B)(
+                        this.sliceSerialize(e)
+                    ).toLowerCase()));
+            }
+            function w(e) {
+                this.exit(e);
+            }
+            function A(e) {
+                this.enter(
+                    {
+                        type: "footnoteReference",
+                        identifier: "",
+                        label: "",
+                    },
+                    e
+                );
+            }
+            function F() {
+                this.buffer();
+            }
+            function D(e) {
+                var t = this.resume(),
+                    n = this.stack[this.stack.length - 1];
+                ((0, i.ok)("footnoteReference" === n.type),
+                    (n.label = t),
+                    (n.identifier = (0, v.B)(
+                        this.sliceSerialize(e)
+                    ).toLowerCase()));
+            }
+            function S(e) {
+                this.exit(e);
+            }
+            function L(e, t, n, r) {
+                var i = n.createTracker(r),
+                    o = i.move("[^"),
+                    l = n.enter("footnoteReference"),
+                    a = n.enter("reference");
+                return (
+                    (o += i.move(
+                        n.safe(
+                            n.associationId(e),
+                            _objectSpread(
+                                _objectSpread({}, i.current()),
+                                {},
+                                {
+                                    before: o,
+                                    after: "]",
+                                }
+                            )
+                        )
+                    )),
+                    a(),
+                    l(),
+                    (o += i.move("]"))
+                );
+            }
+            function O(e, t, n, r) {
+                var i = n.createTracker(r),
+                    o = i.move("[^"),
+                    l = n.enter("footnoteDefinition"),
+                    a = n.enter("label");
+                return (
+                    (o += i.move(
+                        n.safe(
+                            n.associationId(e),
+                            _objectSpread(
+                                _objectSpread({}, i.current()),
+                                {},
+                                {
+                                    before: o,
+                                    after: "]",
+                                }
+                            )
+                        )
+                    )),
+                    a(),
+                    (o += i.move(
+                        "]:" + (e.children && e.children.length > 0 ? " " : "")
+                    )),
+                    i.shift(4),
+                    (o += i.move(
+                        n.indentLines(n.containerFlow(e, i.current()), T)
+                    )),
+                    l(),
+                    o
+                );
+            }
+            function T(e, t, n) {
+                return 0 === t ? e : (n ? "" : "    ") + e;
+            }
+            L.peek = function () {
+                return "[";
+            };
+            var E = [
+                "autolink",
+                "destinationLiteral",
+                "destinationRaw",
+                "reference",
+                "titleQuote",
+                "titleApostrophe",
+            ];
+            function M(e) {
+                this.enter(
+                    {
+                        type: "delete",
+                        children: [],
+                    },
+                    e
+                );
+            }
+            function I(e) {
+                this.exit(e);
+            }
+            function R(e, t, n, r) {
+                var i = n.createTracker(r),
+                    o = n.enter("strikethrough"),
+                    l = i.move("~~");
+                return (
+                    (l += n.containerPhrasing(
+                        e,
+                        _objectSpread(
+                            _objectSpread({}, i.current()),
+                            {},
+                            {
+                                before: l,
+                                after: "~",
+                            }
+                        )
+                    )),
+                    (l += i.move("~~")),
+                    o(),
+                    l
+                );
+            }
+            function j(e) {
+                return e.length;
+            }
+            function z(e) {
+                var t = "string" == typeof e ? e.codePointAt(0) : 0;
+                return 67 === t || 99 === t
+                    ? 99
+                    : 76 === t || 108 === t
+                      ? 108
+                      : 114 * (82 === t || 114 === t);
+            }
+            R.peek = function () {
+                return "~";
+            };
+            var N = n(295053);
+            function P(e) {
+                var t = e._align;
+                ((0, i.ok)(t, "expected `_align` on table"),
+                    this.enter(
+                        {
+                            type: "table",
+                            align: t.map(function (e) {
+                                return "none" === e ? null : e;
+                            }),
+                            children: [],
+                        },
+                        e
+                    ),
+                    (this.data.inTable = !0));
+            }
+            function _(e) {
+                (this.exit(e), (this.data.inTable = void 0));
+            }
+            function B(e) {
+                this.enter(
+                    {
+                        type: "tableRow",
+                        children: [],
+                    },
+                    e
+                );
+            }
+            function q(e) {
+                this.exit(e);
+            }
+            function H(e) {
+                this.enter(
+                    {
+                        type: "tableCell",
+                        children: [],
+                    },
+                    e
+                );
+            }
+            function $(e) {
+                var t = this.resume();
+                this.data.inTable && (t = t.replace(/\\([\\|])/g, W));
+                var n = this.stack[this.stack.length - 1];
+                ((0, i.ok)("inlineCode" === n.type),
+                    (n.value = t),
+                    this.exit(e));
+            }
+            function W(e, t) {
+                return "|" === t ? t : e;
+            }
+            function V(e) {
+                var t = this.stack[this.stack.length - 2];
+                ((0, i.ok)("listItem" === t.type),
+                    (t.checked = "taskListCheckValueChecked" === e.type));
+            }
+            function G(e) {
+                var t = this.stack[this.stack.length - 2];
+                if (
+                    t &&
+                    "listItem" === t.type &&
+                    "boolean" == typeof t.checked
+                ) {
+                    var _e7 = this.stack[this.stack.length - 1];
+                    (0, i.ok)("paragraph" === _e7.type);
+                    var _n6 = _e7.children[0];
+                    if (_n6 && "text" === _n6.type) {
+                        var _r3,
+                            _i6 = t.children,
+                            _o = -1;
+                        for (; ++_o < _i6.length; ) {
+                            var _e8 = _i6[_o];
+                            if ("paragraph" === _e8.type) {
+                                _r3 = _e8;
+                                break;
+                            }
+                        }
+                        _r3 === _e7 &&
+                            ((_n6.value = _n6.value.slice(1)),
+                            0 === _n6.value.length
+                                ? _e7.children.shift()
+                                : _e7.position &&
+                                  _n6.position &&
+                                  "number" ==
+                                      typeof _n6.position.start.offset &&
+                                  (_n6.position.start.column++,
+                                  _n6.position.start.offset++,
+                                  (_e7.position.start = Object.assign(
+                                      {},
+                                      _n6.position.start
+                                  ))));
+                    }
+                }
+                this.exit(e);
+            }
+            function U(e, t, n, r) {
+                var i = e.children[0],
+                    o =
+                        "boolean" == typeof e.checked &&
+                        i &&
+                        "paragraph" === i.type,
+                    l = "[" + (e.checked ? "x" : " ") + "] ",
+                    a = n.createTracker(r);
+                o && a.move(l);
+                var u = N.p.listItem(
+                    e,
+                    t,
+                    n,
+                    _objectSpread(_objectSpread({}, r), a.current())
+                );
+                return (
+                    o &&
+                        (u = u.replace(
+                            /^(?:[*+-]|\d+\.)([\r\n]| {1,3})/,
+                            function (e) {
+                                return e + l;
+                            }
+                        )),
+                    u
+                );
+            }
+            function Q() {
+                return [
+                    {
+                        transforms: [m],
+                        enter: {
+                            literalAutolink: s,
+                            literalAutolinkEmail: c,
+                            literalAutolinkHttp: c,
+                            literalAutolinkWww: c,
+                        },
+                        exit: {
+                            literalAutolink: d,
+                            literalAutolinkEmail: p,
+                            literalAutolinkHttp: f,
+                            literalAutolinkWww: h,
+                        },
+                    },
+                    {
+                        enter: {
+                            gfmFootnoteDefinition: y,
+                            gfmFootnoteDefinitionLabelString: x,
+                            gfmFootnoteCall: A,
+                            gfmFootnoteCallString: F,
+                        },
+                        exit: {
+                            gfmFootnoteDefinition: w,
+                            gfmFootnoteDefinitionLabelString: C,
+                            gfmFootnoteCall: S,
+                            gfmFootnoteCallString: D,
+                        },
+                    },
+                    {
+                        canContainEols: ["delete"],
+                        enter: {
+                            strikethrough: M,
+                        },
+                        exit: {
+                            strikethrough: I,
+                        },
+                    },
+                    {
+                        enter: {
+                            table: P,
+                            tableData: H,
+                            tableHeader: H,
+                            tableRow: B,
+                        },
+                        exit: {
+                            codeText: $,
+                            table: _,
+                            tableData: q,
+                            tableHeader: q,
+                            tableRow: q,
+                        },
+                    },
+                    {
+                        exit: {
+                            taskListCheckValueChecked: V,
+                            taskListCheckValueUnchecked: V,
+                            paragraph: G,
+                        },
+                    },
+                ];
+            }
+            function J(e) {
+                return {
+                    extensions: [
+                        {
+                            unsafe: [
+                                {
+                                    character: "@",
+                                    before: "[+\\-.\\w]",
+                                    after: "[\\-.\\w]",
+                                    inConstruct: a,
+                                    notInConstruct: u,
+                                },
+                                {
+                                    character: ".",
+                                    before: "[Ww]",
+                                    after: "[\\-.\\w]",
+                                    inConstruct: a,
+                                    notInConstruct: u,
+                                },
+                                {
+                                    character: ":",
+                                    before: "[ps]",
+                                    after: "\\/",
+                                    inConstruct: a,
+                                    notInConstruct: u,
+                                },
+                            ],
+                        },
+                        {
+                            unsafe: [
+                                {
+                                    character: "[",
+                                    inConstruct: [
+                                        "phrasing",
+                                        "label",
+                                        "reference",
+                                    ],
+                                },
+                            ],
+                            handlers: {
+                                footnoteDefinition: O,
+                                footnoteReference: L,
+                            },
+                        },
+                        {
+                            unsafe: [
+                                {
+                                    character: "~",
+                                    inConstruct: "phrasing",
+                                    notInConstruct: E,
+                                },
+                            ],
+                            handlers: {
+                                delete: R,
+                            },
+                        },
+                        (function (e) {
+                            var t = e || {},
+                                n = t.tableCellPadding,
+                                r = t.tablePipeAlign,
+                                i = t.stringLength,
+                                o = n ? " " : "|";
+                            return {
+                                unsafe: [
+                                    {
+                                        character: "\r",
+                                        inConstruct: "tableCell",
+                                    },
+                                    {
+                                        character: "\n",
+                                        inConstruct: "tableCell",
+                                    },
+                                    {
+                                        atBreak: !0,
+                                        character: "|",
+                                        after: "[	 :-]",
+                                    },
+                                    {
+                                        character: "|",
+                                        inConstruct: "tableCell",
+                                    },
+                                    {
+                                        atBreak: !0,
+                                        character: ":",
+                                        after: "-",
+                                    },
+                                    {
+                                        atBreak: !0,
+                                        character: "-",
+                                        after: "[:|-]",
+                                    },
+                                ],
+                                handlers: {
+                                    inlineCode: function inlineCode(e, t, n) {
+                                        var r = N.p.inlineCode(e, t, n);
+                                        return (
+                                            n.stack.includes("tableCell") &&
+                                                (r = r.replace(/\|/g, "\\$&")),
+                                            r
+                                        );
+                                    },
+                                    table: function table(e, t, n, r) {
+                                        return a(
+                                            (function (e, t, n) {
+                                                var r = e.children,
+                                                    i = -1,
+                                                    o = [],
+                                                    l = t.enter("table");
+                                                for (; ++i < r.length; )
+                                                    o[i] = u(r[i], t, n);
+                                                return (l(), o);
+                                            })(e, n, r),
+                                            e.align
+                                        );
+                                    },
+                                    tableCell: l,
+                                    tableRow: function tableRow(e, t, n, r) {
+                                        var i = a([u(e, n, r)]);
+                                        return i.slice(0, i.indexOf("\n"));
+                                    },
+                                },
+                            };
+                            function l(e, t, n, r) {
+                                var i = n.enter("tableCell"),
+                                    l = n.enter("phrasing"),
+                                    a = n.containerPhrasing(
+                                        e,
+                                        _objectSpread(
+                                            _objectSpread({}, r),
+                                            {},
+                                            {
+                                                before: o,
+                                                after: o,
+                                            }
+                                        )
+                                    );
+                                return (l(), i(), a);
+                            }
+                            function a(e, t) {
+                                return (function (e, t) {
+                                    var n = t || {},
+                                        r = (n.align || []).concat(),
+                                        i = n.stringLength || j,
+                                        o = [],
+                                        l = [],
+                                        a = [],
+                                        u = [],
+                                        s = 0,
+                                        c = -1;
+                                    for (; ++c < e.length; ) {
+                                        var _t5 = [],
+                                            _r4 = [],
+                                            _o2 = -1;
+                                        for (
+                                            e[c].length > s &&
+                                            (s = e[c].length);
+                                            ++_o2 < e[c].length;
+
+                                        ) {
+                                            var f;
+                                            var _l2 =
+                                                null == (f = e[c][_o2])
+                                                    ? ""
+                                                    : String(f);
+                                            if (!1 !== n.alignDelimiters) {
+                                                var _e9 = i(_l2);
+                                                ((_r4[_o2] = _e9),
+                                                    (void 0 === u[_o2] ||
+                                                        _e9 > u[_o2]) &&
+                                                        (u[_o2] = _e9));
+                                            }
+                                            _t5.push(_l2);
+                                        }
+                                        ((l[c] = _t5), (a[c] = _r4));
+                                    }
+                                    var h = -1;
+                                    if ("object" == _typeof(r) && "length" in r)
+                                        for (; ++h < s; ) o[h] = z(r[h]);
+                                    else {
+                                        var _e0 = z(r);
+                                        for (; ++h < s; ) o[h] = _e0;
+                                    }
+                                    h = -1;
+                                    var p = [],
+                                        d = [];
+                                    for (; ++h < s; ) {
+                                        var _e1 = o[h],
+                                            _t6 = "",
+                                            _r5 = "";
+                                        99 === _e1
+                                            ? ((_t6 = ":"), (_r5 = ":"))
+                                            : 108 === _e1
+                                              ? (_t6 = ":")
+                                              : 114 === _e1 && (_r5 = ":");
+                                        var _i7 =
+                                                !1 === n.alignDelimiters
+                                                    ? 1
+                                                    : Math.max(
+                                                          1,
+                                                          u[h] -
+                                                              _t6.length -
+                                                              _r5.length
+                                                      ),
+                                            _l3 = _t6 + "-".repeat(_i7) + _r5;
+                                        (!1 !== n.alignDelimiters &&
+                                            ((_i7 =
+                                                _t6.length + _i7 + _r5.length) >
+                                                u[h] && (u[h] = _i7),
+                                            (d[h] = _i7)),
+                                            (p[h] = _l3));
+                                    }
+                                    (l.splice(1, 0, p),
+                                        a.splice(1, 0, d),
+                                        (c = -1));
+                                    var m = [];
+                                    for (; ++c < l.length; ) {
+                                        var _e10 = l[c],
+                                            _t7 = a[c];
+                                        h = -1;
+                                        var _r6 = [];
+                                        for (; ++h < s; ) {
+                                            var _i8 = _e10[h] || "",
+                                                _l4 = "",
+                                                _a2 = "";
+                                            if (!1 !== n.alignDelimiters) {
+                                                var _e11 = u[h] - (_t7[h] || 0),
+                                                    _n7 = o[h];
+                                                114 === _n7
+                                                    ? (_l4 = " ".repeat(_e11))
+                                                    : 99 === _n7
+                                                      ? _e11 % 2
+                                                          ? ((_l4 = " ".repeat(
+                                                                _e11 / 2 + 0.5
+                                                            )),
+                                                            (_a2 = " ".repeat(
+                                                                _e11 / 2 - 0.5
+                                                            )))
+                                                          : (_a2 = _l4 =
+                                                                " ".repeat(
+                                                                    _e11 / 2
+                                                                ))
+                                                      : (_a2 = " ".repeat(
+                                                            _e11
+                                                        ));
+                                            }
+                                            (!1 === n.delimiterStart ||
+                                                h ||
+                                                _r6.push("|"),
+                                                !1 !== n.padding &&
+                                                    (!1 !== n.alignDelimiters ||
+                                                        "" !== _i8) &&
+                                                    (!1 !== n.delimiterStart ||
+                                                        h) &&
+                                                    _r6.push(" "),
+                                                !1 !== n.alignDelimiters &&
+                                                    _r6.push(_l4),
+                                                _r6.push(_i8),
+                                                !1 !== n.alignDelimiters &&
+                                                    _r6.push(_a2),
+                                                !1 !== n.padding &&
+                                                    _r6.push(" "),
+                                                (!1 !== n.delimiterEnd ||
+                                                    h !== s - 1) &&
+                                                    _r6.push("|"));
+                                        }
+                                        m.push(
+                                            !1 === n.delimiterEnd
+                                                ? _r6
+                                                      .join("")
+                                                      .replace(/ +$/, "")
+                                                : _r6.join("")
+                                        );
+                                    }
+                                    return m.join("\n");
+                                })(e, {
+                                    align: t,
+                                    alignDelimiters: r,
+                                    padding: n,
+                                    stringLength: i,
+                                });
+                            }
+                            function u(e, t, n) {
+                                var r = e.children,
+                                    i = -1,
+                                    o = [],
+                                    a = t.enter("tableRow");
+                                for (; ++i < r.length; )
+                                    o[i] = l(r[i], e, t, n);
+                                return (a(), o);
+                            }
+                        })(e),
+                        {
+                            unsafe: [
+                                {
+                                    atBreak: !0,
+                                    character: "-",
+                                    after: "[:|-]",
+                                },
+                            ],
+                            handlers: {
+                                listItem: U,
+                            },
+                        },
+                    ],
+                };
+            }
+        },
+        295053: function _(e, t, n) {
+            function r(e, t, n) {
+                return ">" + (n ? "" : " ") + e;
+            }
+            n.d(t, {
+                p: function p() {
+                    return D;
+                },
+            });
+            var i = n(669384);
+            function o(e, t, n, r) {
+                var o = -1;
+                for (; ++o < n.unsafe.length; )
+                    if (
+                        "\n" === n.unsafe[o].character &&
+                        (0, i.q)(n.stack, n.unsafe[o])
+                    )
+                        return /[ \t]/.test(r.before) ? "" : " ";
+                return "\\\n";
+            }
+            var l = n(735857);
+            function a(e, t, n) {
+                return (n ? "" : "    ") + e;
+            }
+            function u(e) {
+                var t = e.options.quote || '"';
+                if ('"' !== t && "'" !== t)
+                    throw Error(
+                        "Cannot serialize title with `" +
+                            t +
+                            "` for `options.quote`, expected `\"`, or `'`"
+                    );
+                return t;
+            }
+            var s = n(23503),
+                c = n(910691);
+            function f(e, t, n) {
+                var r = (0, c.S)(e),
+                    i = (0, c.S)(t);
+                return void 0 === r
+                    ? void 0 === i
+                        ? "_" === n
+                            ? {
+                                  inside: !0,
+                                  outside: !0,
+                              }
+                            : {
+                                  inside: !1,
+                                  outside: !1,
+                              }
+                        : 1 === i
+                          ? {
+                                inside: !0,
+                                outside: !0,
+                            }
+                          : {
+                                inside: !1,
+                                outside: !0,
+                            }
+                    : 1 === r
+                      ? void 0 === i
+                          ? {
+                                inside: !1,
+                                outside: !1,
+                            }
+                          : 1 === i
+                            ? {
+                                  inside: !0,
+                                  outside: !0,
+                              }
+                            : {
+                                  inside: !1,
+                                  outside: !1,
+                              }
+                      : void 0 === i
+                        ? {
+                              inside: !1,
+                              outside: !1,
+                          }
+                        : 1 === i
+                          ? {
+                                inside: !0,
+                                outside: !1,
+                            }
+                          : {
+                                inside: !1,
+                                outside: !1,
+                            };
+            }
+            function h(e, t, n, r) {
+                var i = (function (e) {
+                        var t = e.options.emphasis || "*";
+                        if ("*" !== t && "_" !== t)
+                            throw Error(
+                                "Cannot serialize emphasis with `" +
+                                    t +
+                                    "` for `options.emphasis`, expected `*`, or `_`"
+                            );
+                        return t;
+                    })(n),
+                    o = n.enter("emphasis"),
+                    l = n.createTracker(r),
+                    a = l.move(i),
+                    u = l.move(
+                        n.containerPhrasing(
+                            e,
+                            _objectSpread(
+                                {
+                                    after: i,
+                                    before: a,
+                                },
+                                l.current()
+                            )
+                        )
+                    ),
+                    c = u.charCodeAt(0),
+                    h = f(r.before.charCodeAt(r.before.length - 1), c, i);
+                h.inside && (u = (0, s.T)(c) + u.slice(1));
+                var p = u.charCodeAt(u.length - 1),
+                    d = f(r.after.charCodeAt(0), p, i);
+                d.inside && (u = u.slice(0, -1) + (0, s.T)(p));
+                var m = l.move(i);
+                return (
+                    o(),
+                    (n.attentionEncodeSurroundingInfo = {
+                        after: d.outside,
+                        before: h.outside,
+                    }),
+                    a + u + m
+                );
+            }
+            h.peek = function (e, t, n) {
+                return n.options.emphasis || "*";
+            };
+            var p = n(805594);
+            function d(e) {
+                return e.value || "";
+            }
+            function m(e, t, n, r) {
+                var i = u(n),
+                    o = '"' === i ? "Quote" : "Apostrophe",
+                    l = n.enter("image"),
+                    a = n.enter("label"),
+                    s = n.createTracker(r),
+                    c = s.move("![");
+                return (
+                    (c += s.move(
+                        n.safe(
+                            e.alt,
+                            _objectSpread(
+                                {
+                                    before: c,
+                                    after: "]",
+                                },
+                                s.current()
+                            )
+                        )
+                    )),
+                    (c += s.move("](")),
+                    a(),
+                    (!e.url && e.title) || /[\0- \u007F]/.test(e.url)
+                        ? ((a = n.enter("destinationLiteral")),
+                          (c += s.move("<")),
+                          (c += s.move(
+                              n.safe(
+                                  e.url,
+                                  _objectSpread(
+                                      {
+                                          before: c,
+                                          after: ">",
+                                      },
+                                      s.current()
+                                  )
+                              )
+                          )),
+                          (c += s.move(">")))
+                        : ((a = n.enter("destinationRaw")),
+                          (c += s.move(
+                              n.safe(
+                                  e.url,
+                                  _objectSpread(
+                                      {
+                                          before: c,
+                                          after: e.title ? " " : ")",
+                                      },
+                                      s.current()
+                                  )
+                              )
+                          ))),
+                    a(),
+                    e.title &&
+                        ((a = n.enter("title".concat(o))),
+                        (c += s.move(" " + i)),
+                        (c += s.move(
+                            n.safe(
+                                e.title,
+                                _objectSpread(
+                                    {
+                                        before: c,
+                                        after: i,
+                                    },
+                                    s.current()
+                                )
+                            )
+                        )),
+                        (c += s.move(i)),
+                        a()),
+                    (c += s.move(")")),
+                    l(),
+                    c
+                );
+            }
+            function g(e, t, n, r) {
+                var i = e.referenceType,
+                    o = n.enter("imageReference"),
+                    l = n.enter("label"),
+                    a = n.createTracker(r),
+                    u = a.move("!["),
+                    s = n.safe(
+                        e.alt,
+                        _objectSpread(
+                            {
+                                before: u,
+                                after: "]",
+                            },
+                            a.current()
+                        )
+                    );
+                ((u += a.move(s + "][")), l());
+                var c = n.stack;
+                ((n.stack = []), (l = n.enter("reference")));
+                var f = n.safe(
+                    n.associationId(e),
+                    _objectSpread(
+                        {
+                            before: u,
+                            after: "]",
+                        },
+                        a.current()
+                    )
+                );
+                return (
+                    l(),
+                    (n.stack = c),
+                    o(),
+                    "full" !== i && s && s === f
+                        ? "shortcut" === i
+                            ? (u = u.slice(0, -1))
+                            : (u += a.move("]"))
+                        : (u += a.move(f + "]")),
+                    u
+                );
+            }
+            function k(e, t, n) {
+                var r = e.value || "",
+                    i = "`",
+                    o = -1;
+                for (; RegExp("(^|[^`])" + i + "([^`]|$)").test(r); ) i += "`";
+                for (
+                    /[^ \r\n]/.test(r) &&
+                    ((/^[ \r\n]/.test(r) && /[ \r\n]$/.test(r)) ||
+                        /^`|`$/.test(r)) &&
+                    (r = " " + r + " ");
+                    ++o < n.unsafe.length;
+
+                ) {
+                    var _e12 = void 0,
+                        _t8 = n.unsafe[o],
+                        _i9 = n.compilePattern(_t8);
+                    if (_t8.atBreak)
+                        for (; (_e12 = _i9.exec(r)); ) {
+                            var _t9 = _e12.index;
+                            (10 === r.charCodeAt(_t9) &&
+                                13 === r.charCodeAt(_t9 - 1) &&
+                                _t9--,
+                                (r =
+                                    r.slice(0, _t9) +
+                                    " " +
+                                    r.slice(_e12.index + 1)));
+                        }
+                }
+                return i + r + i;
+            }
+            ((d.peek = function () {
+                return "<";
+            }),
+                (m.peek = function () {
+                    return "!";
+                }),
+                (g.peek = function () {
+                    return "!";
+                }),
+                (k.peek = function () {
+                    return "`";
+                }));
+            var b = n(872534);
+            function v(e, t) {
+                var n = (0, b.d)(e);
+                return !!(
+                    !t.options.resourceLink &&
+                    e.url &&
+                    !e.title &&
+                    e.children &&
+                    1 === e.children.length &&
+                    "text" === e.children[0].type &&
+                    (n === e.url || "mailto:" + n === e.url) &&
+                    /^[a-z][a-z+.-]+:/i.test(e.url) &&
+                    !/[\0- <>\u007F]/.test(e.url)
+                );
+            }
+            function y(e, t, n, r) {
+                var i,
+                    o,
+                    l = u(n),
+                    a = '"' === l ? "Quote" : "Apostrophe",
+                    s = n.createTracker(r);
+                if (v(e, n)) {
+                    var _t0 = n.stack;
+                    ((n.stack = []), (i = n.enter("autolink")));
+                    var _r7 = s.move("<");
+                    return (
+                        (_r7 += s.move(
+                            n.containerPhrasing(
+                                e,
+                                _objectSpread(
+                                    {
+                                        before: _r7,
+                                        after: ">",
+                                    },
+                                    s.current()
+                                )
+                            )
+                        )),
+                        (_r7 += s.move(">")),
+                        i(),
+                        (n.stack = _t0),
+                        _r7
+                    );
+                }
+                ((i = n.enter("link")), (o = n.enter("label")));
+                var c = s.move("[");
+                return (
+                    (c += s.move(
+                        n.containerPhrasing(
+                            e,
+                            _objectSpread(
+                                {
+                                    before: c,
+                                    after: "](",
+                                },
+                                s.current()
+                            )
+                        )
+                    )),
+                    (c += s.move("](")),
+                    o(),
+                    (!e.url && e.title) || /[\0- \u007F]/.test(e.url)
+                        ? ((o = n.enter("destinationLiteral")),
+                          (c += s.move("<")),
+                          (c += s.move(
+                              n.safe(
+                                  e.url,
+                                  _objectSpread(
+                                      {
+                                          before: c,
+                                          after: ">",
+                                      },
+                                      s.current()
+                                  )
+                              )
+                          )),
+                          (c += s.move(">")))
+                        : ((o = n.enter("destinationRaw")),
+                          (c += s.move(
+                              n.safe(
+                                  e.url,
+                                  _objectSpread(
+                                      {
+                                          before: c,
+                                          after: e.title ? " " : ")",
+                                      },
+                                      s.current()
+                                  )
+                              )
+                          ))),
+                    o(),
+                    e.title &&
+                        ((o = n.enter("title".concat(a))),
+                        (c += s.move(" " + l)),
+                        (c += s.move(
+                            n.safe(
+                                e.title,
+                                _objectSpread(
+                                    {
+                                        before: c,
+                                        after: l,
+                                    },
+                                    s.current()
+                                )
+                            )
+                        )),
+                        (c += s.move(l)),
+                        o()),
+                    (c += s.move(")")),
+                    i(),
+                    c
+                );
+            }
+            function x(e, t, n, r) {
+                var i = e.referenceType,
+                    o = n.enter("linkReference"),
+                    l = n.enter("label"),
+                    a = n.createTracker(r),
+                    u = a.move("["),
+                    s = n.containerPhrasing(
+                        e,
+                        _objectSpread(
+                            {
+                                before: u,
+                                after: "]",
+                            },
+                            a.current()
+                        )
+                    );
+                ((u += a.move(s + "][")), l());
+                var c = n.stack;
+                ((n.stack = []), (l = n.enter("reference")));
+                var f = n.safe(
+                    n.associationId(e),
+                    _objectSpread(
+                        {
+                            before: u,
+                            after: "]",
+                        },
+                        a.current()
+                    )
+                );
+                return (
+                    l(),
+                    (n.stack = c),
+                    o(),
+                    "full" !== i && s && s === f
+                        ? "shortcut" === i
+                            ? (u = u.slice(0, -1))
+                            : (u += a.move("]"))
+                        : (u += a.move(f + "]")),
+                    u
+                );
+            }
+            function C(e) {
+                var t = e.options.bullet || "*";
+                if ("*" !== t && "+" !== t && "-" !== t)
+                    throw Error(
+                        "Cannot serialize items with `" +
+                            t +
+                            "` for `options.bullet`, expected `*`, `+`, or `-`"
+                    );
+                return t;
+            }
+            function w(e) {
+                var t = e.options.rule || "*";
+                if ("*" !== t && "-" !== t && "_" !== t)
+                    throw Error(
+                        "Cannot serialize rules with `" +
+                            t +
+                            "` for `options.rule`, expected `*`, `-`, or `_`"
+                    );
+                return t;
+            }
+            ((y.peek = function (e, t, n) {
+                return v(e, n) ? "<" : "[";
+            }),
+                (x.peek = function () {
+                    return "[";
+                }));
+            var A = (0, n(169143).C)([
+                "break",
+                "delete",
+                "emphasis",
+                "footnote",
+                "footnoteReference",
+                "image",
+                "imageReference",
+                "inlineCode",
+                "inlineMath",
+                "link",
+                "linkReference",
+                "mdxJsxTextElement",
+                "mdxTextExpression",
+                "strong",
+                "text",
+                "textDirective",
+            ]);
+            function F(e, t, n, r) {
+                var i = (function (e) {
+                        var t = e.options.strong || "*";
+                        if ("*" !== t && "_" !== t)
+                            throw Error(
+                                "Cannot serialize strong with `" +
+                                    t +
+                                    "` for `options.strong`, expected `*`, or `_`"
+                            );
+                        return t;
+                    })(n),
+                    o = n.enter("strong"),
+                    l = n.createTracker(r),
+                    a = l.move(i + i),
+                    u = l.move(
+                        n.containerPhrasing(
+                            e,
+                            _objectSpread(
+                                {
+                                    after: i,
+                                    before: a,
+                                },
+                                l.current()
+                            )
+                        )
+                    ),
+                    c = u.charCodeAt(0),
+                    h = f(r.before.charCodeAt(r.before.length - 1), c, i);
+                h.inside && (u = (0, s.T)(c) + u.slice(1));
+                var p = u.charCodeAt(u.length - 1),
+                    d = f(r.after.charCodeAt(0), p, i);
+                d.inside && (u = u.slice(0, -1) + (0, s.T)(p));
+                var m = l.move(i + i);
+                return (
+                    o(),
+                    (n.attentionEncodeSurroundingInfo = {
+                        after: d.outside,
+                        before: h.outside,
+                    }),
+                    a + u + m
+                );
+            }
+            F.peek = function (e, t, n) {
+                return n.options.strong || "*";
+            };
+            var D = {
+                blockquote: function blockquote(e, t, n, i) {
+                    var o = n.enter("blockquote"),
+                        l = n.createTracker(i);
+                    (l.move("> "), l.shift(2));
+                    var a = n.indentLines(n.containerFlow(e, l.current()), r);
+                    return (o(), a);
+                },
+                break: o,
+                code: function code(e, t, n, r) {
+                    var i = (function (e) {
+                            var t = e.options.fence || "`";
+                            if ("`" !== t && "~" !== t)
+                                throw Error(
+                                    "Cannot serialize code with `" +
+                                        t +
+                                        "` for `options.fence`, expected `` ` `` or `~`"
+                                );
+                            return t;
+                        })(n),
+                        o = e.value || "",
+                        u = "`" === i ? "GraveAccent" : "Tilde";
+                    if ((0, l.m)(e, n)) {
+                        var _e13 = n.enter("codeIndented"),
+                            _t1 = n.indentLines(o, a);
+                        return (_e13(), _t1);
+                    }
+                    var s = n.createTracker(r),
+                        c = i.repeat(
+                            Math.max(
+                                (function (e, t) {
+                                    var n = String(e),
+                                        r = n.indexOf(t),
+                                        i = r,
+                                        o = 0,
+                                        l = 0;
+                                    if ("string" != typeof t)
+                                        throw TypeError("Expected substring");
+                                    for (; -1 !== r; )
+                                        (r === i ? ++o > l && (l = o) : (o = 1),
+                                            (i = r + t.length),
+                                            (r = n.indexOf(t, i)));
+                                    return l;
+                                })(o, i) + 1,
+                                3
+                            )
+                        ),
+                        f = n.enter("codeFenced"),
+                        h = s.move(c);
+                    if (e.lang) {
+                        var _t10 = n.enter("codeFencedLang".concat(u));
+                        ((h += s.move(
+                            n.safe(
+                                e.lang,
+                                _objectSpread(
+                                    {
+                                        before: h,
+                                        after: " ",
+                                        encode: ["`"],
+                                    },
+                                    s.current()
+                                )
+                            )
+                        )),
+                            _t10());
+                    }
+                    if (e.lang && e.meta) {
+                        var _t11 = n.enter("codeFencedMeta".concat(u));
+                        ((h += s.move(" ")),
+                            (h += s.move(
+                                n.safe(
+                                    e.meta,
+                                    _objectSpread(
+                                        {
+                                            before: h,
+                                            after: "\n",
+                                            encode: ["`"],
+                                        },
+                                        s.current()
+                                    )
+                                )
+                            )),
+                            _t11());
+                    }
+                    return (
+                        (h += s.move("\n")),
+                        o && (h += s.move(o + "\n")),
+                        (h += s.move(c)),
+                        f(),
+                        h
+                    );
+                },
+                definition: function definition(e, t, n, r) {
+                    var i = u(n),
+                        o = '"' === i ? "Quote" : "Apostrophe",
+                        l = n.enter("definition"),
+                        a = n.enter("label"),
+                        s = n.createTracker(r),
+                        c = s.move("[");
+                    return (
+                        (c += s.move(
+                            n.safe(
+                                n.associationId(e),
+                                _objectSpread(
+                                    {
+                                        before: c,
+                                        after: "]",
+                                    },
+                                    s.current()
+                                )
+                            )
+                        )),
+                        (c += s.move("]: ")),
+                        a(),
+                        !e.url || /[\0- \u007F]/.test(e.url)
+                            ? ((a = n.enter("destinationLiteral")),
+                              (c += s.move("<")),
+                              (c += s.move(
+                                  n.safe(
+                                      e.url,
+                                      _objectSpread(
+                                          {
+                                              before: c,
+                                              after: ">",
+                                          },
+                                          s.current()
+                                      )
+                                  )
+                              )),
+                              (c += s.move(">")))
+                            : ((a = n.enter("destinationRaw")),
+                              (c += s.move(
+                                  n.safe(
+                                      e.url,
+                                      _objectSpread(
+                                          {
+                                              before: c,
+                                              after: e.title ? " " : "\n",
+                                          },
+                                          s.current()
+                                      )
+                                  )
+                              ))),
+                        a(),
+                        e.title &&
+                            ((a = n.enter("title".concat(o))),
+                            (c += s.move(" " + i)),
+                            (c += s.move(
+                                n.safe(
+                                    e.title,
+                                    _objectSpread(
+                                        {
+                                            before: c,
+                                            after: i,
+                                        },
+                                        s.current()
+                                    )
+                                )
+                            )),
+                            (c += s.move(i)),
+                            a()),
+                        l(),
+                        c
+                    );
+                },
+                emphasis: h,
+                hardBreak: o,
+                heading: function heading(e, t, n, r) {
+                    var i = Math.max(Math.min(6, e.depth || 1), 1),
+                        o = n.createTracker(r);
+                    if ((0, p.f)(e, n)) {
+                        var _t12 = n.enter("headingSetext"),
+                            _r8 = n.enter("phrasing"),
+                            _l5 = n.containerPhrasing(
+                                e,
+                                _objectSpread(
+                                    _objectSpread({}, o.current()),
+                                    {},
+                                    {
+                                        before: "\n",
+                                        after: "\n",
+                                    }
+                                )
+                            );
+                        return (
+                            _r8(),
+                            _t12(),
+                            _l5 +
+                                "\n" +
+                                (1 === i ? "=" : "-").repeat(
+                                    _l5.length -
+                                        (Math.max(
+                                            _l5.lastIndexOf("\r"),
+                                            _l5.lastIndexOf("\n")
+                                        ) +
+                                            1)
+                                )
+                        );
+                    }
+                    var l = "#".repeat(i),
+                        a = n.enter("headingAtx"),
+                        u = n.enter("phrasing");
+                    o.move(l + " ");
+                    var c = n.containerPhrasing(
+                        e,
+                        _objectSpread(
+                            {
+                                before: "# ",
+                                after: "\n",
+                            },
+                            o.current()
+                        )
+                    );
+                    return (
+                        /^[\t ]/.test(c) &&
+                            (c = (0, s.T)(c.charCodeAt(0)) + c.slice(1)),
+                        (c = c ? l + " " + c : l),
+                        n.options.closeAtx && (c += " " + l),
+                        u(),
+                        a(),
+                        c
+                    );
+                },
+                html: d,
+                image: m,
+                imageReference: g,
+                inlineCode: k,
+                link: y,
+                linkReference: x,
+                list: function list(e, t, n, r) {
+                    var i = n.enter("list"),
+                        o = n.bulletCurrent,
+                        l = e.ordered
+                            ? (function (e) {
+                                  var t = e.options.bulletOrdered || ".";
+                                  if ("." !== t && ")" !== t)
+                                      throw Error(
+                                          "Cannot serialize items with `" +
+                                              t +
+                                              "` for `options.bulletOrdered`, expected `.` or `)`"
+                                      );
+                                  return t;
+                              })(n)
+                            : C(n),
+                        a = e.ordered
+                            ? "." === l
+                                ? ")"
+                                : "."
+                            : (function (e) {
+                                  var t = C(e),
+                                      n = e.options.bulletOther;
+                                  if (!n) return "*" === t ? "-" : "*";
+                                  if ("*" !== n && "+" !== n && "-" !== n)
+                                      throw Error(
+                                          "Cannot serialize items with `" +
+                                              n +
+                                              "` for `options.bulletOther`, expected `*`, `+`, or `-`"
+                                      );
+                                  if (n === t)
+                                      throw Error(
+                                          "Expected `bullet` (`" +
+                                              t +
+                                              "`) and `bulletOther` (`" +
+                                              n +
+                                              "`) to be different"
+                                      );
+                                  return n;
+                              })(n),
+                        u = !!t && !!n.bulletLastUsed && l === n.bulletLastUsed;
+                    if (!e.ordered) {
+                        var _t13 = e.children ? e.children[0] : void 0;
+                        if (
+                            (("*" !== l && "-" !== l) ||
+                                !_t13 ||
+                                (_t13.children && _t13.children[0]) ||
+                                "list" !== n.stack[n.stack.length - 1] ||
+                                "listItem" !== n.stack[n.stack.length - 2] ||
+                                "list" !== n.stack[n.stack.length - 3] ||
+                                "listItem" !== n.stack[n.stack.length - 4] ||
+                                0 !== n.indexStack[n.indexStack.length - 1] ||
+                                0 !== n.indexStack[n.indexStack.length - 2] ||
+                                0 !== n.indexStack[n.indexStack.length - 3] ||
+                                (u = !0),
+                            w(n) === l && _t13)
+                        ) {
+                            var _t14 = -1;
+                            for (; ++_t14 < e.children.length; ) {
+                                var _n8 = e.children[_t14];
+                                if (
+                                    _n8 &&
+                                    "listItem" === _n8.type &&
+                                    _n8.children &&
+                                    _n8.children[0] &&
+                                    "thematicBreak" === _n8.children[0].type
+                                ) {
+                                    u = !0;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    (u && (l = a), (n.bulletCurrent = l));
+                    var s = n.containerFlow(e, r);
+                    return (
+                        (n.bulletLastUsed = l),
+                        (n.bulletCurrent = o),
+                        i(),
+                        s
+                    );
+                },
+                listItem: function listItem(e, t, n, r) {
+                    var i = (function (e) {
+                            var t = e.options.listItemIndent || "one";
+                            if ("tab" !== t && "one" !== t && "mixed" !== t)
+                                throw Error(
+                                    "Cannot serialize items with `" +
+                                        t +
+                                        "` for `options.listItemIndent`, expected `tab`, `one`, or `mixed`"
+                                );
+                            return t;
+                        })(n),
+                        o = n.bulletCurrent || C(n);
+                    t &&
+                        "list" === t.type &&
+                        t.ordered &&
+                        (o =
+                            ("number" == typeof t.start && t.start > -1
+                                ? t.start
+                                : 1) +
+                            (!1 === n.options.incrementListMarker
+                                ? 0
+                                : t.children.indexOf(e)) +
+                            o);
+                    var l = o.length + 1;
+                    ("tab" === i ||
+                        ("mixed" === i &&
+                            ((t && "list" === t.type && t.spread) ||
+                                e.spread))) &&
+                        (l = 4 * Math.ceil(l / 4));
+                    var a = n.createTracker(r);
+                    (a.move(o + " ".repeat(l - o.length)), a.shift(l));
+                    var u = n.enter("listItem"),
+                        s = n.indentLines(
+                            n.containerFlow(e, a.current()),
+                            function (e, t, n) {
+                                return t
+                                    ? (n ? "" : " ".repeat(l)) + e
+                                    : (n ? o : o + " ".repeat(l - o.length)) +
+                                          e;
+                            }
+                        );
+                    return (u(), s);
+                },
+                paragraph: function paragraph(e, t, n, r) {
+                    var i = n.enter("paragraph"),
+                        o = n.enter("phrasing"),
+                        l = n.containerPhrasing(e, r);
+                    return (o(), i(), l);
+                },
+                root: function root(e, t, n, r) {
+                    return (
+                        e.children.some(function (e) {
+                            return A(e);
+                        })
+                            ? n.containerPhrasing
+                            : n.containerFlow
+                    ).call(n, e, r);
+                },
+                strong: F,
+                text: function text(e, t, n, r) {
+                    return n.safe(e.value, r);
+                },
+                thematicBreak: function thematicBreak(e, t, n) {
+                    var r = (w(n) + (n.options.ruleSpaces ? " " : "")).repeat(
+                        (function (e) {
+                            var t = e.options.ruleRepetition || 3;
+                            if (t < 3)
+                                throw Error(
+                                    "Cannot serialize rules with repetition `" +
+                                        t +
+                                        "` for `options.ruleRepetition`, expected `3` or more"
+                                );
+                            return t;
+                        })(n)
+                    );
+                    return n.options.ruleSpaces ? r.slice(0, -1) : r;
+                },
+            };
+        },
+        23503: function _(e, t, n) {
+            function r(e) {
+                return "&#x" + e.toString(16).toUpperCase() + ";";
+            }
+            n.d(t, {
+                T: function T() {
+                    return r;
+                },
+            });
+        },
+        735857: function _(e, t, n) {
+            function r(e, t) {
+                return !!(
+                    !1 === t.options.fences &&
+                    e.value &&
+                    !e.lang &&
+                    /[^ \r\n]/.test(e.value) &&
+                    !/^[\t ]*(?:[\r\n]|$)|(?:^|[\r\n])[\t ]*$/.test(e.value)
+                );
+            }
+            n.d(t, {
+                m: function m() {
+                    return r;
+                },
+            });
+        },
+        805594: function _(e, t, n) {
+            var r = n(147970),
+                i = n(872534);
+            function o(e, t) {
+                var n = !1;
+                return (
+                    (0, r.YR)(e, function (e) {
+                        if (
+                            ("value" in e && /\r?\n|\r/.test(e.value)) ||
+                            "break" === e.type
+                        )
+                            return ((n = !0), !1);
+                    }),
+                    !!(
+                        (!e.depth || e.depth < 3) &&
+                        (0, i.d)(e) &&
+                        (t.options.setext || n)
+                    )
+                );
+            }
+            n.d(t, {
+                f: function f() {
+                    return o;
+                },
+            });
+        },
+        669384: function _(e, t, n) {
+            function r(e, t) {
+                return i(e, t.inConstruct, !0) && !i(e, t.notInConstruct, !1);
+            }
+            function i(e, t, n) {
+                if (("string" == typeof t && (t = [t]), !t || 0 === t.length))
+                    return n;
+                var r = -1;
+                for (; ++r < t.length; ) if (e.includes(t[r])) return !0;
+                return !1;
+            }
+            n.d(t, {
+                q: function q() {
+                    return r;
+                },
+            });
+        },
+        449072: function _(e, t, n) {
+            n.d(t, {
+                T: function T() {
+                    return q;
+                },
+            });
+            var r = n(805389),
+                i = n(40574);
+            var o = {
+                    tokenize: function tokenize(e, t, n) {
+                        var r = 0;
+                        return function t(o) {
+                            return (87 === o || 119 === o) && r < 3
+                                ? (r++, e.consume(o), t)
+                                : 46 === o && 3 === r
+                                  ? (e.consume(o), i)
+                                  : n(o);
+                        };
+                        function i(e) {
+                            return null === e ? n(e) : t(e);
+                        }
+                    },
+                    partial: !0,
+                },
+                l = {
+                    tokenize: function tokenize(e, t, n) {
+                        var r, o, l;
+                        return a;
+                        function a(t) {
+                            return 46 === t || 95 === t
+                                ? e.check(u, c, s)(t)
+                                : null === t ||
+                                    (0, i.Ee)(t) ||
+                                    (0, i.Ny)(t) ||
+                                    (45 !== t && (0, i.es)(t))
+                                  ? c(t)
+                                  : ((l = !0), e.consume(t), a);
+                        }
+                        function s(t) {
+                            return (
+                                95 === t ? (r = !0) : ((o = r), (r = void 0)),
+                                e.consume(t),
+                                a
+                            );
+                        }
+                        function c(e) {
+                            return o || r || !l ? n(e) : t(e);
+                        }
+                    },
+                    partial: !0,
+                },
+                a = {
+                    tokenize: function tokenize(e, t) {
+                        var n = 0,
+                            r = 0;
+                        return o;
+                        function o(a) {
+                            return 40 === a
+                                ? (n++, e.consume(a), o)
+                                : 41 === a && r < n
+                                  ? l(a)
+                                  : 33 === a ||
+                                      34 === a ||
+                                      38 === a ||
+                                      39 === a ||
+                                      41 === a ||
+                                      42 === a ||
+                                      44 === a ||
+                                      46 === a ||
+                                      58 === a ||
+                                      59 === a ||
+                                      60 === a ||
+                                      63 === a ||
+                                      93 === a ||
+                                      95 === a ||
+                                      126 === a
+                                    ? e.check(u, t, l)(a)
+                                    : null === a || (0, i.Ee)(a) || (0, i.Ny)(a)
+                                      ? t(a)
+                                      : (e.consume(a), o);
+                        }
+                        function l(t) {
+                            return (41 === t && r++, e.consume(t), o);
+                        }
+                    },
+                    partial: !0,
+                },
+                u = {
+                    tokenize: function tokenize(e, t, n) {
+                        return r;
+                        function r(a) {
+                            return 33 === a ||
+                                34 === a ||
+                                39 === a ||
+                                41 === a ||
+                                42 === a ||
+                                44 === a ||
+                                46 === a ||
+                                58 === a ||
+                                59 === a ||
+                                63 === a ||
+                                95 === a ||
+                                126 === a
+                                ? (e.consume(a), r)
+                                : 38 === a
+                                  ? (e.consume(a), l)
+                                  : 93 === a
+                                    ? (e.consume(a), o)
+                                    : 60 === a ||
+                                        null === a ||
+                                        (0, i.Ee)(a) ||
+                                        (0, i.Ny)(a)
+                                      ? t(a)
+                                      : n(a);
+                        }
+                        function o(e) {
+                            return null === e ||
+                                40 === e ||
+                                91 === e ||
+                                (0, i.Ee)(e) ||
+                                (0, i.Ny)(e)
+                                ? t(e)
+                                : r(e);
+                        }
+                        function l(t) {
+                            return (0, i.CW)(t)
+                                ? (function t(o) {
+                                      return 59 === o
+                                          ? (e.consume(o), r)
+                                          : (0, i.CW)(o)
+                                            ? (e.consume(o), t)
+                                            : n(o);
+                                  })(t)
+                                : n(t);
+                        }
+                    },
+                    partial: !0,
+                },
+                s = {
+                    tokenize: function tokenize(e, t, n) {
+                        return function (t) {
+                            return (e.consume(t), r);
+                        };
+                        function r(e) {
+                            return (0, i.lV)(e) ? n(e) : t(e);
+                        }
+                    },
+                    partial: !0,
+                },
+                c = {
+                    name: "wwwAutolink",
+                    tokenize: function tokenize(e, t, n) {
+                        var r = this;
+                        return function (t) {
+                            return (87 !== t && 119 !== t) ||
+                                !m.call(r, r.previous) ||
+                                v(r.events)
+                                ? n(t)
+                                : (e.enter("literalAutolink"),
+                                  e.enter("literalAutolinkWww"),
+                                  e.check(
+                                      o,
+                                      e.attempt(l, e.attempt(a, i), n),
+                                      n
+                                  )(t));
+                        };
+                        function i(n) {
+                            return (
+                                e.exit("literalAutolinkWww"),
+                                e.exit("literalAutolink"),
+                                t(n)
+                            );
+                        }
+                    },
+                    previous: m,
+                },
+                f = {
+                    name: "protocolAutolink",
+                    tokenize: function tokenize(e, t, n) {
+                        var r = this,
+                            o = "",
+                            u = !1;
+                        return function (t) {
+                            return (72 === t || 104 === t) &&
+                                g.call(r, r.previous) &&
+                                !v(r.events)
+                                ? (e.enter("literalAutolink"),
+                                  e.enter("literalAutolinkHttp"),
+                                  (o += String.fromCodePoint(t)),
+                                  e.consume(t),
+                                  s)
+                                : n(t);
+                        };
+                        function s(t) {
+                            if ((0, i.CW)(t) && o.length < 5)
+                                return (
+                                    (o += String.fromCodePoint(t)),
+                                    e.consume(t),
+                                    s
+                                );
+                            if (58 === t) {
+                                var _n9 = o.toLowerCase();
+                                if ("http" === _n9 || "https" === _n9)
+                                    return (e.consume(t), c);
+                            }
+                            return n(t);
+                        }
+                        function c(t) {
+                            return 47 === t
+                                ? (e.consume(t), u)
+                                    ? f
+                                    : ((u = !0), c)
+                                : n(t);
+                        }
+                        function f(t) {
+                            return null === t ||
+                                (0, i.JQ)(t) ||
+                                (0, i.Ee)(t) ||
+                                (0, i.Ny)(t) ||
+                                (0, i.es)(t)
+                                ? n(t)
+                                : e.attempt(l, e.attempt(a, h), n)(t);
+                        }
+                        function h(n) {
+                            return (
+                                e.exit("literalAutolinkHttp"),
+                                e.exit("literalAutolink"),
+                                t(n)
+                            );
+                        }
+                    },
+                    previous: g,
+                },
+                h = {
+                    name: "emailAutolink",
+                    tokenize: function tokenize(e, t, n) {
+                        var r,
+                            o,
+                            l = this;
+                        return function (t) {
+                            return !b(t) ||
+                                !k.call(l, l.previous) ||
+                                v(l.events)
+                                ? n(t)
+                                : (e.enter("literalAutolink"),
+                                  e.enter("literalAutolinkEmail"),
+                                  (function t(r) {
+                                      return b(r)
+                                          ? (e.consume(r), t)
+                                          : 64 === r
+                                            ? (e.consume(r), a)
+                                            : n(r);
+                                  })(t));
+                        };
+                        function a(t) {
+                            return 46 === t
+                                ? e.check(s, c, u)(t)
+                                : 45 === t || 95 === t || (0, i.lV)(t)
+                                  ? ((o = !0), e.consume(t), a)
+                                  : c(t);
+                        }
+                        function u(t) {
+                            return (e.consume(t), (r = !0), a);
+                        }
+                        function c(a) {
+                            return o && r && (0, i.CW)(l.previous)
+                                ? (e.exit("literalAutolinkEmail"),
+                                  e.exit("literalAutolink"),
+                                  t(a))
+                                : n(a);
+                        }
+                    },
+                    previous: k,
+                },
+                p = {},
+                d = 48;
+            for (; d < 123; )
+                ((p[d] = h), 58 == ++d ? (d = 65) : 91 === d && (d = 97));
+            function m(e) {
+                return (
+                    null === e ||
+                    40 === e ||
+                    42 === e ||
+                    95 === e ||
+                    91 === e ||
+                    93 === e ||
+                    126 === e ||
+                    (0, i.Ee)(e)
+                );
+            }
+            function g(e) {
+                return !(0, i.CW)(e);
+            }
+            function k(e) {
+                return !(47 === e || b(e));
+            }
+            function b(e) {
+                return (
+                    43 === e || 45 === e || 46 === e || 95 === e || (0, i.lV)(e)
+                );
+            }
+            function v(e) {
+                var t = e.length,
+                    n = !1;
+                for (; t--; ) {
+                    var _r9 = e[t][1];
+                    if (
+                        ("labelLink" === _r9.type ||
+                            "labelImage" === _r9.type) &&
+                        !_r9._balanced
+                    ) {
+                        n = !0;
+                        break;
+                    }
+                    if (_r9._gfmAutolinkLiteralWalkedInto) {
+                        n = !1;
+                        break;
+                    }
+                }
+                return (
+                    e.length > 0 &&
+                        !n &&
+                        (e[e.length - 1][1]._gfmAutolinkLiteralWalkedInto = !0),
+                    n
+                );
+            }
+            ((p[43] = h),
+                (p[45] = h),
+                (p[46] = h),
+                (p[95] = h),
+                (p[72] = [h, f]),
+                (p[104] = [h, f]),
+                (p[87] = [h, c]),
+                (p[119] = [h, c]));
+            var y = n(209283),
+                x = n(40433),
+                C = n(509638);
+            var w = {
+                tokenize: function tokenize(e, t, n) {
+                    var r = this;
+                    return (0, x.N)(
+                        e,
+                        function (e) {
+                            var i = r.events[r.events.length - 1];
+                            return i &&
+                                "gfmFootnoteDefinitionIndent" === i[1].type &&
+                                4 === i[2].sliceSerialize(i[1], !0).length
+                                ? t(e)
+                                : n(e);
+                        },
+                        "gfmFootnoteDefinitionIndent",
+                        5
+                    );
+                },
+                partial: !0,
+            };
+            function A(e, t, n) {
+                var r,
+                    i = this,
+                    o = i.events.length,
+                    l = i.parser.gfmFootnotes || (i.parser.gfmFootnotes = []);
+                for (; o--; ) {
+                    var _e14 = i.events[o][1];
+                    if ("labelImage" === _e14.type) {
+                        r = _e14;
+                        break;
+                    }
+                    if (
+                        "gfmFootnoteCall" === _e14.type ||
+                        "labelLink" === _e14.type ||
+                        "label" === _e14.type ||
+                        "image" === _e14.type ||
+                        "link" === _e14.type
+                    )
+                        break;
+                }
+                return function (o) {
+                    if (!r || !r._balanced) return n(o);
+                    var a = (0, C.B)(
+                        i.sliceSerialize({
+                            start: r.end,
+                            end: i.now(),
+                        })
+                    );
+                    return 94 === a.codePointAt(0) && l.includes(a.slice(1))
+                        ? (e.enter("gfmFootnoteCallLabelMarker"),
+                          e.consume(o),
+                          e.exit("gfmFootnoteCallLabelMarker"),
+                          t(o))
+                        : n(o);
+                };
+            }
+            function F(e, t) {
+                var n = e.length;
+                for (; n--; )
+                    if ("labelImage" === e[n][1].type && "enter" === e[n][0]) {
+                        e[n][1];
+                        break;
+                    }
+                ((e[n + 1][1].type = "data"),
+                    (e[n + 3][1].type = "gfmFootnoteCallLabelMarker"));
+                var r = {
+                        type: "gfmFootnoteCall",
+                        start: Object.assign({}, e[n + 3][1].start),
+                        end: Object.assign({}, e[e.length - 1][1].end),
+                    },
+                    i = {
+                        type: "gfmFootnoteCallMarker",
+                        start: Object.assign({}, e[n + 3][1].end),
+                        end: Object.assign({}, e[n + 3][1].end),
+                    };
+                (i.end.column++, i.end.offset++, i.end._bufferIndex++);
+                var o = {
+                        type: "gfmFootnoteCallString",
+                        start: Object.assign({}, i.end),
+                        end: Object.assign({}, e[e.length - 1][1].start),
+                    },
+                    l = {
+                        type: "chunkString",
+                        contentType: "string",
+                        start: Object.assign({}, o.start),
+                        end: Object.assign({}, o.end),
+                    },
+                    a = [
+                        e[n + 1],
+                        e[n + 2],
+                        ["enter", r, t],
+                        e[n + 3],
+                        e[n + 4],
+                        ["enter", i, t],
+                        ["exit", i, t],
+                        ["enter", o, t],
+                        ["enter", l, t],
+                        ["exit", l, t],
+                        ["exit", o, t],
+                        e[e.length - 2],
+                        e[e.length - 1],
+                        ["exit", r, t],
+                    ];
+                return (e.splice.apply(e, [n, e.length - n + 1].concat(a)), e);
+            }
+            function D(e, t, n) {
+                var r,
+                    o = this,
+                    l = o.parser.gfmFootnotes || (o.parser.gfmFootnotes = []),
+                    a = 0;
+                return function (t) {
+                    return (
+                        e.enter("gfmFootnoteCall"),
+                        e.enter("gfmFootnoteCallLabelMarker"),
+                        e.consume(t),
+                        e.exit("gfmFootnoteCallLabelMarker"),
+                        u
+                    );
+                };
+                function u(t) {
+                    return 94 !== t
+                        ? n(t)
+                        : (e.enter("gfmFootnoteCallMarker"),
+                          e.consume(t),
+                          e.exit("gfmFootnoteCallMarker"),
+                          e.enter("gfmFootnoteCallString"),
+                          (e.enter("chunkString").contentType = "string"),
+                          s);
+                }
+                function s(u) {
+                    if (
+                        a > 999 ||
+                        (93 === u && !r) ||
+                        null === u ||
+                        91 === u ||
+                        (0, i.Ee)(u)
+                    )
+                        return n(u);
+                    if (93 === u) {
+                        e.exit("chunkString");
+                        var _r0 = e.exit("gfmFootnoteCallString");
+                        return l.includes((0, C.B)(o.sliceSerialize(_r0)))
+                            ? (e.enter("gfmFootnoteCallLabelMarker"),
+                              e.consume(u),
+                              e.exit("gfmFootnoteCallLabelMarker"),
+                              e.exit("gfmFootnoteCall"),
+                              t)
+                            : n(u);
+                    }
+                    return (
+                        (0, i.Ee)(u) || (r = !0),
+                        a++,
+                        e.consume(u),
+                        92 === u ? c : s
+                    );
+                }
+                function c(t) {
+                    return 91 === t || 92 === t || 93 === t
+                        ? (e.consume(t), a++, s)
+                        : s(t);
+                }
+            }
+            function S(e, t, n) {
+                var r,
+                    o,
+                    l = this,
+                    a = l.parser.gfmFootnotes || (l.parser.gfmFootnotes = []),
+                    u = 0;
+                return function (t) {
+                    return (
+                        (e.enter("gfmFootnoteDefinition")._container = !0),
+                        e.enter("gfmFootnoteDefinitionLabel"),
+                        e.enter("gfmFootnoteDefinitionLabelMarker"),
+                        e.consume(t),
+                        e.exit("gfmFootnoteDefinitionLabelMarker"),
+                        s
+                    );
+                };
+                function s(t) {
+                    return 94 === t
+                        ? (e.enter("gfmFootnoteDefinitionMarker"),
+                          e.consume(t),
+                          e.exit("gfmFootnoteDefinitionMarker"),
+                          e.enter("gfmFootnoteDefinitionLabelString"),
+                          (e.enter("chunkString").contentType = "string"),
+                          c)
+                        : n(t);
+                }
+                function c(t) {
+                    if (
+                        u > 999 ||
+                        (93 === t && !o) ||
+                        null === t ||
+                        91 === t ||
+                        (0, i.Ee)(t)
+                    )
+                        return n(t);
+                    if (93 === t) {
+                        e.exit("chunkString");
+                        var _n0 = e.exit("gfmFootnoteDefinitionLabelString");
+                        return (
+                            (r = (0, C.B)(l.sliceSerialize(_n0))),
+                            e.enter("gfmFootnoteDefinitionLabelMarker"),
+                            e.consume(t),
+                            e.exit("gfmFootnoteDefinitionLabelMarker"),
+                            e.exit("gfmFootnoteDefinitionLabel"),
+                            h
+                        );
+                    }
+                    return (
+                        (0, i.Ee)(t) || (o = !0),
+                        u++,
+                        e.consume(t),
+                        92 === t ? f : c
+                    );
+                }
+                function f(t) {
+                    return 91 === t || 92 === t || 93 === t
+                        ? (e.consume(t), u++, c)
+                        : c(t);
+                }
+                function h(t) {
+                    return 58 === t
+                        ? (e.enter("definitionMarker"),
+                          e.consume(t),
+                          e.exit("definitionMarker"),
+                          a.includes(r) || a.push(r),
+                          (0, x.N)(e, p, "gfmFootnoteDefinitionWhitespace"))
+                        : n(t);
+                }
+                function p(e) {
+                    return t(e);
+                }
+            }
+            function L(e, t, n) {
+                return e.check(y.B, t, e.attempt(w, t, n));
+            }
+            function O(e) {
+                e.exit("gfmFootnoteDefinition");
+            }
+            var T = n(682777),
+                E = n(910691),
+                M = n(45535);
+            var I = /*#__PURE__*/ (function () {
+                function I() {
+                    _classCallCheck(this, I);
+                    this.map = [];
+                }
+                return _createClass(I, [
+                    {
+                        key: "add",
+                        value: function add(e, t, n) {
+                            !(function (e, t, n, r) {
+                                var i = 0;
+                                if (0 !== n || 0 !== r.length) {
+                                    for (; i < e.map.length; ) {
+                                        if (e.map[i][0] === t) {
+                                            var _e$map$i$;
+                                            ((e.map[i][1] += n),
+                                                (_e$map$i$ =
+                                                    e.map[i][2]).push.apply(
+                                                    _e$map$i$,
+                                                    _toConsumableArray(r)
+                                                ));
+                                            return;
+                                        }
+                                        i += 1;
+                                    }
+                                    e.map.push([t, n, r]);
+                                }
+                            })(this, e, t, n);
+                        },
+                    },
+                    {
+                        key: "consume",
+                        value: function consume(e) {
+                            if (
+                                (this.map.sort(function (e, t) {
+                                    return e[0] - t[0];
+                                }),
+                                0 === this.map.length)
+                            )
+                                return;
+                            var t = this.map.length,
+                                n = [];
+                            for (; t > 0; )
+                                ((t -= 1),
+                                    n.push(
+                                        e.slice(
+                                            this.map[t][0] + this.map[t][1]
+                                        ),
+                                        this.map[t][2]
+                                    ),
+                                    (e.length = this.map[t][0]));
+                            (n.push(_toConsumableArray(e)), (e.length = 0));
+                            var r = n.pop();
+                            for (; r; )
+                                (e.push.apply(e, _toConsumableArray(r)),
+                                    (r = n.pop()));
+                            this.map.length = 0;
+                        },
+                    },
+                ]);
+            })();
+            function R(e, t, n) {
+                var r,
+                    o = this,
+                    l = 0,
+                    a = 0;
+                return function (e) {
+                    var t = o.events.length - 1;
+                    for (; t > -1; ) {
+                        var _e15 = o.events[t][1].type;
+                        if ("lineEnding" === _e15 || "linePrefix" === _e15) t--;
+                        else break;
+                    }
+                    var r = t > -1 ? o.events[t][1].type : null,
+                        i = "tableHead" === r || "tableRow" === r ? v : u;
+                    return i === v && o.parser.lazy[o.now().line] ? n(e) : i(e);
+                };
+                function u(t) {
+                    var n;
+                    return (
+                        e.enter("tableHead"),
+                        e.enter("tableRow"),
+                        124 === (n = t) || ((r = !0), (a += 1)),
+                        s(n)
+                    );
+                }
+                function s(t) {
+                    return null === t
+                        ? n(t)
+                        : (0, i.HP)(t)
+                          ? a > 1
+                              ? ((a = 0),
+                                (o.interrupt = !0),
+                                e.exit("tableRow"),
+                                e.enter("lineEnding"),
+                                e.consume(t),
+                                e.exit("lineEnding"),
+                                h)
+                              : n(t)
+                          : (0, i.On)(t)
+                            ? (0, x.N)(e, s, "whitespace")(t)
+                            : ((a += 1), r && ((r = !1), (l += 1)), 124 === t)
+                              ? (e.enter("tableCellDivider"),
+                                e.consume(t),
+                                e.exit("tableCellDivider"),
+                                (r = !0),
+                                s)
+                              : (e.enter("data"), c(t));
+                }
+                function c(t) {
+                    return null === t || 124 === t || (0, i.Ee)(t)
+                        ? (e.exit("data"), s(t))
+                        : (e.consume(t), 92 === t ? f : c);
+                }
+                function f(t) {
+                    return 92 === t || 124 === t ? (e.consume(t), c) : c(t);
+                }
+                function h(t) {
+                    return ((o.interrupt = !1), o.parser.lazy[o.now().line])
+                        ? n(t)
+                        : (e.enter("tableDelimiterRow"), (r = !1), (0, i.On)(t))
+                          ? (0, x.N)(
+                                e,
+                                p,
+                                "linePrefix",
+                                o.parser.constructs.disable.null.includes(
+                                    "codeIndented"
+                                )
+                                    ? void 0
+                                    : 4
+                            )(t)
+                          : p(t);
+                }
+                function p(t) {
+                    return 45 === t || 58 === t
+                        ? m(t)
+                        : 124 === t
+                          ? ((r = !0),
+                            e.enter("tableCellDivider"),
+                            e.consume(t),
+                            e.exit("tableCellDivider"),
+                            d)
+                          : n(t);
+                }
+                function d(t) {
+                    return (0, i.On)(t)
+                        ? (0, x.N)(e, m, "whitespace")(t)
+                        : m(t);
+                }
+                function m(t) {
+                    return 58 === t
+                        ? ((a += 1),
+                          (r = !0),
+                          e.enter("tableDelimiterMarker"),
+                          e.consume(t),
+                          e.exit("tableDelimiterMarker"),
+                          g)
+                        : 45 === t
+                          ? ((a += 1), g(t))
+                          : null === t || (0, i.HP)(t)
+                            ? b(t)
+                            : n(t);
+                }
+                function g(t) {
+                    return 45 === t
+                        ? (e.enter("tableDelimiterFiller"),
+                          (function t(n) {
+                              return 45 === n
+                                  ? (e.consume(n), t)
+                                  : 58 === n
+                                    ? ((r = !0),
+                                      e.exit("tableDelimiterFiller"),
+                                      e.enter("tableDelimiterMarker"),
+                                      e.consume(n),
+                                      e.exit("tableDelimiterMarker"),
+                                      k)
+                                    : (e.exit("tableDelimiterFiller"), k(n));
+                          })(t))
+                        : n(t);
+                }
+                function k(t) {
+                    return (0, i.On)(t)
+                        ? (0, x.N)(e, b, "whitespace")(t)
+                        : b(t);
+                }
+                function b(o) {
+                    if (124 === o) return p(o);
+                    if (null === o || (0, i.HP)(o))
+                        return r && l === a
+                            ? (e.exit("tableDelimiterRow"),
+                              e.exit("tableHead"),
+                              t(o))
+                            : n(o);
+                    return n(o);
+                }
+                function v(t) {
+                    return (e.enter("tableRow"), y(t));
+                }
+                function y(n) {
+                    return 124 === n
+                        ? (e.enter("tableCellDivider"),
+                          e.consume(n),
+                          e.exit("tableCellDivider"),
+                          y)
+                        : null === n || (0, i.HP)(n)
+                          ? (e.exit("tableRow"), t(n))
+                          : (0, i.On)(n)
+                            ? (0, x.N)(e, y, "whitespace")(n)
+                            : (e.enter("data"), C(n));
+                }
+                function C(t) {
+                    return null === t || 124 === t || (0, i.Ee)(t)
+                        ? (e.exit("data"), y(t))
+                        : (e.consume(t), 92 === t ? w : C);
+                }
+                function w(t) {
+                    return 92 === t || 124 === t ? (e.consume(t), C) : C(t);
+                }
+            }
+            function j(e, t) {
+                var n,
+                    r,
+                    i,
+                    o = -1,
+                    l = !0,
+                    a = 0,
+                    u = [0, 0, 0, 0],
+                    s = [0, 0, 0, 0],
+                    c = !1,
+                    f = 0,
+                    h = new I();
+                for (; ++o < e.length; ) {
+                    var _p = e[o],
+                        _d = _p[1];
+                    "enter" === _p[0]
+                        ? "tableHead" === _d.type
+                            ? ((c = !1),
+                              0 !== f &&
+                                  (N(h, t, f, n, r), (r = void 0), (f = 0)),
+                              (n = {
+                                  type: "table",
+                                  start: Object.assign({}, _d.start),
+                                  end: Object.assign({}, _d.end),
+                              }),
+                              h.add(o, 0, [["enter", n, t]]))
+                            : "tableRow" === _d.type ||
+                                "tableDelimiterRow" === _d.type
+                              ? ((l = !0),
+                                (i = void 0),
+                                (u = [0, 0, 0, 0]),
+                                (s = [0, o + 1, 0, 0]),
+                                c &&
+                                    ((c = !1),
+                                    (r = {
+                                        type: "tableBody",
+                                        start: Object.assign({}, _d.start),
+                                        end: Object.assign({}, _d.end),
+                                    }),
+                                    h.add(o, 0, [["enter", r, t]])),
+                                (a =
+                                    "tableDelimiterRow" === _d.type
+                                        ? 2
+                                        : r
+                                          ? 3
+                                          : 1))
+                              : a &&
+                                  ("data" === _d.type ||
+                                      "tableDelimiterMarker" === _d.type ||
+                                      "tableDelimiterFiller" === _d.type)
+                                ? ((l = !1),
+                                  0 === s[2] &&
+                                      (0 !== u[1] &&
+                                          ((s[0] = s[1]),
+                                          (i = z(h, t, u, a, void 0, i)),
+                                          (u = [0, 0, 0, 0])),
+                                      (s[2] = o)))
+                                : "tableCellDivider" === _d.type &&
+                                  (l
+                                      ? (l = !1)
+                                      : (0 !== u[1] &&
+                                            ((s[0] = s[1]),
+                                            (i = z(h, t, u, a, void 0, i))),
+                                        (s = [(u = s)[1], o, 0, 0])))
+                        : "tableHead" === _d.type
+                          ? ((c = !0), (f = o))
+                          : "tableRow" === _d.type ||
+                              "tableDelimiterRow" === _d.type
+                            ? ((f = o),
+                              0 !== u[1]
+                                  ? ((s[0] = s[1]), (i = z(h, t, u, a, o, i)))
+                                  : 0 !== s[1] && (i = z(h, t, s, a, o, i)),
+                              (a = 0))
+                            : a &&
+                              ("data" === _d.type ||
+                                  "tableDelimiterMarker" === _d.type ||
+                                  "tableDelimiterFiller" === _d.type) &&
+                              (s[3] = o);
+                }
+                for (
+                    0 !== f && N(h, t, f, n, r), h.consume(t.events), o = -1;
+                    ++o < t.events.length;
+
+                ) {
+                    var _e16 = t.events[o];
+                    "enter" === _e16[0] &&
+                        "table" === _e16[1].type &&
+                        (_e16[1]._align = (function (e, t) {
+                            var n = !1,
+                                r = [];
+                            for (; t < e.length; ) {
+                                var _i0 = e[t];
+                                if (n) {
+                                    if ("enter" === _i0[0])
+                                        "tableContent" === _i0[1].type &&
+                                            r.push(
+                                                "tableDelimiterMarker" ===
+                                                    e[t + 1][1].type
+                                                    ? "left"
+                                                    : "none"
+                                            );
+                                    else if ("tableContent" === _i0[1].type) {
+                                        if (
+                                            "tableDelimiterMarker" ===
+                                            e[t - 1][1].type
+                                        ) {
+                                            var _e17 = r.length - 1;
+                                            r[_e17] =
+                                                "left" === r[_e17]
+                                                    ? "center"
+                                                    : "right";
+                                        }
+                                    } else if (
+                                        "tableDelimiterRow" === _i0[1].type
+                                    )
+                                        break;
+                                } else
+                                    "enter" === _i0[0] &&
+                                        "tableDelimiterRow" === _i0[1].type &&
+                                        (n = !0);
+                                t += 1;
+                            }
+                            return r;
+                        })(t.events, o));
+                }
+                return e;
+            }
+            function z(e, t, n, r, i, o) {
+                0 !== n[0] &&
+                    ((o.end = Object.assign({}, P(t.events, n[0]))),
+                    e.add(n[0], 0, [["exit", o, t]]));
+                var l = P(t.events, n[1]);
+                if (
+                    ((o = {
+                        type:
+                            1 === r
+                                ? "tableHeader"
+                                : 2 === r
+                                  ? "tableDelimiter"
+                                  : "tableData",
+                        start: Object.assign({}, l),
+                        end: Object.assign({}, l),
+                    }),
+                    e.add(n[1], 0, [["enter", o, t]]),
+                    0 !== n[2])
+                ) {
+                    var _i1 = P(t.events, n[2]),
+                        _o3 = P(t.events, n[3]),
+                        _l6 = {
+                            type: "tableContent",
+                            start: Object.assign({}, _i1),
+                            end: Object.assign({}, _o3),
+                        };
+                    if ((e.add(n[2], 0, [["enter", _l6, t]]), 2 !== r)) {
+                        var _r1 = t.events[n[2]],
+                            _i10 = t.events[n[3]];
+                        if (
+                            ((_r1[1].end = Object.assign({}, _i10[1].end)),
+                            (_r1[1].type = "chunkText"),
+                            (_r1[1].contentType = "text"),
+                            n[3] > n[2] + 1)
+                        ) {
+                            var _t15 = n[2] + 1,
+                                _r10 = n[3] - n[2] - 1;
+                            e.add(_t15, _r10, []);
+                        }
+                    }
+                    e.add(n[3] + 1, 0, [["exit", _l6, t]]);
+                }
+                return (
+                    void 0 !== i &&
+                        ((o.end = Object.assign({}, P(t.events, i))),
+                        e.add(i, 0, [["exit", o, t]]),
+                        (o = void 0)),
+                    o
+                );
+            }
+            function N(e, t, n, r, i) {
+                var o = [],
+                    l = P(t.events, n);
+                (i && ((i.end = Object.assign({}, l)), o.push(["exit", i, t])),
+                    (r.end = Object.assign({}, l)),
+                    o.push(["exit", r, t]),
+                    e.add(n + 1, 0, o));
+            }
+            function P(e, t) {
+                var n = e[t],
+                    r = "enter" === n[0] ? "start" : "end";
+                return n[1][r];
+            }
+            var _ = {
+                name: "tasklistCheck",
+                tokenize: function tokenize(e, t, n) {
+                    var r = this;
+                    return function (t) {
+                        return null === r.previous &&
+                            r._gfmTasklistFirstContentOfListItem
+                            ? (e.enter("taskListCheck"),
+                              e.enter("taskListCheckMarker"),
+                              e.consume(t),
+                              e.exit("taskListCheckMarker"),
+                              o)
+                            : n(t);
+                    };
+                    function o(t) {
+                        return (0, i.Ee)(t)
+                            ? (e.enter("taskListCheckValueUnchecked"),
+                              e.consume(t),
+                              e.exit("taskListCheckValueUnchecked"),
+                              l)
+                            : 88 === t || 120 === t
+                              ? (e.enter("taskListCheckValueChecked"),
+                                e.consume(t),
+                                e.exit("taskListCheckValueChecked"),
+                                l)
+                              : n(t);
+                    }
+                    function l(t) {
+                        return 93 === t
+                            ? (e.enter("taskListCheckMarker"),
+                              e.consume(t),
+                              e.exit("taskListCheckMarker"),
+                              e.exit("taskListCheck"),
+                              a)
+                            : n(t);
+                    }
+                    function a(r) {
+                        return (0, i.HP)(r)
+                            ? t(r)
+                            : (0, i.On)(r)
+                              ? e.check(
+                                    {
+                                        tokenize: B,
+                                    },
+                                    t,
+                                    n
+                                )(r)
+                              : n(r);
+                    }
+                },
+            };
+            function B(e, t, n) {
+                return (0, x.N)(
+                    e,
+                    function (e) {
+                        return null === e ? n(e) : t(e);
+                    },
+                    "whitespace"
+                );
+            }
+            function q(e) {
+                var t, n;
+                return (0, r.y)([
+                    {
+                        text: p,
+                    },
+                    {
+                        document: {
+                            91: {
+                                name: "gfmFootnoteDefinition",
+                                tokenize: S,
+                                continuation: {
+                                    tokenize: L,
+                                },
+                                exit: O,
+                            },
+                        },
+                        text: {
+                            91: {
+                                name: "gfmFootnoteCall",
+                                tokenize: D,
+                            },
+                            93: {
+                                name: "gfmPotentialFootnoteCall",
+                                add: "after",
+                                tokenize: A,
+                                resolveTo: F,
+                            },
+                        },
+                    },
+                    ((t = (e || {}).singleTilde),
+                    (n = {
+                        name: "strikethrough",
+                        tokenize: function tokenize(e, n, r) {
+                            var i = this.previous,
+                                o = this.events,
+                                l = 0;
+                            return function (a) {
+                                return 126 === i &&
+                                    "characterEscape" !==
+                                        o[o.length - 1][1].type
+                                    ? r(a)
+                                    : (e.enter(
+                                          "strikethroughSequenceTemporary"
+                                      ),
+                                      (function o(a) {
+                                          var u = (0, E.S)(i);
+                                          if (126 === a)
+                                              return l > 1
+                                                  ? r(a)
+                                                  : (e.consume(a), l++, o);
+                                          if (l < 2 && !t) return r(a);
+                                          var s = e.exit(
+                                                  "strikethroughSequenceTemporary"
+                                              ),
+                                              c = (0, E.S)(a);
+                                          return (
+                                              (s._open =
+                                                  !c || (2 === c && !!u)),
+                                              (s._close =
+                                                  !u || (2 === u && !!c)),
+                                              n(a)
+                                          );
+                                      })(a));
+                            };
+                        },
+                        resolveAll: function resolveAll(e, t) {
+                            var n = -1;
+                            for (; ++n < e.length; )
+                                if (
+                                    "enter" === e[n][0] &&
+                                    "strikethroughSequenceTemporary" ===
+                                        e[n][1].type &&
+                                    e[n][1]._close
+                                ) {
+                                    var _r11 = n;
+                                    for (; _r11--; )
+                                        if (
+                                            "exit" === e[_r11][0] &&
+                                            "strikethroughSequenceTemporary" ===
+                                                e[_r11][1].type &&
+                                            e[_r11][1]._open &&
+                                            e[n][1].end.offset -
+                                                e[n][1].start.offset ==
+                                                e[_r11][1].end.offset -
+                                                    e[_r11][1].start.offset
+                                        ) {
+                                            ((e[n][1].type =
+                                                "strikethroughSequence"),
+                                                (e[_r11][1].type =
+                                                    "strikethroughSequence"));
+                                            var _i11 = {
+                                                    type: "strikethrough",
+                                                    start: Object.assign(
+                                                        {},
+                                                        e[_r11][1].start
+                                                    ),
+                                                    end: Object.assign(
+                                                        {},
+                                                        e[n][1].end
+                                                    ),
+                                                },
+                                                _o4 = {
+                                                    type: "strikethroughText",
+                                                    start: Object.assign(
+                                                        {},
+                                                        e[_r11][1].end
+                                                    ),
+                                                    end: Object.assign(
+                                                        {},
+                                                        e[n][1].start
+                                                    ),
+                                                },
+                                                _l7 = [
+                                                    ["enter", _i11, t],
+                                                    ["enter", e[_r11][1], t],
+                                                    ["exit", e[_r11][1], t],
+                                                    ["enter", _o4, t],
+                                                ],
+                                                _a3 =
+                                                    t.parser.constructs
+                                                        .insideSpan.null;
+                                            (_a3 &&
+                                                (0, T.m)(
+                                                    _l7,
+                                                    _l7.length,
+                                                    0,
+                                                    (0, M.W)(
+                                                        _a3,
+                                                        e.slice(_r11 + 1, n),
+                                                        t
+                                                    )
+                                                ),
+                                                (0, T.m)(_l7, _l7.length, 0, [
+                                                    ["exit", _o4, t],
+                                                    ["enter", e[n][1], t],
+                                                    ["exit", e[n][1], t],
+                                                    ["exit", _i11, t],
+                                                ]),
+                                                (0, T.m)(
+                                                    e,
+                                                    _r11 - 1,
+                                                    n - _r11 + 3,
+                                                    _l7
+                                                ),
+                                                (n = _r11 + _l7.length - 2));
+                                            break;
+                                        }
+                                }
+                            for (n = -1; ++n < e.length; )
+                                "strikethroughSequenceTemporary" ===
+                                    e[n][1].type && (e[n][1].type = "data");
+                            return e;
+                        },
+                    }),
+                    null == t && (t = !0),
+                    {
+                        text: {
+                            126: n,
+                        },
+                        insideSpan: {
+                            null: [n],
+                        },
+                        attentionMarkers: {
+                            null: [126],
+                        },
+                    }),
+                    {
+                        flow: {
+                            null: {
+                                name: "table",
+                                tokenize: R,
+                                resolveAll: j,
+                            },
+                        },
+                    },
+                    {
+                        text: {
+                            91: _,
+                        },
+                    },
+                ]);
+            }
+        },
+        477760: function _(e, t, n) {
+            function r(e) {
+                var t = String(e),
+                    n = [];
+                return {
+                    toOffset: function toOffset(e) {
+                        if (
+                            e &&
+                            "number" == typeof e.line &&
+                            "number" == typeof e.column &&
+                            !Number.isNaN(e.line) &&
+                            !Number.isNaN(e.column)
+                        ) {
+                            for (; n.length < e.line; ) {
+                                var _e18 = n[n.length - 1],
+                                    _r12 = i(t, _e18),
+                                    o = -1 === _r12 ? t.length + 1 : _r12 + 1;
+                                if (_e18 === o) break;
+                                n.push(o);
+                            }
+                            var _r13 =
+                                (e.line > 1 ? n[e.line - 2] : 0) + e.column - 1;
+                            if (_r13 < n[e.line - 1]) return _r13;
+                        }
+                    },
+                    toPoint: function toPoint(e) {
+                        if ("number" == typeof e && e > -1 && e <= t.length) {
+                            var _r14 = 0;
+                            for (;;) {
+                                var o = n[_r14];
+                                if (void 0 === o) {
+                                    var _e19 = i(t, n[_r14 - 1]);
+                                    ((o =
+                                        -1 === _e19 ? t.length + 1 : _e19 + 1),
+                                        (n[_r14] = o));
+                                }
+                                if (o > e)
+                                    return {
+                                        line: _r14 + 1,
+                                        column:
+                                            e -
+                                            (_r14 > 0 ? n[_r14 - 1] : 0) +
+                                            1,
+                                        offset: e,
+                                    };
+                                _r14++;
+                            }
+                        }
+                    },
+                };
+            }
+            function i(e, t) {
+                var n = e.indexOf("\r", t),
+                    r = e.indexOf("\n", t);
+                return -1 === r
+                    ? n
+                    : -1 === n || n + 1 === r
+                      ? r
+                      : n < r
+                        ? n
+                        : r;
+            }
+            n.d(t, {
+                C: function C() {
+                    return r;
+                },
+            });
+        },
+    },
+]);

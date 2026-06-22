@@ -1,0 +1,22 @@
+(function () {
+    "use strict";
+
+    if (typeof window.requestIdleCallback === "function") return;
+
+    window.requestIdleCallback = function (callback, options) {
+        var timeout = options && options.timeout;
+        var start = Date.now();
+        return window.setTimeout(function () {
+            callback({
+                didTimeout: !!timeout && Date.now() - start >= timeout,
+                timeRemaining: function () {
+                    return Math.max(0, 50 - (Date.now() - start));
+                },
+            });
+        }, 1);
+    };
+
+    window.cancelIdleCallback = function (id) {
+        window.clearTimeout(id);
+    };
+})();
