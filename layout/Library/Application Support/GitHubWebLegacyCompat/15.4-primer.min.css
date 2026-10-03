@@ -36,4 +36,4 @@ html{-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;font-family:sans-se
         Consolas,
         Liberation Mono,
         monospace
-    );margin-top:0;margin-bottom:0;font-size:12px}.octicon{vertical-align:text-bottom}.blankslate{--blankslate-outer-padding-block:var(--base-size-20);--blankslate-outer-padding-inline:var(--base-size-20)}.blankslate-spacious{--blankslate-outer-padding-block:var(--base-size-44);--blankslate-outer-padding-inline:var(--base-size-28)}.blankslate-icon{margin-bottom:var(--stack-gap-condensed)}.blankslate-heading{font-size:var(--text-title-size-small)}.blankslate p{font-size:var(--text-body-size-medium)}.blankslate-action{margin-top:var(--stack-gap-condensed)}.blankslate-action:first-of-type{margin-top:var(--stack-gap-normal)}.blankslate-action:last-of-type{margin-bottom:calc(var(--stack-gap-condensed)/ 2)}
+    );margin-top:0;margin-bottom:0;font-size:12px}.octicon{vertical-align:text-bottom;vertical-align:text-bottom;fill:currentColor;display:inline-block;overflow:visible!important}

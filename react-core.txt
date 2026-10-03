@@ -1,5 +1,0 @@
-# Old
-coreLoader:async function e({location:e})
-
-# New
-coreLoader:async function e_({location:e})
